@@ -1,21 +1,9 @@
-name: PyeongHo Site
-description: lab lab lab
-meta_description: "lab"
+name: PyeongHo Lab
+description: LabLAbLAb
+meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
-markdown: redcarpet
-highlighter: rouge
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-extensions: [fenced_code_blocks]
-kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  input:          GFM
-  hard_wrap:      false
-  footnote_nr:    1
-
+markdown: kramdown
+highlighter: pygments
 logo: false
 paginate: 15
 baseurl: /
