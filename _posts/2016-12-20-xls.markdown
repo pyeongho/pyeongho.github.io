@@ -14,29 +14,9 @@ tags:
 
  - xlsxwriter 라이브러리 사용 속도 테스트 
     - 파이썬 테스트 코드
-
-    {% highlight python %}
-
-        import xlsxwriter
-
-        workbook = xlsxwriter.Workbook('demo.xlsx')        
-        worksheet = workbook.add_worksheet()
-        worksheet.set_column('A:A', 20)
-        i=0
-        while i < 100000:
-            i = i + 1
-            worksheet.write(i, 0, 123)
-            worksheet.write(i, 1, 123)
-            worksheet.write(i, 2, 123)
-            worksheet.write(i, 3, 123)
-            worksheet.write(i, 4, 123)
-            worksheet.write(i, 5, 123)
-
-        workbook.close()
-    {% endhighlight %}    
+<script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script>
 
     - C 테스트 코드   
-
 <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
 
 
