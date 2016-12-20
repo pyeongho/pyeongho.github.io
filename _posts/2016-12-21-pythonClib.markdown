@@ -1,13 +1,12 @@
 ---
 layout: post
-title: 파이썬 라이브러리 만들기
+title: python 모듈 만들기
 category: 실습중
 comments: true
-description: 파이썬 C 라이브러리 원형
+description: 파이썬 C 모듈 원형
 tags:
     - c
-    - python
-    - xlsxwriter
+    - python   
 ---
 
 ### 파이썬에서 사용 할 C 라이브러리 만들기
