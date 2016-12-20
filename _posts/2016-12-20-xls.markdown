@@ -37,30 +37,7 @@ tags:
 
     - C 테스트 코드
     
-    {% highlight c %}
-    
-        #include "xlsxwriter.h"
-
-        int main() {
-        int i=0;
-            lxw_workbook  *workbook  = workbook_new("hello_world.xlsx");
-            lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
-
-            for(i=0;i<100000;i++){
-                worksheet_write_number(worksheet, i, 0, 123, NULL);    
-                worksheet_write_number(worksheet, i, 1, 123, NULL);    
-                worksheet_write_number(worksheet, i, 2, 123, NULL);    
-                worksheet_write_number(worksheet, i, 3, 123, NULL);    
-                worksheet_write_number(worksheet, i, 4, 123, NULL);    
-                worksheet_write_number(worksheet, i, 5, 123, NULL);    
-            }
-            
-
-            workbook_close(workbook);
-
-            return 0;
-        }
-    {% endhighlight %}
+    <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
 
 
 ## This is h2 header
