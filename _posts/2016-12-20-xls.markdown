@@ -1,0 +1,152 @@
+---
+layout: post
+title: 파이썬 라이브러리 만들기
+category: 실습중
+comments: true
+description: 파이썬 엑셀 라이브러리 만들기
+tags:
+    - 엑셀
+    - 파이썬 라이브러리
+    - xlsxwriter
+---
+
+## 파이썬을 이용 해서 C 라이브러리 만들기
+
+ - xlsxwriter 라이브러리 사용 속도 테스트 
+    - 파이썬 테스트 코드
+        ```python
+
+        import xlsxwriter
+
+        workbook = xlsxwriter.Workbook('demo.xlsx')        
+        worksheet = workbook.add_worksheet()
+        worksheet.set_column('A:A', 20)
+        i=0
+        while i < 100000:
+            i = i + 1
+            worksheet.write(i, 0, 123)
+            worksheet.write(i, 1, 123)
+            worksheet.write(i, 2, 123)
+            worksheet.write(i, 3, 123)
+            worksheet.write(i, 4, 123)
+            worksheet.write(i, 5, 123)
+
+        workbook.close()
+        ```
+
+    - C 테스트 코드   
+    ``` c
+    #include "xlsxwriter.h"
+
+    int main() {
+    int i=0;
+        lxw_workbook  *workbook  = workbook_new("hello_world.xlsx");
+        lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
+
+        for(i=0;i<100000;i++){
+            worksheet_write_number(worksheet, i, 0, 123, NULL);    
+            worksheet_write_number(worksheet, i, 1, 123, NULL);    
+            worksheet_write_number(worksheet, i, 2, 123, NULL);    
+            worksheet_write_number(worksheet, i, 3, 123, NULL);    
+            worksheet_write_number(worksheet, i, 4, 123, NULL);    
+            worksheet_write_number(worksheet, i, 5, 123, NULL);    
+        }
+        
+
+        workbook_close(workbook);
+
+        return 0;
+    }
+    ```    
+
+
+## This is h2 header
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus eu eros at maximus. 
+
+<div class="info alert"><strong>INFO: </strong> This is info message</div>
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+
+<div class="warning alert"><strong>WARNING: </strong>This is warning message with a <a href="#">some random link</a> to click.</div>
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+
+<div class="note alert"><strong>NOTE: </strong>This is note message</div>
+
+<div class="success alert">
+<h4>This is h4 header!</h4>
+<p>Mauris ullamcorper lacus sed augue molestie, ac consequat erat posuere</p>
+<p>Mauris <i>ullamcorper lacus</i> sed augue molestie, git clone ac consequat erat posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur odio sapien, sollicitudin ut pharetra in, tincidunt vel elit.</p>
+</div>
+
+### This is h3 header
+
+Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue molestie, ac consequat erat posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur odio sapien, sollicitudin ut pharetra in, tincidunt vel elit.
+
+<div class="highlighter-header">HTML/CSS</div>
+{% highlight html linenos %}
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+      p {
+          border-style: solid;
+          border-bottom: thick dotted #ff0000;
+        }
+   </style>
+</head>
+<body>
+    <p>This is some text in a paragraph.</p>
+</body>
+</html>
+{% endhighlight %}
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus eu eros at maximus. 
+
+- List item number 1
+    - Nested list item 1
+    - Nested list item 2
+        - Deep nested list item 1ante at vestibulum. Mauris ullamcorper lacus sed augue molestie.
+        - Deep nested list item 2
+    - Nested list item number 3
+- List item number 3
+
+1. List item number 1
+    1. Nested list item number 1
+    2. Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue molestie, ac consequat erat posuere.
+2. List item number 2
+3. List item number 3
+
+
+#### This is h4 header
+
+Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue molestie, ac consequat erat posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur odio sapien, sollicitudin ut pharetra in, tincidunt vel elit.
+
+
+| Header One     | Header Two | Header Three | Head |
+| ------------- | ------------- | ----------- | -------- |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+| Item One       | Item Two       | Item Three   | Long Item Four   |
+
+
+Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue molestie, ac consequat erat posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur odio sapien, sollicitudin ut pharetra in, tincidunt vel elit.
+
+![image test](/resources/images/main_front.jpg) 
+
+Bold text: __I am bold__
+
+Italic text: *I am italic*
+
+Inline code: `html`, `css`, `git clone <url>`.
+
+Link text: [more examples](http://www.dennis-grinch.co.uk)
+
+Abbreviation: <abbr title='Content Management System'>CMS</abbr>
