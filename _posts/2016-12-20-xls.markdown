@@ -36,9 +36,10 @@ tags:
     {% endhighlight %}    
 
     - C 테스트 코드   
-    <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
 
-    {% gist pyeongho/a4ee815aaa703709f0de758d2fbbf840 %}
+<script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
+
+
 ## This is h2 header
 
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
