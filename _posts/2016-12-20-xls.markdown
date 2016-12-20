@@ -37,7 +37,8 @@ tags:
 
     - C 테스트 코드
     
-     {% highlight c %}
+    {% highlight c %}
+    
         #include "xlsxwriter.h"
 
         int main() {
@@ -59,7 +60,7 @@ tags:
 
             return 0;
         }
-        {% endhighlight %}
+    {% endhighlight %}
 
 
 ## This is h2 header
