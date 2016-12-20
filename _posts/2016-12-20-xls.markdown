@@ -14,7 +14,7 @@ tags:
 
  - xlsxwriter 라이브러리 사용 속도 테스트 
     - 파이썬 테스트 코드
-        {% highlight python linenos %}
+        {% highlight python %}
 
         import xlsxwriter
 
