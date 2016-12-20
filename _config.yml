@@ -2,9 +2,10 @@ name: PyeongHo Site
 description: lab lab lab
 meta_description: "lab"
 
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+extensions: [fenced_code_blocks]
 kramdown:
   auto_ids:       true
   footnote_nr:    1
@@ -14,7 +15,7 @@ kramdown:
   input:          GFM
   hard_wrap:      false
   footnote_nr:    1
-  
+
 logo: false
 paginate: 15
 baseurl: /
