@@ -10,12 +10,11 @@ tags:
     - xlsxwriter
 ---
 
-## 파이썬을 이용 해서 C 라이브러리 만들기
+## 파이썬에서 사용 할 C 라이브러리 만들기
 
  - xlsxwriter 라이브러리 사용 속도 테스트 
     - 파이썬 테스트 코드
-        {% highlight python %}
-
+    
         import xlsxwriter
 
         workbook = xlsxwriter.Workbook('demo.xlsx')        
@@ -32,7 +31,9 @@ tags:
             worksheet.write(i, 5, 123)
 
         workbook.close()
-        {% endhighlight %}
+
+    
+
 
     - C 테스트 코드   
         ``` c    
