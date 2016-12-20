@@ -14,7 +14,7 @@ tags:
 
  - xlsxwriter 라이브러리 사용 속도 테스트 
     - 파이썬 테스트 코드
-        ```python
+        {% highlight python linenos %}
 
         import xlsxwriter
 
@@ -32,32 +32,32 @@ tags:
             worksheet.write(i, 5, 123)
 
         workbook.close()
-        ```
+        {% endhighlight %}
 
     - C 테스트 코드   
-    ``` c
-    #include "xlsxwriter.h"
+        ``` c    
+        #include "xlsxwriter.h"
 
-    int main() {
-    int i=0;
-        lxw_workbook  *workbook  = workbook_new("hello_world.xlsx");
-        lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
+        int main() {
+        int i=0;
+            lxw_workbook  *workbook  = workbook_new("hello_world.xlsx");
+            lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
 
-        for(i=0;i<100000;i++){
-            worksheet_write_number(worksheet, i, 0, 123, NULL);    
-            worksheet_write_number(worksheet, i, 1, 123, NULL);    
-            worksheet_write_number(worksheet, i, 2, 123, NULL);    
-            worksheet_write_number(worksheet, i, 3, 123, NULL);    
-            worksheet_write_number(worksheet, i, 4, 123, NULL);    
-            worksheet_write_number(worksheet, i, 5, 123, NULL);    
+            for(i=0;i<100000;i++){
+                worksheet_write_number(worksheet, i, 0, 123, NULL);    
+                worksheet_write_number(worksheet, i, 1, 123, NULL);    
+                worksheet_write_number(worksheet, i, 2, 123, NULL);    
+                worksheet_write_number(worksheet, i, 3, 123, NULL);    
+                worksheet_write_number(worksheet, i, 4, 123, NULL);    
+                worksheet_write_number(worksheet, i, 5, 123, NULL);    
+            }
+            
+
+            workbook_close(workbook);
+
+            return 0;
         }
-        
-
-        workbook_close(workbook);
-
-        return 0;
-    }
-    ```    
+        ```    
 
 
 ## This is h2 header
