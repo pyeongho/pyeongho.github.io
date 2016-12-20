@@ -9,15 +9,16 @@ tags:
     - 파이썬 라이브러리
     - xlsxwriter
 ---
-</br>
+
 
 
 ### 파이썬에서 사용 할 C 라이브러리 만들기
 
- #### 속도 테스트를 위한 기본 테스트
-  - xlsxwriter 라이브러리 사용
-     - python 테스트 
-     <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script>
+#### 속도 테스트를 위한 기본 테스트
+
+  - xlsxwriter 라이브러리 사용  
+     - python 테스트
+     <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script>     
      - C 테스트 코드
      <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
      
