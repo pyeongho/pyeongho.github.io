@@ -1,18 +1,18 @@
 ---
 layout: post
-title: python 라이브러리 만들기
-category: 실습중
+title: python 에서 사용할 C 엑셀 모듈 만들기
+category: python
 comments: true
 description: python 엑셀 모듈 만들기
 tags:
     - 엑셀
-    - 파이썬 라이브러리
+    - python 라이브러리
     - xlsxwriter
 ---
 
 
 
-### 파이썬에서 사용 할 C 모듈 만들기
+### python에서 사용 할 C 모듈 만들기
 
 #### 0. 진행 이유
   -  python 에서 엑셀 만들기 사용하면 느리다고 함
@@ -29,6 +29,7 @@ tags:
     - c : 약 1.221초
 
 #### 2. C 라이브러리 만들기 도전 
+  - 기본 C module 링크: [C module](https://pyeongho.github.io/%EC%8B%A4%EC%8A%B5%EC%A4%91/2016/12/21/pythonClib.html)
 
 
 
