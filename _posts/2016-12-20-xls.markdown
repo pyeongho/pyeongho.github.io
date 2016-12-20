@@ -14,7 +14,9 @@ tags:
 
  - xlsxwriter 라이브러리 사용 속도 테스트 
     - 파이썬 테스트 코드
-    
+
+    {% highlight python %}
+
         import xlsxwriter
 
         workbook = xlsxwriter.Workbook('demo.xlsx')        
@@ -31,12 +33,11 @@ tags:
             worksheet.write(i, 5, 123)
 
         workbook.close()
+    {% endhighlight %}    
 
+    - C 테스트 코드
     
-
-
-    - C 테스트 코드   
-        ``` c    
+     {% highlight c %}
         #include "xlsxwriter.h"
 
         int main() {
@@ -58,7 +59,7 @@ tags:
 
             return 0;
         }
-        ```    
+        {% endhighlight %}
 
 
 ## This is h2 header
