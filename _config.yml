@@ -2,7 +2,7 @@ name: PyeongHo Site
 description: 간장공장공장장
 meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
-markdown: markdown
+markdown: kramdown
 highlighter: pygments
 logo: false
 paginate: 15
