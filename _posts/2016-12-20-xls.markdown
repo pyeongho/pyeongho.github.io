@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 파이썬 라이브러리 만들기
+title: python 라이브러리 만들기
 category: 실습중
 comments: true
-description: 파이썬 엑셀 라이브러리 만들기
+description: python 엑셀 모듈 만들기
 tags:
     - 엑셀
     - 파이썬 라이브러리
@@ -12,7 +12,7 @@ tags:
 
 
 
-### 파이썬에서 사용 할 C 라이브러리 만들기
+### 파이썬에서 사용 할 C 모듈 만들기
 
 #### 0. 진행 이유
   -  python 에서 엑셀 만들기 사용하면 느리다고 함
@@ -25,10 +25,10 @@ tags:
      <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
      
  - 속도 측정
-    | 언어 | 속도(S) | 
-    | ---- | ---- |
-    | python | ㄶㄹ |
-    | c | 1.221s |
+    - python : 약 12초
+    - c : 약 1.221초
+
+#### 2. C 라이브러리 만들기 도전 
 
 
 
