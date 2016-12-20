@@ -1,9 +1,9 @@
 ---
 layout: post
 title: python 모듈 만들기
-category: 실습중
+category: python
 comments: true
-description: 파이썬 C 모듈 원형
+description: python C 모듈 원형
 tags:
     - c
     - python   
