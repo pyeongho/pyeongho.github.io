@@ -14,3 +14,7 @@ gems: [jekyll-paginate]
 # Details for the RSS feed generator
 url:            'blog url'
 author:         'Your Name'
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
