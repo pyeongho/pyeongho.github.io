@@ -6,7 +6,8 @@ comments: true
 description: python 엑셀 모듈 만들기
 tags:
     - 엑셀
-    - python 라이브러리
+    - python
+    - c module
     - xlsxwriter
 ---
 
@@ -23,28 +24,44 @@ tags:
      <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script>     
      - C 테스트 코드
      <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
-     
+
  - 속도 측정
     - python : 약 12초
     - c : 약 1.221초
 
-#### 2. C 라이브러리 만들기 도전 
-  - 기본 C module 링크: [C module](https://pyeongho.github.io/%EC%8B%A4%EC%8A%B5%EC%A4%91/2016/12/21/pythonClib.html)
+#### 2. C 라이브러리 만들기
+  - 기본 C module 링크: [C module](https://pyeongho.github.io/python/2016/12/21/pythonClib.html)
+
+#### 3. setup.py 의 문제점
+  - 기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함
+
+#### 4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드
+  - 리눅스에 libxlsxwriter 를 설치 한다.
+  - setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
+    - ext_modules = [Extension("mylib", ["mylib.c"],extra_link_args=['-lxlsxwriter'])]
+  - mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조
+
+
+
+#### 참고 코드
+  - python 에서 호출, C 에서 엑셀 파일 생성
+   <script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script>
+
 
 
 
 ## This is h2 header
 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus eu eros at maximus. 
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus eu eros at maximus.
 
 <div class="info alert"><strong>INFO: </strong> This is info message</div>
 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
 <div class="warning alert"><strong>WARNING: </strong>This is warning message with a <a href="#">some random link</a> to click.</div>
 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
 <div class="note alert"><strong>NOTE: </strong>This is note message</div>
 
@@ -76,8 +93,8 @@ Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue m
 </html>
 {% endhighlight %}
 
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus eu eros at maximus. 
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Nunc orci purus, egestas a erat pulvinar, fringilla sodales turpis. Fusce luctus eu eros at maximus.
 
 - List item number 1
     - Nested list item 1
@@ -112,7 +129,7 @@ Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue m
 
 Curabitur pharetra eget ante at vestibulum. Mauris ullamcorper lacus sed augue molestie, ac consequat erat posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur odio sapien, sollicitudin ut pharetra in, tincidunt vel elit.
 
-![image test](/resources/images/main_front.jpg) 
+![image test](/resources/images/main_front.jpg)
 
 Bold text: __I am bold__
 
