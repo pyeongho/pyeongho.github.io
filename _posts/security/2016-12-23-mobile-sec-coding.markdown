@@ -43,6 +43,7 @@ tags:
 외부 입력 에서 경로조작에 사용될 수 있는 문자를 필터링하지 않으면, 경로에 
 대한 문자열이 입력되어 시스템 정보누출, 서비스 장애 등을 유발 시킬 수 있다.
   - 샘플코드 
+
     ```java
       public void f(Properties request) {
         String name = request.getProperty("filename");
@@ -55,6 +56,7 @@ tags:
   - 안전한 코드 
     - 해결코드 : 외부 입력값에 대하여 Null 여부를 체크하고, 외부에서 입력되는 파일이름(name)에서 상대경로(/,\\,&등의 특수문자)를 설정 할 수 없도록 replaceAll을 이용하여 특수문자를 제거한다.
   - 샘플코드 
+
     ```java
         public void f(Properties request) {
             String name = request.getProperty("filename");
@@ -78,6 +80,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 외부의 입력으로부터 직접 파일을 생성하게 되는 경우 임의의 파일 이름을 입력 받을 수 있도록  되어있어, 다른 파일에 접근이 가능 해져 의도하지 않은 정보가 노출될 수 있다.
   - 샘플코드 
+
     ```java
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +103,7 @@ tags:
     - 해결코드 : 외부의 입력이 파일이름으로 사용될 경우 절대 경로명이 사용되지 못하도록, 문자열이 “\”또는 “/”를 포함하거나 해당 문자열로 시작할 경우 관련동작 수행을 거부하는 것이 바람직하다.
 
   - 샘플코드 
+
     ```java
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -123,6 +127,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : Object.equals(), Comparable.compareTo(), omparator.compare()에서는 매개변수를 null과 비교 해야한다.
   - 샘플코드 
+
     ```java
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -135,6 +140,7 @@ tags:
   - 안전한 코드 
     - 해결코드 : 매개변수를 null과 비교하는 코드를 작성한다.
   - 샘플코드 
+
     ```java
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -150,6 +156,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : equals와 hasCode를 같이 사용하지 않았다[참고링크](http://egloos.zum.com/playpc/v/1173713)
   - 샘플코드 
+
     ```java
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -169,6 +176,7 @@ tags:
   - 안전한 코드 
     - 해결코드 : equals와 hasCode를 같이 작성하여해결한다.
   - 샘플코드 
+
     ```java
         public boolean equals(Object obj) {
             if (obj == null)
@@ -190,7 +198,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 443 Port로 데이터 외부 전송코드 스니핑이 발생할 수 있다
   - 샘플코드 
-  
+
     ```java
         public void onCreate(Bundle savedInstanceState) {
             int port = 443;
@@ -208,6 +216,7 @@ tags:
   - 안전한 코드 
     - 해결코드 : 민감한 정보를 전달 할 때에는  일반 소켓보다는 SSL을 사용하여 전송한다.    
   - 샘플코드 
+
     ```java
     public void onCreate(Bundle savedInstanceState) {
         int port = 443;
@@ -220,13 +229,13 @@ tags:
         in.close();
         out.close();
     }
-
     ```
 
 #### 6. 보안특성 - 취약한 암호화 알고리즘의 사용
   - 안전하지 않음 코드
     - 문제점 : 보안적으로 취약하거나 위험한 암호화 알고리즘을 사용했다. RC2,RC4,RC6, MD4,MD5,SHA1,DES.
   - 샘플코드 
+  
     ```java
         public byte[] encrypt(byte[] msg, Key k) {
             byte[] rslt = null;
