@@ -235,7 +235,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 보안적으로 취약하거나 위험한 암호화 알고리즘을 사용했다. RC2,RC4,RC6, MD4,MD5,SHA1,DES.
   - 샘플코드 
-  
+
     ```java
         public byte[] encrypt(byte[] msg, Key k) {
             byte[] rslt = null;
@@ -254,6 +254,7 @@ tags:
   - 안전한 코드 
     - 해결코드 : 취약하다고 알려진 알고리즘 대신 AES 알고리즘을 최소한 128비트 길이를 이용하여 사용하는 것이 바람직하다
   - 샘플코드 
+
     ```java
     public byte[] encrypt(byte[] msg, Key k) {
          byte[] rslt = null;
@@ -274,6 +275,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : seed를 설정 할 수 없기 때문에 위험.
   - 샘플코드 
+
     ```java
     public double roledice() {
          return Math.random();
@@ -296,6 +298,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : MODE_WORLD_READABLE은 다른 응용프로그램이 접근가능
   - 샘플코드 
+
     ```java
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -309,11 +312,11 @@ tags:
         }
     }
     ```
+
   - 안전한 코드 
     - 해결코드 : MODE_PRIVATE을 사용하면 외부에서 접근이 불가능하다
-
-
   - 샘플코드 
+
     ```java
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -332,14 +335,15 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
-    ```java
+
+    ```xml
         <service android:name=".syncadapter.SyncService" android:exported="true">
     ```
   - 안전한 코드 
     - 해결코드 : 
-
   - 샘플코드 
-    ```java
+
+    ```xml
      <service android:name=".syncadapter.SyncService" android:exported="false">
     ```        
 
@@ -347,7 +351,8 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
-    ```java
+
+    ```xml
     <manifest 
         xmlns:android=http://schemas.android.com/apk/res/android
         package="com.example.android.apis"
@@ -360,7 +365,8 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
-    ```java
+
+    ```xml
     <manifest xmlns:android=http://schemas.android.com/apk/res/android
         package="com.example.android.apis"
         android:versionCode="1"
@@ -372,6 +378,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     public class UA367 extends Activity {
         @override
@@ -417,6 +424,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     public class SA367 extends Activity {
         public void onCreate(Bundle savedInstanceState) {
@@ -455,6 +463,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     public int factorial(int n) {
         return n * factorial(n - 1);
@@ -465,6 +474,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     public int factorial(int n) {
         int i;
@@ -481,6 +491,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -496,6 +507,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -511,6 +523,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     private Connection conn;
     public Connection DBConnect(String url, String id, String password) {
@@ -532,6 +545,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     private Connection conn;
     public Connection DBConnect(String url, String id, String password) {
@@ -565,6 +579,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     public void f(boolean b) {
         String cmd = System.getProperty("cmd");
@@ -578,6 +593,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     public void f(boolean b) {
         String cmd = System.getProperty("cmd");
@@ -594,6 +610,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     // private인 배열을 public인 메소드가 return한다
     private String[] colors;
@@ -606,6 +623,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     private String[] colors;
     //메소드를 private으로 하거나, 복제본 반환,수정하는 public메소드를 별도로 만든다
@@ -628,6 +646,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     // userRoles 필드는 private 이지만 public인 setUserRoles()를 통해 외부의 배열이 할당 되면 사실상 public필드가된다.
     private String[] userRoles;
@@ -640,6 +659,7 @@ tags:
     - 해결코드 : 
 
   - 샘플코드 
+
     ```java
     // 객체가 클래스의 private member를 수정하지 않도록 한다.
         private String[] userRoles;
@@ -655,6 +675,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 
   - 샘플코드 
+
     ```java
     public void f() {
         try { 
@@ -671,6 +692,7 @@ tags:
   - 안전한 코드 
     - 해결코드 : 
   - 샘플코드 
+  
     ```java
         public void f() {
             try { 
