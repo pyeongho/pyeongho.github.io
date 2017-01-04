@@ -190,6 +190,7 @@ tags:
   - 안전하지 않음 코드
     - 문제점 : 443 Port로 데이터 외부 전송코드 스니핑이 발생할 수 있다
   - 샘플코드 
+  
     ```java
         public void onCreate(Bundle savedInstanceState) {
             int port = 443;
