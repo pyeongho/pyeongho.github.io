@@ -1,0 +1,93 @@
+---
+layout: post
+title: firebase database
+category: andorid
+comments: true
+description: firebase database
+tags:
+    - firebase    
+    - database    
+---
+
+
+
+#### 1. firebase database 를 사용해 보자 
+ - 안드로이드 스튜디오 에서 tools -> firebase 를 클릭한다.
+ - firebase 관련 메뉴들이 나오는데 사용 할 realtime database 를 선택
+ - 기본 firebase가 연결되어 있다고 나옴 
+ - firebase authentication 문서를 미리 진행 하면 connected 로 변경 됩니다.
+ - 연결 안되어 있으면 connect 클릭해 주세요
+
+#### 2. add the realtime database to your app 
+ - add the realtime database to your app 버튼을 클릭하여 플러그인 및 디펜던시를 추가 한다.
+
+#### 3. firebase 데이터베이스 룰 설정
+ - firebase 콘솔에서 database 규칙을 알아보자
+ - firebase 콘솔 -> database -> 규칙 탭
+ - 기본은 아래와 같다.
+
+  ```
+  {
+    "rules": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+  ```
+ - 읽기 권한, 쓰기 권한 모두 null 이 아닐때 라고 하니깐 firebase 인증은 기존에 했으니 될거 같음
+
+#### 4. 권한 확인 완료 된 코드에서 데이터 추가하는 코드를 넣어보자
+ - 기존 코드중(아래코드 참고) user!=null 이 아닐때 코드를 추가 하자
+
+``` java 
+    mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    
+                    // Write a message to the database
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("message");
+                    myRef.setValue("Hello, World!");
+
+                } else {
+                    // User is signed out
+                    log.d("onAuthStateChanged:signed_out");
+                }
+            }
+        };
+
+```
+
+ - 값 확인은 firebase 콘솔에서 확인해 보자
+ - Hello World 잘 추가 되어 있습니다.
+
+#### 5. 데이터의 구조: JSON 트리
+ - [참고 데이터의 구조: JSON 트리](https://firebase.google.com/docs/database/android/structure-data?hl=ko)
+ - SQL 데이터베이스와 달리 테이블이나 레코드가 없으며, JSON 트리에 추가된 데이터는 연결된 키를 갖는 기존 JSON 구조의 노드가 됩니다. 사용자 ID 또는 의미 있는 이름을 키로 직접 지정할 수도 있고, push()를 사용하여 자동으로 지정할 수도 있습니다.
+ - 예제
+
+ ```JSON
+ {
+  "users": {
+    "alovelace": {
+      "name": "Ada Lovelace",
+      "contacts": { "ghopper": true },
+    },
+    "ghopper": { ... },
+    "eclarke": { ... }
+  }
+}
+데이터
+ ```
+
+#### 6. 데이터의 구조 권장 사항
+ - Firebase 실시간 데이터베이스는 최대 32단계의 데이터 중첩을 허용하므로 기본 구조에 중첩을 도입해도 괜찮다고 생각할 수도 있습니다. 그러나 데이터베이스의 특정 위치에서 데이터를 가져오면 모든 하위 노드가 함께 검색됩니다. 또한 사용자에게 데이터베이스의 특정 노드에 대한 읽기 또는 쓰기 권한을 부여하면 해당 노드에 속한 모든 데이터에 대한 권한이 함께 부여됩니다. 따라서 실제 구현에서는 데이터 구조를 최대한 평면화하는 것이 좋습니다.
+
+- 데이터 구조평면화
+- 확장 가능한 데이터 만들기
+
+#### 7. DB 설계가 제일 중요함
+

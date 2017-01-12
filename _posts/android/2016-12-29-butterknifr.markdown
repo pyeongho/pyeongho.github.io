@@ -14,6 +14,7 @@ tags:
 [butterknife github](https://github.com/JakeWharton/butterknife)
 
 #### 1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함
+
 ```java 
     ImageButton btn_send; 
     btn_send = (ImageButton) findViewById(R.id.btn_send);
@@ -23,6 +24,7 @@ tags:
 #### 2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.
  - 안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다
  - 아래 내용을 모듈의 적당한 위치 시켜야 합니다.
+
  ```
     apply plugin: 'com.jakewharton.butterknife'
  
@@ -32,6 +34,7 @@ tags:
     }
 ```
  - 프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
+ 
  ```
     buildscript {
         repositories {
