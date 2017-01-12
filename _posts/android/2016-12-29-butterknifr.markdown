@@ -25,7 +25,7 @@ tags:
  - 안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다
  - 아래 내용을 모듈의 적당한 위치 시켜야 합니다.
 
- ```
+ ```json
     apply plugin: 'com.jakewharton.butterknife'
  
     dependencies {
@@ -34,8 +34,8 @@ tags:
     }
 ```
  - 프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
- 
- ```
+
+ ```json
     buildscript {
         repositories {
             mavenCentral()
