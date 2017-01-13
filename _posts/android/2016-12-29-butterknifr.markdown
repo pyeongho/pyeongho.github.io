@@ -24,26 +24,11 @@ tags:
 #### 2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.
  - 안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다
  - 아래 내용을 모듈의 적당한 위치 시켜야 합니다.
+    <script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script>
 
- ```gradle 
-    apply plugin: 'com.jakewharton.butterknife'
-     dependencies {
-        compile 'com.jakewharton:butterknife:8.4.0'
-        annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    }
-```
  - 프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
-
- ```gradle     
-    buildscript {
-        repositories {
-            mavenCentral()
-        }
-        dependencies {
-            classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
-        }
-    }
- ```
+    <script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script>
+ 
 
 #### 3. 안드로이드 스튜디오 플러그인을 설치
  - setting -> plugins -> browse repositories   에서 butterknife zelezny 찾아서 설치 (안드로이드 스튜디오 재시작함)
