@@ -34,7 +34,7 @@ tags:
 ```
  - 프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
 
- ```json     
+ ```gradle     
     buildscript {
         repositories {
             mavenCentral()
