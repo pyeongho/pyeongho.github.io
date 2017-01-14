@@ -37,7 +37,7 @@ tags:
  - 댓글을 자신의 사이트에 추가 하기위해서는 아래 버튼을 눌러주세요
    - i want to install Disqus on my site
  - site 이름과 카테고리 선택을 해주세요.
- ![name](img/comment_name.png)
+ ![name](/assets/images/post/comment_name.PNG)
 
  - 하단의 create 버튼은 누르고 렛츠 스타트를 선택 합니다.
  - 플랫폼은 jekyll 을 선택합니다.
