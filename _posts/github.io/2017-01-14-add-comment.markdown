@@ -24,7 +24,7 @@ tags:
    ![follow](img/comment_follow.PNG)
  - 적당히 잘 선택해 줍니다.
  - 3개를 선택하면 상단에 cotinew 
- ![continue]({{ site.url }}/assets/post/comment_continue.png) 
+ ![continue]({{ site.url }}assets/post/comment_continue.png) 
 
  - disqus 홈이 표시 됩니다.
  
