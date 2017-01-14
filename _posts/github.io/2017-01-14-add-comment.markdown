@@ -24,7 +24,8 @@ tags:
    ![follow](img/comment_follow.PNG)
  - 적당히 잘 선택해 줍니다.
  - 3개를 선택하면 상단에 cotinew 
- ![continue](img/comment_continue.png)
+ ![continue]({{ site.url }}/assets/post/comment_continue.png) 
+
  - disqus 홈이 표시 됩니다.
  
 #### 2. Disqus 설정하기
@@ -43,4 +44,7 @@ tags:
  - 추가하는 방법이 나옵니다.
 
 #### 3. github.io jekyll 과 연동하기
- - 
+ - 중간에 Universal Code 를 선택하면 해당 코드가 표시 되고 이를 복사해서 
+ - _layout/post.html 의 disqus 위치에 추가 시켰습니다.
+ - 결과는 성공입니다.
+
