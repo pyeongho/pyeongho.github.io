@@ -21,9 +21,9 @@ tags:
  - [Disqus 홈페이지](https://disqus.com/) 에서 회원 가입을 한다.
  - 계정은 페이스북 트위터 구글을 사용 가능 합니다.
  - 회원 가입이 완료 되면 아래와 같은 이미지 가나옵니다.
-   ![follow](img/comment_follow.PNG)
+   ![follow]({{ site.url }}assets/images/post/comment_follow.PNG)
  - 적당히 잘 선택해 줍니다.
- - 3개를 선택하면 상단에 cotinew 
+ - 3개를 선택하면 상단에 cotinue 
  ![continue]({{ site.url }}assets/images/post/comment_continue.png) 
 
  - disqus 홈이 표시 됩니다.
@@ -32,7 +32,7 @@ tags:
  - 회원 가입이 완료 되었으니 Disqus 설정을 추가합니다. 
  - [설정하기](https://disqus.com/profile/signup/intent/) 로 이동합니다. 
  - 위 링클르 클릭하면 아래와 같이 나옵니다.
-  ![choose](img/comment_sel.png)
+  ![choose]({{ site.url }}assets/images/post/comment_sel.png)
 
  - 댓글을 자신의 사이트에 추가 하기위해서는 아래 버튼을 눌러주세요
    - i want to install Disqus on my site
