@@ -25,7 +25,14 @@ post_class: post-template
                 {% endif %}
             </section>
         </header>
-
+{% if post %}
+  {% assign categories = post.categories %}
+{% else %}
+  {% assign categories = page.categories %}
+{% endif %}
+{% for category in categories %}
+  <span class="entry-categories"><a href="{{ site.url }}/{{ page.category-url }}/" rel="category">{{ page.category }}</a></span>{% unless forloop.last %},{% endunless %}
+{% endfor %}
 <!--         <header class="post-header">
             <a id="blog-logo" href="{{site.url}}">
                 {% if site.logo %}
@@ -36,12 +43,12 @@ post_class: post-template
             </a>
         </header> -->
 
-        <span class="post-meta">
+        <!-- <span class="post-meta">
             <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
             {% if page.categories.size > 0 %}
                 {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
             {% endif %}
-        </span> 
+        </span> -->
 
         <!-- <h1 class="post-title">{{ page.title }}</h1> -->
 
