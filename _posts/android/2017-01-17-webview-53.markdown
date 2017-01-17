@@ -41,7 +41,7 @@ tags:
 
    4. 구글과 네이버도 테스트 진행
        - 구글, 네이버 인증서
-
+       -
         ![구글](/assets/images/post/google.png) ![네이버](/assets/images/post/naver.png)
 
    5. 현재 테스트 결과
