@@ -11,7 +11,7 @@ tags:
 
 
 
-#### 1. EditText 를 이요한 리스트 검색 기능
+#### 1. EditText에서 한두 글자를 입력하면 리스트에서 해당 결과를 보여주는 방법
 
   - RecyclerView에 원하는 내용만 출력하기
   - 기본 내용은 [http://jizard.tistory.com/53](http://jizard.tistory.com/53) 블로그를 참조 했습니다.

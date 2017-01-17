@@ -14,7 +14,7 @@ tags:
 
 
 
-#### 1. 안드로이드 WebView 53 에서 인증서 버그
+#### 1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유
 
  - 여기 저기에서 문제 발생에 대한 공지 내용 
     - [다음 공지](https://channel.daum.net/content/232337?dmp_channel=notice)
