@@ -12,6 +12,7 @@ tags:
 
 
 #### 1. EditText 를 이요한 리스트 검색 기능
+
   - RecyclerView에 원하는 내용만 출력하기
   - 기본 내용은 [http://jizard.tistory.com/53](http://jizard.tistory.com/53) 블로그를 참조 했습니다.
   - 리스트2개를 가지고  contain 에 포함 된것만 보여주는 형태 입니다.
