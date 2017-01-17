@@ -1,0 +1,66 @@
+---
+layout: post
+title: 안드로이드 WebView 53 SSL 버그
+category: andorid
+comments: true
+description: webview 버전 53 에서 인증서 버그
+tags:
+    - android
+    - webview53
+    - ssl 
+    - symantec
+
+---
+
+
+
+#### 1. 안드로이드 WebView 53 에서 인증서 버그
+ - 여기 저기에서 문제 발생에 대한 공지 내용 
+  - [다음 공지](https://channel.daum.net/content/232337?dmp_channel=notice)
+  - [KG 이니시스 공지](http://sir.kr/co_notice/1205)
+ - 에러 내용은 webview 버전 53 일때 ssl 인증서 오류가 발생한다.
+  - 정확히 symantec 인증서 에서만 오류가 발생 한다고 한다.
+ - 해결 방법은 다음의 공지 처럼 크롬 업데이트나 웹뷰 업데이트 설치 말고는 방법이 없다
+ - 그래도 테스트를 내용을 확인 해야 마음이 편하다. 구글 에서도 인증서 오류 관련 팝업을 넣어야 한다고 공지함
+ - 구글의 공지도 있고 해서 테스틀 진행함 
+ - 테스트를 위해서 테스트 기기에 webview 53 버전을 설치함 
+ - [webview 53 다운로드 경로](http://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-53-0-2785-97-release/) 
+ - 구글에서 추가 해야한다고 하는  ssl error 팝업을 아래와 같이 추가함
+ <script src="https://gist.github.com/pyeongho/66a50062921216dfae7a1abb9e8cb94e.js"></script>
+
+ - 테스트 시나리오 
+   1. WebView 버전을 53으로 변경한다.
+       - 참고 버전 확인 코드
+        <script src="https://gist.github.com/pyeongho/fc0d7c47be2a505f92a3d1d994fe5388.js"></script>
+
+   2. 시만텍 인증서 사용하는 페이지를 로딩한다.
+     - [https://www.symantec.com/ko/kr/ssl-certificates/](https://www.symantec.com/ko/kr/ssl-certificates/)
+     - 크롬에서 확인 인증서 확인 가능합니다.
+   3. 해당 페이지 로딩시 인증서 에러 팝업을 확인한다.
+     - 에러 내용은 "보안 인증서에 오류가 있습니다." 정의 되지 않은 에러 입니다.
+
+   4. 구글과 네이버도 테스트 진행
+   ![구글](/assets/images/post/google.png) ![네이버](/assets/images/post/naver.png)
+
+   5. 현재 테스트 결과
+     - 시만텍 실패만 실패함
+     - 구글,코모도, 글로벌은 성공, 이외에는 테스트 진행 안함
+
+   6. WebView 버전 업데이트 후 시만텍 사이트 접근(스토어 버전은 55 버전)
+    - 정상 동작 
+
+   7. 해결 방법은 다음의 공지 처럼 하면 될것으로 보임
+
+#### 2. 내용 파악  
+ - [sslmate](https://sslmate.com/blog/post/ct_redaction_in_chrome_53)
+ - 위 사이트에 잘 정리 되어 있습니다.
+ - 발생 : 2016년 11월10일 업데이트로 발생, 시만텍 인증서를 사용하는 모든 웹사이트에서 오류 메시지 발생
+ (인증서를 변경한 사이트들도 있습니다.)
+ - 수정 : 2016년 11월26일 스토어에 WebView 배포 함
+
+#### 3. 시만텍에서 발표한 내용 
+ - [시만텍 입장](https://knowledge.symantec.com/support/ssl-certificates-support/index?page=content&id=ALERT2160&actp=LIST&viewlocale=en_US)
+ 
+
+    
+   
