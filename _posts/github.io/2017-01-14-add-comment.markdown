@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jekyll 댓글 추가 하기
-category: github.io 사용법
+category: github.io
 comments: true
 description: jekyll 에서 댓글 기능 추가 하기
 tags:
