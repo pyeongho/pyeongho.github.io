@@ -1,9 +1,9 @@
 ---
 layout: post
-title: retrofit2 + okhttp3 기계번역 사용하기
+title: retrofit2 + okhttp3 네이버 기계번역 사용하기
 category: andorid
 comments: true
-description: retrofit2,okhttp3 기계번역 사용하기
+description: retrofit2,okhttp3 네이버 기계번역 사용하기
 tags:
     - retrofit2
 ---
