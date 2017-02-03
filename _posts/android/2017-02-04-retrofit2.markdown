@@ -31,7 +31,7 @@ tags:
  - 클라이언트 아이디, 시크릿 아이디  <- 이게 필요합니다.
  
 #### 3. 개발자 등록후 우선 기계번역 API 사용 법을 확인해 보겠습니다.
-- [기계번역 사용 java](https://developers.naver.com/docs/labs/translator)
+- [기계번역 사용 java 개발문서 링크](https://developers.naver.com/docs/labs/translator)
 - 위 링크를 따라 가면 java 항목의 예제가 있습니다. 
 - 요약 하면 포스트 방식 사용
 - 커스텀 헤더 필요
@@ -56,7 +56,7 @@ tags:
 <script src="https://gist.github.com/pyeongho/536acac03a5a3bb1e18db29b0677fda2.js"></script>
 
 #### 7. 결과를 받을 클래스 생성 
-- [json to java 파일 생성](http://www.jsonschema2pojo.org/)
+- [json to java 파일 생성 링크](http://www.jsonschema2pojo.org/)
 - 다른 플러그인이 있다고 하지만 지금은 웹사이트를 이용하고 있습니다.
 - 아래가 결과로 받을 json 형태 입니다. 
 - 아내 내용으로 클래스 파일 3개를 만들어서 추가 하였습니다.
