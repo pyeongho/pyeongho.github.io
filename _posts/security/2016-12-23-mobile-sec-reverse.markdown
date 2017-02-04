@@ -15,6 +15,7 @@ tags:
 ### 4. APK 바이너리 분석 및 리패키징
   
 #### 1.첨부된 apk 의 코드를 확인 한다. 
+
   - 이용하는 툴은 jd-gui-windows-1.4.0.zip , dex2jar-2.0.zip  
   - iamaboy.apk
   - d2j-dex2jar.bat iamaboy.apk
