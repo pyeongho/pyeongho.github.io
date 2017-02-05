@@ -60,14 +60,14 @@ tags:
   - 추가된 의존성에 RxJava2CallAdapterFactory 가 있습니다.
     
   - ```java
-        mRetrofit = new Retrofit.Builder()
-        .baseUrl(ApiStores.API_SERVER_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .client(okHttpClient)
-        .build();
+    mRetrofit = new Retrofit.Builder()
+    .baseUrl(ApiStores.API_SERVER_URL)
+    .addConverterFactory(GsonConverterFactory.create())
+    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+    .client(okHttpClient)
+    .build();
       ```
-      
+
 ##### 2. retrofit2에 리퀘스트 rxandroid 용 Observable 추가
   - ApiStores 클래스에 Observable 을 반환 하는 리퀘스트 추가
   
@@ -93,5 +93,5 @@ tags:
 
 
 #### 8 . 최종 결과 코드
-  - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample.git)
+  - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample)
   - 한번에 커밋 하지 못해서 두번째 세번째 업데이트 내용입니다.

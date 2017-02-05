@@ -85,5 +85,5 @@ tags:
  - 버터나이프 추가
  - EditText 에 한글 입력후 버튼을 누르면 영문이 나오는 간단한 샘플 입니다.
  - AppClient 의 클라이언트 아이디와 시크릿 아이디는 변경 해야합니다.
- - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample.git)
+ - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample)
  - 첫번째 리비전이 위 샘플 입니다.
