@@ -66,7 +66,7 @@ tags:
     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     .client(okHttpClient)
     .build();
-      ```
+    ```
 
 ##### 2. retrofit2에 리퀘스트 rxandroid 용 Observable 추가
   - ApiStores 클래스에 Observable 을 반환 하는 리퀘스트 추가
