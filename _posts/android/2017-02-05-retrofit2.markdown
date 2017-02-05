@@ -55,7 +55,7 @@ tags:
 
 #### 7. 위 순서대로 진행 코드 추가
 
- ##### 1. retrofit2 클라이언트에 rxandroid2 어댑터 추가
+##### 1. retrofit2 클라이언트에 rxandroid2 어댑터 추가
   - AppClient 클래스의 retrofit 생성에서 addCallAdapterFactory 를 추가 합니다.
   - 추가된 의존성에 RxJava2CallAdapterFactory 가 있습니다.
     
@@ -67,6 +67,7 @@ tags:
         .client(okHttpClient)
         .build();
       ```
+      
 ##### 2. retrofit2에 리퀘스트 rxandroid 용 Observable 추가
   - ApiStores 클래스에 Observable 을 반환 하는 리퀘스트 추가
   
@@ -78,7 +79,7 @@ tags:
             @Field("target") String target,
             @Field("text") String text);  
     ```
-          
+
 ##### 3. CompositeDisposable 을 사용 및 생성 추가
  -  Observable, Observer 를 아래 처럼 추가 했는데 좋아 보이지 않음
  - <script src="https://gist.github.com/pyeongho/7b0a8b61f99271d81b4f4849906cad8e.js"></script>
