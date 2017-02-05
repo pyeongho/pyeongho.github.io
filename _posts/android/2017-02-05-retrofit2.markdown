@@ -53,13 +53,13 @@ tags:
  - 버튼 클릭시 rxandroid 형태로 스트림 시작
 
 
- #### 7. 위 순서대로 진행 코드 추가
+#### 7. 위 순서대로 진행 코드 추가
 
  ##### 1. retrofit2 클라이언트에 rxandroid2 어댑터 추가
   - AppClient 클래스의 retrofit 생성에서 addCallAdapterFactory 를 추가 합니다.
   - 추가된 의존성에 RxJava2CallAdapterFactory 가 있습니다.
     
-    - ```java
+  - ```java
         mRetrofit = new Retrofit.Builder()
         .baseUrl(ApiStores.API_SERVER_URL)
         .addConverterFactory(GsonConverterFactory.create())
@@ -77,7 +77,8 @@ tags:
             @Field("source") String source,
             @Field("target") String target,
             @Field("text") String text);  
-    ```      
+    ```
+          
 ##### 3. CompositeDisposable 을 사용 및 생성 추가
  -  Observable, Observer 를 아래 처럼 추가 했는데 좋아 보이지 않음
  - <script src="https://gist.github.com/pyeongho/7b0a8b61f99271d81b4f4849906cad8e.js"></script>
@@ -90,6 +91,6 @@ tags:
  - subcription 이 훨씬 이해하기 좋게 변경됨
 
 
-  #### 8 . 최종 결과 코드
+#### 8 . 최종 결과 코드
   - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample.git)
   - 한번에 커밋 하지 못해서 두번째 세번째 업데이트 내용입니다.
