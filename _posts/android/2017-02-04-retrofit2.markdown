@@ -41,19 +41,19 @@ tags:
  - 디버깅을 위한 http 로그 추가
  - 커스텀 헤더 추가
  - retrofit 생성
- <script src="https://gist.github.com/pyeongho/4d5b2c096baf1eefb76c39bf2f418cdc.js"></script>
+ - <script src="https://gist.github.com/pyeongho/4d5b2c096baf1eefb76c39bf2f418cdc.js"></script>
 
 #### 5. post body 를 넣을 인터페이스 클래스 생성
 - 네이버 기계번역에서 사용 하는 필드는 3개 입니다.
 - source, target, text
 - urlencoded 추가 한 인터페이스 클래스 입니다.
-<script src="https://gist.github.com/pyeongho/ca8e9aa7513d1683f2740a6106cae249.js"></script>
+- <script src="https://gist.github.com/pyeongho/ca8e9aa7513d1683f2740a6106cae249.js"></script>
 
 
 #### 6. callback 상속 받기
 - 그냥 사용해도 되지만 에러처리등을 편하게 사용하기 위함
 - 필요한 클래스들 생성
-<script src="https://gist.github.com/pyeongho/536acac03a5a3bb1e18db29b0677fda2.js"></script>
+- <script src="https://gist.github.com/pyeongho/536acac03a5a3bb1e18db29b0677fda2.js"></script>
 
 #### 7. 결과를 받을 클래스 생성
 - [json to java 파일 생성 링크](http://www.jsonschema2pojo.org/)
@@ -79,11 +79,11 @@ tags:
  - 실행  
  - 한글을 영어로 바꾸는 함수 입니다.
  - 함수에 한글을 넘기면 영문으로 변환값이 출력 됩니다.
- <script src="https://gist.github.com/pyeongho/415d4b207338a8e49b6bbef69ae75389.js"></script>
+ - <script src="https://gist.github.com/pyeongho/415d4b207338a8e49b6bbef69ae75389.js"></script>
 
 #### 9. 전체 샘플 코드
  - 버터나이프 추가
  - EditText 에 한글 입력후 버튼을 누르면 영문이 나오는 간단한 샘플 입니다.
  - AppClient 의 클라이언트 아이디와 시크릿 아이디는 변경 해야합니다.
- - [github 링크 전체 파일](https://github.com/pyeongho/Retrofit2Sample)
+ - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample.git)
  - 첫번째 리비전이 위 샘플 입니다.
