@@ -1,39 +1,67 @@
 ---
 layout: post
-title: butterknife
+title: 버터 나이프 없이 데이터 바인딩 사용하기
 category: andorid
 comments: true
-description: butterknife 라이브러리 사용
+description: findViewById 없이 사용하기
 tags:
-    - butterknife    
+    - no more findViewById
 ---
 
 
 
-### butterknife 를 이용
-[butterknife github](https://github.com/JakeWharton/butterknife)
+### 참고 사이트 
+ - [안드로이드 개발자 사이트 링크](https://developer.android.com/topic/libraries/data-binding/index.html#studio_support)
+ - [GsBob 블로그](http://gogorchg.tistory.com/entry/Android-DataBinding-findViewById-이제-안녕)
 
-#### 1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함
+#### 1. 버터 나이프 사용하면 좋긴 하지만 라이브러리 추가가 싫어 질때가 있어서 찾아보고 적용해 보았습니다.
+ - gradle 추가 내용
+  ```gradle
+     android {
+        …
+        dataBinding {
+            enabled = true
+        }
+    }
+  ```
 
-```java 
-    ImageButton btn_send; 
-    btn_send = (ImageButton) findViewById(R.id.btn_send);
-    ib_chat_photo.setOnClickListener(this);
-```
-
-#### 2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.
- - 안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다
- - 아래 내용을 모듈의 적당한 위치 시켜야 합니다.
-    <script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script>
-
- - 프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
-    <script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script>
+#### 2. 기존과 달라지는 방법
+ - 1. 레이아웃 파일 최상위 트리에 
+ ```xml
  
+  <layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    ...
+    <!-- 기존 내용 -->
+    ...
 
-#### 3. 안드로이드 스튜디오 플러그인을 설치
- - setting -> plugins -> browse repositories   에서 butterknife zelezny 찾아서 설치 (안드로이드 스튜디오 재시작함)
- - 레이아웃 xml 파일에서 마우스 오른쪽 버튼 클릭후 generate 를 선택 합니다.
- - butterknife 가 보입니다. 선택합니다.
- - 체크박스 선택 창이 나옵니다.  원하는 속성을 체크 체크 해서 완료 하면 됩니다.
+  </layout>
+ ``` 
 
+ 
+- 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
 
+ ```java
+   ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+ ```
+#### 3. 사용방법
+```java
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.hello.setText("id:hello ");
+        binding.tvHello.setText("id:tv_hello");
+``` 
+
+#### 4. 그래들에 추가 하고 싱크 리빌드 한번 해주세요.
+ - ActivityMainBinding 자동으로 생성 됩니다. 
+ - 처음에는 이걸 못찾아서 당황 했지만 그래들 싱크 해지고 리빌드 해주면 자동 생성 됩니다.
+ - 생성 규칙은 아래 처럼 입니다. _ 자동으로 사라지고 카멜코딩룰을 적용해 줍니다.
+   - 중요한 점은  activity_main - > ActivityMainBinding 형태로 변형 됩니다.
+   - 변수 이름도 해당 규칙이 적용 됩니다. 
+   - tv_hello -> tvHello 로 변경 되면서 자동으로 카멜코딩도 적용줍니다.
+
+ #### 5. 좋은점
+  - 외부 라이브러리를 사용 안해도 된다.
+  - findViewById 사용을 안해도 된다.
+  - 심지어 변수 선언들도 안해도 된다.
