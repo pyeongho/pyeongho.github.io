@@ -14,6 +14,7 @@ tags:
  - [안드로이드 개발자 사이트 링크](https://developer.android.com/topic/libraries/data-binding/index.html#studio_support)
  - [GsBob 블로그](http://gogorchg.tistory.com/entry/Android-DataBinding-findViewById-이제-안녕)
 
+
 #### 1. 버터 나이프 사용하면 좋긴 하지만 라이브러리 추가가 싫어 질때가 있어서 찾아보고 적용해 보았습니다.
  - gradle 추가 내용
  - ```gradle
@@ -23,35 +24,30 @@ tags:
             enabled = true
         }
     }
-   ```
+    ```
 
 
 #### 2. 기존과 달라지는 방법
-
  - 1. 레이아웃 파일 최상위 트리에 
+  - ```xml
+     <layout 
+         xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools">
+         ...
+     </layout>
+    ``` 
 
- ```xml
-  <layout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    ...
-  </layout>
- 
- ``` 
-
-- 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
-
- ```java
-   ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
- ```
+ - 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
+  - ```java
+     ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    ```
 
 #### 3. 사용방법
-
-```java
+ - ```java
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.hello.setText("id:hello ");
         binding.tvHello.setText("id:tv_hello");
-``` 
+    ``` 
 
 #### 4. 그래들에 추가 하고 싱크 리빌드 한번 해주세요.
  - ActivityMainBinding 자동으로 생성 됩니다. 
