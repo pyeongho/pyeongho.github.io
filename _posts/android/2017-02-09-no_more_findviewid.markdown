@@ -17,6 +17,7 @@ tags:
 
 #### 1. 버터 나이프 사용하면 좋긴 하지만 라이브러리 추가가 싫어 질때가 있어서 찾아보고 적용해 보았습니다.
  - gradle 추가 내용
+
 ```grldle
     android {
         …
@@ -27,14 +28,11 @@ tags:
 ```
  
 #### 2. 기존과 달라지는 방법
- 
- ##### 1. 레이아웃 파일 최상위 트리에 
-
+ - 1. 레이아웃 파일 최상위 트리에 
   - <script src="https://gist.github.com/pyeongho/90ec3c115ae62ecc49f398f40b55e8d6.js"></script>
-
-
- ##### 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
-
+ 
+ - 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
+ 
 ```java
      ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 ```
