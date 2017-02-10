@@ -28,16 +28,10 @@ tags:
 
 
 #### 2. 기존과 달라지는 방법
- - 1. 레이아웃 파일 최상위 트리에 
-  - ```xml
-     <layout 
-         xmlns:android="http://schemas.android.com/apk/res/android"
-         xmlns:tools="http://schemas.android.com/tools">
-         ...
-     </layout>
-    ``` 
+ ##### 1. 레이아웃 파일 최상위 트리에 
+  - <script src="https://gist.github.com/pyeongho/90ec3c115ae62ecc49f398f40b55e8d6.js"></script>
 
- - 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
+ ##### 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
   - ```java
      ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     ```
@@ -57,7 +51,7 @@ tags:
    - 변수 이름도 해당 규칙이 적용 됩니다. 
    - tv_hello -> tvHello 로 변경 되면서 자동으로 카멜코딩도 적용줍니다.
 
- #### 5. 좋은점
+#### 5. 좋은점
   - 외부 라이브러리를 사용 안해도 된다.
   - findViewById 사용을 안해도 된다.
   - 심지어 변수 선언들도 안해도 된다.
