@@ -32,7 +32,7 @@ tags:
   - <script src="https://gist.github.com/pyeongho/90ec3c115ae62ecc49f398f40b55e8d6.js"></script>
  
  - 2. setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.
- 
+
 ```java
      ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 ```
@@ -53,7 +53,47 @@ tags:
    - 변수 이름도 해당 규칙이 적용 됩니다. 
    - tv_hello -> tvHello 로 변경 되면서 자동으로 카멜코딩도 적용줍니다.
 
-#### 5. 좋은점
+#### 5. 리스트뷰 또는 리사이클러 뷰에서 사용 
+ - ListView 어댑터나 RecyclerView 어댑터 내에서 데이터 바인딩 항목을 사용 중인 경우 다음을 선호하는 개발자도 있습니다.
+```java 
+  ListItemBinding binding = ListItemBinding.inflate(layoutInflater, viewGroup, false);
+  //or
+  ListItemBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.list_item, viewGroup, false);
+```
+
+#### 6. 위에서 사용을 레이아웃 바인딩이라고 하고 이제는 데이터 바이딩과 클릭이벤트 
+ - 클래스를 사용하기 위해서 사용자 객체를 만든다.
+ - <script src="https://gist.github.com/pyeongho/8133adb6428e763ae8953edc56b5a680.js"></script>
+ - 레이아웃 파일에 아래 내용을 추가
+
+```xml  
+    <data>
+       <variable name="user" type="com.example.User"/>
+   </data>
+   ... 
+           <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" />
+   ...         
+``` 
+
+ - 액티비티 자바 파일에
+
+```java
+   User user = new User("Test", "User");
+   binding.setUser(user);
+```
+
+ - 텍스트뷰에 hello 에 Test 가 추가 된다.
+ - 안드로이드 개발자 사이트에 보면 클릭이벤트 리스너등 사용하면 좋을것들이 너무 많다.
+ - 심지어 import 룰 사용도 가능하다.
+ - 바인딩 기능을 모두 사용하면 레이아웃 파일을 보기 힘들어 질거 같다...
+
+
+
+#### *. 좋은점
   - 외부 라이브러리를 사용 안해도 된다.
   - findViewById 사용을 안해도 된다.
   - 심지어 변수 선언들도 안해도 된다.
