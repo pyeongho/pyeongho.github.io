@@ -92,6 +92,15 @@ tags:
  - 바인딩 기능을 모두 사용하면 레이아웃 파일을 보기 힘들어 질거 같다...
 
 
+#### 7. 항상 해줘야 하는 자바 코드를 추상화 클래스로 만들어 보면
+ - baseactiviy 를 만듬
+  - <script src="https://gist.github.com/pyeongho/ac55d87b879282327bbb60c2ab5874de.js"></script>
+ - MainActivity 에서 사용하는 법
+
+```java
+    setBiding(R.layout.activity_main);
+    getBinding().tvHello.setText("id:tv_hello");
+```  
 
 #### *. 좋은점
   - 외부 라이브러리를 사용 안해도 된다.
