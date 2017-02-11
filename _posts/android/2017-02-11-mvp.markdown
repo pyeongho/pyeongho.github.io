@@ -1,49 +1,37 @@
 ---
 layout: post
-title: retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기
+title: mvp를 공부하자 
 category: andorid
 comments: true
-description: retrofit2,okhttp3,rxandroid2,mvp 네이버 기계번역 사용하기
+description: 안드로이드 클린코드 1단계
 tags:
-    - retrofit2
-    - rxandroid2
     - mvp
+    - android
 ---
 
 
 
-### retrofit2 + rxandroid2 + mvp 를 이용한 통신
+### 안드로이드에 mvp를 적극적으로 추가하기 위한 공부중
 
-#### 참고로 mvp 처럼만 보이고 아닐수도 있어요.
+#### 1. 첫번쩨 공부
+ - [정승욱님 블로그 게시글 링크](https://medium.com/@jsuch2362/adapter-누구냐-넌-data-view-2db7eff11c20#.779qihsc4)
+ - mvp 적용해야겠다고 생각하고 기본적인 샘플을 만들어 볼려고 이것 저것 시도 하였습니다.
+ - 앱을 만들면서 필요 하다고 느껴진 통신을 rxjava2 와 mvp 를 적용 하면 기본적인건 모두 적용 가능하다고 생각
+ - 그래서 네이버 기계 번역을 여기 저기 내용을 짜깁기 해서 만들어 보았습니다.
+ - 저렇게 샘플을 기반으로 패턴을 이용해서 지속적으로 사용하려 했습니다.
+ - 블로그를 여기저기 돌아다니다 보면서 좀더 공부 해야 겠다는 생각이 들어서 공부를 시작 합니다.
 
-#### 1. dependencies 추가 기존 내용과 동일 합니다.
- 
-```gradle
-    compile 'com.squareup.okhttp3:okhttp:3.6.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-
-    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-```
-
-
-#### 2. mvp 패던 링크 
- - [잔디랩의 mvp](http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html)
- - [pluu dev](http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/)
- - [꿈많은 개발자 링크](http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html)
-
-#### 3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요
-
-#### 4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.
-  - mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..
-  - 다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.
-  - mvp가 자리 잡으면 테스트 주도 개발을 도전해 보겠습니다.
-  - 아래가 코드가 제가 다른 사람걸 참고 만든 전체 코드 입니다.
-  - 버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.
-
-#### 5. 전체 샘플코드 
-- 기존 샘플코드에 폴더를 추가 하였습니다.
-- [https://github.com/pyeongho/retrofit2sample](https://github.com/pyeongho/retrofit2sample)
+#### 2. 정승욱님 블로그 내용 공부
+ - 안드로이드 앱 개발의 리스트뷰 
+ - 복사 내용 
+ - Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.
+  - View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행.
+  - Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함.
+  - Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행
+ - [https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample](https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample)
+  - 예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.
+  - Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다. 
+  
+#### 3. 좀더 자세히 정리된 블로그로 이동
+ - [꿈많은 개발자가 되자 블로그 링크](http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html)
+ - 
