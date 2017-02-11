@@ -55,6 +55,7 @@ tags:
 
 #### 5. 리스트뷰 또는 리사이클러 뷰에서 사용 
  - ListView 어댑터나 RecyclerView 어댑터 내에서 데이터 바인딩 항목을 사용 중인 경우 다음을 선호하는 개발자도 있습니다.
+
 ```java 
   ListItemBinding binding = ListItemBinding.inflate(layoutInflater, viewGroup, false);
   //or
@@ -98,9 +99,36 @@ tags:
  - MainActivity 에서 사용하는 법
 
 ```java
+    ...
+    public class MainActivity extends BaseActivity<ActivityMainBinding> {
+    ...    
     setBiding(R.layout.activity_main);
     getBinding().tvHello.setText("id:tv_hello");
+    ...
 ```  
+
+#### 8. fragment 에서 사용하기
+
+```java
+public class FancyFragment extends Fragment {
+  private FragmentFancyBinding binding;
+
+  @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    return inflater.inflate(R.layout.fragment_fancy, container, false);
+  }
+
+  @Override
+  public void onActivityCreated(Bundle savedInstanceState) {
+    super.onActivityCreated(savedInstanceState);
+    binding = FragmentFancyBinding.bind(getView());
+  }
+}
+```
+
+#### 9. ViewHolder 에서 사용하기
+ - <script src="https://gist.github.com/pyeongho/dc4aa079ab29e6d30d6092f147c6a4d7.js"></script>
+
 
 #### *. 좋은점
   - 외부 라이브러리를 사용 안해도 된다.

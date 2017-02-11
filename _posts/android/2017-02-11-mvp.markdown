@@ -25,13 +25,13 @@ tags:
  - 안드로이드 앱 개발의 리스트뷰 
  - 복사 내용 
  - Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.
-  - View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행.
-  - Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함.
-  - Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행
+  - View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행. 또는 UI 처리와 이벤트를 프리젠터로 넘김
+  - Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함. 
+  - Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행, 또는 통신같은 데이터 처리
  - [https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample](https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample)
   - 예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.
   - Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다. 
   
 #### 3. 좀더 자세히 정리된 블로그로 이동
  - [꿈많은 개발자가 되자 블로그 링크](http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html)
- - 
+ - [내가 좋아하는 스타일의 mvp ](https://github.com/antoniolg/androidmvp)
