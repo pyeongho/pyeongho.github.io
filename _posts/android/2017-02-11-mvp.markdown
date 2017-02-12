@@ -35,3 +35,7 @@ tags:
 #### 3. 좀더 자세히 정리된 블로그로 이동
  - [꿈많은 개발자가 되자 블로그 링크](http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html)
  - [내가 좋아하는 스타일의 mvp ](https://github.com/antoniolg/androidmvp)
+
+#### 4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플
+ -  [https://github.com/pyeongho/retrofit2sample](https://github.com/pyeongho/retrofit2sample)
+ - 위 코드에 새로운 폴더를 생성하였습니다. 
