@@ -93,5 +93,5 @@ tags:
 
 
 #### 8 . 최종 결과 코드
-  - [github 링크 전체 파일](https://github.com/pyeongho/retrofit2sample)
+  - [https://github.com/pyeongho/Sample](https://github.com/pyeongho/Sample)
   - 한번에 커밋 하지 못해서 두번째 세번째 업데이트 내용입니다.

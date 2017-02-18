@@ -37,5 +37,5 @@ tags:
  - [내가 좋아하는 스타일의 mvp ](https://github.com/antoniolg/androidmvp)
 
 #### 4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플
- -  [https://github.com/pyeongho/retrofit2sample](https://github.com/pyeongho/retrofit2sample)
+ -  [https://github.com/pyeongho/Sample](https://github.com/pyeongho/Sample)
  - 위 코드에 새로운 폴더를 생성하였습니다. 

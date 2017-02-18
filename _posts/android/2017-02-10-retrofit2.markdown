@@ -46,4 +46,4 @@ tags:
 
 #### 5. 전체 샘플코드 
 - 기존 샘플코드에 폴더를 추가 하였습니다.
-- [https://github.com/pyeongho/retrofit2sample](https://github.com/pyeongho/retrofit2sample)
+- [https://github.com/pyeongho/Sample](https://github.com/pyeongho/Sample)

@@ -25,7 +25,7 @@ tags:
 ```gradle
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
-
+    
 def AAVersion = '4.1.0'
 
 ...
