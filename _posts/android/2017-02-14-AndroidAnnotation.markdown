@@ -25,7 +25,7 @@ tags:
 ```gradle
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
-    
+
 def AAVersion = '4.1.0'
 
 ...
@@ -42,3 +42,8 @@ dependencies {
  - databinding 의 BaseActivity 를 사용한다.
  - @EActivity 에 레이아웃 파일을 추가하지 않는다.
  - 기본 Activity 의 onCreate 에서 레이아웃을 처리 한다.
+
+
+#### 3. 네이버 기계번역을 안드로이드 어노테이션으로 샘플코들르 만들어 보았습니다.
+ -  [https://github.com/pyeongho/Sample](https://github.com/pyeongho/Sample)
+ - AndoroidAnnotation 폴더에 있습니다.
