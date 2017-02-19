@@ -1,16 +1,17 @@
 ---
 layout: post
-title: 샘플코드를 좀더 편하게 사용하기 위한 방법 찾기
+title: 제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기
 category: andorid
 comments: true
 description: API가 추가 될때마다 계속 추가해야하나?
 tags:
-    - retrofit2
+    - generic
     - rxandroid2
     - mvp
 ---
 
-### 실제 사용할때 편한 방법을 만들어 보자
+### 최종코드의 BasePresnter의 addSubscription를 부분만 확인하면 됩니다.
+ 
 
 #### 1. api 추가되면 어떻게 해야 하나
  - 기존 코드에서 기계번역 1개의 api만 사용 하고 있습니다.
@@ -39,4 +40,4 @@ tags:
 
 #### 5. 최종 결과를 다운 받기에 폴더 하나 더 만들었습니다.
  -  [https://github.com/pyeongho/Sample](https://github.com/pyeongho/Sample)
- - Retorfit2T
+ - 폴더이름 Retorfit2T
