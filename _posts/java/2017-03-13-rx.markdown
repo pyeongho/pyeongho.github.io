@@ -1,0 +1,166 @@
+---
+layout: post
+title: RxJava
+category: java
+comments: true
+description: rxjava, rxandroid
+tags:
+    - rxjava
+    - rxandorid
+---
+
+### RxJava 이해하기
+ 
+####  공부 링크
+ - [http://post.naver.com/viewer/postView.nhn?volumeNo=6721006&memberNo=34635212](http://post.naver.com/viewer/postView.nhn?volumeNo=6721006&memberNo=34635212)
+
+
+#### Reactive Programming
+ - "컴퓨팅으로써 반응형 프로그래밍은 데이터의 흐름과 변화에 대한 전달을 기반으로 하는 프로그래밍 패러다임이다."
+ - 데이터 처리가 끝날 때까지 쓰레드를 대기시키거나 코백을 받아서 처리하기 때문에 불필요한 컴퓨팅 리소스 사용이 발생하 됩니다. 반면 Messaging 기반의 Reactive Programming 에서는 필요한 경우에만 쓰레드를 생성 후 메시지 형태로 전달한다.
+
+#### RxJava 의 기초
+ - RxJava 는 데이트를 가공/변형/처리를 하는 라이브러리
+
+#### RxJava 
+ - 0~10까지의 Int 형 배열이 있습니다. Int 형 배열을 a 부터 j 까지 변경하여 화면에 출력하도록 하겠습니다.
+ - rxjava 는 람다가...
+
+  ```java
+    // old
+    List<Integer> datas = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    for (int data : datas) {
+      char value = (char) data + 'a';
+      print(value);
+    }
+
+    //rxjava 특이점 없음
+    Observable.fromIteratable(datas)
+    .subscribe(data -> {
+      char value = (char) data + 'a';
+      print(value);
+    });
+
+    //rxjava 의 map 를 이용함
+    Observable.fromIteratable(datas)
+    .map(data -> (char) data + 'a')
+    .subscribe(value -> print(value));
+
+    // 요구조건 추가 
+    //추가 1 : 짝수에 해당하는 숫자는 출력하지 말 것.
+
+    //old
+    for (int data : datas) {
+      if ((data % 2) != 0) {
+        char value = (char) data + 'a';
+        print(value);
+      }
+    }
+
+    //rxjava filter 을 이용함
+    Observable.fromIteratable(datas)
+    .filter(data -> (data % 2) != 0)
+    .map(data -> (char) data + 'a')
+    .subscribe(value -> print(value));
+
+    //또 추가조건
+    //추가 2 : 각 문자는 10번씩 반복되도록 한꺼번에 출력되도록 할 것.
+
+    //old
+    List<Character> chars = new ArrayList<>();
+    for (int data : datas) {
+      if ((data % 2) != 0) {
+        char value = (char) data + 'a';    
+        for (int idx = 0; idx < 10; idx++) {
+          chars.add(value);
+        }
+      }
+    }
+    print(chars);
+     
+    //rxjava flatmap 
+    //flatmap 은 1개의 데이터에 대해 n 개의 데이터로 변형할 수 있는 처리 기능
+    //collect 는 주입된 데이터를 특정 Collection 에 담을 수 있도록 하는 처리 기능
+    //Observable.range 는 (n, m) 에 대해 n 부터 n + m -1 만큼 int 형 데이터를 호출해주는 데이터로
+    //Observable.range(0, 10).map(index -> value)) 는 value 라는 값을 10번 반복
+    Observable.fromIteratable(datas)
+    .filter(data -> (data % 2) != 0)
+    .map(data -> (char) data + 'a')
+    .flatMap(value -> Observable.range(0, 10).map(index -> value))
+    .collect(() -> new ArrayList<Character>(), (chars, value) -> chars.add(value))
+    .subscribe(values -> print(values));
+
+  ```   
+
+#### Subject
+ - 지금까지 Observable 정해진 데이터만 사용
+ - 하지만 데이터가 언제 어떻게 시작될지 모르는 경우가 있다.
+ - 일반적인 예시로 사용자가 화면을 터치하는 것은 언제 얼마나 할지 알 수 없습니다.
+ - 이런 경우 Subject를 사용합니다.
+ - Observable 는 내부에서
+ - Subject 는 외부에서
+   ```java
+      PublishSubject<Integer> subject = PublishSubject.<Integer>create();
+      subject
+      .filter(data -> (data % 2) != 0)
+      .map(data -> (char) data + 'a')
+      .flatMap(value -> Observable.range(0, 10).map(index -> value))
+      .collect(() -> new ArrayList<Character>(), (chars, value) -> chars.add(value))
+      .subscribe(values -> print(values));
+
+      //사용
+      subject.onNext(0);
+      subject.onNext(1);
+      subject.onNext(2);
+      subject.onNext(3);
+      subject.onNext(4);
+      subject.onNext(5);
+   ```
+
+#### 비동기 처리하기
+ - rxjava 는 비동기처리에 굉장히 유연하고 쉽게 사용 가능
+ - 주로 사용하는 비동기 쓰레드 선언
+   - Schedulers.io()
+     - Network IO 나 File IO 등을 처리하기 위한 쓰레드
+   - Schedulers.computation()
+     - 단순 연산로직등에 사용되며 Event Looper 에 의해 동작하는 쓰레드
+   -  AndroidSchedulers.mainThread()  
+     - Android 에서 UI Thread 에서 처리하기 위한 쓰레드
+ - 데이터 주입과 데이터 처리
+   - 데이터 주입 : subscribeOn(쓰레드)
+     - 데이터를 주입하는 시점에 대한 쓰레드 선언이며 모든 stream 내에서 최종적으로 선언한
+쓰레드가 할당됩니다.
+   - 데이터 처리 : observeOn(쓰레드)     
+     - 쓰레드를 선언한 다음부터 새로운 쓰레드가 선언되기 전까지 데이터 처리에 동작할 쓰레드
+를 할당합니다.
+
+  - 예제를 보면서 기존에는 아래와 같은 코드가 뭔지 몰랐지만 저렇게 된다는걸 이해됨 기능별로 쓰레드를 나누어서 동작시키는 코드로 아래처럼 코드로 이벤트 스트림을 만드는걸로 보임, 데이터주입은 아래처럼 한개만 있으면 되고, 데이터처리는 필요할때마다 변경해서 사용
+
+  ```java
+    Observable.create(emitter -> {
+      emitter.onNext(1);
+      emitter.onNext(2);
+      emitter.onNext(3);
+      emitter.onNext(4);
+      emitter.onComplete();
+    })
+    .subscribeOn(Schedulers.computation())
+    .observeOn(Schedulers.io())
+    .filter(data -> (data % 2) != 0)
+    .map(data -> (char) data + 'a')
+    .observeOn(Schedulers.computation())
+    .flatMap(value -> Observable.range(0, 10).map(index -> value))
+    .collect(() -> new ArrayList<Character>(), (chars, value) -> chars.add(value))
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(values -> print(values));
+  ```
+  - 위 코드는 아래와 같은 쓰레드로 동작
+    - Observable.create() - Schedulers.computation()
+    - filter() - Schedulers.io()
+    - map() - Schedulers.io()
+    - flatMap() - Schedulers.computation()
+    - collect() - Schedulers.computation()
+    - subscribe() - AndroidSchedulers.mainThread()
+
+#### Rx 기능정리
+ - [Rx 문서](http://reactivex.io/documentation/operators.html#alphabetical)
