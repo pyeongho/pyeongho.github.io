@@ -54,6 +54,7 @@ tags:
     - "\(age) 입니다."  // 스위프트에서는 이런것도 가능
   - 3. 배열과 딕셔너리
     - 대괄호 사용,
+    
     ```Swift
 
         var languages = ["Swift", "Objective-C", "Python"]    
@@ -78,11 +79,12 @@ tags:
     - ! 도 없다.. , if 문에는 무조건 불 값만
     - switch case 는 살짝 독특
       -  범위도 가능하고 break 도 없다.
-      
+
         ```
         case 8..<14:
             student = "초등학생"
-        ```        
+        ```       
+
     - for의 배열은 자바의 문법과 동일
     - for의 딕셔너리는 둘다 받으면 된다.아래 처럼
       - //for (country, capital) in capitals 
