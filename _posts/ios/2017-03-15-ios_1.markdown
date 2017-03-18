@@ -81,8 +81,10 @@ tags:
       -  범위도 가능하고 break 도 없다.
 
         ```Swift
+
         case 8..<14:
             student = "초등학생"
+
         ```       
 
     - for의 배열은 자바의 문법과 동일
@@ -97,6 +99,7 @@ tags:
       - if 문 사용 예제 
 
         ```Swift
+
         if let email = optionalEmail {
              print(email) // optionalEmail의 값이 존재한다면 해당 값이 출력됩니다.
         }
@@ -117,5 +120,6 @@ tags:
         if let age = optionalAge, age >= 20 {
         // age의 값이 존재하고, 20 이상입니다.
         }
+        
         ```  
          
