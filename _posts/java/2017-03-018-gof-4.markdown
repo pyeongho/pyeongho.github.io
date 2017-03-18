@@ -1,0 +1,60 @@
+---
+layout: post
+title: java 디자인패턴 4일차
+category: java
+comments: true
+description: GoF java 디자인패턴
+tags:
+    - gof java
+    - 디자인패턴
+---
+
+### GoF 의 자바 디자인 패턴, 인프런 강의
+ 
+####  코드 링크
+ - [https://github.com/parkgaram/java-designpattern](https://github.com/parkgaram/java-designpattern)
+
+#### 11. 데코레이션 패턴
+  - 학습목표
+    - 동적으로 책임 추가가 필요 할때 데코레이션 패턴 추가
+  - 키워드 
+    - 책임(해야 하는일)
+  - 예제 : 커피 제조 방법
+    - 에스프레소 : 커피의 기본
+    - 아메리카노 : 에스프레소 + 물
+    - 카페라떼 : 에스프레소 + 우유
+    - 헤이즐넛 : 아메리카노 + 헤이즐넛 시럽
+    - 카페모카 : 카페라떼 + 초코릿
+    - 캬라멜 마끼아또 : 카페라떼 + 캬라멜 시럽
+
+#### 12. 방문자 패턴
+  - 학습목표
+    - 객체에서 처리를 분리해서 사용
+  - 수정 불가능한 클래스를 방문자 패턴을 이용해서 분리해서 처리가 가능함
+
+ #### 13. 책임사슬 처리
+   - 학습목표
+     - 다양한 처리방식을 유연하게 처리 할 수 있다.   
+   - 예제 : 사칙 연산
+     - 테스트를 위한 슈도 코드를 넣으면서 코딩을 하자
+     - 테스트 주도 개발을 목표로
+
+     ```java
+        PlusCal plus = new PlusCal();
+        SubCal sub = new SubCal();
+
+        // 위 내용은 추상화 한다.
+        Cal plus = new PlusCal();
+        Cal sub = new SubCal();
+        plus.setNextCal(sub);
+        
+        Request request1 = new Request(1,2,"+");
+        Request request2 = new Request(10,2,"-");
+        
+        plus.process(request1);
+        plus.process(request2);
+
+     ```
+     - 처리를 다음 클래스로 넘겨서 처리 시킨다.
+    
+

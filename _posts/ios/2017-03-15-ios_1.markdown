@@ -1,0 +1,117 @@
+---
+layout: post
+title: iOS 공부 1일차
+category: iOS
+comments: true
+description: 스위프트를 이용해서 앱을 개발해 보자
+tags:
+    - iOS
+    - 스위프트
+---
+
+### iOS를 공부해서 원하는 앱을 만들어 보자
+ 
+#### 0. 따라하기
+ - [https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/)
+
+#### 1. 환경 설정
+ - Xcode 다운로드
+ - [https://developer.apple.com/download/](https://developer.apple.com/download/)
+ - Xcode 8.3 beta 4 를 다운 받고 설치
+
+#### 2. Playground 사용해 보기
+ - 뭔지는 모르겠지만 따라서  
+ - 함수 실행하고 동작 하는것 확인 
+ - 이제 헬로우 월드를 찍어야 하는데...
+
+#### 3.xcode 프로젝트 새로 만들기 누름
+ - 싱글뷰 애플리케이션 선택하고 이름 넣고 넥스트 넥스트
+ - 화살표 버튼 클릭 
+ - 시뮬레이터가 7+ 라서 5s 로 변경하니 많이 보던 화면이 
+ - 하지만 헬로우 월드 단어도 기본으로 안넣어주는 센스
+ - 왼쪽에 스토리보드라는 메뉴가 보인다.
+ - 개발자들이 말하는 스토리보드 ui 편집기로 보인다.
+ - 일단 클릭해서 나오는걸 보고
+ - 라벨을 찾기 위해서 이것 저것 시도
+ - 오른쪽 아래 필터 입력창에 넣으면 나온다고 했지만 안나옴
+ - 자세히 보니 탭 형태로 동그란걸 선택 하니 필터가 나오가 라벨 추가가 가능함
+ - 헬로우 월드 성공
+ - 프로그램의 완성은 헬로 월드 니깐
+
+#### 4. 스위프트 공부
+  - 플레이그라운드가 스위프트 공부하기 좋은 콘솔로 이해됨
+  - 1. 변수와 상수 선언
+     - var : 변수
+     - let : 상수, 콘스트 , 파이널
+  - 2. 타입 선언 
+    - 스크립트 언어처럼 타입이 없어도 될거 같지만 넣어야 좋음
+    - 물론 안넣어도 문제는 없음, 타입추론 이런기능도 있음
+    - var name: STring ="phkim"
+    - var age: Int = 12
+    - var height: Float = 11.11
+    - Int + Float 는 에러 <- 차라리 이게 좋음
+    - String(age) +" 입니다." // 이렇게 가능하지만
+    - "\(age) 입니다."  // 스위프트에서는 이런것도 가능
+  - 3. 배열과 딕셔너리
+    - 대괄호 사용,
+    ```Swift
+
+        var languages = ["Swift", "Objective-C", "Python"]    
+        var capitals = [
+            "한국": "서울",
+            "일본": "도쿄",
+            "중국": "베이징",
+        ]
+
+        // 타입 추가 방법
+        var languages: [String] = []
+        var capitals: [String: String] = [:]
+
+        // 간결
+        var languages = [String]()
+        var capitals = [String: String]()
+
+    ```
+  - 4. 조건문과 반복문
+    - 이것만 잘해도..
+    - if 에 괄호가 없다
+    - ! 도 없다.. , if 문에는 무조건 불 값만
+    - switch case 는 살짝 독특
+      -  범위도 가능하고 break 도 없다.
+        ```
+        case 8..<14:
+            student = "초등학생"
+        ```        
+    - for의 배열은 자바의 문법과 동일
+    - for의 딕셔너리는 둘다 받으면 된다.아래 처럼
+      - //for (country, capital) in capitals 
+    - for i in 0..<100{}
+    - for _ in 0..<10{}
+    - 옵셔널 이라는 용어 ? 를 이용함
+      - let optionalEmail: String? = "devxoul@gmail.com"
+      - 널 값을 허용할지 말지에 대한 내용
+      - 변수도 같은 옵션 끼리만 가능함
+      - if 문 사용 예제 
+        ```
+        if let email = optionalEmail {
+             print(email) // optionalEmail의 값이 존재한다면 해당 값이 출력됩니다.
+        }
+        // optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.
+
+
+        // And 조건은 , 로 구분 해서 사용 ㅏ능    
+        var optionalName: String? = "전수열"
+        var optionalEmail: String? = "devxoul@gmail.com"
+
+        if let name = optionalName, email = optionalEmail {
+        // name과 email 값이 존재
+        }
+
+        // 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로    
+        var optionalAge: Int? = 22
+
+        if let age = optionalAge, age >= 20 {
+        // age의 값이 존재하고, 20 이상입니다.
+        }
+        ```  
+         
