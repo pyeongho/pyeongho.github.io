@@ -78,6 +78,7 @@ tags:
     - ! 도 없다.. , if 문에는 무조건 불 값만
     - switch case 는 살짝 독특
       -  범위도 가능하고 break 도 없다.
+      
         ```
         case 8..<14:
             student = "초등학생"
@@ -92,6 +93,7 @@ tags:
       - 널 값을 허용할지 말지에 대한 내용
       - 변수도 같은 옵션 끼리만 가능함
       - if 문 사용 예제 
+
         ```
         if let email = optionalEmail {
              print(email) // optionalEmail의 값이 존재한다면 해당 값이 출력됩니다.
