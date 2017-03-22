@@ -43,9 +43,7 @@ tags:
       - hello.png  
   - 스태틱 폴더는 html 에서 js 파일이나 이미지 파일 경로를 나타내기 위해서 입니다.
   - 경로를 나타 내는 방법은 아래처럼 url_for 를 사용합니다. 
-  ```html
-  	<script src="{{ url_for('static', filename='js/phaser.min.js') }}"></script>
-  ```  
+<script src="https://gist.github.com/anonymous/62e4bb32d428839989d208e4c6b55b80.js"></script>
 
 #### 4. heroku 파이썬 패키지 설치 
-  -  pip freeze > requirements.txt 를 이용해서 추가해야 하는 패키지를 넣는다.
+  -  pip freeze > requirements.txt 를 이용해서 파일을 같이 푸시 한다.
