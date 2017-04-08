@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 구글 드라이브를 이용해서 쉽게 이미지르 올리자
+title: 구글 드라이브를 이용해서 쉽게 이미지를 올리자
 category: github.io
 comments: true
 description: 올리기 귀찮은 이미지를 구글 드라이브이용해서 편하게
