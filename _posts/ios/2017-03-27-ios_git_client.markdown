@@ -15,8 +15,10 @@ tags:
 #### 1. 공부할 자료 수집
   - 깃 라이브러리 
     - [https://github.com/libgit2/objective-git#carthage](https://github.com/libgit2/objective-git#carthage)
+  - [https://github.com/SwiftGit2/SwiftGit2](https://github.com/SwiftGit2/SwiftGit2)
   -  carthage 사용법을 알아야 한다.
     - [https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/](https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/)
+
 
  ####2. carthage 사용법 
   - homebrew로 설치 하기
