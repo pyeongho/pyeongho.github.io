@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [드로이드나이츠] 클린아키텍처 듣기 전부터 고민하던 내용들
+title:  클린아키텍처 듣기 전부터 고민하던 내용들
 category: 컨퍼런스
 comments: true
 description: 드로이드 나이츠 컨퍼런스중 가장 기억에 남는 세션 입니다.
