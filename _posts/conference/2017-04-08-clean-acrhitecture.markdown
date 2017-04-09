@@ -35,7 +35,7 @@ tags:
 #### 2. 기본 아키텍처
   - 엉클밥의 클린아키텍처 서버
     - ![](https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg)
-    - ![](http://drive.google.com/uc?export=view&id=0BwUadct9RzY3cmtQUjlkYlN5QTg)
+    
     - 바깥쪽이 보여주는 부분
     - 가장안쪽이 개념단위
       - 프레임워크 독립적
