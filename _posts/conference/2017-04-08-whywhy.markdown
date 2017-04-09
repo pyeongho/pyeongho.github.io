@@ -10,12 +10,8 @@ tags:
 ---
 
 
-#### 드로이드나이츠 클리아키텍처
-
-[참고 : https://speakerdeck.com/sunghyunzz/clean-architecture-in-android](https://speakerdeck.com/sunghyunzz/clean-architecture-in-android/)
-
-[참고 : https://realm.io/kr/news/clean-architecture-in-android/](https://realm.io/kr/news/clean-architecture-in-android//)
-
+#### 적용에 앞서 많은 고민중
+  - 고민은 좋은거.
 
 #### 1. MVP등의 각종 패턴은 정말 만능일까? 의문점들
   - 장점은 매우 많습니다. 개발자가 많고 교육 시간이 많으면 하는게 좋습니다. 테스트하기에 좋다.
@@ -88,4 +84,5 @@ tags:
     - 절대 안되죠 왜냐면 화면에 보이는 부분은 분리했지만 안드로이드 플랫폼 안에서 구분이니깐요
     - 그래서 이런 저런 생각하던중 클린아키텍처를 보고 기본부터 다시 생각하기 시작함
     - 드로이드나이츠의 클린아키텍처 세션을듣고 클린아키텍처 먼저 적용이 필요하다고 생각함 
+
 
