@@ -35,6 +35,7 @@ tags:
 #### 2. 기본 아키텍처
   - 엉클밥의 클린아키텍처 서버
     - ![클린아키텍처](https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg)
+    - <img src="https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg">
     - 바깥쪽이 보여주는 부분
     - 가장안쪽이 개념단위
       - 프레임워크 독립적
@@ -107,7 +108,7 @@ tags:
       }
 
       ```
-       
+
 ##### 2.3 data
   - Repository의 실제 구현 
   - Data Source 의존성 
