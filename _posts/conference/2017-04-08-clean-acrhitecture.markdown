@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  드로이드나이츠 클린아키텍처 세션
-category: 컨퍼런스
+category: conference
 comments: true
 description: 드로이드 나이츠 컨퍼런스중 가장 기억에 남는 세션 입니다.
 tags:
@@ -34,8 +34,7 @@ tags:
 
 #### 2. 기본 아키텍처
   - 엉클밥의 클린아키텍처 서버
-    - ![](https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg)
-    - <img src="https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg" width="50%" height="50%">
+    - <img src="https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg" width="50%" height="50%"/>
     - 바깥쪽이 보여주는 부분
     - 가장안쪽이 개념단위
       - 프레임워크 독립적
