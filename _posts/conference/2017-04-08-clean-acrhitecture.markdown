@@ -106,7 +106,8 @@ tags:
         fun update(bank: Bank): Completable 
       }
 
-      ``` 
+      ```
+       
 ##### 2.3 data
   - Repository의 실제 구현 
   - Data Source 의존성 
