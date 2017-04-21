@@ -54,6 +54,7 @@ There is no plans to support a redirect without a user gesture.
 #### 5. 수정 사용자 제스처로 이동하게 하면 됩니다.
   - 사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.
   - 사용자 액션만 추가 하면 됩니다.
+  
   ```javascript
     <script>
       function go_marget(){
