@@ -1,0 +1,23 @@
+---
+layout: post
+title: 클린 아키텍처를 적용해 보자
+category: andorid
+comments: true
+description: 클린 아키텍처를 잘 사용하면 많이 편할거 같다.
+tags:
+    - clean
+    - rxandroid2
+    - mvp
+---
+
+### android10/Android-CleanArchitecture 엄지척
+ 
+
+#### 1. 클린 아키텍처 고민 중
+ - 우선 참고 [clean architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
+ - 가장 처음 고민한 샘플 코드
+   - Android Architecture Blueprints [beta] - MVP + Clean Architecture
+     - [https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/](https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/)
+   - 우선 이름부터 구글이라서 믿고 따라가볼려고 함
+   - 게다가 mvp도 같이 있으니 기본 코드로는 좋을거 같아서 확인 시작
+   - 
