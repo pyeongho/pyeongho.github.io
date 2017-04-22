@@ -51,10 +51,10 @@ tags:
   - [다운로드 링크 : Platypus](http://sveinbjorn.org/files/software/platypus.zip)
   - 다운 받아서 실행하면 보안 어쩌고 저쩌고 하면서 실행이 안되면 설정 -> 보안 항목에서 실행 할 수 있습니다.
   - 아래 이미지중 new 를 눌러서 
-  - 스크리트를 붙혀넣기 하였습니다.
-  - <script src="https://gist.github.com/anonymous/f75a813795bd542b035f637f9e71276e.js"></script>
+  - 스크립트를 붙혀넣기 하였습니다.
+  - <script src="https://gist.github.com/pyeongho/1a1ba765dcd809de71d4a7bd029d9dc6.js"></script>
   - 코드는 크게 다르지 않지만 gdrive 가 절대 경로로 변경 된게 다릅니다.
   - 아래 처럼 인터페이스 및 필요없는 옵션 체크 해제 후 앱을 만들었습니다.
   - 앱 프로그램을 애플리케이션으로 이동하여 알프레드로 호출하니 잘 동작 합니다.
   - 어차피 단축키 추가해봐야 외우기 힘들테니 그냥 알프레드를 이용하려고 합니다. 
-  - ![테스트](https://drive.google.com/uc?id=0BwUadct9RzY3MlJrOERUMG15ejA)
+  - ![테스트](http://drive.google.com/uc?export=view&id=0BwUadct9RzY3MlJrOERUMG15ejA)
