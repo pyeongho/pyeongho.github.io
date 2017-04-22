@@ -68,8 +68,8 @@ tags:
   - 자신의 목표 꿈을 무한 반복하자
 
 ####  현장 메모 첨부
-  - ![](https://drive.google.com/uc?id=0BwUadct9RzY3TUxaNGV6LU15M1U)
-  - ![](https://drive.google.com/uc?id=0BwUadct9RzY3Uy1JSEV0TnNxVXc)
-  - ![](https://drive.google.com/uc?id=0BwUadct9RzY3YjBtaGRGcnBWTzg)
-  - ![](https://drive.google.com/uc?id=0BwUadct9RzY3YjBtaGRGcnBWTzg)
-  - ![](http://googledrive.com/host/0BwUadct9RzY3YjBtaGRGcnBWTzg)
+  - ![](http://drive.google.com/uc?export=view&id=0BwUadct9RzY3TUxaNGV6LU15M1U)
+  - ![](http://drive.google.com/uc?export=view&id=0BwUadct9RzY3Uy1JSEV0TnNxVXc)
+  - ![](http://drive.google.com/uc?export=view&id=0BwUadct9RzY3YjBtaGRGcnBWTzg)
+  - ![](http://drive.google.com/uc?export=view&id=0BwUadct9RzY3UzdkaDQtbmtMRG8)
+  
