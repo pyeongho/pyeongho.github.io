@@ -67,7 +67,7 @@ tags:
   - 8번 노출의 힘
   - 자신의 목표 꿈을 무한 반복하자
 
-#### *. 현장 메모 첨부
+####  현장 메모 첨부
   - ![](https://drive.google.com/uc?id=0BwUadct9RzY3TUxaNGV6LU15M1U)
   - ![](https://drive.google.com/uc?id=0BwUadct9RzY3Uy1JSEV0TnNxVXc)
   - ![](https://drive.google.com/uc?id=0BwUadct9RzY3YjBtaGRGcnBWTzg)
