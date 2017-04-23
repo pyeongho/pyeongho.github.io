@@ -1,4 +1,4 @@
 ---
 name: android
-title: ㅇ드로이드
+title: 안드로이드
 ---

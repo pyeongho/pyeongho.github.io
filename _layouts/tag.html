@@ -1,32 +1,29 @@
 ---
 layout: default
-post_class: post-template page-template
 ---
 
-<nav class="main-nav clearfix">
-    <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home</a>
-    <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
-</nav>
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Main</a></h5>
+    {% include share.html %}
+</div>
 
+<div id="cover" class="container"
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+    <div>
+        <h1>{{ page.title | default: page.name }}</h1>
+        <p>All Posts in <strong>{{ page.name }}</strong></p>
+    </div>
+</div>
 
-<main class="content" role="main">
-    <article class="post">
-        <!-- <header class="post-header">
-            <a id="blog-logo" href="{{site.baseurl}}">
-                {% if site.logo %}
-                    <img src="{{site.logo}}" alt="{{ site.name }}" />
-                {% else %}
-                    <span class="blog-title">{{ site.name }}</span>
-                {%endif%}
-            </a>
-        </header> -->
-
-        <h1 class="post-title">{{ page.title }}</h1>
-
-        <section class="post-content">
-            {{content}}
-        </section>
-
-    </article>
-
-</main>
+<div id="content" class="container">
+    <div id="tag-content" role="main">
+        <ul id="post-list">
+            {% for post in site.posts %}
+                {% if post.tags contains page.name %}
+                    {% include item.html %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% include pagination.html %}
+    </div>
+</div>
