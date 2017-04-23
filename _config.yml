@@ -14,3 +14,16 @@ gems: [jekyll-paginate]
 # Details for the RSS feed generator
 url:            'https://pyeongho.github.io/'
 author:         'PyeongHo'
+
+
+collections:
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
