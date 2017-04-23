@@ -28,6 +28,20 @@
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
+  {% for category in site.categories %}
+    <li><a name="{{ category | first }}">{{ category | first }}</a>
+      <ul>
+      {% for posts in category %}
+        {% for post in posts %}
+          {% if post.title != nil %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+
     {{ content }}
     <footer class="site-footer clearfix">
       <section class="copyright">
