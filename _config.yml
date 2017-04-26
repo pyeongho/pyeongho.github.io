@@ -16,14 +16,14 @@ author: 'PyeongHo'
 nickname: PyeongHo
 bio: '즐겁게 또 즐겁게'
 location: ' KOREA'
-url: 'https://pyeongho.github.io/'
+url: 'https://pyeongho.github.io/factory/'
 image: 'assets/images/casper.png'
 
-short_url: 'pyeongho.github.io/'
+short_url: 'pyeongho.github.io/factory/'
 google_analytics: UA-90332203-1
 disqus: pyeonghokim
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /
+baseurl: /factory/
 
 # Permalinks
 permalink: /:title
@@ -59,10 +59,10 @@ lsi: false
 username: pyeongho
 repo: pyeongho.github.io
 branch: master
-relative_source: ../pyeongho.github.io/
-destination: ../pyeongho.github.io-pages/
-production_url:  https://pyeongho.github.io/
-source_url:      https://github.com/pyeongho/pyeongho.github.io/
+relative_source: ../factory/
+destination: ../factory-pages/
+production_url:  https://pyeongho.github.io/factory/
+source_url:      https://github.com/pyeongho/pyeongho.github.io/factory/
 
 exclude:
   - README.md
