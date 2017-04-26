@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>http://localhost:4000</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>파이썬을 이용한 서버구축</title>
+	  <link>//flask</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-03-20T00:00:00+09:00</pubDate>
+	  <guid>//flask</guid>
+	  <description><![CDATA[
+	     <h3 id="클라우드-서버-구축">클라우드 서버 구축</h3>
+
+<h4 id="1-환경-설정">1 환경 설정</h4>
+<ul>
+  <li>클라우드9 에서 테스트</li>
+  <li>heroku 에 상시 서버 실행</li>
+  <li>클라우드9는 개발 환경을 제공하기에 상시 서버로 사용하기 어렵다.(무료로)</li>
+  <li>heroku는 18시간 사용 6시간휴식으로 서버 사용 가능</li>
+  <li>heroku는 git 으로 코드를 관리하며 추가 하면 바로 서버에 추가됨</li>
+  <li>디버깅은 어떻게 하는지 찾아봐야 함</li>
+  <li>2개 모두 거의 모든 언어를 지원 한다.</li>
+</ul>
+
+<h4 id="2-목표">2. 목표</h4>
+<ul>
+  <li>파이썬 서버</li>
+  <li>phaser 클라이언트</li>
+</ul>
+
+<h4 id="3-기본-코드">3. 기본 코드</h4>
+<ul>
+  <li>c9 에서 기본 파이썬 코드는 아래와 같습니다.</li>
+  <li>
+    <script src="https://gist.github.com/anonymous/2aaf522bb68ffbc1d28e1d5698a70f32.js"></script>
+  </li>
+  <li>폴더 구조는 2개가 필요합니다. 트리를 어떻게 그리는지 몰라서… 아래처럼 생겼습니다.</li>
+  <li>파이썬 파일과 템플릿 폴더, 스트택 폭더가 필요합니다.</li>
+  <li>플라스크가 아래와 같은 내용을 지원해서 입니다.
+    <ul>
+      <li>hello.py</li>
+      <li>templates
+        <ul>
+          <li>hello.html</li>
+        </ul>
+      </li>
+      <li>static
+        <ul>
+          <li>js
+            <ul>
+              <li>test.js</li>
+              <li>hello.js</li>
+            </ul>
+          </li>
+          <li>hello.png</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>스태틱 폴더는 html 에서 js 파일이나 이미지 파일 경로를 나타내기 위해서 입니다.</li>
+  <li>경로를 나타 내는 방법은 아래처럼 url_for 를 사용합니다. 
+<script src="https://gist.github.com/anonymous/62e4bb32d428839989d208e4c6b55b80.js"></script></li>
+</ul>
+
+<h4 id="4-heroku-파이썬-패키지-설치">4. heroku 파이썬 패키지 설치</h4>
+<ul>
+  <li>pip freeze &gt; requirements.txt 를 이용해서 파일을 같이 푸시 한다.</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>python 모듈 만들기,python C 모듈 원형</title>
+	  <link>//pythonClib</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2016-12-21T00:00:00+09:00</pubDate>
+	  <guid>//pythonClib</guid>
+	  <description><![CDATA[
+	     <h3 id="python-사용-할-c-라이브러리-만들기">python 사용 할 C 라이브러리 만들기</h3>
+
+<h4 id="1-mylibc-원형-함수를-만든다">1. mylib.c 원형 함수를 만든다.</h4>
+<ul>
+  <li>python 에서 호출 하는 함수는 wlog 입니다.</li>
+  <li>PyMethodDef를 보면 jni 와 비슷합니다.</li>
+</ul>
+
+<h4 id="2-setuppy">2. setup.py</h4>
+<ul>
+  <li>컴파일 과 install 하는 python 코드 원형</li>
+  <li>python setup.py install (sudo 가 필요 할 경우가 많습니다.)</li>
+</ul>
+
+<h4 id="3-testpy">3. test.py</h4>
+<ul>
+  <li>python test.py 를 실행 하면 pylog.txt 파일을 만들고 I love U 문구넣습니다.</li>
+</ul>
+
+<h4 id="4-참고-코드">4. 참고 코드</h4>
+<ul>
+  <li>
+    <script src="https://gist.github.com/pyeongho/09b03c195395e2f8879c5f97686735a5.js"></script>
+  </li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/abcad87180768a30091457630d38dc40.js"></script>
+  </li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/7053f0fb7f15931a82ab927d11a5e206.js"></script>
+  </li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>mysql 사용법</title>
+	  <link>//mysql</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2016-12-21T00:00:00+09:00</pubDate>
+	  <guid>//mysql</guid>
+	  <description><![CDATA[
+	     <h3 id="리눅스에서-mysql-사용하기">리눅스에서 mysql 사용하기</h3>
+
+<h4 id="1-mysql-기본-그냥-참고용-테스트-안함">1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
+<ul>
+  <li>mysql이 설치는 되어 있을거구 없으면 (apt-get install mysql-server)</li>
+  <li>
+    <p>실행은 sudo service mysql start 정도</p>
+
+    <p>sudo apt-get install mysql-server
+sudo service mysql start</p>
+  </li>
+</ul>
+
+<h4 id="2-mysql-접속-및-데이터-베이스-추가">2. mysql 접속 및 데이터 베이스 추가</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>  # mysql -u root -p
+  mysql &gt; use mysql; 
+  mysql &gt; select host, user, password from user;         
++--------------+------------------+-------------------------------------------+
+| host         | user             | password                                  |
++--------------+------------------+-------------------------------------------+
+| localhost    | root             |                                           |
+| dfc2eabdf236 | root             |                                           |
+| 127.0.0.1    | root             |                                           |
+| ::1          | root             |                                           |
+| localhost    | debian-sys-maint | *3D5BF21EE82A4BA04A8EBDEAC7458C03D731EC74 |
+| %            | xxxxxxxx         |                                           |
++--------------+------------------+-------------------------------------------+
+6 rows in set (0.00 sec)
+</code></pre>
+</div>
+
+<ul>
+  <li>위 처럼 동작 하면 기본 적인 sql 테스트 완료</li>
+</ul>
+
+<h4 id="3-사용자-추가-및-권한추가">3. 사용자 추가 및 권한추가</h4>
+<ul>
+  <li>
+    <p>localhost</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql &gt; create user userid@localhost identified by '비밀번호';
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>기존에 사용하던 계정에 외부 접근 권한을 부여하려면, Host를 ‘%’ 로 하여 똑같은 계정을 추가한다</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> mysql &gt; create user 'userid'@'%' identified by '비밀번호';  
+ // '%' 의 의미는 외부에서의 접근을 허용
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>위 방법 말고 많아요. 다른 방법은 구글에서 검색해서 한다.</p>
+  </li>
+</ul>
+
+<h4 id="4-데이터-베이스-생성">4. 데이터 베이스 생성</h4>
+<ul>
+  <li>
+    <p>databases 확인</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>show databases; 
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>databases 생성</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>create database TEST;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>database 확인 하면 TEST 가 있다.</p>
+  </li>
+</ul>
+
+<h4 id="5-테이블-생성">5. 테이블 생성</h4>
+<ul>
+  <li>테이블 생성하기전 사용하려면 데이터 베이스를 선택 해야 합니다.</li>
+  <li>use ‘데이터베이스이름’;  // 데이터베이스 사용하기</li>
+  <li>show tables;  // 데이터베이스 테이블 확인 하기</li>
+  <li>test 데이터베이스 사용</li>
+  <li>
+    <p>그리고 테이블 만들기</p>
+
+    <p>mysql&gt;use test;</p>
+
+    <p>CREATE TABLE address (
+  name varchar(25) default NULL,
+  address text,
+  tel varchar(25) default NULL
+);</p>
+
+    <p>mysql&gt;use test;
++—————-+
+| Tables_in_test |
++—————-+
+| address        |
++—————-+
+1 row in set (0.00 sec)</p>
+  </li>
+</ul>
+
+<h4 id="6-더미데이터-추가">6. 더미데이터 추가</h4>
+<ul>
+  <li>INSERT INTO address VALUES (‘ABC’,’DEFGHIJKLMN’,’031-000-0000’);</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>python 에서 사용할 C 엑셀 모듈 만들기</title>
+	  <link>//xls</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2016-12-20T00:00:00+09:00</pubDate>
+	  <guid>//xls</guid>
+	  <description><![CDATA[
+	     <h3 id="python에서-사용-할-c-모듈-만들기">python에서 사용 할 C 모듈 만들기</h3>
+
+<h4 id="0-진행-이유">0. 진행 이유</h4>
+<ul>
+  <li>python 에서 엑셀 만들기 사용하면 느리다고 함</li>
+</ul>
+
+<h4 id="1속도-테스트">1.속도 테스트</h4>
+<ul>
+  <li>xlsxwriter 라이브러리 사용
+    <ul>
+      <li>python 테스트
+ <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script></li>
+      <li>C 테스트 코드
+ <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script></li>
+    </ul>
+  </li>
+  <li>속도 측정
+    <ul>
+      <li>python : 약 12초</li>
+      <li>c : 약 1.221초</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-c-라이브러리-만들기">2. C 라이브러리 만들기</h4>
+<ul>
+  <li>기본 C module 링크: <a href="https://pyeongho.github.io/python/2016/12/21/pythonClib.html">C module</a></li>
+</ul>
+
+<h4 id="3-setuppy-의-문제점">3. setup.py 의 문제점</h4>
+<ul>
+  <li>기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함</li>
+</ul>
+
+<h4 id="4-python-에서-c-의-libxlsxwriter-를-이용한다-코드는-c-테스트-코드">4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
+<ul>
+  <li>리눅스에 libxlsxwriter 를 설치 한다.</li>
+  <li>setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
+    <ul>
+      <li>ext_modules = [Extension(“mylib”, [“mylib.c”],extra_link_args=[‘-lxlsxwriter’])]</li>
+    </ul>
+  </li>
+  <li>mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조</li>
+</ul>
+
+<h4 id="참고-코드">참고 코드</h4>
+<ul>
+  <li>python 에서 호출, C 에서 엑셀 파일 생성
+   <script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script></li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

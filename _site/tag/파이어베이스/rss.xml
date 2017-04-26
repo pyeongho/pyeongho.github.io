@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>http://localhost:4000</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>파이어베이스 데이터베이스를  사용해보자</title>
+	  <link>//firebase2</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-01-01T00:00:00+09:00</pubDate>
+	  <guid>//firebase2</guid>
+	  <description><![CDATA[
+	     <h4 id="1-firebase-database-를-사용해-보자">1. firebase database 를 사용해 보자</h4>
+<ul>
+  <li>안드로이드 스튜디오 에서 tools -&gt; firebase 를 클릭한다.</li>
+  <li>firebase 관련 메뉴들이 나오는데 사용 할 realtime database 를 선택</li>
+  <li>기본 firebase가 연결되어 있다고 나옴</li>
+  <li>firebase authentication 문서를 미리 진행 하면 connected 로 변경 됩니다.</li>
+  <li>연결 안되어 있으면 connect 클릭해 주세요</li>
+</ul>
+
+<h4 id="2-add-the-realtime-database-to-your-app">2. add the realtime database to your app</h4>
+<ul>
+  <li>add the realtime database to your app 버튼을 클릭하여 플러그인 및 디펜던시를 추가 한다.</li>
+</ul>
+
+<h4 id="3-firebase-데이터베이스-룰-설정">3. firebase 데이터베이스 룰 설정</h4>
+<ul>
+  <li>firebase 콘솔에서 database 규칙을 알아보자</li>
+  <li>firebase 콘솔 -&gt; database -&gt; 규칙 탭</li>
+  <li>기본은 아래와 같다.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">".read"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth != null"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">".write"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth != null"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+<ul>
+  <li>읽기 권한, 쓰기 권한 모두 null 이 아닐때 라고 하니깐 firebase 인증은 기존에 했으니 될거 같음</li>
+</ul>
+
+<h4 id="4-권한-확인-완료-된-코드에서-데이터-추가하는-코드를-넣어보자">4. 권한 확인 완료 된 코드에서 데이터 추가하는 코드를 넣어보자</h4>
+<ul>
+  <li>기존 코드중(아래코드 참고) user!=null 이 아닐때 코드를 추가 하자</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">mAuthListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FirebaseAuth</span><span class="o">.</span><span class="na">AuthStateListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAuthStateChanged</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">FirebaseAuth</span> <span class="n">firebaseAuth</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">FirebaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">firebaseAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="c1">// User is signed in</span>
+                    
+                    <span class="c1">// Write a message to the database</span>
+                    <span class="n">FirebaseDatabase</span> <span class="n">database</span> <span class="o">=</span> <span class="n">FirebaseDatabase</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+                    <span class="n">DatabaseReference</span> <span class="n">myRef</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">getReference</span><span class="o">(</span><span class="s">"message"</span><span class="o">);</span>
+                    <span class="n">myRef</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">"Hello, World!"</span><span class="o">);</span>
+
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="c1">// User is signed out</span>
+                    <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"onAuthStateChanged:signed_out"</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>값 확인은 firebase 콘솔에서 확인해 보자</li>
+  <li>Hello World 잘 추가 되어 있습니다.</li>
+</ul>
+
+<h4 id="5-데이터의-구조-json-트리">5. 데이터의 구조: JSON 트리</h4>
+<ul>
+  <li><a href="https://firebase.google.com/docs/database/android/structure-data?hl=ko">참고 데이터의 구조: JSON 트리</a></li>
+  <li>SQL 데이터베이스와 달리 테이블이나 레코드가 없으며, JSON 트리에 추가된 데이터는 연결된 키를 갖는 기존 JSON 구조의 노드가 됩니다. 사용자 ID 또는 의미 있는 이름을 키로 직접 지정할 수도 있고, push()를 사용하여 자동으로 지정할 수도 있습니다.</li>
+  <li>예제</li>
+</ul>
+
+<pre><code class="language-JSON"> {
+  "users": {
+    "alovelace": {
+      "name": "Ada Lovelace",
+      "contacts": { "ghopper": true },
+    },
+    "ghopper": { ... },
+    "eclarke": { ... }
+  }
+}
+데이터
+</code></pre>
+
+<h4 id="6-데이터의-구조-권장-사항">6. 데이터의 구조 권장 사항</h4>
+<ul>
+  <li>
+    <p>Firebase 실시간 데이터베이스는 최대 32단계의 데이터 중첩을 허용하므로 기본 구조에 중첩을 도입해도 괜찮다고 생각할 수도 있습니다. 그러나 데이터베이스의 특정 위치에서 데이터를 가져오면 모든 하위 노드가 함께 검색됩니다. 또한 사용자에게 데이터베이스의 특정 노드에 대한 읽기 또는 쓰기 권한을 부여하면 해당 노드에 속한 모든 데이터에 대한 권한이 함께 부여됩니다. 따라서 실제 구현에서는 데이터 구조를 최대한 평면화하는 것이 좋습니다.</p>
+  </li>
+  <li>데이터 구조평면화</li>
+  <li>확장 가능한 데이터 만들기</li>
+</ul>
+
+<h4 id="7-db-설계가-제일-중요함">7. DB 설계가 제일 중요함</h4>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>파이어베이스를 사용해보자</title>
+	  <link>//firebase1</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-01-01T00:00:00+09:00</pubDate>
+	  <guid>//firebase1</guid>
+	  <description><![CDATA[
+	     <h4 id="1-firebase-authentication-를-사용해-보자">1. firebase authentication 를 사용해 보자</h4>
+<ul>
+  <li>안드로이드 스튜디오 에서 tools -&gt; firebase 를 클릭한다.</li>
+  <li>firebase 관련 메뉴들이 나오는데 사용 할 authentication 선택 한다.</li>
+  <li>영어지만 설명서 대로 진행 한다.</li>
+</ul>
+
+<h4 id="2-email-and-password-authentication-을-설명서대로-진행-한다">2. Email and password authentication 을 설명서대로 진행 한다.</h4>
+<ul>
+  <li>순서대로 진행 하는데 어려움은 없다.</li>
+  <li>3번 순서부터는 직접 코드를 추가 하는 부분임</li>
+  <li>매뉴얼에 나온 코드를 추가 하고 createAccount 실행 했지만 fail 발생</li>
+  <li>로그인을 했지만 역시 실패, 그나마 아래 메시지로 내용을 확인 가능
+    <ul>
+      <li>com.google.firebase.FirebaseException: An internal error has occurred. [ PASSWORD_LOGIN_DISABLED ]</li>
+    </ul>
+  </li>
+  <li>파이어베이스 사이트에 접속</li>
+  <li>생성한 프로젝트 로 접근, authentication 중 이메일, 비밀번호 를 활성화 시킴</li>
+  <li>다시 로그인 시도, 원하는 에러 메시지 발생
+    <ul>
+      <li>There is no user record corresponding to this identifier. The user may have been deleted.</li>
+    </ul>
+  </li>
+  <li>다시 회원 가입, 로그인,  성공</li>
+</ul>
+
+<h4 id="3-google-sign-in-을-이용하자">3. google sign-in 을 이용하자</h4>
+<ul>
+  <li>시작은 이제 firebase 페이지에서 google sign-in 을 미리 설정해 놓자</li>
+  <li>아래 링크는 매뉴얼 하단에 구글 sign-in 클릭하면 이동 됩니다.</li>
+  <li><a href="https://firebase.google.com/docs/auth/android/google-signin?utm_source=studio">Android에서 Google 로그인을 사용하여 인증하기</a></li>
+  <li>이것도 설명서에 잘 나와 있습니다. 게다가 한글</li>
+  <li>순서대로 진행하면서 안되는 것만 추가 하겠습니다.</li>
+</ul>
+
+<h4 id="4-google-signin-과-firebase-authentication-어려운-점은-없습니다-설명서-대로-하나씩-진행하면-됩니다">4. google signin 과 firebase authentication 어려운 점은 없습니다. 설명서 대로 하나씩 진행하면 됩니다.</h4>
+<ul>
+  <li>권한만 미리 지정하면 문제 없어 보임</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

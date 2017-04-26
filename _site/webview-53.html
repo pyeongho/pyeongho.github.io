@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>안드로이드 WebView 53 SSL 버그</title>
+    <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="PyeongHo Factory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PyeongHo Factory" />
+    <meta property="og:description" content="즐거운 공장" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PyeongHo Factory" />
+    <meta name="twitter:description" content="즐거운 공장" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Finding The Way Home",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "즐거운 공장"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="PyeongHo Factory" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
+        <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
+  
+        <li class="nav-conference " role="presentation"><a href="/tag/conference">Conference</a></li>
+        <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
+        <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
+        <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
+        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-android">
+
+        <header class="post-header">
+            <h1 class="post-title">안드로이드 WebView 53 SSL 버그</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
+            <time class="post-date" datetime="2017-01-15">15 Jan 2017</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/android'>Android</a>,
+                       
+                
+                    
+                       <a href='/tag/webview53'>Webview53</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <h4 id="1-안드로이드-webview-53-에서-ssl-에러가-발생한-이유">1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유</h4>
+<ul>
+  <li>webview 버전 53 에서 인증서 버그</li>
+  <li>여기 저기에서 문제 발생에 대한 공지 내용
+    <ul>
+      <li><a href="https://channel.daum.net/content/232337?dmp_channel=notice">다음 공지</a></li>
+      <li><a href="http://sir.kr/co_notice/1205">KG 이니시스 공지</a></li>
+    </ul>
+  </li>
+  <li>에러 내용은 webview 버전 53 일때 ssl 인증서 오류가 발생한다.
+    <ul>
+      <li>정확히 symantec 인증서 에서만 오류가 발생 한다고 한다.</li>
+    </ul>
+  </li>
+  <li>해결 방법은 다음의 공지 처럼 크롬 업데이트나 웹뷰 업데이트 설치 말고는 방법이 없다</li>
+  <li>그래도 테스트를 내용을 확인 해야 마음이 편하다. 구글 에서도 인증서 오류 관련 팝업을 넣어야 한다고 공지함</li>
+  <li>구글의 공지도 있고 해서 테스틀 진행함</li>
+  <li>테스트를 위해서 테스트 기기에 webview 53 버전을 설치함</li>
+  <li><a href="http://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-53-0-2785-97-release/">webview 53 다운로드 경로</a></li>
+  <li>
+    <p>구글에서 추가 해야한다고 하는  ssl error 팝업을 아래와 같이 추가함
+ <script src="https://gist.github.com/pyeongho/66a50062921216dfae7a1abb9e8cb94e.js"></script></p>
+  </li>
+  <li>테스트 시나리오
+    <ol>
+      <li>WebView 버전을 53으로 변경한다.
+        <ul>
+          <li>참고 버전 확인 코드
+  <script src="https://gist.github.com/pyeongho/fc0d7c47be2a505f92a3d1d994fe5388.js"></script></li>
+        </ul>
+      </li>
+      <li>시만텍 인증서 사용하는 페이지를 로딩한다.
+        <ul>
+          <li><a href="https://www.symantec.com/ko/kr/ssl-certificates/">https://www.symantec.com/ko/kr/ssl-certificates/</a></li>
+          <li>크롬에서 확인 인증서 확인 가능합니다.</li>
+        </ul>
+      </li>
+      <li>해당 페이지 로딩시 인증서 에러 팝업을 확인한다.
+        <ul>
+          <li>에러 내용은 “보안 인증서에 오류가 있습니다.” 정의 되지 않은 에러 입니다.</li>
+        </ul>
+      </li>
+      <li>구글과 네이버도 테스트 진행
+        <ul>
+          <li>구글, 네이버 인증서
+ -
+  <img src="/assets/images/post/google.png" alt="구글" /> <img src="/assets/images/post/naver.png" alt="네이버" /></li>
+        </ul>
+      </li>
+      <li>현재 테스트 결과
+        <ul>
+          <li>시만텍 실패만 실패함</li>
+          <li>구글,코모도, 글로벌은 성공, 이외에는 테스트 진행 안함</li>
+        </ul>
+      </li>
+      <li>WebView 버전 업데이트 후 시만텍 사이트 접근(스토어 버전은 55 버전)
+        <ul>
+          <li>정상 동작</li>
+        </ul>
+      </li>
+      <li>해결 방법은 다음의 공지 처럼 하면 될것으로 보임</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="2-내용-파악">2. 내용 파악</h4>
+<ul>
+  <li><a href="https://sslmate.com/blog/post/ct_redaction_in_chrome_53">sslmate</a></li>
+  <li>위 사이트에 잘 정리 되어 있습니다.</li>
+  <li>발생 : 2016년 11월10일 업데이트로 발생, 시만텍 인증서를 사용하는 모든 웹사이트에서 오류 메시지 발생
+ (인증서를 변경한 사이트들도 있습니다.)</li>
+  <li>수정 : 2016년 11월26일 스토어에 WebView 배포 함</li>
+</ul>
+
+<h4 id="3-시만텍에서-발표한-내용">3. 시만텍에서 발표한 내용</h4>
+<ul>
+  <li><a href="https://knowledge.symantec.com/support/ssl-certificates-support/index?page=content&amp;id=ALERT2160&amp;actp=LIST&amp;viewlocale=en_US">시만텍 입장</a></li>
+</ul>
+
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="http://localhost:4000"> pyeongho.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 WebView 53 SSL 버그&amp;url=http://localhost:4000webview-53"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000webview-53"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000webview-53"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/rxandroid_1">
+            <section class="post">
+                <h2>RxAndroid2 를 이용해서 앱을 만들어 보자</h2>
+                <p>#### 1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자 - 인터넷에...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/edit_search">
+            <section class="post">
+                <h2>EditText 를 이용한 RecyclerView 검색 기능</h2>
+                <p>1. EditText에서 한두 글자를 입력하면 리스트에서 해당 결과를 보여주는 방법 RecyclerView 에 검색 기능을 추가하여...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-90332203-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>
