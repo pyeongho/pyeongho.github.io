@@ -57,7 +57,7 @@ exclude: [vendor]
 safe: false
 lsi: false
 username: pyeongho
-repo: pyeongho.github.io
+repo: factory
 branch: master
 relative_source: ../factory/
 destination: ../factory-pages/
