@@ -59,8 +59,8 @@ lsi: false
 username: pyeongho
 repo: pyeongho.github.io
 branch: master
-relative_source: ../jasper/
-destination: ../jasper-pages/
+relative_source: ../pyeongho.github.io/
+destination: ../pyeongho.github.io-pages/
 production_url:  https://pyeongho.github.io/
 source_url:      https://github.com/pyeongho/pyeongho.github.io/
 
