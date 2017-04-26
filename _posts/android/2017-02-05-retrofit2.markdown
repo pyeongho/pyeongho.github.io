@@ -1,18 +1,22 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: retrofit2 + okhttp3 + rxandroid2네이버 기계번역 사용하기
-category: andorid
-comments: true
-description: retrofit2,okhttp3,rxandroid2 네이버 기계번역 사용하기
-tags:
-    - retrofit2
-    - rxandroid2
+date: 2017-02-05
+tags: 
+  - android
+  - rxandroid2
+  - retrofit2
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
 
 ### retrofit2 + rxandroid2 를 이용한 통신
-
+  - rxandroid2 를 추가해 보았습니다.
 
 #### 1. dependencies 추가
 

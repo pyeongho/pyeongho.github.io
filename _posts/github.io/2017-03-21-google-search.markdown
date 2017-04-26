@@ -1,13 +1,16 @@
 ---
 layout: post
-title: jekyll 구글 검색 허용하기
-category: github.io
-comments: true
-description: jekyll github.io 를 만들면 구글 검색을 허용해야 한다.
-tags:
-    - jekyll    
-    - google
-    - search
+cover: 'assets/images/cover4.jpg'
+title: github page 구글 검색 허용하기
+date: 2017-03-21
+tags: 
+    - githubpage
+    - jekyll
+    - disqus
+subclass: 'post tag-githubpage'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 

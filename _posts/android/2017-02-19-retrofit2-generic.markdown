@@ -1,17 +1,21 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: 제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기
-category: andorid
-comments: true
-description: API가 추가 될때마다 계속 추가해야하나?
-tags:
-    - generic
-    - rxandroid2
-    - mvp
+date: 2017-02-19
+tags: 
+  - android
+  - 제네릭
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
+
+
 ### 최종코드의 BasePresnter의 addSubscription를 부분만 확인하면 됩니다.
- 
+  - API가 추가 될때마다 계속 추가해야하나?
 
 #### 1. api 추가되면 어떻게 해야 하나
  - 기존 코드에서 기계번역 1개의 api만 사용 하고 있습니다.

@@ -1,16 +1,22 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: dagger2 를 공부
-category: andorid
-comments: true
-description: 안드로이드 dagger
-tags:
-    - dagger
+date: 2017-02-12
+tags: 
+  - android
+  - dagger2
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
 
-### DI 공부
+#### DI 공부
+  - 라이브러리를 이용해서 의존성을  주입하는 방법
+  - 그냥 플래버를 이용해도 되지만 좀더 많은 사람들이 사용하는 방법
 
 #### 1. dagger2 공부하기
  - 아래 링크를 참고로 따라하기 시작 

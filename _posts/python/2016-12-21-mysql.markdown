@@ -1,14 +1,18 @@
 ---
 layout: post
+cover: 'assets/images/cover6.jpg'
 title: mysql 사용법
-category: linux
-comments: true
-description: 우분투에서 mysql 사용 및 sample code
-tags:
-    - c
+date: 2016-12-21
+tags: 
+    - python
     - mysql
     - linux
+subclass: 'post tag-python'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
+
 
 ### 리눅스에서 mysql 사용하기
 

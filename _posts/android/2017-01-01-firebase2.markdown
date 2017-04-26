@@ -1,12 +1,16 @@
 ---
 layout: post
-title: firebase database
-category: andorid
-comments: true
-description: firebase database
-tags:
-    - firebase    
-    - database    
+cover: 'assets/images/cover1.jpg'
+title: 파이어베이스 데이터베이스를  사용해보자
+date: 2017-01-01
+tags: 
+  - android
+  - 파이어베이스 
+  - 데이터베이스
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 

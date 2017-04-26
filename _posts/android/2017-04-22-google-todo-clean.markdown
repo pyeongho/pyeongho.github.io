@@ -1,16 +1,19 @@
 ---
 layout: post
-title: 구글 샘플 할일, 클린 아키텍처
-category: andorid
-comments: true
-description: 클린아키텍처 청사진 고르기
-tags:
-    - 클린아키텍처
-    - 구글 샘플
+cover: 'assets/images/cover1.jpg'
+title: 구글에서 만든 클린 아키텍처를 이해하고 알아보자
+date: 2017-04-22
+tags: 
+  - android
+  - 클린아키텍처
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 ### 구글 클린 아키텍처
- 
+  - mvp 패턴만 적용 하더라도 구조가 이상해 보인다. 어떻게 하면 좀더 좋은 구조를 만들 수 있을까를 고민하던 중 클린아키텍처가 있었고 그중 구글이 만들 샘플 코드가 기본 라이브러리로만 만들어져서 마음에 들어서 분석하기 시작함   
 
 #### 1. 구글 샘플 분석 하기
   - [https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/](https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/)

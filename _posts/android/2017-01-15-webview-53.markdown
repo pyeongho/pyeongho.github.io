@@ -1,21 +1,22 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: 안드로이드 WebView 53 SSL 버그
-category: andorid
-comments: true
-description: webview 버전 53 에서 인증서 버그
-tags:
+date: 2017-01-15
+tags: 
     - android
     - webview53
-    - ssl 
-    - symantec
-
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
 
-#### 1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유
 
+#### 1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유
+ - webview 버전 53 에서 인증서 버그
  - 여기 저기에서 문제 발생에 대한 공지 내용 
     - [다음 공지](https://channel.daum.net/content/232337?dmp_channel=notice)
     - [KG 이니시스 공지](http://sir.kr/co_notice/1205)

@@ -1,18 +1,21 @@
 ---
 layout: post
+cover: 'assets/images/cover4.jpg'
 title: 구글 드라이브를 이용해서 쉽게 이미지를 올리자
-category: github.io
-comments: true
-description: 올리기 귀찮은 이미지를 구글 드라이브이용해서 편하게
-tags:
-    - jekyll    
-    - google
-    - image
+date: 2017-03-29
+tags: 
+    - githubpage
+    - googledrive
+subclass: 'post tag-githubpage'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
-#### 맥에서 github page 이미지 쉽게 올리기
 
+#### 맥에서 github page 이미지 쉽게 올리기
+  - 깃허브 페이지를 이용중 가장 힘든건 스크린샷을 추가하는 방법이라 생각해서 찾아보니 구글드라이브를 이미지서버로 사용이 가능해서 적용해 보았습니다. 문제는 사파리에서 정상동작 안한다는 단점
 
 [참고 : https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/](https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/)
 #### 1. 구글 드라이브 설치

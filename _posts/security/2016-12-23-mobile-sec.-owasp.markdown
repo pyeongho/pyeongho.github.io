@@ -1,12 +1,16 @@
 ---
 layout: post
-title: andorid 취약점
-category: security
-comments: true
-description: OWASP top 10 항목을 이용한 취약점 확인 
-tags:
-    - OWASP 
-    - andorid
+cover: 'assets/images/cover7.jpg'
+title:  OWASP top 10 항목을 이용한 취약점 확인 
+date: 2016-12-23
+tags: 
+    - security
+    - OWASP
+    - 보안점검
+subclass: 'post tag-security'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 

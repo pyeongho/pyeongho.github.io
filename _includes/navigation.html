@@ -1,0 +1,22 @@
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home {% if page.current == 'home' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}">Home</a></li>
+        <li class="nav-about {% if page.current == 'about' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}about">About</a></li>
+        <li class="nav-android {% if page.url contains 'android' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/android">Android</a></li>
+        <li class="nav-java {% if page.url contains 'java' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/java">Java</a></li>
+        <li class="nav-book {% if page.url contains 'book' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/book">Book</a></li>
+  
+        <li class="nav-conference {% if page.url contains 'conference' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/conference">Conference</a></li>
+        <li class="nav-githubpage {% if page.url contains 'githubpage' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/githubpage">githubpage</a></li>
+        <li class="nav-ios {% if page.url contains 'iOS' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/iOS">iOS</a></li>
+        <li class="nav-python {% if page.url contains 'python' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/python">Python</a></li>
+        <li class="nav-security {% if page.url contains 'security' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>

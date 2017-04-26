@@ -1,14 +1,16 @@
 ---
 layout: post
-title: RxAndroid2 공부 중 1
-category: andorid
-comments: true
-description: RxAndroid2 를 이용해서 앱을 만들어 보자
-tags:
-    - android
-    - RxAndroid2     
+cover: 'assets/images/cover1.jpg'
+title: RxAndroid2 를 이용해서 앱을 만들어 보자
+date: 2017-01-22
+tags: 
+  - android
+  - rxandroid2
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
-
 
 
 #### 1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자

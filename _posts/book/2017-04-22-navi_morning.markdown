@@ -1,12 +1,16 @@
 ---
 layout: post
-title: 미라클 모닝
-category: book
-comments: true
-description: 당신의 하루를 바꾸는 기적
-tags:
+cover: 'assets/images/cover2.jpg'
+title: 미라클 모닝,당신의 하루를 바꾸는 기적
+date: 2017-04-22
+tags: 
+    - book
     - 미라클모닝
     - 문정나비
+subclass: 'post tag-book'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 

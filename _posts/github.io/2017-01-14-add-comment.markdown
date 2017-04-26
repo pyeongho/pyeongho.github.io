@@ -1,13 +1,16 @@
 ---
 layout: post
+cover: 'assets/images/cover4.jpg'
 title: jekyll 댓글 추가 하기
-category: github.io
-comments: true
-description: jekyll 에서 댓글 기능 추가 하기
-tags:
-    - jekyll    
-    - 댓글
+date: 2017-01-14
+tags: 
+    - githubpage
+    - jekyll
     - disqus
+subclass: 'post tag-githubpage'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 

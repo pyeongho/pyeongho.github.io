@@ -1,14 +1,17 @@
 ---
 layout: post
+cover: 'assets/images/cover6.jpg'
 title: 파이썬을 이용한 서버구축
-category: java
-comments: true
-description: heroku, c9
-tags:
+date: 2017-03-20
+tags: 
     - python
     - flask
     - heroku
     - c9
+subclass: 'post tag-python'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 ### 클라우드 서버 구축

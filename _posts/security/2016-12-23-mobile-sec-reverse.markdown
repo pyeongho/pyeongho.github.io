@@ -1,16 +1,17 @@
 ---
 layout: post
+cover: 'assets/images/cover7.jpg'
 title: APK 바이너리 분석 및 리패키징
-category: security
-comments: true
-description: APK 바이너리 분석 및 리패키징
-tags:
-    - OWASP 
-    - andorid    
+date: 2016-12-23
+tags: 
+    - security
+    - OWASP
     - 보안점검
+subclass: 'post tag-security'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
-
-
 
 ### 4. APK 바이너리 분석 및 리패키징
   

@@ -1,15 +1,17 @@
 ---
 layout: post
+cover: 'assets/images/cover7.jpg'
 title: 모바일앱 보안코딩
-category: security
-comments: true
-description:   보안 코딩
-tags:
-    - 취약점
-    - andorid
-    - 시큐어 코딩
+date: 2016-12-23
+tags: 
+    - security
+    - OWASP
+    - 시큐어코딩
+subclass: 'post tag-security'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
-
 
 
 ### andorid-java 시큐어 코딩 가이드

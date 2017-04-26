@@ -1,16 +1,16 @@
 ---
 layout: post
+cover: 'assets/images/cover6.jpg'
 title: python 에서 사용할 C 엑셀 모듈 만들기
-category: python
-comments: true
-description: python 엑셀 모듈 만들기
-tags:
-    - 엑셀
+date: 2016-12-20
+tags: 
     - python
-    - c module
     - xlsxwriter
+subclass: 'post tag-python'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
-
 
 
 ### python에서 사용 할 C 모듈 만들기

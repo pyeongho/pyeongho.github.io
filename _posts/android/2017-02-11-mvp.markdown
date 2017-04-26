@@ -1,14 +1,16 @@
 ---
 layout: post
-title: mvp를 공부하자 
-category: andorid
-comments: true
-description: 안드로이드 클린코드 1단계
-tags:
-    - mvp
-    - android
+cover: 'assets/images/cover1.jpg'
+title: mvp 패턴을 공부하자
+date: 2017-02-11
+tags: 
+  - android
+  - mvp
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
-
 
 
 ### 안드로이드에 mvp를 적극적으로 추가하기 위한 공부중

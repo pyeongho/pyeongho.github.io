@@ -1,12 +1,15 @@
 ---
 layout: post
+cover: 'assets/images/cover6.jpg'
 title: RxJava
-category: java
-comments: true
-description: rxjava, rxandroid
-tags:
+date: 2017-03-13
+tags: 
+    - java
     - rxjava
-    - rxandorid
+subclass: 'post tag-java'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 ### RxJava 이해하기

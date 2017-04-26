@@ -1,16 +1,22 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: AndroidAnnotation을 공부 하자
-category: andorid
-comments: true
-description: 안드로이드 
-tags:
+date: 2017-02-14
+tags: 
+    - android
     - AndroidAnnotation
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
 
+
 ### 안드로이드에서 AndroidAnnotation을 이용해서 앱을 개발해 보자
+ - 어노테이션 기능으로 좀금더 편하게 의존성을 주입해서 앱을 개발하는 방법 입니다.
  - [http://androidannotations.org/ 공식사이트](http://androidannotations.org/)
 
 #### 1. 환경 설정

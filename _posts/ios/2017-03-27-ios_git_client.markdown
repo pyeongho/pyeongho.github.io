@@ -1,17 +1,22 @@
 ---
 layout: post
-title: github.io  사진 업로드용 앱 개발 1회차
-category: iOS
-comments: true
-description: gitugb.io 지킬에 사진업로드 쉽게 하는 앱개발
-tags:
+cover: 'assets/images/cover5.jpg'
+title: gitugb.io 지킬에 사진업로드 쉽게 하는 앱개발
+date: 2017-03-27
+tags: 
     - iOS
     - 스위프트
     - carthage
+subclass: 'post tag-iOS'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
+
 ### iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.
- 
+  - 스마튼폰에서 찍은 사진을 블로그에 바로 올리고 싶은 생각으로 앱을 개발해 보기로 결정
+  
 #### 1. 공부할 자료 수집
   - 깃 라이브러리 
     - [https://github.com/libgit2/objective-git#carthage](https://github.com/libgit2/objective-git#carthage)

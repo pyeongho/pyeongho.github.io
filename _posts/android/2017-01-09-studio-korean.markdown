@@ -1,17 +1,22 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: 안드로이드 스튜디오 한글 깨짐
-category: andorid
-comments: true
-description: 안드로이드 스튜디오 최신버전에서 레이아웃 미리보기에서 한글깨짐 현상 수정
-tags:
-    - android-studio    
-    - 한글깨짐    
+date: 2017-01-09
+tags: 
+  - android
+  - 한글깨짐 
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
 
+
 #### 1. 안드로이드 스튜디오 2.X 버전에서 한글깨짐 수정
+ - 안드로이드 스튜디오 최신버전에서 레이아웃 미리보기에서 한글깨짐 현상 수정
  - 안드로이드 스튜디오가 설치된 경로 내의 다음 파일을 확인합니다. (OS X의 경우 안드로이드 스튜디오 실행파일을 오른쪽 선택한 후 ‘Show Package contents’로 하위 폴더 탐색 가능)
  - 아래가 경로 입니다.
  

@@ -1,12 +1,16 @@
 ---
 layout: post
+cover: 'assets/images/cover7.jpg'
 title: andorid 취약점
-category: security
-comments: true
-description: 금융감독원의 스마트폰 보안 안전대책 이행실채 점검 체크리스트
-tags:
-    - 금감원 
-    - andorid
+date: 2016-12-23
+tags: 
+    - security
+    - 금감원
+    - 시큐어코딩
+subclass: 'post tag-security'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 

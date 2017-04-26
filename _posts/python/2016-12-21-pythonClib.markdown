@@ -1,13 +1,18 @@
 ---
 layout: post
-title: python 모듈 만들기
-category: python
-comments: true
-description: python C 모듈 원형
-tags:
-    - c
-    - python   
+cover: 'assets/images/cover6.jpg'
+title: python 모듈 만들기,python C 모듈 원형
+date: 2016-12-21
+tags: 
+    - python
+    - 라이브러리만들기
+subclass: 'post tag-python'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
+
+
 
 ### python 사용 할 C 라이브러리 만들기
 

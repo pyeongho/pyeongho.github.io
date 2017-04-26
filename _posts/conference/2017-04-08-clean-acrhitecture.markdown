@@ -1,16 +1,24 @@
 ---
 layout: post
-title:  드로이드나이츠 클린아키텍처 세션
-category: conference
-comments: true
-description: 드로이드 나이츠 컨퍼런스중 가장 기억에 남는 세션 입니다.
-tags:
+cover: 'assets/images/cover3.jpg'
+title: 드로이드나이츠 클린아키텍처 세션
+date: 2017-04-08
+tags: 
+    - conference
     - 클린아키텍처
     - 드로이드나이츠
+subclass: 'post tag-conference'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
+
 #### 드로이드나이츠 클린아키텍처
+ - 드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.
+ - 그중 기억에 남는 클린 아키텍처를 정리 하였습니다.
+
  - [참고 : https://speakerdeck.com/sunghyunzz/clean-architecture-in-android](https://speakerdeck.com/sunghyunzz/clean-architecture-in-android/)
 
  - [참고 : https://realm.io/kr/news/clean-architecture-in-android/](https://realm.io/kr/news/clean-architecture-in-android//)

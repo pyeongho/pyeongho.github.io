@@ -1,13 +1,18 @@
 ---
 layout: post
-title:  클린아키텍처 듣기 전부터 고민하던 내용들
-category: conference
-comments: true
-description: 드로이드 나이츠 컨퍼런스중 가장 기억에 남는 세션 입니다.
-tags:
+cover: 'assets/images/cover3.jpg'
+title: 클린아키텍처 듣기 전부터 고민하던 내용들
+date: 2017-04-08
+tags: 
+    - conference
     - 클린아키텍처
     - 드로이드나이츠
+subclass: 'post tag-conference'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
+
 
 
 #### 적용에 앞서 많은 고민중

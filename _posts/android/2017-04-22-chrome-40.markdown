@@ -1,15 +1,21 @@
 ---
 layout: post
-title: 크롬 40+ 의 앱 실행 문제
-category: andorid
-comments: true
-description: 크롬버전 40이상에서 제한된 기능
-tags:
-    - chrome 40
-    - deeplink
+cover: 'assets/images/cover1.jpg'
+title: 크롬 40+ 버전에서 의 앱 실행 문제
+date: 2017-04-22
+tags: 
+  - android
+  - chrome40
+  - 탐색할수없음
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
+
 ### 크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.
+  - 탐색할수없음
  
 
 #### 1. javascript 의 body onload 에 마켓 이동하는 코드를 추가

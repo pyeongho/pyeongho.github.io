@@ -1,12 +1,15 @@
 ---
 layout: post
+cover: 'assets/images/cover6.jpg'
 title: java 디자인패턴 4일차
-category: java
-comments: true
-description: GoF java 디자인패턴
-tags:
-    - gof java
-    - 디자인패턴
+date: 2017-03-18
+tags: 
+    - java
+    - gof
+subclass: 'post tag-java'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 ### GoF 의 자바 디자인 패턴, 인프런 강의

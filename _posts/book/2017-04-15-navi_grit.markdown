@@ -1,14 +1,17 @@
 ---
 layout: post
-title: GRIT
-category: book
-comments: true
-description: GRIT IQ, 재능 환경을 뛰어 넘는 열정적 끈기의 힘 그릿
-tags:
+cover: 'assets/images/cover2.jpg'
+title: GRIT IQ, 재능 환경을 뛰어 넘는 열정적 끈기의 힘 그릿
+date: 2017-04-15
+tags: 
+    - book
     - grit
     - 문정나비
+subclass: 'post tag-book'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
-
 
 #### 본것 깨달은것 적용할것
 

@@ -1,16 +1,21 @@
 ---
 layout: post
-title: 버터 나이프 없이 데이터 바인딩 사용하기
-category: andorid
-comments: true
-description: findViewById 없이 사용하기
-tags:
-    - no more findViewById
+cover: 'assets/images/cover1.jpg'
+title: 버터나이프 없이 조금더 편하게 XML 의 객체를 사용해 보자
+date: 2017-02-09
+tags: 
+  - android
+  - 데이터바인딩
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
+#### findViewById 없이 사용하기
+  - 앱을 만들면서 항상해야 하고 코드가 안 이쁘게 보이는걸 데이터 바인딩으로 해결해 보자
 
-
-### 참고 사이트 
+#### 참고 사이트 
  - [안드로이드 개발자 사이트 링크](https://developer.android.com/topic/libraries/data-binding/index.html#studio_support)
  - [GsBob 블로그](http://gogorchg.tistory.com/entry/Android-DataBinding-findViewById-이제-안녕)
 

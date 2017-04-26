@@ -1,16 +1,20 @@
 ---
 layout: post
+cover: 'assets/images/cover6.jpg'
 title: java 디자인패턴 1일차
-category: java
-comments: true
-description: GoF java 전략 패턴
-tags:
-    - gof java
-    - 디자인패턴
+date: 2017-02-25
+tags: 
+    - java
+    - gof
+subclass: 'post tag-java'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
+
 ### GoF 의 자바 디자인 패턴, 인프런 강의
- 
+  
 ####  코드 링크
  - [https://github.com/parkgaram/java-designpattern](https://github.com/parkgaram/java-designpattern)
 

@@ -1,18 +1,18 @@
 ---
 layout: post
+cover: 'assets/images/cover1.jpg'
 title: retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기
-category: andorid
-comments: true
-description: retrofit2,okhttp3,rxandroid2,mvp 네이버 기계번역 사용하기
-tags:
-    - retrofit2
-    - rxandroid2
-    - mvp
+date: 2017-02-10
+tags: 
+  - android
+  - mvp 
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
-
-
-### retrofit2 + rxandroid2 + mvp 를 이용한 통신
+#### retrofit2 + rxandroid2 + mvp 를 이용한 통신
 
 #### 참고로 mvp 처럼만 보이고 아닐수도 있어요.
 

@@ -1,16 +1,20 @@
 ---
 layout: post
-title: butterknife
-category: andorid
-comments: true
-description: butterknife 라이브러리 사용
+cover: 'assets/images/cover1.jpg'
+title: butterknife 라이브러리 사용
+date: 2016-12-29
 tags:
-    - butterknife    
+    - android
+    - butterknife
+subclass: 'post tag-android'
+categories: 'pyeongho'
+navigation: True
+logo: 'assets/images/ghost.png'    
 ---
 
 
 
-### butterknife 를 이용
+### butterknife 를 사용해 보자
 [butterknife github](https://github.com/JakeWharton/butterknife)
 
 #### 1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함
