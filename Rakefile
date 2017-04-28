@@ -9,7 +9,6 @@ require 'rake'
 require 'date'
 require 'yaml'
 
-task :default => :spec
 
 CONFIG = YAML.load(File.read('_config.yml'))
 USERNAME = CONFIG["username"]
