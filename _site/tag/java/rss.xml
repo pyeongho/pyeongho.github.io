@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>java 디자인패턴 4일차</title>
+	  <link>//gof-4</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-03-18T00:00:00+09:00</pubDate>
+	  <guid>//gof-4</guid>
+	  <description><![CDATA[
+	     <h3 id="gof-의-자바-디자인-패턴-인프런-강의">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+
+<h4 id="코드-링크">코드 링크</h4>
+<ul>
+  <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
+</ul>
+
+<h4 id="11-데코레이션-패턴">11. 데코레이션 패턴</h4>
+<ul>
+  <li>학습목표
+    <ul>
+      <li>동적으로 책임 추가가 필요 할때 데코레이션 패턴 추가</li>
+    </ul>
+  </li>
+  <li>키워드
+    <ul>
+      <li>책임(해야 하는일)</li>
+    </ul>
+  </li>
+  <li>예제 : 커피 제조 방법
+    <ul>
+      <li>에스프레소 : 커피의 기본</li>
+      <li>아메리카노 : 에스프레소 + 물</li>
+      <li>카페라떼 : 에스프레소 + 우유</li>
+      <li>헤이즐넛 : 아메리카노 + 헤이즐넛 시럽</li>
+      <li>카페모카 : 카페라떼 + 초코릿</li>
+      <li>캬라멜 마끼아또 : 카페라떼 + 캬라멜 시럽</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="12-방문자-패턴">12. 방문자 패턴</h4>
+<ul>
+  <li>학습목표
+    <ul>
+      <li>객체에서 처리를 분리해서 사용</li>
+    </ul>
+  </li>
+  <li>수정 불가능한 클래스를 방문자 패턴을 이용해서 분리해서 처리가 가능함</li>
+</ul>
+
+<h4 id="13-책임사슬-처리">13. 책임사슬 처리</h4>
+<ul>
+  <li>학습목표
+    <ul>
+      <li>다양한 처리방식을 유연하게 처리 할 수 있다.</li>
+      <li>예제 : 사칙 연산
+        <ul>
+          <li>테스트를 위한 슈도 코드를 넣으면서 코딩을 하자</li>
+          <li>테스트 주도 개발을 목표로</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">PlusCal</span> <span class="n">plus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlusCal</span><span class="o">();</span>
+    <span class="n">SubCal</span> <span class="n">sub</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubCal</span><span class="o">();</span>
+
+    <span class="c1">// 위 내용은 추상화 한다.</span>
+    <span class="n">Cal</span> <span class="n">plus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlusCal</span><span class="o">();</span>
+    <span class="n">Cal</span> <span class="n">sub</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubCal</span><span class="o">();</span>
+    <span class="n">plus</span><span class="o">.</span><span class="na">setNextCal</span><span class="o">(</span><span class="n">sub</span><span class="o">);</span>
+        
+    <span class="n">Request</span> <span class="n">request1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="s">"+"</span><span class="o">);</span>
+    <span class="n">Request</span> <span class="n">request2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="s">"-"</span><span class="o">);</span>
+        
+    <span class="n">plus</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">request1</span><span class="o">);</span>
+    <span class="n">plus</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">request2</span><span class="o">);</span>
+
+</code></pre>
+    </div>
+    <ul>
+      <li>처리를 다음 클래스로 넘겨서 처리 시킨다.</li>
+    </ul>
+  </li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>RxJava</title>
+	  <link>//rx</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-03-13T00:00:00+09:00</pubDate>
+	  <guid>//rx</guid>
+	  <description><![CDATA[
+	     <h3 id="rxjava-이해하기">RxJava 이해하기</h3>
+
+<h4 id="공부-링크">공부 링크</h4>
+
+<ul>
+  <li><a href="http://post.naver.com/viewer/postView.nhn?volumeNo=6721006&amp;memberNo=34635212">http://post.naver.com/viewer/postView.nhn?volumeNo=6721006&amp;memberNo=34635212</a></li>
+</ul>
+
+<h4 id="reactive-programming">Reactive Programming</h4>
+<ul>
+  <li>“컴퓨팅으로써 반응형 프로그래밍은 데이터의 흐름과 변화에 대한 전달을 기반으로 하는 프로그래밍 패러다임이다.”</li>
+  <li>데이터 처리가 끝날 때까지 쓰레드를 대기시키거나 코백을 받아서 처리하기 때문에 불필요한 컴퓨팅 리소스 사용이 발생하 됩니다. 반면 Messaging 기반의 Reactive Programming 에서는 필요한 경우에만 쓰레드를 생성 후 메시지 형태로 전달한다.</li>
+</ul>
+
+<h4 id="rxjava-의-기초">RxJava 의 기초</h4>
+<ul>
+  <li>RxJava 는 데이트를 가공/변형/처리를 하는 라이브러리</li>
+</ul>
+
+<h4 id="rxjava">RxJava</h4>
+<ul>
+  <li>0~10까지의 Int 형 배열이 있습니다. Int 형 배열을 a 부터 j 까지 변경하여 화면에 출력하도록 하겠습니다.</li>
+  <li>rxjava 는 람다가…</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="c1">// old</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">datas</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">data</span> <span class="o">:</span> <span class="n">datas</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">//rxjava 특이점 없음</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">});</span>
+
+    <span class="c1">//rxjava 의 map 를 이용함</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">));</span>
+
+    <span class="c1">// 요구조건 추가 </span>
+    <span class="c1">//추가 1 : 짝수에 해당하는 숫자는 출력하지 말 것.</span>
+
+    <span class="c1">//old</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">data</span> <span class="o">:</span> <span class="n">datas</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">((</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>
+        <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//rxjava filter 을 이용함</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">));</span>
+
+    <span class="c1">//또 추가조건</span>
+    <span class="c1">//추가 2 : 각 문자는 10번씩 반복되도록 한꺼번에 출력되도록 할 것.</span>
+
+    <span class="c1">//old</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">chars</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">data</span> <span class="o">:</span> <span class="n">datas</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">((</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>    
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">idx</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">chars</span><span class="o">);</span>
+     
+    <span class="c1">//rxjava flatmap </span>
+    <span class="c1">//flatmap 은 1개의 데이터에 대해 n 개의 데이터로 변형할 수 있는 처리 기능</span>
+    <span class="c1">//collect 는 주입된 데이터를 특정 Collection 에 담을 수 있도록 하는 처리 기능</span>
+    <span class="c1">//Observable.range 는 (n, m) 에 대해 n 부터 n + m -1 만큼 int 형 데이터를 호출해주는 데이터로</span>
+    <span class="c1">//Observable.range(0, 10).map(index -&gt; value)) 는 value 라는 값을 10번 반복</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Observable</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">collect</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;(),</span> <span class="o">(</span><span class="n">chars</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">values</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">values</span><span class="o">));</span>
+
+</code></pre>
+</div>
+
+<h4 id="subject">Subject</h4>
+<ul>
+  <li>지금까지 Observable 정해진 데이터만 사용</li>
+  <li>하지만 데이터가 언제 어떻게 시작될지 모르는 경우가 있다.</li>
+  <li>일반적인 예시로 사용자가 화면을 터치하는 것은 언제 얼마나 할지 알 수 없습니다.</li>
+  <li>이런 경우 Subject를 사용합니다.</li>
+  <li>Observable 는 내부에서</li>
+  <li>Subject 는 외부에서
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code>   <span class="n">PublishSubject</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">subject</span> <span class="o">=</span> <span class="n">PublishSubject</span><span class="o">.&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="n">create</span><span class="o">();</span>
+   <span class="n">subject</span>
+   <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Observable</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">))</span>
+   <span class="o">.</span><span class="na">collect</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;(),</span> <span class="o">(</span><span class="n">chars</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+   <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">values</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">values</span><span class="o">));</span>
+
+   <span class="c1">//사용</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h4 id="비동기-처리하기">비동기 처리하기</h4>
+<ul>
+  <li>rxjava 는 비동기처리에 굉장히 유연하고 쉽게 사용 가능</li>
+  <li>주로 사용하는 비동기 쓰레드 선언
+    <ul>
+      <li>Schedulers.io()
+        <ul>
+          <li>Network IO 나 File IO 등을 처리하기 위한 쓰레드</li>
+        </ul>
+      </li>
+      <li>Schedulers.computation()
+        <ul>
+          <li>단순 연산로직등에 사용되며 Event Looper 에 의해 동작하는 쓰레드</li>
+        </ul>
+      </li>
+      <li>AndroidSchedulers.mainThread()</li>
+      <li>Android 에서 UI Thread 에서 처리하기 위한 쓰레드</li>
+    </ul>
+  </li>
+  <li>데이터 주입과 데이터 처리
+    <ul>
+      <li>데이터 주입 : subscribeOn(쓰레드)
+        <ul>
+          <li>데이터를 주입하는 시점에 대한 쓰레드 선언이며 모든 stream 내에서 최종적으로 선언한
+쓰레드가 할당됩니다.</li>
+        </ul>
+      </li>
+      <li>데이터 처리 : observeOn(쓰레드)
+        <ul>
+          <li>쓰레드를 선언한 다음부터 새로운 쓰레드가 선언되기 전까지 데이터 처리에 동작할 쓰레드
+를 할당합니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>예제를 보면서 기존에는 아래와 같은 코드가 뭔지 몰랐지만 저렇게 된다는걸 이해됨 기능별로 쓰레드를 나누어서 동작시키는 코드로 아래처럼 코드로 이벤트 스트림을 만드는걸로 보임, 데이터주입은 아래처럼 한개만 있으면 되고, 데이터처리는 필요할때마다 변경해서 사용</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Observable</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">emitter</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onComplete</span><span class="o">();</span>
+    <span class="o">})</span>
+    <span class="o">.</span><span class="na">subscribeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">computation</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">io</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">computation</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Observable</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">collect</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;(),</span> <span class="o">(</span><span class="n">chars</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">AndroidSchedulers</span><span class="o">.</span><span class="na">mainThread</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">values</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">values</span><span class="o">));</span>
+</code></pre>
+</div>
+<ul>
+  <li>위 코드는 아래와 같은 쓰레드로 동작
+    <ul>
+      <li>Observable.create() - Schedulers.computation()</li>
+      <li>filter() - Schedulers.io()</li>
+      <li>map() - Schedulers.io()</li>
+      <li>flatMap() - Schedulers.computation()</li>
+      <li>collect() - Schedulers.computation()</li>
+      <li>subscribe() - AndroidSchedulers.mainThread()</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="rx-기능정리">Rx 기능정리</h4>
+<ul>
+  <li><a href="http://reactivex.io/documentation/operators.html#alphabetical">Rx 문서</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>java 디자인패턴 3일차</title>
+	  <link>//gof-3</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-03-01T00:00:00+09:00</pubDate>
+	  <guid>//gof-3</guid>
+	  <description><![CDATA[
+	     <h3 id="gof-의-자바-디자인-패턴-인프런-강의">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+
+<h4 id="코드-링크">코드 링크</h4>
+<ul>
+  <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
+</ul>
+
+<h4 id="72-추상-팩토리-패턴">7.2 추상 팩토리 패턴</h4>
+<ul>
+  <li>GUI 팩토리가 좋은 예</li>
+  <li>각각의 운영체제에 맞게 동작 시키기</li>
+  <li>팩토리인스턴스를 이용해서 원하는 객체를 가지고 오는 흐름</li>
+  <li>맥,윈도우,리눅스의 환경에서 해당 팩토리들이 공개 되면 좋지 않다.
+    <ul>
+      <li>맥에서 개발중인데 리눅스 팩토리 사용하고 하는 현상 발생</li>
+    </ul>
+  </li>
+  <li>각각의 기능을 팩토리인스턴스로 이동시킨다.</li>
+  <li>라이브러리 형태로 제공 이라고 생각 해야 한다.</li>
+</ul>
+
+<h4 id="8-브릿지-패턴">8. 브릿지 패턴</h4>
+<ul>
+  <li>학습목표
+    <ul>
+      <li>브릿지 패턴이란?</li>
+      <li>어댑터 턴과 브릿지 패턴을 연결하여 이해</li>
+    </ul>
+  </li>
+  <li>키워드
+    <ul>
+      <li>기능과 구현을 분리</li>
+    </ul>
+  </li>
+  <li>구현에 따라서 계속 추가 하지 말자</li>
+  <li>인터페이스를 만들어서 기능을 위임한다.</li>
+  <li>구현부를 생성자에 넣어서 기능을 추가를 쉽게 가능함</li>
+</ul>
+
+<h4 id="10-컴포짓-패컨">10. 컴포짓 패컨</h4>
+<ul>
+  <li>학습목표
+    <ul>
+      <li>컴포짓 패턴을 통해서 트리 구조 구현</li>
+    </ul>
+  </li>
+  <li>키워드
+    <ul>
+      <li>컨테이너/내용물/동일시</li>
+    </ul>
+  </li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>java 디자인패턴 2일차</title>
+	  <link>//gof-2</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-02-26T00:00:00+09:00</pubDate>
+	  <guid>//gof-2</guid>
+	  <description><![CDATA[
+	     <h3 id="gof-의-자바-디자인-패턴-인프런-강의">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+
+<h4 id="코드-링크">코드 링크</h4>
+<ul>
+  <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
+</ul>
+
+<h4 id="5-프로토타입-패턴">5. 프로토타입 패턴</h4>
+<ul>
+  <li>복잡한 인스턴스를 복사 할 수 있다</li>
+  <li>복사할 원형</li>
+  <li>생산 비용이 높은 인스턴스를 복사 한다.
+    <ul>
+      <li>종류가 너무 많아서 클래스로 정리되지 않는다.</li>
+      <li>클래스로부터 인스턴스 생성이 어렵다.
+      1. 요구사항
+        <ul>
+          <li>어떤 모양을 그릴 수 있도록 하고 복사 붙혀넣기 기능 구현
+    2. 구현</li>
+        </ul>
+      </li>
+      <li>자바에는 이미 clone 가 가능함</li>
+      <li>implements Cloneable 를 사용하면 사용 할 수 있다.
+     3. 요구사항</li>
+      <li>복사 후 붙혀 넣기를 하면 두 도형이 겹치는데 안겹치도록 살짝 옆으로
+     4. 알아두면 좋은 복사</li>
+      <li>깊은 복사
+        <ul>
+          <li>clone 를 이용하여 값을 복사해서 생각 하는 2개의 인스턴스</li>
+          <li>문제점 기본 변수는 가능 하지만 사용자 클래스는 깊은 복사가 안 일어남</li>
+        </ul>
+      </li>
+      <li>얕은 복사
+        <ul>
+          <li>주소값을 복사한다. = 을 사용해서 대입 할때</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="61-빌더-패턴책">6.1 빌더 패턴(책)</h4>
+<ul>
+  <li>복잡한 단계가 필요한 인스턴스 생성을 패턴을 통해 구현
+    <ol>
+      <li>생각의 흐름</li>
+    </ol>
+    <ul>
+      <li>컴퓨터 컴1 = 뉴 컴퓨터(사양1, 사양2 ,…);</li>
+      <li>위 처럼 가능 하지만 너무 복잡하고 길어짐</li>
+      <li>그래서 다른 클래스에서 만들온다.
+       2. 빌더 패턴 생각의 흐름</li>
+      <li>공장을 만든다.</li>
+      <li>공장에서 설계도를 받는다.
+        <ul>
+          <li>추상으로 만들어서 원하는 설계도만 추가하면 간단하게 만들 수 있다.</li>
+        </ul>
+      </li>
+      <li>공장에서 설계도로 만든다.</li>
+      <li>공장에서 결과를 반환 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="62-빌더-패턴현장">6.2 빌더 패턴(현장)</h4>
+<ul>
+  <li>많은 변수를 가진 객체의 생성을 가독성 높도록 코딩</li>
+  <li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>Computer com = ComputerBuilder
+  .start()
+  .setCpu("i7")
+  .setRam("8g")
+  .setStrorage("256g ssd")
+  .buid();
+</code></pre>
+    </div>
+    <h4 id="71-추상-팩토리-패턴">7.1 추상 팩토리 패턴</h4>
+  </li>
+  <li>관련 있는 객체의 생성을 가상화 한다.</li>
+  <li>바이크팩토리 패토리 = 뉴 삼천리바이크팩토리
+팩토리.바디생성
+팩토리.휠생성</li>
+  <li>위 흐름 처럼 원하는공장을 만들고 원하는 결과를 만든다.</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>java 디자인패턴 1일차</title>
+	  <link>//gof-1</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-02-25T00:00:00+09:00</pubDate>
+	  <guid>//gof-1</guid>
+	  <description><![CDATA[
+	     <h3 id="gof-의-자바-디자인-패턴-인프런-강의">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+
+<h4 id="코드-링크">코드 링크</h4>
+<ul>
+  <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
+</ul>
+
+<h4 id="1-전략-패턴">1. 전략 패턴</h4>
+<ul>
+  <li>인터페이스
+    <ul>
+      <li>기능에 대한 선언과 구현 분리</li>
+      <li>기능을 사용하는 통로</li>
+    </ul>
+  </li>
+  <li>델리케이트
+    <ul>
+      <li>위임하다. 다른객체의 기능을 사용한다.</li>
+    </ul>
+  </li>
+  <li>전략 패턴
+    <ul>
+      <li>여러 알고리즘을 하나의 추상적인 접근점(인터페이스)을 만들어 접근점에서 서로 교환 가능하도록 하는 패턴</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>요구사항
+    <ul>
+      <li>신작 게임에서 케릭터와 무기를 구현</li>
+      <li>무기는 두가지 종류</li>
+      <li>칼 , 검</li>
+      <li>weapon 이라는 인터페이스를 만들고</li>
+      <li>칼 이라는 객체를 웨폰으로 구현 함</li>
+      <li>케릭터는 웨폰이라는 교환 가능한 무기를 가지고 공격 한다.</li>
+      <li>무기는 교환 가능 하다.
+         - 유지보수 
+         - 도끼 추가</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="2-어댑터-패턴">2. 어댑터 패턴</h4>
+<ul>
+  <li>연관성 없는 두 객체를 묶어 사용하기</li>
+  <li>알고리즘을 요구상항에 맞춰 사용 가능함</li>
+  <li>220볼트 코드에 110볼트 코드를 추가 하기 위해 돼지코를 사용하는 내용!@</li>
+  <li>기존 알고리즘은 사용, 알고리즘 추가나 알고리즘 인자 변경등이 가능함</li>
+</ul>
+
+<ol>
+  <li>요구사항
+    <ul>
+      <li>두 수에 대한 연산을 수행하는 객체 만들기</li>
+      <li>수의 두 배의 수를 반환 =&gt; Double twiceOf(Float num);</li>
+      <li>수의 반의수를 반환  =&gt;  Double halfOf(Float num);</li>
+      <li>구현 객체 이름은 Adapter</li>
+      <li>Math 클래스에서 두 배와 절반을 구하는 함수는 이미 구현 됨(double twoTime(double num))</li>
+      <li>어댑터에 추가 기능을 넣을수 있다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="3-템플릿-메소드-패턴">3. 템플릿 메소드 패턴</h4>
+<ul>
+  <li>일정한 프로세스를 가진 요구사항을 템플릿 메소드 패턴을 이용하여 구한 한다.</li>
+  <li>모양자를 템플릿이라고 생각, 다른색 펜으로 그리면 달라짐</li>
+  <li>알고리즘의 구조를 메소드에 정의, 하위 클래스에서 알고리즘 구조의 변경없이 알고리즘을 재정의 하는 패턴
+    <ul>
+      <li>구현하려는 알고리즘이 일정한 프로세스가 있다</li>
+      <li>구현하려는 알고리즘은 변경 가능하다.</li>
+    </ul>
+  </li>
+  <li>알고리즘은 여러단계</li>
+  <li>나눠진 알고리즘을 메소드로 선언</li>
+  <li>알고리즘을 수행할 템플릿 메소드를 만든다.</li>
+  <li>하위클래스에서 구현 한다.</li>
+</ul>
+
+<ol>
+  <li>요구사항
+    <ul>
+      <li>접속을 구현해 주세요 -&gt; requestConnection
+        <ul>
+          <li>보안 과정 -&gt; doSecurity</li>
+          <li>인증 과정 -&gt; authentication</li>
+          <li>권한 과정 -&gt; authorization</li>
+          <li>접속 과정 -&gt; connection</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>내용
+    <ul>
+      <li>순서
+        <ul>
+          <li>여러단계로 나누기 -&gt; 메소드 선언 -&gt; 템플릿 메소드 -&gt; 하위 클래스에서 구현</li>
+        </ul>
+      </li>
+      <li>추상 클래스 생성(접두사를 활용하자)</li>
+      <li>외부에서 재정의 해야 하고 사용금지 시킬때 protect(패키지나눠서 잘)</li>
+    </ul>
+  </li>
+  <li>추가 개발
+    <ul>
+      <li>하위 클래스에서 즉 구현부에서 수정</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="4-팩토리-매소드-패턴">4. 팩토리 매소드 패턴</h4>
+<ul>
+  <li>팩토리 메소드 패턴에서 템플릿 메소드 패턴의 사용됨을 안다.</li>
+  <li>팩토리 메소드 패턴에서의 구조와 구현의 분리를 이해하고 구조와 구현의 분리 장점을 안다.
+    <ol>
+      <li>요구사항</li>
+    </ol>
+    <ul>
+      <li>게임 아이템과 아이템을 생성을 구현해주세요.</li>
+      <li>아이템을 생성하기 전에 데이터 베이스에서 아이템 정보를 요구사항</li>
+      <li>아이템 생성후 데이터 베이스에 정보를 남김</li>
+      <li>아이템 생성 주체는 ItemCreator로 이름 짓습니다.</li>
+      <li>아이템은 item 이라는 인터페이스로 다룰수 있음</li>
+      <li>use 함수를 기본 함수로 갖고 있습니다.</li>
+      <li>아이템 종류는 물약1, 물약2 가 있습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="4-싱글톤-패턴">4. 싱글톤 패턴</h4>
+<ul>
+  <li>객체 : 속성과 기능을 갖춘 것</li>
+  <li>클래스 : 속성과 기능을 정의한 것</li>
+  <li>인스턴스 : 속성과 기능ㅇ을 가진 것 중 실제 하는것</li>
+  <li>자동차 =&gt; 객체</li>
+  <li>자동차 설계도 =&gt; 클래스</li>
+  <li>실제 자동차 =&gt; 인스턴스</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

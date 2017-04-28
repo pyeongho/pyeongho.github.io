@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>클린아키텍처 듣기 전부터 고민하던 내용들</title>
+    <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="PyeongHo Factory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PyeongHo Factory" />
+    <meta property="og:description" content="즐거운 공장" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PyeongHo Factory" />
+    <meta name="twitter:description" content="즐거운 공장" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Finding The Way Home",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "즐거운 공장"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="PyeongHo Factory" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
+        <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
+  
+        <li class="nav-conference " role="presentation"><a href="/tag/conference">Conference</a></li>
+        <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
+        <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
+        <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
+        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/cover3.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-conference">
+
+        <header class="post-header">
+            <h1 class="post-title">클린아키텍처 듣기 전부터 고민하던 내용들</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
+            <time class="post-date" datetime="2017-04-08">08 Apr 2017</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/conference'>Conference</a>,
+                       
+                
+                    
+                       <a href='/tag/클린아키텍처'>클린아키텍처</a>,
+                       
+                
+                    
+                       <a href='/tag/드로이드나이츠'>드로이드나이츠</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <h4 id="적용에-앞서-많은-고민중">적용에 앞서 많은 고민중</h4>
+<ul>
+  <li>고민은 좋은거.</li>
+</ul>
+
+<h4 id="1-mvp등의-각종-패턴은-정말-만능일까-의문점들">1. MVP등의 각종 패턴은 정말 만능일까? 의문점들</h4>
+<ul>
+  <li>장점은 매우 많습니다. 개발자가 많고 교육 시간이 많으면 하는게 좋습니다. 테스트하기에 좋다.</li>
+  <li>의문점들
+    <ul>
+      <li>요즘 유행하는 MVP 패턴을 적용해 보려고 공부중 이지만 유지보수가 정말 편해 질까?</li>
+      <li>MVP를 정말 열심히 해서 잘 적용하면 다른 사람들이 잘 알아 볼 수 있을까?</li>
+      <li>만약 회사에 신입이 오면 코드가 잘 보고 비슷한 패턴으로 추가를 해줄까?</li>
+      <li>정말 유지 보수가 쉬울까?</li>
+    </ul>
+  </li>
+  <li>패턴을 적용하면 우선 많은 파일들이 생김
+    <ul>
+      <li>패키지 관리를 어떻게 해야 할까? ‘M’ 끼리 ‘V’ 끼리 ‘P’ 끼리</li>
+      <li>액티비티는 뷰에 넣어야 하나?</li>
+    </ul>
+  </li>
+  <li>패턴을 적용하면 거의 대부분이 DI라이브러를 추가하기 시작 함(dagger 등)
+    <ul>
+      <li>컴파일단계에서 추가되어서 기본 구조를 모르면 약간 많이 어색함</li>
+      <li>스프링을 공부 했던 사람은 매우 편하다고 함</li>
+      <li>C 를 기반으로 하는 저 같은 사람에게는 너무 어색함</li>
+    </ul>
+  </li>
+  <li>지금 만드는 코드들을 보면 액티비티에 다 넣는다. 앱을 만들면서 아래 내용 말고는 없는거 같다. 앱 자체에 알고리즘이라고 할 만한 내용이 없다. 거의 모든일이 서버 의존적이다.
+    <ul>
+      <li>뷰 초기화(현재는 구글의 데이터 바인딩을 사용해서 안함)</li>
+      <li>뷰 이벤트 등록</li>
+      <li>http 리스너 등록</li>
+    </ul>
+  </li>
+  <li>
+    <p>서버개발자가 있어서 그럴수도 있지만 사내에 막강한 서버개발자가 있고 기본 구성이 서버1명 +앱1명 이라고 가정하고 앱을 만드는 경우를 가정하자. (매우 개인적인 생각들)</p>
+
+    <ul>
+      <li>회원 가입 시나리오 및 추가내용
+        <ul>
+          <li>앱 :  아이디 비밀번호를 서버에 전송</li>
+          <li>서버 : 아이디 비밀번호 저장, 토큰 발급</li>
+          <li>앱 : 토큰으로 API 접근</li>
+          <li>간단하게 회원 가입가능하게 만들었다.</li>
+          <li>사업팀에서 요청 사항이 생겼다.
+            <ul>
+              <li>카카오톡 회원 가입을 추가해 주세요.</li>
+              <li>소셜로그인 기능도 결국 소셜의 아이디값을 콜백으로 받아서 이를 회원 가입 시나리오에 추가함, 비밀번호가 없음</li>
+            </ul>
+          </li>
+          <li>매우 간단한 내용이고 다른일들이 발생해도 추가 하기 쉬운 일들이라고 생각한다.</li>
+          <li>xml 에 아이디 비밀번호 입력란이 있고 회원 가입 버튼만 있으면 된다.</li>
+          <li>카카오톡 버튼이 추가가 필요하면 카카오 sdk 호출이 하여 아이디를 받을수 있는 리스너를 등록한다.
+            <ul>
+              <li>성공 리스너에서 자사 회원 가입 API를 호출한다.</li>
+            </ul>
+          </li>
+          <li>회원 가입을 시나리오를 가정해 보았고 추가되는 사항도 만들어 보았다.</li>
+          <li>액티비티에 기본적인 클래스 분리와 함수 분리만 하였을때에도 변경 되는 로직에 큰무리 없이 쉽게 추가가 가능하다.</li>
+          <li>MVP 패턴을 적용하려면 정확히 지킬건 지켜주고 싶다.
+            <ul>
+              <li>기존 포스트 내용들 처럼 액티비티에 뷰 와 프리젠터 파일 만들어 주고 액티비티와 연결해주고 각종 이벤트들을 연결해 준다.</li>
+              <li>카카오 버튼이 하나 추가되어도 뷰와 프리젠터에 추가해서(어렵지는 않다.)</li>
+              <li>카카오 SDK api를 이용해서 리스너 등록하고 결과를 처리하고</li>
+              <li>프리젠터 임플리먼트에서 결과를 받아서 뷰 함수를 호출하여 화면 업데이트 하고 …</li>
+            </ul>
+          </li>
+          <li>
+            <p>위와 같은 상황이 거의 대부분 구성이었다. 앱에서 비지니스로직,모델 이라고 할 내용이 거의 없다.</p>
+          </li>
+          <li>통신 요청하고 결과를 화면에 보여준다. 이게 거의 대부분의 앱의 구성이었다.</li>
+          <li>이렇다 보니 왜 mvp 를 써서 코드가 복잡해 보이게 하는지 잘 이해가 되지 않는다.</li>
+          <li>유닛테스트를 만들기 쉽다.
+            <ul>
+              <li>위 내용중 유닛 테스트는 어떤게 있을까를 생각해 보자</li>
+              <li>어떤게 나올까요 애매한 상황이라고 생각합니다.</li>
+              <li>왜냐면 내용이 없습니다.</li>
+              <li>그래도 뭔가 하고 싶어서..
+                <ul>
+                  <li>유닛테스트를 하는데 통신 API에 잘못된 값들만 넣어서 결과를 확인한다.
+                    <ul>
+                      <li>통신 테스트는 별개로 서버와 함께 하는게 좋을거 같은 생각, 내가 만든 기능테스트라고 하기에는 어려워 보임</li>
+                    </ul>
+                  </li>
+                  <li>결과로 받은 내용이 화면에 나오는 부분을 확인한다.</li>
+                </ul>
+              </li>
+              <li>mvp 패턴보다는 차라리 리액트개념을 넣어보자는게 나을거 같다.</li>
+              <li>rx로만 앱을 구성하면 한눈에 보기좋고 수정들이 훨씬더 좋으니깐</li>
+              <li>등등 하기싫은 이유들..</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>의문점이 생기는 이유는 하기 싫어서 핑계를 찾는거 같다.</li>
+  <li>mvp 와 같은 패턴이 생기는 이유를 생각해 보았습니다.
+    <ul>
+      <li>UI 쪽과 그이외의 기능을 분리하고 UI와 기능의 연결을 단일 통로로 해결하자</li>
+      <li>이게 핵심이라고 판단 하고 있습니다.</li>
+      <li>mvc, mvvc, mvp 등등을 만들어서 패턴을 만들어 보는 이유는 조금더 규격화 해보는게 아닌지 생각합니다.</li>
+      <li>여기서부터 또 다른의문점이 생기기 시작 했습니다.</li>
+      <li>저렇게 화면에 보이는 부분만 따로 만들면 자바가 동작 하는 여러 플랫폼에서 동작 해야 하는거 아닐까?</li>
+      <li>절대 안되죠 왜냐면 화면에 보이는 부분은 분리했지만 안드로이드 플랫폼 안에서 구분이니깐요</li>
+      <li>그래서 이런 저런 생각하던중 클린아키텍처를 보고 기본부터 다시 생각하기 시작함</li>
+      <li>드로이드나이츠의 클린아키텍처 세션을듣고 클린아키텍처 먼저 적용이 필요하다고 생각함</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=클린아키텍처 듣기 전부터 고민하던 내용들&amp;url=https://pyeongho.github.io/whywhy"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/whywhy"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/whywhy"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover2.jpg)" href="/navi_grit">
+            <section class="post">
+                <h2>GRIT IQ, 재능 환경을 뛰어 넘는 열정적 끈기의 힘 그릿</h2>
+                <p>#### 본것 깨달은것 적용할것 #### 1. 내꺼 - 43: "낙담했죠. 정말 실망했지만 그 일을 곱...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover3.jpg)" href="/clean-acrhitecture">
+            <section class="post">
+                <h2>드로이드나이츠 클린아키텍처 세션</h2>
+                <p>드로이드나이츠 클린아키텍처 드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다. 그중 기억에 남는 클린 아키텍처를 정리 하였습니다....</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-90332203-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

@@ -60,7 +60,7 @@ username: pyeongho
 repo: pyeongho.github.io
 branch: master
 relative_source: ./
-destination: ./
+destination: ../jasper-pages/
 production_url:  https://pyeongho.github.io/
 source_url:      https://github.com/pyeongho/pyeongho.github.io/
 

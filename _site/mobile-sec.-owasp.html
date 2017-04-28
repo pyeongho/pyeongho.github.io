@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>OWASP top 10 항목을 이용한 취약점 확인</title>
+    <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="PyeongHo Factory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PyeongHo Factory" />
+    <meta property="og:description" content="즐거운 공장" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PyeongHo Factory" />
+    <meta name="twitter:description" content="즐거운 공장" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Finding The Way Home",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "즐거운 공장"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="PyeongHo Factory" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
+        <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
+  
+        <li class="nav-conference " role="presentation"><a href="/tag/conference">Conference</a></li>
+        <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
+        <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
+        <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
+        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/cover7.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-security">
+
+        <header class="post-header">
+            <h1 class="post-title">OWASP top 10 항목을 이용한 취약점 확인</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
+            <time class="post-date" datetime="2016-12-23">23 Dec 2016</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/security'>Security</a>,
+                       
+                
+                    
+                       <a href='/tag/OWASP'>Owasp</a>,
+                       
+                
+                    
+                       <a href='/tag/보안점검'>보안점검</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <h4 id="1-mobile-owasp-top-10--2014">1. Mobile OWASP Top 10 ( 2014)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>진단 항목</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>서버 측 통제 미흡</td>
+      <td>모바일 앱을 통해 모바일 웹 사이트 침해 사고</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>취약한 정보 저장 방식</td>
+      <td>설정파일, DB 파일등에 사용자 정보 저장등</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>취약한 전송 계층 보호</td>
+      <td>평문으로 주요 데이터 전송</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>의도하지 않은 정보 유출</td>
+      <td>웹 브라우져 캐시, 키보드 캐시, 로그등 단말기 OS 에서의 특성에 읜한 정보 유출</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>취약한 인증 및 권한 관리</td>
+      <td>인증 권한을 단말기에 의존, 4자리 PIN 등의 간단한 번호</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>취약한 암호화</td>
+      <td>암호화를 부적절하게 또는 취약한 암호화</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>클라이언트 측 삽입</td>
+      <td>사용자 입력값 통제, SQL injection. XSS, 3자 앱의 무단 기능 호출등</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>신뢰 할 수없는  사용자 입력값</td>
+      <td>보안과 관련된 의사 결정이 필요한 기능을 입력값을 믿고 신뢰 할 경우 3자 앱에 의해 의도치 않는 동작</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>세션 처리 미흡</td>
+      <td>세션 타임 아웃 및 로그인</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>엡 바이너리 보호 미흡</td>
+      <td>악의적으로 변조된 앱</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="1-서버-측-통제-미흡">1. 서버 측 통제 미흡</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>스마트폰 단말기가 아닌 일반 브라우저에서 접근</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>모바일 웹사이트를 일반 브라우저를 이용해서 편리한 환경에서 해킹시도</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>웹 취약점을 공략</li>
+    </ul>
+  </li>
+  <li>발생 가능한 부분
+    <ul>
+      <li>하이브리드 앱에 포함된 웹페이지를 크롬등을 이용해서 분석 및 해킹시도</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>모바일 사이트도 일반 사이트 처럼 보안 절차 필요</li>
+      <li>SQL injection, Cross Site Scripting 등 주기적인 보안 점검 수행</li>
+      <li>단말기 API 에서만 동작하도록 통체</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="2-취약한-정보-저장-방식">2. 취약한 정보 저장 방식</h5>
+<ul>
+  <li>위협
+    - 분실한 스마트폰 또는 악성코드로 로컬에 저장된 정보에 접근</li>
+  <li>attack vector
+    <ul>
+      <li>파일 탐색 프로그램이나 로걸 DB 에 접속하여 평문으로 저장된 데이터를 
+ 열람 변조등 또는 외부로 유츌</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>루팅을 통한 손쉬운 접근, 암호화된 경우에도 비교적 손쉽게 해결</li>
+    </ul>
+  </li>
+  <li>발생 가능한 부분
+    <ul>
+      <li>저장 기능이 있는 앱의 대부분</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>반드시 필요한 경우를 제외하고는 되도록 스마트폰 로컬에 저장하지 않는다.</li>
+      <li>외부저장소에 민감한 정보를 저장하면 안된다.</li>
+      <li>필요한 경우 OS 에서 제공하는 암호화 API 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="3-취약한-전송-정보-계층-보호">3. 취약한 전송 정보 계층 보호</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>서버 클라이언트구간의 평문으로 전송</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>신뢰할 수 없는 네트워크 공간에서 제3자가 평문으로 된정보를 열람/변조하거나 
+외부 서버로 유출</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>서버, 클라이언트 구간에서 제3자가 개입할 수 있다.</li>
+      <li>인터넷에 공개된 가짜 AP를 통한 정보를 열람/변조 또는 외부 서버로 유출</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>SSL/TLS를 사용하거나 주요 정보를 암호화 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="4-의도하지-않은-정보-유출">4. 의도하지 않은 정보 유출</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>분실한 스마트폰 또는 악성코드로 로컬에 저장된 정보에 접근</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>신파일 탐색 프로그램이나 로걸 DB 에 접속하여 평문으로 저장된 데이터를 
+ 열람 변조등 또는 외부로 유츌</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>개발자가 단말기 OS의 특성, 보안기능 및 이로 인한 보안 영향에 대해 충분히 
+파악하지 않고 개발</li>
+    </ul>
+  </li>
+  <li>발생 가능한 부분
+    <ul>
+      <li>로그, 스크린샷 브라우져 캐시, 임시 폴더</li>
+      <li>코드에 있는 테스트용 계정 정보</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>로그는 기록하지 않도록 개발</li>
+      <li>아이디 / 패스워드 등은 스크린샷을 통한 유출 대비(<em>**</em>)</li>
+      <li>인앱브라우져 역시 캐시를 지워준다.</li>
+      <li>소스코드내 민감한 정보를 하드코딩하는것 바람직 하지 않다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="5-취약한-인증-및-권한-관리">5. 취약한 인증 및 권한 관리</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>부적절하게 구현된 인증 절차나 권한 확인 절차를 우회하여 특정사용자 권한도용</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>인증 권한 절차가 없거나 부적절하게 된 경우 다른사용자가 이를 우회하여 접근</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>분실된 경우를 고려하지 않았거나  구현 과정의 실수</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>인증 권한 관리를 구현 해야 한다.</li>
+      <li>기기 분실 위험에 대해서 고려할 필요가 있다.</li>
+      <li>개발 도구를 이용해 앱 위/변조 하여 인증, 권한 관리를 우회 할수 있으므로
+권한 관리의 최종 점검은 서버측에서 수행해야함</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="6-취약한-암호화">6. 취약한 암호화</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>암호화된 정보를 3자가 획득함</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>암호화된 정보를 복호화하여 평문으로 볼 수 있다.</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>암호화가 아닌 방법을 암호화로 착각하여 발생</li>
+      <li>믿을 만한 암호화 이지만 부적절하게 사용하여 발생</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>암호화 키를 모바일 앱 내에 함께 저장하는 방법을 사용하지 않는다.</li>
+      <li>신뢰 할 수 있는 라이브러리를 사용한다.</li>
+      <li>플랫폼에서 제공하는 기능을 사용한다.</li>
+      <li>base64, 난독화, 시리얼라이즈는 암호화가 아니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="7-클라이언트측-삽입">7. 클라이언트측 삽입</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>3자가 앱에 비정상 데이터를 삽입</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>앱, 웹에 비정상 데이터를 삽입하여 해킹</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>3자가 해당 앱의 기능을 호출 하거나 통신 과정에 개입 할 수 없다는 가정 하에  개발 하여 발생</li>
+      <li>사용자 입력 부분의 SQL injection, Cross Site Scripting, 버퍼오버플로우등</li>
+    </ul>
+  </li>
+  <li>발생 가능한 부분
+    <ul>
+      <li>자바스크립트 enable , 자바스크립트 인터페이스를 이용할 수 있음</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>사용자 입력값 검증</li>
+      <li>html tag, javascript 및 sql query 등의 비정상 데이터 방지</li>
+      <li>DB 관련 작업시 prepared statement <a href="http://hackbyr0k.tistory.com/2">SQL injection 링크</a></li>
+      <li>문자열 처리보다 안전한 함수 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="8-신뢰-할-수-없는-사용자의-입력값">8. 신뢰 할 수 없는 사용자의 입력값</h5>
+<ul>
+  <li>대응 방안
+    <ul>
+      <li>사용자 입력값 검증, 사용자를 믿지 마라
+        <h5 id="9-세션-처리-미흡">9. 세션 처리 미흡</h5>
+      </li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>세션 타임 아웃을 단말기에 의존하지 말아야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="10-앱-바이너리-보호-미흡">10. 앱 바이너리 보호 미흡</h5>
+<ul>
+  <li>위협
+    <ul>
+      <li>3자가 앱을 역컴파일하여 분석한후 정상기능 변경한 위변조 바이너리 배포</li>
+    </ul>
+  </li>
+  <li>attack vector
+    <ul>
+      <li>앱 자체를 역컴파일하여 분석</li>
+    </ul>
+  </li>
+  <li>문제점
+    <ul>
+      <li>사용자가 자사가 개발한 정상적인 앱만 사용할 것이라고 가정한 상태에서 개발 하여 발생</li>
+    </ul>
+  </li>
+  <li>대응 방안
+    <ul>
+      <li>바이너리 위변조 방지 및 분석 방지를 위한 보안도구 사용(프로가드 등)</li>
+      <li>솔루션??</li>
+    </ul>
+  </li>
+</ul>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=OWASP top 10 항목을 이용한 취약점 확인&amp;url=https://pyeongho.github.io/mobile-sec.-owasp"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/mobile-sec.-owasp"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/mobile-sec.-owasp"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/butterknifr">
+            <section class="post">
+                <h2>butterknife 라이브러리 사용</h2>
+                <p>### butterknife 를 사용해 보자 [butterknife github](https://github.com/JakeWharton/butterknife) #### 1. 안드로이드 xml 레이아웃 사용시 아래 와...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/mobile-sec-reverse">
+            <section class="post">
+                <h2>APK 바이너리 분석 및 리패키징</h2>
+                <p>4. APK 바이너리 분석 및 리패키징 1.첨부된 apk 의 코드를 확인 한다. 이용하는 툴은 jd-gui-windows-1.4.0.zip...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-90332203-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

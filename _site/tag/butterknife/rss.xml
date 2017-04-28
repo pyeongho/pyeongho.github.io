@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>butterknife 라이브러리 사용</title>
+	  <link>//butterknifr</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2016-12-29T00:00:00+09:00</pubDate>
+	  <guid>//butterknifr</guid>
+	  <description><![CDATA[
+	     <h3 id="butterknife-를-사용해-보자">butterknife 를 사용해 보자</h3>
+<p><a href="https://github.com/JakeWharton/butterknife">butterknife github</a></p>
+
+<h4 id="1-안드로이드-xml-레이아웃-사용시-아래-와-같은-작업을-해야함-많아-지면-매번-해야함">1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함</h4>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">ImageButton</span> <span class="n">btn_send</span><span class="o">;</span> 
+    <span class="n">btn_send</span> <span class="o">=</span> <span class="o">(</span><span class="n">ImageButton</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btn_send</span><span class="o">);</span>
+    <span class="n">ib_chat_photo</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<h4 id="2-butterknife-위-작업을-편하게-해주는-라이브러리-입니다">2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.</h4>
+<ul>
+  <li>안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다</li>
+  <li>
+    <p>아래 내용을 모듈의 적당한 위치 시켜야 합니다.
+ <script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script></p>
+  </li>
+  <li>프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
+ <script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script></li>
+</ul>
+
+<h4 id="3-안드로이드-스튜디오-플러그인을-설치">3. 안드로이드 스튜디오 플러그인을 설치</h4>
+<ul>
+  <li>setting -&gt; plugins -&gt; browse repositories   에서 butterknife zelezny 찾아서 설치 (안드로이드 스튜디오 재시작함)</li>
+  <li>레이아웃 xml 파일에서 마우스 오른쪽 버튼 클릭후 generate 를 선택 합니다.</li>
+  <li>butterknife 가 보입니다. 선택합니다.</li>
+  <li>체크박스 선택 창이 나옵니다.  원하는 속성을 체크 체크 해서 완료 하면 됩니다.</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
