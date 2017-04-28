@@ -8,10 +8,8 @@
 require 'rake'
 require 'date'
 require 'yaml'
-require 'rspec/core/rake_task'
 
 task :default => :spec
-RSpec::Core::RakeTask.new
 
 CONFIG = YAML.load(File.read('_config.yml'))
 USERNAME = CONFIG["username"]
