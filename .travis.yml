@@ -14,11 +14,11 @@ rvm:
   - jruby-head
   - ree
 
-#install:
+install:
   # Install Jekyll and dependencies
-  #- bundle install
+  - bundle install
 
-#script: "bundle exec jekyll build"
+script: "bundle exec jekyll build"
 #script: bundle exec rake site:deploy --quiet #--trace
 
 # Generate your secure token with the travis gem:
