@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>파이어베이스 데이터베이스를  사용해보자</title>
+    <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="PyeongHo Factory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PyeongHo Factory" />
+    <meta property="og:description" content="즐거운 공장" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PyeongHo Factory" />
+    <meta name="twitter:description" content="즐거운 공장" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Finding The Way Home",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "즐거운 공장"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="PyeongHo Factory" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+    
+        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
+        <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
+  
+        <li class="nav-conference " role="presentation"><a href="/tag/conference">Conference</a></li>
+        <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
+        <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
+        <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
+        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-android">
+
+        <header class="post-header">
+            <h1 class="post-title">파이어베이스 데이터베이스를  사용해보자</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
+            <time class="post-date" datetime="2017-01-01">01 Jan 2017</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/android'>Android</a>,
+                       
+                
+                    
+                       <a href='/tag/파이어베이스'>파이어베이스</a>,
+                       
+                
+                    
+                       <a href='/tag/데이터베이스'>데이터베이스</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <h4 id="firebase-database---">1. firebase database 를 사용해 보자</h4>
+<ul>
+  <li>안드로이드 스튜디오 에서 tools -&gt; firebase 를 클릭한다.</li>
+  <li>firebase 관련 메뉴들이 나오는데 사용 할 realtime database 를 선택</li>
+  <li>기본 firebase가 연결되어 있다고 나옴</li>
+  <li>firebase authentication 문서를 미리 진행 하면 connected 로 변경 됩니다.</li>
+  <li>연결 안되어 있으면 connect 클릭해 주세요</li>
+</ul>
+
+<h4 id="add-the-realtime-database-to-your-app">2. add the realtime database to your app</h4>
+<ul>
+  <li>add the realtime database to your app 버튼을 클릭하여 플러그인 및 디펜던시를 추가 한다.</li>
+</ul>
+
+<h4 id="firebase---">3. firebase 데이터베이스 룰 설정</h4>
+<ul>
+  <li>firebase 콘솔에서 database 규칙을 알아보자</li>
+  <li>firebase 콘솔 -&gt; database -&gt; 규칙 탭</li>
+  <li>기본은 아래와 같다.</li>
+</ul>
+
+<p><code class="highlighter-rouge"><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">".read"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth != null"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">".write"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth != null"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+ </span></code>
+ - 읽기 권한, 쓰기 권한 모두 null 이 아닐때 라고 하니깐 firebase 인증은 기존에 했으니 될거 같음</p>
+
+<h4 id="section">4. 권한 확인 완료 된 코드에서 데이터 추가하는 코드를 넣어보자</h4>
+<ul>
+  <li>기존 코드중(아래코드 참고) user!=null 이 아닐때 코드를 추가 하자</li>
+</ul>
+
+<p>``` java 
+    mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("message");
+                myRef.setValue("Hello, World!");
+
+            } else {
+                // User is signed out
+                log.d("onAuthStateChanged:signed_out");
+            }
+        }
+    };
+</code></pre>
+</div>
+
+<p>```</p>
+
+<ul>
+  <li>값 확인은 firebase 콘솔에서 확인해 보자</li>
+  <li>Hello World 잘 추가 되어 있습니다.</li>
+</ul>
+
+<h4 id="json-">5. 데이터의 구조: JSON 트리</h4>
+<ul>
+  <li><a href="https://firebase.google.com/docs/database/android/structure-data?hl=ko">참고 데이터의 구조: JSON 트리</a></li>
+  <li>SQL 데이터베이스와 달리 테이블이나 레코드가 없으며, JSON 트리에 추가된 데이터는 연결된 키를 갖는 기존 JSON 구조의 노드가 됩니다. 사용자 ID 또는 의미 있는 이름을 키로 직접 지정할 수도 있고, push()를 사용하여 자동으로 지정할 수도 있습니다.</li>
+  <li>예제</li>
+</ul>
+
+<p><code class="highlighter-rouge">JSON
+ {
+  "users": {
+    "alovelace": {
+      "name": "Ada Lovelace",
+      "contacts": { "ghopper": true },
+    },
+    "ghopper": { ... },
+    "eclarke": { ... }
+  }
+}
+데이터
+</code></p>
+
+<h4 id="section-1">6. 데이터의 구조 권장 사항</h4>
+<ul>
+  <li>
+    <p>Firebase 실시간 데이터베이스는 최대 32단계의 데이터 중첩을 허용하므로 기본 구조에 중첩을 도입해도 괜찮다고 생각할 수도 있습니다. 그러나 데이터베이스의 특정 위치에서 데이터를 가져오면 모든 하위 노드가 함께 검색됩니다. 또한 사용자에게 데이터베이스의 특정 노드에 대한 읽기 또는 쓰기 권한을 부여하면 해당 노드에 속한 모든 데이터에 대한 권한이 함께 부여됩니다. 따라서 실제 구현에서는 데이터 구조를 최대한 평면화하는 것이 좋습니다.</p>
+  </li>
+  <li>데이터 구조평면화</li>
+  <li>확장 가능한 데이터 만들기</li>
+</ul>
+
+<h4 id="db---">7. DB 설계가 제일 중요함</h4>
+
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=파이어베이스 데이터베이스를  사용해보자&amp;url=https://pyeongho.github.io/firebase2"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/firebase2"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/firebase2"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/studio-korean">
+            <section class="post">
+                <h2>안드로이드 스튜디오 한글 깨짐</h2>
+                <p>#### 1. 안드로이드 스튜디오 2.X 버전에서 한글깨짐 수정 - 안드로이드 스튜디오 최신버전에서 레이아웃 미리보기에서 한글깨짐...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/firebase1">
+            <section class="post">
+                <h2>파이어베이스를 사용해보자</h2>
+                <p>1. firebase authentication 를 사용해 보자 안드로이드 스튜디오 에서 tools -&gt; firebase 를 클릭한다. firebase...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-90332203-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

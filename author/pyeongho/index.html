@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>PyeongHo Factory</title>
+    <title>Author</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="home-template nav-closed">
+<body class="author-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -68,7 +68,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
         <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
@@ -89,31 +89,45 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="background-image: url(/assets/images/cover1.jpg) ">
-    <nav class="main-nav overlay clearfix">
-        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+<!-- The big featured header -->
+
+<!-- Everything inside the #author tags pulls data from the author -->
+<!-- #author  -->
+    <header class="main-header author-head " style="background-image: url(/assets/images/cover4.jpg) ">
+        <nav class="main-nav overlay clearfix">
+            <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+            
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            
+        </nav>
+    </header>
+
+    <section class="author-profile inner">
         
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        <figure class="author-image">
+            <div class="img" style="background-image: url(/assets/images/casper.png)"><span class="hidden">PyeongHo's Picture</span></div>
+        </figure>
         
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">PyeongHo Factory</h1>
-            <h2 class="page-description">즐거운 공장</h2>
+        <h1 class="author-title">PyeongHo</h1>
+        
+            <h2 class="author-bio">즐겁게 또 즐겁게</h2>
+        
+        <div class="author-meta">
+            <span class="author-location icon-location"> KOREA</span>
+            <span class="author-link icon-link"><a href="https://pyeongho.github.io/">pyeongho.github.io/</a></span>
+            <!-- <span class="author-stats"><i class="icon-stats"></i> [[plural ../pagination.total empty='No posts' singular='% post' plural='% posts']]</span> -->
+            <span class="author-stats"><i class="icon-stats"></i>39 posts</span>
         </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
+    </section>
+<!-- /author -->
 
 <!-- The main content area on the homepage -->
 <main id="content" class="content" role="main">
 
-    <!-- The tag below includes the post loop - partials/loop.hbs -->
+    <!-- The tag below includes the post loop - partials/loop.hbs  -->
         <!-- Previous/next page links - only displayed on page 2+ -->
     <div class="extra-pagination inner">
         
@@ -121,7 +135,7 @@
     
     <span class="page-number"> Page 1 of 8 </span>
      
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+        <a class="older-posts" href="/author/PyeongHo/page2/" title="Next Page">Older Posts &raquo;</a>
      
 </nav>
         
@@ -255,10 +269,10 @@
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/whywhy">클린아키텍처 듣기 전부터 고민하던 내용들</a></h2>
+            <h2 class="post-title"><a href="/clean-acrhitecture">드로이드나이츠 클린아키텍처 세션</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>적용에 앞서 많은 고민중 고민은 좋은거. 1. MVP등의 각종 패턴은 정말 만능일까? 의문점들 장점은 매우 많습니다. 개발자가 많고 교육 시간이 많으면 하는게 좋습니다. 테스트하기에 좋다. 의문점들... <a class="read-more" href="/whywhy">&raquo;</a></p>
+            <p>드로이드나이츠 클린아키텍처 드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다. 그중 기억에 남는 클린 아키텍처를 정리 하였습니다. 참고 : https://speakerdeck.com/sunghyunzz/clean-architecture-in-android 참고 : https://realm.io/kr/news/clean-architecture-in-android/ 참고 : https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html 1. 변화에... <a class="read-more" href="/clean-acrhitecture">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
@@ -292,7 +306,7 @@
     
     <span class="page-number"> Page 1 of 8 </span>
      
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+        <a class="older-posts" href="/author/PyeongHo/page2/" title="Next Page">Older Posts &raquo;</a>
      
 </nav>
     

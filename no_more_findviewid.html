@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>버터나이프 없이 조금더 편하게 XML 의 객체를 사용해 보자</title>
+    <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="PyeongHo Factory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PyeongHo Factory" />
+    <meta property="og:description" content="즐거운 공장" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PyeongHo Factory" />
+    <meta name="twitter:description" content="즐거운 공장" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Finding The Way Home",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "즐거운 공장"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="PyeongHo Factory" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+    
+        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
+        <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
+  
+        <li class="nav-conference " role="presentation"><a href="/tag/conference">Conference</a></li>
+        <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
+        <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
+        <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
+        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-android">
+
+        <header class="post-header">
+            <h1 class="post-title">버터나이프 없이 조금더 편하게 XML 의 객체를 사용해 보자</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
+            <time class="post-date" datetime="2017-02-09">09 Feb 2017</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/android'>Android</a>,
+                       
+                
+                    
+                       <a href='/tag/데이터바인딩'>데이터바인딩</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <h4 id="findviewbyid--">findViewById 없이 사용하기</h4>
+<ul>
+  <li>앱을 만들면서 항상해야 하고 코드가 안 이쁘게 보이는걸 데이터 바인딩으로 해결해 보자</li>
+</ul>
+
+<h4 id="section">참고 사이트</h4>
+<ul>
+  <li><a href="https://developer.android.com/topic/libraries/data-binding/index.html#studio_support">안드로이드 개발자 사이트 링크</a></li>
+  <li><a href="http://gogorchg.tistory.com/entry/Android-DataBinding-findViewById-이제-안녕">GsBob 블로그</a></li>
+</ul>
+
+<h4 id="section-1">1. 버터 나이프 사용하면 좋긴 하지만 라이브러리 추가가 싫어 질때가 있어서 찾아보고 적용해 보았습니다.</h4>
+<ul>
+  <li>gradle 추가 내용</li>
+</ul>
+
+<p><code class="highlighter-rouge">grldle
+    android {
+        …
+        dataBinding {
+            enabled = true
+        }
+    }
+</code></p>
+
+<h4 id="section-2">2. 기존과 달라지는 방법</h4>
+<ul>
+  <li>
+    <ol>
+      <li>레이아웃 파일 최상위 트리에</li>
+    </ol>
+  </li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/90ec3c115ae62ecc49f398f40b55e8d6.js"></script>
+  </li>
+  <li>
+    <ol>
+      <li>setContentView(R.layout.activity_main); 가 아래 처럼 변경 됩니다.</li>
+    </ol>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">java
+     ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+</code></p>
+
+<h4 id="section-3">3. 사용방법</h4>
+
+<p><code class="highlighter-rouge">java
+    ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    binding.hello.setText("id:hello ");
+    binding.tvHello.setText("id:tv_hello");
+</code></p>
+
+<h4 id="section-4">4. 그래들에 추가 하고 싱크 리빌드 한번 해주세요.</h4>
+<ul>
+  <li>ActivityMainBinding 자동으로 생성 됩니다.</li>
+  <li>처음에는 이걸 못찾아서 당황 했지만 그래들 싱크 해지고 리빌드 해주면 자동 생성 됩니다.</li>
+  <li>생성 규칙은 아래 처럼 입니다. _ 자동으로 사라지고 카멜코딩룰을 적용해 줍니다.
+    <ul>
+      <li>중요한 점은  activity_main - &gt; ActivityMainBinding 형태로 변형 됩니다.</li>
+      <li>변수 이름도 해당 규칙이 적용 됩니다.</li>
+      <li>tv_hello -&gt; tvHello 로 변경 되면서 자동으로 카멜코딩도 적용줍니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-5">5. 리스트뷰 또는 리사이클러 뷰에서 사용</h4>
+<ul>
+  <li>ListView 어댑터나 RecyclerView 어댑터 내에서 데이터 바인딩 항목을 사용 중인 경우 다음을 선호하는 개발자도 있습니다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">java 
+  ListItemBinding binding = ListItemBinding.inflate(layoutInflater, viewGroup, false);
+  //or
+  ListItemBinding binding = DataBindingUtil.inflate(layoutInflater, R.layout.list_item, viewGroup, false);
+</code></p>
+
+<h4 id="section-6">6. 위에서 사용을 레이아웃 바인딩이라고 하고 이제는 데이터 바이딩과 클릭이벤트</h4>
+<ul>
+  <li>클래스를 사용하기 위해서 사용자 객체를 만든다.</li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/8133adb6428e763ae8953edc56b5a680.js"></script>
+  </li>
+  <li>레이아웃 파일에 아래 내용을 추가</li>
+</ul>
+
+<p><code class="highlighter-rouge">xml  
+    &lt;data&gt;
+       &lt;variable name="user" type="com.example.User"/&gt;
+   &lt;/data&gt;
+   ... 
+           &lt;TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" /&gt;
+   ...         
+</code></p>
+
+<ul>
+  <li>액티비티 자바 파일에</li>
+</ul>
+
+<p><code class="highlighter-rouge">java
+   User user = new User("Test", "User");
+   binding.setUser(user);
+</code></p>
+
+<ul>
+  <li>텍스트뷰에 hello 에 Test 가 추가 된다.</li>
+  <li>안드로이드 개발자 사이트에 보면 클릭이벤트 리스너등 사용하면 좋을것들이 너무 많다.</li>
+  <li>심지어 import 룰 사용도 가능하다.</li>
+  <li>바인딩 기능을 모두 사용하면 레이아웃 파일을 보기 힘들어 질거 같다…</li>
+</ul>
+
+<h4 id="section-7">7. 항상 해줘야 하는 자바 코드를 추상화 클래스로 만들어 보면</h4>
+<ul>
+  <li>baseactiviy 를 만듬</li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/ac55d87b879282327bbb60c2ab5874de.js"></script>
+  </li>
+  <li>MainActivity 에서 사용하는 법</li>
+</ul>
+
+<p><code class="highlighter-rouge">java
+    ...
+    public class MainActivity extends BaseActivity&lt;ActivityMainBinding&gt; {
+    ...    
+    setBiding(R.layout.activity_main);
+    getBinding().tvHello.setText("id:tv_hello");
+    ...
+</code></p>
+
+<h4 id="fragment--">8. fragment 에서 사용하기</h4>
+
+<p>```java
+public class FancyFragment extends Fragment {
+  private FragmentFancyBinding binding;</p>
+
+<p>@Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    return inflater.inflate(R.layout.fragment_fancy, container, false);
+  }</p>
+
+<p>@Override
+  public void onActivityCreated(Bundle savedInstanceState) {
+    super.onActivityCreated(savedInstanceState);
+    binding = FragmentFancyBinding.bind(getView());
+  }
+}
+```</p>
+
+<h4 id="viewholder--">9. ViewHolder 에서 사용하기</h4>
+<ul>
+  <li>
+    <script src="https://gist.github.com/pyeongho/dc4aa079ab29e6d30d6092f147c6a4d7.js"></script>
+  </li>
+</ul>
+
+<h4 id="section-8">*. 좋은점</h4>
+<ul>
+  <li>외부 라이브러리를 사용 안해도 된다.</li>
+  <li>findViewById 사용을 안해도 된다.</li>
+  <li>심지어 변수 선언들도 안해도 된다.</li>
+</ul>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=버터나이프 없이 조금더 편하게 XML 의 객체를 사용해 보자&amp;url=https://pyeongho.github.io/no_more_findviewid"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/no_more_findviewid"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/no_more_findviewid"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/retrofit2">
+            <section class="post">
+                <h2>retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기</h2>
+                <p>#### retrofit2 + rxandroid2 + mvp 를 이용한 통신 #### 참고로 mvp 처럼만 보이고 아닐수도...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/retrofit2">
+            <section class="post">
+                <h2>retrofit2 + okhttp3 + rxandroid2네이버 기계번역 사용하기</h2>
+                <p>retrofit2 + rxandroid2 를 이용한 통신 rxandroid2 를 추가해 보았습니다. 1. dependencies 추가 ```gradle compile...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-90332203-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

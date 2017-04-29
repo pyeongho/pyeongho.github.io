@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>APK 바이너리 분석 및 리패키징</title>
+    <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="PyeongHo Factory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PyeongHo Factory" />
+    <meta property="og:description" content="즐거운 공장" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PyeongHo Factory" />
+    <meta name="twitter:description" content="즐거운 공장" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Finding The Way Home",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "즐거운 공장"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="PyeongHo Factory" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+    
+        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
+        <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
+  
+        <li class="nav-conference " role="presentation"><a href="/tag/conference">Conference</a></li>
+        <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
+        <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
+        <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
+        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+ 
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/cover7.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-security">
+
+        <header class="post-header">
+            <h1 class="post-title">APK 바이너리 분석 및 리패키징</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
+            <time class="post-date" datetime="2016-12-23">23 Dec 2016</time>
+                <!-- [[tags prefix=" on "]] -->
+                 
+                on 
+                
+                    
+                       <a href='/tag/security'>Security</a>,
+                       
+                
+                    
+                       <a href='/tag/OWASP'>Owasp</a>,
+                       
+                
+                    
+                       <a href='/tag/보안점검'>보안점검</a>
+                       
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+            
+            <h3 id="apk----">4. APK 바이너리 분석 및 리패키징</h3>
+
+<h4 id="apk-----1">1.첨부된 apk 의 코드를 확인 한다.</h4>
+
+<ul>
+  <li>이용하는 툴은 jd-gui-windows-1.4.0.zip , dex2jar-2.0.zip</li>
+  <li>iamaboy.apk</li>
+  <li>d2j-dex2jar.bat iamaboy.apk</li>
+  <li>iamaboy-dex2jar.jar  파일 생성을 확인한다.</li>
+  <li>다른 툴인 jd-gui.exe 를 실행하여 jd-gui.exe 파일을 연다.</li>
+  <li>코드를 확인 하면 됩니다.</li>
+</ul>
+
+<h4 id="section">2.루팅 체크 앱을 무력화 하여 동작 하도록 한다.</h4>
+<ul>
+  <li>
+    <p>기본 안드로이드 앱에서 루팅 체크 하는 코드를 추가 한다. 
+  ```java 
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    if (rootCheck()){
+        Toast.makeText(this, “root”, Toast.LENGTH_SHORT).show();
+        finish();
+    }
+}</p>
+
+    <p>public boolean rootCheck(){
+    String[] arrayOfString = new String[5];
+    arrayOfString[0] = “/sbin/su”;
+    arrayOfString[1] = “/system/su”;
+    arrayOfString[2] = “/system/sbin/su”;
+    arrayOfString[3] = “/system/xbin/su”;
+    arrayOfString[4] = “/data/data/com.noshufou.android.su”;
+    int i = 0;
+    while (true)
+    {
+        if (i &gt;= arrayOfString.length)
+            return false;
+        if (new File(arrayOfString[i]).exists())
+            return true;
+        i += 1;
+    }
+}
+  ```</p>
+  </li>
+  <li>apktool_2.2.1.jar 을 이용하여 루팅 테스트 앱을 smali 코드로 변경 한다.</li>
+  <li>java -jar apktool_2.2.1.jar d root.apk</li>
+  <li>MainActivity.smali  파일에서 루팅 검사를 무력화 시킨다</li>
+  <li>변경 방법은 문자열을 아래처럼 변경 해도 되고 
+  const-string v5, “/system/sbin/su1”</li>
+  <li>조건문을 변경해도 됩니다. 아래는 원래 코드 입니다.</li>
+  <li>if-eqz v0 v0 ==0 이면 cond_0 으로 간다는 내용 정도 
+<code class="highlighter-rouge">
+  invoke-virtual {p0}, Lkr/test/hello/MainActivity;-&gt;rootCheck()Z
+  move-result v0
+  if-eqz v0, :cond_0
+</code></li>
+  <li>if-eqz v0, :cond_0  =&gt;  if-nez v0, :cond_0</li>
+  <li>위 처럼 조건문을 변경해도 됩니다.</li>
+  <li>smali 코드를 잘분석해서 변경 해야 합니다.</li>
+  <li>java -jar apktool_2.2.1.jar b root  으로 다시 컴파일 (폴더 이름임)</li>
+  <li>dist 폴더에 apk 가 생성됨</li>
+  <li>apk 를 서명하여 앱을 실행하면 앱이</li>
+</ul>
+
+<h4 id="section-1">3.  로그 추가 하기</h4>
+<ul>
+  <li>함수위에 .local 숫자 이렇게 있는데 변수 개수 입니다.</li>
+  <li>만약 기존 함수에 .local 3 이 있으면 .local 5 로 변경 하고</li>
+  <li>아래와 같은 코드를 추가 하면 로그를 추력 할 수 있습니다.
+ <code class="highlighter-rouge">
+ const-string v3, "[Injected Message]"		
+ const-string v4, "Called onCreate() Method"	
+ invoke-static {v3, v4}, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I 
+</code></li>
+  <li>Log 클래스의 함수는 는 인자를 2개 받기 때문에 변수 v3,v4 에 각각 원하는 문자열을 넣고 함수를 호출 하는 내용입니다.</li>
+  <li>참고로 Log 클래스의 각 함수는 int 형을 반화하기에 위처럼 마지막 문자열에 I  가 있습니다.</li>
+</ul>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=APK 바이너리 분석 및 리패키징&amp;url=https://pyeongho.github.io/mobile-sec-reverse"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/mobile-sec-reverse"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/mobile-sec-reverse"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover7.jpg)" href="/mobile-sec.-owasp">
+            <section class="post">
+                <h2>OWASP top 10 항목을 이용한 취약점 확인</h2>
+                <p>#### 1. Mobile OWASP Top 10 ( 2014) | No | 진단 항목 | 내용...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/mobile-sec-domestic">
+            <section class="post">
+                <h2>andorid 취약점</h2>
+                <p>2. 국내 모바일 앱 보안점검 체크리스트 스마트폰 금융안전대책 이행 실태 체크리스트 그룹 점검항목 세부내용 1...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-90332203-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>
