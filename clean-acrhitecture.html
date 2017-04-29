@@ -137,7 +137,7 @@
 
         <section class="post-content">
             
-            <h4 id="section">드로이드나이츠 클린아키텍처</h4>
+            <h4 id="드로이드나이츠-클린아키텍처">드로이드나이츠 클린아키텍처</h4>
 <ul>
   <li>드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.</li>
   <li>
@@ -152,7 +152,7 @@
   <li><a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">참고 : https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html</a></li>
 </ul>
 
-<h4 id="section-1">1. 변화에 잘 적응하는 아키텍처</h4>
+<h4 id="1-변화에-잘-적응하는-아키텍처">1. 변화에 잘 적응하는 아키텍처</h4>
 <ul>
   <li>이전 까지 했던 고민이 이걸로 보입니다. 어떤 변화든 잘 적응하는 코드를 만들자</li>
   <li>적응을 잘하는건 변하는 부분만 수정하자 &lt;- 이 부분이 중요</li>
@@ -181,7 +181,7 @@
   </li>
 </ul>
 
-<h4 id="section-2">2. 기본 아키텍처</h4>
+<h4 id="2-기본-아키텍처">2. 기본 아키텍처</h4>
 <ul>
   <li>엉클밥의 클린아키텍처 서버
     <ul>
@@ -222,7 +222,7 @@
   </li>
 </ul>
 
-<h5 id="entity">2.1 Entity</h5>
+<h5 id="21-entity">2.1 Entity</h5>
 <ul>
   <li>순수한 Java(Kotlin) 모듈</li>
   <li>Android와의 의존성이 없음
@@ -238,25 +238,29 @@
   <li>모든 내용이 엔터티에 포함되어 있다.</li>
   <li>TransactionType 엔터티로 선언한것이다.</li>
   <li>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨</li>
-  <li><code class="highlighter-rouge">kotlin
-  class TransactionCategory( 
-    val id: String, 
-    val name: String, 
-    val transactionType: TransactionType, 
-    val priority: Int
-  ) : Entity
-</code></li>
-  <li><code class="highlighter-rouge">java
-  class TransactionCategory extends Entity( 
-    String id; 
-    String name;
-    TransactionType transactionType;
-    Int priority;
-  ) : 
-</code></li>
+  <li>
+    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">TransactionCategory</span><span class="p">(</span> 
+    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> 
+    <span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> 
+    <span class="kd">val</span> <span class="py">transactionType</span><span class="p">:</span> <span class="n">TransactionType</span><span class="p">,</span> 
+    <span class="kd">val</span> <span class="py">priority</span><span class="p">:</span> <span class="n">Int</span>
+  <span class="p">)</span> <span class="p">:</span> <span class="n">Entity</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">TransactionCategory</span> <span class="kd">extends</span> <span class="nf">Entity</span><span class="o">(</span> 
+    <span class="n">String</span> <span class="n">id</span><span class="o">;</span> 
+    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="n">TransactionType</span> <span class="n">transactionType</span><span class="o">;</span>
+    <span class="n">Int</span> <span class="n">priority</span><span class="o">;</span>
+  <span class="o">)</span> <span class="o">:</span> 
+</code></pre>
+    </div>
+  </li>
 </ul>
 
-<h5 id="domain">2.2 Domain</h5>
+<h5 id="22-domain">2.2 Domain</h5>
 <ul>
   <li>순수한 Java(Kotlin) 모듈</li>
   <li>Android와의 의존성이 없음</li>
@@ -272,25 +276,25 @@
       <li>유스케이스는 데이터베이스를 고려하지 말자</li>
       <li>사고의 흐름</li>
       <li>
-        <p>```kotlin
-class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){ 
-  override fun buildUseCaseObservable(): Observable&lt;List<bank>&gt; { 
-    return repository.getAll() 
-  } 
-}</bank></bank></p>
+        <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">GetBanks</span><span class="p">(</span><span class="kd">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">BanksRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">UseCase</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;(){</span> 
+  <span class="k">override</span> <span class="k">fun</span> <span class="nf">buildUseCaseObservable</span><span class="p">():</span> <span class="n">Observable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="n">repository</span><span class="p">.</span><span class="n">getAll</span><span class="p">()</span> 
+  <span class="p">}</span> 
+<span class="p">}</span>
 
-        <p>interface BanksRepository : Repository {<br />
-  fun getAll(): Observable&lt;List<bank>&gt; 
-  fun update(bank: Bank): Completable 
-}</bank></p>
+<span class="kd">interface</span> <span class="nc">BanksRepository</span> <span class="p">:</span> <span class="n">Repository</span> <span class="p">{</span>  
+  <span class="k">fun</span> <span class="nf">getAll</span><span class="p">():</span> <span class="n">Observable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;</span> 
+  <span class="k">fun</span> <span class="nf">update</span><span class="p">(</span><span class="n">bank</span><span class="p">:</span> <span class="n">Bank</span><span class="p">):</span> <span class="n">Completable</span> 
+<span class="p">}</span>
 
-        <p>```</p>
+</code></pre>
+        </div>
       </li>
     </ul>
   </li>
 </ul>
 
-<h5 id="data">2.3 data</h5>
+<h5 id="23-data">2.3 data</h5>
 <ul>
   <li>Repository의 실제 구현</li>
   <li>Data Source 의존성</li>
@@ -309,7 +313,7 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
   </li>
 </ul>
 
-<h5 id="presentation">2.4 Presentation</h5>
+<h5 id="24-presentation">2.4 Presentation</h5>
 <ul>
   <li>UI 레벨의 처리 (mvp, mvc)</li>
   <li>Android 의존성이 강함</li>
@@ -333,12 +337,12 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
   </li>
 </ul>
 
-<h4 id="section-3">3. 좋은 코드가 좋은 제품이다.</h4>
+<h4 id="3-좋은-코드가-좋은-제품이다">3. 좋은 코드가 좋은 제품이다.</h4>
 <ul>
   <li>각각의 레이어에서 모델이 존재해서 진입 장벽이 있지만 유지보수가 쉽다.</li>
 </ul>
 
-<h4 id="section-4">* 현장 메모</h4>
+<h4 id="-현장-메모">* 현장 메모</h4>
 <ul>
   <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3cG41UmxfbEN4NjQ" alt="1페이지" /></li>
   <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3NTNGRVpKLXNSOTg" alt="2페이지" /></li>
@@ -367,7 +371,7 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
                 
                 <div class="author-meta">
                     <span class="author-location icon-location">  KOREA</span> 
-                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                    <span class="author-link icon-link"><a href="http://localhost:4000"> pyeongho.github.io/</a></span> 
                 </div>
             </section>
 
@@ -375,15 +379,15 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=드로이드나이츠 클린아키텍처 세션&amp;url=https://pyeongho.github.io/clean-acrhitecture"
+                <a class="icon-twitter" href="http://twitter.com/share?text=드로이드나이츠 클린아키텍처 세션&amp;url=http://localhost:4000clean-acrhitecture"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/clean-acrhitecture"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000clean-acrhitecture"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/clean-acrhitecture"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000clean-acrhitecture"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

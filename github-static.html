@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기</title>
+    <title>스태틱으로 변경하기</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -97,7 +97,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover4.jpg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -108,23 +108,23 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-android">
+    <article class="post tag-githubpage">
 
         <header class="post-header">
-            <h1 class="post-title">제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기</h1>
+            <h1 class="post-title">스태틱으로 변경하기</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2017-02-19">19 Feb 2017</time>
+            <time class="post-date" datetime="2017-04-29">29 Apr 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/android'>Android</a>,
+                       <a href='/tag/githubpage'>Githubpage</a>,
                        
                 
                     
-                       <a href='/tag/제네릭'>제네릭</a>
+                       <a href='/tag/스태틱'>스태틱</a>
                        
                 
                 
@@ -133,49 +133,42 @@
 
         <section class="post-content">
             
-            <h3 id="최종코드의-basepresnter의-addsubscription를-부분만-확인하면-됩니다">최종코드의 BasePresnter의 addSubscription를 부분만 확인하면 됩니다.</h3>
+            <h4 id="테마를-변경하면서-스택으로-변경하기로-결정">테마를 변경하면서 스택으로 변경하기로 결정</h4>
 <ul>
-  <li>API가 추가 될때마다 계속 추가해야하나?</li>
+  <li>테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정</li>
+  <li>목표 설정
+    <ul>
+      <li>저장소 위치를 비트버켓으로 이동한다.</li>
+      <li>지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.</li>
+    </ul>
+  </li>
 </ul>
 
-<h4 id="1-api-추가되면-어떻게-해야-하나">1. api 추가되면 어떻게 해야 하나</h4>
+<h4 id="1-우선-저장소-옮기는-건-쉬움">1. 우선 저장소 옮기는 건 쉬움</h4>
 <ul>
-  <li>기존 코드에서 기계번역 1개의 api만 사용 하고 있습니다.</li>
-  <li>만약 api가 계속 추가 되면 응답값이 계속 바뀌면 api 콜백을 계속 추가 해야 하나?</li>
-  <li>addSubscription를 계속 만들어야 하나 고민을 시작함</li>
-  <li>그래서 간단하게 제네릭 타입의 클래서를 만들고 api콜백과 addSubscription는 하나만 사용하는 방법</li>
-  <li>호출 할때만 제네릭에(템플릿이라고 해야 하나!@) 메소드를 호출할때, 콜백을 받을때 원하는 클래스 타입으로 받고 싶었습니다.</li>
-  <li>컴파일 에러 안나게 해서 코드를 추가 했지만,,, 값이 들어 오지 않았습니다.</li>
-  <li>git 히스토리에 남아 있습니다.</li>
-  <li>그래서 다시 시작 하게 되었습니다.</li>
-  <li>코드커밋을 잘못해서 기본 객체로 받는것도 올라가 있습니다.(withoutbutter)</li>
+  <li>git remote add 태그 [저장소 위치]</li>
+  <li>추가된 저장소로 푸시</li>
 </ul>
 
-<h4 id="2-어떻게-접근할것인가">2. 어떻게 접근할것인가?</h4>
+<h4 id="2-지킬-컴파일-환경-구성">2. 지킬 컴파일 환경 구성</h4>
 <ul>
-  <li>현재 문제점 : addSubscription 에 타입이 정해져 있어서 추가하기 귀찮게 되어 있다.</li>
-  <li>API콜백은 원하는 클래스로 사용가능하고 api 인터페이스 역시 샘플처럼 있고 계속 추가 하면 될거라고 생각</li>
+  <li>테마 변경중이라 글을 못섰지만</li>
+  <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
 </ul>
 
-<h4 id="3-공부링크">3. 공부링크</h4>
+<p>#### 3. 기존 파일을 모두삭제</p>
 <ul>
-  <li><a href="https://github.com/amitshekhariitbhu/RxJava2-Android-Samples">https://github.com/amitshekhariitbhu/RxJava2-Android-Samples</a></li>
-  <li><a href="https://github.com/delicious-mvp/delicious">https://github.com/delicious-mvp/delicious</a></li>
-  <li>rxjava1 이지만 공부할게 많다.</li>
+  <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
+  <li>모두 정상 동작</li>
 </ul>
 
-<h4 id="4-처음-부터-잘못-접근">4. 처음 부터 잘못 접근</h4>
+<p>#### 4. 지금 쓰는건 테스트 하기위함</p>
 <ul>
-  <li>제넥릭 사용법을 잘 몰라서 이상한짓을 한거임</li>
-  <li>addSubscription 에서 제네릭으로 받으면 됩니다.</li>
-  <li>RxJava2 map 과 필터 공부로 깔끔하게 마무리</li>
+  <li>수동으로 비트버켓에 푸시</li>
+  <li>jekyll build</li>
+  <li>결과물을 pyeongho.github.io 로 푸시</li>
 </ul>
 
-<h4 id="5-최종-결과를-다운-받기에-폴더-하나-더-만들었습니다">5. 최종 결과를 다운 받기에 폴더 하나 더 만들었습니다.</h4>
-<ul>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-  <li>폴더이름 Retorfit2T</li>
-</ul>
 
 
         </section>
@@ -207,15 +200,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기&amp;url=http://localhost:4000retrofit2-generic"
+                <a class="icon-twitter" href="http://twitter.com/share?text=스태틱으로 변경하기&amp;url=http://localhost:4000github-static"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000retrofit2-generic"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000github-static"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000retrofit2-generic"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000github-static"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -253,20 +246,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover6.jpg)" href="/gof-1">
-            <section class="post">
-                <h2>java 디자인패턴 1일차</h2>
-                <p>### GoF 의 자바 디자인 패턴, 인프런 강의 #### 코드 링크 - [https://github.com/parkgaram/java-designpattern](https://github.com/parkgaram/java-designpattern) #### 1....</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/AndroidAnnotation">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover2.jpg)" href="/navi_morning">
             <section class="post">
-                <h2>AndroidAnnotation을 공부 하자</h2>
-                <p>안드로이드에서 AndroidAnnotation을 이용해서 앱을 개발해 보자 어노테이션 기능으로 좀금더 편하게 의존성을 주입해서 앱을 개발하는 방법...</p>
+                <h2>미라클 모닝,당신의 하루를 바꾸는 기적</h2>
+                <p>본것 깨달은것 적용할것 1. 내꺼 미라클 모닝 명상: 앉아서, 고요히, 평화롭게, 천천히, 깊히 호흡 하면서...</p>
             </section>
         </a>
     

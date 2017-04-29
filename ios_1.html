@@ -133,31 +133,31 @@
 
         <section class="post-content">
             
-            <h3 id="ios-----">iOS를 공부해서 원하는 앱을 만들어 보자</h3>
+            <h3 id="ios를-공부해서-원하는-앱을-만들어-보자">iOS를 공부해서 원하는 앱을 만들어 보자</h3>
 <ul>
   <li>안드로이드 개발자지만 iOS 앱을 만들어 보고 싶어서 공부를 시작</li>
 </ul>
 
-<h4 id="section">0. 따라하기</h4>
+<h4 id="0-따라하기">0. 따라하기</h4>
 <ul>
   <li><a href="https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/">https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/</a></li>
 </ul>
 
-<h4 id="section-1">1. 환경 설정</h4>
+<h4 id="1-환경-설정">1. 환경 설정</h4>
 <ul>
   <li>Xcode 다운로드</li>
   <li><a href="https://developer.apple.com/download/">https://developer.apple.com/download/</a></li>
   <li>Xcode 8.3 beta 4 를 다운 받고 설치</li>
 </ul>
 
-<h4 id="playground--">2. Playground 사용해 보기</h4>
+<h4 id="2-playground-사용해-보기">2. Playground 사용해 보기</h4>
 <ul>
   <li>뭔지는 모르겠지만 따라서</li>
   <li>함수 실행하고 동작 하는것 확인</li>
   <li>이제 헬로우 월드를 찍어야 하는데…</li>
 </ul>
 
-<h4 id="xcode----">3.xcode 프로젝트 새로 만들기 누름</h4>
+<h4 id="3xcode-프로젝트-새로-만들기-누름">3.xcode 프로젝트 새로 만들기 누름</h4>
 <ul>
   <li>싱글뷰 애플리케이션 선택하고 이름 넣고 넥스트 넥스트</li>
   <li>화살표 버튼 클릭</li>
@@ -173,7 +173,7 @@
   <li>프로그램의 완성은 헬로 월드 니깐</li>
 </ul>
 
-<h4 id="section-2">4. 스위프트 공부</h4>
+<h4 id="4-스위프트-공부">4. 스위프트 공부</h4>
 <ul>
   <li>플레이그라운드가 스위프트 공부하기 좋은 콘솔로 이해됨</li>
   <li>
@@ -211,26 +211,23 @@
       </li>
     </ol>
 
-    <p>```Swift</p>
+    <pre><code class="language-Swift">
+    var languages = ["Swift", "Objective-C", "Python"]    
+    var capitals = [
+        "한국": "서울",
+        "일본": "도쿄",
+        "중국": "베이징",
+    ]
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>var languages = ["Swift", "Objective-C", "Python"]    
-var capitals = [
-    "한국": "서울",
-    "일본": "도쿄",
-    "중국": "베이징",
-]
+    // 타입 추가 방법
+    var languages: [String] = []
+    var capitals: [String: String] = [:]
 
-// 타입 추가 방법
-var languages: [String] = []
-var capitals: [String: String] = [:]
+    // 간결
+    var languages = [String]()
+    var capitals = [String: String]()
 
-// 간결
-var languages = [String]()
-var capitals = [String: String]()
 </code></pre>
-    </div>
-
-    <p>```</p>
   </li>
   <li>
     <ol>
@@ -246,12 +243,11 @@ var capitals = [String: String]()
           </li>
         </ul>
 
-        <p>```Swift</p>
+        <pre><code class="language-Swift">
+ case 8..&lt;14:
+     student = "초등학생"
 
-        <p>case 8..&lt;14:
-     student = “초등학생”</p>
-
-        <p>```</p>
+</code></pre>
       </li>
     </ol>
 
@@ -272,29 +268,29 @@ var capitals = [String: String]()
           <li>
             <p>if 문 사용 예제</p>
 
-            <p>```Swift</p>
-
-            <p>if let email = optionalEmail {
+            <pre><code class="language-Swift">
+if let email = optionalEmail {
      print(email) // optionalEmail의 값이 존재한다면 해당 값이 출력됩니다.
 }
-// optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.</p>
+// optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.
 
-            <p>// And 조건은 , 로 구분 해서 사용 ㅏ능  <br />
-var optionalName: String? = “전수열”
-var optionalEmail: String? = “devxoul@gmail.com”</p>
 
-            <p>if let name = optionalName, email = optionalEmail {
+// And 조건은 , 로 구분 해서 사용 ㅏ능    
+var optionalName: String? = "전수열"
+var optionalEmail: String? = "devxoul@gmail.com"
+
+if let name = optionalName, email = optionalEmail {
 // name과 email 값이 존재
-}</p>
+}
 
-            <p>// 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로  <br />
-var optionalAge: Int? = 22</p>
+// 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로    
+var optionalAge: Int? = 22
 
-            <p>if let age = optionalAge, age &gt;= 20 {
+if let age = optionalAge, age &gt;= 20 {
 // age의 값이 존재하고, 20 이상입니다.
-}</p>
-
-            <p>```</p>
+}
+        
+</code></pre>
           </li>
         </ul>
       </li>
@@ -325,7 +321,7 @@ var optionalAge: Int? = 22</p>
                 
                 <div class="author-meta">
                     <span class="author-location icon-location">  KOREA</span> 
-                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                    <span class="author-link icon-link"><a href="http://localhost:4000"> pyeongho.github.io/</a></span> 
                 </div>
             </section>
 
@@ -333,15 +329,15 @@ var optionalAge: Int? = 22</p>
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=스위프트를 이용해서 앱을 개발해 보자(iOS 공부 1일차)&amp;url=https://pyeongho.github.io/ios_1"
+                <a class="icon-twitter" href="http://twitter.com/share?text=스위프트를 이용해서 앱을 개발해 보자(iOS 공부 1일차)&amp;url=http://localhost:4000ios_1"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/ios_1"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000ios_1"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/ios_1"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000ios_1"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

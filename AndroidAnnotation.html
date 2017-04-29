@@ -133,13 +133,13 @@
 
         <section class="post-content">
             
-            <h3 id="androidannotation----">안드로이드에서 AndroidAnnotation을 이용해서 앱을 개발해 보자</h3>
+            <h3 id="안드로이드에서-androidannotation을-이용해서-앱을-개발해-보자">안드로이드에서 AndroidAnnotation을 이용해서 앱을 개발해 보자</h3>
 <ul>
   <li>어노테이션 기능으로 좀금더 편하게 의존성을 주입해서 앱을 개발하는 방법 입니다.</li>
   <li><a href="http://androidannotations.org/">http://androidannotations.org/ 공식사이트</a></li>
 </ul>
 
-<h4 id="section">1. 환경 설정</h4>
+<h4 id="1-환경-설정">1. 환경 설정</h4>
 <ul>
   <li><a href="https://github.com/androidannotations/androidannotations/wiki/Building-Project-Gradle">https://github.com/androidannotations/androidannotations/wiki/Building-Project-Gradle</a></li>
   <li>그래들 환경이라서 편하게 추가 할 수 있습니다.</li>
@@ -152,30 +152,30 @@
   <li>app 레벨 그래들 변경내용</li>
 </ul>
 
-<p>```gradle
-apply plugin: ‘com.android.application’
-apply plugin: ‘android-apt’</p>
+<div class="language-gradle highlighter-rouge"><pre class="highlight"><code><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'com.android.application'</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'android-apt'</span>
 
-<p>def AAVersion = ‘4.1.0’</p>
+<span class="kt">def</span> <span class="n">AAVersion</span> <span class="o">=</span> <span class="s1">'4.1.0'</span>
 
-<p>…
-dependencies {
- …
-    apt “org.androidannotations:androidannotations:$AAVersion”
-    compile “org.androidannotations:androidannotations-api:$AAVersion”
- … <br />
-}</p>
+<span class="o">...</span>
+<span class="k">dependencies</span> <span class="o">{</span>
+ <span class="o">...</span>
+    <span class="n">apt</span> <span class="s2">"org.androidannotations:androidannotations:$AAVersion"</span>
+    <span class="n">compile</span> <span class="s2">"org.androidannotations:androidannotations-api:$AAVersion"</span>
+ <span class="o">...</span>   
+<span class="o">}</span>
 
-<p>```</p>
+</code></pre>
+</div>
 
-<h4 id="databinding---">2. databinding 과 함께 사용하기</h4>
+<h4 id="2-databinding-과-함께-사용하기">2. databinding 과 함께 사용하기</h4>
 <ul>
   <li>databinding 의 BaseActivity 를 사용한다.</li>
   <li>@EActivity 에 레이아웃 파일을 추가하지 않는다.</li>
   <li>기본 Activity 의 onCreate 에서 레이아웃을 처리 한다.</li>
 </ul>
 
-<h4 id="section-1">3. 네이버 기계번역을 안드로이드 어노테이션으로 샘플코들르 만들어 보았습니다.</h4>
+<h4 id="3-네이버-기계번역을-안드로이드-어노테이션으로-샘플코들르-만들어-보았습니다">3. 네이버 기계번역을 안드로이드 어노테이션으로 샘플코들르 만들어 보았습니다.</h4>
 <ul>
   <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
   <li>AndoroidAnnotation 폴더에 있습니다.</li>
@@ -203,7 +203,7 @@ dependencies {
                 
                 <div class="author-meta">
                     <span class="author-location icon-location">  KOREA</span> 
-                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                    <span class="author-link icon-link"><a href="http://localhost:4000"> pyeongho.github.io/</a></span> 
                 </div>
             </section>
 
@@ -211,15 +211,15 @@ dependencies {
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=AndroidAnnotation을 공부 하자&amp;url=https://pyeongho.github.io/AndroidAnnotation"
+                <a class="icon-twitter" href="http://twitter.com/share?text=AndroidAnnotation을 공부 하자&amp;url=http://localhost:4000AndroidAnnotation"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/AndroidAnnotation"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000AndroidAnnotation"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/AndroidAnnotation"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000AndroidAnnotation"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

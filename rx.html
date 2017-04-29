@@ -133,9 +133,9 @@
 
         <section class="post-content">
             
-            <h3 id="rxjava-">RxJava 이해하기</h3>
+            <h3 id="rxjava-이해하기">RxJava 이해하기</h3>
 
-<h4 id="section">공부 링크</h4>
+<h4 id="공부-링크">공부 링크</h4>
 
 <ul>
   <li><a href="http://post.naver.com/viewer/postView.nhn?volumeNo=6721006&amp;memberNo=34635212">http://post.naver.com/viewer/postView.nhn?volumeNo=6721006&amp;memberNo=34635212</a></li>
@@ -147,7 +147,7 @@
   <li>데이터 처리가 끝날 때까지 쓰레드를 대기시키거나 코백을 받아서 처리하기 때문에 불필요한 컴퓨팅 리소스 사용이 발생하 됩니다. 반면 Messaging 기반의 Reactive Programming 에서는 필요한 경우에만 쓰레드를 생성 후 메시지 형태로 전달한다.</li>
 </ul>
 
-<h4 id="rxjava--">RxJava 의 기초</h4>
+<h4 id="rxjava-의-기초">RxJava 의 기초</h4>
 <ul>
   <li>RxJava 는 데이트를 가공/변형/처리를 하는 라이브러리</li>
 </ul>
@@ -158,73 +158,71 @@
   <li>rxjava 는 람다가…</li>
 </ul>
 
-<p>```java
-    // old
-    List<integer> datas = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    for (int data : datas) {
-      char value = (char) data + 'a';
-      print(value);
-    }</integer></p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="c1">// old</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">datas</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">data</span> <span class="o">:</span> <span class="n">datas</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//rxjava 특이점 없음
-Observable.fromIteratable(datas)
-.subscribe(data -&gt; {
-  char value = (char) data + 'a';
-  print(value);
-});
+    <span class="c1">//rxjava 특이점 없음</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>
+      <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">});</span>
 
-//rxjava 의 map 를 이용함
-Observable.fromIteratable(datas)
-.map(data -&gt; (char) data + 'a')
-.subscribe(value -&gt; print(value));
+    <span class="c1">//rxjava 의 map 를 이용함</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">));</span>
 
-// 요구조건 추가 
-//추가 1 : 짝수에 해당하는 숫자는 출력하지 말 것.
+    <span class="c1">// 요구조건 추가 </span>
+    <span class="c1">//추가 1 : 짝수에 해당하는 숫자는 출력하지 말 것.</span>
 
-//old
-for (int data : datas) {
-  if ((data % 2) != 0) {
-    char value = (char) data + 'a';
-    print(value);
-  }
-}
+    <span class="c1">//old</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">data</span> <span class="o">:</span> <span class="n">datas</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">((</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>
+        <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
 
-//rxjava filter 을 이용함
-Observable.fromIteratable(datas)
-.filter(data -&gt; (data % 2) != 0)
-.map(data -&gt; (char) data + 'a')
-.subscribe(value -&gt; print(value));
+    <span class="c1">//rxjava filter 을 이용함</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">));</span>
 
-//또 추가조건
-//추가 2 : 각 문자는 10번씩 반복되도록 한꺼번에 출력되도록 할 것.
+    <span class="c1">//또 추가조건</span>
+    <span class="c1">//추가 2 : 각 문자는 10번씩 반복되도록 한꺼번에 출력되도록 할 것.</span>
 
-//old
-List&lt;Character&gt; chars = new ArrayList&lt;&gt;();
-for (int data : datas) {
-  if ((data % 2) != 0) {
-    char value = (char) data + 'a';    
-    for (int idx = 0; idx &lt; 10; idx++) {
-      chars.add(value);
-    }
-  }
-}
-print(chars);
- 
-//rxjava flatmap 
-//flatmap 은 1개의 데이터에 대해 n 개의 데이터로 변형할 수 있는 처리 기능
-//collect 는 주입된 데이터를 특정 Collection 에 담을 수 있도록 하는 처리 기능
-//Observable.range 는 (n, m) 에 대해 n 부터 n + m -1 만큼 int 형 데이터를 호출해주는 데이터로
-//Observable.range(0, 10).map(index -&gt; value)) 는 value 라는 값을 10번 반복
-Observable.fromIteratable(datas)
-.filter(data -&gt; (data % 2) != 0)
-.map(data -&gt; (char) data + 'a')
-.flatMap(value -&gt; Observable.range(0, 10).map(index -&gt; value))
-.collect(() -&gt; new ArrayList&lt;Character&gt;(), (chars, value) -&gt; chars.add(value))
-.subscribe(values -&gt; print(values));
+    <span class="c1">//old</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">chars</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">data</span> <span class="o">:</span> <span class="n">datas</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">((</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">value</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">;</span>    
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">idx</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">chars</span><span class="o">);</span>
+     
+    <span class="c1">//rxjava flatmap </span>
+    <span class="c1">//flatmap 은 1개의 데이터에 대해 n 개의 데이터로 변형할 수 있는 처리 기능</span>
+    <span class="c1">//collect 는 주입된 데이터를 특정 Collection 에 담을 수 있도록 하는 처리 기능</span>
+    <span class="c1">//Observable.range 는 (n, m) 에 대해 n 부터 n + m -1 만큼 int 형 데이터를 호출해주는 데이터로</span>
+    <span class="c1">//Observable.range(0, 10).map(index -&gt; value)) 는 value 라는 값을 10번 반복</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">fromIteratable</span><span class="o">(</span><span class="n">datas</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Observable</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">collect</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;(),</span> <span class="o">(</span><span class="n">chars</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">values</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">values</span><span class="o">));</span>
+
 </code></pre>
 </div>
-
-<p>```</p>
 
 <h4 id="subject">Subject</h4>
 <ul>
@@ -233,29 +231,28 @@ Observable.fromIteratable(datas)
   <li>일반적인 예시로 사용자가 화면을 터치하는 것은 언제 얼마나 할지 알 수 없습니다.</li>
   <li>이런 경우 Subject를 사용합니다.</li>
   <li>Observable 는 내부에서</li>
-  <li>
-    <p>Subject 는 외부에서
-```java
-   PublishSubject<integer> subject = PublishSubject.<integer>create();
-   subject
-   .filter(data -&gt; (data % 2) != 0)
-   .map(data -&gt; (char) data + 'a')
-   .flatMap(value -&gt; Observable.range(0, 10).map(index -&gt; value))
-   .collect(() -&gt; new ArrayList<character>(), (chars, value) -&gt; chars.add(value))
-   .subscribe(values -&gt; print(values));</character></integer></integer></p>
+  <li>Subject 는 외부에서
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code>   <span class="n">PublishSubject</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">subject</span> <span class="o">=</span> <span class="n">PublishSubject</span><span class="o">.&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="n">create</span><span class="o">();</span>
+   <span class="n">subject</span>
+   <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+   <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Observable</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">))</span>
+   <span class="o">.</span><span class="na">collect</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;(),</span> <span class="o">(</span><span class="n">chars</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+   <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">values</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">values</span><span class="o">));</span>
 
-    <p>//사용
-   subject.onNext(0);
-   subject.onNext(1);
-   subject.onNext(2);
-   subject.onNext(3);
-   subject.onNext(4);
-   subject.onNext(5);
-```</p>
+   <span class="c1">//사용</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+   <span class="n">subject</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+</code></pre>
+    </div>
   </li>
 </ul>
 
-<h4 id="section-1">비동기 처리하기</h4>
+<h4 id="비동기-처리하기">비동기 처리하기</h4>
 <ul>
   <li>rxjava 는 비동기처리에 굉장히 유연하고 쉽게 사용 가능</li>
   <li>주로 사용하는 비동기 쓰레드 선언
@@ -293,33 +290,38 @@ Observable.fromIteratable(datas)
   <li>예제를 보면서 기존에는 아래와 같은 코드가 뭔지 몰랐지만 저렇게 된다는걸 이해됨 기능별로 쓰레드를 나누어서 동작시키는 코드로 아래처럼 코드로 이벤트 스트림을 만드는걸로 보임, 데이터주입은 아래처럼 한개만 있으면 되고, 데이터처리는 필요할때마다 변경해서 사용</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-    Observable.create(emitter -&gt; {
-      emitter.onNext(1);
-      emitter.onNext(2);
-      emitter.onNext(3);
-      emitter.onNext(4);
-      emitter.onComplete();
-    })
-    .subscribeOn(Schedulers.computation())
-    .observeOn(Schedulers.io())
-    .filter(data -&gt; (data % 2) != 0)
-    .map(data -&gt; (char) data + 'a')
-    .observeOn(Schedulers.computation())
-    .flatMap(value -&gt; Observable.range(0, 10).map(index -&gt; value))
-    .collect(() -&gt; new ArrayList&lt;Character&gt;(), (chars, value) -&gt; chars.add(value))
-    .observeOn(AndroidSchedulers.mainThread())
-    .subscribe(values -&gt; print(values));
- </code>
-  - 위 코드는 아래와 같은 쓰레드로 동작
-    - Observable.create() - Schedulers.computation()
-    - filter() - Schedulers.io()
-    - map() - Schedulers.io()
-    - flatMap() - Schedulers.computation()
-    - collect() - Schedulers.computation()
-    - subscribe() - AndroidSchedulers.mainThread()</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Observable</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">emitter</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onNext</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+      <span class="n">emitter</span><span class="o">.</span><span class="na">onComplete</span><span class="o">();</span>
+    <span class="o">})</span>
+    <span class="o">.</span><span class="na">subscribeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">computation</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">io</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">data</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">data</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">data</span> <span class="o">+</span> <span class="sc">'a'</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">computation</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">value</span> <span class="o">-&gt;</span> <span class="n">Observable</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">10</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">index</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">collect</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;(),</span> <span class="o">(</span><span class="n">chars</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">AndroidSchedulers</span><span class="o">.</span><span class="na">mainThread</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="n">values</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="n">values</span><span class="o">));</span>
+</code></pre>
+</div>
+<ul>
+  <li>위 코드는 아래와 같은 쓰레드로 동작
+    <ul>
+      <li>Observable.create() - Schedulers.computation()</li>
+      <li>filter() - Schedulers.io()</li>
+      <li>map() - Schedulers.io()</li>
+      <li>flatMap() - Schedulers.computation()</li>
+      <li>collect() - Schedulers.computation()</li>
+      <li>subscribe() - AndroidSchedulers.mainThread()</li>
+    </ul>
+  </li>
+</ul>
 
-<h4 id="rx-">Rx 기능정리</h4>
+<h4 id="rx-기능정리">Rx 기능정리</h4>
 <ul>
   <li><a href="http://reactivex.io/documentation/operators.html#alphabetical">Rx 문서</a></li>
 </ul>
@@ -346,7 +348,7 @@ Observable.fromIteratable(datas)
                 
                 <div class="author-meta">
                     <span class="author-location icon-location">  KOREA</span> 
-                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                    <span class="author-link icon-link"><a href="http://localhost:4000"> pyeongho.github.io/</a></span> 
                 </div>
             </section>
 
@@ -354,15 +356,15 @@ Observable.fromIteratable(datas)
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=RxJava&amp;url=https://pyeongho.github.io/rx"
+                <a class="icon-twitter" href="http://twitter.com/share?text=RxJava&amp;url=http://localhost:4000rx"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/rx"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000rx"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/rx"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000rx"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>

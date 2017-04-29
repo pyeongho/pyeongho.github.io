@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>http://localhost:4000</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>스태틱으로 변경하기</title>
+	  <link>//github-static</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-04-29T00:00:00+09:00</pubDate>
+	  <guid>//github-static</guid>
+	  <description><![CDATA[
+	     <h4 id="테마를-변경하면서-스택으로-변경하기로-결정">테마를 변경하면서 스택으로 변경하기로 결정</h4>
+<ul>
+  <li>테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정</li>
+  <li>목표 설정
+    <ul>
+      <li>저장소 위치를 비트버켓으로 이동한다.</li>
+      <li>지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="1-우선-저장소-옮기는-건-쉬움">1. 우선 저장소 옮기는 건 쉬움</h4>
+<ul>
+  <li>git remote add 태그 [저장소 위치]</li>
+  <li>추가된 저장소로 푸시</li>
+</ul>
+
+<h4 id="2-지킬-컴파일-환경-구성">2. 지킬 컴파일 환경 구성</h4>
+<ul>
+  <li>테마 변경중이라 글을 못섰지만</li>
+  <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
+</ul>
+
+<p>#### 3. 기존 파일을 모두삭제</p>
+<ul>
+  <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
+  <li>모두 정상 동작</li>
+</ul>
+
+<p>#### 4. 지금 쓰는건 테스트 하기위함</p>
+<ul>
+  <li>수동으로 비트버켓에 푸시</li>
+  <li>jekyll build</li>
+  <li>결과물을 pyeongho.github.io 로 푸시</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

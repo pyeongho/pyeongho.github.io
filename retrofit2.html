@@ -133,34 +133,33 @@
 
         <section class="post-content">
             
-            <h4 id="retrofit2--rxandroid2--mvp---">retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
+            <h4 id="retrofit2--rxandroid2--mvp-를-이용한-통신">retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
 
-<h4 id="mvp----">참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
+<h4 id="참고로-mvp-처럼만-보이고-아닐수도-있어요">참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
 
-<h4 id="dependencies-----">1. dependencies 추가 기존 내용과 동일 합니다.</h4>
+<h4 id="1-dependencies-추가-기존-내용과-동일-합니다">1. dependencies 추가 기존 내용과 동일 합니다.</h4>
 
-<p>```gradle
-    compile ‘com.squareup.okhttp3:okhttp:3.6.0’
-    compile ‘com.squareup.okhttp3:logging-interceptor:3.6.0’
-    compile ‘com.squareup.retrofit2:retrofit:2.1.0’
-    compile ‘com.squareup.retrofit2:converter-gson:2.1.0’</p>
+<div class="language-gradle highlighter-rouge"><pre class="highlight"><code>    <span class="n">compile</span> <span class="s1">'com.squareup.okhttp3:okhttp:3.6.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.squareup.okhttp3:logging-interceptor:3.6.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.squareup.retrofit2:retrofit:2.1.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.squareup.retrofit2:converter-gson:2.1.0'</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>compile 'io.reactivex.rxjava2:rxjava:2.0.1'
-compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0' ```
+    <span class="n">compile</span> <span class="s1">'io.reactivex.rxjava2:rxjava:2.0.1'</span>
+    <span class="n">compile</span> <span class="s1">'io.reactivex.rxjava2:rxandroid:2.0.1'</span>
+    <span class="n">compile</span> <span class="s1">'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'</span>
 </code></pre>
 </div>
 
-<h4 id="mvp--">2. mvp 패던 링크</h4>
+<h4 id="2-mvp-패던-링크">2. mvp 패던 링크</h4>
 <ul>
   <li><a href="http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html">잔디랩의 mvp</a></li>
   <li><a href="http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/">pluu dev</a></li>
   <li><a href="http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html">꿈많은 개발자 링크</a></li>
 </ul>
 
-<h4 id="mvp---1">3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
+<h4 id="3-통신으로만-구현-하다-보니-모델이-없어서--mvp-처럼-안느껴지네요">3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
 
-<h4 id="mvp--------">4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
+<h4 id="4--mvp-이외의-코드를-제거-하여-조금더-보기-편하도록-하겠습니다">4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
 <ul>
   <li>mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..</li>
   <li>다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.</li>
@@ -169,7 +168,7 @@ compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0' ```
   <li>버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.</li>
 </ul>
 
-<h4 id="section">5. 전체 샘플코드</h4>
+<h4 id="5-전체-샘플코드">5. 전체 샘플코드</h4>
 <ul>
   <li>기존 샘플코드에 폴더를 추가 하였습니다.</li>
   <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
@@ -197,7 +196,7 @@ compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0' ```
                 
                 <div class="author-meta">
                     <span class="author-location icon-location">  KOREA</span> 
-                    <span class="author-link icon-link"><a href="https://pyeongho.github.io/"> pyeongho.github.io/</a></span> 
+                    <span class="author-link icon-link"><a href="http://localhost:4000"> pyeongho.github.io/</a></span> 
                 </div>
             </section>
 
@@ -205,15 +204,15 @@ compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0' ```
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기&amp;url=https://pyeongho.github.io/retrofit2"
+                <a class="icon-twitter" href="http://twitter.com/share?text=retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기&amp;url=http://localhost:4000retrofit2"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/retrofit2"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000retrofit2"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/retrofit2"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000retrofit2"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
