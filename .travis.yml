@@ -1,14 +1,24 @@
 sudo: false
 language: ruby
 cache: bundler
-rvm:
+#rvm:
 #- 2.1
-- 2.1.1
+#- 2.1.1
 
-install:
+rvm:
+  - 2.1.0
+  - jruby-18mode
+  - jruby-19mode
+  - rbx-2
+  - ruby-head
+  - jruby-head
+  - ree
+
+#install:
   # Install Jekyll and dependencies
-  - bundle install
+  #- bundle install
 
+#script: "bundle exec jekyll build"
 #script: bundle exec rake site:deploy --quiet #--trace
 
 # Generate your secure token with the travis gem:
