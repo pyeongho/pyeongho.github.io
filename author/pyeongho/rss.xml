@@ -752,23 +752,27 @@ There is no plans to support a redirect without a user gesture.</p>
   <li>가계부에서 소비내역 지출 내역의 변경되지 않는다.</li>
   <li>모든 내용이 엔터티에 포함되어 있다.</li>
   <li>TransactionType 엔터티로 선언한것이다.</li>
-  <li>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨</li>
-  <li><code class="highlighter-rouge">kotlin
+  <li>
+    <p>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨</p>
+
+    <p><code class="highlighter-rouge">kotlin
   class TransactionCategory( 
     val id: String, 
     val name: String, 
     val transactionType: TransactionType, 
     val priority: Int
   ) : Entity
-</code></li>
-  <li><code class="highlighter-rouge">java
+</code></p>
+
+    <p><code class="highlighter-rouge">java
   class TransactionCategory extends Entity( 
     String id; 
     String name;
     TransactionType transactionType;
     Int priority;
   ) : 
-</code></li>
+</code></p>
+  </li>
 </ul>
 
 <h5 id="domain">2.2 Domain</h5>
@@ -785,8 +789,9 @@ There is no plans to support a redirect without a user gesture.</p>
       <li>BanksRepository 는 인터페이스로 존재</li>
       <li>도메인 레이어에 존재</li>
       <li>유스케이스는 데이터베이스를 고려하지 말자</li>
-      <li>사고의 흐름</li>
       <li>
+        <p>사고의 흐름</p>
+
         <p>```kotlin
 class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){ 
   override fun buildUseCaseObservable(): Observable&lt;List<bank>&gt; { 
@@ -875,25 +880,31 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
   <li>깃허브 페이지를 이용중 가장 힘든건 스크린샷을 추가하는 방법이라 생각해서 찾아보니 구글드라이브를 이미지서버로 사용이 가능해서 적용해 보았습니다. 문제는 사파리에서 정상동작 안한다는 단점</li>
 </ul>
 
-<p><a href="https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/">참고 : https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/</a>
-#### 1. 구글 드라이브 설치
-  - homebrew 를 이용해서 쉽게 설치
-  - $brew install gdrive
-  - 설치 완료후
-  - $gdrive list 
-  - 입력하면 인증해야 한다고 나오면서 아래처럼 링크가 나옵니다.
-    <code class="highlighter-rouge">
-    Authentication needed
-    Go to the following url in your browser:
-    https://accounts.google.com/o/oauth2/auth?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx........
-    Enter verification code:
-   </code>
-  - 권한 요청 페이지가 나오고 권한을 허용하면  인증 코드가 나온는데 복사 해서 입력란에 넣어 줍니다.
-  - 다시 한번
-  - $gdrive list
-  - 자신의 구글드라이브의 루트의 리스트가 나옵니다.</p>
+<p><a href="https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/">참고 : https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/</a></p>
 
-<h4 id="section">2. 캡쳐 쉘 스크립트 만들기</h4>
+<h4 id="section">1. 구글 드라이브 설치</h4>
+<ul>
+  <li>homebrew 를 이용해서 쉽게 설치</li>
+  <li>$brew install gdrive</li>
+  <li>설치 완료후</li>
+  <li>$gdrive list</li>
+  <li>
+    <p>입력하면 인증해야 한다고 나오면서 아래처럼 링크가 나옵니다.</p>
+
+    <p><code class="highlighter-rouge">
+Authentication needed
+Go to the following url in your browser:
+https://accounts.google.com/o/oauth2/auth?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx........
+Enter verification code:
+</code></p>
+  </li>
+  <li>권한 요청 페이지가 나오고 권한을 허용하면  인증 코드가 나온는데 복사 해서 입력란에 넣어 줍니다.</li>
+  <li>다시 한번</li>
+  <li>$gdrive list</li>
+  <li>자신의 구글드라이브의 루트의 리스트가 나옵니다.</li>
+</ul>
+
+<h4 id="section-1">2. 캡쳐 쉘 스크립트 만들기</h4>
 <ul>
   <li>
     <script src="https://gist.github.com/anonymous/1582cd1b8c6afd2fa682d71779e03aa9.js"></script>
@@ -913,7 +924,7 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
   <li>아래 앱을 만들때는 스크립트를 복사 해서 사용하기웨 위 내용은 사용 안하더라구요</li>
 </ul>
 
-<h4 id="section-1">4. 맥용 앱을 만들어서 단축키로 실행해야죠</h4>
+<h4 id="section-2">4. 맥용 앱을 만들어서 단축키로 실행해야죠</h4>
 <ul>
   <li>Platypus 요런 프로그램이 쉘 스크립트를 앱으로 만들어 줍니다.</li>
   <li><a href="http://sveinbjorn.org/files/software/platypus.zip">다운로드 링크 : Platypus</a></li>
@@ -957,12 +968,17 @@ class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){
     - <a href="https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/">https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/</a></li>
 </ul>
 
-<p>####2. carthage 사용법 
-  - homebrew로 설치 하기
-     - 설치 안되어 있으면
-       - $ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</p>
-
+<h4 id="carthage-">2. carthage 사용법</h4>
 <ul>
+  <li>homebrew로 설치 하기
+    <ul>
+      <li>설치 안되어 있으면
+        <ul>
+          <li>$ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li>$ brew update</li>
   <li>$ brew install carthage</li>
   <li>Cartfile 파일 생성하기
