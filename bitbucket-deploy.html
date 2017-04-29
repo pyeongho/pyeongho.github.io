@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>미라클 모닝,당신의 하루를 바꾸는 기적</title>
+    <title>비트버켓에서 파이프라인을 이용한 자동 배포</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -97,7 +97,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/cover2.jpg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover4.jpg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -108,27 +108,23 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-book">
+    <article class="post tag-githubpage">
 
         <header class="post-header">
-            <h1 class="post-title">미라클 모닝,당신의 하루를 바꾸는 기적</h1>
+            <h1 class="post-title">비트버켓에서 파이프라인을 이용한 자동 배포</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2017-04-22">22 Apr 2017</time>
+            <time class="post-date" datetime="2017-04-29">29 Apr 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/book'>Book</a>,
+                       <a href='/tag/githubpage'>Githubpage</a>,
                        
                 
                     
-                       <a href='/tag/미라클모닝'>미라클모닝</a>,
-                       
-                
-                    
-                       <a href='/tag/문정나비'>문정나비</a>
+                       <a href='/tag/bitbucket'>Bitbucket</a>
                        
                 
                 
@@ -137,101 +133,83 @@
 
         <section class="post-content">
             
-            <h4 id="section">본것 깨달은것 적용할것</h4>
-
-<h4 id="section-1">1. 내꺼</h4>
+            <h4 id="section">자동배포시스템 적용하기</h4>
 <ul>
-  <li>미라클 모닝
-    <ul>
-      <li>명상: 앉아서, 고요히, 평화롭게, 천천히, 깊히 호흡 하면서</li>
-      <li>확신의 말:  나의 무한한 가능성과 우선 과제들을 상기시켜주는 다짐과 확신의 말을 큰소리로 읽기</li>
-      <li>비전보드 : 눈을 감아 상상하거나, 비전보드를 보며 실제 처럼 생생하게 성과를 그려 본다.</li>
-      <li>쓰기 : 감사함을 느끼는 대상, 자랑스러운 기억, 노력해서 얻어낸 결과를 일기장에 적는다.</li>
-      <li>읽기 : 자기계발서를 읽는다.</li>
-      <li>운동 : 일어서서 몸을 움직인다.</li>
-    </ul>
-  </li>
-  <li>36: 성공과 정도가 자기계발의 정도를 넘어서는 경우는 드물다. “ 성공과 일치되는 노력”</li>
-  <li>60: 평범
-    <ul>
-      <li>룸미러 증후군 : 자신은 안된다. 한계를 설정해서 자신을 미리 규정한다.</li>
-      <li>목표의식 결여
-        <ul>
-          <li>목표의식 만들기 :사소하고 간단한 목표, 언제나 바꿔도 되는 목표, 목표에 맞춰 살자</li>
-        </ul>
-      </li>
-      <li>사건의 분리: 약속깨는것 정도는 괜찬다.</li>
-      <li>책임감 부족</li>
-      <li>평범한 영향력 집단에 있기, 밝은사람 주변에는 밝은 사람만</li>
-      <li>낮은 자기계발 정도</li>
-      <li>절박함의 부족</li>
-    </ul>
-  </li>
-  <li>“목표는 결정 하는것이다”</li>
-  <li>85: 아침 일찍 일어나기 위해서는 휴가 첫날의 설렘을 가져보자</li>
-  <li>121: 목표는 구체적으로
-    <ul>
-      <li>‘나는 일주일에 5일 헬스클럼에 갈것이다. 최소 20분간 러닝머신을 뛸 것이다. 20분동안 온전히 뜀박질에 집중 할 것이다’</li>
-      <li>빈도, 양, 정확한 시간으로 목표를 정한다.</li>
-    </ul>
-  </li>
-  <li>126: 꿈을 시각화 해보자
-    <ul>
-      <li>예) 난 어디에 취직해서 어떤 개발자가 되어서 어떤 코딩을 할것이다.</li>
-    </ul>
-  </li>
-  <li>147:  생각을 손으로 정리하면 조금더 명확해 진다.</li>
-  <li>158: 침묵(명상)5분 -&gt; 확신의말 5분 -&gt; 시각화 5분 -&gt; 운동 20분 -&gt; 독서 20분 -&gt; 일기쓰기 5분</li>
+  <li>github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함</li>
 </ul>
 
-<h4 id="section-2">2. 타인의 생각</h4>
+<p>#### 1. 스태틱으로 변경 후 배포 방법 개선이 필요 하다고 생각
+   - 블로그 업데이트 순서
+     - 비트버켓에서 클론
+     - 글 작성
+     - 비트버켓에 오리지널 마크다운 푸시
+     - 로컬에서 지킬 빌드 후 결과를 깃허브에 푸시
+   - 위 같은 순서를 하려고 하니 너무 끔직함
+   - 스크립트를 작성해서 하려 했지만 마크다운 툴을 비주얼스튜디오 코드를 사용하다 보니 스크립트 명령을 부를수가 없다.
+   - 명령창을 열어서 스크립트 실행? 이것도 귀찮다.
+   - 만약 로컬에서 지킬 빌드가 안되면 어떻게? 저거 하려면 몇 단계를 거쳐야 하는거야.. 나름 코딩하는 사람인데</p>
+
+<h4 id="section-1">2. 트래비스 삽질</h4>
 <ul>
-  <li>A : ‘오늘을 마지노선으로 그어라’ 에 대한 의문점이 많다.</li>
-  <li>B
-    <ul>
-      <li>교육의 질이 교사를 넘어서기 힘들다.</li>
-      <li>8번 노출의 힘</li>
-      <li>아프리카에 우물 파기, 하루 4시간씩 물을 구하러 이동하지만 우물을 파기위한 시간이 없다. 우선순위를 정하자</li>
-      <li>우리가 가진 빛은 다른 사람에게 전파 된다.</li>
-    </ul>
-  </li>
-  <li>C : 나를 사랑 하자, 나를 비난하지 말자</li>
-  <li>D
-    <ul>
-      <li>평범함에 안주 하지 않겠다.</li>
-      <li>확신을 무한히 외친다.</li>
-      <li>숨쉬는걸 느껴 보자</li>
-    </ul>
-  </li>
-  <li>E : 다른사람에게 좋은 인상을 주려고 노력하지 말고 자신을 보여주자, (목표설정), (멘토), (동료), (의지)</li>
-  <li>F : 마음만 먹고 행동하지 않는건 기록하지 않아서 이다.</li>
-  <li>G : 환경 &lt;- 행동 &lt;- 능력 &lt;- 믿음 &lt;- 정체성
-    <ul>
-      <li>금수저 흙수저는 행동으로 해결한다.</li>
-      <li>습관이 중요하다.</li>
-    </ul>
-  </li>
+  <li>jekyll/jasper 테마가 트래비스 연동을 추천해서 해당 방법을 계속 찾음</li>
+  <li>깃허브에서도 실패한 트래비스</li>
+  <li>비트버켓에서 트래비스 가능 할거라 생각하고 찾아지만 한글이나 영어 둘다 자료가 너무 없음</li>
+  <li>검색을 조금 바꿔보니 비트버켓은 자체 ci 를 제공하는걸로 보임</li>
+  <li>파이프라인 이라는 용어찾음</li>
 </ul>
 
-<h4 id="section-3">3. 책 추천</h4>
+<h4 id="section-2">3 비트버켓 파이프라인 적응기</h4>
 <ul>
-  <li>‘새벽나라에 사는 거인’</li>
-  <li>‘내 영혼을 담은 인생의 사계절: 짐론’</li>
+  <li>비트버켓 저장소의 설정을 확인하면 pipeline 설정 항목이 보인다.</li>
+  <li>항목을 설정하면 파이프라인 설정 파일을 만들수있다.</li>
+  <li>지킬을 루비라는것만 알아서 ..</li>
+  <li>다시 검색을 시작</li>
+  <li><a href="https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/">https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/</a></li>
+  <li>위 링크에서 어떻게 해야 할지를 발견함</li>
+  <li>내가 생각했던 순서를 정확하게 똑같이 하려는 분을 만남. 감사합니다.</li>
 </ul>
 
-<h4 id="section-4">다시 한번</h4>
+<h4 id="section-3">4. 자동 배포 시스템</h4>
 <ul>
-  <li>목표는 결정 하는것이다.</li>
-  <li>8번 노출의 힘</li>
-  <li>자신의 목표 꿈을 무한 반복하자</li>
+  <li>파이프라인 얌 파일 설정</li>
 </ul>
 
-<h4 id="section-5">현장 메모 첨부</h4>
+<p><code class="highlighter-rouge">yml
+  image: ruby:2.4.0
+  pipelines:  
+    default:
+      - step:
+          script:
+            - git config --global user.email "pyeongho@bitbucket.com"
+            - git config --global user.name "pyeongho"
+            - gem install jekyll
+            - bundle install
+            - rm -rf .git
+            - git clone https://pyeongho:$SITE_A@github.com/pyeongho/pyeongho.github.io.git _site
+            - jekyll build
+            - cd _site
+            - git add . &amp;&amp; git commit -m "New version - $BITBUCKET_COMMIT"
+            - git push origin master
+ </code></p>
+
 <ul>
-  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3TUxaNGV6LU15M1U" alt="" /></li>
-  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3Uy1JSEV0TnNxVXc" alt="" /></li>
-  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3YjBtaGRGcnBWTzg" alt="" /></li>
-  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3UzdkaDQtbmtMRG8" alt="" /></li>
+  <li>번들 빌드 하기위해서는 Gemfile Gemfile.lock 파일 필요합니다.(재스퍼 테마에서 파일 참고)</li>
+  <li>위 내용중 SITE_A 는 비트버켓 설정에 가능합니다. 공개된곳에 암호를 입력할수 없기에 설정에서 환경 변수 등록이 가능합니다.
+    <ul>
+      <li>setting -&gt; Environment variables -&gt; 문자열 등록</li>
+    </ul>
+  </li>
+  <li>처음에는 토큰을 트래비스가 했던 토큰 방법을 찾아 보았는데 계속 실패하고 설마 했는데 사이트에 환경변수 입력하는 곳 있어서 github push 조건을 만들었습니다.</li>
+  <li>그래서 테스트 푸시를 했지만 컴파일 에러 에러 에러 ..</li>
+  <li>처음에는 루비 버전 문제라 생각 하고 재스퍼의 트래비스와 동일한 버전으로 변경했지만 실패..</li>
+  <li>에러 메시지를 자세히 읽어보니 json 1.8.3 라고 나와 있지만 정확히 안알려줌</li>
+  <li>에러 메시지로 구글링 하니 동일한 증상에 대한 해결책이 있음</li>
+  <li><a href="https://github.com/flori/json/issues/303">https://github.com/flori/json/issues/303</a></li>
+  <li>여기에 보면 ruby 2.4 에서는 1.8.3 버전이 동작 안한다고 함</li>
+  <li>그래서 Gemfile.lock 파일에서 json 1.8.3 을 2.0.2 로 변경 지킬 컴파일 완료</li>
+  <li>자동 배포 완료</li>
+  <li>비트버켓 파이프라인에서 진행상황 또는 결과들을 볼 수있습니다.</li>
+  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3REF4SGtfZEhpWVU" alt="결과" /></li>
 </ul>
 
 
@@ -265,15 +243,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=미라클 모닝,당신의 하루를 바꾸는 기적&amp;url=https://pyeongho.github.io/navi_morning"
+                <a class="icon-twitter" href="http://twitter.com/share?text=비트버켓에서 파이프라인을 이용한 자동 배포&amp;url=https://pyeongho.github.io/bitbucket-deploy"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/navi_morning"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/bitbucket-deploy"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/navi_morning"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/bitbucket-deploy"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -311,20 +289,20 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover4.jpg)" href="/bitbucket-deploy">
+        <a class="read-next-story " style="background-image: url(/assets/images/cover4.jpg)" href="/github-static">
             <section class="post">
-                <h2>비트버켓에서 파이프라인을 이용한 자동 배포</h2>
-                <p>#### 자동배포시스템 적용하기 - github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓...</p>
+                <h2>스태틱으로 변경하기</h2>
+                <p>#### 테마를 변경하면서 스택으로 변경하기로 결정 - 테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정...</p>
             </section>
         </a>
     
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/google-todo-clean">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover2.jpg)" href="/navi_morning">
             <section class="post">
-                <h2>구글에서 만든 클린 아키텍처를 이해하고 알아보자</h2>
-                <p>구글 클린 아키텍처 mvp 패턴만 적용 하더라도 구조가 이상해 보인다. 어떻게 하면 좀더 좋은 구조를...</p>
+                <h2>미라클 모닝,당신의 하루를 바꾸는 기적</h2>
+                <p>본것 깨달은것 적용할것 1. 내꺼 미라클 모닝 명상: 앉아서, 고요히, 평화롭게, 천천히, 깊히 호흡 하면서...</p>
             </section>
         </a>
     

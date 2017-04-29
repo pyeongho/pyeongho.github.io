@@ -32,6 +32,24 @@
     
       
       <item>
+        <title>비트버켓에서 파이프라인을 이용한 자동 배포</title>
+        
+          <description>&lt;h4 id=&quot;section&quot;&gt;자동배포시스템 적용하기&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//bitbucket-deploy</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//bitbucket-deploy</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>미라클 모닝,당신의 하루를 바꾸는 기적</title>
         
           <description>&lt;h4 id=&quot;section&quot;&gt;본것 깨달은것 적용할것&lt;/h4&gt;
