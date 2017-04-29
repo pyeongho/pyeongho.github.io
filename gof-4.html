@@ -133,14 +133,14 @@
 
         <section class="post-content">
             
-            <h3 id="gof-의-자바-디자인-패턴-인프런-강의">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+            <h3 id="gof------">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
 
-<h4 id="코드-링크">코드 링크</h4>
+<h4 id="section">코드 링크</h4>
 <ul>
   <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
 </ul>
 
-<h4 id="11-데코레이션-패턴">11. 데코레이션 패턴</h4>
+<h4 id="section-1">11. 데코레이션 패턴</h4>
 <ul>
   <li>학습목표
     <ul>
@@ -164,7 +164,7 @@
   </li>
 </ul>
 
-<h4 id="12-방문자-패턴">12. 방문자 패턴</h4>
+<h4 id="section-2">12. 방문자 패턴</h4>
 <ul>
   <li>학습목표
     <ul>
@@ -174,7 +174,7 @@
   <li>수정 불가능한 클래스를 방문자 패턴을 이용해서 분리해서 처리가 가능함</li>
 </ul>
 
-<h4 id="13-책임사슬-처리">13. 책임사슬 처리</h4>
+<h4 id="section-3">13. 책임사슬 처리</h4>
 <ul>
   <li>학습목표
     <ul>
@@ -187,25 +187,25 @@
       </li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">PlusCal</span> <span class="n">plus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlusCal</span><span class="o">();</span>
-    <span class="n">SubCal</span> <span class="n">sub</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubCal</span><span class="o">();</span>
+    <p>```java
+    PlusCal plus = new PlusCal();
+    SubCal sub = new SubCal();</p>
 
-    <span class="c1">// 위 내용은 추상화 한다.</span>
-    <span class="n">Cal</span> <span class="n">plus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlusCal</span><span class="o">();</span>
-    <span class="n">Cal</span> <span class="n">sub</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubCal</span><span class="o">();</span>
-    <span class="n">plus</span><span class="o">.</span><span class="na">setNextCal</span><span class="o">(</span><span class="n">sub</span><span class="o">);</span>
-        
-    <span class="n">Request</span> <span class="n">request1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="s">"+"</span><span class="o">);</span>
-    <span class="n">Request</span> <span class="n">request2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="s">"-"</span><span class="o">);</span>
-        
-    <span class="n">plus</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">request1</span><span class="o">);</span>
-    <span class="n">plus</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">request2</span><span class="o">);</span>
-
+    <div class="highlighter-rouge"><pre class="highlight"><code>// 위 내용은 추상화 한다.
+Cal plus = new PlusCal();
+Cal sub = new SubCal();
+plus.setNextCal(sub);
+    
+Request request1 = new Request(1,2,"+");
+Request request2 = new Request(10,2,"-");
+    
+plus.process(request1);
+plus.process(request2);
 </code></pre>
     </div>
-    <ul>
-      <li>처리를 다음 클래스로 넘겨서 처리 시킨다.</li>
-    </ul>
+
+    <p>```
+ - 처리를 다음 클래스로 넘겨서 처리 시킨다.</p>
   </li>
 </ul>
 

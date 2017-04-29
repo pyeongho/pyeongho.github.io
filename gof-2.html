@@ -133,14 +133,14 @@
 
         <section class="post-content">
             
-            <h3 id="gof-의-자바-디자인-패턴-인프런-강의">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+            <h3 id="gof------">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
 
-<h4 id="코드-링크">코드 링크</h4>
+<h4 id="section">코드 링크</h4>
 <ul>
   <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
 </ul>
 
-<h4 id="5-프로토타입-패턴">5. 프로토타입 패턴</h4>
+<h4 id="section-1">5. 프로토타입 패턴</h4>
 <ul>
   <li>복잡한 인스턴스를 복사 할 수 있다</li>
   <li>복사할 원형</li>
@@ -148,17 +148,26 @@
     <ul>
       <li>종류가 너무 많아서 클래스로 정리되지 않는다.</li>
       <li>클래스로부터 인스턴스 생성이 어렵다.
-      1. 요구사항
-        <ul>
-          <li>어떤 모양을 그릴 수 있도록 하고 복사 붙혀넣기 기능 구현
-    2. 구현</li>
-        </ul>
+        <ol>
+          <li>요구사항
+            <ul>
+              <li>어떤 모양을 그릴 수 있도록 하고 복사 붙혀넣기 기능 구현</li>
+            </ul>
+          </li>
+          <li>구현</li>
+        </ol>
       </li>
       <li>자바에는 이미 clone 가 가능함</li>
       <li>implements Cloneable 를 사용하면 사용 할 수 있다.
-     3. 요구사항</li>
+        <ol>
+          <li>요구사항</li>
+        </ol>
+      </li>
       <li>복사 후 붙혀 넣기를 하면 두 도형이 겹치는데 안겹치도록 살짝 옆으로
-     4. 알아두면 좋은 복사</li>
+        <ol>
+          <li>알아두면 좋은 복사</li>
+        </ol>
+      </li>
       <li>깊은 복사
         <ul>
           <li>clone 를 이용하여 값을 복사해서 생각 하는 2개의 인스턴스</li>
@@ -174,43 +183,45 @@
   </li>
 </ul>
 
-<h4 id="61-빌더-패턴책">6.1 빌더 패턴(책)</h4>
+<h4 id="section-2">6.1 빌더 패턴(책)</h4>
 <ul>
   <li>복잡한 단계가 필요한 인스턴스 생성을 패턴을 통해 구현
     <ol>
-      <li>생각의 흐름</li>
-    </ol>
-    <ul>
-      <li>컴퓨터 컴1 = 뉴 컴퓨터(사양1, 사양2 ,…);</li>
-      <li>위 처럼 가능 하지만 너무 복잡하고 길어짐</li>
-      <li>그래서 다른 클래스에서 만들온다.
-       2. 빌더 패턴 생각의 흐름</li>
-      <li>공장을 만든다.</li>
-      <li>공장에서 설계도를 받는다.
+      <li>생각의 흐름
         <ul>
-          <li>추상으로 만들어서 원하는 설계도만 추가하면 간단하게 만들 수 있다.</li>
+          <li>컴퓨터 컴1 = 뉴 컴퓨터(사양1, 사양2 ,…);</li>
+          <li>위 처럼 가능 하지만 너무 복잡하고 길어짐</li>
+          <li>그래서 다른 클래스에서 만들온다.</li>
         </ul>
       </li>
-      <li>공장에서 설계도로 만든다.</li>
-      <li>공장에서 결과를 반환 한다.</li>
-    </ul>
+      <li>빌더 패턴 생각의 흐름
+        <ul>
+          <li>공장을 만든다.</li>
+          <li>공장에서 설계도를 받는다.
+            <ul>
+              <li>추상으로 만들어서 원하는 설계도만 추가하면 간단하게 만들 수 있다.</li>
+            </ul>
+          </li>
+          <li>공장에서 설계도로 만든다.</li>
+          <li>공장에서 결과를 반환 한다.</li>
+        </ul>
+      </li>
+    </ol>
   </li>
 </ul>
 
-<h4 id="62-빌더-패턴현장">6.2 빌더 패턴(현장)</h4>
+<h4 id="section-3">6.2 빌더 패턴(현장)</h4>
 <ul>
   <li>많은 변수를 가진 객체의 생성을 가독성 높도록 코딩</li>
-  <li>
-    <div class="highlighter-rouge"><pre class="highlight"><code>Computer com = ComputerBuilder
+  <li><code class="highlighter-rouge">
+Computer com = ComputerBuilder
   .start()
   .setCpu("i7")
   .setRam("8g")
   .setStrorage("256g ssd")
   .buid();
-</code></pre>
-    </div>
-    <h4 id="71-추상-팩토리-패턴">7.1 추상 팩토리 패턴</h4>
-  </li>
+</code>
+#### 7.1 추상 팩토리 패턴</li>
   <li>관련 있는 객체의 생성을 가상화 한다.</li>
   <li>바이크팩토리 패토리 = 뉴 삼천리바이크팩토리
 팩토리.바디생성

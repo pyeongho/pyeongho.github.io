@@ -15,10 +15,10 @@
 	  <title>스태틱으로 변경하기</title>
 	  <link>//github-static</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-29T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-29T00:00:00+00:00</pubDate>
 	  <guid>//github-static</guid>
 	  <description><![CDATA[
-	     <h4 id="테마를-변경하면서-스택으로-변경하기로-결정">테마를 변경하면서 스택으로 변경하기로 결정</h4>
+	     <h4 id="section">테마를 변경하면서 스택으로 변경하기로 결정</h4>
 <ul>
   <li>테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정</li>
   <li>목표 설정
@@ -29,25 +29,25 @@
   </li>
 </ul>
 
-<h4 id="1-우선-저장소-옮기는-건-쉬움">1. 우선 저장소 옮기는 건 쉬움</h4>
+<h4 id="section-1">1. 우선 저장소 옮기는 건 쉬움</h4>
 <ul>
   <li>git remote add 태그 [저장소 위치]</li>
   <li>추가된 저장소로 푸시</li>
 </ul>
 
-<h4 id="2-지킬-컴파일-환경-구성">2. 지킬 컴파일 환경 구성</h4>
+<h4 id="section-2">2. 지킬 컴파일 환경 구성</h4>
 <ul>
   <li>테마 변경중이라 글을 못섰지만</li>
   <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
 </ul>
 
-<h4 id="3-기존-파일을-모두삭제">3. 기존 파일을 모두삭제</h4>
+<h4 id="section-3">3. 기존 파일을 모두삭제</h4>
 <ul>
   <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
   <li>모두 정상 동작</li>
 </ul>
 
-<h4 id="4-지금-쓰는건-테스트-하기위함">4. 지금 쓰는건 테스트 하기위함</h4>
+<h4 id="section-4">4. 지금 쓰는건 테스트 하기위함</h4>
 <ul>
   <li>수동으로 비트버켓에 푸시</li>
   <li>jekyll build</li>
@@ -62,12 +62,12 @@
 	  <title>미라클 모닝,당신의 하루를 바꾸는 기적</title>
 	  <link>//navi_morning</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
 	  <guid>//navi_morning</guid>
 	  <description><![CDATA[
-	     <h4 id="본것-깨달은것-적용할것">본것 깨달은것 적용할것</h4>
+	     <h4 id="section">본것 깨달은것 적용할것</h4>
 
-<h4 id="1-내꺼">1. 내꺼</h4>
+<h4 id="section-1">1. 내꺼</h4>
 <ul>
   <li>미라클 모닝
     <ul>
@@ -112,7 +112,7 @@
   <li>158: 침묵(명상)5분 -&gt; 확신의말 5분 -&gt; 시각화 5분 -&gt; 운동 20분 -&gt; 독서 20분 -&gt; 일기쓰기 5분</li>
 </ul>
 
-<h4 id="2-타인의-생각">2. 타인의 생각</h4>
+<h4 id="section-2">2. 타인의 생각</h4>
 <ul>
   <li>A : ‘오늘을 마지노선으로 그어라’ 에 대한 의문점이 많다.</li>
   <li>B
@@ -141,20 +141,20 @@
   </li>
 </ul>
 
-<h4 id="3-책-추천">3. 책 추천</h4>
+<h4 id="section-3">3. 책 추천</h4>
 <ul>
   <li>‘새벽나라에 사는 거인’</li>
   <li>‘내 영혼을 담은 인생의 사계절: 짐론’</li>
 </ul>
 
-<h4 id="다시-한번">다시 한번</h4>
+<h4 id="section-4">다시 한번</h4>
 <ul>
   <li>목표는 결정 하는것이다.</li>
   <li>8번 노출의 힘</li>
   <li>자신의 목표 꿈을 무한 반복하자</li>
 </ul>
 
-<h4 id="현장-메모-첨부">현장 메모 첨부</h4>
+<h4 id="section-5">현장 메모 첨부</h4>
 <ul>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3TUxaNGV6LU15M1U" alt="" /></li>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3Uy1JSEV0TnNxVXc" alt="" /></li>
@@ -170,15 +170,15 @@
 	  <title>구글에서 만든 클린 아키텍처를 이해하고 알아보자</title>
 	  <link>//google-todo-clean</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
 	  <guid>//google-todo-clean</guid>
 	  <description><![CDATA[
-	     <h3 id="구글-클린-아키텍처">구글 클린 아키텍처</h3>
+	     <h3 id="section">구글 클린 아키텍처</h3>
 <ul>
   <li>mvp 패턴만 적용 하더라도 구조가 이상해 보인다. 어떻게 하면 좀더 좋은 구조를 만들 수 있을까를 고민하던 중 클린아키텍처가 있었고 그중 구글이 만들 샘플 코드가 기본 라이브러리로만 만들어져서 마음에 들어서 분석하기 시작함</li>
 </ul>
 
-<h4 id="1-구글-샘플-분석-하기">1. 구글 샘플 분석 하기</h4>
+<h4 id="section-1">1. 구글 샘플 분석 하기</h4>
 <ul>
   <li><a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/">https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/</a></li>
   <li>패키지 구분을 어떻게 했는지 직관적인 확인이 어렵다.(아직 적응 못함)</li>
@@ -227,87 +227,75 @@
 	  <title>크롬 40+ 버전에서 의 앱 실행 문제</title>
 	  <link>//chrome-40</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
 	  <guid>//chrome-40</guid>
 	  <description><![CDATA[
-	     <h3 id="크롬에서-사용자-제스처-없이-앱-실행은-안됩니다">크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.</h3>
+	     <h3 id="section">크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.</h3>
 <ul>
   <li>탐색할수없음</li>
 </ul>
 
-<h4 id="1-javascript-의-body-onload-에-마켓-이동하는-코드를-추가">1. javascript 의 body onload 에 마켓 이동하는 코드를 추가</h4>
+<h4 id="javascript--body-onload-----">1. javascript 의 body onload 에 마켓 이동하는 코드를 추가</h4>
 <ul>
   <li>아래와 같이 간단하게 추가 했는데 마켓으로 이동 안하는 기기들이 있음</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>   <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-    <span class="kd">function</span> <span class="nx">go_marget</span><span class="p">(){</span>
-         <span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">'market://details?id=com.xxx.xxx'</span><span class="p">;</span>
-    <span class="p">}</span>
-   <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>   <span class="o">&lt;</span><span class="nx">body</span> <span class="nx">onload</span><span class="o">=</span><span class="s2">"go_marget()"</span><span class="o">&gt;</span>   
+<p>```javascript
+   <script>
+    function go_marget(){
+         top.location.href = 'market://details?id=com.xxx.xxx';
+    }
+   </script></p>
+<body onload="go_marget()">   
 
-</code></pre>
-</div>
+  ```
 
-<ul>
-  <li>크롬 인스펙트를 이용해서 콘솔로그를 확인하니 “탐색할수없음” 이라는 문구가 나옴</li>
-</ul>
+  - 크롬 인스펙트를 이용해서 콘솔로그를 확인하니 "탐색할수없음" 이라는 문구가 나옴
 
-<h4 id="2-구글-검색-시작">2. 구글 검색 시작</h4>
-<ul>
-  <li>이것 저것 검색 하다 보니 chrome 40+ 이상에서는 동작 안하는다는 내용 확인</li>
-  <li>
-    <p><a href="https://devtalk.kakao.com/t/onload/15293/2">https://devtalk.kakao.com/t/onload/15293/2</a></p>
-  </li>
-  <li>그래서 조금더 검색</li>
-  <li><a href="http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/">http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/</a></li>
-  <li>에서 내용을 잘 정리해줌</li>
-</ul>
+#### 2. 구글 검색 시작
+  - 이것 저것 검색 하다 보니 chrome 40+ 이상에서는 동작 안하는다는 내용 확인 
+  - [https://devtalk.kakao.com/t/onload/15293/2](https://devtalk.kakao.com/t/onload/15293/2)
 
-<h4 id="3-내용-요약">3. 내용 요약</h4>
-<ul>
-  <li>구글엔지니어가 판도라 앱을 설치</li>
-  <li>주소창에 pandora.com 을 크롬에서 입력</li>
-  <li>웹사이트로 이동되지 않고 판도앱이 실행됨</li>
-  <li>버그로 접수</li>
-  <li>수정해 버림</li>
-</ul>
+  - 그래서 조금더 검색
+  - [http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/](http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/)
+  - 에서 내용을 잘 정리해줌 
 
-<h4 id="4-구글의-답변">4. 구글의 답변</h4>
-<ul>
-  <li>
-    <p>원문 : From the omnibox, no, there is no plans to allow external redirects.  If typing in the omnibox, the user is showing a strong intent to stay within chrome, so we made the decision to not allow external redirects (too many of them led to what we believed to be bad user experiences).
+#### 3. 내용 요약
+  - 구글엔지니어가 판도라 앱을 설치
+  - 주소창에 pandora.com 을 크롬에서 입력
+  - 웹사이트로 이동되지 않고 판도앱이 실행됨
+  - 버그로 접수 
+  - 수정해 버림 
+
+#### 4. 구글의 답변 
+ - 원문 : From the omnibox, no, there is no plans to allow external redirects.  If typing in the omnibox, the user is showing a strong intent to stay within chrome, so we made the decision to not allow external redirects (too many of them led to what we believed to be bad user experiences).
 Clicking on a link should still behave as before and redirect to market:// links. As it stands, how can I programmatically redirect a user to the play store?
-There is no plans to support a redirect without a user gesture.</p>
-  </li>
-  <li>
-    <p>번역기 : 검색 주소창에서 외부로 리디렉션을 허용 할 계획이 없습니다. 검색 주소창에 검색어를 입력하면 사용자는 크롬 내에 머물러야한다는 강한 의지를 나타내고 있으므로 외부 리디렉션을 허용하지 않기로 결정했습니다. 너무 많은 사용자가 사용자 경험이 좋지 않다고 생각하는 것으로 이끌었습니다. 
+There is no plans to support a redirect without a user gesture.
+
+- 번역기 : 검색 주소창에서 외부로 리디렉션을 허용 할 계획이 없습니다. 검색 주소창에 검색어를 입력하면 사용자는 크롬 내에 머물러야한다는 강한 의지를 나타내고 있으므로 외부 리디렉션을 허용하지 않기로 결정했습니다. 너무 많은 사용자가 사용자 경험이 좋지 않다고 생각하는 것으로 이끌었습니다. 
 링크를 클릭하면 이전과 같이 작동하고 market : // 링크로 리디렉션되어야합니다. 그대로, 어떻게 프로그래밍 방식으로 사용자를 플레이 스토어 로 리디렉션 할 수 있습니까? 
-사용자 gestur e 없이 리디렉션을 지원할 계획은 없습니다 .</p>
-  </li>
-</ul>
+사용자 gestur e 없이 리디렉션을 지원할 계획은 없습니다 .
 
-<h4 id="5-수정-사용자-제스처로-이동하게-하면-됩니다">5. 수정 사용자 제스처로 이동하게 하면 됩니다.</h4>
-<ul>
-  <li>사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.</li>
-  <li>사용자 액션만 추가 하면 됩니다.</li>
-</ul>
+#### 5. 수정 사용자 제스처로 이동하게 하면 됩니다.
+  - 사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.
+  - 사용자 액션만 추가 하면 됩니다.
+  
+  ```javascript
+    <script>
+      function go_marget(){
+        if(confirm("앱을 실행 하시겠습니까?") == true){  
+          top.location.href = "market://details?id=com.xxx.xxx";
+        }else{   //취소
+          return;
+        }
+      }
+   </script>
+   <body onload="go_marget()">   
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-      <span class="kd">function</span> <span class="nx">go_marget</span><span class="p">(){</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">"앱을 실행 하시겠습니까?"</span><span class="p">)</span> <span class="o">==</span> <span class="kc">true</span><span class="p">){</span>  
-          <span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">"market://details?id=com.xxx.xxx"</span><span class="p">;</span>
-        <span class="p">}</span><span class="k">else</span><span class="p">{</span>   <span class="c1">//취소</span>
-          <span class="k">return</span><span class="p">;</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-   <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>   <span class="o">&lt;</span><span class="nx">body</span> <span class="nx">onload</span><span class="o">=</span><span class="s2">"go_marget()"</span><span class="o">&gt;</span>   
+  ```
 
-</code></pre>
-</div>
 
+</body></body>
 
 	  ]]></description>
 	</item>
@@ -316,12 +304,12 @@ There is no plans to support a redirect without a user gesture.</p>
 	  <title>GRIT IQ, 재능 환경을 뛰어 넘는 열정적 끈기의 힘 그릿</title>
 	  <link>//navi_grit</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-15T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-15T00:00:00+00:00</pubDate>
 	  <guid>//navi_grit</guid>
 	  <description><![CDATA[
-	     <h4 id="본것-깨달은것-적용할것">본것 깨달은것 적용할것</h4>
+	     <h4 id="section">본것 깨달은것 적용할것</h4>
 
-<h4 id="1-내꺼">1. 내꺼</h4>
+<h4 id="section-1">1. 내꺼</h4>
 <ul>
   <li>43: “낙담했죠. 정말 실망했지만 그 일을 곱 씹고 있지는 않았어요. 다음에 어떡해야 할지 거기에 집중해야 한다고 생각했어여. 그래서 선생님을 찾아가서 도움을 청했어요”</li>
   <li>46: 사람들은 문제가 이해가 안되면 보통 ‘나중에 다시 생각해봐야겠다’고 한뒤에 사실상 잊어버린다.</li>
@@ -342,7 +330,7 @@ There is no plans to support a redirect without a user gesture.</p>
   </li>
 </ul>
 
-<h4 id="2-남의껏">2. 남의껏</h4>
+<h4 id="section-2">2. 남의껏</h4>
 <ul>
   <li>A (CEO)
     <ul>
@@ -457,7 +445,7 @@ There is no plans to support a redirect without a user gesture.</p>
   </li>
 </ul>
 
-<h4 id="-현장-메모-첨부">*. 현장 메모 첨부</h4>
+<h4 id="section-3">*. 현장 메모 첨부</h4>
 <ul>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3Y2NaZU9xY0hOUDA" alt="" /></li>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3S2ZuQTY2VVRqRnc" alt="" /></li>
@@ -470,240 +458,18 @@ There is no plans to support a redirect without a user gesture.</p>
 	</item>
 
 	<item>
-	  <title>드로이드나이츠 클린아키텍처 세션</title>
-	  <link>//clean-acrhitecture</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-04-08T00:00:00+09:00</pubDate>
-	  <guid>//clean-acrhitecture</guid>
-	  <description><![CDATA[
-	     <h4 id="드로이드나이츠-클린아키텍처">드로이드나이츠 클린아키텍처</h4>
-<ul>
-  <li>드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.</li>
-  <li>
-    <p>그중 기억에 남는 클린 아키텍처를 정리 하였습니다.</p>
-  </li>
-  <li>
-    <p><a href="https://speakerdeck.com/sunghyunzz/clean-architecture-in-android/">참고 : https://speakerdeck.com/sunghyunzz/clean-architecture-in-android</a></p>
-  </li>
-  <li>
-    <p><a href="https://realm.io/kr/news/clean-architecture-in-android//">참고 : https://realm.io/kr/news/clean-architecture-in-android/</a></p>
-  </li>
-  <li><a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">참고 : https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html</a></li>
-</ul>
-
-<h4 id="1-변화에-잘-적응하는-아키텍처">1. 변화에 잘 적응하는 아키텍처</h4>
-<ul>
-  <li>이전 까지 했던 고민이 이걸로 보입니다. 어떤 변화든 잘 적응하는 코드를 만들자</li>
-  <li>적응을 잘하는건 변하는 부분만 수정하자 &lt;- 이 부분이 중요</li>
-  <li>변화에 잘 대응할 수 있다.</li>
-  <li>= 변화에 따른 코드의 변경이 적다.
-    <ul>
-      <li>테이블 구조를 변경했는데 액티비티를 변경???</li>
-    </ul>
-  </li>
-  <li>= 코드가 잘 분리되어있다.
-    <ul>
-      <li>잘 분리되어야지 그냥 분리하면 안됨</li>
-    </ul>
-  </li>
-  <li>= 코드가 본질에 맞게 설계되어있다.
-    <ul>
-      <li>어떻게 레이아웃을 구성할까에 사용할까를 이용하면 안됨</li>
-      <li>본질
-        <ul>
-          <li>도메인의 본질 : 기획자, 디자이너가, 사용자가 받아들이는 형태 일반적으로 보여지는 형태가 바뀌는거지 기본 개념이 변경되지 않음. 가계부를 예로 들어서 소비내역, 지출내역이라는 개념은 변경되지 않는다. 변경되는 어떻게 보여줄지 어떻게 필터링 할지가 변경 되는 거다. 도메인의 본질의 개념을 이해햐자.</li>
-          <li>개발구조상의 본질 : 쉐어드프리퍼런스, 렘, sqlite 가 있는데 각가의 사용을 언제든 변경 없이 사용이 가능해야한다!?. 쉐어드 프리퍼런스를 수정 했는데 액티비티 수정을 해야 하면 코드가 잘못 된거다.</li>
-          <li>안드로이드 구조 상의 본질 : 안드로이드 라이프사이클등</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="2-기본-아키텍처">2. 기본 아키텍처</h4>
-<ul>
-  <li>엉클밥의 클린아키텍처 서버
-    <ul>
-      <li>
-        <p><img src="https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg" alt="" /></p>
-      </li>
-      <li>바깥쪽이 보여주는 부분</li>
-      <li>가장안쪽이 개념단위
-        <ul>
-          <li>프레임워크 독립적
-            <ul>
-              <li>레트로핏 -&gt; 볼리 로 변경이 쉬움</li>
-            </ul>
-          </li>
-          <li>테스트 가능</li>
-          <li>ui 독립적</li>
-          <li>db 독립적
-            <ul>
-              <li>서버에서 사용하던지, 내부에서 사용하던지 중요치 않음</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3YU9CMXN5S2FTRXc" alt="기본" />
-    <ul>
-      <li>안드로이드의 계층을 4개로 사용자에게 보여지는 로직과 관련된 Presentation 레이어</li>
-      <li>DB, 네트워크를 포함한 데이터를 가져오는 Data 레이어</li>
-      <li>사용자의 유스케이스로 분리되는 Domain 레이어
-        <ul>
-          <li>get트랜잭션</li>
-        </ul>
-      </li>
-      <li>사용자의 개념을 정의하는 Entity 레이어</li>
-      <li>이 네 레이어 간의 의존성은 위에서 아래로 발생해야 합니다. 즉, 가장 하단부의 레이어일 수록 가장 의존성이 낮아야 합니다. 가량 프리젠테이션 레이어는 데이터 레이어를 알지만 데이터는 프리젠테이션을 몰라야 하며, 이 덕분에 맨 아래의 엔티티는 순수한 Java 내지는 Kotlin 모듈이 될 수 있습니다. 이런 레이어의 분리 덕분에 본질을 정의할 때 어떤 데이터베이스에 저장될지, 어떤 뷰에서 보일지 고민하지 않고 Entity를 작성할 수 있고, 이에 대한 유스 케이스로 Domain 레이어를 작성할 수 있습니다. 또한 트랜잭션을 가져오는 것을 Data에서, 어떻게 보여줄 것인지를 Presentation에서 고민하면 됩니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h5 id="21-entity">2.1 Entity</h5>
-<ul>
-  <li>순수한 Java(Kotlin) 모듈</li>
-  <li>Android와의 의존성이 없음
-    <ul>
-      <li>엔터티는 안드로이드의 파서러블을 사용할 수 없음</li>
-    </ul>
-  </li>
-  <li>파서러블의 고민은 뷰 모델</li>
-  <li>도메인(비즈니스 로직)에서 파생되는 개념을 표현</li>
-  <li>(같은 서비스) Android - iOS - 서버 모두 동일한 형태</li>
-  <li>아래가 샘플로 보여준 코틀린 코드 입니다. 자바는 코틀린은 모르지만 느낌상으로 같다고 만들어본 코드 입니다.</li>
-  <li>가계부에서 소비내역 지출 내역의 변경되지 않는다.</li>
-  <li>모든 내용이 엔터티에 포함되어 있다.</li>
-  <li>TransactionType 엔터티로 선언한것이다.</li>
-  <li>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨</li>
-  <li>
-    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">TransactionCategory</span><span class="p">(</span> 
-    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> 
-    <span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> 
-    <span class="kd">val</span> <span class="py">transactionType</span><span class="p">:</span> <span class="n">TransactionType</span><span class="p">,</span> 
-    <span class="kd">val</span> <span class="py">priority</span><span class="p">:</span> <span class="n">Int</span>
-  <span class="p">)</span> <span class="p">:</span> <span class="n">Entity</span>
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">TransactionCategory</span> <span class="kd">extends</span> <span class="nf">Entity</span><span class="o">(</span> 
-    <span class="n">String</span> <span class="n">id</span><span class="o">;</span> 
-    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="n">TransactionType</span> <span class="n">transactionType</span><span class="o">;</span>
-    <span class="n">Int</span> <span class="n">priority</span><span class="o">;</span>
-  <span class="o">)</span> <span class="o">:</span> 
-</code></pre>
-    </div>
-  </li>
-</ul>
-
-<h5 id="22-domain">2.2 Domain</h5>
-<ul>
-  <li>순수한 Java(Kotlin) 모듈</li>
-  <li>Android와의 의존성이 없음</li>
-  <li>Use Case</li>
-  <li>Repository Interface 정의</li>
-  <li>예
-    <ul>
-      <li>뱅크레포지토리를 주입을 받고</li>
-      <li>인터페이스정의만 함</li>
-      <li>하는 액션은 getAll</li>
-      <li>BanksRepository 는 인터페이스로 존재</li>
-      <li>도메인 레이어에 존재</li>
-      <li>유스케이스는 데이터베이스를 고려하지 말자</li>
-      <li>사고의 흐름</li>
-      <li>
-        <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">GetBanks</span><span class="p">(</span><span class="kd">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">BanksRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">UseCase</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;(){</span> 
-  <span class="k">override</span> <span class="k">fun</span> <span class="nf">buildUseCaseObservable</span><span class="p">():</span> <span class="n">Observable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;</span> <span class="p">{</span> 
-    <span class="k">return</span> <span class="n">repository</span><span class="p">.</span><span class="n">getAll</span><span class="p">()</span> 
-  <span class="p">}</span> 
-<span class="p">}</span>
-
-<span class="kd">interface</span> <span class="nc">BanksRepository</span> <span class="p">:</span> <span class="n">Repository</span> <span class="p">{</span>  
-  <span class="k">fun</span> <span class="nf">getAll</span><span class="p">():</span> <span class="n">Observable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;</span> 
-  <span class="k">fun</span> <span class="nf">update</span><span class="p">(</span><span class="n">bank</span><span class="p">:</span> <span class="n">Bank</span><span class="p">):</span> <span class="n">Completable</span> 
-<span class="p">}</span>
-
-</code></pre>
-        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h5 id="23-data">2.3 data</h5>
-<ul>
-  <li>Repository의 실제 구현</li>
-  <li>Data Source 의존성</li>
-  <li>Android 의존성(어느순간 생기기 시작 가능성)</li>
-  <li>데이터베이스 의존성이 생김</li>
-  <li>도메인에서 정의한 인터페이스 구현이다. 렘 오브젝트를 엔터티로 변환 한다.</li>
-  <li>렘이 sqlite로 변경되면 해당 레이어에서 처리 한다.</li>
-  <li>똑같은 도메인의 유지하여 인테페이스를 네트워크로 변경가능하다.</li>
-  <li>데이터모델은 렘이 아닌 응답값의 리스폰스로 변경하면 된다.</li>
-  <li>예
-    <ul>
-      <li>
-        <script src="https://gist.github.com/pyeongho/a621449874cd17a0c12041baf56fa835.js"></script>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h5 id="24-presentation">2.4 Presentation</h5>
-<ul>
-  <li>UI 레벨의 처리 (mvp, mvc)</li>
-  <li>Android 의존성이 강함</li>
-  <li>View와 Presenter</li>
-  <li>함수 이름도 onViewCreated 처럼 각각의 행동에 맞게
-    <ul>
-      <li>onNextButtonClicked</li>
-    </ul>
-  </li>
-  <li>내부 로직이 변경되어도 뷰 코드는 변겨이 안됨</li>
-  <li>파서러블이 필요할때 프리젠터에서도 뷰 모델이 있고 엔터티를 매핑하여 사용한다.</li>
-  <li>예
-    <ul>
-      <li>
-        <script src="https://gist.github.com/pyeongho/618f625aa3f4a212f97197981ed5ea41.js"></script>
-      </li>
-      <li>
-        <script src="https://gist.github.com/pyeongho/6b325023418e98ab2d0a496da91d4087.js"></script>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="3-좋은-코드가-좋은-제품이다">3. 좋은 코드가 좋은 제품이다.</h4>
-<ul>
-  <li>각각의 레이어에서 모델이 존재해서 진입 장벽이 있지만 유지보수가 쉽다.</li>
-</ul>
-
-<h4 id="-현장-메모">* 현장 메모</h4>
-<ul>
-  <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3cG41UmxfbEN4NjQ" alt="1페이지" /></li>
-  <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3NTNGRVpKLXNSOTg" alt="2페이지" /></li>
-</ul>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
 	  <title>클린아키텍처 듣기 전부터 고민하던 내용들</title>
 	  <link>//whywhy</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-08T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-08T00:00:00+00:00</pubDate>
 	  <guid>//whywhy</guid>
 	  <description><![CDATA[
-	     <h4 id="적용에-앞서-많은-고민중">적용에 앞서 많은 고민중</h4>
+	     <h4 id="section">적용에 앞서 많은 고민중</h4>
 <ul>
   <li>고민은 좋은거.</li>
 </ul>
 
-<h4 id="1-mvp등의-각종-패턴은-정말-만능일까-의문점들">1. MVP등의 각종 패턴은 정말 만능일까? 의문점들</h4>
+<h4 id="mvp-----">1. MVP등의 각종 패턴은 정말 만능일까? 의문점들</h4>
 <ul>
   <li>장점은 매우 많습니다. 개발자가 많고 교육 시간이 많으면 하는게 좋습니다. 테스트하기에 좋다.</li>
   <li>의문점들
@@ -816,39 +582,254 @@ There is no plans to support a redirect without a user gesture.</p>
 	</item>
 
 	<item>
+	  <title>드로이드나이츠 클린아키텍처 세션</title>
+	  <link>//clean-acrhitecture</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-04-08T00:00:00+00:00</pubDate>
+	  <guid>//clean-acrhitecture</guid>
+	  <description><![CDATA[
+	     <h4 id="section">드로이드나이츠 클린아키텍처</h4>
+<ul>
+  <li>드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.</li>
+  <li>
+    <p>그중 기억에 남는 클린 아키텍처를 정리 하였습니다.</p>
+  </li>
+  <li>
+    <p><a href="https://speakerdeck.com/sunghyunzz/clean-architecture-in-android/">참고 : https://speakerdeck.com/sunghyunzz/clean-architecture-in-android</a></p>
+  </li>
+  <li>
+    <p><a href="https://realm.io/kr/news/clean-architecture-in-android//">참고 : https://realm.io/kr/news/clean-architecture-in-android/</a></p>
+  </li>
+  <li><a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">참고 : https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html</a></li>
+</ul>
+
+<h4 id="section-1">1. 변화에 잘 적응하는 아키텍처</h4>
+<ul>
+  <li>이전 까지 했던 고민이 이걸로 보입니다. 어떤 변화든 잘 적응하는 코드를 만들자</li>
+  <li>적응을 잘하는건 변하는 부분만 수정하자 &lt;- 이 부분이 중요</li>
+  <li>변화에 잘 대응할 수 있다.</li>
+  <li>= 변화에 따른 코드의 변경이 적다.
+    <ul>
+      <li>테이블 구조를 변경했는데 액티비티를 변경???</li>
+    </ul>
+  </li>
+  <li>= 코드가 잘 분리되어있다.
+    <ul>
+      <li>잘 분리되어야지 그냥 분리하면 안됨</li>
+    </ul>
+  </li>
+  <li>= 코드가 본질에 맞게 설계되어있다.
+    <ul>
+      <li>어떻게 레이아웃을 구성할까에 사용할까를 이용하면 안됨</li>
+      <li>본질
+        <ul>
+          <li>도메인의 본질 : 기획자, 디자이너가, 사용자가 받아들이는 형태 일반적으로 보여지는 형태가 바뀌는거지 기본 개념이 변경되지 않음. 가계부를 예로 들어서 소비내역, 지출내역이라는 개념은 변경되지 않는다. 변경되는 어떻게 보여줄지 어떻게 필터링 할지가 변경 되는 거다. 도메인의 본질의 개념을 이해햐자.</li>
+          <li>개발구조상의 본질 : 쉐어드프리퍼런스, 렘, sqlite 가 있는데 각가의 사용을 언제든 변경 없이 사용이 가능해야한다!?. 쉐어드 프리퍼런스를 수정 했는데 액티비티 수정을 해야 하면 코드가 잘못 된거다.</li>
+          <li>안드로이드 구조 상의 본질 : 안드로이드 라이프사이클등</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-2">2. 기본 아키텍처</h4>
+<ul>
+  <li>엉클밥의 클린아키텍처 서버
+    <ul>
+      <li>
+        <p><img src="https://drive.google.com/uc?id=0BwUadct9RzY3cmtQUjlkYlN5QTg" alt="" /></p>
+      </li>
+      <li>바깥쪽이 보여주는 부분</li>
+      <li>가장안쪽이 개념단위
+        <ul>
+          <li>프레임워크 독립적
+            <ul>
+              <li>레트로핏 -&gt; 볼리 로 변경이 쉬움</li>
+            </ul>
+          </li>
+          <li>테스트 가능</li>
+          <li>ui 독립적</li>
+          <li>db 독립적
+            <ul>
+              <li>서버에서 사용하던지, 내부에서 사용하던지 중요치 않음</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3YU9CMXN5S2FTRXc" alt="기본" />
+    <ul>
+      <li>안드로이드의 계층을 4개로 사용자에게 보여지는 로직과 관련된 Presentation 레이어</li>
+      <li>DB, 네트워크를 포함한 데이터를 가져오는 Data 레이어</li>
+      <li>사용자의 유스케이스로 분리되는 Domain 레이어
+        <ul>
+          <li>get트랜잭션</li>
+        </ul>
+      </li>
+      <li>사용자의 개념을 정의하는 Entity 레이어</li>
+      <li>이 네 레이어 간의 의존성은 위에서 아래로 발생해야 합니다. 즉, 가장 하단부의 레이어일 수록 가장 의존성이 낮아야 합니다. 가량 프리젠테이션 레이어는 데이터 레이어를 알지만 데이터는 프리젠테이션을 몰라야 하며, 이 덕분에 맨 아래의 엔티티는 순수한 Java 내지는 Kotlin 모듈이 될 수 있습니다. 이런 레이어의 분리 덕분에 본질을 정의할 때 어떤 데이터베이스에 저장될지, 어떤 뷰에서 보일지 고민하지 않고 Entity를 작성할 수 있고, 이에 대한 유스 케이스로 Domain 레이어를 작성할 수 있습니다. 또한 트랜잭션을 가져오는 것을 Data에서, 어떻게 보여줄 것인지를 Presentation에서 고민하면 됩니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="entity">2.1 Entity</h5>
+<ul>
+  <li>순수한 Java(Kotlin) 모듈</li>
+  <li>Android와의 의존성이 없음
+    <ul>
+      <li>엔터티는 안드로이드의 파서러블을 사용할 수 없음</li>
+    </ul>
+  </li>
+  <li>파서러블의 고민은 뷰 모델</li>
+  <li>도메인(비즈니스 로직)에서 파생되는 개념을 표현</li>
+  <li>(같은 서비스) Android - iOS - 서버 모두 동일한 형태</li>
+  <li>아래가 샘플로 보여준 코틀린 코드 입니다. 자바는 코틀린은 모르지만 느낌상으로 같다고 만들어본 코드 입니다.</li>
+  <li>가계부에서 소비내역 지출 내역의 변경되지 않는다.</li>
+  <li>모든 내용이 엔터티에 포함되어 있다.</li>
+  <li>TransactionType 엔터티로 선언한것이다.</li>
+  <li>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨</li>
+  <li><code class="highlighter-rouge">kotlin
+  class TransactionCategory( 
+    val id: String, 
+    val name: String, 
+    val transactionType: TransactionType, 
+    val priority: Int
+  ) : Entity
+</code></li>
+  <li><code class="highlighter-rouge">java
+  class TransactionCategory extends Entity( 
+    String id; 
+    String name;
+    TransactionType transactionType;
+    Int priority;
+  ) : 
+</code></li>
+</ul>
+
+<h5 id="domain">2.2 Domain</h5>
+<ul>
+  <li>순수한 Java(Kotlin) 모듈</li>
+  <li>Android와의 의존성이 없음</li>
+  <li>Use Case</li>
+  <li>Repository Interface 정의</li>
+  <li>예
+    <ul>
+      <li>뱅크레포지토리를 주입을 받고</li>
+      <li>인터페이스정의만 함</li>
+      <li>하는 액션은 getAll</li>
+      <li>BanksRepository 는 인터페이스로 존재</li>
+      <li>도메인 레이어에 존재</li>
+      <li>유스케이스는 데이터베이스를 고려하지 말자</li>
+      <li>사고의 흐름</li>
+      <li>
+        <p>```kotlin
+class GetBanks(val repository: BanksRepository) : UseCase&lt;List<bank>&gt;(){ 
+  override fun buildUseCaseObservable(): Observable&lt;List<bank>&gt; { 
+    return repository.getAll() 
+  } 
+}</bank></bank></p>
+
+        <p>interface BanksRepository : Repository {<br />
+  fun getAll(): Observable&lt;List<bank>&gt; 
+  fun update(bank: Bank): Completable 
+}</bank></p>
+
+        <p>```</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="data">2.3 data</h5>
+<ul>
+  <li>Repository의 실제 구현</li>
+  <li>Data Source 의존성</li>
+  <li>Android 의존성(어느순간 생기기 시작 가능성)</li>
+  <li>데이터베이스 의존성이 생김</li>
+  <li>도메인에서 정의한 인터페이스 구현이다. 렘 오브젝트를 엔터티로 변환 한다.</li>
+  <li>렘이 sqlite로 변경되면 해당 레이어에서 처리 한다.</li>
+  <li>똑같은 도메인의 유지하여 인테페이스를 네트워크로 변경가능하다.</li>
+  <li>데이터모델은 렘이 아닌 응답값의 리스폰스로 변경하면 된다.</li>
+  <li>예
+    <ul>
+      <li>
+        <script src="https://gist.github.com/pyeongho/a621449874cd17a0c12041baf56fa835.js"></script>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="presentation">2.4 Presentation</h5>
+<ul>
+  <li>UI 레벨의 처리 (mvp, mvc)</li>
+  <li>Android 의존성이 강함</li>
+  <li>View와 Presenter</li>
+  <li>함수 이름도 onViewCreated 처럼 각각의 행동에 맞게
+    <ul>
+      <li>onNextButtonClicked</li>
+    </ul>
+  </li>
+  <li>내부 로직이 변경되어도 뷰 코드는 변겨이 안됨</li>
+  <li>파서러블이 필요할때 프리젠터에서도 뷰 모델이 있고 엔터티를 매핑하여 사용한다.</li>
+  <li>예
+    <ul>
+      <li>
+        <script src="https://gist.github.com/pyeongho/618f625aa3f4a212f97197981ed5ea41.js"></script>
+      </li>
+      <li>
+        <script src="https://gist.github.com/pyeongho/6b325023418e98ab2d0a496da91d4087.js"></script>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-3">3. 좋은 코드가 좋은 제품이다.</h4>
+<ul>
+  <li>각각의 레이어에서 모델이 존재해서 진입 장벽이 있지만 유지보수가 쉽다.</li>
+</ul>
+
+<h4 id="section-4">* 현장 메모</h4>
+<ul>
+  <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3cG41UmxfbEN4NjQ" alt="1페이지" /></li>
+  <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3NTNGRVpKLXNSOTg" alt="2페이지" /></li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>구글 드라이브를 이용해서 쉽게 이미지를 올리자</title>
 	  <link>//google-drive-for-image</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-03-29T00:00:00+09:00</pubDate>
+	  <pubDate>2017-03-29T00:00:00+00:00</pubDate>
 	  <guid>//google-drive-for-image</guid>
 	  <description><![CDATA[
-	     <h4 id="맥에서-github-page-이미지-쉽게-올리기">맥에서 github page 이미지 쉽게 올리기</h4>
+	     <h4 id="github-page---">맥에서 github page 이미지 쉽게 올리기</h4>
 <ul>
   <li>깃허브 페이지를 이용중 가장 힘든건 스크린샷을 추가하는 방법이라 생각해서 찾아보니 구글드라이브를 이미지서버로 사용이 가능해서 적용해 보았습니다. 문제는 사파리에서 정상동작 안한다는 단점</li>
 </ul>
 
-<p><a href="https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/">참고 : https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/</a></p>
-<h4 id="1-구글-드라이브-설치">1. 구글 드라이브 설치</h4>
-<ul>
-  <li>homebrew 를 이용해서 쉽게 설치</li>
-  <li>$brew install gdrive</li>
-  <li>설치 완료후</li>
-  <li>$gdrive list</li>
-  <li>입력하면 인증해야 한다고 나오면서 아래처럼 링크가 나옵니다.
-    <div class="highlighter-rouge"><pre class="highlight"><code>Authentication needed
-Go to the following url in your browser:
-https://accounts.google.com/o/oauth2/auth?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx........
-Enter verification code:
-</code></pre>
-    </div>
-  </li>
-  <li>권한 요청 페이지가 나오고 권한을 허용하면  인증 코드가 나온는데 복사 해서 입력란에 넣어 줍니다.</li>
-  <li>다시 한번</li>
-  <li>$gdrive list</li>
-  <li>자신의 구글드라이브의 루트의 리스트가 나옵니다.</li>
-</ul>
+<p><a href="https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/">참고 : https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/</a>
+#### 1. 구글 드라이브 설치
+  - homebrew 를 이용해서 쉽게 설치
+  - $brew install gdrive
+  - 설치 완료후
+  - $gdrive list 
+  - 입력하면 인증해야 한다고 나오면서 아래처럼 링크가 나옵니다.
+    <code class="highlighter-rouge">
+    Authentication needed
+    Go to the following url in your browser:
+    https://accounts.google.com/o/oauth2/auth?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx........
+    Enter verification code:
+   </code>
+  - 권한 요청 페이지가 나오고 권한을 허용하면  인증 코드가 나온는데 복사 해서 입력란에 넣어 줍니다.
+  - 다시 한번
+  - $gdrive list
+  - 자신의 구글드라이브의 루트의 리스트가 나옵니다.</p>
 
-<h4 id="2-캡쳐-쉘-스크립트-만들기">2. 캡쳐 쉘 스크립트 만들기</h4>
+<h4 id="section">2. 캡쳐 쉘 스크립트 만들기</h4>
 <ul>
   <li>
     <script src="https://gist.github.com/anonymous/1582cd1b8c6afd2fa682d71779e03aa9.js"></script>
@@ -863,12 +844,12 @@ Enter verification code:
   <li>명령어를 입력하면 확인 할 수 있습니다.</li>
 </ul>
 
-<h4 id="3-여기까지가-gdrive-공부정도-입니다">3. 여기까지가 gdrive 공부정도 입니다</h4>
+<h4 id="gdrive--">3. 여기까지가 gdrive 공부정도 입니다</h4>
 <ul>
   <li>아래 앱을 만들때는 스크립트를 복사 해서 사용하기웨 위 내용은 사용 안하더라구요</li>
 </ul>
 
-<h4 id="4-맥용-앱을-만들어서-단축키로-실행해야죠">4. 맥용 앱을 만들어서 단축키로 실행해야죠</h4>
+<h4 id="section-1">4. 맥용 앱을 만들어서 단축키로 실행해야죠</h4>
 <ul>
   <li>Platypus 요런 프로그램이 쉘 스크립트를 앱으로 만들어 줍니다.</li>
   <li><a href="http://sveinbjorn.org/files/software/platypus.zip">다운로드 링크 : Platypus</a></li>
@@ -892,15 +873,15 @@ Enter verification code:
 	  <title>gitugb.io 지킬에 사진업로드 쉽게 하는 앱개발</title>
 	  <link>//ios_git_client</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-03-27T00:00:00+09:00</pubDate>
+	  <pubDate>2017-03-27T00:00:00+00:00</pubDate>
 	  <guid>//ios_git_client</guid>
 	  <description><![CDATA[
-	     <h3 id="ios-에서-githubio에-사진을-첨부한-글을-포스팅한다">iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.</h3>
+	     <h3 id="ios--githubio----">iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.</h3>
 <ul>
   <li>스마튼폰에서 찍은 사진을 블로그에 바로 올리고 싶은 생각으로 앱을 개발해 보기로 결정</li>
 </ul>
 
-<h4 id="1-공부할-자료-수집">1. 공부할 자료 수집</h4>
+<h4 id="section">1. 공부할 자료 수집</h4>
 <ul>
   <li>깃 라이브러리
     <ul>
@@ -912,17 +893,12 @@ Enter verification code:
     - <a href="https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/">https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/</a></li>
 </ul>
 
-<p>####2. carthage 사용법</p>
+<p>####2. carthage 사용법 
+  - homebrew로 설치 하기
+     - 설치 안되어 있으면
+       - $ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</p>
+
 <ul>
-  <li>homebrew로 설치 하기
-    <ul>
-      <li>설치 안되어 있으면
-        <ul>
-          <li>$ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
   <li>$ brew update</li>
   <li>$ brew install carthage</li>
   <li>Cartfile 파일 생성하기
@@ -953,12 +929,12 @@ Enter verification code:
 	  <title>github page 구글 검색 허용하기</title>
 	  <link>//google-search</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-03-21T00:00:00+09:00</pubDate>
+	  <pubDate>2017-03-21T00:00:00+00:00</pubDate>
 	  <guid>//google-search</guid>
 	  <description><![CDATA[
-	     <h4 id="지킬로-만들면-구글-검색이-안됩니다">지킬로 만들면 구글 검색이 안됩니다.</h4>
+	     <h4 id="section">지킬로 만들면 구글 검색이 안됩니다.</h4>
 
-<h4 id="1-구글-검색-허용하기">1. 구글 검색 허용하기</h4>
+<h4 id="section-1">1. 구글 검색 허용하기</h4>
 <ul>
   <li>구글 웹마스터 도구(Search Console)에 속성 추가 및 인증
     <ul>
@@ -976,10 +952,9 @@ Enter verification code:
   <li>sitemap.xml 등록하기
     <ul>
       <li>_config.yml 에 url 을 추가 합니다.
-        <div class="highlighter-rouge"><pre class="highlight"><code>url: https://pyeongho.github.io
-</code></pre>
-        </div>
-      </li>
+<code class="highlighter-rouge">
+url: https://pyeongho.github.io
+</code></li>
       <li>sitemap.xml 을 만들어서 루트 폴더에 올리고 푸시
         <ul>
           <li><a href="https://github.com/pyeongho/pyeongho.github.io/blob/master/sitemap.xml">sitemap.xml 예제</a></li>
@@ -991,7 +966,7 @@ Enter verification code:
   </li>
 </ul>
 
-<h5 id="참고">참고</h5>
+<h5 id="section-2">참고</h5>
 <p><a href="https://wayhome25.github.io/etc/2017/02/20/google-search-sitemap-jekyll/">초보몽키의 개발로그</a></p>
 
 	  ]]></description>

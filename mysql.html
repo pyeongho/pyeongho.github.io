@@ -137,9 +137,9 @@
 
         <section class="post-content">
             
-            <h3 id="리눅스에서-mysql-사용하기">리눅스에서 mysql 사용하기</h3>
+            <h3 id="mysql-">리눅스에서 mysql 사용하기</h3>
 
-<h4 id="1-mysql-기본-그냥-참고용-테스트-안함">1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
+<h4 id="mysql-----">1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
 <ul>
   <li>mysql이 설치는 되어 있을거구 없으면 (apt-get install mysql-server)</li>
   <li>
@@ -150,7 +150,7 @@ sudo service mysql start</p>
   </li>
 </ul>
 
-<h4 id="2-mysql-접속-및-데이터-베이스-추가">2. mysql 접속 및 데이터 베이스 추가</h4>
+<h4 id="mysql------1">2. mysql 접속 및 데이터 베이스 추가</h4>
 <div class="highlighter-rouge"><pre class="highlight"><code>  # mysql -u root -p
   mysql &gt; use mysql; 
   mysql &gt; select host, user, password from user;         
@@ -172,7 +172,7 @@ sudo service mysql start</p>
   <li>위 처럼 동작 하면 기본 적인 sql 테스트 완료</li>
 </ul>
 
-<h4 id="3-사용자-추가-및-권한추가">3. 사용자 추가 및 권한추가</h4>
+<h4 id="section">3. 사용자 추가 및 권한추가</h4>
 <ul>
   <li>
     <p>localhost</p>
@@ -194,7 +194,7 @@ sudo service mysql start</p>
   </li>
 </ul>
 
-<h4 id="4-데이터-베이스-생성">4. 데이터 베이스 생성</h4>
+<h4 id="section-1">4. 데이터 베이스 생성</h4>
 <ul>
   <li>
     <p>databases 확인</p>
@@ -215,7 +215,7 @@ sudo service mysql start</p>
   </li>
 </ul>
 
-<h4 id="5-테이블-생성">5. 테이블 생성</h4>
+<h4 id="section-2">5. 테이블 생성</h4>
 <ul>
   <li>테이블 생성하기전 사용하려면 데이터 베이스를 선택 해야 합니다.</li>
   <li>use ‘데이터베이스이름’;  // 데이터베이스 사용하기</li>
@@ -242,7 +242,7 @@ sudo service mysql start</p>
   </li>
 </ul>
 
-<h4 id="6-더미데이터-추가">6. 더미데이터 추가</h4>
+<h4 id="section-3">6. 더미데이터 추가</h4>
 <ul>
   <li>INSERT INTO address VALUES (‘ABC’,’DEFGHIJKLMN’,’031-000-0000’);</li>
 </ul>
