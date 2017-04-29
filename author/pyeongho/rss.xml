@@ -314,65 +314,52 @@
 
 <h4 id="javascript--body-onload-----">1. javascript 의 body onload 에 마켓 이동하는 코드를 추가</h4>
 <ul>
-  <li>아래와 같이 간단하게 추가 했는데 마켓으로 이동 안하는 기기들이 있음</li>
+  <li>아래와 같이 간단하게 추가 했는데 마켓으로 이동 안하는 기기들이 있음
+  <script src="https://gist.github.com/pyeongho/b26f2f488f00f487a19ab823bbbca27a.js"></script></li>
+  <li>크롬 인스펙트를 이용해서 콘솔로그를 확인하니 “탐색할수없음” 이라는 문구가 나옴</li>
 </ul>
 
-<p>```javascript
-   <script>
-    function go_marget(){
-         top.location.href = 'market://details?id=com.xxx.xxx';
-    }
-   </script></p>
-<body onload="go_marget()">   
+<h4 id="section-1">2. 구글 검색 시작</h4>
+<ul>
+  <li>이것 저것 검색 하다 보니 chrome 40+ 이상에서는 동작 안하는다는 내용 확인</li>
+  <li>
+    <p><a href="https://devtalk.kakao.com/t/onload/15293/2">https://devtalk.kakao.com/t/onload/15293/2</a></p>
+  </li>
+  <li>그래서 조금더 검색</li>
+  <li><a href="http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/">http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/</a></li>
+  <li>에서 내용을 잘 정리해줌</li>
+</ul>
 
-  ```
+<h4 id="section-2">3. 내용 요약</h4>
+<ul>
+  <li>구글엔지니어가 판도라 앱을 설치</li>
+  <li>주소창에 pandora.com 을 크롬에서 입력</li>
+  <li>웹사이트로 이동되지 않고 판도앱이 실행됨</li>
+  <li>버그로 접수</li>
+  <li>수정해 버림</li>
+</ul>
 
-  - 크롬 인스펙트를 이용해서 콘솔로그를 확인하니 "탐색할수없음" 이라는 문구가 나옴
-
-#### 2. 구글 검색 시작
-  - 이것 저것 검색 하다 보니 chrome 40+ 이상에서는 동작 안하는다는 내용 확인 
-  - [https://devtalk.kakao.com/t/onload/15293/2](https://devtalk.kakao.com/t/onload/15293/2)
-
-  - 그래서 조금더 검색
-  - [http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/](http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/)
-  - 에서 내용을 잘 정리해줌 
-
-#### 3. 내용 요약
-  - 구글엔지니어가 판도라 앱을 설치
-  - 주소창에 pandora.com 을 크롬에서 입력
-  - 웹사이트로 이동되지 않고 판도앱이 실행됨
-  - 버그로 접수 
-  - 수정해 버림 
-
-#### 4. 구글의 답변 
- - 원문 : From the omnibox, no, there is no plans to allow external redirects.  If typing in the omnibox, the user is showing a strong intent to stay within chrome, so we made the decision to not allow external redirects (too many of them led to what we believed to be bad user experiences).
+<h4 id="section-3">4. 구글의 답변</h4>
+<ul>
+  <li>
+    <p>원문 : From the omnibox, no, there is no plans to allow external redirects.  If typing in the omnibox, the user is showing a strong intent to stay within chrome, so we made the decision to not allow external redirects (too many of them led to what we believed to be bad user experiences).
 Clicking on a link should still behave as before and redirect to market:// links. As it stands, how can I programmatically redirect a user to the play store?
-There is no plans to support a redirect without a user gesture.
-
-- 번역기 : 검색 주소창에서 외부로 리디렉션을 허용 할 계획이 없습니다. 검색 주소창에 검색어를 입력하면 사용자는 크롬 내에 머물러야한다는 강한 의지를 나타내고 있으므로 외부 리디렉션을 허용하지 않기로 결정했습니다. 너무 많은 사용자가 사용자 경험이 좋지 않다고 생각하는 것으로 이끌었습니다. 
+There is no plans to support a redirect without a user gesture.</p>
+  </li>
+  <li>
+    <p>번역기 : 검색 주소창에서 외부로 리디렉션을 허용 할 계획이 없습니다. 검색 주소창에 검색어를 입력하면 사용자는 크롬 내에 머물러야한다는 강한 의지를 나타내고 있으므로 외부 리디렉션을 허용하지 않기로 결정했습니다. 너무 많은 사용자가 사용자 경험이 좋지 않다고 생각하는 것으로 이끌었습니다. 
 링크를 클릭하면 이전과 같이 작동하고 market : // 링크로 리디렉션되어야합니다. 그대로, 어떻게 프로그래밍 방식으로 사용자를 플레이 스토어 로 리디렉션 할 수 있습니까? 
-사용자 gestur e 없이 리디렉션을 지원할 계획은 없습니다 .
+사용자 gestur e 없이 리디렉션을 지원할 계획은 없습니다 .</p>
+  </li>
+</ul>
 
-#### 5. 수정 사용자 제스처로 이동하게 하면 됩니다.
-  - 사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.
-  - 사용자 액션만 추가 하면 됩니다.
-  
-  ```javascript
-    <script>
-      function go_marget(){
-        if(confirm("앱을 실행 하시겠습니까?") == true){  
-          top.location.href = "market://details?id=com.xxx.xxx";
-        }else{   //취소
-          return;
-        }
-      }
-   </script>
-   <body onload="go_marget()">   
+<h4 id="section-4">5. 수정 사용자 제스처로 이동하게 하면 됩니다.</h4>
+<ul>
+  <li>사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.</li>
+  <li>사용자 액션만 추가 하면 됩니다.
+  <script src="https://gist.github.com/pyeongho/af47412cd50a3579484f0d3db285cd73.js"></script></li>
+</ul>
 
-  ```
-
-
-</body></body>
 
 	  ]]></description>
 	</item>
