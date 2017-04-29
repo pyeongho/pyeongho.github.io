@@ -23,18 +23,23 @@
   <li>github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함</li>
 </ul>
 
-<p>#### 1. 스태틱으로 변경 후 배포 방법 개선이 필요 하다고 생각
-   - 블로그 업데이트 순서
-     - 비트버켓에서 클론
-     - 글 작성
-     - 비트버켓에 오리지널 마크다운 푸시
-     - 로컬에서 지킬 빌드 후 결과를 깃허브에 푸시
-   - 위 같은 순서를 하려고 하니 너무 끔직함
-   - 스크립트를 작성해서 하려 했지만 마크다운 툴을 비주얼스튜디오 코드를 사용하다 보니 스크립트 명령을 부를수가 없다.
-   - 명령창을 열어서 스크립트 실행? 이것도 귀찮다.
-   - 만약 로컬에서 지킬 빌드가 안되면 어떻게? 저거 하려면 몇 단계를 거쳐야 하는거야.. 나름 코딩하는 사람인데</p>
+<h4 id="section-1">1. 스태틱으로 변경 후 배포 방법 개선이 필요 하다고 생각</h4>
+<ul>
+  <li>블로그 업데이트 순서
+    <ul>
+      <li>비트버켓에서 클론</li>
+      <li>글 작성</li>
+      <li>비트버켓에 오리지널 마크다운 푸시</li>
+      <li>로컬에서 지킬 빌드 후 결과를 깃허브에 푸시</li>
+    </ul>
+  </li>
+  <li>위 같은 순서를 하려고 하니 너무 끔직함</li>
+  <li>스크립트를 작성해서 하려 했지만 마크다운 툴을 비주얼스튜디오 코드를 사용하다 보니 스크립트 명령을 부를수가 없다.</li>
+  <li>명령창을 열어서 스크립트 실행? 이것도 귀찮다.</li>
+  <li>만약 로컬에서 지킬 빌드가 안되면 어떻게? 저거 하려면 몇 단계를 거쳐야 하는거야.. 나름 코딩하는 사람인데</li>
+</ul>
 
-<h4 id="section-1">2. 트래비스 삽질</h4>
+<h4 id="section-2">2. 트래비스 삽질</h4>
 <ul>
   <li>jekyll/jasper 테마가 트래비스 연동을 추천해서 해당 방법을 계속 찾음</li>
   <li>깃허브에서도 실패한 트래비스</li>
@@ -43,7 +48,7 @@
   <li>파이프라인 이라는 용어찾음</li>
 </ul>
 
-<h4 id="section-2">3 비트버켓 파이프라인 적응기</h4>
+<h4 id="section-3">3 비트버켓 파이프라인 적응기</h4>
 <ul>
   <li>비트버켓 저장소의 설정을 확인하면 pipeline 설정 항목이 보인다.</li>
   <li>항목을 설정하면 파이프라인 설정 파일을 만들수있다.</li>
@@ -54,30 +59,12 @@
   <li>내가 생각했던 순서를 정확하게 똑같이 하려는 분을 만남. 감사합니다.</li>
 </ul>
 
-<h4 id="section-3">4. 자동 배포 시스템</h4>
+<h4 id="section-4">4. 자동 배포 시스템</h4>
 <ul>
   <li>파이프라인 얌 파일 설정</li>
-</ul>
-
-<p><code class="highlighter-rouge">yml
-  image: ruby:2.4.0
-  pipelines:  
-    default:
-      - step:
-          script:
-            - git config --global user.email "pyeongho@bitbucket.com"
-            - git config --global user.name "pyeongho"
-            - gem install jekyll
-            - bundle install
-            - rm -rf .git
-            - git clone https://pyeongho:$SITE_A@github.com/pyeongho/pyeongho.github.io.git _site
-            - jekyll build
-            - cd _site
-            - git add . &amp;&amp; git commit -m "New version - $BITBUCKET_COMMIT"
-            - git push origin master
- </code></p>
-
-<ul>
+  <li>
+    <script src="https://gist.github.com/pyeongho/fe5b671a55f6c18d6f6f918af27cfbe7.js"></script>
+  </li>
   <li>번들 빌드 하기위해서는 Gemfile Gemfile.lock 파일 필요합니다.(재스퍼 테마에서 파일 참고)</li>
   <li>위 내용중 SITE_A 는 비트버켓 설정에 가능합니다. 공개된곳에 암호를 입력할수 없기에 설정에서 환경 변수 등록이 가능합니다.
     <ul>
