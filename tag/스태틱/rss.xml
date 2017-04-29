@@ -5,7 +5,7 @@
    
       <title>pyeongho.github.io/</title>
    
-   <link>http://localhost:4000</link>
+   <link>https://pyeongho.github.io/</link>
    <description>즐거운 공장</description>
    <language>en-uk</language>
    <managingEditor> PyeongHo</managingEditor>
@@ -41,13 +41,13 @@
   <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
 </ul>
 
-<p>#### 3. 기존 파일을 모두삭제</p>
+<h4 id="3-기존-파일을-모두삭제">3. 기존 파일을 모두삭제</h4>
 <ul>
   <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
   <li>모두 정상 동작</li>
 </ul>
 
-<p>#### 4. 지금 쓰는건 테스트 하기위함</p>
+<h4 id="4-지금-쓰는건-테스트-하기위함">4. 지금 쓰는건 테스트 하기위함</h4>
 <ul>
   <li>수동으로 비트버켓에 푸시</li>
   <li>jekyll build</li>
