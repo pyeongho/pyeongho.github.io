@@ -12,6 +12,48 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>이미지를 호스팅을 드랍박스로 변경해 보자</title>
+	  <link>//github-image-dropbox</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-04-29T00:00:00+00:00</pubDate>
+	  <guid>//github-image-dropbox</guid>
+	  <description><![CDATA[
+	     <h4 id="section">구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.</h4>
+<ul>
+  <li>드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자</li>
+</ul>
+
+<h4 id="section-1">1. 드랍박스 업로드가 쉘로 가능한지 찾기</h4>
+<ul>
+  <li><a href="https://github.com/andreafabrizi/Dropbox-Uploader">https://github.com/andreafabrizi/Dropbox-Uploader</a></li>
+  <li>위 경로에서 쉘스크립트를 제공한다.</li>
+  <li>업로드 와 공유기능을 제공합니다.</li>
+  <li>그래서 기존 구글드라이브와 와 같이 프로그램을 만들어 보자</li>
+  <li>구글드라이브 설명
+    <ul>
+      <li><a href="https://pyeongho.github.io/google-drive-for-image">https://pyeongho.github.io/google-drive-for-image</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-2">2. 수정된 스크립트만 올리겠습니다.</h4>
+<ul>
+  <li>인자를 받아서 수정하는 부분을 갭쳐실행 -&gt; 업로드 -&gt; 공유 -&gt; 링크 복사</li>
+  <li>
+    <p>인자받는 부분을 모두 지우고 아래 내용을 추가 했습니다.
+<script src="https://gist.github.com/pyeongho/70aa0ea2f17452d3fefbce17ed7b9e10.js"></script></p>
+  </li>
+  <li>그리고 db_share 함수와 get_Share 함수에 내용을 추가 했습니다.
+<script src="https://gist.github.com/pyeongho/d1b3e874b5dd47b6721b16f6f49e5b43.js"></script></li>
+</ul>
+
+<h4 id="section-3">3. 드랍박스 이미지는 사파리에서 잘 나왔으면 좋겠습니다.</h4>
+<p><img src="http://dl.dropbox.com/s/s5slt9ilsflggrv/201704301038.png" alt="드랍박스공유테스트" /></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>스태틱으로 변경하기</title>
 	  <link>//github-static</link>
 	  <author>PyeongHo</author>
@@ -905,67 +947,6 @@ There is no plans to support a redirect without a user gesture.</p>
   <li>앱 프로그램을 애플리케이션으로 이동하여 알프레드로 호출하니 잘 동작 합니다.</li>
   <li>어차피 단축키 추가해봐야 외우기 힘들테니 그냥 알프레드를 이용하려고 합니다.</li>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3MlJrOERUMG15ejA" alt="테스트" /></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>gitugb.io 지킬에 사진업로드 쉽게 하는 앱개발</title>
-	  <link>//ios_git_client</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-03-27T00:00:00+00:00</pubDate>
-	  <guid>//ios_git_client</guid>
-	  <description><![CDATA[
-	     <h3 id="ios--githubio----">iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.</h3>
-<ul>
-  <li>스마튼폰에서 찍은 사진을 블로그에 바로 올리고 싶은 생각으로 앱을 개발해 보기로 결정</li>
-</ul>
-
-<h4 id="section">1. 공부할 자료 수집</h4>
-<ul>
-  <li>깃 라이브러리
-    <ul>
-      <li><a href="https://github.com/libgit2/objective-git#carthage">https://github.com/libgit2/objective-git#carthage</a></li>
-    </ul>
-  </li>
-  <li><a href="https://github.com/SwiftGit2/SwiftGit2">https://github.com/SwiftGit2/SwiftGit2</a></li>
-  <li>carthage 사용법을 알아야 한다.
-    - <a href="https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/">https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/</a></li>
-</ul>
-
-<h4 id="carthage-">2. carthage 사용법</h4>
-<ul>
-  <li>homebrew로 설치 하기
-    <ul>
-      <li>설치 안되어 있으면
-        <ul>
-          <li>$ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>$ brew update</li>
-  <li>$ brew install carthage</li>
-  <li>Cartfile 파일 생성하기
-    <ul>
-      <li>프로젝트 루트에 Cartfile 파일을 만들어서</li>
-      <li>라이브러리 사용 설명서에 나온 주소를 입력 한다.</li>
-      <li>정확한 문법은 인터넷에서 확인해 주세요</li>
-      <li>예)  github “libgit2/objective-git”</li>
-    </ul>
-  </li>
-  <li>프로젝트 루트에서 명령어 실행
-    <ul>
-      <li>$ carthage update</li>
-    </ul>
-  </li>
-  <li>라이브러리에 따라서 헤더 위치를 추가 해야합니다.
-    <ul>
-      <li>프로젝트 세팅 -&gt; 빌드 세팅 -&gt; Header Search Path (all,level)</li>
-    </ul>
-  </li>
-  <li>import ObjectiveGit 추가후 컴파일 완료</li>
 </ul>
 
 	  ]]></description>

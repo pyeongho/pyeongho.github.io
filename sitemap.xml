@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//github-image-dropbox</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//github-static</loc>
     </url>
     
@@ -576,6 +580,14 @@
     
     
     <url>
+        <loc>https://pyeongho.github.io//tag/githubpage/page2/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>https://pyeongho.github.io//tag/jekyll/rss.xml</loc>
     </url>
     
@@ -1065,6 +1077,22 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/%EC%8A%A4%ED%83%9C%ED%8B%B1/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%EB%93%9C%EB%9E%8D%EB%B0%95%EC%8A%A4/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%EB%93%9C%EB%9E%8D%EB%B0%95%EC%8A%A4/</loc>
     </url>
     
     

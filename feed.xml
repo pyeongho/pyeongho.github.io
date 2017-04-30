@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>이미지를 호스팅을 드랍박스로 변경해 보자</title>
+        
+          <description>&lt;h4 id=&quot;section&quot;&gt;구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//github-image-dropbox</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//github-image-dropbox</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>스태틱으로 변경하기</title>
         
           <description>&lt;h4 id=&quot;section&quot;&gt;테마를 변경하면서 스택으로 변경하기로 결정&lt;/h4&gt;

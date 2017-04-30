@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>스태틱으로 변경하기</title>
+    <title>이미지를 호스팅을 드랍박스로 변경해 보자</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,7 +111,7 @@
     <article class="post tag-githubpage">
 
         <header class="post-header">
-            <h1 class="post-title">스태틱으로 변경하기</h1>
+            <h1 class="post-title">이미지를 호스팅을 드랍박스로 변경해 보자</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
             <time class="post-date" datetime="2017-04-29">29 Apr 2017</time>
@@ -124,7 +124,7 @@
                        
                 
                     
-                       <a href='/tag/스태틱'>스태틱</a>
+                       <a href='/tag/드랍박스'>드랍박스</a>
                        
                 
                 
@@ -133,42 +133,37 @@
 
         <section class="post-content">
             
-            <h4 id="section">테마를 변경하면서 스택으로 변경하기로 결정</h4>
+            <h4 id="section">구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.</h4>
 <ul>
-  <li>테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정</li>
-  <li>목표 설정
+  <li>드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자</li>
+</ul>
+
+<h4 id="section-1">1. 드랍박스 업로드가 쉘로 가능한지 찾기</h4>
+<ul>
+  <li><a href="https://github.com/andreafabrizi/Dropbox-Uploader">https://github.com/andreafabrizi/Dropbox-Uploader</a></li>
+  <li>위 경로에서 쉘스크립트를 제공한다.</li>
+  <li>업로드 와 공유기능을 제공합니다.</li>
+  <li>그래서 기존 구글드라이브와 와 같이 프로그램을 만들어 보자</li>
+  <li>구글드라이브 설명
     <ul>
-      <li>저장소 위치를 비트버켓으로 이동한다.</li>
-      <li>지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.</li>
+      <li><a href="https://pyeongho.github.io/google-drive-for-image">https://pyeongho.github.io/google-drive-for-image</a></li>
     </ul>
   </li>
 </ul>
 
-<h4 id="section-1">1. 우선 저장소 옮기는 건 쉬움</h4>
+<h4 id="section-2">2. 수정된 스크립트만 올리겠습니다.</h4>
 <ul>
-  <li>git remote add 태그 [저장소 위치]</li>
-  <li>추가된 저장소로 푸시</li>
+  <li>인자를 받아서 수정하는 부분을 갭쳐실행 -&gt; 업로드 -&gt; 공유 -&gt; 링크 복사</li>
+  <li>
+    <p>인자받는 부분을 모두 지우고 아래 내용을 추가 했습니다.
+<script src="https://gist.github.com/pyeongho/70aa0ea2f17452d3fefbce17ed7b9e10.js"></script></p>
+  </li>
+  <li>그리고 db_share 함수와 get_Share 함수에 내용을 추가 했습니다.
+<script src="https://gist.github.com/pyeongho/d1b3e874b5dd47b6721b16f6f49e5b43.js"></script></li>
 </ul>
 
-<h4 id="section-2">2. 지킬 컴파일 환경 구성</h4>
-<ul>
-  <li>테마 변경중이라 글을 못섰지만</li>
-  <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
-</ul>
-
-<h4 id="section-3">3. 기존 파일을 모두삭제</h4>
-<ul>
-  <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
-  <li>모두 정상 동작</li>
-</ul>
-
-<h4 id="section-4">4. 지금 쓰는건 테스트 하기위함</h4>
-<ul>
-  <li>수동으로 비트버켓에 푸시</li>
-  <li>jekyll build</li>
-  <li>결과물을 pyeongho.github.io 로 푸시</li>
-</ul>
-
+<h4 id="section-3">3. 드랍박스 이미지는 사파리에서 잘 나왔으면 좋겠습니다.</h4>
+<p><img src="http://dl.dropbox.com/s/s5slt9ilsflggrv/201704301038.png" alt="드랍박스공유테스트" /></p>
 
 
         </section>
@@ -200,15 +195,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=스태틱으로 변경하기&amp;url=https://pyeongho.github.io/github-static"
+                <a class="icon-twitter" href="http://twitter.com/share?text=이미지를 호스팅을 드랍박스로 변경해 보자&amp;url=https://pyeongho.github.io/github-image-dropbox"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/github-static"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/github-image-dropbox"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/github-static"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/github-image-dropbox"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -246,20 +241,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover4.jpg)" href="/github-image-dropbox">
-            <section class="post">
-                <h2>이미지를 호스팅을 드랍박스로 변경해 보자</h2>
-                <p>#### 구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다. - 드랍박스를 이용해서 링크를 가지고 오는 방법을...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover4.jpg)" href="/bitbucket-deploy">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover4.jpg)" href="/github-static">
             <section class="post">
-                <h2>비트버켓에서 파이프라인을 이용한 자동 배포</h2>
-                <p>자동배포시스템 적용하기 github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을...</p>
+                <h2>스태틱으로 변경하기</h2>
+                <p>테마를 변경하면서 스택으로 변경하기로 결정 테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야...</p>
             </section>
         </a>
     
