@@ -158,8 +158,8 @@
   <li>rxjava 는 람다가…</li>
 </ul>
 
-<p>```java
-    // old
+<p>```java<br />
+    // old<br />
     List<integer> datas = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     for (int data : datas) {
       char value = (char) data + 'a';
@@ -234,8 +234,8 @@ Observable.fromIteratable(datas)
   <li>이런 경우 Subject를 사용합니다.</li>
   <li>Observable 는 내부에서</li>
   <li>
-    <p>Subject 는 외부에서
-```java
+    <p>Subject 는 외부에서<br />
+```java<br />
    PublishSubject<integer> subject = PublishSubject.<integer>create();
    subject
    .filter(data -&gt; (data % 2) != 0)
@@ -244,13 +244,13 @@ Observable.fromIteratable(datas)
    .collect(() -&gt; new ArrayList<character>(), (chars, value) -&gt; chars.add(value))
    .subscribe(values -&gt; print(values));</character></integer></integer></p>
 
-    <p>//사용
-   subject.onNext(0);
-   subject.onNext(1);
-   subject.onNext(2);
-   subject.onNext(3);
-   subject.onNext(4);
-   subject.onNext(5);
+    <p>//사용<br />
+   subject.onNext(0);<br />
+   subject.onNext(1);<br />
+   subject.onNext(2);<br />
+   subject.onNext(3);<br />
+   subject.onNext(4);<br />
+   subject.onNext(5);<br />
 ```</p>
   </li>
 </ul>
@@ -278,13 +278,13 @@ Observable.fromIteratable(datas)
     <ul>
       <li>데이터 주입 : subscribeOn(쓰레드)
         <ul>
-          <li>데이터를 주입하는 시점에 대한 쓰레드 선언이며 모든 stream 내에서 최종적으로 선언한
+          <li>데이터를 주입하는 시점에 대한 쓰레드 선언이며 모든 stream 내에서 최종적으로 선언한<br />
 쓰레드가 할당됩니다.</li>
         </ul>
       </li>
       <li>데이터 처리 : observeOn(쓰레드)
         <ul>
-          <li>쓰레드를 선언한 다음부터 새로운 쓰레드가 선언되기 전까지 데이터 처리에 동작할 쓰레드
+          <li>쓰레드를 선언한 다음부터 새로운 쓰레드가 선언되기 전까지 데이터 처리에 동작할 쓰레드<br />
 를 할당합니다.</li>
         </ul>
       </li>
@@ -310,13 +310,13 @@ Observable.fromIteratable(datas)
     .collect(() -&gt; new ArrayList&lt;Character&gt;(), (chars, value) -&gt; chars.add(value))
     .observeOn(AndroidSchedulers.mainThread())
     .subscribe(values -&gt; print(values));
- </code>
-  - 위 코드는 아래와 같은 쓰레드로 동작
-    - Observable.create() - Schedulers.computation()
-    - filter() - Schedulers.io()
-    - map() - Schedulers.io()
-    - flatMap() - Schedulers.computation()
-    - collect() - Schedulers.computation()
+ </code><br />
+  - 위 코드는 아래와 같은 쓰레드로 동작<br />
+    - Observable.create() - Schedulers.computation()<br />
+    - filter() - Schedulers.io()<br />
+    - map() - Schedulers.io()<br />
+    - flatMap() - Schedulers.computation()<br />
+    - collect() - Schedulers.computation()<br />
     - subscribe() - AndroidSchedulers.mainThread()</p>
 
 <h4 id="rx-">Rx 기능정리</h4>

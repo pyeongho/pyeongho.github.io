@@ -152,21 +152,20 @@
   <li>app 레벨 그래들 변경내용</li>
 </ul>
 
-<p>```gradle
-apply plugin: ‘com.android.application’
-apply plugin: ‘android-apt’</p>
+<pre><code class="language-gradle">apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
-<p>def AAVersion = ‘4.1.0’</p>
+def AAVersion = '4.1.0'
 
-<p>…
+...
 dependencies {
- …
-    apt “org.androidannotations:androidannotations:$AAVersion”
-    compile “org.androidannotations:androidannotations-api:$AAVersion”
- … <br />
-}</p>
+ ...
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+ ...   
+}
 
-<p>```</p>
+</code></pre>
 
 <h4 id="databinding---">2. databinding 과 함께 사용하기</h4>
 <ul>

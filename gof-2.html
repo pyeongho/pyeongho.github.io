@@ -213,18 +213,20 @@
 <h4 id="section-3">6.2 빌더 패턴(현장)</h4>
 <ul>
   <li>많은 변수를 가진 객체의 생성을 가독성 높도록 코딩</li>
-  <li><code class="highlighter-rouge">
-Computer com = ComputerBuilder
+  <li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>Computer com = ComputerBuilder
   .start()
   .setCpu("i7")
   .setRam("8g")
   .setStrorage("256g ssd")
   .buid();
-</code>
-#### 7.1 추상 팩토리 패턴</li>
+</code></pre>
+    </div>
+    <p>#### 7.1 추상 팩토리 패턴</p>
+  </li>
   <li>관련 있는 객체의 생성을 가상화 한다.</li>
-  <li>바이크팩토리 패토리 = 뉴 삼천리바이크팩토리
-팩토리.바디생성
+  <li>바이크팩토리 패토리 = 뉴 삼천리바이크팩토리<br />
+팩토리.바디생성<br />
 팩토리.휠생성</li>
   <li>위 흐름 처럼 원하는공장을 만들고 원하는 결과를 만든다.</li>
 </ul>
