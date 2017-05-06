@@ -155,10 +155,29 @@ compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 <p>```</p>
 
 <p>``` java
-  private int x=3;
-  public int sum(int a, int b){
-    return a+b;
-  }</p>
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search);</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    ImageAdapter adapter = new ImageAdapter(HomeActivity.this);
+
+    DaggerHomeComponent.builder()
+            .homeModule(new HomeModule(this, adapter))
+            .build()
+            .inject(this);
+
+    ButterKnife.bind(this);
+
+    rvSearchResult.setAdapter(adapter);
+    rvSearchResult.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
+
+    imageAdapterDataView.setOnRecyclerItemClickListener((adapter1, position) -&gt; {
+        homePresenter.onItemClick(position);
+    });
+}
+</code></pre>
+</div>
 
 <p>```</p>
 
