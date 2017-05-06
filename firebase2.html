@@ -165,7 +165,7 @@
       </span><span class="nt">".write"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auth != null"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
- </span></code><br />
+ </span></code>
  - 읽기 권한, 쓰기 권한 모두 null 이 아닐때 라고 하니깐 firebase 인증은 기존에 했으니 될거 같음</p>
 
 <h4 id="section">4. 권한 확인 완료 된 코드에서 데이터 추가하는 코드를 넣어보자</h4>
@@ -173,27 +173,29 @@
   <li>기존 코드중(아래코드 참고) user!=null 이 아닐때 코드를 추가 하자</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="n">mAuthListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FirebaseAuth</span><span class="o">.</span><span class="na">AuthStateListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="n">onAuthStateChanged</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">FirebaseAuth</span> <span class="n">firebaseAuth</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">FirebaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">firebaseAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">();</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="c1">// User is signed in</span>
-                    
-                    <span class="c1">// Write a message to the database</span>
-                    <span class="n">FirebaseDatabase</span> <span class="n">database</span> <span class="o">=</span> <span class="n">FirebaseDatabase</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
-                    <span class="n">DatabaseReference</span> <span class="n">myRef</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="na">getReference</span><span class="o">(</span><span class="s">"message"</span><span class="o">);</span>
-                    <span class="n">myRef</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">"Hello, World!"</span><span class="o">);</span>
+<p>``` java 
+    mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in</p>
 
-                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                    <span class="c1">// User is signed out</span>
-                    <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"onAuthStateChanged:signed_out"</span><span class="o">);</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">};</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("message");
+                myRef.setValue("Hello, World!");
 
+            } else {
+                // User is signed out
+                log.d("onAuthStateChanged:signed_out");
+            }
+        }
+    };
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>값 확인은 firebase 콘솔에서 확인해 보자</li>

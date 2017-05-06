@@ -211,23 +211,26 @@
       </li>
     </ol>
 
-    <pre><code class="language-Swift">
-    var languages = ["Swift", "Objective-C", "Python"]    
-    var capitals = [
-        "한국": "서울",
-        "일본": "도쿄",
-        "중국": "베이징",
-    ]
+    <p>```Swift</p>
 
-    // 타입 추가 방법
-    var languages: [String] = []
-    var capitals: [String: String] = [:]
+    <div class="highlighter-rouge"><pre class="highlight"><code>var languages = ["Swift", "Objective-C", "Python"]    
+var capitals = [
+    "한국": "서울",
+    "일본": "도쿄",
+    "중국": "베이징",
+]
 
-    // 간결
-    var languages = [String]()
-    var capitals = [String: String]()
+// 타입 추가 방법
+var languages: [String] = []
+var capitals: [String: String] = [:]
 
+// 간결
+var languages = [String]()
+var capitals = [String: String]()
 </code></pre>
+    </div>
+
+    <p>```</p>
   </li>
   <li>
     <ol>
@@ -245,7 +248,7 @@
 
         <p>```Swift</p>
 
-        <p>case 8..&lt;14:<br />
+        <p>case 8..&lt;14:
      student = “초등학생”</p>
 
         <p>```</p>
@@ -269,29 +272,29 @@
           <li>
             <p>if 문 사용 예제</p>
 
-            <pre><code class="language-Swift">
-if let email = optionalEmail {
+            <p>```Swift</p>
+
+            <p>if let email = optionalEmail {
      print(email) // optionalEmail의 값이 존재한다면 해당 값이 출력됩니다.
 }
-// optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.
+// optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.</p>
 
+            <p>// And 조건은 , 로 구분 해서 사용 ㅏ능  <br />
+var optionalName: String? = “전수열”
+var optionalEmail: String? = “devxoul@gmail.com”</p>
 
-// And 조건은 , 로 구분 해서 사용 ㅏ능    
-var optionalName: String? = "전수열"
-var optionalEmail: String? = "devxoul@gmail.com"
-
-if let name = optionalName, email = optionalEmail {
+            <p>if let name = optionalName, email = optionalEmail {
 // name과 email 값이 존재
-}
+}</p>
 
-// 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로    
-var optionalAge: Int? = 22
+            <p>// 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로  <br />
+var optionalAge: Int? = 22</p>
 
-if let age = optionalAge, age &gt;= 20 {
+            <p>if let age = optionalAge, age &gt;= 20 {
 // age의 값이 존재하고, 20 이상입니다.
-}
-        
-</code></pre>
+}</p>
+
+            <p>```</p>
           </li>
         </ul>
       </li>

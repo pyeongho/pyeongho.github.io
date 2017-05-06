@@ -265,23 +265,23 @@
 <ul>
   <li>안전하지 않음 코드
     <ul>
-      <li>문제점 : 외부의 입력을 통하여 “디렉터리 경로 문자열” 생성이 필요한 경우,<br />
-외부 입력 에서 경로조작에 사용될 수 있는 문자를 필터링하지 않으면, 경로에 <br />
+      <li>문제점 : 외부의 입력을 통하여 “디렉터리 경로 문자열” 생성이 필요한 경우,
+외부 입력 에서 경로조작에 사용될 수 있는 문자를 필터링하지 않으면, 경로에 
 대한 문자열이 입력되어 시스템 정보누출, 서비스 장애 등을 유발 시킬 수 있다.</li>
     </ul>
   </li>
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Properties</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"filename"</span><span class="o">);</span>
-    <span class="k">if</span><span class="o">(</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
-      <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/usr/local/tmp/"</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
-      <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+  public void f(Properties request) {
+    String name = request.getProperty("filename");
+    if( name != null ) {
+      File file = new File("/usr/local/tmp/" + name);
+      file.delete();
+    }
+  }
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -291,21 +291,21 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Properties</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"filename"</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">dentry</span> <span class="o">=</span> <span class="s">"/usr/local/tmp"</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="s">""</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">)</span> <span class="o">{</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"\\"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"."</span><span class="o">,</span> <span class="s">" "</span><span class="o">);</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"&amp;"</span><span class="o">,</span> <span class="s">" "</span><span class="o">);</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="s">"-report"</span><span class="o">;</span>
-            <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">dentry</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">file</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void f(Properties request) {
+        String name = request.getProperty("filename");
+        String dentry = "/usr/local/tmp";
+        if ( name != null &amp;&amp; !"".equals(name) ) {
+            name = name.replaceAll("/", "");
+            name = name.replaceAll("\\", "");
+            name = name.replaceAll(".", " ");
+            name = name.replaceAll("&amp;", " ");
+            name = name + "-report";
+            File file = new File(dentry + name);
+            if (file != null) file.delete();
+        }
+    }
+</code></p>
   </li>
 </ul>
 
@@ -321,23 +321,23 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">(),</span> <span class="s">"inputFile"</span><span class="o">);</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-        <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
-        <span class="n">props</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">is</span><span class="o">);</span>
-        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"filename"</span><span class="o">);</span>
-        <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/usr/local/tmp/"</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
-        <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-        <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Error"</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    File file = new File(android.os.Environment.getExternalStorageDirectory(), "inputFile");
+    try {
+        InputStream is = new FileInputStream(file);
+        Properties props = new Properties();
+        props.load(is);
+        String name = props.getProperty("filename");
+        file = new File("/usr/local/tmp/" + name);
+        file.delete();
+        is.close();
+    } catch (IOException e) {
+        Log.w("Error", "", e);
+    }
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -347,24 +347,24 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">(),</span> <span class="s">"inputFile"</span><span class="o">);</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-            <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
-            <span class="n">props</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">is</span><span class="o">);</span>
-            <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"filename"</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span> <span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
-                <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-                <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Error"</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        File file = new File(android.os.Environment.getExternalStorageDirectory(), "inputFile");
+        try {
+            InputStream is = new FileInputStream(file);
+            Properties props = new Properties();
+            props.load(is);
+            String name = props.getProperty("filename");
+            if (name.indexOf("/") &lt;0) {
+                file = new File(name);
+                file.delete();
+                is.close();
+        } catch (IOException e) {
+            Log.w("Error", "", e);
+        }
+    }
+</code></p>
   </li>
 </ul>
 
@@ -378,14 +378,14 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">object</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="o">(</span><span class="n">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+    public boolean equals(Object object) {
+        return (toString().equals(object.toString()));
+    }
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -395,16 +395,16 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">object</span><span class="o">){</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">object</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="o">(</span><span class="n">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
-        <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span> <span class="o">;</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+    public boolean equals(Object object){
+        if(object != null)
+            return (toString().equals(object.toString()));
+        else return false ;
+    }
+</code></p>
   </li>
 </ul>
 
@@ -418,21 +418,21 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-        <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">i1</span> <span class="o">==</span> <span class="n">i2</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        int i1 = this.hashCode();
+        int i2 = obj.hashCode();
+        if (i1 == i2)
+            return true;
+        else
+            return false;
+    }
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -442,22 +442,22 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-        <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">i1</span> <span class="o">==</span> <span class="n">i2</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="nd">@Overide</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">hashCode</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">HashCodeBuilder</span><span class="o">(</span><span class="mi">17</span><span class="o">,</span> <span class="mi">37</span><span class="o">).</span><span class="na">toHashCode</span><span class="o">();</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        int i1 = this.hashCode();
+        int i2 = obj.hashCode();
+        if (i1 == i2)
+            return true;
+        else
+            return false;
+    }
+    @Overide
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).toHashCode();
+    }
+</code></p>
   </li>
 </ul>
 
@@ -471,17 +471,18 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span><span class="o">;</span>
-        <span class="n">String</span> <span class="n">hostname</span> <span class="o">=</span> <span class="s">"hostname"</span><span class="o">;</span>
-        <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Socket</span><span class="o">(</span><span class="n">hostname</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
+    <p>```java
+    public void onCreate(Bundle savedInstanceState) {
+        int port = 443;
+        String hostname = “hostname”;
+        Socket socket = new Socket(hostname, port);</p>
 
-        <span class="n">InputStream</span> <span class="n">in</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
-        <span class="n">OutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">();</span>
-        <span class="c1">// Read from in and write to out...</span>
-        <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="o">}</span>
+    <div class="highlighter-rouge"><pre class="highlight"><code>    InputStream in = socket.getInputStream();
+    OutputStream out = socket.getOutputStream();
+    // Read from in and write to out...
+    in.close();
+    out.close();
+} ```
 </code></pre>
     </div>
   </li>
@@ -493,19 +494,19 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span><span class="o">;</span>
-    <span class="n">String</span> <span class="n">hostname</span> <span class="o">=</span> <span class="s">"hostname"</span><span class="o">;</span>
-    <span class="n">SocketFactory</span> <span class="n">socketFactory</span> <span class="o">=</span> <span class="n">SSLSocketFactory</span><span class="o">.</span><span class="na">getDefault</span><span class="o">();</span>
-    <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="n">socketFactory</span><span class="o">.</span><span class="na">createSocket</span><span class="o">(</span><span class="n">hostname</span><span class="o">,</span> <span class="o">,</span> <span class="n">port</span><span class="o">);</span>
-    <span class="n">InputStream</span> <span class="n">in</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span>
-    <span class="n">OutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">();</span>
-    <span class="c1">// Read from in and write to out...</span>
-    <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void onCreate(Bundle savedInstanceState) {
+    int port = 443;
+    String hostname = "hostname";
+    SocketFactory socketFactory = SSLSocketFactory.getDefault();
+    Socket socket = socketFactory.createSocket(hostname, , port);
+    InputStream in = socket.getInputStream();
+    OutputStream out = socket.getOutputStream();
+    // Read from in and write to out...
+    in.close();
+    out.close();
+}
+</code></p>
   </li>
 </ul>
 
@@ -519,18 +520,19 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">,</span> <span class="n">Key</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">byte</span><span class="o">[]</span> <span class="n">rslt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <p>```java
+    public byte[] encrypt(byte[] msg, Key k) {
+        byte[] rslt = null;</p>
 
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="c1">//DES 등의 낮은 보안 수준의 알고리즘을 사용하는 것은 안전하지 않다</span>
-            <span class="n">Cipher</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"DES"</span><span class="o">);</span>
-            <span class="n">c</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">Cipher</span><span class="o">.</span><span class="na">ENCRYPT_MODE</span><span class="o">,</span> <span class="n">k</span><span class="o">);</span>
-            <span class="n">rslt</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidKeyException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">rslt</span><span class="o">;</span>
-    <span class="o">}</span>
+    <div class="highlighter-rouge"><pre class="highlight"><code>    try {
+        //DES 등의 낮은 보안 수준의 알고리즘을 사용하는 것은 안전하지 않다
+        Cipher c = Cipher.getInstance("DES");
+        c.init(Cipher.ENCRYPT_MODE, k);
+        rslt = c.update(msg);
+    } catch (InvalidKeyException e) {
+    }
+    return rslt;
+} ```
 </code></pre>
     </div>
   </li>
@@ -542,19 +544,19 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">,</span> <span class="n">Key</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
-     <span class="kt">byte</span><span class="o">[]</span> <span class="n">rslt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <p>```java
+public byte[] encrypt(byte[] msg, Key k) {
+     byte[] rslt = null;</p>
 
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="c1">//낮은 보안 수준의 DES알고리즘을 높은 보안 수준의 AES</span>
-        <span class="c1">// 알고리즘으로 대체한다</span>
-        <span class="n">Cipher</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Cipher</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"AES/CBC/PKCS5Padding"</span><span class="o">);</span>
-        <span class="n">c</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">Cipher</span><span class="o">.</span><span class="na">ENCRYPT_MODE</span><span class="o">,</span> <span class="n">k</span><span class="o">);</span>
-        <span class="n">rslt</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidKeyException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">rslt</span><span class="o">;</span>
-<span class="o">}</span>
+    <div class="highlighter-rouge"><pre class="highlight"><code>try {
+    //낮은 보안 수준의 DES알고리즘을 높은 보안 수준의 AES
+    // 알고리즘으로 대체한다
+    Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
+    c.init(Cipher.ENCRYPT_MODE, k);
+    rslt = c.update(msg);
+} catch (InvalidKeyException e) {
+}
+return rslt; } ```    
 </code></pre>
     </div>
   </li>
@@ -570,18 +572,18 @@
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">double</span> <span class="nf">roledice</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-     <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">();</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public double roledice() {
+     return Math.random();
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
       <li>해결코드 : seed를 설정 하는 코드를 사용.</li>
     </ul>
   </li>
-  <li>샘플코드 <br />
+  <li>샘플코드 
 <code class="highlighter-rouge">java
 public int roledice() {
      Random r = new Random();
@@ -602,19 +604,19 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="n">FileOutputStream</span> <span class="n">fOut</span> <span class="o">=</span> <span class="n">openFileOutput</span><span class="o">(</span><span class="s">"test"</span><span class="o">,</span>  <span class="n">MODE_WORLD_READABLE</span><span class="o">);</span>
-        <span class="n">OutputStreamWriter</span> <span class="n">out1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fOut</span><span class="o">);</span>
-        <span class="n">out1</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
-        <span class="n">out1</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="n">fOut</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    try {
+        FileOutputStream fOut = openFileOutput("test",  MODE_WORLD_READABLE);
+        OutputStreamWriter out1 = new OutputStreamWriter(fOut);
+        out1.write("Hello World");
+        out1.close();
+        fOut.close();
+    } catch (Throwable t) {
+    }
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -624,19 +626,19 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">FileOutputStream</span> <span class="n">fOut</span> <span class="o">=</span> <span class="n">openFileOutput</span><span class="o">(</span><span class="s">"test"</span><span class="o">,</span> <span class="n">MODE_PRIVATE</span><span class="o">);</span>
-            <span class="n">OutputStreamWriter</span> <span class="n">out1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fOut</span><span class="o">);</span>
-            <span class="n">out1</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
-            <span class="n">out1</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-            <span class="n">fOut</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        try {
+            FileOutputStream fOut = openFileOutput("test", MODE_PRIVATE);
+            OutputStreamWriter out1 = new OutputStreamWriter(fOut);
+            out1.write("Hello World");
+            out1.close();
+            fOut.close();
+        } catch (Throwable t) {
+        }
+    }
+</code></p>
   </li>
 </ul>
 
@@ -650,9 +652,9 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">".syncadapter.SyncService"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">xml
+    &lt;service android:name=".syncadapter.SyncService" android:exported="true"&gt;
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -662,13 +664,49 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">".syncadapter.SyncService"</span> <span class="na">android:exported=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    <p>```xml</p>
+    <service android:name=".syncadapter.SyncService" android:exported="false">
+```        
+
+</service>
+  </li>
+</ul>
+<p>#### 10. 보안특성 - 공유 아이디에 의한 접근제어 통과
+  - 안전하지 않음 코드
+    - 문제점 : 
+  - 샘플코드</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>```xml
+&lt;manifest 
+    xmlns:android=http://schemas.android.com/apk/res/android
+    package="com.example.android.apis"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:sharedUserId="android.uid.developer1"&gt;
+```
 </code></pre>
-    </div>
+</div>
+
+<ul>
+  <li>안전한 코드
+    <ul>
+      <li>해결코드 :</li>
+    </ul>
+  </li>
+  <li>
+    <p>샘플코드</p>
+
+    <p><code class="highlighter-rouge">xml
+&lt;manifest xmlns:android=http://schemas.android.com/apk/res/android
+    package="com.example.android.apis"
+    android:versionCode="1"
+    android:versionName="1.0"&gt;
+&lt;!-- android:sharedUserId="android.uid.developer1“ --&gt;
+</code></p>
   </li>
 </ul>
 
-<h4 id="section-7">10. 보안특성 - 공유 아이디에 의한 접근제어 통과</h4>
+<h4 id="section-7">11. 보안특성 - 경쟁조건: 검사시점과 사용시점</h4>
 <ul>
   <li>안전하지 않음 코드
     <ul>
@@ -678,14 +716,46 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;manifest</span> 
-    <span class="na">xmlns:android=</span><span class="s">http://schemas.android.com/apk/res/android</span>
-    <span class="na">package=</span><span class="s">"com.example.android.apis"</span>
-    <span class="na">android:versionCode=</span><span class="s">"1"</span>
-    <span class="na">android:versionName=</span><span class="s">"1.0"</span>
-    <span class="na">android:sharedUserId=</span><span class="s">"android.uid.developer1"</span><span class="nt">&gt;</span>
-</code></pre>
-    </div>
+    <p>```java
+public class UA367 extends Activity {
+    @override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        FileAccessThread fileAccessThread = new FileAccessThread();
+        FileDeleteThread fileDeleteThread = new FileDeleteThread();
+        fileAccessThread.start();
+        fileDeleteThread.start();
+    }
+}
+class FileAccessThread extends Thread {
+    public void run() {
+        try {
+            File f = new File(“Test_367.txt”);
+            if (f.exists()) { 
+                BufferedReader br = new BufferedReader(new FileReader(f));
+                br.close();
+            }
+        } catch(FileNotFoundException e) {
+            System.out.println(“Exception Occurred”);
+        }
+    }
+}</p>
+
+    <p>class FileDeleteThread extends Thread {
+    public void run() {
+        try {
+            File f = new File(“Test_367.txt”);
+            if (f.exists()) { 
+                f.delete();
+            }
+        } catch(FileNotFoundException e) {
+            System.out.println(“Exception Occurred”);
+        } catch(IOException e) {
+            System.out.println(“Exception Occurred”);
+        }
+    }
+}
+```</p>
   </li>
   <li>안전한 코드
     <ul>
@@ -695,17 +765,43 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">http://schemas.android.com/apk/res/android</span>
-    <span class="na">package=</span><span class="s">"com.example.android.apis"</span>
-    <span class="na">android:versionCode=</span><span class="s">"1"</span>
-    <span class="na">android:versionName=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
-<span class="c">&lt;!-- android:sharedUserId="android.uid.developer1“ --&gt;</span>
-</code></pre>
-    </div>
+    <p>```java
+public class SA367 extends Activity {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+            FileAccessThread fileAccess = new FileAccessThread();
+            Thread first = new Thread(fileAccess);
+            Thread second = new Thread(fileAccess);
+            Thread third = new Thread(fileAccess);
+            Thread fourth = new Thread(fileAccess);
+            first.start();
+            second.start();
+            third.start();
+            fourth.start();
+    }<br />
+}</p>
+
+    <p>class FileAccessThread implements Runnable {
+    public synchronized void run() {
+        try {
+            File f = new File(“Test.txt”);
+            if (f.exists()){
+                Thread.sleep(100);
+                BufferedReader br = new BufferedReader(new FileReader(f));
+                System.out.println(br.readLine());
+                br.close();
+                f.delete();
+            }
+        } catch (IOException e) {
+            System.err.println(“IOException occured”);
+        }
+    }
+}
+```</p>
   </li>
 </ul>
 
-<h4 id="section-8">11. 보안특성 - 경쟁조건: 검사시점과 사용시점</h4>
+<h4 id="section-8">12. 시간 및 상태 - 제대로 제어되지 않은 재귀</h4>
 <ul>
   <li>안전하지 않음 코드
     <ul>
@@ -715,46 +811,11 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UA367</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
-    <span class="nd">@override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">FileAccessThread</span> <span class="n">fileAccessThread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileAccessThread</span><span class="o">();</span>
-        <span class="n">FileDeleteThread</span> <span class="n">fileDeleteThread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileDeleteThread</span><span class="o">();</span>
-        <span class="n">fileAccessThread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-        <span class="n">fileDeleteThread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="kd">class</span> <span class="nc">FileAccessThread</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"Test_367.txt"</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span> 
-                <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">f</span><span class="o">));</span>
-                <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-            <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception Occurred"</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">FileDeleteThread</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"Test_367.txt"</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span> 
-                <span class="n">f</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-            <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception Occurred"</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception Occurred"</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public int factorial(int n) {
+    return n * factorial(n - 1);
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -764,43 +825,21 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SA367</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-            <span class="n">FileAccessThread</span> <span class="n">fileAccess</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileAccessThread</span><span class="o">();</span>
-            <span class="n">Thread</span> <span class="n">first</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="n">fileAccess</span><span class="o">);</span>
-            <span class="n">Thread</span> <span class="n">second</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="n">fileAccess</span><span class="o">);</span>
-            <span class="n">Thread</span> <span class="n">third</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="n">fileAccess</span><span class="o">);</span>
-            <span class="n">Thread</span> <span class="n">fourth</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="n">fileAccess</span><span class="o">);</span>
-            <span class="n">first</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-            <span class="n">second</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-            <span class="n">third</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-            <span class="n">fourth</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-    <span class="o">}</span>  
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">FileAccessThread</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"Test.txt"</span><span class="o">);</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">exists</span><span class="o">()){</span>
-                <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
-                <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">f</span><span class="o">));</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
-                <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="n">f</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
-            <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"IOException occured"</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public int factorial(int n) {
+    int i;
+    if (n == 1) {
+        i = 1;
+    } else {
+        i = n * factorial(n - 1);
+    }
+    return i;
+}
+</code></p>
   </li>
 </ul>
 
-<h4 id="section-9">12. 시간 및 상태 - 제대로 제어되지 않은 재귀</h4>
+<h4 id="section-9">13. 에러처리 - 오류 메세지를 통한 정보 노출</h4>
 <ul>
   <li>안전하지 않음 코드
     <ul>
@@ -810,11 +849,16 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    try{ 
+        throw new IOException(); 
+    }catch (IOException e) { 
+        e.printStackTrace(); 
+    }
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -824,21 +868,20 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    try{
+        throw new IOException();
+    }catch (IOException e) { 
+        System.out.println(“예외발생"); 
+    }
+}
+</code></p>
   </li>
 </ul>
 
-<h4 id="section-10">13. 에러처리 - 오류 메세지를 통한 정보 노출</h4>
+<h4 id="section-10">14. 에러처리 - 오류 상황에 대한 처리 부재</h4>
 <ul>
   <li>안전하지 않음 코드
     <ul>
@@ -848,16 +891,22 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="k">try</span><span class="o">{</span> 
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">IOException</span><span class="o">();</span> 
-    <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> 
-        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span> 
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+private Connection conn;
+public Connection DBConnect(String url, String id, String password) {
+    try {
+        String CONNECT_STRING = url + ":" + id + ":" + password;
+        InitialContext ctx = new InitialContext();
+        DataSource datasource = (DataSource) ctx.lookup(CONNECT_STRING);
+        conn = datasource.getConnection();
+    } catch (SQLException e) {
+        // catch 블록이 비어있음
+    } catch (NamingException e) {
+        // catch 블록이 비어있음
+    }
+    return conn;
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -867,20 +916,38 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="k">try</span><span class="o">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="n">IOException</span><span class="o">();</span>
-    <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">“예외발생"</span><span class="o">);</span> 
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+private Connection conn;
+public Connection DBConnect(String url, String id, String password) {
+    try {
+        String CONNECT_STRING = url + ":" + id + ":" + password;
+        InitialContext ctx = new InitialContext();
+        DataSource datasource = (DataSource) ctx.lookup(CONNECT_STRING);
+        conn = datasource.getConnection();
+    } catch (SQLException e) {
+        // Exception catch 이후Exception에 대한 적절한 처리가 필요
+        if ( conn != null ) {
+            try {
+                conn.close();              
+            }catch (SQLException e1) { 
+                conn = null;
+            }
+        }
+    } catch (NamingException e) {
+    // Exception catch 이후Exception에 대한 적절한 처리가 필요
+    if ( conn != null ) {
+        try {
+            conn.close();
+        } catch (SQLException e1) { 
+            conn = null; 
+        }
+    }
+}
+</code></p>
   </li>
 </ul>
 
-<h4 id="section-11">14. 에러처리 - 오류 상황에 대한 처리 부재</h4>
+<h4 id="section-11">15. 코드품질 - 널포인터 역참조</h4>
 <ul>
   <li>안전하지 않음 코드
     <ul>
@@ -890,22 +957,14 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span><span class="o">;</span>
-<span class="kd">public</span> <span class="n">Connection</span> <span class="nf">DBConnect</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">CONNECT_STRING</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">password</span><span class="o">;</span>
-        <span class="n">InitialContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InitialContext</span><span class="o">();</span>
-        <span class="n">DataSource</span> <span class="n">datasource</span> <span class="o">=</span> <span class="o">(</span><span class="n">DataSource</span><span class="o">)</span> <span class="n">ctx</span><span class="o">.</span><span class="na">lookup</span><span class="o">(</span><span class="n">CONNECT_STRING</span><span class="o">);</span>
-        <span class="n">conn</span> <span class="o">=</span> <span class="n">datasource</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// catch 블록이 비어있음</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NamingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// catch 블록이 비어있음</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">conn</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p>```java
+public void f(boolean b) {
+    String cmd = System.getProperty(“cmd”);
+    cmd = cmd.trim();
+    System.out.println(cmd);
+}</p>
+
+    <p>```</p>
   </li>
   <li>안전한 코드
     <ul>
@@ -915,75 +974,17 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span><span class="o">;</span>
-<span class="kd">public</span> <span class="n">Connection</span> <span class="nf">DBConnect</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">CONNECT_STRING</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">password</span><span class="o">;</span>
-        <span class="n">InitialContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InitialContext</span><span class="o">();</span>
-        <span class="n">DataSource</span> <span class="n">datasource</span> <span class="o">=</span> <span class="o">(</span><span class="n">DataSource</span><span class="o">)</span> <span class="n">ctx</span><span class="o">.</span><span class="na">lookup</span><span class="o">(</span><span class="n">CONNECT_STRING</span><span class="o">);</span>
-        <span class="n">conn</span> <span class="o">=</span> <span class="n">datasource</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// Exception catch 이후Exception에 대한 적절한 처리가 필요</span>
-        <span class="k">if</span> <span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
-            <span class="k">try</span> <span class="o">{</span>
-                <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>              
-            <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span> 
-                <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NamingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// Exception catch 이후Exception에 대한 적절한 처리가 필요</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span> 
-            <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> 
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-</ul>
-
-<h4 id="section-12">15. 코드품질 - 널포인터 역참조</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">cmd</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"cmd"</span><span class="o">);</span>
-    <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">cmd</span><span class="o">);</span>
-<span class="o">}</span>
-
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">cmd</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"cmd"</span><span class="o">);</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">cmd</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> 
-        <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">cmd</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">else</span><span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"null command"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void f(boolean b) {
+    String cmd = System.getProperty("cmd");
+    if (cmd != null) { 
+        cmd = cmd.trim();
+        System.out.println(cmd);
+    } else{
+        System.out.println("null command");
+    }
+}
+</code></p>
   </li>
 </ul>
 
@@ -997,13 +998,13 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// private인 배열을 public인 메소드가 return한다</span>
-<span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">colors</span><span class="o">;</span>
-<span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getColors</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
-    <span class="k">return</span> <span class="n">colors</span><span class="o">;</span> 
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+// private인 배열을 public인 메소드가 return한다
+private String[] colors;
+public String[] getColors() { 
+    return colors; 
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -1013,23 +1014,23 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">colors</span><span class="o">;</span>
-<span class="c1">//메소드를 private으로 하거나, 복제본 반환,수정하는 public메소드를 별도로 만든다</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-    <span class="n">String</span><span class="o">[]</span> <span class="n">newColors</span> <span class="o">=</span> <span class="n">getColors</span><span class="o">();</span>
-<span class="o">}</span>
-<span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getColors</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span><span class="o">[]</span> <span class="n">ret</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span> <span class="k">this</span><span class="o">.</span><span class="na">colors</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">colors</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">colors</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="n">ret</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">colors</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
-<span class="o">}</span>
+    <p>```java
+private String[] colors;
+//메소드를 private으로 하거나, 복제본 반환,수정하는 public메소드를 별도로 만든다
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    String[] newColors = getColors();
+}
+public String[] getColors() {
+    String[] ret = null;
+    if ( this.colors != null ) {
+        ret = new String[colors.length];
+        for (int i = 0; i &lt; colors.length; i++) { ret[i] = this.colors[i]; }
+    }
+    return ret;
+}</p>
 
-</code></pre>
-    </div>
+    <p>```</p>
   </li>
 </ul>
 
@@ -1043,13 +1044,13 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// userRoles 필드는 private 이지만 public인 setUserRoles()를 통해 외부의 배열이 할당 되면 사실상 public필드가된다.</span>
-<span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserRoles</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">userRoles</span> <span class="o">=</span> <span class="n">userRoles</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+// userRoles 필드는 private 이지만 public인 setUserRoles()를 통해 외부의 배열이 할당 되면 사실상 public필드가된다.
+private String[] userRoles;
+public void setUserRoles(String[] userRoles) {
+    this.userRoles = userRoles;
+}
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -1059,18 +1060,18 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// 객체가 클래스의 private member를 수정하지 않도록 한다.</span>
-    <span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">;</span>
+    <p>```java
+// 객체가 클래스의 private member를 수정하지 않도록 한다.
+    private String[] userRoles;</p>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="n">setUserRoles</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">userRoles</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">userRoles</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">userRoles</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">){</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">userRoles</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">userRoles</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+    <div class="highlighter-rouge"><pre class="highlight"><code>public void setUserRoles(String[] userRoles) {
+    this.userRoles = new String[userRoles.length];
+    for (int i = 0; i &lt; userRoles.length; ++i){
+        this.userRoles[i] = userRoles[i];
+    }
+} ```   #### 18. 캡슐화 - 시스템 데이터 정보 누출
 </code></pre>
     </div>
-    <p>#### 18. 캡슐화 - 시스템 데이터 정보 누출</p>
   </li>
   <li>안전하지 않음 코드
     <ul>
@@ -1080,18 +1081,18 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="o">{</span> 
-        <span class="n">g</span><span class="o">();</span>
-    <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//예외 발생시 printf(e.getMessage())를 통해 </span>
-        <span class="c1">//오류 메시지 정보가 유출된다.</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="kd">private</span> <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span> <span class="err">……</span> <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+public void f() {
+    try { 
+        g();
+    }catch (IOException e) {
+        //예외 발생시 printf(e.getMessage())를 통해 
+        //오류 메시지 정보가 유출된다.
+        System.err.printf(e.getMessage());
+    }
+}
+private void g() throws IOException { …… }
+</code></p>
   </li>
   <li>안전한 코드
     <ul>
@@ -1101,17 +1102,17 @@ public int roledice() {
   <li>
     <p>샘플코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span> 
-            <span class="n">g</span><span class="o">();</span>
-        <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="c1">// end user가 볼수 있는 오류 메시지 정보를 생성하지 않아야 한다.</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"IOException Occured"</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="n">g</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span> <span class="err">……</span> <span class="o">}</span>
-</code></pre>
-    </div>
+    <p><code class="highlighter-rouge">java
+    public void f() {
+        try { 
+            g();
+        }catch (IOException e) {
+            // end user가 볼수 있는 오류 메시지 정보를 생성하지 않아야 한다.
+            System.err.println("IOException Occured");
+        }
+    }
+    private void g() throws IOException { …… }
+</code></p>
   </li>
 </ul>
 
