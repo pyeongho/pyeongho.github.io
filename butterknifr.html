@@ -138,20 +138,20 @@
 
 <h4 id="xml-----------">1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함</h4>
 
-<p><code class="highlighter-rouge">java 
-    ImageButton btn_send; 
-    btn_send = (ImageButton) findViewById(R.id.btn_send);
-    ib_chat_photo.setOnClickListener(this);
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="n">ImageButton</span> <span class="n">btn_send</span><span class="o">;</span> 
+    <span class="n">btn_send</span> <span class="o">=</span> <span class="o">(</span><span class="n">ImageButton</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btn_send</span><span class="o">);</span>
+    <span class="n">ib_chat_photo</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</code></pre>
+</div>
 
 <h4 id="butterknife------">2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.</h4>
 <ul>
   <li>안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다</li>
   <li>
-    <p>아래 내용을 모듈의 적당한 위치 시켜야 합니다.
+    <p>아래 내용을 모듈의 적당한 위치 시켜야 합니다.<br />
  <script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script></p>
   </li>
-  <li>프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
+  <li>프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.<br />
  <script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script></li>
 </ul>
 

@@ -204,7 +204,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/SwiftGit2/SwiftGit2&quot;&gt;https://github.com/SwiftGit2/SwiftGit2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;carthage 사용법을 알아야 한다.
+  &lt;li&gt;carthage 사용법을 알아야 한다.&lt;br /&gt;
     - &lt;a href=&quot;https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/&quot;&gt;https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -545,7 +545,7 @@
   &lt;li&gt;구글의 공지도 있고 해서 테스틀 진행함&lt;/li&gt;
   &lt;li&gt;테스트를 위해서 테스트 기기에 webview 53 버전을 설치함&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-53-0-2785-97-release/&quot;&gt;webview 53 다운로드 경로&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;구글에서 추가 해야한다고 하는  ssl error 팝업을 아래와 같이 추가함
+  &lt;li&gt;구글에서 추가 해야한다고 하는  ssl error 팝업을 아래와 같이 추가함&lt;br /&gt;
  &lt;script src=&quot;https://gist.github.com/pyeongho/66a50062921216dfae7a1abb9e8cb94e.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -568,7 +568,7 @@
   &lt;li&gt;RecyclerView에 원하는 내용만 출력하기&lt;/li&gt;
   &lt;li&gt;기본 내용은 &lt;a href=&quot;http://jizard.tistory.com/53&quot;&gt;http://jizard.tistory.com/53&lt;/a&gt; 블로그를 참조 했습니다.&lt;/li&gt;
   &lt;li&gt;리스트2개를 가지고  contain 에 포함 된것만 보여주는 형태 입니다.&lt;/li&gt;
-  &lt;li&gt;중요한 코드는 아래와 같습니다.
+  &lt;li&gt;중요한 코드는 아래와 같습니다.&lt;br /&gt;
 &lt;script src=&quot;https://gist.github.com/pyeongho/fbe79093772cfa1b62fc3f97659bdaed.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -612,7 +612,7 @@
   &lt;li&gt;
     &lt;p&gt;아래가 경로 입니다.&lt;/p&gt;
 
-    &lt;p&gt;// Windows
+    &lt;p&gt;// Windows&lt;br /&gt;
  {Android Studio 설치경로}/plugins/android/lib/layoutlib/data/fonts/fonts.xml&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;

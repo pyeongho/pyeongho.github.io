@@ -211,26 +211,23 @@
       </li>
     </ol>
 
-    <p>```Swift</p>
+    <pre><code class="language-Swift">
+    var languages = ["Swift", "Objective-C", "Python"]    
+    var capitals = [
+        "한국": "서울",
+        "일본": "도쿄",
+        "중국": "베이징",
+    ]
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>var languages = ["Swift", "Objective-C", "Python"]    
-var capitals = [
-    "한국": "서울",
-    "일본": "도쿄",
-    "중국": "베이징",
-]
+    // 타입 추가 방법
+    var languages: [String] = []
+    var capitals: [String: String] = [:]
 
-// 타입 추가 방법
-var languages: [String] = []
-var capitals: [String: String] = [:]
+    // 간결
+    var languages = [String]()
+    var capitals = [String: String]()
 
-// 간결
-var languages = [String]()
-var capitals = [String: String]()
 </code></pre>
-    </div>
-
-    <p>```</p>
   </li>
   <li>
     <ol>
@@ -248,7 +245,7 @@ var capitals = [String: String]()
 
         <p>```Swift</p>
 
-        <p>case 8..&lt;14:
+        <p>case 8..&lt;14:<br />
      student = “초등학생”</p>
 
         <p>```</p>
@@ -272,29 +269,29 @@ var capitals = [String: String]()
           <li>
             <p>if 문 사용 예제</p>
 
-            <p>```Swift</p>
-
-            <p>if let email = optionalEmail {
+            <pre><code class="language-Swift">
+if let email = optionalEmail {
      print(email) // optionalEmail의 값이 존재한다면 해당 값이 출력됩니다.
 }
-// optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.</p>
+// optionalEmail의 값이 존재하지 않는다면 if문을 그냥 지나칩니다.
 
-            <p>// And 조건은 , 로 구분 해서 사용 ㅏ능  <br />
-var optionalName: String? = “전수열”
-var optionalEmail: String? = “devxoul@gmail.com”</p>
 
-            <p>if let name = optionalName, email = optionalEmail {
+// And 조건은 , 로 구분 해서 사용 ㅏ능    
+var optionalName: String? = "전수열"
+var optionalEmail: String? = "devxoul@gmail.com"
+
+if let name = optionalName, email = optionalEmail {
 // name과 email 값이 존재
-}</p>
+}
 
-            <p>// 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로  <br />
-var optionalAge: Int? = 22</p>
+// 일반 조건문과의 바인딩 , 순서는 앞에서 뒤로    
+var optionalAge: Int? = 22
 
-            <p>if let age = optionalAge, age &gt;= 20 {
+if let age = optionalAge, age &gt;= 20 {
 // age의 값이 존재하고, 20 이상입니다.
-}</p>
-
-            <p>```</p>
+}
+        
+</code></pre>
           </li>
         </ul>
       </li>
