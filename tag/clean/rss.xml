@@ -12,7 +12,7 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>다음 이미지 검색을 내가 좋아하는 형태로 변경해 보자</title>
+	  <title>Daum 이미지 검색을 내가 좋아하는 형태로 변경해 보자</title>
 	  <link>//my-clean-mvp</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2017-05-07T00:00:00+00:00</pubDate>
