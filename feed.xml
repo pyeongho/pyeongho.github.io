@@ -8,6 +8,29 @@
     
       
       <item>
+        <title>다음 이미지 검색을 내가 좋아하는 형태로 변경해 보자</title>
+        
+          <description>&lt;h3 id=&quot;gdg-atsl-on-mvp-&quot;&gt;구글 샘플과 GDG-ATSL-ON-MVP를 이용&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.&lt;/li&gt;
+  &lt;li&gt;원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ZeroBrain/GDG-ATSL-ON-MVP&quot;&gt;https://github.com/ZeroBrain/GDG-ATSL-ON-MVP&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//my-clean-mvp</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//my-clean-mvp</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>이미지를 호스팅을 드랍박스로 변경해 보자</title>
         
           <description>&lt;h4 id=&quot;section&quot;&gt;구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.&lt;/h4&gt;
