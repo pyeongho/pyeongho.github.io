@@ -5,7 +5,7 @@
    
       <title>pyeongho.github.io/</title>
    
-   <link>http://localhost:4000</link>
+   <link>https://pyeongho.github.io/</link>
    <description>즐거운 공장</description>
    <language>en-uk</language>
    <managingEditor> PyeongHo</managingEditor>
@@ -15,23 +15,23 @@
 	  <title>python 에서 사용할 C 엑셀 모듈 만들기</title>
 	  <link>//xls</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2016-12-20T00:00:00+09:00</pubDate>
+	  <pubDate>2016-12-20T00:00:00+00:00</pubDate>
 	  <guid>//xls</guid>
 	  <description><![CDATA[
-	     <h3 id="python에서-사용-할-c-모듈-만들기">python에서 사용 할 C 모듈 만들기</h3>
+	     <h3 id="python---c--">python에서 사용 할 C 모듈 만들기</h3>
 
-<h4 id="0-진행-이유">0. 진행 이유</h4>
+<h4 id="section">0. 진행 이유</h4>
 <ul>
   <li>python 에서 엑셀 만들기 사용하면 느리다고 함</li>
 </ul>
 
-<h4 id="1속도-테스트">1.속도 테스트</h4>
+<h4 id="section-1">1.속도 테스트</h4>
 <ul>
   <li>xlsxwriter 라이브러리 사용
     <ul>
-      <li>python 테스트
+      <li>python 테스트<br />
  <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script></li>
-      <li>C 테스트 코드
+      <li>C 테스트 코드<br />
  <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script></li>
     </ul>
   </li>
@@ -43,17 +43,17 @@
   </li>
 </ul>
 
-<h4 id="2-c-라이브러리-만들기">2. C 라이브러리 만들기</h4>
+<h4 id="c--">2. C 라이브러리 만들기</h4>
 <ul>
   <li>기본 C module 링크: <a href="https://pyeongho.github.io/python/2016/12/21/pythonClib.html">C module</a></li>
 </ul>
 
-<h4 id="3-setuppy-의-문제점">3. setup.py 의 문제점</h4>
+<h4 id="setuppy--">3. setup.py 의 문제점</h4>
 <ul>
   <li>기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함</li>
 </ul>
 
-<h4 id="4-python-에서-c-의-libxlsxwriter-를-이용한다-코드는-c-테스트-코드">4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
+<h4 id="python--c--libxlsxwriter----c--">4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
 <ul>
   <li>리눅스에 libxlsxwriter 를 설치 한다.</li>
   <li>setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
@@ -64,9 +64,9 @@
   <li>mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조</li>
 </ul>
 
-<h4 id="참고-코드">참고 코드</h4>
+<h4 id="section-2">참고 코드</h4>
 <ul>
-  <li>python 에서 호출, C 에서 엑셀 파일 생성
+  <li>python 에서 호출, C 에서 엑셀 파일 생성<br />
    <script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script></li>
 </ul>
 

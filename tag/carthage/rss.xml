@@ -5,7 +5,7 @@
    
       <title>pyeongho.github.io/</title>
    
-   <link>http://localhost:4000</link>
+   <link>https://pyeongho.github.io/</link>
    <description>즐거운 공장</description>
    <language>en-uk</language>
    <managingEditor> PyeongHo</managingEditor>
@@ -15,15 +15,15 @@
 	  <title>gitugb.io 지킬에 사진업로드 쉽게 하는 앱개발</title>
 	  <link>//ios_git_client</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-03-27T00:00:00+09:00</pubDate>
+	  <pubDate>2017-03-27T00:00:00+00:00</pubDate>
 	  <guid>//ios_git_client</guid>
 	  <description><![CDATA[
-	     <h3 id="ios-에서-githubio에-사진을-첨부한-글을-포스팅한다">iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.</h3>
+	     <h3 id="ios--githubio----">iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.</h3>
 <ul>
   <li>스마튼폰에서 찍은 사진을 블로그에 바로 올리고 싶은 생각으로 앱을 개발해 보기로 결정</li>
 </ul>
 
-<h4 id="1-공부할-자료-수집">1. 공부할 자료 수집</h4>
+<h4 id="section">1. 공부할 자료 수집</h4>
 <ul>
   <li>깃 라이브러리
     <ul>
@@ -31,21 +31,16 @@
     </ul>
   </li>
   <li><a href="https://github.com/SwiftGit2/SwiftGit2">https://github.com/SwiftGit2/SwiftGit2</a></li>
-  <li>carthage 사용법을 알아야 한다.
+  <li>carthage 사용법을 알아야 한다.<br />
     - <a href="https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/">https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/</a></li>
 </ul>
 
-<p>####2. carthage 사용법</p>
+<p>####2. carthage 사용법 <br />
+  - homebrew로 설치 하기<br />
+     - 설치 안되어 있으면<br />
+       - $ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</p>
+
 <ul>
-  <li>homebrew로 설치 하기
-    <ul>
-      <li>설치 안되어 있으면
-        <ul>
-          <li>$ ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
   <li>$ brew update</li>
   <li>$ brew install carthage</li>
   <li>Cartfile 파일 생성하기

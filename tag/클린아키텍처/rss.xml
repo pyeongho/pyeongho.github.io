@@ -5,7 +5,7 @@
    
       <title>pyeongho.github.io/</title>
    
-   <link>http://localhost:4000</link>
+   <link>https://pyeongho.github.io/</link>
    <description>즐거운 공장</description>
    <language>en-uk</language>
    <managingEditor> PyeongHo</managingEditor>
@@ -15,15 +15,15 @@
 	  <title>구글에서 만든 클린 아키텍처를 이해하고 알아보자</title>
 	  <link>//google-todo-clean</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
 	  <guid>//google-todo-clean</guid>
 	  <description><![CDATA[
-	     <h3 id="구글-클린-아키텍처">구글 클린 아키텍처</h3>
+	     <h3 id="section">구글 클린 아키텍처</h3>
 <ul>
   <li>mvp 패턴만 적용 하더라도 구조가 이상해 보인다. 어떻게 하면 좀더 좋은 구조를 만들 수 있을까를 고민하던 중 클린아키텍처가 있었고 그중 구글이 만들 샘플 코드가 기본 라이브러리로만 만들어져서 마음에 들어서 분석하기 시작함</li>
 </ul>
 
-<h4 id="1-구글-샘플-분석-하기">1. 구글 샘플 분석 하기</h4>
+<h4 id="section-1">1. 구글 샘플 분석 하기</h4>
 <ul>
   <li><a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/">https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/</a></li>
   <li>패키지 구분을 어떻게 했는지 직관적인 확인이 어렵다.(아직 적응 못함)</li>
@@ -72,15 +72,15 @@
 	  <title>클린아키텍처 듣기 전부터 고민하던 내용들</title>
 	  <link>//whywhy</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-08T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-08T00:00:00+00:00</pubDate>
 	  <guid>//whywhy</guid>
 	  <description><![CDATA[
-	     <h4 id="적용에-앞서-많은-고민중">적용에 앞서 많은 고민중</h4>
+	     <h4 id="section">적용에 앞서 많은 고민중</h4>
 <ul>
   <li>고민은 좋은거.</li>
 </ul>
 
-<h4 id="1-mvp등의-각종-패턴은-정말-만능일까-의문점들">1. MVP등의 각종 패턴은 정말 만능일까? 의문점들</h4>
+<h4 id="mvp-----">1. MVP등의 각종 패턴은 정말 만능일까? 의문점들</h4>
 <ul>
   <li>장점은 매우 많습니다. 개발자가 많고 교육 시간이 많으면 하는게 좋습니다. 테스트하기에 좋다.</li>
   <li>의문점들
@@ -196,10 +196,10 @@
 	  <title>드로이드나이츠 클린아키텍처 세션</title>
 	  <link>//clean-acrhitecture</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-08T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-08T00:00:00+00:00</pubDate>
 	  <guid>//clean-acrhitecture</guid>
 	  <description><![CDATA[
-	     <h4 id="드로이드나이츠-클린아키텍처">드로이드나이츠 클린아키텍처</h4>
+	     <h4 id="section">드로이드나이츠 클린아키텍처</h4>
 <ul>
   <li>드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.</li>
   <li>
@@ -214,7 +214,7 @@
   <li><a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">참고 : https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html</a></li>
 </ul>
 
-<h4 id="1-변화에-잘-적응하는-아키텍처">1. 변화에 잘 적응하는 아키텍처</h4>
+<h4 id="section-1">1. 변화에 잘 적응하는 아키텍처</h4>
 <ul>
   <li>이전 까지 했던 고민이 이걸로 보입니다. 어떤 변화든 잘 적응하는 코드를 만들자</li>
   <li>적응을 잘하는건 변하는 부분만 수정하자 &lt;- 이 부분이 중요</li>
@@ -243,7 +243,7 @@
   </li>
 </ul>
 
-<h4 id="2-기본-아키텍처">2. 기본 아키텍처</h4>
+<h4 id="section-2">2. 기본 아키텍처</h4>
 <ul>
   <li>엉클밥의 클린아키텍처 서버
     <ul>
@@ -284,7 +284,7 @@
   </li>
 </ul>
 
-<h5 id="21-entity">2.1 Entity</h5>
+<h5 id="entity">2.1 Entity</h5>
 <ul>
   <li>순수한 Java(Kotlin) 모듈</li>
   <li>Android와의 의존성이 없음
@@ -299,30 +299,11 @@
   <li>가계부에서 소비내역 지출 내역의 변경되지 않는다.</li>
   <li>모든 내용이 엔터티에 포함되어 있다.</li>
   <li>TransactionType 엔터티로 선언한것이다.</li>
-  <li>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨</li>
-  <li>
-    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">TransactionCategory</span><span class="p">(</span> 
-    <span class="kd">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> 
-    <span class="kd">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> 
-    <span class="kd">val</span> <span class="py">transactionType</span><span class="p">:</span> <span class="n">TransactionType</span><span class="p">,</span> 
-    <span class="kd">val</span> <span class="py">priority</span><span class="p">:</span> <span class="n">Int</span>
-  <span class="p">)</span> <span class="p">:</span> <span class="n">Entity</span>
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="kd">class</span> <span class="nc">TransactionCategory</span> <span class="kd">extends</span> <span class="nf">Entity</span><span class="o">(</span> 
-    <span class="n">String</span> <span class="n">id</span><span class="o">;</span> 
-    <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="n">TransactionType</span> <span class="n">transactionType</span><span class="o">;</span>
-    <span class="n">Int</span> <span class="n">priority</span><span class="o">;</span>
-  <span class="o">)</span> <span class="o">:</span> 
-</code></pre>
-    </div>
-  </li>
+  <li>테이블간의 조인을 위해서 트랜잭션 아이디 등은 데이터베이스를 위함이기에 엔터티에서는넣으면 안됨<br />
+  <script src="https://gist.github.com/pyeongho/88654a0893a13314cc12d77698a1fce0.js"></script></li>
 </ul>
 
-<h5 id="22-domain">2.2 Domain</h5>
+<h5 id="domain">2.2 Domain</h5>
 <ul>
   <li>순수한 Java(Kotlin) 모듈</li>
   <li>Android와의 의존성이 없음</li>
@@ -336,27 +317,13 @@
       <li>BanksRepository 는 인터페이스로 존재</li>
       <li>도메인 레이어에 존재</li>
       <li>유스케이스는 데이터베이스를 고려하지 말자</li>
-      <li>사고의 흐름</li>
-      <li>
-        <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">GetBanks</span><span class="p">(</span><span class="kd">val</span> <span class="py">repository</span><span class="p">:</span> <span class="n">BanksRepository</span><span class="p">)</span> <span class="p">:</span> <span class="n">UseCase</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;(){</span> 
-  <span class="k">override</span> <span class="k">fun</span> <span class="nf">buildUseCaseObservable</span><span class="p">():</span> <span class="n">Observable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;</span> <span class="p">{</span> 
-    <span class="k">return</span> <span class="n">repository</span><span class="p">.</span><span class="n">getAll</span><span class="p">()</span> 
-  <span class="p">}</span> 
-<span class="p">}</span>
-
-<span class="kd">interface</span> <span class="nc">BanksRepository</span> <span class="p">:</span> <span class="n">Repository</span> <span class="p">{</span>  
-  <span class="k">fun</span> <span class="nf">getAll</span><span class="p">():</span> <span class="n">Observable</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Bank</span><span class="p">&gt;&gt;</span> 
-  <span class="k">fun</span> <span class="nf">update</span><span class="p">(</span><span class="n">bank</span><span class="p">:</span> <span class="n">Bank</span><span class="p">):</span> <span class="n">Completable</span> 
-<span class="p">}</span>
-
-</code></pre>
-        </div>
-      </li>
+      <li>사고의 흐름<br />
+<script src="https://gist.github.com/pyeongho/ca326b43ca93d0aaaa3925e9e38f49b3.js"></script></li>
     </ul>
   </li>
 </ul>
 
-<h5 id="23-data">2.3 data</h5>
+<h5 id="data">2.3 data</h5>
 <ul>
   <li>Repository의 실제 구현</li>
   <li>Data Source 의존성</li>
@@ -375,7 +342,7 @@
   </li>
 </ul>
 
-<h5 id="24-presentation">2.4 Presentation</h5>
+<h5 id="presentation">2.4 Presentation</h5>
 <ul>
   <li>UI 레벨의 처리 (mvp, mvc)</li>
   <li>Android 의존성이 강함</li>
@@ -399,12 +366,12 @@
   </li>
 </ul>
 
-<h4 id="3-좋은-코드가-좋은-제품이다">3. 좋은 코드가 좋은 제품이다.</h4>
+<h4 id="section-3">3. 좋은 코드가 좋은 제품이다.</h4>
 <ul>
   <li>각각의 레이어에서 모델이 존재해서 진입 장벽이 있지만 유지보수가 쉽다.</li>
 </ul>
 
-<h4 id="-현장-메모">* 현장 메모</h4>
+<h4 id="section-4">* 현장 메모</h4>
 <ul>
   <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3cG41UmxfbEN4NjQ" alt="1페이지" /></li>
   <li><img src="https://drive.google.com/uc?id=0BwUadct9RzY3NTNGRVpKLXNSOTg" alt="2페이지" /></li>

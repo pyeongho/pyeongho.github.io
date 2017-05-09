@@ -5,36 +5,205 @@
    
       <title>pyeongho.github.io/</title>
    
-   <link>http://localhost:4000</link>
+   <link>https://pyeongho.github.io/</link>
    <description>즐거운 공장</description>
    <language>en-uk</language>
    <managingEditor> PyeongHo</managingEditor>
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>이미지를 호스팅을 드랍박스로 변경해 보자</title>
+	  <link>//github-image-dropbox</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-04-30T00:00:00+00:00</pubDate>
+	  <guid>//github-image-dropbox</guid>
+	  <description><![CDATA[
+	     <h4 id="section">구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.</h4>
+<ul>
+  <li>드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자</li>
+</ul>
+
+<h4 id="section-1">1. 드랍박스 업로드가 쉘로 가능한지 찾기</h4>
+<ul>
+  <li><a href="https://github.com/andreafabrizi/Dropbox-Uploader">https://github.com/andreafabrizi/Dropbox-Uploader</a></li>
+  <li>위 경로에서 쉘스크립트를 제공한다.</li>
+  <li>업로드 와 공유기능을 제공합니다.</li>
+  <li>그래서 기존 구글드라이브와 와 같이 프로그램을 만들어 보자</li>
+  <li>구글드라이브 설명
+    <ul>
+      <li><a href="https://pyeongho.github.io/google-drive-for-image">https://pyeongho.github.io/google-drive-for-image</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-2">2. 수정된 스크립트만 올리겠습니다.</h4>
+<ul>
+  <li>인자를 받아서 수정하는 부분을 갭쳐실행 -&gt; 업로드 -&gt; 공유 -&gt; 링크 복사</li>
+  <li>
+    <p>인자받는 부분을 모두 지우고 아래 내용을 추가 했습니다.<br />
+<script src="https://gist.github.com/pyeongho/70aa0ea2f17452d3fefbce17ed7b9e10.js"></script></p>
+  </li>
+  <li>그리고 db_share 함수와 get_Share 함수에 내용을 추가 했습니다.<br />
+<script src="https://gist.github.com/pyeongho/d1b3e874b5dd47b6721b16f6f49e5b43.js"></script></li>
+</ul>
+
+<h4 id="section-3">3. 드랍박스 이미지는 사파리에서 잘 나왔으면 좋겠습니다.</h4>
+<p><img src="http://dl.dropbox.com/s/s5slt9ilsflggrv/201704301038.png" alt="드랍박스공유테스트" /></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Github Page 스태틱으로 변경하기</title>
+	  <link>//github-static</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-04-29T20:00:00+00:00</pubDate>
+	  <guid>//github-static</guid>
+	  <description><![CDATA[
+	     <h4 id="section">테마를 변경하면서 스택으로 변경하기로 결정</h4>
+<ul>
+  <li>테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정</li>
+  <li>목표 설정
+    <ul>
+      <li>저장소 위치를 비트버켓으로 이동한다.</li>
+      <li>지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-1">1. 우선 저장소 옮기는 건 쉬움</h4>
+<ul>
+  <li>git remote add 태그 [저장소 위치]</li>
+  <li>추가된 저장소로 푸시</li>
+</ul>
+
+<h4 id="section-2">2. 지킬 컴파일 환경 구성</h4>
+<ul>
+  <li>테마 변경중이라 글을 못섰지만</li>
+  <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
+</ul>
+
+<h4 id="section-3">3. 기존 파일을 모두삭제</h4>
+<ul>
+  <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
+  <li>모두 정상 동작</li>
+</ul>
+
+<h4 id="section-4">4. 지금 쓰는건 테스트 하기위함</h4>
+<ul>
+  <li>수동으로 비트버켓에 푸시</li>
+  <li>jekyll build</li>
+  <li>결과물을 pyeongho.github.io 로 푸시</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>비트버켓에서 파이프라인을 이용한 자동 배포</title>
+	  <link>//bitbucket-deploy</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-04-29T12:00:00+00:00</pubDate>
+	  <guid>//bitbucket-deploy</guid>
+	  <description><![CDATA[
+	     <h4 id="section">자동배포시스템 적용하기</h4>
+<ul>
+  <li>github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함</li>
+</ul>
+
+<h4 id="section-1">1. 스태틱으로 변경 후 배포 방법 개선이 필요 하다고 생각</h4>
+<ul>
+  <li>블로그 업데이트 순서
+    <ul>
+      <li>비트버켓에서 클론</li>
+      <li>글 작성</li>
+      <li>비트버켓에 오리지널 마크다운 푸시</li>
+      <li>로컬에서 지킬 빌드 후 결과를 깃허브에 푸시</li>
+    </ul>
+  </li>
+  <li>위 같은 순서를 하려고 하니 너무 끔직함</li>
+  <li>스크립트를 작성해서 하려 했지만 마크다운 툴을 비주얼스튜디오 코드를 사용하다 보니 스크립트 명령을 부를수가 없다.</li>
+  <li>명령창을 열어서 스크립트 실행? 이것도 귀찮다.</li>
+  <li>만약 로컬에서 지킬 빌드가 안되면 어떻게? 저거 하려면 몇 단계를 거쳐야 하는거야.. 나름 코딩하는 사람인데</li>
+</ul>
+
+<h4 id="section-2">2. 트래비스 삽질</h4>
+<ul>
+  <li>jekyll/jasper 테마가 트래비스 연동을 추천해서 해당 방법을 계속 찾음</li>
+  <li>깃허브에서도 실패한 트래비스</li>
+  <li>비트버켓에서 트래비스 가능 할거라 생각하고 찾아지만 한글이나 영어 둘다 자료가 너무 없음</li>
+  <li>검색을 조금 바꿔보니 비트버켓은 자체 ci 를 제공하는걸로 보임</li>
+  <li>파이프라인 이라는 용어찾음</li>
+</ul>
+
+<h4 id="section-3">3 비트버켓 파이프라인 적응기</h4>
+<ul>
+  <li>비트버켓 저장소의 설정을 확인하면 pipeline 설정 항목이 보인다.</li>
+  <li>항목을 설정하면 파이프라인 설정 파일을 만들수있다.</li>
+  <li>지킬을 루비라는것만 알아서 ..</li>
+  <li>다시 검색을 시작</li>
+  <li><a href="https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/">https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/</a></li>
+  <li>위 링크에서 어떻게 해야 할지를 발견함</li>
+  <li>내가 생각했던 순서를 정확하게 똑같이 하려는 분을 만남. 감사합니다.</li>
+</ul>
+
+<h4 id="section-4">4. 자동 배포 시스템</h4>
+<ul>
+  <li>파이프라인 얌 파일 설정</li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/fe5b671a55f6c18d6f6f918af27cfbe7.js"></script>
+  </li>
+  <li>번들 빌드 하기위해서는 Gemfile Gemfile.lock 파일 필요합니다.(재스퍼 테마에서 파일 참고)</li>
+  <li>위 내용중 SITE_A 는 비트버켓 설정에 가능합니다. 공개된곳에 암호를 입력할수 없기에 설정에서 환경 변수 등록이 가능합니다.
+    <ul>
+      <li>setting -&gt; Environment variables -&gt; 문자열 등록</li>
+    </ul>
+  </li>
+  <li>처음에는 토큰을 트래비스가 했던 토큰 방법을 찾아 보았는데 계속 실패하고 설마 했는데 사이트에 환경변수 입력하는 곳 있어서 github push 조건을 만들었습니다.</li>
+  <li>그래서 테스트 푸시를 했지만 컴파일 에러 에러 에러 ..</li>
+  <li>처음에는 루비 버전 문제라 생각 하고 재스퍼의 트래비스와 동일한 버전으로 변경했지만 실패..</li>
+  <li>에러 메시지를 자세히 읽어보니 json 1.8.3 라고 나와 있지만 정확히 안알려줌</li>
+  <li>에러 메시지로 구글링 하니 동일한 증상에 대한 해결책이 있음</li>
+  <li><a href="https://github.com/flori/json/issues/303">https://github.com/flori/json/issues/303</a></li>
+  <li>여기에 보면 ruby 2.4 에서는 1.8.3 버전이 동작 안한다고 함</li>
+  <li>그래서 Gemfile.lock 파일에서 json 1.8.3 을 2.0.2 로 변경 지킬 컴파일 완료</li>
+  <li>자동 배포 완료</li>
+  <li>비트버켓 파이프라인에서 진행상황 또는 결과들을 볼 수있습니다.</li>
+  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3REF4SGtfZEhpWVU" alt="결과" /></li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>구글 드라이브를 이용해서 쉽게 이미지를 올리자</title>
 	  <link>//google-drive-for-image</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-03-29T00:00:00+09:00</pubDate>
+	  <pubDate>2017-03-29T00:00:00+00:00</pubDate>
 	  <guid>//google-drive-for-image</guid>
 	  <description><![CDATA[
-	     <h4 id="맥에서-github-page-이미지-쉽게-올리기">맥에서 github page 이미지 쉽게 올리기</h4>
+	     <h4 id="github-page---">맥에서 github page 이미지 쉽게 올리기</h4>
 <ul>
   <li>깃허브 페이지를 이용중 가장 힘든건 스크린샷을 추가하는 방법이라 생각해서 찾아보니 구글드라이브를 이미지서버로 사용이 가능해서 적용해 보았습니다. 문제는 사파리에서 정상동작 안한다는 단점</li>
 </ul>
 
 <p><a href="https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/">참고 : https://beomi.github.io/2017/03/27/Use-GoogleDrive-as-Image-Server/</a></p>
-<h4 id="1-구글-드라이브-설치">1. 구글 드라이브 설치</h4>
+
+<h4 id="section">1. 구글 드라이브 설치</h4>
 <ul>
   <li>homebrew 를 이용해서 쉽게 설치</li>
   <li>$brew install gdrive</li>
   <li>설치 완료후</li>
   <li>$gdrive list</li>
-  <li>입력하면 인증해야 한다고 나오면서 아래처럼 링크가 나옵니다.
-    <div class="highlighter-rouge"><pre class="highlight"><code>Authentication needed
-Go to the following url in your browser:
-https://accounts.google.com/o/oauth2/auth?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx........
-Enter verification code:
+  <li>
+    <p>입력하면 인증해야 한다고 나오면서 아래처럼 링크가 나옵니다.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  Authentication needed
+  Go to the following url in your browser:
+  https://accounts.google.com/o/oauth2/auth?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx........
+  Enter verification code:
 </code></pre>
     </div>
   </li>
@@ -44,7 +213,7 @@ Enter verification code:
   <li>자신의 구글드라이브의 루트의 리스트가 나옵니다.</li>
 </ul>
 
-<h4 id="2-캡쳐-쉘-스크립트-만들기">2. 캡쳐 쉘 스크립트 만들기</h4>
+<h4 id="section-1">2. 캡쳐 쉘 스크립트 만들기</h4>
 <ul>
   <li>
     <script src="https://gist.github.com/anonymous/1582cd1b8c6afd2fa682d71779e03aa9.js"></script>
@@ -59,12 +228,12 @@ Enter verification code:
   <li>명령어를 입력하면 확인 할 수 있습니다.</li>
 </ul>
 
-<h4 id="3-여기까지가-gdrive-공부정도-입니다">3. 여기까지가 gdrive 공부정도 입니다</h4>
+<h4 id="gdrive--">3. 여기까지가 gdrive 공부정도 입니다</h4>
 <ul>
   <li>아래 앱을 만들때는 스크립트를 복사 해서 사용하기웨 위 내용은 사용 안하더라구요</li>
 </ul>
 
-<h4 id="4-맥용-앱을-만들어서-단축키로-실행해야죠">4. 맥용 앱을 만들어서 단축키로 실행해야죠</h4>
+<h4 id="section-2">4. 맥용 앱을 만들어서 단축키로 실행해야죠</h4>
 <ul>
   <li>Platypus 요런 프로그램이 쉘 스크립트를 앱으로 만들어 줍니다.</li>
   <li><a href="http://sveinbjorn.org/files/software/platypus.zip">다운로드 링크 : Platypus</a></li>
@@ -88,12 +257,12 @@ Enter verification code:
 	  <title>github page 구글 검색 허용하기</title>
 	  <link>//google-search</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-03-21T00:00:00+09:00</pubDate>
+	  <pubDate>2017-03-21T00:00:00+00:00</pubDate>
 	  <guid>//google-search</guid>
 	  <description><![CDATA[
-	     <h4 id="지킬로-만들면-구글-검색이-안됩니다">지킬로 만들면 구글 검색이 안됩니다.</h4>
+	     <h4 id="section">지킬로 만들면 구글 검색이 안됩니다.</h4>
 
-<h4 id="1-구글-검색-허용하기">1. 구글 검색 허용하기</h4>
+<h4 id="section-1">1. 구글 검색 허용하기</h4>
 <ul>
   <li>구글 웹마스터 도구(Search Console)에 속성 추가 및 인증
     <ul>
@@ -110,11 +279,10 @@ Enter verification code:
   </li>
   <li>sitemap.xml 등록하기
     <ul>
-      <li>_config.yml 에 url 을 추가 합니다.
-        <div class="highlighter-rouge"><pre class="highlight"><code>url: https://pyeongho.github.io
-</code></pre>
-        </div>
-      </li>
+      <li>_config.yml 에 url 을 추가 합니다.<br />
+<code class="highlighter-rouge">
+url: https://pyeongho.github.io
+</code></li>
       <li>sitemap.xml 을 만들어서 루트 폴더에 올리고 푸시
         <ul>
           <li><a href="https://github.com/pyeongho/pyeongho.github.io/blob/master/sitemap.xml">sitemap.xml 예제</a></li>
@@ -126,7 +294,7 @@ Enter verification code:
   </li>
 </ul>
 
-<h5 id="참고">참고</h5>
+<h5 id="section-2">참고</h5>
 <p><a href="https://wayhome25.github.io/etc/2017/02/20/google-search-sitemap-jekyll/">초보몽키의 개발로그</a></p>
 
 	  ]]></description>
@@ -136,36 +304,36 @@ Enter verification code:
 	  <title>jekyll 댓글 추가 하기</title>
 	  <link>//add-comment</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-01-14T00:00:00+09:00</pubDate>
+	  <pubDate>2017-01-14T00:00:00+00:00</pubDate>
 	  <guid>//add-comment</guid>
 	  <description><![CDATA[
-	     <h4 id="1-disqus-를-이용하여-댓글-기능을-추가-순서는-크게-3단계">1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계</h4>
+	     <h4 id="disqus--------3">1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계</h4>
 <ul>
   <li>Disqus 가입하기</li>
   <li>Disqus 설정하기</li>
   <li>github 연동하기</li>
 </ul>
 
-<h4 id="2-disqus-가입하기">2. Disqus 가입하기</h4>
+<h4 id="disqus-">2. Disqus 가입하기</h4>
 <ul>
   <li><a href="https://disqus.com/">Disqus 홈페이지</a> 에서 회원 가입을 한다.</li>
   <li>계정은 페이스북 트위터 구글을 사용 가능 합니다.</li>
-  <li>회원 가입이 완료 되면 아래와 같은 이미지 가나옵니다.
+  <li>회원 가입이 완료 되면 아래와 같은 이미지 가나옵니다.<br />
 <img src="/assets/images/post/comment_follow.PNG" alt="follow" /></li>
   <li>적당히 잘 선택해 줍니다.</li>
   <li>
-    <p>3개를 선택하면 상단에 cotinue 
+    <p>3개를 선택하면 상단에 cotinue <br />
  <img src="/assets/images/post/comment_continue.PNG" alt="continue" /></p>
   </li>
   <li>disqus 홈이 표시 됩니다.</li>
 </ul>
 
-<h4 id="2-disqus-설정하기">2. Disqus 설정하기</h4>
+<h4 id="disqus--1">2. Disqus 설정하기</h4>
 <ul>
   <li>회원 가입이 완료 되었으니 Disqus 설정을 추가합니다.</li>
   <li><a href="https://disqus.com/profile/signup/intent/">설정하기</a> 로 이동합니다.</li>
   <li>
-    <p>위 링클르 클릭하면 아래와 같이 나옵니다.
+    <p>위 링클르 클릭하면 아래와 같이 나옵니다.<br />
   <img src="/assets/images/post/comment_sel.PNG" alt="choose" /></p>
   </li>
   <li>댓글을 자신의 사이트에 추가 하기위해서는 아래 버튼을 눌러주세요
@@ -174,7 +342,7 @@ Enter verification code:
     </ul>
   </li>
   <li>
-    <p>site 이름과 카테고리 선택을 해주세요.
+    <p>site 이름과 카테고리 선택을 해주세요.<br />
  <img src="/assets/images/post/comment_name.PNG" alt="name" /></p>
   </li>
   <li>하단의 create 버튼은 누르고 렛츠 스타트를 선택 합니다.</li>
@@ -182,7 +350,7 @@ Enter verification code:
   <li>추가하는 방법이 나옵니다.</li>
 </ul>
 
-<h4 id="3-githubio-jekyll-과-연동하기">3. github.io jekyll 과 연동하기</h4>
+<h4 id="githubio-jekyll--">3. github.io jekyll 과 연동하기</h4>
 <ul>
   <li>중간에 Universal Code 를 선택하면 해당 코드가 표시 되고 이를 복사해서</li>
   <li>_layout/post.html 의 disqus 위치에 추가 시켰습니다.</li>

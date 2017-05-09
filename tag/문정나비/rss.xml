@@ -5,7 +5,7 @@
    
       <title>pyeongho.github.io/</title>
    
-   <link>http://localhost:4000</link>
+   <link>https://pyeongho.github.io/</link>
    <description>즐거운 공장</description>
    <language>en-uk</language>
    <managingEditor> PyeongHo</managingEditor>
@@ -15,12 +15,12 @@
 	  <title>미라클 모닝,당신의 하루를 바꾸는 기적</title>
 	  <link>//navi_morning</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
 	  <guid>//navi_morning</guid>
 	  <description><![CDATA[
-	     <h4 id="본것-깨달은것-적용할것">본것 깨달은것 적용할것</h4>
+	     <h4 id="section">본것 깨달은것 적용할것</h4>
 
-<h4 id="1-내꺼">1. 내꺼</h4>
+<h4 id="section-1">1. 내꺼</h4>
 <ul>
   <li>미라클 모닝
     <ul>
@@ -65,7 +65,7 @@
   <li>158: 침묵(명상)5분 -&gt; 확신의말 5분 -&gt; 시각화 5분 -&gt; 운동 20분 -&gt; 독서 20분 -&gt; 일기쓰기 5분</li>
 </ul>
 
-<h4 id="2-타인의-생각">2. 타인의 생각</h4>
+<h4 id="section-2">2. 타인의 생각</h4>
 <ul>
   <li>A : ‘오늘을 마지노선으로 그어라’ 에 대한 의문점이 많다.</li>
   <li>B
@@ -94,20 +94,20 @@
   </li>
 </ul>
 
-<h4 id="3-책-추천">3. 책 추천</h4>
+<h4 id="section-3">3. 책 추천</h4>
 <ul>
   <li>‘새벽나라에 사는 거인’</li>
   <li>‘내 영혼을 담은 인생의 사계절: 짐론’</li>
 </ul>
 
-<h4 id="다시-한번">다시 한번</h4>
+<h4 id="section-4">다시 한번</h4>
 <ul>
   <li>목표는 결정 하는것이다.</li>
   <li>8번 노출의 힘</li>
   <li>자신의 목표 꿈을 무한 반복하자</li>
 </ul>
 
-<h4 id="현장-메모-첨부">현장 메모 첨부</h4>
+<h4 id="section-5">현장 메모 첨부</h4>
 <ul>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3TUxaNGV6LU15M1U" alt="" /></li>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3Uy1JSEV0TnNxVXc" alt="" /></li>
@@ -123,12 +123,12 @@
 	  <title>GRIT IQ, 재능 환경을 뛰어 넘는 열정적 끈기의 힘 그릿</title>
 	  <link>//navi_grit</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-04-15T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-15T00:00:00+00:00</pubDate>
 	  <guid>//navi_grit</guid>
 	  <description><![CDATA[
-	     <h4 id="본것-깨달은것-적용할것">본것 깨달은것 적용할것</h4>
+	     <h4 id="section">본것 깨달은것 적용할것</h4>
 
-<h4 id="1-내꺼">1. 내꺼</h4>
+<h4 id="section-1">1. 내꺼</h4>
 <ul>
   <li>43: “낙담했죠. 정말 실망했지만 그 일을 곱 씹고 있지는 않았어요. 다음에 어떡해야 할지 거기에 집중해야 한다고 생각했어여. 그래서 선생님을 찾아가서 도움을 청했어요”</li>
   <li>46: 사람들은 문제가 이해가 안되면 보통 ‘나중에 다시 생각해봐야겠다’고 한뒤에 사실상 잊어버린다.</li>
@@ -149,7 +149,7 @@
   </li>
 </ul>
 
-<h4 id="2-남의껏">2. 남의껏</h4>
+<h4 id="section-2">2. 남의껏</h4>
 <ul>
   <li>A (CEO)
     <ul>
@@ -264,7 +264,7 @@
   </li>
 </ul>
 
-<h4 id="-현장-메모-첨부">*. 현장 메모 첨부</h4>
+<h4 id="section-3">*. 현장 메모 첨부</h4>
 <ul>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3Y2NaZU9xY0hOUDA" alt="" /></li>
   <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3S2ZuQTY2VVRqRnc" alt="" /></li>
