@@ -205,29 +205,30 @@ compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
   </li>
   <li>map
     <ul>
-      <li>입력으로 들어 오는 값을 변경 할 수 있다. 다음으로 전달되는 문자열은 간장공장+query</li>
-    </ul>
+      <li>
+        <p>입력으로 들어 오는 값을 변경 할 수 있다. 다음으로 전달되는 문자열은 간장공장+query</p>
 
-    <p><code class="highlighter-rouge">java
-    Observable.just(query)
-      .map(text -&gt; "간장공장"+text)
-</code></p>
+        <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">text</span> <span class="o">-&gt;</span> <span class="s">"간장공장"</span><span class="o">+</span><span class="n">text</span><span class="o">)</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
   </li>
   <li>zip
     <ul>
       <li>이걸 몰라서 한참 걸렸습니다.</li>
       <li>이름의 느낌 처럼 압축 하는 느낌입니다.</li>
-      <li>일단 사용 코드 입니다.</li>
-    </ul>
+      <li>
+        <p>일단 사용 코드 입니다.</p>
 
-    <p><code class="highlighter-rouge">java
-    Observable.zip(
-      Observable.just(query),
-      Observable.just(requestPage),
-      (queryText,requestPageText) -&gt; Log.d("phkim","query: "+queryText + "requestPage:"+requestPageText))
-</code></p>
-
-    <ul>
+        <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">Observable</span><span class="o">.</span><span class="na">zip</span><span class="o">(</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">),</span>
+    <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">requestPage</span><span class="o">),</span>
+    <span class="o">(</span><span class="n">queryText</span><span class="o">,</span><span class="n">requestPageText</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"phkim"</span><span class="o">,</span><span class="s">"query: "</span><span class="o">+</span><span class="n">queryText</span> <span class="o">+</span> <span class="s">"requestPage:"</span><span class="o">+</span><span class="n">requestPageText</span><span class="o">))</span>
+</code></pre>
+        </div>
+      </li>
       <li>문자열 하나씩 입력되면 동식에 사용 가능하도록 변경해 줍니다.</li>
       <li>배열이 들어가서 하나씩 연속으로 사용하는게 아닌 동시에 사용 가능합니다.</li>
     </ul>
