@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>Daum 이미지 검색을 내가 좋아하는 형태로 변경해 보자</title>
+    <title>Rx 사용하면서 추가하거나 공부한 내용</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -70,7 +70,7 @@
     <ul>
         <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
-        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-android  nav-current" role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
         <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
   
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">Daum 이미지 검색을 내가 좋아하는 형태로 변경해 보자</h1>
+            <h1 class="post-title">Rx 사용하면서 추가하거나 공부한 내용</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2017-05-07">07 May 2017</time>
+            <time class="post-date" datetime="2017-05-14">14 May 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,11 +124,11 @@
                        
                 
                     
-                       <a href='/tag/mvp'>Mvp</a>,
+                       <a href='/tag/rxandroid'>Rxandroid</a>,
                        
                 
                     
-                       <a href='/tag/clean'>Clean</a>
+                       <a href='/tag/rxbiding'>Rxbiding</a>
                        
                 
                 
@@ -137,96 +137,98 @@
 
         <section class="post-content">
             
-            <h3 id="gdg-atsl-on-mvp-">구글 샘플과 GDG-ATSL-ON-MVP를 이용</h3>
+            <h3 id="rx----">rx 라이브러리를 사용하면서 사용하는 함수들</h3>
 <ul>
-  <li>2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.</li>
-  <li>원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
+  <li>간단하게 성남도서관 검색 앱을 개발하면서 사용하는 함수들 입니다.</li>
+  <li>rxbiding 사용법</li>
+</ul>
+
+<h4 id="section">0. 목적</h4>
+<ul>
+  <li>클린 + MVP + RX 를 사용하면서 익숙해지기</li>
+  <li>뷰에서는 이벤트에 대한 처리와 보여주는것만 처리</li>
+  <li>프리젠터에서는 유즈케이스를 이용한 API 접근</li>
+  <li>유즈케이스 옵저버를 반환</li>
+  <li>이로 인해서 구조가 무너지지 않은걸로 생각함</li>
+</ul>
+
+<h4 id="rxbiding">1. rxbiding</h4>
+<ul>
+  <li>각종 view 들의 이벤트를 옵저버로 형태로 변환하여 편하게 사용 가능함</li>
+  <li><a href="https://github.com/JakeWharton/RxBinding">https://github.com/JakeWharton/RxBinding</a>
     <ul>
-      <li><a href="https://github.com/ZeroBrain/GDG-ATSL-ON-MVP">https://github.com/ZeroBrain/GDG-ATSL-ON-MVP</a></li>
+      <li>안드로이드 UI 위젯 사용을 위한 플랫폼</li>
     </ul>
   </li>
-</ul>
-
-<h4 id="section">1. 구글샘플 기반으로 앱을 생성하고 제로브레인님의 다음 이미지 검색기능을 추가 하는 형태로 진행</h4>
-<ul>
-  <li>기본 샘플 생성</li>
-  <li>버터나이프, 데이터바인딩 은 넣으면 코드가 짧아 지지만 사용 안합니다.</li>
-  <li>구글 샘플이 좋았던 점은 거의 모든 뷰를 프래그먼트에서 구현 하였던 점입니다.
+  <li>현재 사용을 위하여 추가한  라이브러리 <br />
+<code class="highlighter-rouge">gradle
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
+</code></li>
+  <li>사용은 연속 클릭 방지를 위해서 사용하였습니다. API 호출 까지 한번에 사용하면 좋을거 mvp 를 적용중이라 구조가 무너져서 사용 안하기로함</li>
+  <li>연속 클릭 방지를 위한 RxBiding 사용
     <ul>
-      <li>프로가드 적용시 액티비티 코드는 거의 원형이 남아 있는데 이를 프래그먼트에서 구현 하니 프로가드 적용이 조금더 강력한 느낌 이었습니다.</li>
+      <li>뷰의 클릭에 사용할 버튼뷰를 넘기고</li>
+      <li>throttleFirst(1, TimeUnit.SECONDS) : (첫번쩨 이벤트를 실행후 1초이내로 들어오는 다른 이벤트는 버린다.)</li>
+      <li>throttleLast(1, TimeUnit.SECONDS) : 1초 동안 들어오는 이벤트중 마지막 이베트늘 실행<br />
+<code class="highlighter-rouge">java
+RxView.clicks(btnUseRxCallBack)
+  .throttleFirst(1, TimeUnit.SECONDS)
+  .observeOn(AndroidSchedulers.mainThread())
+  .subscribe(
+          o -&gt; mPresenter.clickedSearch(editText.getText().toString()),
+          error-&gt;Log.e("error",error.toString()));
+</code><br />
+#### 2. 사용중인 RX 함수</li>
     </ul>
   </li>
-  <li>구글 샘플에서 기본적으로 필요한 것들을 복사해옴</li>
-  <li>rx 를 추가하면 많이 없어질걸로 예상</li>
-</ul>
-
-<h4 id="section-1">2. 진행 순서</h4>
-<ul>
-  <li>샘플앱 기본을 정한다.(나중에 해도 됨)</li>
-  <li>MVP 구현은 거의 구글샘플을 기반으로 한다.(프래그먼트)</li>
-  <li>클린아키텍처 기반으로 앱의 목적을 정한다.
+  <li>filter
     <ul>
-      <li>이미지 검색 원하는 문구로 이미지를 검색하고 결과를 클릭하면 이미지가 포함된 URL을 브라우저를 통해서 연다.</li>
-      <li>엔티티 설정 -&gt;  이미지URL, 이미지 타이틀, 이미지를 포함한 오리지널 URL</li>
+      <li>아래 처럼 문자열이 있을때만 필터링을 추가할 수 있다. true 일때만 다음으로 <br />
+ <code class="highlighter-rouge">java 
+  Observable.just(query)
+    .filter(text -&gt; !TextUtils.isEmpty(text))
+</code></li>
     </ul>
   </li>
-  <li>UseCase 를 만든다.
+  <li>map
     <ul>
-      <li>문자열 입력에 따른 결과값 반환 하는 케이스</li>
-      <li>대략 =&gt; GetImages(String query)  이런 함수로 예상</li>
+      <li>입력으로 들어 오는 값을 변경 할 수 있다. 다음으로 전달되는 문자열은 간장공장+query<br />
+ <code class="highlighter-rouge">java 
+  Observable.just(query)
+    .map(text -&gt; "간장공장"+text)
+</code></li>
     </ul>
   </li>
-  <li>UseCase가 가지고올 레포지토리 생성</li>
-  <li>원래 구글샘플에 rx 통신 모듈 추가</li>
-</ul>
-
-<h4 id="section-2">3. 여러번 반복 하니 편해진다.</h4>
-<ul>
-  <li>아직 대거를 사용하진 못했지만 기본 싱글톤 인젝션 방식으로 구현되어 있어서 대거를 추가하기 쉬어 보인다.</li>
-  <li>기존에는 다음 API 처리문과 use 케이스가 결합되어 있어서 변경 하면 여기 저기 변경이 많이 발생했지만</li>
-  <li>지금은 다음에서 네이버로 변경 된다 하더라고 레포지토리만 변경하고 해당 API맞게 받은후 동일한 usecase 를 사용하기에 쉽게 변경 가능하다.</li>
-</ul>
-
-<h4 id="mvp--">4. mvp 의 장점</h4>
-<ul>
-  <li>당연한거지만 다른 레이어와 완전히 분리되어 있어서 로그만 출력하고 추후 개발이 쉽다.</li>
-  <li>UI 쪽만 따로 개발 및 테스트가 가능하다.</li>
-</ul>
-
-<h4 id="section-3">5. 구글 샘플의 콜백</h4>
-<ul>
-  <li>use case 콜백은 상당히 유용하다.</li>
-  <li>처음에는 사용 안하려고 했지만 기본 언어 이외에 사용하는것도 거의 없다.</li>
-  <li>android.os.Handler 만 사용하고 있다.</li>
-</ul>
-
-<h4 id="rx--">6. Rx 콜백으로 변경하기</h4>
-<ul>
-  <li>기존 rx 샘플에 만들어 놓은 apicallback 를 이용해 보겠습니다.
+  <li>zip
     <ul>
-      <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-      <li>폴더이름 Retorfit2T</li>
+      <li>이걸 몰라서 한참 걸렸습니다.</li>
+      <li>이름의 느낌 처럼 압축 하는 느낌입니다.</li>
+      <li>일단 사용 코드 입니다.    <br />
+ <code class="highlighter-rouge">java
+  Observable.zip(
+    Observable.just(query),
+    Observable.just(requestPage),
+    (queryText,requestPageText) -&gt; Log.d("phkim","query: "+queryText + "requestPage:"+requestPageText))
+</code></li>
+      <li>문자열 하나씩 입력되면 동식에 사용 가능하도록 변경해 줍니다.</li>
+      <li>배열이 들어가서 하나씩 연속으로 사용하는게 아닌 동시에 사용 가능합니다.</li>
     </ul>
   </li>
-  <li>apicallback 클래스를 복사해서 사용하기</li>
-</ul>
-
-<h4 id="section-4">7. 인젝션</h4>
-<ul>
-  <li>현재 인젝션을 싱글톤으로 주입 하는 방법을 선택했습니다.</li>
-  <li>이를 대거를 이용하는 방법은 추후 진행 하겠습니다.</li>
-</ul>
-
-<h4 id="section-5">8. 샘플</h4>
-<ul>
-  <li>입력창에서 문자를 입력하면 핸들러콜백을 이용하는 방식</li>
-  <li>버튼을 누르면 rx 를 이요하는 방법 입니다.</li>
-  <li>샘플 코드
+  <li>flatMap
     <ul>
-      <li>MyCleanMvp 폴더입니다.</li>
-      <li>프로젝트 그래들에 다음 API 키를 추가해야합니다.</li>
-      <li><a href="https://github.com/pyeongho/Sample.git">https://github.com/pyeongho/Sample.git</a></li>
-      <li><img src="http://dl.dropbox.com/s/nnzymkk8a9f3vb3/201705090718.png" alt="" /></li>
+      <li>결과를 옵저버 형태로 반환합니다.</li>
+      <li>다른 옵저버와 합칠때 사용합니다.</li>
+      <li>코드를 추가 하기에는 양이 너무 길어 져서</li>
+      <li>옵저버 A , 옵저버 B</li>
+      <li>실행중인 옵저버 A 스트림에 옵저버 B 를 추가 할 수 있습니다.</li>
+      <li>콜백에 콜백을 처리할때 사용하기 좋습니다.</li>
+      <li>예를 들어서 소셜 로그인 처리 할때 사용 하면 됩니다.
+        <ul>
+          <li>페이스북 로그인 -&gt; 콜백으로 결과 -&gt; 사용하는 서버로 결과 전달 -&gt; 페이스북과 사용중인 서버 로그인 완료</li>
+          <li>위와 같은 내요을 콜백에서 콜백을 호출하는 형태를 조금이나마 줄일 수 있다</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -262,15 +264,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=Daum 이미지 검색을 내가 좋아하는 형태로 변경해 보자&amp;url=https://pyeongho.github.io/my-clean-mvp"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Rx 사용하면서 추가하거나 공부한 내용&amp;url=https://pyeongho.github.io/use-rx-android"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/my-clean-mvp"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/use-rx-android"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/my-clean-mvp"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/use-rx-android"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -308,20 +310,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/use-rx-android">
-            <section class="post">
-                <h2>Rx 사용하면서 추가하거나 공부한 내용</h2>
-                <p>### rx 라이브러리를 사용하면서 사용하는 함수들 - 간단하게 성남도서관 검색 앱을 개발하면서 사용하는 함수들 입니다....</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover4.jpg)" href="/github-image-dropbox">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/my-clean-mvp">
             <section class="post">
-                <h2>이미지를 호스팅을 드랍박스로 변경해 보자</h2>
-                <p>구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다. 드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자...</p>
+                <h2>Daum 이미지 검색을 내가 좋아하는 형태로 변경해 보자</h2>
+                <p>구글 샘플과 GDG-ATSL-ON-MVP를 이용 2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고...</p>
             </section>
         </a>
     
