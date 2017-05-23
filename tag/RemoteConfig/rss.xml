@@ -50,11 +50,11 @@
 </ul>
 
 <p><code class="highlighter-rouge">java
-    FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
-      .setDeveloperModeEnabled(BuildConfig.DEBUG)
-      .build();
-    mFirebaseRemoteConfig.setConfigSettings(setting);
-</code></p>
+      FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
+        .setDeveloperModeEnabled(BuildConfig.DEBUG)
+        .build();
+      mFirebaseRemoteConfig.setConfigSettings(setting);
+ </code></p>
 
 <h4 id="remote-config---">3. Remote Config 사용시 주의 사항</h4>
 <ul>
