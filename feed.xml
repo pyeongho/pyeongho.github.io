@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
+        
+          <description>&lt;h3 id=&quot;section&quot;&gt;파이어베이스 리모트 컨피그 사용&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함&lt;/li&gt;
+  &lt;li&gt;공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//firebase_remoteconfig</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//firebase_remoteconfig</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>대한민국 부동산의 미래</title>
         
           <description>&lt;h4 id=&quot;section&quot;&gt;본것 깨달은것 적용할것&lt;/h4&gt;
