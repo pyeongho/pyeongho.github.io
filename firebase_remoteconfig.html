@@ -165,15 +165,14 @@
   <li>위 내용으로 에러가 발생</li>
   <li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
   <li>구글 검색으로 위와 같은 내용이 찾음</li>
-  <li>아래 코드로 동작 확인</li>
+  <li>아래 코드로 동작 확인  <br />
+<code class="highlighter-rouge">java
+ FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
+   .setDeveloperModeEnabled(BuildConfig.DEBUG)
+   .build();
+ mFirebaseRemoteConfig.setConfigSettings(setting);
+</code></li>
 </ul>
-
-<p><code class="highlighter-rouge">java
-      FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
-        .setDeveloperModeEnabled(BuildConfig.DEBUG)
-        .build();
-      mFirebaseRemoteConfig.setConfigSettings(setting);
- </code></p>
 
 <h4 id="remote-config---">3. Remote Config 사용시 주의 사항</h4>
 <ul>
