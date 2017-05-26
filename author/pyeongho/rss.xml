@@ -12,6 +12,226 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>코를린 공부를 intellij 에서</title>
+	  <link>//kotlin_with_intellij</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-05-22T00:00:00+00:00</pubDate>
+	  <guid>//kotlin_with_intellij</guid>
+	  <description><![CDATA[
+	     <h3 id="section">안드로이드 공식 언어인 코틀릭 공부</h3>
+<ul>
+  <li>안드로이드 스튜디오가 아닌 인텔리제이 에서 공부</li>
+  <li>기본 적인 언어 공부후 안드로이드 스튜디오에서 진행</li>
+</ul>
+
+<h4 id="section-1">0. 목적</h4>
+<ul>
+  <li>기본적인 문법및 사용법을 익혀 보자<br />
+  -[http://thdev.tech/categories.html#Kotlin-ref] (http://thdev.tech/categories.html#Kotlin-ref)</li>
+</ul>
+
+<h4 id="section-2">1. 인텔리제이에서 코틀린 실습하기</h4>
+<ul>
+  <li><a href="https://news.realm.io/kr/news/kotlin-1/">https://news.realm.io/kr/news/kotlin-1/</a></li>
+  <li>인텔리제이 실행</li>
+  <li>Create New Project</li>
+  <li>kotlin(java)</li>
+  <li>create -&gt; use library from plugin 체크</li>
+  <li>상단 오른쪽 위에 SDK 선택에서</li>
+  <li>JDK -&gt; 설치된 JDK 폴더 경로 입력</li>
+  <li>next</li>
+  <li>프로젝트 이름 설정</li>
+  <li>빈 프로젝트 생성 완료</li>
+  <li>src 폴더에서 오른쪽 버튼</li>
+  <li>new -&gt; kotling file/class 선택</li>
+  <li>app 파일 생성(app.kt)</li>
+  <li>아래 처럼 메인 코드 입력</li>
+</ul>
+
+<pre><code class="language-kotlin">   fun main(args: Array&lt;String&gt;) {
+    println("Hello Hello!")
+  }
+</code></pre>
+
+<ul>
+  <li>app.kt 파일에서 마우스 오른쪽 버튼으로 run app.kt 실행</li>
+  <li>실행 창에 메인 함수 실행을 확인 할 수 있습니다.</li>
+</ul>
+
+<h4 id="section-3">2. 기본 내용을 확인 하기</h4>
+
+<ul>
+  <li><a href="http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0">http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0</a></li>
+  <li>코틀린 함수 사용
+    <ul>
+      <li>
+        <p>첫번째 두번째 함수는 그럭 저럭 넘어가면 되고<br />
+```kotlin<br />
+  fun sum(a:Int , b:Int): Int{<br />
+    return a+b<br />
+  }</p>
+
+        <p>// Single Expression Function 이런건 사용하지 말자 한 두줄  줄인다고 코드가 좋아질거 같진 않다.<br />
+  fun sum2(a:Int , b:Int) = a+b</p>
+
+        <p>fun printSum(a:Int, b:Int):Unit {<br />
+      print(a+b)<br />
+  }<br />
+```</p>
+      </li>
+      <li>
+        <p>세번째 함수  Unit를 void 라고 생각하자</p>
+        <ul>
+          <li>코드의 내부 구현은 println을 한번 호출했을 뿐 어떤 결과를 반환한다거나 하는것을 생각하기 어렵습니다. 이런 경우에 println은 Unit을 리턴합니다. 이런 부분은 Scala와 비슷한 부분이 있어 보입니다. Kotlin은 모든 함수 구현이 반환값을 가지며 return을 명시적으로 써줄수도 생략할 수 도 있습니다. 반환이 없어 보이는 코드의 경우에는 Unit을 리턴하며 이 Unit은 Java의 void와 같다고 생각하시면 됩니다. 사실은 반환값이 없는경우를 Unit을 리턴한다고 생각하시면 될 것 같습니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>변수 선언
+    <ul>
+      <li>상수는 val</li>
+      <li>
+        <p>변수는 var    <br />
+```kotlin<br />
+  // Immutable<br />
+  val a: Int = 1<br />
+  val b = 1<br />
+  val c: Int<br />
+  c = 1</p>
+
+        <p>// Mutable<br />
+  var x = 5<br />
+  x += 1<br />
+```</p>
+      </li>
+    </ul>
+  </li>
+  <li>조건문
+    <ul>
+      <li>자바 처럼 기본 조건문을 사용하자</li>
+    </ul>
+  </li>
+  <li>null
+    <ul>
+      <li>
+        <p>```kotlin<br />
+val x: String = null // error<br />
+val x: String? = null // ok</p>
+
+        <p>val x:Int? = 3<br />
+x + 4 // error<br />
+if (x != null) x + 4 // ok</p>
+
+        <p>val x: Int? = null<br />
+val y: Int = x ?: 0  //  x ? x : 0<br />
+x?.rangeTo(3) // null<br />
+y.rangeTo(3) // 0..3<br />
+  ```</p>
+      </li>
+      <li>
+        <p>x?.rangeTo(3) 를 이용하면 체인형 함수 실행에 유리 하나의 결과만 널이라도 바로 null 반환</p>
+      </li>
+    </ul>
+  </li>
+  <li>types Any
+    <ul>
+      <li>컴파일러가 고생이 많아 보입니다.</li>
+      <li>obj is String 만 성공해도 다음 블럭에서는 obj 가 문자열 클래스 이다.</li>
+      <li>
+        <p>if 문 조건은 왼쪽 부터 실행 된다.<br />
+```kotlin    <br />
+fun getStringLength(obj: Any): Int? {<br />
+  if (obj is String) // 여기서 obj가 자동으로 String으로 캐스팅됩니다.<br />
+    return obj.length<br />
+  return null // 여기는 여전히 obj의 타입은 Any입니다.<br />
+}</p>
+
+        <p>if (obj !is String) { return … }<br />
+return obj.length</p>
+
+        <p>if (obj is String &amp;&amp; obj.length &gt; 0) { … }</p>
+
+        <p>var x: Any = “hello”<br />
+println(x) // hello가 출력</p>
+
+        <p>x = 3<br />
+println(x) // 3이 출력<br />
+```</p>
+      </li>
+    </ul>
+  </li>
+  <li>반목문 및 콜렉션
+    <ul>
+      <li>람다 가능</li>
+    </ul>
+
+    <pre><code class="language-kotlin">  //val collection: List&lt;String&gt; = ...
+  val collection: MutableList&lt;String&gt; = ArrayList()
+  collection.add("1")
+  collection.add("2")
+  collection.add("3")
+  collection.add("4")
+  collection.add("5")
+      
+  val array = arrayListOf&lt;String&gt;()
+  array.add("11")
+  array.add("12")
+  array.add("13")
+
+  for (element in collection)
+    println(element)
+      
+  var i = 0
+  while (i &lt; collection.size())
+    println(collection[i++])
+      
+  collection.forEach { e -&gt; println(e) }
+  collection.forEach { println(it) }
+</code></pre>
+  </li>
+  <li>when
+    <ul>
+      <li>Any 타입일때 케이스문처럼 사용이 가능한다.<br />
+<code class="highlighter-rouge">kotlin
+fun cases(obj: Any) {
+when (obj) {
+  1 -&gt; print("One")
+  "Hello" -&gt; print("Greeting")
+  is Long -&gt; print("Long")
+  !is String -&gt; print("Not a string")
+  else -&gt; print("Unknown")
+}
+}
+</code></li>
+    </ul>
+  </li>
+  <li>범위(range) 사용하기w
+    <ul>
+      <li>
+        <div class="highlighter-rouge"><pre class="highlight"><code> if (x in 1..y-1)
+   print("OK")
+
+ for (x in 1..5)
+   print(x)
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-4">3. 지속적인 공부가 필요함</h4>
+<ul>
+  <li>현재 여기까지 진행하고 조금씩 앱을 만들어 보도록 하겠습니다.</li>
+  <li>코틀린 문서 링크 입니다.</li>
+  <li><a href="http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc">http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc</a></li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
 	  <link>//firebase_remoteconfig</link>
 	  <author>PyeongHo</author>
@@ -678,70 +898,6 @@ compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
   <li>TasksDataSource(데이터레이어) &lt;- usecase(도메인레이어) &lt;- 프리젠테이션레이어(사용자)</li>
   <li>처음에는 별로 마음에 안들었지만 보다 보면 볼수록 마음에 듬</li>
   <li>정리중</li>
-</ul>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>크롬 40+ 버전에서 의 앱 실행 문제</title>
-	  <link>//chrome-40</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
-	  <guid>//chrome-40</guid>
-	  <description><![CDATA[
-	     <h3 id="section">크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.</h3>
-<ul>
-  <li>탐색할수없음</li>
-</ul>
-
-<h4 id="javascript--body-onload-----">1. javascript 의 body onload 에 마켓 이동하는 코드를 추가</h4>
-<ul>
-  <li>아래와 같이 간단하게 추가 했는데 마켓으로 이동 안하는 기기들이 있음<br />
-  <script src="https://gist.github.com/pyeongho/b26f2f488f00f487a19ab823bbbca27a.js"></script></li>
-  <li>크롬 인스펙트를 이용해서 콘솔로그를 확인하니 “탐색할수없음” 이라는 문구가 나옴</li>
-</ul>
-
-<h4 id="section-1">2. 구글 검색 시작</h4>
-<ul>
-  <li>이것 저것 검색 하다 보니 chrome 40+ 이상에서는 동작 안하는다는 내용 확인</li>
-  <li>
-    <p><a href="https://devtalk.kakao.com/t/onload/15293/2">https://devtalk.kakao.com/t/onload/15293/2</a></p>
-  </li>
-  <li>그래서 조금더 검색</li>
-  <li><a href="http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/">http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/</a></li>
-  <li>에서 내용을 잘 정리해줌</li>
-</ul>
-
-<h4 id="section-2">3. 내용 요약</h4>
-<ul>
-  <li>구글엔지니어가 판도라 앱을 설치</li>
-  <li>주소창에 pandora.com 을 크롬에서 입력</li>
-  <li>웹사이트로 이동되지 않고 판도앱이 실행됨</li>
-  <li>버그로 접수</li>
-  <li>수정해 버림</li>
-</ul>
-
-<h4 id="section-3">4. 구글의 답변</h4>
-<ul>
-  <li>
-    <p>원문 : From the omnibox, no, there is no plans to allow external redirects.  If typing in the omnibox, the user is showing a strong intent to stay within chrome, so we made the decision to not allow external redirects (too many of them led to what we believed to be bad user experiences).<br />
-Clicking on a link should still behave as before and redirect to market:// links. As it stands, how can I programmatically redirect a user to the play store?<br />
-There is no plans to support a redirect without a user gesture.</p>
-  </li>
-  <li>
-    <p>번역기 : 검색 주소창에서 외부로 리디렉션을 허용 할 계획이 없습니다. 검색 주소창에 검색어를 입력하면 사용자는 크롬 내에 머물러야한다는 강한 의지를 나타내고 있으므로 외부 리디렉션을 허용하지 않기로 결정했습니다. 너무 많은 사용자가 사용자 경험이 좋지 않다고 생각하는 것으로 이끌었습니다. <br />
-링크를 클릭하면 이전과 같이 작동하고 market : // 링크로 리디렉션되어야합니다. 그대로, 어떻게 프로그래밍 방식으로 사용자를 플레이 스토어 로 리디렉션 할 수 있습니까? <br />
-사용자 gestur e 없이 리디렉션을 지원할 계획은 없습니다 .</p>
-  </li>
-</ul>
-
-<h4 id="section-4">5. 수정 사용자 제스처로 이동하게 하면 됩니다.</h4>
-<ul>
-  <li>사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.</li>
-  <li>사용자 액션만 추가 하면 됩니다.<br />
-  <script src="https://gist.github.com/pyeongho/af47412cd50a3579484f0d3db285cd73.js"></script></li>
 </ul>
 
 

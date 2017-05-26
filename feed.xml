@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>코를린 공부를 intellij 에서</title>
+        
+          <description>&lt;h3 id=&quot;section&quot;&gt;안드로이드 공식 언어인 코틀릭 공부&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;안드로이드 스튜디오가 아닌 인텔리제이 에서 공부&lt;/li&gt;
+  &lt;li&gt;기본 적인 언어 공부후 안드로이드 스튜디오에서 진행&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//kotlin_with_intellij</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//kotlin_with_intellij</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
         
           <description>&lt;h3 id=&quot;section&quot;&gt;파이어베이스 리모트 컨피그 사용&lt;/h3&gt;

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
+    <title>코를린 공부를 intellij 에서</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,7 +111,7 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">RemoteConfig FirebaseRemoteConfigFetchThrottledException</h1>
+            <h1 class="post-title">코를린 공부를 intellij 에서</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
             <time class="post-date" datetime="2017-05-22">22 May 2017</time>
@@ -124,11 +124,11 @@
                        
                 
                     
-                       <a href='/tag/firebase'>Firebase</a>,
+                       <a href='/tag/intellij'>Intellij</a>,
                        
                 
                     
-                       <a href='/tag/RemoteConfig'>Remoteconfig</a>
+                       <a href='/tag/kotlin'>Kotlin</a>
                        
                 
                 
@@ -137,47 +137,215 @@
 
         <section class="post-content">
             
-            <h3 id="section">파이어베이스 리모트 컨피그 사용</h3>
+            <h3 id="section">안드로이드 공식 언어인 코틀릭 공부</h3>
 <ul>
-  <li>앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함</li>
-  <li>공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음</li>
+  <li>안드로이드 스튜디오가 아닌 인텔리제이 에서 공부</li>
+  <li>기본 적인 언어 공부후 안드로이드 스튜디오에서 진행</li>
 </ul>
 
 <h4 id="section-1">0. 목적</h4>
 <ul>
-  <li>앱 재배포 없이 기능을 선택 하려고함</li>
-  <li>firebase reomte config 기능이 눈에 들어옴</li>
-  <li>테스트도 할겸 도전</li>
+  <li>기본적인 문법및 사용법을 익혀 보자<br />
+  -[http://thdev.tech/categories.html#Kotlin-ref] (http://thdev.tech/categories.html#Kotlin-ref)</li>
 </ul>
 
-<h4 id="section-2">1. 앱에 파이어 베이스 리모트 컨피그 기능 추가</h4>
+<h4 id="section-2">1. 인텔리제이에서 코틀린 실습하기</h4>
 <ul>
-  <li>안드로이드 스튜디오에서 편하게 추가 가능하다.</li>
-  <li>tools -&gt; Firebase 선택시 편집기 오른쪽에 사용 가능한 기능이 나옵니다.</li>
-  <li>Remote Config  를 선택해서 순서대로 하면 사용상 문제는 없습니다.</li>
+  <li><a href="https://news.realm.io/kr/news/kotlin-1/">https://news.realm.io/kr/news/kotlin-1/</a></li>
+  <li>인텔리제이 실행</li>
+  <li>Create New Project</li>
+  <li>kotlin(java)</li>
+  <li>create -&gt; use library from plugin 체크</li>
+  <li>상단 오른쪽 위에 SDK 선택에서</li>
+  <li>JDK -&gt; 설치된 JDK 폴더 경로 입력</li>
+  <li>next</li>
+  <li>프로젝트 이름 설정</li>
+  <li>빈 프로젝트 생성 완료</li>
+  <li>src 폴더에서 오른쪽 버튼</li>
+  <li>new -&gt; kotling file/class 선택</li>
+  <li>app 파일 생성(app.kt)</li>
+  <li>아래 처럼 메인 코드 입력</li>
 </ul>
 
-<h4 id="section-3">2. 처음 한두번은 문제 없다가 갑자기 에러가 나기 시작함</h4>
+<pre><code class="language-kotlin">   fun main(args: Array&lt;String&gt;) {
+    println("Hello Hello!")
+  }
+</code></pre>
+
 <ul>
-  <li>순서 대로 진행 하면 ‘Fetch Failed’ 에러로 정확한 이유를 알수 없음</li>
-  <li>그래서 addOnFailureListener 리스너를 이용해서 exception 클래스 이름을 확인 하였습니다.</li>
-  <li>FirebaseRemoteConfigFetchThrottledException</li>
-  <li>위 내용으로 에러가 발생</li>
-  <li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
-  <li>구글 검색으로 위와 같은 내용이 찾음</li>
-  <li>아래 코드로 동작 확인  <br />
-<code class="highlighter-rouge">java
- FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
-   .setDeveloperModeEnabled(BuildConfig.DEBUG)
-   .build();
- mFirebaseRemoteConfig.setConfigSettings(setting);
+  <li>app.kt 파일에서 마우스 오른쪽 버튼으로 run app.kt 실행</li>
+  <li>실행 창에 메인 함수 실행을 확인 할 수 있습니다.</li>
+</ul>
+
+<h4 id="section-3">2. 기본 내용을 확인 하기</h4>
+
+<ul>
+  <li><a href="http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0">http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0</a></li>
+  <li>코틀린 함수 사용
+    <ul>
+      <li>
+        <p>첫번째 두번째 함수는 그럭 저럭 넘어가면 되고<br />
+```kotlin<br />
+  fun sum(a:Int , b:Int): Int{<br />
+    return a+b<br />
+  }</p>
+
+        <p>// Single Expression Function 이런건 사용하지 말자 한 두줄  줄인다고 코드가 좋아질거 같진 않다.<br />
+  fun sum2(a:Int , b:Int) = a+b</p>
+
+        <p>fun printSum(a:Int, b:Int):Unit {<br />
+      print(a+b)<br />
+  }<br />
+```</p>
+      </li>
+      <li>
+        <p>세번째 함수  Unit를 void 라고 생각하자</p>
+        <ul>
+          <li>코드의 내부 구현은 println을 한번 호출했을 뿐 어떤 결과를 반환한다거나 하는것을 생각하기 어렵습니다. 이런 경우에 println은 Unit을 리턴합니다. 이런 부분은 Scala와 비슷한 부분이 있어 보입니다. Kotlin은 모든 함수 구현이 반환값을 가지며 return을 명시적으로 써줄수도 생략할 수 도 있습니다. 반환이 없어 보이는 코드의 경우에는 Unit을 리턴하며 이 Unit은 Java의 void와 같다고 생각하시면 됩니다. 사실은 반환값이 없는경우를 Unit을 리턴한다고 생각하시면 될 것 같습니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>변수 선언
+    <ul>
+      <li>상수는 val</li>
+      <li>
+        <p>변수는 var    <br />
+```kotlin<br />
+  // Immutable<br />
+  val a: Int = 1<br />
+  val b = 1<br />
+  val c: Int<br />
+  c = 1</p>
+
+        <p>// Mutable<br />
+  var x = 5<br />
+  x += 1<br />
+```</p>
+      </li>
+    </ul>
+  </li>
+  <li>조건문
+    <ul>
+      <li>자바 처럼 기본 조건문을 사용하자</li>
+    </ul>
+  </li>
+  <li>null
+    <ul>
+      <li>
+        <p>```kotlin<br />
+val x: String = null // error<br />
+val x: String? = null // ok</p>
+
+        <p>val x:Int? = 3<br />
+x + 4 // error<br />
+if (x != null) x + 4 // ok</p>
+
+        <p>val x: Int? = null<br />
+val y: Int = x ?: 0  //  x ? x : 0<br />
+x?.rangeTo(3) // null<br />
+y.rangeTo(3) // 0..3<br />
+  ```</p>
+      </li>
+      <li>
+        <p>x?.rangeTo(3) 를 이용하면 체인형 함수 실행에 유리 하나의 결과만 널이라도 바로 null 반환</p>
+      </li>
+    </ul>
+  </li>
+  <li>types Any
+    <ul>
+      <li>컴파일러가 고생이 많아 보입니다.</li>
+      <li>obj is String 만 성공해도 다음 블럭에서는 obj 가 문자열 클래스 이다.</li>
+      <li>
+        <p>if 문 조건은 왼쪽 부터 실행 된다.<br />
+```kotlin    <br />
+fun getStringLength(obj: Any): Int? {<br />
+  if (obj is String) // 여기서 obj가 자동으로 String으로 캐스팅됩니다.<br />
+    return obj.length<br />
+  return null // 여기는 여전히 obj의 타입은 Any입니다.<br />
+}</p>
+
+        <p>if (obj !is String) { return … }<br />
+return obj.length</p>
+
+        <p>if (obj is String &amp;&amp; obj.length &gt; 0) { … }</p>
+
+        <p>var x: Any = “hello”<br />
+println(x) // hello가 출력</p>
+
+        <p>x = 3<br />
+println(x) // 3이 출력<br />
+```</p>
+      </li>
+    </ul>
+  </li>
+  <li>반목문 및 콜렉션
+    <ul>
+      <li>람다 가능</li>
+    </ul>
+
+    <pre><code class="language-kotlin">  //val collection: List&lt;String&gt; = ...
+  val collection: MutableList&lt;String&gt; = ArrayList()
+  collection.add("1")
+  collection.add("2")
+  collection.add("3")
+  collection.add("4")
+  collection.add("5")
+      
+  val array = arrayListOf&lt;String&gt;()
+  array.add("11")
+  array.add("12")
+  array.add("13")
+
+  for (element in collection)
+    println(element)
+      
+  var i = 0
+  while (i &lt; collection.size())
+    println(collection[i++])
+      
+  collection.forEach { e -&gt; println(e) }
+  collection.forEach { println(it) }
+</code></pre>
+  </li>
+  <li>when
+    <ul>
+      <li>Any 타입일때 케이스문처럼 사용이 가능한다.<br />
+<code class="highlighter-rouge">kotlin
+fun cases(obj: Any) {
+when (obj) {
+  1 -&gt; print("One")
+  "Hello" -&gt; print("Greeting")
+  is Long -&gt; print("Long")
+  !is String -&gt; print("Not a string")
+  else -&gt; print("Unknown")
+}
+}
 </code></li>
+    </ul>
+  </li>
+  <li>범위(range) 사용하기w
+    <ul>
+      <li>
+        <div class="highlighter-rouge"><pre class="highlight"><code> if (x in 1..y-1)
+   print("OK")
+
+ for (x in 1..5)
+   print(x)
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h4 id="remote-config---">3. Remote Config 사용시 주의 사항</h4>
+<h4 id="section-4">3. 지속적인 공부가 필요함</h4>
 <ul>
-  <li>개발 모드 일때는 꼭 개발 설정을 하자</li>
+  <li>현재 여기까지 진행하고 조금씩 앱을 만들어 보도록 하겠습니다.</li>
+  <li>코틀린 문서 링크 입니다.</li>
+  <li><a href="http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc">http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc</a></li>
 </ul>
+
 
 
         </section>
@@ -209,15 +377,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=RemoteConfig FirebaseRemoteConfigFetchThrottledException&amp;url=https://pyeongho.github.io/firebase_remoteconfig"
+                <a class="icon-twitter" href="http://twitter.com/share?text=코를린 공부를 intellij 에서&amp;url=https://pyeongho.github.io/kotlin_with_intellij"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/firebase_remoteconfig"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/kotlin_with_intellij"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/firebase_remoteconfig"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/kotlin_with_intellij"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -255,20 +423,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/kotlin_with_intellij">
-            <section class="post">
-                <h2>코를린 공부를 intellij 에서</h2>
-                <p>### 안드로이드 공식 언어인 코틀릭 공부 - 안드로이드 스튜디오가 아닌 인텔리제이 에서 공부 - 기본...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover2.jpg)" href="/nav_real_estate">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/firebase_remoteconfig">
             <section class="post">
-                <h2>대한민국 부동산의 미래</h2>
-                <p>본것 깨달은것 적용할것 1. 내꺼 너무 늦은거 같다는 생각을 많이 하였습니다. 노후파산을 읽고 은퇴후 생활을...</p>
+                <h2>RemoteConfig FirebaseRemoteConfigFetchThrottledException</h2>
+                <p>파이어베이스 리모트 컨피그 사용 앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함...</p>
             </section>
         </a>
     

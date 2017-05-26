@@ -12,6 +12,226 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>코를린 공부를 intellij 에서</title>
+	  <link>//kotlin_with_intellij</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-05-22T00:00:00+00:00</pubDate>
+	  <guid>//kotlin_with_intellij</guid>
+	  <description><![CDATA[
+	     <h3 id="section">안드로이드 공식 언어인 코틀릭 공부</h3>
+<ul>
+  <li>안드로이드 스튜디오가 아닌 인텔리제이 에서 공부</li>
+  <li>기본 적인 언어 공부후 안드로이드 스튜디오에서 진행</li>
+</ul>
+
+<h4 id="section-1">0. 목적</h4>
+<ul>
+  <li>기본적인 문법및 사용법을 익혀 보자<br />
+  -[http://thdev.tech/categories.html#Kotlin-ref] (http://thdev.tech/categories.html#Kotlin-ref)</li>
+</ul>
+
+<h4 id="section-2">1. 인텔리제이에서 코틀린 실습하기</h4>
+<ul>
+  <li><a href="https://news.realm.io/kr/news/kotlin-1/">https://news.realm.io/kr/news/kotlin-1/</a></li>
+  <li>인텔리제이 실행</li>
+  <li>Create New Project</li>
+  <li>kotlin(java)</li>
+  <li>create -&gt; use library from plugin 체크</li>
+  <li>상단 오른쪽 위에 SDK 선택에서</li>
+  <li>JDK -&gt; 설치된 JDK 폴더 경로 입력</li>
+  <li>next</li>
+  <li>프로젝트 이름 설정</li>
+  <li>빈 프로젝트 생성 완료</li>
+  <li>src 폴더에서 오른쪽 버튼</li>
+  <li>new -&gt; kotling file/class 선택</li>
+  <li>app 파일 생성(app.kt)</li>
+  <li>아래 처럼 메인 코드 입력</li>
+</ul>
+
+<pre><code class="language-kotlin">   fun main(args: Array&lt;String&gt;) {
+    println("Hello Hello!")
+  }
+</code></pre>
+
+<ul>
+  <li>app.kt 파일에서 마우스 오른쪽 버튼으로 run app.kt 실행</li>
+  <li>실행 창에 메인 함수 실행을 확인 할 수 있습니다.</li>
+</ul>
+
+<h4 id="section-3">2. 기본 내용을 확인 하기</h4>
+
+<ul>
+  <li><a href="http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0">http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0</a></li>
+  <li>코틀린 함수 사용
+    <ul>
+      <li>
+        <p>첫번째 두번째 함수는 그럭 저럭 넘어가면 되고<br />
+```kotlin<br />
+  fun sum(a:Int , b:Int): Int{<br />
+    return a+b<br />
+  }</p>
+
+        <p>// Single Expression Function 이런건 사용하지 말자 한 두줄  줄인다고 코드가 좋아질거 같진 않다.<br />
+  fun sum2(a:Int , b:Int) = a+b</p>
+
+        <p>fun printSum(a:Int, b:Int):Unit {<br />
+      print(a+b)<br />
+  }<br />
+```</p>
+      </li>
+      <li>
+        <p>세번째 함수  Unit를 void 라고 생각하자</p>
+        <ul>
+          <li>코드의 내부 구현은 println을 한번 호출했을 뿐 어떤 결과를 반환한다거나 하는것을 생각하기 어렵습니다. 이런 경우에 println은 Unit을 리턴합니다. 이런 부분은 Scala와 비슷한 부분이 있어 보입니다. Kotlin은 모든 함수 구현이 반환값을 가지며 return을 명시적으로 써줄수도 생략할 수 도 있습니다. 반환이 없어 보이는 코드의 경우에는 Unit을 리턴하며 이 Unit은 Java의 void와 같다고 생각하시면 됩니다. 사실은 반환값이 없는경우를 Unit을 리턴한다고 생각하시면 될 것 같습니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>변수 선언
+    <ul>
+      <li>상수는 val</li>
+      <li>
+        <p>변수는 var    <br />
+```kotlin<br />
+  // Immutable<br />
+  val a: Int = 1<br />
+  val b = 1<br />
+  val c: Int<br />
+  c = 1</p>
+
+        <p>// Mutable<br />
+  var x = 5<br />
+  x += 1<br />
+```</p>
+      </li>
+    </ul>
+  </li>
+  <li>조건문
+    <ul>
+      <li>자바 처럼 기본 조건문을 사용하자</li>
+    </ul>
+  </li>
+  <li>null
+    <ul>
+      <li>
+        <p>```kotlin<br />
+val x: String = null // error<br />
+val x: String? = null // ok</p>
+
+        <p>val x:Int? = 3<br />
+x + 4 // error<br />
+if (x != null) x + 4 // ok</p>
+
+        <p>val x: Int? = null<br />
+val y: Int = x ?: 0  //  x ? x : 0<br />
+x?.rangeTo(3) // null<br />
+y.rangeTo(3) // 0..3<br />
+  ```</p>
+      </li>
+      <li>
+        <p>x?.rangeTo(3) 를 이용하면 체인형 함수 실행에 유리 하나의 결과만 널이라도 바로 null 반환</p>
+      </li>
+    </ul>
+  </li>
+  <li>types Any
+    <ul>
+      <li>컴파일러가 고생이 많아 보입니다.</li>
+      <li>obj is String 만 성공해도 다음 블럭에서는 obj 가 문자열 클래스 이다.</li>
+      <li>
+        <p>if 문 조건은 왼쪽 부터 실행 된다.<br />
+```kotlin    <br />
+fun getStringLength(obj: Any): Int? {<br />
+  if (obj is String) // 여기서 obj가 자동으로 String으로 캐스팅됩니다.<br />
+    return obj.length<br />
+  return null // 여기는 여전히 obj의 타입은 Any입니다.<br />
+}</p>
+
+        <p>if (obj !is String) { return … }<br />
+return obj.length</p>
+
+        <p>if (obj is String &amp;&amp; obj.length &gt; 0) { … }</p>
+
+        <p>var x: Any = “hello”<br />
+println(x) // hello가 출력</p>
+
+        <p>x = 3<br />
+println(x) // 3이 출력<br />
+```</p>
+      </li>
+    </ul>
+  </li>
+  <li>반목문 및 콜렉션
+    <ul>
+      <li>람다 가능</li>
+    </ul>
+
+    <pre><code class="language-kotlin">  //val collection: List&lt;String&gt; = ...
+  val collection: MutableList&lt;String&gt; = ArrayList()
+  collection.add("1")
+  collection.add("2")
+  collection.add("3")
+  collection.add("4")
+  collection.add("5")
+      
+  val array = arrayListOf&lt;String&gt;()
+  array.add("11")
+  array.add("12")
+  array.add("13")
+
+  for (element in collection)
+    println(element)
+      
+  var i = 0
+  while (i &lt; collection.size())
+    println(collection[i++])
+      
+  collection.forEach { e -&gt; println(e) }
+  collection.forEach { println(it) }
+</code></pre>
+  </li>
+  <li>when
+    <ul>
+      <li>Any 타입일때 케이스문처럼 사용이 가능한다.<br />
+<code class="highlighter-rouge">kotlin
+fun cases(obj: Any) {
+when (obj) {
+  1 -&gt; print("One")
+  "Hello" -&gt; print("Greeting")
+  is Long -&gt; print("Long")
+  !is String -&gt; print("Not a string")
+  else -&gt; print("Unknown")
+}
+}
+</code></li>
+    </ul>
+  </li>
+  <li>범위(range) 사용하기w
+    <ul>
+      <li>
+        <div class="highlighter-rouge"><pre class="highlight"><code> if (x in 1..y-1)
+   print("OK")
+
+ for (x in 1..5)
+   print(x)
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="section-4">3. 지속적인 공부가 필요함</h4>
+<ul>
+  <li>현재 여기까지 진행하고 조금씩 앱을 만들어 보도록 하겠습니다.</li>
+  <li>코틀린 문서 링크 입니다.</li>
+  <li><a href="http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc">http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc</a></li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
 	  <link>//firebase_remoteconfig</link>
 	  <author>PyeongHo</author>
@@ -604,58 +824,6 @@ dependencies {
 <ul>
   <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
   <li>위 코드에 새로운 폴더를 생성하였습니다.</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기</title>
-	  <link>//retrofit2</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-02-10T00:00:00+00:00</pubDate>
-	  <guid>//retrofit2</guid>
-	  <description><![CDATA[
-	     <h4 id="retrofit2--rxandroid2--mvp---">retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
-
-<h4 id="mvp----">참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
-
-<h4 id="dependencies-----">1. dependencies 추가 기존 내용과 동일 합니다.</h4>
-
-<pre><code class="language-gradle">
-    compile 'com.squareup.okhttp3:okhttp:3.6.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-
-    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    
-</code></pre>
-
-<h4 id="mvp--">2. mvp 패던 링크</h4>
-<ul>
-  <li><a href="http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html">잔디랩의 mvp</a></li>
-  <li><a href="http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/">pluu dev</a></li>
-  <li><a href="http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html">꿈많은 개발자 링크</a></li>
-</ul>
-
-<h4 id="mvp---1">3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
-
-<h4 id="mvp--------">4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
-<ul>
-  <li>mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..</li>
-  <li>다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.</li>
-  <li>mvp가 자리 잡으면 테스트 주도 개발을 도전해 보겠습니다.</li>
-  <li>아래가 코드가 제가 다른 사람걸 참고 만든 전체 코드 입니다.</li>
-  <li>버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.</li>
-</ul>
-
-<h4 id="section">5. 전체 샘플코드</h4>
-<ul>
-  <li>기존 샘플코드에 폴더를 추가 하였습니다.</li>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
 </ul>
 
 	  ]]></description>
