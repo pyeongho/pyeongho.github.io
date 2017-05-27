@@ -36,10 +36,13 @@
   &lt;li&gt;2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.&lt;/li&gt;
   &lt;li&gt;하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://devtalk.kakao.com/t/topic/20684/3&quot;&gt;https://devtalk.kakao.com/t/topic/20684/3&lt;/a&gt;&lt;br /&gt;
-#### 1. 내용&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://devtalk.kakao.com/t/topic/20684/3&quot;&gt;https://devtalk.kakao.com/t/topic/20684/3&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;1. 내용&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;인터벌 함수를 이용해서 hidden 을 계속 확인한다.&lt;/li&gt;
   &lt;li&gt;타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.&lt;/li&gt;
 &lt;/ul&gt;

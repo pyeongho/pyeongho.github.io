@@ -33,19 +33,17 @@
 <ul>
   <li>기존에 사용해보았던 데이터바인딩도 사용가능하지만 새 술은  새 부대에</li>
   <li>build.gradle(app) 에 내용 추가</li>
-</ul>
+  <li>
+    <p>```gradle<br />
+ apply plugin: ‘com.android.application’<br />
+ apply plugin: ‘kotlin-android’<br />
+ apply plugin: ‘kotlin-android-extensions’</p>
 
-<p>```gradle<br />
-  apply plugin: ‘com.android.application’<br />
-  apply plugin: ‘kotlin-android’<br />
-  apply plugin: ‘kotlin-android-extensions’</p>
-
-<p>dependencies {<br />
-      compile “org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version”<br />
-  }<br />
- ```</p>
-
-<ul>
+    <p>dependencies {<br />
+     compile “org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version”<br />
+ }<br />
+  ```</p>
+  </li>
   <li>사용은 xml 에서 정의한 아이디를 넣으면 자동으로 임포트 되어서 사용이 편합니다.
     <ul>
       <li>import kotlinx.android.synthetic.main.fragment_main.view.*</li>
