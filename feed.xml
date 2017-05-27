@@ -8,6 +8,53 @@
     
       
       <item>
+        <title>코틀린 안드로이드 익스텐션</title>
+        
+          <description>&lt;h3 id=&quot;findviewid---&quot;&gt;findviewid 는 안했으면 …&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;코틀린에서도 사용 가능한 방법&lt;/li&gt;
+  &lt;li&gt;코틀린 안드로이드 익스텐션&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//kotlin_android_extensions</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//kotlin_android_extensions</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>웹에서 앱 설치 여부를 확인하자</title>
+        
+          <description>&lt;h3 id=&quot;web------&quot;&gt;Web 에서 앱 설치 여부를 확인 하자&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.&lt;/li&gt;
+  &lt;li&gt;하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://devtalk.kakao.com/t/topic/20684/3&quot;&gt;https://devtalk.kakao.com/t/topic/20684/3&lt;/a&gt;&lt;br /&gt;
+#### 1. 내용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인터벌 함수를 이용해서 hidden 을 계속 확인한다.&lt;/li&gt;
+  &lt;li&gt;타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//app_check</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//app_check</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>코를린 공부를 intellij 에서</title>
         
           <description>&lt;h3 id=&quot;section&quot;&gt;안드로이드 공식 언어인 코틀릭 공부&lt;/h3&gt;
@@ -18,7 +65,7 @@
 
 </description>
         
-        <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io//kotlin_with_intellij</link>
         <guid isPermaLink="true">https://pyeongho.github.io//kotlin_with_intellij</guid>

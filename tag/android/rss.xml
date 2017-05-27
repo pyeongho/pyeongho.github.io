@@ -12,10 +12,129 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>코틀린 안드로이드 익스텐션</title>
+	  <link>//kotlin_android_extensions</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-05-27T00:00:00+00:00</pubDate>
+	  <guid>//kotlin_android_extensions</guid>
+	  <description><![CDATA[
+	     <h3 id="findviewid---">findviewid 는 안했으면 …</h3>
+<ul>
+  <li>코틀린에서도 사용 가능한 방법</li>
+  <li>코틀린 안드로이드 익스텐션</li>
+</ul>
+
+<h4 id="kotlin-android-extensions-">1. Kotlin android extensions 사용하기</h4>
+<ul>
+  <li><a href="http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html">http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html</a></li>
+</ul>
+
+<h4 id="kotlin-android-extensions--1">2. Kotlin android extensions 사용하기</h4>
+<ul>
+  <li>기존에 사용해보았던 데이터바인딩도 사용가능하지만 새 술은  새 부대에</li>
+  <li>build.gradle(app) 에 내용 추가</li>
+</ul>
+
+<p>```gradle<br />
+  apply plugin: ‘com.android.application’<br />
+  apply plugin: ‘kotlin-android’<br />
+  apply plugin: ‘kotlin-android-extensions’</p>
+
+<p>dependencies {<br />
+      compile “org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version”<br />
+  }<br />
+ ```</p>
+
+<ul>
+  <li>사용은 xml 에서 정의한 아이디를 넣으면 자동으로 임포트 되어서 사용이 편합니다.
+    <ul>
+      <li>import kotlinx.android.synthetic.main.fragment_main.view.*</li>
+      <li>view.tv_hello.text = “ABCD”</li>
+    </ul>
+  </li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>웹에서 앱 설치 여부를 확인하자</title>
+	  <link>//app_check</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-05-27T00:00:00+00:00</pubDate>
+	  <guid>//app_check</guid>
+	  <description><![CDATA[
+	     <h3 id="web------">Web 에서 앱 설치 여부를 확인 하자</h3>
+<ul>
+  <li>시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.</li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API">https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API</a></li>
+  <li>2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.</li>
+  <li>하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지
+    <ul>
+      <li><a href="https://devtalk.kakao.com/t/topic/20684/3">https://devtalk.kakao.com/t/topic/20684/3</a><br />
+#### 1. 내용</li>
+    </ul>
+  </li>
+  <li>인터벌 함수를 이용해서 hidden 을 계속 확인한다.</li>
+  <li>타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.</li>
+</ul>
+
+<h4 id="section">2. 문제</h4>
+<ul>
+  <li>단순참고용 정도로 사용하면 좋을거 같습니다.</li>
+  <li>많이 테스트 안해보았습니다.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>document.webkitHidden</td>
+          <td> </td>
+          <td>document.hidden 를 이용해서 설치 여부를 확인 하는 방법 입니다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>크롬에서 지원하는 intent 방식을 사용하면 항상 마켓이 실행되서 체크하기 어려우니 꼭 커스텀 스킴으로 테스트 해야 합니다.</li>
+</ul>
+
+<h4 id="section-1">3. 코드</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">appSchem</span> <span class="o">=</span> <span class="s1">'mayapp://launch?Data=abcdefg'</span><span class="p">;</span>
+    
+<span class="nx">isMyApp</span><span class="p">();</span>
+<span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">appSchem</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">isMyApp</span><span class="p">(){</span>
+  <span class="kd">function</span> <span class="nx">clearTimers</span><span class="p">(){</span>
+        <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">heartbeat</span><span class="p">);</span>
+        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="kd">function</span> <span class="nx">intervalHeartbeat</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">webkitHidden</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">hidden</span><span class="p">){</span>
+            <span class="nx">clearTimers</span><span class="p">();</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'앱이 설치 되어 있습니다.'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">heartbeat</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">intervalHeartbeat</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">deLay</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'앱이 없습니다.'</span><span class="p">);</span>
+    <span class="p">},</span> <span class="nx">deLay</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>코를린 공부를 intellij 에서</title>
 	  <link>//kotlin_with_intellij</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2017-05-22T00:00:00+00:00</pubDate>
+	  <pubDate>2017-05-23T00:00:00+00:00</pubDate>
 	  <guid>//kotlin_with_intellij</guid>
 	  <description><![CDATA[
 	     <h3 id="section">안드로이드 공식 언어인 코틀릭 공부</h3>
@@ -740,90 +859,6 @@ dependencies {
 <ul>
   <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
   <li>AndoroidAnnotation 폴더에 있습니다.</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>dagger2 를 공부</title>
-	  <link>//dagger2</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-02-12T00:00:00+00:00</pubDate>
-	  <guid>//dagger2</guid>
-	  <description><![CDATA[
-	     <h4 id="di-">DI 공부</h4>
-<ul>
-  <li>라이브러리를 이용해서 의존성을  주입하는 방법</li>
-  <li>그냥 플래버를 이용해도 되지만 좀더 많은 사람들이 사용하는 방법</li>
-</ul>
-
-<h4 id="dagger2-">1. dagger2 공부하기</h4>
-<ul>
-  <li>아래 링크를 참고로 따라하기 시작</li>
-  <li><a href="http://pluu.github.io/blog/android/2017/01/12/android-dagger/">http://pluu.github.io/blog/android/2017/01/12/android-dagger/</a></li>
-</ul>
-
-<h4 id="section">2. 위 사이트를 따라하면서 느낀점</h4>
-<ul>
-  <li>가장 기본적인 사용법은 알수가 있음</li>
-  <li>만들어본 샘플은 개 이름을 가지고 오는 가장 간단한 형태였고 이를 주입시키는 내용 이었습니다.</li>
-  <li>따라하지는 못했지만 빌드환경을 변경해서 클래스를 변경가능하다.</li>
-  <li>테스트시 편한점이 생긴다.</li>
-  <li>앞으로 샘플들에 포함된 dagger2 가 있으면 왜 사용해야 하는지 이유를 확실히 하겠습니다.</li>
-</ul>
-
-<h4 id="dagger2--">3. 매우 간단한 dagger2 샘플 입니다.</h4>
-<ul>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-  <li>dagger2 폴더에 있습니다.</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>mvp 패턴을 공부하자</title>
-	  <link>//mvp</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-02-11T00:00:00+00:00</pubDate>
-	  <guid>//mvp</guid>
-	  <description><![CDATA[
-	     <h3 id="mvp----">안드로이드에 mvp를 적극적으로 추가하기 위한 공부중</h3>
-
-<h4 id="section">1. 첫번쩨 공부</h4>
-<ul>
-  <li><a href="https://medium.com/@jsuch2362/adapter-누구냐-넌-data-view-2db7eff11c20#.779qihsc4">정승욱님 블로그 게시글 링크</a></li>
-  <li>mvp 적용해야겠다고 생각하고 기본적인 샘플을 만들어 볼려고 이것 저것 시도 하였습니다.</li>
-  <li>앱을 만들면서 필요 하다고 느껴진 통신을 rxjava2 와 mvp 를 적용 하면 기본적인건 모두 적용 가능하다고 생각</li>
-  <li>그래서 네이버 기계 번역을 여기 저기 내용을 짜깁기 해서 만들어 보았습니다.</li>
-  <li>저렇게 샘플을 기반으로 패턴을 이용해서 지속적으로 사용하려 했습니다.</li>
-  <li>블로그를 여기저기 돌아다니다 보면서 좀더 공부 해야 겠다는 생각이 들어서 공부를 시작 합니다.</li>
-</ul>
-
-<h4 id="section-1">2. 정승욱님 블로그 내용 공부</h4>
-<ul>
-  <li>안드로이드 앱 개발의 리스트뷰</li>
-  <li>복사 내용</li>
-  <li>Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.</li>
-  <li>View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행. 또는 UI 처리와 이벤트를 프리젠터로 넘김</li>
-  <li>Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함.</li>
-  <li>Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행, 또는 통신같은 데이터 처리</li>
-  <li><a href="https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample">https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample</a></li>
-  <li>예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.</li>
-  <li>Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다.</li>
-</ul>
-
-<h4 id="section-2">3. 좀더 자세히 정리된 블로그로 이동</h4>
-<ul>
-  <li><a href="http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html">꿈많은 개발자가 되자 블로그 링크</a></li>
-  <li><a href="https://github.com/antoniolg/androidmvp">내가 좋아하는 스타일의 mvp </a></li>
-</ul>
-
-<h4 id="mvp-">4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플</h4>
-<ul>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-  <li>위 코드에 새로운 폴더를 생성하였습니다.</li>
 </ul>
 
 	  ]]></description>
