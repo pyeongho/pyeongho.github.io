@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>Dagger2 기초 부터</title>
+        
+          <description>&lt;h3 id=&quot;dagger2--&quot;&gt;Dagger2 활용을 위하여&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pluu.github.io/blog/android/2017/01/13/android-dagger/&quot;&gt;http://pluu.github.io/blog/android/2017/01/13/android-dagger/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//re-dagger2</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//re-dagger2</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>코틀린 안드로이드 익스텐션</title>
         
           <description>&lt;h3 id=&quot;findviewid---&quot;&gt;findviewid 는 안했으면 …&lt;/h3&gt;

@@ -12,6 +12,206 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Dagger2 기초 부터</title>
+	  <link>//re-dagger2</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-05-30T00:00:00+00:00</pubDate>
+	  <guid>//re-dagger2</guid>
+	  <description><![CDATA[
+	     <h3 id="dagger2--">Dagger2 활용을 위하여</h3>
+<ul>
+  <li>기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다.</li>
+  <li><a href="http://pluu.github.io/blog/android/2017/01/13/android-dagger/">http://pluu.github.io/blog/android/2017/01/13/android-dagger/</a></li>
+</ul>
+
+<h4 id="section">0. 내가 생각하는 시나리오</h4>
+<ul>
+  <li>기능이 있거나 구조체로 사용하는 클래스를 만든다.</li>
+  <li>어노테이션을 이용해서 원하는곳에서 사용 가능하게 한다.</li>
+  <li>싱글톤으로 구현된 스태틱 클래스를 들을 편하게 가져다 쓰는 느낌으로</li>
+</ul>
+
+<h4 id="section-1">1. 그래들 설정</h4>
+<ul>
+  <li>다른곳은 너무 어렵게 되어 있습니다.</li>
+  <li>
+    <pre><code class="language-gradle">  compile 'com.google.dagger:dagger:2.7'
+  annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
+</code></pre>
+  </li>
+</ul>
+
+<h4 id="section-2">2. 따라하기</h4>
+<ul>
+  <li>
+    <p>개 이름이 있는 클래스를 생성한다.<br />
+  <code class="highlighter-rouge">java
+public class Dog {
+  public String getName() {
+      return "멈뭄미";
+  }
+}
+ </code></p>
+  </li>
+  <li>개 클래스를 제공할 모듈을 만든다.</li>
+  <li>개 클래스를 반환한 함수를 메소드를 만들고 어노테이션으로 @Provides 추가 한다.</li>
+  <li>클래스에는 @Module 을 어노테이션을 입력한다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">java
+  @Module
+  public class SampleModule {
+      @Provides
+      Dog provideDog() {
+          return new Dog();
+      }
+  }
+ </code></p>
+
+<ul>
+  <li>모듈을 사용할 인터페이스를 만든다.</li>
+  <li>
+    <p>inject 메소드를 만들어야 한다.<br />
+  <code class="highlighter-rouge">java
+  @Component(modules = SampleModule.class)
+  public interface SampleComponent {
+  void inject(MainActivity activity);
+  }
+ </code></p>
+  </li>
+  <li>액티비티에 의존성을 주입시켜 개 이름을 출력해 보자</li>
+  <li>아래 내용을 진행하기 전에 make 를 한번 진행해야 DaggerSampleComponent 를 사용할 수 있습니다.</li>
+  <li>new Dog 를 안했지만 “멈뭄미” 를 출력 가능합니다.</li>
+  <li>즉 Dog 를 주입 시켰습니다.</li>
+  <li>
+    <p>가장 기본 적인 필드 인젝션 입니다.<br />
+  ```java<br />
+  public class MainActivity extends AppCompatActivity {<br />
+// 인스턴스가 주입되는 필드<br />
+@Inject<br />
+Dog dog;</p>
+
+    <p>@Override<br />
+protected void onCreate(Bundle savedInstanceState) {<br />
+    super.onCreate(savedInstanceState);<br />
+    setContentView(R.layout.activity_main);</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>// SampleComponent로부터 DaggerSampleComponent 가 자동 생성되므로, 그것을 사용하여 SampleComponent를 만듭니다.
+SampleComponent component = DaggerSampleComponent.builder()
+        // 사용하는 Module 인스턴스를 지정합니다.
+        // (여기서 deprecated 될 수 있지만, 일단 모든 코드를 작성하고 빌드하면 사라질 것입니다)
+        .sampleModule(new SampleModule())
+        .build();
+
+// 의존 주입을 실행합니다
+component.inject(this);
+
+String name = dog.getName();
+
+Log.d("MainActivity", name);
+</code></pre>
+    </div>
+
+    <p>}<br />
+  }<br />
+  ```</p>
+  </li>
+  <li>생성자 인젝션</li>
+  <li>
+    <p>생성자에서 개 클래스를 입력 받기 위해서 아래 처럼 클래스를 작성합니다.<br />
+  ```java<br />
+  public class Owner {</p>
+
+    <p>private Dog dog;</p>
+
+    <p>@Inject<br />
+public Owner(Dog dog) {<br />
+    this.dog = dog;<br />
+}</p>
+
+    <p>public String getPetName() {<br />
+    return dog.getName();<br />
+}<br />
+  }<br />
+  ```</p>
+  </li>
+  <li>MainActivity 에서 변경 내용은 아래 처럼 인젝트 내용만 변경해 주면 됩니다.<br />
+  <code class="highlighter-rouge">java
+   @Inject
+   Owner owner;
+ </code></li>
+</ul>
+
+<h4 id="section-3">3. 인터페이스를 이용하여 좀더 편하게 주입을 변경하기</h4>
+<ul>
+  <li>지금까지 사용한 것은 구현 클래스였지만, 다음은 interface를 사용하도록 변경합니다.<br />
+  ```java<br />
+  public interface Pet {<br />
+String getName();<br />
+  }</li>
+</ul>
+
+<p>public class Dog implements Pet {</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@Override
+public String getName() {
+    return "포치";
+}   }
+</code></pre>
+</div>
+
+<p>@Module<br />
+  public class SampleModule {</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@Provides
+Pet providePet() {
+    return new Dog();
+}   }
+</code></pre>
+</div>
+
+<p>public class Owner {</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>private Pet pet;
+
+@Inject
+public Owner(Pet pet) {
+    this.pet = pet;
+}
+
+public String getPetName() {
+    return pet.getName();
+}   }   ```   - 구현 클래스가 아닌 인터페이스로만 의존성을 변경하였습니다.   - 여러가지 컴포넌트를 이용해서 주입을 변경해도 되지만 그래들에서 제공하는 플래버를 이용해 보겠습니다.
+</code></pre>
+</div>
+
+<h4 id="build-variants----">4. Build Variants 를 이용해서 주입을 변경해보자</h4>
+<ul>
+  <li>테스트 또는 저장소 변경등을 쉽게 할 수 있다.</li>
+  <li>그래들 변경 <br />
+  <code class="highlighter-rouge">gradle
+flavorDimensions "mode"
+productFlavors {
+    dog {
+        dimension "mode"
+    }
+    cat {
+        dimension "mode"
+    }
+}
+ </code></li>
+  <li>src 폴더 아래 dog/java ,cat/java 폴더 생성(패키지 이름까지 동일하게 처리 해야 한다.)</li>
+  <li>View → Tool Windows → Build Variants에서 추가된 내용을 확인 할 수 있다.</li>
+  <li>main 폴더의 sampleModule 를 제거 한다.</li>
+  <li>cat, dog 폴더에 각각 추가한다.</li>
+  <li>플래버 변경 만으로 원하는 인터페이스 모듈 주입 가능합니다.</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>dagger2 를 공부</title>
 	  <link>//dagger2</link>
 	  <author>PyeongHo</author>
