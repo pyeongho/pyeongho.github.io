@@ -8,6 +8,28 @@
     
       
       <item>
+        <title>로그를 편하게 사용하자</title>
+        
+          <description>&lt;h3 id=&quot;log------&quot;&gt;Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Log -&amp;gt; log 로 변경해서 대문자를 사용안한다.&lt;/li&gt;
+  &lt;li&gt;TAG 입력이 귀찮아서 제거함&lt;/li&gt;
+  &lt;li&gt;파일이름과 라인 함수 이름을 출력 하도록 함&lt;/li&gt;
+  &lt;li&gt;릴리즈에서는 로그가 출력 안되도록 하였습니다.&lt;/li&gt;
+  &lt;li&gt;그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l()&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//log</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//log</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Dagger2 기초 부터</title>
         
           <description>&lt;h3 id=&quot;dagger2--&quot;&gt;Dagger2 활용을 위하여&lt;/h3&gt;

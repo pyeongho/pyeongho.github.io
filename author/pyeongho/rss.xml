@@ -12,6 +12,28 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>로그를 편하게 사용하자</title>
+	  <link>//log</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-06-06T00:00:00+00:00</pubDate>
+	  <guid>//log</guid>
+	  <description><![CDATA[
+	     <h3 id="log------">Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.</h3>
+<ul>
+  <li>Log -&gt; log 로 변경해서 대문자를 사용안한다.</li>
+  <li>TAG 입력이 귀찮아서 제거함</li>
+  <li>파일이름과 라인 함수 이름을 출력 하도록 함</li>
+  <li>릴리즈에서는 로그가 출력 안되도록 하였습니다.</li>
+  <li>그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l()</li>
+</ul>
+
+<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Dagger2 기초 부터</title>
 	  <link>//re-dagger2</link>
 	  <author>PyeongHo</author>
@@ -36,8 +58,10 @@
   <li>
     <p>다른곳은 너무 어렵게 되어 있습니다.</p>
 
-    <pre><code class="language-gradle">  compile 'com.google.dagger:dagger:2.7'
+    <pre><code class="language-gradle">
+  compile 'com.google.dagger:dagger:2.7'
   annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
+      
 </code></pre>
   </li>
 </ul>
@@ -47,13 +71,17 @@
   <li>개 이름이 있는 클래스를 생성한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-    public class Dog {
-      public String getName() {
-          return "멈뭄미";
-      }
-    }
- </code></p>
+<p>```java</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Dog {
+  public String getName() {
+      return "멈뭄미";
+  }
+}
+</code></pre>
+</div>
+
+<p>```</p>
 
 <ul>
   <li>개 클래스를 제공할 모듈을 만든다.</li>
@@ -61,27 +89,31 @@
   <li>클래스에는 @Module 을 어노테이션을 입력한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-  @Module
-  public class SampleModule {
-      @Provides
-      Dog provideDog() {
-          return new Dog();
-      }
-  }
- </code></p>
+<p>```java</p>
+
+<p>@Module<br />
+  public class SampleModule {<br />
+      @Provides<br />
+      Dog provideDog() {<br />
+          return new Dog();<br />
+      }<br />
+  }</p>
+
+<p>```</p>
 
 <ul>
   <li>모듈을 사용할 인터페이스를 만든다.</li>
   <li>inject 메소드를 만들어야 한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-  @Component(modules = SampleModule.class)
-  public interface SampleComponent {
-      void inject(MainActivity activity);
-  }
- </code></p>
+<p>```java</p>
+
+<p>@Component(modules = SampleModule.class)<br />
+  public interface SampleComponent {<br />
+      void inject(MainActivity activity);<br />
+  }</p>
+
+<p>```</p>
 
 <ul>
   <li>액티비티에 의존성을 주입시켜 개 이름을 출력해 보자</li>
@@ -91,8 +123,9 @@
   <li>가장 기본 적인 필드 인젝션 입니다.</li>
 </ul>
 
-<p>```java<br />
-  public class MainActivity extends AppCompatActivity {<br />
+<p>```java</p>
+
+<p>public class MainActivity extends AppCompatActivity {<br />
     // 인스턴스가 주입되는 필드<br />
     @Inject<br />
     Dog dog;</p>
@@ -116,17 +149,20 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Log.d("MainActivity", name);
 
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>생성자 인젝션</li>
   <li>생성자에서 개 클래스를 입력 받기 위해서 아래 처럼 클래스를 작성합니다.</li>
 </ul>
 
-<p>```java<br />
-  public class Owner {</p>
+<p>```java</p>
+
+<p>public class Owner {</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>private Dog dog;
 
@@ -137,26 +173,31 @@ public Owner(Dog dog) {
 
 public String getPetName() {
     return dog.getName();
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>MainActivity 에서 변경 내용은 아래 처럼 인젝트 내용만 변경해 주면 됩니다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-   @Inject
-   Owner owner;
- </code></p>
+<p>```java</p>
+
+<p>@Inject<br />
+   Owner owner;</p>
+
+<p>```</p>
 
 <h4 id="section-3">3. 인터페이스를 이용하여 좀더 편하게 주입을 변경하기</h4>
 <ul>
   <li>지금까지 사용한 것은 구현 클래스였지만, 다음은 interface를 사용하도록 변경합니다.</li>
 </ul>
 
-<p>```java<br />
-  public interface Pet {<br />
+<p>```java</p>
+
+<p>public interface Pet {<br />
     String getName();<br />
   }</p>
 
@@ -190,9 +231,11 @@ public Owner(Pet pet) {
 
 public String getPetName() {
     return pet.getName();
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>구현 클래스가 아닌 인터페이스로만 의존성을 변경하였습니다.</li>
@@ -205,17 +248,21 @@ public String getPetName() {
   <li>그래들 변경</li>
 </ul>
 
-<p><code class="highlighter-rouge">gradle
-    flavorDimensions "mode"
-    productFlavors {
-        dog {
-            dimension "mode"
-        }
-        cat {
-            dimension "mode"
-        }
+<p>```gradle</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>flavorDimensions "mode"
+productFlavors {
+    dog {
+        dimension "mode"
     }
- </code></p>
+    cat {
+        dimension "mode"
+    }
+}
+</code></pre>
+</div>
+
+<p>```</p>
 
 <ul>
   <li>src 폴더 아래 dog/java ,cat/java 폴더 생성(패키지 이름까지 동일하게 처리 해야 한다.)</li>
@@ -949,53 +996,6 @@ compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
 
 <h4 id="section-3">3. 드랍박스 이미지는 사파리에서 잘 나왔으면 좋겠습니다.</h4>
 <p><img src="http://dl.dropbox.com/s/s5slt9ilsflggrv/201704301038.png" alt="드랍박스공유테스트" /></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Github Page 스태틱으로 변경하기</title>
-	  <link>//github-static</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-04-29T20:00:00+00:00</pubDate>
-	  <guid>//github-static</guid>
-	  <description><![CDATA[
-	     <h4 id="section">테마를 변경하면서 스택으로 변경하기로 결정</h4>
-<ul>
-  <li>테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정</li>
-  <li>목표 설정
-    <ul>
-      <li>저장소 위치를 비트버켓으로 이동한다.</li>
-      <li>지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="section-1">1. 우선 저장소 옮기는 건 쉬움</h4>
-<ul>
-  <li>git remote add 태그 [저장소 위치]</li>
-  <li>추가된 저장소로 푸시</li>
-</ul>
-
-<h4 id="section-2">2. 지킬 컴파일 환경 구성</h4>
-<ul>
-  <li>테마 변경중이라 글을 못섰지만</li>
-  <li>sudo jekyll serve 를 하기위해서 이거저것 해서 성공</li>
-</ul>
-
-<h4 id="section-3">3. 기존 파일을 모두삭제</h4>
-<ul>
-  <li>스태틱 파일이 정상적으로 생기는걸 확인하고 해당 파일로 전체 파일 변경</li>
-  <li>모두 정상 동작</li>
-</ul>
-
-<h4 id="section-4">4. 지금 쓰는건 테스트 하기위함</h4>
-<ul>
-  <li>수동으로 비트버켓에 푸시</li>
-  <li>jekyll build</li>
-  <li>결과물을 pyeongho.github.io 로 푸시</li>
-</ul>
-
 
 	  ]]></description>
 	</item>

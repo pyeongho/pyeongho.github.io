@@ -12,6 +12,28 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>로그를 편하게 사용하자</title>
+	  <link>//log</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-06-06T00:00:00+00:00</pubDate>
+	  <guid>//log</guid>
+	  <description><![CDATA[
+	     <h3 id="log------">Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.</h3>
+<ul>
+  <li>Log -&gt; log 로 변경해서 대문자를 사용안한다.</li>
+  <li>TAG 입력이 귀찮아서 제거함</li>
+  <li>파일이름과 라인 함수 이름을 출력 하도록 함</li>
+  <li>릴리즈에서는 로그가 출력 안되도록 하였습니다.</li>
+  <li>그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l()</li>
+</ul>
+
+<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Dagger2 기초 부터</title>
 	  <link>//re-dagger2</link>
 	  <author>PyeongHo</author>
@@ -36,8 +58,10 @@
   <li>
     <p>다른곳은 너무 어렵게 되어 있습니다.</p>
 
-    <pre><code class="language-gradle">  compile 'com.google.dagger:dagger:2.7'
+    <pre><code class="language-gradle">
+  compile 'com.google.dagger:dagger:2.7'
   annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
+      
 </code></pre>
   </li>
 </ul>
@@ -47,13 +71,17 @@
   <li>개 이름이 있는 클래스를 생성한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-    public class Dog {
-      public String getName() {
-          return "멈뭄미";
-      }
-    }
- </code></p>
+<p>```java</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Dog {
+  public String getName() {
+      return "멈뭄미";
+  }
+}
+</code></pre>
+</div>
+
+<p>```</p>
 
 <ul>
   <li>개 클래스를 제공할 모듈을 만든다.</li>
@@ -61,27 +89,31 @@
   <li>클래스에는 @Module 을 어노테이션을 입력한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-  @Module
-  public class SampleModule {
-      @Provides
-      Dog provideDog() {
-          return new Dog();
-      }
-  }
- </code></p>
+<p>```java</p>
+
+<p>@Module<br />
+  public class SampleModule {<br />
+      @Provides<br />
+      Dog provideDog() {<br />
+          return new Dog();<br />
+      }<br />
+  }</p>
+
+<p>```</p>
 
 <ul>
   <li>모듈을 사용할 인터페이스를 만든다.</li>
   <li>inject 메소드를 만들어야 한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-  @Component(modules = SampleModule.class)
-  public interface SampleComponent {
-      void inject(MainActivity activity);
-  }
- </code></p>
+<p>```java</p>
+
+<p>@Component(modules = SampleModule.class)<br />
+  public interface SampleComponent {<br />
+      void inject(MainActivity activity);<br />
+  }</p>
+
+<p>```</p>
 
 <ul>
   <li>액티비티에 의존성을 주입시켜 개 이름을 출력해 보자</li>
@@ -91,8 +123,9 @@
   <li>가장 기본 적인 필드 인젝션 입니다.</li>
 </ul>
 
-<p>```java<br />
-  public class MainActivity extends AppCompatActivity {<br />
+<p>```java</p>
+
+<p>public class MainActivity extends AppCompatActivity {<br />
     // 인스턴스가 주입되는 필드<br />
     @Inject<br />
     Dog dog;</p>
@@ -116,17 +149,20 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Log.d("MainActivity", name);
 
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>생성자 인젝션</li>
   <li>생성자에서 개 클래스를 입력 받기 위해서 아래 처럼 클래스를 작성합니다.</li>
 </ul>
 
-<p>```java<br />
-  public class Owner {</p>
+<p>```java</p>
+
+<p>public class Owner {</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>private Dog dog;
 
@@ -137,26 +173,31 @@ public Owner(Dog dog) {
 
 public String getPetName() {
     return dog.getName();
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>MainActivity 에서 변경 내용은 아래 처럼 인젝트 내용만 변경해 주면 됩니다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-   @Inject
-   Owner owner;
- </code></p>
+<p>```java</p>
+
+<p>@Inject<br />
+   Owner owner;</p>
+
+<p>```</p>
 
 <h4 id="section-3">3. 인터페이스를 이용하여 좀더 편하게 주입을 변경하기</h4>
 <ul>
   <li>지금까지 사용한 것은 구현 클래스였지만, 다음은 interface를 사용하도록 변경합니다.</li>
 </ul>
 
-<p>```java<br />
-  public interface Pet {<br />
+<p>```java</p>
+
+<p>public interface Pet {<br />
     String getName();<br />
   }</p>
 
@@ -190,9 +231,11 @@ public Owner(Pet pet) {
 
 public String getPetName() {
     return pet.getName();
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>구현 클래스가 아닌 인터페이스로만 의존성을 변경하였습니다.</li>
@@ -205,17 +248,21 @@ public String getPetName() {
   <li>그래들 변경</li>
 </ul>
 
-<p><code class="highlighter-rouge">gradle
-    flavorDimensions "mode"
-    productFlavors {
-        dog {
-            dimension "mode"
-        }
-        cat {
-            dimension "mode"
-        }
+<p>```gradle</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>flavorDimensions "mode"
+productFlavors {
+    dog {
+        dimension "mode"
     }
- </code></p>
+    cat {
+        dimension "mode"
+    }
+}
+</code></pre>
+</div>
+
+<p>```</p>
 
 <ul>
   <li>src 폴더 아래 dog/java ,cat/java 폴더 생성(패키지 이름까지 동일하게 처리 해야 한다.)</li>
@@ -968,60 +1015,6 @@ There is no plans to support a redirect without a user gesture.</p>
   <script src="https://gist.github.com/pyeongho/af47412cd50a3579484f0d3db285cd73.js"></script></li>
 </ul>
 
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기</title>
-	  <link>//retrofit2-generic</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-02-19T00:00:00+00:00</pubDate>
-	  <guid>//retrofit2-generic</guid>
-	  <description><![CDATA[
-	     <h3 id="basepresnter-addsubscription---">최종코드의 BasePresnter의 addSubscription를 부분만 확인하면 됩니다.</h3>
-<ul>
-  <li>API가 추가 될때마다 계속 추가해야하나?</li>
-</ul>
-
-<h4 id="api----">1. api 추가되면 어떻게 해야 하나</h4>
-<ul>
-  <li>기존 코드에서 기계번역 1개의 api만 사용 하고 있습니다.</li>
-  <li>만약 api가 계속 추가 되면 응답값이 계속 바뀌면 api 콜백을 계속 추가 해야 하나?</li>
-  <li>addSubscription를 계속 만들어야 하나 고민을 시작함</li>
-  <li>그래서 간단하게 제네릭 타입의 클래서를 만들고 api콜백과 addSubscription는 하나만 사용하는 방법</li>
-  <li>호출 할때만 제네릭에(템플릿이라고 해야 하나!@) 메소드를 호출할때, 콜백을 받을때 원하는 클래스 타입으로 받고 싶었습니다.</li>
-  <li>컴파일 에러 안나게 해서 코드를 추가 했지만,,, 값이 들어 오지 않았습니다.</li>
-  <li>git 히스토리에 남아 있습니다.</li>
-  <li>그래서 다시 시작 하게 되었습니다.</li>
-  <li>코드커밋을 잘못해서 기본 객체로 받는것도 올라가 있습니다.(withoutbutter)</li>
-</ul>
-
-<h4 id="section">2. 어떻게 접근할것인가?</h4>
-<ul>
-  <li>현재 문제점 : addSubscription 에 타입이 정해져 있어서 추가하기 귀찮게 되어 있다.</li>
-  <li>API콜백은 원하는 클래스로 사용가능하고 api 인터페이스 역시 샘플처럼 있고 계속 추가 하면 될거라고 생각</li>
-</ul>
-
-<h4 id="section-1">3. 공부링크</h4>
-<ul>
-  <li><a href="https://github.com/amitshekhariitbhu/RxJava2-Android-Samples">https://github.com/amitshekhariitbhu/RxJava2-Android-Samples</a></li>
-  <li><a href="https://github.com/delicious-mvp/delicious">https://github.com/delicious-mvp/delicious</a></li>
-  <li>rxjava1 이지만 공부할게 많다.</li>
-</ul>
-
-<h4 id="section-2">4. 처음 부터 잘못 접근</h4>
-<ul>
-  <li>제넥릭 사용법을 잘 몰라서 이상한짓을 한거임</li>
-  <li>addSubscription 에서 제네릭으로 받으면 됩니다.</li>
-  <li>RxJava2 map 과 필터 공부로 깔끔하게 마무리</li>
-</ul>
-
-<h4 id="section-3">5. 최종 결과를 다운 받기에 폴더 하나 더 만들었습니다.</h4>
-<ul>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-  <li>폴더이름 Retorfit2T</li>
-</ul>
 
 	  ]]></description>
 	</item>

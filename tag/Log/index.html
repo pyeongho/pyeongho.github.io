@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="home-template nav-closed">
+<body class="tag-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -68,7 +68,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
         <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
@@ -89,12 +89,14 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
+
+
+<!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="background-image: url(/assets/images/cover1.jpg) ">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="background-image: url(/assets/images/cover2.jpg) ">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -103,11 +105,14 @@
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">PyeongHo Factory</h1>
-            <h2 class="page-description">즐거운 공장</h2>
+            <h1 class="page-title">Log</h1>
+            <h2 class="page-description">
+            
+			    A 1-post collection
+            
+            </h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
 <!-- The main content area on the homepage -->
@@ -119,9 +124,7 @@
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 11 </span>
-     
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
         
@@ -157,145 +160,18 @@
         </footer>
     </article>
     
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/re-dagger2">Dagger2 기초 부터</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Dagger2 활용을 위하여 기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다. http://pluu.github.io/blog/android/2017/01/13/android-dagger/ 0. 내가 생각하는 시나리오 기능이 있거나 구조체로 사용하는 클래스를 만든다. 어노테이션을 이용해서 원하는곳에서 사용 가능하게... <a class="read-more" href="/re-dagger2">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/dagger2'>Dagger2</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-05-30">30 May 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/kotlin_android_extensions">코틀린 안드로이드 익스텐션</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>findviewid 는 안했으면 … 코틀린에서도 사용 가능한 방법 코틀린 안드로이드 익스텐션 1. Kotlin android extensions 사용하기 http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html 2. Kotlin android extensions 사용하기 기존에 사용해보았던 데이터바인딩도 사용가능하지만... <a class="read-more" href="/kotlin_android_extensions">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/extensions'>Extensions</a>,
-                       
-                
-                    
-                       <a href='/tag/kotlin'>Kotlin</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-05-27">27 May 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/app_check">웹에서 앱 설치 여부를 확인하자</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Web 에서 앱 설치 여부를 확인 하자 시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다. https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API 2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다. 하지만... <a class="read-more" href="/app_check">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/webkitHidden'>Webkithidden</a>,
-                       
-                
-                    
-                       <a href='/tag/hidden'>Hidden</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-05-27">27 May 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/kotlin_with_intellij">코를린 공부를 intellij 에서</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>안드로이드 공식 언어인 코틀릭 공부 안드로이드 스튜디오가 아닌 인텔리제이 에서 공부 기본 적인 언어 공부후 안드로이드 스튜디오에서 진행 0. 목적 기본적인 문법및 사용법을 익혀 보자 -[http://thdev.tech/categories.html#Kotlin-ref]... <a class="read-more" href="/kotlin_with_intellij">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/intellij'>Intellij</a>,
-                       
-                
-                    
-                       <a href='/tag/kotlin'>Kotlin</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-05-23">23 May 2017</time>
-        </footer>
-    </article>
-    
 
     <!-- Previous/next page links - displayed on every page -->
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 11 </span>
-     
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
     
 
 
 </main>
-
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>

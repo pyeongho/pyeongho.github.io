@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//log</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//re-dagger2</loc>
     </url>
     
@@ -333,6 +337,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//author/pyeongho/page10/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//author/pyeongho/page11/</loc>
     </url>
     
     
@@ -1324,6 +1336,22 @@
     
     
     <url>
+        <loc>https://pyeongho.github.io//tag/Log/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/Log/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>https://pyeongho.github.io//page2/</loc>
     </url>
     
@@ -1389,6 +1417,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//page10/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//page11/</loc>
     </url>
     
     

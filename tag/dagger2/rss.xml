@@ -36,8 +36,10 @@
   <li>
     <p>다른곳은 너무 어렵게 되어 있습니다.</p>
 
-    <pre><code class="language-gradle">  compile 'com.google.dagger:dagger:2.7'
+    <pre><code class="language-gradle">
+  compile 'com.google.dagger:dagger:2.7'
   annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
+      
 </code></pre>
   </li>
 </ul>
@@ -47,13 +49,17 @@
   <li>개 이름이 있는 클래스를 생성한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-    public class Dog {
-      public String getName() {
-          return "멈뭄미";
-      }
-    }
- </code></p>
+<p>```java</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Dog {
+  public String getName() {
+      return "멈뭄미";
+  }
+}
+</code></pre>
+</div>
+
+<p>```</p>
 
 <ul>
   <li>개 클래스를 제공할 모듈을 만든다.</li>
@@ -61,27 +67,31 @@
   <li>클래스에는 @Module 을 어노테이션을 입력한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-  @Module
-  public class SampleModule {
-      @Provides
-      Dog provideDog() {
-          return new Dog();
-      }
-  }
- </code></p>
+<p>```java</p>
+
+<p>@Module<br />
+  public class SampleModule {<br />
+      @Provides<br />
+      Dog provideDog() {<br />
+          return new Dog();<br />
+      }<br />
+  }</p>
+
+<p>```</p>
 
 <ul>
   <li>모듈을 사용할 인터페이스를 만든다.</li>
   <li>inject 메소드를 만들어야 한다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-  @Component(modules = SampleModule.class)
-  public interface SampleComponent {
-      void inject(MainActivity activity);
-  }
- </code></p>
+<p>```java</p>
+
+<p>@Component(modules = SampleModule.class)<br />
+  public interface SampleComponent {<br />
+      void inject(MainActivity activity);<br />
+  }</p>
+
+<p>```</p>
 
 <ul>
   <li>액티비티에 의존성을 주입시켜 개 이름을 출력해 보자</li>
@@ -91,8 +101,9 @@
   <li>가장 기본 적인 필드 인젝션 입니다.</li>
 </ul>
 
-<p>```java<br />
-  public class MainActivity extends AppCompatActivity {<br />
+<p>```java</p>
+
+<p>public class MainActivity extends AppCompatActivity {<br />
     // 인스턴스가 주입되는 필드<br />
     @Inject<br />
     Dog dog;</p>
@@ -116,17 +127,20 @@ protected void onCreate(Bundle savedInstanceState) {
 
     Log.d("MainActivity", name);
 
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>생성자 인젝션</li>
   <li>생성자에서 개 클래스를 입력 받기 위해서 아래 처럼 클래스를 작성합니다.</li>
 </ul>
 
-<p>```java<br />
-  public class Owner {</p>
+<p>```java</p>
+
+<p>public class Owner {</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>private Dog dog;
 
@@ -137,26 +151,31 @@ public Owner(Dog dog) {
 
 public String getPetName() {
     return dog.getName();
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>MainActivity 에서 변경 내용은 아래 처럼 인젝트 내용만 변경해 주면 됩니다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-   @Inject
-   Owner owner;
- </code></p>
+<p>```java</p>
+
+<p>@Inject<br />
+   Owner owner;</p>
+
+<p>```</p>
 
 <h4 id="section-3">3. 인터페이스를 이용하여 좀더 편하게 주입을 변경하기</h4>
 <ul>
   <li>지금까지 사용한 것은 구현 클래스였지만, 다음은 interface를 사용하도록 변경합니다.</li>
 </ul>
 
-<p>```java<br />
-  public interface Pet {<br />
+<p>```java</p>
+
+<p>public interface Pet {<br />
     String getName();<br />
   }</p>
 
@@ -190,9 +209,11 @@ public Owner(Pet pet) {
 
 public String getPetName() {
     return pet.getName();
-}   }   ```
+}   }
 </code></pre>
 </div>
+
+<p>```</p>
 
 <ul>
   <li>구현 클래스가 아닌 인터페이스로만 의존성을 변경하였습니다.</li>
@@ -205,17 +226,21 @@ public String getPetName() {
   <li>그래들 변경</li>
 </ul>
 
-<p><code class="highlighter-rouge">gradle
-    flavorDimensions "mode"
-    productFlavors {
-        dog {
-            dimension "mode"
-        }
-        cat {
-            dimension "mode"
-        }
+<p>```gradle</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>flavorDimensions "mode"
+productFlavors {
+    dog {
+        dimension "mode"
     }
- </code></p>
+    cat {
+        dimension "mode"
+    }
+}
+</code></pre>
+</div>
+
+<p>```</p>
 
 <ul>
   <li>src 폴더 아래 dog/java ,cat/java 폴더 생성(패키지 이름까지 동일하게 처리 해야 한다.)</li>
