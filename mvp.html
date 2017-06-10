@@ -133,41 +133,51 @@
 
         <section class="post-content">
             
-            <h3 id="mvp----">안드로이드에 mvp를 적극적으로 추가하기 위한 공부중</h3>
+            <h3>안드로이드에 mvp를 적극적으로 추가하기 위한 공부중</h3>
 
-<h4 id="section">1. 첫번쩨 공부</h4>
+<h4>1. 첫번쩨 공부</h4>
+
 <ul>
-  <li><a href="https://medium.com/@jsuch2362/adapter-누구냐-넌-data-view-2db7eff11c20#.779qihsc4">정승욱님 블로그 게시글 링크</a></li>
-  <li>mvp 적용해야겠다고 생각하고 기본적인 샘플을 만들어 볼려고 이것 저것 시도 하였습니다.</li>
-  <li>앱을 만들면서 필요 하다고 느껴진 통신을 rxjava2 와 mvp 를 적용 하면 기본적인건 모두 적용 가능하다고 생각</li>
-  <li>그래서 네이버 기계 번역을 여기 저기 내용을 짜깁기 해서 만들어 보았습니다.</li>
-  <li>저렇게 샘플을 기반으로 패턴을 이용해서 지속적으로 사용하려 했습니다.</li>
-  <li>블로그를 여기저기 돌아다니다 보면서 좀더 공부 해야 겠다는 생각이 들어서 공부를 시작 합니다.</li>
+<li><a href="https://medium.com/@jsuch2362/adapter-%EB%88%84%EA%B5%AC%EB%83%90-%EB%84%8C-data-view-2db7eff11c20#.779qihsc4">정승욱님 블로그 게시글 링크</a></li>
+<li>mvp 적용해야겠다고 생각하고 기본적인 샘플을 만들어 볼려고 이것 저것 시도 하였습니다.</li>
+<li>앱을 만들면서 필요 하다고 느껴진 통신을 rxjava2 와 mvp 를 적용 하면 기본적인건 모두 적용 가능하다고 생각</li>
+<li>그래서 네이버 기계 번역을 여기 저기 내용을 짜깁기 해서 만들어 보았습니다.</li>
+<li>저렇게 샘플을 기반으로 패턴을 이용해서 지속적으로 사용하려 했습니다.</li>
+<li>블로그를 여기저기 돌아다니다 보면서 좀더 공부 해야 겠다는 생각이 들어서 공부를 시작 합니다.</li>
 </ul>
 
-<h4 id="section-1">2. 정승욱님 블로그 내용 공부</h4>
+<h4>2. 정승욱님 블로그 내용 공부</h4>
+
 <ul>
-  <li>안드로이드 앱 개발의 리스트뷰</li>
-  <li>복사 내용</li>
-  <li>Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.</li>
-  <li>View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행. 또는 UI 처리와 이벤트를 프리젠터로 넘김</li>
-  <li>Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함.</li>
-  <li>Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행, 또는 통신같은 데이터 처리</li>
-  <li><a href="https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample">https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample</a></li>
-  <li>예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.</li>
-  <li>Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다.</li>
+<li>안드로이드 앱 개발의 리스트뷰 </li>
+<li>복사 내용 </li>
+<li>Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.
+
+<ul>
+<li>View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행. 또는 UI 처리와 이벤트를 프리젠터로 넘김</li>
+<li>Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함. </li>
+<li>Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행, 또는 통신같은 데이터 처리</li>
+</ul></li>
+<li><a href="https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample">https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample</a>
+
+<ul>
+<li>예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.</li>
+<li>Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다. </li>
+</ul></li>
 </ul>
 
-<h4 id="section-2">3. 좀더 자세히 정리된 블로그로 이동</h4>
+<h4>3. 좀더 자세히 정리된 블로그로 이동</h4>
+
 <ul>
-  <li><a href="http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html">꿈많은 개발자가 되자 블로그 링크</a></li>
-  <li><a href="https://github.com/antoniolg/androidmvp">내가 좋아하는 스타일의 mvp </a></li>
+<li><a href="http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html">꿈많은 개발자가 되자 블로그 링크</a></li>
+<li><a href="https://github.com/antoniolg/androidmvp">내가 좋아하는 스타일의 mvp </a></li>
 </ul>
 
-<h4 id="mvp-">4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플</h4>
+<h4>4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플</h4>
+
 <ul>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-  <li>위 코드에 새로운 폴더를 생성하였습니다.</li>
+<li> <a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
+<li>위 코드에 새로운 폴더를 생성하였습니다. </li>
 </ul>
 
 

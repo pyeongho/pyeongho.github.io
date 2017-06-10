@@ -18,17 +18,17 @@
 	  <pubDate>2017-06-06T00:00:00+00:00</pubDate>
 	  <guid>//log</guid>
 	  <description><![CDATA[
-	     <h3 id="log------">Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.</h3>
+	     <h3>Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.</h3>
+
 <ul>
-  <li>Log -&gt; log 로 변경해서 대문자를 사용안한다.</li>
-  <li>TAG 입력이 귀찮아서 제거함</li>
-  <li>파일이름과 라인 함수 이름을 출력 하도록 함</li>
-  <li>릴리즈에서는 로그가 출력 안되도록 하였습니다.</li>
-  <li>그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l()</li>
+<li>Log -&gt; log 로 변경해서 대문자를 사용안한다.</li>
+<li>TAG 입력이 귀찮아서 제거함</li>
+<li>파일이름과 라인 함수 이름을 출력 하도록 함</li>
+<li>릴리즈에서는 로그가 출력 안되도록 하였습니다.</li>
+<li>그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l() </li>
 </ul>
 
 <script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script>
-
 
 	  ]]></description>
 	</item>
@@ -40,196 +40,173 @@
 	  <pubDate>2017-05-30T00:00:00+00:00</pubDate>
 	  <guid>//re-dagger2</guid>
 	  <description><![CDATA[
-	     <h3 id="dagger2--">Dagger2 활용을 위하여</h3>
+	     <h3>Dagger2 활용을 위하여</h3>
+
 <ul>
-  <li>기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다.</li>
-  <li><a href="http://pluu.github.io/blog/android/2017/01/13/android-dagger/">http://pluu.github.io/blog/android/2017/01/13/android-dagger/</a></li>
+<li>기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다.</li>
+<li><a href="http://pluu.github.io/blog/android/2017/01/13/android-dagger/">http://pluu.github.io/blog/android/2017/01/13/android-dagger/</a></li>
 </ul>
 
-<h4 id="section">0. 내가 생각하는 시나리오</h4>
+<h4>0. 내가 생각하는 시나리오</h4>
+
 <ul>
-  <li>기능이 있거나 구조체로 사용하는 클래스를 만든다.</li>
-  <li>어노테이션을 이용해서 원하는곳에서 사용 가능하게 한다.</li>
-  <li>싱글톤으로 구현된 스태틱 클래스를 들을 편하게 가져다 쓰는 느낌으로</li>
+<li>기능이 있거나 구조체로 사용하는 클래스를 만든다.</li>
+<li>어노테이션을 이용해서 원하는곳에서 사용 가능하게 한다.</li>
+<li>싱글톤으로 구현된 스태틱 클래스를 들을 편하게 가져다 쓰는 느낌으로</li>
 </ul>
 
-<h4 id="section-1">1. 그래들 설정</h4>
-<ul>
-  <li>
-    <p>다른곳은 너무 어렵게 되어 있습니다.</p>
+<h4>1. 그래들 설정</h4>
 
-    <pre><code class="language-gradle">  compile 'com.google.dagger:dagger:2.7'
+<ul>
+<li><p>다른곳은 너무 어렵게 되어 있습니다.</p>
+<div class="highlight"><pre><code class="language-gradle" data-lang="gradle">  compile 'com.google.dagger:dagger:2.7'
   annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
-</code></pre>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-2">2. 따라하기</h4>
-<ul>
-  <li>개 이름이 있는 클래스를 생성한다.</li>
-</ul>
-
-<p><code class="highlighter-rouge">java
-    public class Dog {
-      public String getName() {
-          return "멈뭄미";
-      }
-    }
- </code></p>
+<h4>2. 따라하기</h4>
 
 <ul>
-  <li>개 클래스를 제공할 모듈을 만든다.</li>
-  <li>개 클래스를 반환한 함수를 메소드를 만들고 어노테이션으로 @Provides 추가 한다.</li>
-  <li>클래스에는 @Module 을 어노테이션을 입력한다.</li>
+<li>개 이름이 있는 클래스를 생성한다.</li>
 </ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="n">String</span> <span class="n">getName</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="s">"멈뭄미"</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>개 클래스를 제공할 모듈을 만든다.</li>
+<li>개 클래스를 반환한 함수를 메소드를 만들고 어노테이션으로 @Provides 추가 한다.</li>
+<li>클래스에는 @Module 을 어노테이션을 입력한다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="nd">@Module</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleModule</span> <span class="o">{</span>
+        <span class="nd">@Provides</span>
+        <span class="n">Dog</span> <span class="n">provideDog</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>모듈을 사용할 인터페이스를 만든다.</li>
+<li>inject 메소드를 만들어야 한다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="nd">@Component</span><span class="o">(</span><span class="n">modules</span> <span class="o">=</span> <span class="n">SampleModule</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SampleComponent</span> <span class="o">{</span>
+        <span class="kt">void</span> <span class="n">inject</span><span class="o">(</span><span class="n">MainActivity</span> <span class="n">activity</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>액티비티에 의존성을 주입시켜 개 이름을 출력해 보자</li>
+<li>아래 내용을 진행하기 전에 make 를 한번 진행해야 DaggerSampleComponent 를 사용할 수 있습니다.</li>
+<li>new Dog 를 안했지만 &quot;멈뭄미&quot; 를 출력 가능합니다.</li>
+<li>즉 Dog 를 주입 시켰습니다.</li>
+<li>가장 기본 적인 필드 인젝션 입니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+      <span class="c1">// 인스턴스가 주입되는 필드</span>
+      <span class="nd">@Inject</span>
+      <span class="n">Dog</span> <span class="n">dog</span><span class="o">;</span>
 
-<p><code class="highlighter-rouge">java
-    @Module
-    public class SampleModule {
-        @Provides
-        Dog provideDog() {
-            return new Dog();
-        }
-    }
- </code></p>
+      <span class="nd">@Override</span>
+      <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+          <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+
+          <span class="c1">// SampleComponent로부터 DaggerSampleComponent 가 자동 생성되므로, 그것을 사용하여 SampleComponent를 만듭니다.</span>
+          <span class="n">SampleComponent</span> <span class="n">component</span> <span class="o">=</span> <span class="n">DaggerSampleComponent</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                  <span class="c1">// 사용하는 Module 인스턴스를 지정합니다.</span>
+                  <span class="c1">// (여기서 deprecated 될 수 있지만, 일단 모든 코드를 작성하고 빌드하면 사라질 것입니다)</span>
+                  <span class="o">.</span><span class="na">sampleModule</span><span class="o">(</span><span class="k">new</span> <span class="n">SampleModule</span><span class="o">())</span>
+                  <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+          <span class="c1">// 의존 주입을 실행합니다</span>
+          <span class="n">component</span><span class="o">.</span><span class="na">inject</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+          <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">dog</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+
+          <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"MainActivity"</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+
+      <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>생성자 인젝션</li>
+<li>생성자에서 개 클래스를 입력 받기 위해서 아래 처럼 클래스를 작성합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Owner</span> <span class="o">{</span>
+
+      <span class="kd">private</span> <span class="n">Dog</span> <span class="n">dog</span><span class="o">;</span>
+
+      <span class="nd">@Inject</span>
+      <span class="kd">public</span> <span class="n">Owner</span><span class="o">(</span><span class="n">Dog</span> <span class="n">dog</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">dog</span> <span class="o">=</span> <span class="n">dog</span><span class="o">;</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="n">String</span> <span class="n">getPetName</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">dog</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>MainActivity 에서 변경 내용은 아래 처럼 인젝트 내용만 변경해 주면 됩니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="nd">@Inject</span>
+    <span class="n">Owner</span> <span class="n">owner</span><span class="o">;</span>
+</code></pre></div>
+<h4>3. 인터페이스를 이용하여 좀더 편하게 주입을 변경하기</h4>
 
 <ul>
-  <li>모듈을 사용할 인터페이스를 만든다.</li>
-  <li>inject 메소드를 만들어야 한다.</li>
+<li>지금까지 사용한 것은 구현 클래스였지만, 다음은 interface를 사용하도록 변경합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Pet</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">getName</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="n">Pet</span> <span class="o">{</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="n">String</span> <span class="n">getName</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="s">"포치"</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Module</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleModule</span> <span class="o">{</span>
+
+      <span class="nd">@Provides</span>
+      <span class="n">Pet</span> <span class="n">providePet</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Owner</span> <span class="o">{</span>
+
+      <span class="kd">private</span> <span class="n">Pet</span> <span class="n">pet</span><span class="o">;</span>
+
+      <span class="nd">@Inject</span>
+      <span class="kd">public</span> <span class="n">Owner</span><span class="o">(</span><span class="n">Pet</span> <span class="n">pet</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">pet</span> <span class="o">=</span> <span class="n">pet</span><span class="o">;</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="n">String</span> <span class="n">getPetName</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">pet</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>구현 클래스가 아닌 인터페이스로만 의존성을 변경하였습니다.</li>
+<li>여러가지 컴포넌트를 이용해서 주입을 변경해도 되지만 그래들에서 제공하는 플래버를 이용해 보겠습니다.</li>
 </ul>
 
-<p><code class="highlighter-rouge">java
-    @Component(modules = SampleModule.class)
-    public interface SampleComponent {
-        void inject(MainActivity activity);
-    }
- </code></p>
+<h4>4. Build Variants 를 이용해서 주입을 변경해보자</h4>
 
 <ul>
-  <li>액티비티에 의존성을 주입시켜 개 이름을 출력해 보자</li>
-  <li>아래 내용을 진행하기 전에 make 를 한번 진행해야 DaggerSampleComponent 를 사용할 수 있습니다.</li>
-  <li>new Dog 를 안했지만 “멈뭄미” 를 출력 가능합니다.</li>
-  <li>즉 Dog 를 주입 시켰습니다.</li>
-  <li>가장 기본 적인 필드 인젝션 입니다.</li>
+<li>테스트 또는 저장소 변경등을 쉽게 할 수 있다.</li>
+<li>그래들 변경 </li>
 </ul>
-
-<p>```java<br />
-    public class MainActivity extends AppCompatActivity {<br />
-      // 인스턴스가 주입되는 필드<br />
-      @Inject<br />
-      Dog dog;</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
-
-      // SampleComponent로부터 DaggerSampleComponent 가 자동 생성되므로, 그것을 사용하여 SampleComponent를 만듭니다.
-      SampleComponent component = DaggerSampleComponent.builder()
-              // 사용하는 Module 인스턴스를 지정합니다.
-              // (여기서 deprecated 될 수 있지만, 일단 모든 코드를 작성하고 빌드하면 사라질 것입니다)
-              .sampleModule(new SampleModule())
-              .build();
-
-      // 의존 주입을 실행합니다
-      component.inject(this);
-
-      String name = dog.getName();
-
-      Log.d("MainActivity", name);
-
-  }
-}   ```
-</code></pre>
-</div>
-
-<ul>
-  <li>생성자 인젝션</li>
-  <li>생성자에서 개 클래스를 입력 받기 위해서 아래 처럼 클래스를 작성합니다.</li>
-</ul>
-
-<p>```java<br />
-    public class Owner {</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  private Dog dog;
-
-  @Inject
-  public Owner(Dog dog) {
-      this.dog = dog;
-  }
-
-  public String getPetName() {
-      return dog.getName();
-  }
-}   ```
-</code></pre>
-</div>
-
-<ul>
-  <li>MainActivity 에서 변경 내용은 아래 처럼 인젝트 내용만 변경해 주면 됩니다.</li>
-</ul>
-
-<p><code class="highlighter-rouge">java
-    @Inject
-    Owner owner;
- </code></p>
-
-<h4 id="section-3">3. 인터페이스를 이용하여 좀더 편하게 주입을 변경하기</h4>
-<ul>
-  <li>지금까지 사용한 것은 구현 클래스였지만, 다음은 interface를 사용하도록 변경합니다.</li>
-</ul>
-
-<p>```java<br />
-    public interface Pet {<br />
-      String getName();<br />
-    }</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public class Dog implements Pet {
-
-  @Override
-  public String getName() {
-      return "포치";
-  }
-}
-
-@Module
-public class SampleModule {
-
-  @Provides
-  Pet providePet() {
-      return new Dog();
-  }
-}
-
-public class Owner {
-
-  private Pet pet;
-
-  @Inject
-  public Owner(Pet pet) {
-      this.pet = pet;
-  }
-
-  public String getPetName() {
-      return pet.getName();
-  }
-}   ```
-</code></pre>
-</div>
-
-<ul>
-  <li>구현 클래스가 아닌 인터페이스로만 의존성을 변경하였습니다.</li>
-  <li>여러가지 컴포넌트를 이용해서 주입을 변경해도 되지만 그래들에서 제공하는 플래버를 이용해 보겠습니다.</li>
-</ul>
-
-<h4 id="build-variants----">4. Build Variants 를 이용해서 주입을 변경해보자</h4>
-<ul>
-  <li>테스트 또는 저장소 변경등을 쉽게 할 수 있다.</li>
-  <li>그래들 변경</li>
-</ul>
-
-<p><code class="highlighter-rouge">gradle
-    flavorDimensions "mode"
+<div class="highlight"><pre><code class="language-gradle" data-lang="gradle">    flavorDimensions "mode"
     productFlavors {
         dog {
             dimension "mode"
@@ -238,16 +215,14 @@ public class Owner {
             dimension "mode"
         }
     }
- </code></p>
-
+</code></pre></div>
 <ul>
-  <li>src 폴더 아래 dog/java ,cat/java 폴더 생성(패키지 이름까지 동일하게 처리 해야 한다.)</li>
-  <li>View → Tool Windows → Build Variants에서 추가된 내용을 확인 할 수 있다.</li>
-  <li>main 폴더의 sampleModule 를 제거 한다.</li>
-  <li>cat, dog 폴더에 각각 추가한다.</li>
-  <li>플래버 변경 만으로 원하는 인터페이스 모듈 주입 가능합니다.</li>
+<li>src 폴더 아래 dog/java ,cat/java 폴더 생성(패키지 이름까지 동일하게 처리 해야 한다.)</li>
+<li>View → Tool Windows → Build Variants에서 추가된 내용을 확인 할 수 있다.</li>
+<li>main 폴더의 sampleModule 를 제거 한다.</li>
+<li>cat, dog 폴더에 각각 추가한다.</li>
+<li>플래버 변경 만으로 원하는 인터페이스 모듈 주입 가능합니다.</li>
 </ul>
-
 
 	  ]]></description>
 	</item>
@@ -259,38 +234,41 @@ public class Owner {
 	  <pubDate>2017-05-27T00:00:00+00:00</pubDate>
 	  <guid>//kotlin_android_extensions</guid>
 	  <description><![CDATA[
-	     <h3 id="findviewid---">findviewid 는 안했으면 …</h3>
+	     <h3>findviewid 는 안했으면 ...</h3>
+
 <ul>
-  <li>코틀린에서도 사용 가능한 방법</li>
-  <li>코틀린 안드로이드 익스텐션</li>
+<li>코틀린에서도 사용 가능한 방법</li>
+<li>코틀린 안드로이드 익스텐션</li>
 </ul>
 
-<h4 id="kotlin-android-extensions-">1. Kotlin android extensions 사용하기</h4>
+<h4>1. Kotlin android extensions 사용하기</h4>
+
 <ul>
-  <li><a href="http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html">http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html</a></li>
+<li><a href="http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html">http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html</a></li>
 </ul>
 
-<h4 id="kotlin-android-extensions--1">2. Kotlin android extensions 사용하기</h4>
-<ul>
-  <li>기존에 사용해보았던 데이터바인딩도 사용가능하지만 새 술은  새 부대에</li>
-  <li>build.gradle(app) 에 내용 추가</li>
-  <li>
-    <p>```gradle<br />
- apply plugin: ‘com.android.application’<br />
- apply plugin: ‘kotlin-android’<br />
- apply plugin: ‘kotlin-android-extensions’</p>
+<h4>2. Kotlin android extensions 사용하기</h4>
 
-    <p>dependencies {<br />
-     compile “org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version”<br />
- }<br />
-  ```</p>
-  </li>
-  <li>사용은 xml 에서 정의한 아이디를 넣으면 자동으로 임포트 되어서 사용이 편합니다.
-    <ul>
-      <li>import kotlinx.android.synthetic.main.fragment_main.view.*</li>
-      <li>view.tv_hello.text = “ABCD”</li>
-    </ul>
-  </li>
+<ul>
+<li>기존에 사용해보았던 데이터바인딩도 사용가능하지만 새 술은  새 부대에 </li>
+<li>build.gradle(app) 에 내용 추가</li>
+<li><div class="highlight"><pre><code class="language-gradle" data-lang="gradle">apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version"
+}
+</code></pre></div></li>
+</ul>
+
+<ul>
+<li>사용은 xml 에서 정의한 아이디를 넣으면 자동으로 임포트 되어서 사용이 편합니다.
+
+<ul>
+<li>import kotlinx.android.synthetic.main.fragment_main.view.*</li>
+<li>view.tv_hello.text = &quot;ABCD&quot;</li>
+</ul></li>
 </ul>
 
 	  ]]></description>
@@ -303,46 +281,38 @@ public class Owner {
 	  <pubDate>2017-05-27T00:00:00+00:00</pubDate>
 	  <guid>//app_check</guid>
 	  <description><![CDATA[
-	     <h3 id="web------">Web 에서 앱 설치 여부를 확인 하자</h3>
+	     <h3>Web 에서 앱 설치 여부를 확인 하자</h3>
+
 <ul>
-  <li>시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.</li>
-  <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API">https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API</a></li>
-  <li>2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.</li>
-  <li>하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지
-    <ul>
-      <li><a href="https://devtalk.kakao.com/t/topic/20684/3">https://devtalk.kakao.com/t/topic/20684/3</a></li>
-    </ul>
-  </li>
+<li>시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.</li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API">https://developer.mozilla.org/ko/docs/Web/API/Page<em>Visibility</em>API</a> </li>
+<li>2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.</li>
+<li>하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지 
+
+<ul>
+<li><a href="https://devtalk.kakao.com/t/topic/20684/3">https://devtalk.kakao.com/t/topic/20684/3</a></li>
+</ul></li>
 </ul>
 
-<h4 id="section">1. 내용</h4>
+<h4>1. 내용</h4>
+
 <ul>
-  <li>인터벌 함수를 이용해서 hidden 을 계속 확인한다.</li>
-  <li>타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.</li>
+<li>인터벌 함수를 이용해서 hidden 을 계속 확인한다.</li>
+<li>타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.</li>
 </ul>
 
-<h4 id="section-1">2. 문제</h4>
+<h4>2. 문제</h4>
+
 <ul>
-  <li>단순참고용 정도로 사용하면 좋을거 같습니다.</li>
-  <li>많이 테스트 안해보았습니다.</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>document.webkitHidden</td>
-          <td> </td>
-          <td>document.hidden 를 이용해서 설치 여부를 확인 하는 방법 입니다.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>크롬에서 지원하는 intent 방식을 사용하면 항상 마켓이 실행되서 체크하기 어려우니 꼭 커스텀 스킴으로 테스트 해야 합니다.</li>
+<li>단순참고용 정도로 사용하면 좋을거 같습니다.</li>
+<li>많이 테스트 안해보았습니다.</li>
+<li>document.webkitHidden || document.hidden 를 이용해서 설치 여부를 확인 하는 방법 입니다.</li>
+<li>크롬에서 지원하는 intent 방식을 사용하면 항상 마켓이 실행되서 체크하기 어려우니 꼭 커스텀 스킴으로 테스트 해야 합니다.</li>
 </ul>
 
-<h4 id="section-2">3. 코드</h4>
+<h4>3. 코드</h4>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">appSchem</span> <span class="o">=</span> <span class="s1">'mayapp://launch?Data=abcdefg'</span><span class="p">;</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">appSchem</span> <span class="o">=</span> <span class="s1">'mayapp://launch?Data=abcdefg'</span><span class="p">;</span>
-    
 <span class="nx">isMyApp</span><span class="p">();</span>
 <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">appSchem</span><span class="p">;</span>
 
@@ -351,7 +321,7 @@ public class Owner {
         <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">heartbeat</span><span class="p">);</span>
         <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
     <span class="p">}</span>
- 
+
     <span class="kd">function</span> <span class="nx">intervalHeartbeat</span><span class="p">(){</span>
         <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">webkitHidden</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">hidden</span><span class="p">){</span>
             <span class="nx">clearTimers</span><span class="p">();</span>
@@ -366,9 +336,7 @@ public class Owner {
   <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
-
+</code></pre></div>
 	  ]]></description>
 	</item>
 
@@ -379,161 +347,150 @@ public class Owner {
 	  <pubDate>2017-05-23T00:00:00+00:00</pubDate>
 	  <guid>//kotlin_with_intellij</guid>
 	  <description><![CDATA[
-	     <h3 id="section">안드로이드 공식 언어인 코틀릭 공부</h3>
+	     <h3>안드로이드 공식 언어인 코틀릭 공부</h3>
+
 <ul>
-  <li>안드로이드 스튜디오가 아닌 인텔리제이 에서 공부</li>
-  <li>기본 적인 언어 공부후 안드로이드 스튜디오에서 진행</li>
+<li>안드로이드 스튜디오가 아닌 인텔리제이 에서 공부</li>
+<li>기본 적인 언어 공부후 안드로이드 스튜디오에서 진행</li>
 </ul>
 
-<h4 id="section-1">0. 목적</h4>
+<h4>0. 목적</h4>
+
 <ul>
-  <li>기본적인 문법및 사용법을 익혀 보자<br />
-  -[http://thdev.tech/categories.html#Kotlin-ref] (http://thdev.tech/categories.html#Kotlin-ref)</li>
+<li>기본적인 문법및 사용법을 익혀 보자
+-<a href="http://thdev.tech/categories.html#Kotlin-ref">http://thdev.tech/categories.html#Kotlin-ref</a></li>
 </ul>
 
-<h4 id="section-2">1. 인텔리제이에서 코틀린 실습하기</h4>
-<ul>
-  <li><a href="https://news.realm.io/kr/news/kotlin-1/">https://news.realm.io/kr/news/kotlin-1/</a></li>
-  <li>인텔리제이 실행</li>
-  <li>Create New Project</li>
-  <li>kotlin(java)</li>
-  <li>create -&gt; use library from plugin 체크</li>
-  <li>상단 오른쪽 위에 SDK 선택에서</li>
-  <li>JDK -&gt; 설치된 JDK 폴더 경로 입력</li>
-  <li>next</li>
-  <li>프로젝트 이름 설정</li>
-  <li>빈 프로젝트 생성 완료</li>
-  <li>src 폴더에서 오른쪽 버튼</li>
-  <li>new -&gt; kotling file/class 선택</li>
-  <li>app 파일 생성(app.kt)</li>
-  <li>아래 처럼 메인 코드 입력</li>
-</ul>
+<h4>1. 인텔리제이에서 코틀린 실습하기</h4>
 
-<pre><code class="language-kotlin">   fun main(args: Array&lt;String&gt;) {
+<ul>
+<li><a href="https://news.realm.io/kr/news/kotlin-1/">https://news.realm.io/kr/news/kotlin-1/</a></li>
+<li>인텔리제이 실행</li>
+<li>Create New Project</li>
+<li>kotlin(java)</li>
+<li>create -&gt; use library from plugin 체크</li>
+<li>상단 오른쪽 위에 SDK 선택에서 </li>
+<li>JDK -&gt; 설치된 JDK 폴더 경로 입력</li>
+<li>next </li>
+<li>프로젝트 이름 설정</li>
+<li>빈 프로젝트 생성 완료</li>
+<li>src 폴더에서 오른쪽 버튼 </li>
+<li>new -&gt; kotling file/class 선택</li>
+<li>app 파일 생성(app.kt)</li>
+<li>아래 처럼 메인 코드 입력</li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">   fun main(args: Array&lt;String&gt;) {
     println("Hello Hello!")
   }
-</code></pre>
-
+</code></pre></div>
 <ul>
-  <li>app.kt 파일에서 마우스 오른쪽 버튼으로 run app.kt 실행</li>
-  <li>실행 창에 메인 함수 실행을 확인 할 수 있습니다.</li>
+<li>app.kt 파일에서 마우스 오른쪽 버튼으로 run app.kt 실행 </li>
+<li>실행 창에 메인 함수 실행을 확인 할 수 있습니다.</li>
 </ul>
 
-<h4 id="section-3">2. 기본 내용을 확인 하기</h4>
+<h4>2. 기본 내용을 확인 하기</h4>
 
 <ul>
-  <li><a href="http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0">http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0</a></li>
-  <li>코틀린 함수 사용
-    <ul>
-      <li>
-        <p>첫번째 두번째 함수는 그럭 저럭 넘어가면 되고<br />
-```kotlin<br />
-  fun sum(a:Int , b:Int): Int{<br />
-    return a+b<br />
-  }</p>
+<li><a href="http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0">http://theeye.pe.kr/archives/tag/%EC%BD%94%ED%8B%80%EB%A6%B0</a></li>
+<li><p>코틀린 함수 사용   </p>
 
-        <p>// Single Expression Function 이런건 사용하지 말자 한 두줄  줄인다고 코드가 좋아질거 같진 않다.<br />
-  fun sum2(a:Int , b:Int) = a+b</p>
-
-        <p>fun printSum(a:Int, b:Int):Unit {<br />
-      print(a+b)<br />
-  }<br />
-```</p>
-      </li>
-      <li>
-        <p>세번째 함수  Unit를 void 라고 생각하자</p>
-        <ul>
-          <li>코드의 내부 구현은 println을 한번 호출했을 뿐 어떤 결과를 반환한다거나 하는것을 생각하기 어렵습니다. 이런 경우에 println은 Unit을 리턴합니다. 이런 부분은 Scala와 비슷한 부분이 있어 보입니다. Kotlin은 모든 함수 구현이 반환값을 가지며 return을 명시적으로 써줄수도 생략할 수 도 있습니다. 반환이 없어 보이는 코드의 경우에는 Unit을 리턴하며 이 Unit은 Java의 void와 같다고 생각하시면 됩니다. 사실은 반환값이 없는경우를 Unit을 리턴한다고 생각하시면 될 것 같습니다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>변수 선언
-    <ul>
-      <li>상수는 val</li>
-      <li>
-        <p>변수는 var    <br />
-```kotlin<br />
-  // Immutable<br />
-  val a: Int = 1<br />
-  val b = 1<br />
-  val c: Int<br />
-  c = 1</p>
-
-        <p>// Mutable<br />
-  var x = 5<br />
-  x += 1<br />
-```</p>
-      </li>
-    </ul>
-  </li>
-  <li>조건문
-    <ul>
-      <li>자바 처럼 기본 조건문을 사용하자</li>
-    </ul>
-  </li>
-  <li>null
-    <ul>
-      <li>
-        <p>```kotlin<br />
-val x: String = null // error<br />
-val x: String? = null // ok</p>
-
-        <p>val x:Int? = 3<br />
-x + 4 // error<br />
-if (x != null) x + 4 // ok</p>
-
-        <p>val x: Int? = null<br />
-val y: Int = x ?: 0  //  x ? x : 0<br />
-x?.rangeTo(3) // null<br />
-y.rangeTo(3) // 0..3<br />
-  ```</p>
-      </li>
-      <li>
-        <p>x?.rangeTo(3) 를 이용하면 체인형 함수 실행에 유리 하나의 결과만 널이라도 바로 null 반환</p>
-      </li>
-    </ul>
-  </li>
-  <li>types Any
-    <ul>
-      <li>컴파일러가 고생이 많아 보입니다.</li>
-      <li>obj is String 만 성공해도 다음 블럭에서는 obj 가 문자열 클래스 이다.</li>
-      <li>
-        <p>if 문 조건은 왼쪽 부터 실행 된다.<br />
-```kotlin    <br />
-fun getStringLength(obj: Any): Int? {<br />
-  if (obj is String) // 여기서 obj가 자동으로 String으로 캐스팅됩니다.<br />
-    return obj.length<br />
-  return null // 여기는 여전히 obj의 타입은 Any입니다.<br />
+<ul>
+<li><p>첫번째 두번째 함수는 그럭 저럭 넘어가면 되고
+```kotlin
+fun sum(a:Int , b:Int): Int{
+  return a+b
 }</p>
 
-        <p>if (obj !is String) { return … }<br />
-return obj.length</p>
+<p>// Single Expression Function 이런건 사용하지 말자 한 두줄  줄인다고 코드가 좋아질거 같진 않다.
+fun sum2(a:Int , b:Int) = a+b</p>
 
-        <p>if (obj is String &amp;&amp; obj.length &gt; 0) { … }</p>
+<p>fun printSum(a:Int, b:Int):Unit {
+    print(a+b)
+}
+```</p></li>
+<li><p>세번째 함수  Unit를 void 라고 생각하자</p>
 
-        <p>var x: Any = “hello”<br />
-println(x) // hello가 출력</p>
+<ul>
+<li> 코드의 내부 구현은 println을 한번 호출했을 뿐 어떤 결과를 반환한다거나 하는것을 생각하기 어렵습니다. 이런 경우에 println은 Unit을 리턴합니다. 이런 부분은 Scala와 비슷한 부분이 있어 보입니다. Kotlin은 모든 함수 구현이 반환값을 가지며 return을 명시적으로 써줄수도 생략할 수 도 있습니다. 반환이 없어 보이는 코드의 경우에는 Unit을 리턴하며 이 Unit은 Java의 void와 같다고 생각하시면 됩니다. 사실은 반환값이 없는경우를 Unit을 리턴한다고 생각하시면 될 것 같습니다.</li>
+</ul></li>
+</ul></li>
+<li><p>변수 선언 </p>
 
-        <p>x = 3<br />
-println(x) // 3이 출력<br />
-```</p>
-      </li>
-    </ul>
-  </li>
-  <li>반목문 및 콜렉션
-    <ul>
-      <li>람다 가능</li>
-    </ul>
+<ul>
+<li>상수는 val</li>
+<li><p>변수는 var<br>
+```kotlin
+// Immutable
+val a: Int = 1
+val b = 1
+val c: Int
+c = 1</p>
 
-    <pre><code class="language-kotlin">  //val collection: List&lt;String&gt; = ...
+<p>// Mutable
+var x = 5
+x += 1
+```</p></li>
+</ul></li>
+<li><p>조건문 </p>
+
+<ul>
+<li>자바 처럼 기본 조건문을 사용하자</li>
+</ul></li>
+<li><p>null   </p>
+
+<ul>
+<li><div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val x: String = null // error
+val x: String? = null // ok
+
+val x:Int? = 3
+x + 4 // error
+if (x != null) x + 4 // ok
+
+val x: Int? = null
+val y: Int = x ?: 0  //  x ? x : 0
+x?.rangeTo(3) // null
+y.rangeTo(3) // 0..3
+</code></pre></div></li>
+<li><p>x?.rangeTo(3) 를 이용하면 체인형 함수 실행에 유리 하나의 결과만 널이라도 바로 null 반환</p></li>
+</ul></li>
+<li><p>types Any</p>
+
+<ul>
+<li>컴파일러가 고생이 많아 보입니다.</li>
+<li>obj is String 만 성공해도 다음 블럭에서는 obj 가 문자열 클래스 이다.</li>
+<li>if 문 조건은 왼쪽 부터 실행 된다.
+```kotlin<br>
+fun getStringLength(obj: Any): Int? {
+if (obj is String) // 여기서 obj가 자동으로 String으로 캐스팅됩니다.
+  return obj.length
+return null // 여기는 여전히 obj의 타입은 Any입니다.
+}</li>
+</ul>
+
+<p>if (obj !is String) { return ... }
+  return obj.length</p>
+
+<p>if (obj is String &amp;&amp; obj.length &gt; 0) { ... }</p>
+
+<p>var x: Any = &quot;hello&quot;
+  println(x) // hello가 출력</p>
+
+<p>x = 3
+  println(x) // 3이 출력
+```</p></li>
+<li><p>반목문 및 콜렉션 </p>
+
+<ul>
+<li>람다 가능</li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">  //val collection: List&lt;String&gt; = ...
   val collection: MutableList&lt;String&gt; = ArrayList()
   collection.add("1")
   collection.add("2")
   collection.add("3")
   collection.add("4")
   collection.add("5")
-      
+
   val array = arrayListOf&lt;String&gt;()
   array.add("11")
   array.add("12")
@@ -541,53 +498,50 @@ println(x) // 3이 출력<br />
 
   for (element in collection)
     println(element)
-      
+
   var i = 0
   while (i &lt; collection.size())
     println(collection[i++])
-      
+
   collection.forEach { e -&gt; println(e) }
   collection.forEach { println(it) }
-</code></pre>
-  </li>
-  <li>when
-    <ul>
-      <li>Any 타입일때 케이스문처럼 사용이 가능한다.<br />
-<code class="highlighter-rouge">kotlin
+</code></pre></div></li>
+<li><p>when</p>
+
+<ul>
+<li>Any 타입일때 케이스문처럼 사용이 가능한다.
+<code>kotlin
 fun cases(obj: Any) {
 when (obj) {
-  1 -&gt; print("One")
-  "Hello" -&gt; print("Greeting")
-  is Long -&gt; print("Long")
-  !is String -&gt; print("Not a string")
-  else -&gt; print("Unknown")
+1 -&gt; print(&quot;One&quot;)
+&quot;Hello&quot; -&gt; print(&quot;Greeting&quot;)
+is Long -&gt; print(&quot;Long&quot;)
+!is String -&gt; print(&quot;Not a string&quot;)
+else -&gt; print(&quot;Unknown&quot;)
 }
 }
 </code></li>
-    </ul>
-  </li>
-  <li>범위(range) 사용하기w
-    <ul>
-      <li>
-        <div class="highlighter-rouge"><pre class="highlight"><code> if (x in 1..y-1)
-   print("OK")
+</ul></li>
+<li><p>범위(range) 사용하기w</p>
 
- for (x in 1..5)
-   print(x)
-</code></pre>
-        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="section-4">3. 지속적인 공부가 필요함</h4>
 <ul>
-  <li>현재 여기까지 진행하고 조금씩 앱을 만들어 보도록 하겠습니다.</li>
-  <li>코틀린 문서 링크 입니다.</li>
-  <li><a href="http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc">http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc</a></li>
+<li>```
+if (x in 1..y-1)
+ print(&quot;OK&quot;)</li>
 </ul>
 
+<p>for (x in 1..5)
+     print(x)
+  ```   </p></li>
+</ul>
+
+<h4>3. 지속적인 공부가 필요함</h4>
+
+<ul>
+<li>현재 여기까지 진행하고 조금씩 앱을 만들어 보도록 하겠습니다.</li>
+<li>코틀린 문서 링크 입니다.</li>
+<li><a href="http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc">http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc</a></li>
+</ul>
 
 	  ]]></description>
 	</item>
@@ -599,46 +553,51 @@ when (obj) {
 	  <pubDate>2017-05-22T00:00:00+00:00</pubDate>
 	  <guid>//firebase_remoteconfig</guid>
 	  <description><![CDATA[
-	     <h3 id="section">파이어베이스 리모트 컨피그 사용</h3>
+	     <h3>파이어베이스 리모트 컨피그 사용</h3>
+
 <ul>
-  <li>앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함</li>
-  <li>공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음</li>
+<li>앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함</li>
+<li>공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음</li>
 </ul>
 
-<h4 id="section-1">0. 목적</h4>
+<h4>0. 목적</h4>
+
 <ul>
-  <li>앱 재배포 없이 기능을 선택 하려고함</li>
-  <li>firebase reomte config 기능이 눈에 들어옴</li>
-  <li>테스트도 할겸 도전</li>
+<li>앱 재배포 없이 기능을 선택 하려고함</li>
+<li>firebase reomte config 기능이 눈에 들어옴 </li>
+<li>테스트도 할겸 도전 </li>
 </ul>
 
-<h4 id="section-2">1. 앱에 파이어 베이스 리모트 컨피그 기능 추가</h4>
+<h4>1. 앱에 파이어 베이스 리모트 컨피그 기능 추가</h4>
+
 <ul>
-  <li>안드로이드 스튜디오에서 편하게 추가 가능하다.</li>
-  <li>tools -&gt; Firebase 선택시 편집기 오른쪽에 사용 가능한 기능이 나옵니다.</li>
-  <li>Remote Config  를 선택해서 순서대로 하면 사용상 문제는 없습니다.</li>
+<li>안드로이드 스튜디오에서 편하게 추가 가능하다.</li>
+<li>tools -&gt; Firebase 선택시 편집기 오른쪽에 사용 가능한 기능이 나옵니다.</li>
+<li>Remote Config  를 선택해서 순서대로 하면 사용상 문제는 없습니다.</li>
 </ul>
 
-<h4 id="section-3">2. 처음 한두번은 문제 없다가 갑자기 에러가 나기 시작함</h4>
+<h4>2. 처음 한두번은 문제 없다가 갑자기 에러가 나기 시작함</h4>
+
 <ul>
-  <li>순서 대로 진행 하면 ‘Fetch Failed’ 에러로 정확한 이유를 알수 없음</li>
-  <li>그래서 addOnFailureListener 리스너를 이용해서 exception 클래스 이름을 확인 하였습니다.</li>
-  <li>FirebaseRemoteConfigFetchThrottledException</li>
-  <li>위 내용으로 에러가 발생</li>
-  <li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
-  <li>구글 검색으로 위와 같은 내용이 찾음</li>
-  <li>아래 코드로 동작 확인  <br />
-<code class="highlighter-rouge">java
- FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
-   .setDeveloperModeEnabled(BuildConfig.DEBUG)
-   .build();
- mFirebaseRemoteConfig.setConfigSettings(setting);
+<li>순서 대로 진행 하면 &#39;Fetch Failed&#39; 에러로 정확한 이유를 알수 없음</li>
+<li>그래서 addOnFailureListener 리스너를 이용해서 exception 클래스 이름을 확인 하였습니다.</li>
+<li>FirebaseRemoteConfigFetchThrottledException</li>
+<li>위 내용으로 에러가 발생</li>
+<li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
+<li>구글 검색으로 위와 같은 내용이 찾음</li>
+<li>아래 코드로 동작 확인<br>
+<code>java
+FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
+  .setDeveloperModeEnabled(BuildConfig.DEBUG)
+  .build();
+mFirebaseRemoteConfig.setConfigSettings(setting);
 </code></li>
 </ul>
 
-<h4 id="remote-config---">3. Remote Config 사용시 주의 사항</h4>
+<h4>3. Remote Config 사용시 주의 사항</h4>
+
 <ul>
-  <li>개발 모드 일때는 꼭 개발 설정을 하자</li>
+<li>개발 모드 일때는 꼭 개발 설정을 하자</li>
 </ul>
 
 	  ]]></description>
@@ -651,54 +610,50 @@ when (obj) {
 	  <pubDate>2017-05-20T00:00:00+00:00</pubDate>
 	  <guid>//nav_real_estate</guid>
 	  <description><![CDATA[
-	     <h4 id="section">본것 깨달은것 적용할것</h4>
+	     <h4>본것 깨달은것 적용할것</h4>
 
-<h4 id="section-1">1. 내꺼</h4>
+<h4>1. 내꺼</h4>
+
 <ul>
-  <li>너무 늦은거 같다는 생각을 많이 하였습니다. 노후파산을 읽고 은퇴후 생활을 고민 하여야 했지만 생각만 하고 실천하지 못하였다. 그래서 많은 시간이 지나버렸다. 이번 ‘대한민국 부동산의 미래’ 라는 책을 읽고 다시한번 실행 해야겠다는 생각을 했다. 책의 출시 시기가 2016년6월 빚을 내면 원금과 이자를 같이 갚아야 한다는 내용이 부족하지만 현실을 바라보기는 충분다. 이상적인 은퇴시기인 60세에 은퇴를 한다고 가정을 해보자. 그러면 최소 30년은 벌어놓은 돈으로 생활해야 한다. 최저 생활비는 150이라고 하지만 사람다운 삶을 위해서는 250정도는 있어야 한다고들 한다. <br />
-  단순한 계산으로 250 X 12 X 30 = 90,000 9억 정도가 있어야 한다. <br />
-  생각을 안해도 순수하게 9억을 가지고 은퇴하기는 힘들거 같다.<br />
-  한달 단위로 가능성을 만들어 보자<br />
-  주택 연금 : 5억짜리 집으로 연금을 신청하면 한달에 135 만원 정도 나온다고 한다.<br />
-  주택연금이 좋은점은 연금을 받을 동안 해당 집에서 거주 해도 되는걸로 보인다. 250 중에 집값도 포함 되어 있다고 생각하면 많은 부분이 해소된다. 공인중개사분은 2~3채를 사야 한다고 한다. 하지만 한채 사기도 힘든데 이걸 어떻게 해야 하는지도 잘 모르겠다.</li>
-  <li>전세를 끼고 집을 구매하는 방법, 전세값과 집값이 차이가 많이 안나는 곳에 갭투자 하면 좋을거 같다. 월급으로 이자를 감당이 될것으로 보인다.</li>
-  <li>토지 구매를 생각해야 한다. 30년뒤에 토지 값은 오를것으로 생각한다. 책에 나온것을 보면 과거 20~30년간 토지 가격은 최대 2~3000배 올라다고 한다.</li>
-  <li>주택 구매는 서울과 1기 신도시를 타겟으로 해야 한다. 이유는 집값이 떨어지지 않을 곳이다.</li>
-  <li>실제 거주 지역과 투자용 집을 구분해야 한다.</li>
-  <li>내년이 오기전에 전세끼고 집을 구매하는 방법을 생각해 보자</li>
-  <li>계산
-    <ul>
-      <li>전세를 끼고 주택을 구매한다. 예를 들어서 100%짜리 집을 젠세금 75%끼고 있는 집을 25%에 구매 한다.</li>
-      <li>25%는 대출 한다. 이외 부가적인 돈은 보유 현금으로 한다.</li>
-      <li>현재 살고 있는 전세금으로 25%를 상환한다. 상환한 나머지 금액으로 다른 곳에 집을 구한다.</li>
-      <li>75%의 부채를 가지고 있는것과 동일하다. 지하철역 주변과 공실이 없도록 해야한다.</li>
-      <li>하지만 75%는 이자가 없다.</li>
-      <li>75%를 줄여야 한다. 실제 거주하는곳도 좋았으면 좋겠다.
-        <ul>
-          <li>선택1
-            <ul>
-              <li>은행에서 50%를 대출 받아서 다음계약에서 25%에 반 전세 형태로 변경한다.</li>
-              <li>50%에 대한 월세를 받는다.</li>
-              <li>월세와 월급의 일부로 대출을 상환?</li>
-            </ul>
-          </li>
-          <li>선택2
-            <ul>
-              <li>전세는 귀한 매물이라 생각하고 공실 없이 전세를 잘 유지 시킨다.</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>문제는 실제 최소한의 비용으로 실제 거주지도 괜찮은 곳에서 있고 싶다. 좀더 고민하자..</li>
+<li>너무 늦은거 같다는 생각을 많이 하였습니다. 노후파산을 읽고 은퇴후 생활을 고민 하여야 했지만 생각만 하고 실천하지 못하였다. 그래서 많은 시간이 지나버렸다. 이번 &#39;대한민국 부동산의 미래&#39; 라는 책을 읽고 다시한번 실행 해야겠다는 생각을 했다. 책의 출시 시기가 2016년6월 빚을 내면 원금과 이자를 같이 갚아야 한다는 내용이 부족하지만 현실을 바라보기는 충분다. 이상적인 은퇴시기인 60세에 은퇴를 한다고 가정을 해보자. 그러면 최소 30년은 벌어놓은 돈으로 생활해야 한다. 최저 생활비는 150이라고 하지만 사람다운 삶을 위해서는 250정도는 있어야 한다고들 한다. 
+단순한 계산으로 250 X 12 X 30 = 90,000 9억 정도가 있어야 한다. 
+생각을 안해도 순수하게 9억을 가지고 은퇴하기는 힘들거 같다.
+한달 단위로 가능성을 만들어 보자
+주택 연금 : 5억짜리 집으로 연금을 신청하면 한달에 135 만원 정도 나온다고 한다.
+주택연금이 좋은점은 연금을 받을 동안 해당 집에서 거주 해도 되는걸로 보인다. 250 중에 집값도 포함 되어 있다고 생각하면 많은 부분이 해소된다. 공인중개사분은 2~3채를 사야 한다고 한다. 하지만 한채 사기도 힘든데 이걸 어떻게 해야 하는지도 잘 모르겠다.</li>
+<li>전세를 끼고 집을 구매하는 방법, 전세값과 집값이 차이가 많이 안나는 곳에 갭투자 하면 좋을거 같다. 월급으로 이자를 감당이 될것으로 보인다.</li>
+<li>토지 구매를 생각해야 한다. 30년뒤에 토지 값은 오를것으로 생각한다. 책에 나온것을 보면 과거 20~30년간 토지 가격은 최대 2~3000배 올라다고 한다. </li>
+<li>주택 구매는 서울과 1기 신도시를 타겟으로 해야 한다. 이유는 집값이 떨어지지 않을 곳이다.</li>
+<li>실제 거주 지역과 투자용 집을 구분해야 한다.</li>
+<li>내년이 오기전에 전세끼고 집을 구매하는 방법을 생각해 보자</li>
+<li>계산
+
+<ul>
+<li>전세를 끼고 주택을 구매한다. 예를 들어서 100%짜리 집을 젠세금 75%끼고 있는 집을 25%에 구매 한다.</li>
+<li>25%는 대출 한다. 이외 부가적인 돈은 보유 현금으로 한다.</li>
+<li>현재 살고 있는 전세금으로 25%를 상환한다. 상환한 나머지 금액으로 다른 곳에 집을 구한다.</li>
+<li>75%의 부채를 가지고 있는것과 동일하다. 지하철역 주변과 공실이 없도록 해야한다.</li>
+<li>하지만 75%는 이자가 없다.</li>
+<li>75%를 줄여야 한다. 실제 거주하는곳도 좋았으면 좋겠다.
+
+<ul>
+<li>선택1 </li>
+<li>은행에서 50%를 대출 받아서 다음계약에서 25%에 반 전세 형태로 변경한다.</li>
+<li>50%에 대한 월세를 받는다.</li>
+<li>월세와 월급의 일부로 대출을 상환?</li>
+<li>선택2</li>
+<li>전세는 귀한 매물이라 생각하고 공실 없이 전세를 잘 유지 시킨다.</li>
+</ul></li>
+<li>문제는 실제 최소한의 비용으로 실제 거주지도 괜찮은 곳에서 있고 싶다. 좀더 고민하자..</li>
+</ul></li>
 </ul>
 
-<h4 id="section-2">현장 메모 첨부</h4>
+<h4>현장 메모 첨부</h4>
+
 <ul>
-  <li><img src="http://dl.dropbox.com/s/v3acnw3etogtaon/201705201617.png" alt="" /></li>
-  <li><img src="http://dl.dropbox.com/s/n940oow1doxfnnv/201705201620.png" alt="" /></li>
-  <li><img src="http://dl.dropbox.com/s/qkq460mh73vmcfc/201705201618.png" alt="" /></li>
+<li><img src="http://dl.dropbox.com/s/v3acnw3etogtaon/201705201617.png" alt=""></li>
+<li><img src="http://dl.dropbox.com/s/n940oow1doxfnnv/201705201620.png" alt=""></li>
+<li><img src="http://dl.dropbox.com/s/qkq460mh73vmcfc/201705201618.png" alt=""></li>
 </ul>
 
 	  ]]></description>
@@ -711,120 +666,105 @@ when (obj) {
 	  <pubDate>2017-05-14T00:00:00+00:00</pubDate>
 	  <guid>//use-rx-android</guid>
 	  <description><![CDATA[
-	     <h3 id="rx----">rx 라이브러리를 사용하면서 사용하는 함수들</h3>
+	     <h3>rx 라이브러리를 사용하면서 사용하는 함수들</h3>
+
 <ul>
-  <li>간단하게 성남도서관 검색 앱을 개발하면서 사용하는 함수들 입니다.</li>
-  <li>rxbiding 사용법</li>
+<li>간단하게 성남도서관 검색 앱을 개발하면서 사용하는 함수들 입니다.</li>
+<li>rxbiding 사용법</li>
 </ul>
 
-<h4 id="section">0. 목적</h4>
+<h4>0. 목적</h4>
+
 <ul>
-  <li>클린 + MVP + RX 를 사용하면서 익숙해지기</li>
-  <li>뷰에서는 이벤트에 대한 처리와 보여주는것만 처리</li>
-  <li>프리젠터에서는 유즈케이스를 이용한 API 접근</li>
-  <li>유즈케이스 옵저버를 반환</li>
-  <li>이로 인해서 구조가 무너지지 않은걸로 생각함</li>
+<li>클린 + MVP + RX 를 사용하면서 익숙해지기</li>
+<li>뷰에서는 이벤트에 대한 처리와 보여주는것만 처리</li>
+<li>프리젠터에서는 유즈케이스를 이용한 API 접근</li>
+<li>유즈케이스 옵저버를 반환</li>
+<li>이로 인해서 구조가 무너지지 않은걸로 생각함</li>
 </ul>
 
-<h4 id="rxbiding">1. rxbiding</h4>
-<ul>
-  <li>각종 view 들의 이벤트를 옵저버로 형태로 변환하여 편하게 사용 가능함</li>
-  <li><a href="https://github.com/JakeWharton/RxBinding">https://github.com/JakeWharton/RxBinding</a>
-    <ul>
-      <li>안드로이드 UI 위젯 사용을 위한 플랫폼</li>
-    </ul>
-  </li>
-  <li>
-    <p>현재 사용을 위하여 추가한  라이브러리</p>
+<h4>1. rxbiding</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+<ul>
+<li>각종 view 들의 이벤트를 옵저버로 형태로 변환하여 편하게 사용 가능함</li>
+<li><a href="https://github.com/JakeWharton/RxBinding">https://github.com/JakeWharton/RxBinding</a>
+
+<ul>
+<li>안드로이드 UI 위젯 사용을 위한 플랫폼 </li>
+</ul></li>
+<li><p>현재 사용을 위하여 추가한  라이브러리 </p>
+<div class="highlight"><pre><code class="language-" data-lang="">compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
 compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
-</code></pre>
-    </div>
-  </li>
-  <li>사용은 연속 클릭 방지를 위해서 사용하였습니다. API 호출 까지 한번에 사용하면 좋을거 mvp 를 적용중이라 구조가 무너져서 사용 안하기로함</li>
-  <li>연속 클릭 방지를 위한 RxBiding 사용
-    <ul>
-      <li>뷰의 클릭에 사용할 버튼뷰를 넘기고</li>
-      <li>throttleFirst(1, TimeUnit.SECONDS) : (첫번쩨 이벤트를 실행후 1초이내로 들어오는 다른 이벤트는 버린다.)</li>
-      <li>
-        <p>throttleLast(1, TimeUnit.SECONDS) : 1초 동안 들어오는 이벤트중 마지막 이베트늘 실행</p>
+</code></pre></div></li>
+<li><p>사용은 연속 클릭 방지를 위해서 사용하였습니다. API 호출 까지 한번에 사용하면 좋을거 mvp 를 적용중이라 구조가 무너져서 사용 안하기로함 </p></li>
+<li><p>연속 클릭 방지를 위한 RxBiding 사용</p>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">RxView</span><span class="o">.</span><span class="na">clicks</span><span class="o">(</span><span class="n">btnUseRxCallBack</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">throttleFirst</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">AndroidSchedulers</span><span class="o">.</span><span class="na">mainThread</span><span class="o">())</span>
-    <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span>
-            <span class="n">o</span> <span class="o">-&gt;</span> <span class="n">mPresenter</span><span class="o">.</span><span class="na">clickedSearch</span><span class="o">(</span><span class="n">editText</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">()),</span>
-            <span class="n">error</span><span class="o">-&gt;</span><span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"error"</span><span class="o">,</span><span class="n">error</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
-</code></pre>
-        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="rx-">2. 사용중인 RX 함수</h4>
 <ul>
-  <li>filter
-    <ul>
-      <li>
-        <p>아래 처럼 문자열이 있을때만 필터링을 추가할 수 있다. true 일때만 다음으로</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">text</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">text</span><span class="o">))</span>
-</code></pre>
-        </div>
-      </li>
-    </ul>
-  </li>
-  <li>map
-    <ul>
-      <li>
-        <p>입력으로 들어 오는 값을 변경 할 수 있다. 다음으로 전달되는 문자열은 간장공장+query</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">text</span> <span class="o">-&gt;</span> <span class="s">"간장공장"</span><span class="o">+</span><span class="n">text</span><span class="o">)</span>
-</code></pre>
-        </div>
-      </li>
-    </ul>
-  </li>
-  <li>zip
-    <ul>
-      <li>이걸 몰라서 한참 걸렸습니다.</li>
-      <li>이름의 느낌 처럼 압축 하는 느낌입니다.</li>
-      <li>
-        <p>일단 사용 코드 입니다.</p>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="n">Observable</span><span class="o">.</span><span class="na">zip</span><span class="o">(</span>
-    <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">),</span>
-    <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">requestPage</span><span class="o">),</span>
-    <span class="o">(</span><span class="n">queryText</span><span class="o">,</span><span class="n">requestPageText</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"phkim"</span><span class="o">,</span><span class="s">"query: "</span><span class="o">+</span><span class="n">queryText</span> <span class="o">+</span> <span class="s">"requestPage:"</span><span class="o">+</span><span class="n">requestPageText</span><span class="o">))</span>
-</code></pre>
-        </div>
-      </li>
-      <li>문자열 하나씩 입력되면 동식에 사용 가능하도록 변경해 줍니다.</li>
-      <li>배열이 들어가서 하나씩 연속으로 사용하는게 아닌 동시에 사용 가능합니다.</li>
-    </ul>
-  </li>
-  <li>flatMap
-    <ul>
-      <li>결과를 옵저버 형태로 반환합니다.</li>
-      <li>다른 옵저버와 합칠때 사용합니다.</li>
-      <li>코드를 추가 하기에는 양이 너무 길어 져서</li>
-      <li>옵저버 A , 옵저버 B</li>
-      <li>실행중인 옵저버 A 스트림에 옵저버 B 를 추가 할 수 있습니다.</li>
-      <li>콜백에 콜백을 처리할때 사용하기 좋습니다.</li>
-      <li>예를 들어서 소셜 로그인 처리 할때 사용 하면 됩니다.
-        <ul>
-          <li>페이스북 로그인 -&gt; 콜백으로 결과 -&gt; 사용하는 서버로 결과 전달 -&gt; 페이스북과 사용중인 서버 로그인 완료</li>
-          <li>위와 같은 내요을 콜백에서 콜백을 호출하는 형태를 조금이나마 줄일 수 있다</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+<li>뷰의 클릭에 사용할 버튼뷰를 넘기고</li>
+<li>throttleFirst(1, TimeUnit.SECONDS) : (첫번쩨 이벤트를 실행후 1초이내로 들어오는 다른 이벤트는 버린다.)</li>
+<li>throttleLast(1, TimeUnit.SECONDS) : 1초 동안 들어오는 이벤트중 마지막 이베트늘 실행</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">RxView</span><span class="o">.</span><span class="na">clicks</span><span class="o">(</span><span class="n">btnUseRxCallBack</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">throttleFirst</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">AndroidSchedulers</span><span class="o">.</span><span class="na">mainThread</span><span class="o">())</span>
+      <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span>
+              <span class="n">o</span> <span class="o">-&gt;</span> <span class="n">mPresenter</span><span class="o">.</span><span class="na">clickedSearch</span><span class="o">(</span><span class="n">editText</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">()),</span>
+              <span class="n">error</span><span class="o">-&gt;</span><span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"error"</span><span class="o">,</span><span class="n">error</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
+</code></pre></div></li>
 </ul>
 
+<h4>2. 사용중인 RX 함수</h4>
+
+<ul>
+<li><p>filter</p>
+
+<ul>
+<li>아래 처럼 문자열이 있을때만 필터링을 추가할 수 있다. true 일때만 다음으로 </li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">text</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">text</span><span class="o">))</span>
+</code></pre></div></li>
+<li><p>map</p>
+
+<ul>
+<li>입력으로 들어 오는 값을 변경 할 수 있다. 다음으로 전달되는 문자열은 간장공장+query</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">)</span>
+      <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">text</span> <span class="o">-&gt;</span> <span class="s">"간장공장"</span><span class="o">+</span><span class="n">text</span><span class="o">)</span>
+</code></pre></div></li>
+<li><p>zip</p>
+
+<ul>
+<li>이걸 몰라서 한참 걸렸습니다.</li>
+<li>이름의 느낌 처럼 압축 하는 느낌입니다.</li>
+<li>일단 사용 코드 입니다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">Observable</span><span class="o">.</span><span class="na">zip</span><span class="o">(</span>
+      <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">query</span><span class="o">),</span>
+      <span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">requestPage</span><span class="o">),</span>
+      <span class="o">(</span><span class="n">queryText</span><span class="o">,</span><span class="n">requestPageText</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"phkim"</span><span class="o">,</span><span class="s">"query: "</span><span class="o">+</span><span class="n">queryText</span> <span class="o">+</span> <span class="s">"requestPage:"</span><span class="o">+</span><span class="n">requestPageText</span><span class="o">))</span>
+</code></pre></div>
+<ul>
+<li>문자열 하나씩 입력되면 동식에 사용 가능하도록 변경해 줍니다.</li>
+<li>배열이 들어가서 하나씩 연속으로 사용하는게 아닌 동시에 사용 가능합니다. </li>
+</ul></li>
+<li><p>flatMap</p>
+
+<ul>
+<li>결과를 옵저버 형태로 반환합니다.</li>
+<li>다른 옵저버와 합칠때 사용합니다.</li>
+<li>코드를 추가 하기에는 양이 너무 길어 져서</li>
+<li>옵저버 A , 옵저버 B</li>
+<li>실행중인 옵저버 A 스트림에 옵저버 B 를 추가 할 수 있습니다.</li>
+<li>콜백에 콜백을 처리할때 사용하기 좋습니다.</li>
+<li>예를 들어서 소셜 로그인 처리 할때 사용 하면 됩니다.
+
+<ul>
+<li>페이스북 로그인 -&gt; 콜백으로 결과 -&gt; 사용하는 서버로 결과 전달 -&gt; 페이스북과 사용중인 서버 로그인 완료</li>
+<li>위와 같은 내요을 콜백에서 콜백을 호출하는 형태를 조금이나마 줄일 수 있다</li>
+</ul></li>
+</ul></li>
+</ul>
 
 	  ]]></description>
 	</item>
@@ -836,100 +776,108 @@ compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
 	  <pubDate>2017-05-07T00:00:00+00:00</pubDate>
 	  <guid>//my-clean-mvp</guid>
 	  <description><![CDATA[
-	     <h3 id="gdg-atsl-on-mvp-">구글 샘플과 GDG-ATSL-ON-MVP를 이용</h3>
+	     <h3>구글 샘플과 GDG-ATSL-ON-MVP를 이용</h3>
+
 <ul>
-  <li>2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.</li>
-  <li>원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
-    <ul>
-      <li><a href="https://github.com/ZeroBrain/GDG-ATSL-ON-MVP">https://github.com/ZeroBrain/GDG-ATSL-ON-MVP</a></li>
-    </ul>
-  </li>
+<li>2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.</li>
+<li>원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
+
+<ul>
+<li><a href="https://github.com/ZeroBrain/GDG-ATSL-ON-MVP">https://github.com/ZeroBrain/GDG-ATSL-ON-MVP</a></li>
+</ul></li>
 </ul>
 
-<h4 id="section">1. 구글샘플 기반으로 앱을 생성하고 제로브레인님의 다음 이미지 검색기능을 추가 하는 형태로 진행</h4>
+<h4>1. 구글샘플 기반으로 앱을 생성하고 제로브레인님의 다음 이미지 검색기능을 추가 하는 형태로 진행</h4>
+
 <ul>
-  <li>기본 샘플 생성</li>
-  <li>버터나이프, 데이터바인딩 은 넣으면 코드가 짧아 지지만 사용 안합니다.</li>
-  <li>구글 샘플이 좋았던 점은 거의 모든 뷰를 프래그먼트에서 구현 하였던 점입니다.
-    <ul>
-      <li>프로가드 적용시 액티비티 코드는 거의 원형이 남아 있는데 이를 프래그먼트에서 구현 하니 프로가드 적용이 조금더 강력한 느낌 이었습니다.</li>
-    </ul>
-  </li>
-  <li>구글 샘플에서 기본적으로 필요한 것들을 복사해옴</li>
-  <li>rx 를 추가하면 많이 없어질걸로 예상</li>
+<li>기본 샘플 생성</li>
+<li>버터나이프, 데이터바인딩 은 넣으면 코드가 짧아 지지만 사용 안합니다.</li>
+<li>구글 샘플이 좋았던 점은 거의 모든 뷰를 프래그먼트에서 구현 하였던 점입니다.
+
+<ul>
+<li>프로가드 적용시 액티비티 코드는 거의 원형이 남아 있는데 이를 프래그먼트에서 구현 하니 프로가드 적용이 조금더 강력한 느낌 이었습니다.</li>
+</ul></li>
+<li>구글 샘플에서 기본적으로 필요한 것들을 복사해옴</li>
+<li>rx 를 추가하면 많이 없어질걸로 예상</li>
 </ul>
 
-<h4 id="section-1">2. 진행 순서</h4>
+<h4>2. 진행 순서</h4>
+
 <ul>
-  <li>샘플앱 기본을 정한다.(나중에 해도 됨)</li>
-  <li>MVP 구현은 거의 구글샘플을 기반으로 한다.(프래그먼트)</li>
-  <li>클린아키텍처 기반으로 앱의 목적을 정한다.
-    <ul>
-      <li>이미지 검색 원하는 문구로 이미지를 검색하고 결과를 클릭하면 이미지가 포함된 URL을 브라우저를 통해서 연다.</li>
-      <li>엔티티 설정 -&gt;  이미지URL, 이미지 타이틀, 이미지를 포함한 오리지널 URL</li>
-    </ul>
-  </li>
-  <li>UseCase 를 만든다.
-    <ul>
-      <li>문자열 입력에 따른 결과값 반환 하는 케이스</li>
-      <li>대략 =&gt; GetImages(String query)  이런 함수로 예상</li>
-    </ul>
-  </li>
-  <li>UseCase가 가지고올 레포지토리 생성</li>
-  <li>원래 구글샘플에 rx 통신 모듈 추가</li>
+<li>샘플앱 기본을 정한다.(나중에 해도 됨)</li>
+<li>MVP 구현은 거의 구글샘플을 기반으로 한다.(프래그먼트)</li>
+<li>클린아키텍처 기반으로 앱의 목적을 정한다. 
+
+<ul>
+<li>이미지 검색 원하는 문구로 이미지를 검색하고 결과를 클릭하면 이미지가 포함된 URL을 브라우저를 통해서 연다.</li>
+<li>엔티티 설정 -&gt;  이미지URL, 이미지 타이틀, 이미지를 포함한 오리지널 URL</li>
+</ul></li>
+<li>UseCase 를 만든다.
+
+<ul>
+<li>문자열 입력에 따른 결과값 반환 하는 케이스</li>
+<li>대략 =&gt; GetImages(String query)  이런 함수로 예상</li>
+</ul></li>
+<li>UseCase가 가지고올 레포지토리 생성</li>
+<li>원래 구글샘플에 rx 통신 모듈 추가</li>
 </ul>
 
-<h4 id="section-2">3. 여러번 반복 하니 편해진다.</h4>
+<h4>3. 여러번 반복 하니 편해진다.</h4>
+
 <ul>
-  <li>아직 대거를 사용하진 못했지만 기본 싱글톤 인젝션 방식으로 구현되어 있어서 대거를 추가하기 쉬어 보인다.</li>
-  <li>기존에는 다음 API 처리문과 use 케이스가 결합되어 있어서 변경 하면 여기 저기 변경이 많이 발생했지만</li>
-  <li>지금은 다음에서 네이버로 변경 된다 하더라고 레포지토리만 변경하고 해당 API맞게 받은후 동일한 usecase 를 사용하기에 쉽게 변경 가능하다.</li>
+<li>아직 대거를 사용하진 못했지만 기본 싱글톤 인젝션 방식으로 구현되어 있어서 대거를 추가하기 쉬어 보인다.</li>
+<li>기존에는 다음 API 처리문과 use 케이스가 결합되어 있어서 변경 하면 여기 저기 변경이 많이 발생했지만</li>
+<li>지금은 다음에서 네이버로 변경 된다 하더라고 레포지토리만 변경하고 해당 API맞게 받은후 동일한 usecase 를 사용하기에 쉽게 변경 가능하다.</li>
 </ul>
 
-<h4 id="mvp--">4. mvp 의 장점</h4>
+<h4>4. mvp 의 장점</h4>
+
 <ul>
-  <li>당연한거지만 다른 레이어와 완전히 분리되어 있어서 로그만 출력하고 추후 개발이 쉽다.</li>
-  <li>UI 쪽만 따로 개발 및 테스트가 가능하다.</li>
+<li>당연한거지만 다른 레이어와 완전히 분리되어 있어서 로그만 출력하고 추후 개발이 쉽다.</li>
+<li>UI 쪽만 따로 개발 및 테스트가 가능하다.</li>
 </ul>
 
-<h4 id="section-3">5. 구글 샘플의 콜백</h4>
+<h4>5. 구글 샘플의 콜백</h4>
+
 <ul>
-  <li>use case 콜백은 상당히 유용하다.</li>
-  <li>처음에는 사용 안하려고 했지만 기본 언어 이외에 사용하는것도 거의 없다.</li>
-  <li>android.os.Handler 만 사용하고 있다.</li>
+<li>use case 콜백은 상당히 유용하다. </li>
+<li>처음에는 사용 안하려고 했지만 기본 언어 이외에 사용하는것도 거의 없다.</li>
+<li>android.os.Handler 만 사용하고 있다.</li>
 </ul>
 
-<h4 id="rx--">6. Rx 콜백으로 변경하기</h4>
+<h4>6. Rx 콜백으로 변경하기</h4>
+
 <ul>
-  <li>기존 rx 샘플에 만들어 놓은 apicallback 를 이용해 보겠습니다.
-    <ul>
-      <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-      <li>폴더이름 Retorfit2T</li>
-    </ul>
-  </li>
-  <li>apicallback 클래스를 복사해서 사용하기</li>
+<li>기존 rx 샘플에 만들어 놓은 apicallback 를 이용해 보겠습니다.
+
+<ul>
+<li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
+<li>폴더이름 Retorfit2T</li>
+</ul></li>
+<li>apicallback 클래스를 복사해서 사용하기</li>
 </ul>
 
-<h4 id="section-4">7. 인젝션</h4>
+<h4>7. 인젝션</h4>
+
 <ul>
-  <li>현재 인젝션을 싱글톤으로 주입 하는 방법을 선택했습니다.</li>
-  <li>이를 대거를 이용하는 방법은 추후 진행 하겠습니다.</li>
+<li>현재 인젝션을 싱글톤으로 주입 하는 방법을 선택했습니다.</li>
+<li>이를 대거를 이용하는 방법은 추후 진행 하겠습니다.</li>
 </ul>
 
-<h4 id="section-5">8. 샘플</h4>
-<ul>
-  <li>입력창에서 문자를 입력하면 핸들러콜백을 이용하는 방식</li>
-  <li>버튼을 누르면 rx 를 이요하는 방법 입니다.</li>
-  <li>샘플 코드
-    <ul>
-      <li>MyCleanMvp 폴더입니다.</li>
-      <li>프로젝트 그래들에 다음 API 키를 추가해야합니다.</li>
-      <li><a href="https://github.com/pyeongho/Sample.git">https://github.com/pyeongho/Sample.git</a></li>
-      <li><img src="http://dl.dropbox.com/s/nnzymkk8a9f3vb3/201705090718.png" alt="" /></li>
-    </ul>
-  </li>
-</ul>
+<h4>8. 샘플</h4>
 
+<ul>
+<li>입력창에서 문자를 입력하면 핸들러콜백을 이용하는 방식</li>
+<li>버튼을 누르면 rx 를 이요하는 방법 입니다.</li>
+<li>샘플 코드 
+
+<ul>
+<li>MyCleanMvp 폴더입니다. </li>
+<li>프로젝트 그래들에 다음 API 키를 추가해야합니다.</li>
+<li><a href="https://github.com/pyeongho/Sample.git">https://github.com/pyeongho/Sample.git</a></li>
+<li><img src="http://dl.dropbox.com/s/nnzymkk8a9f3vb3/201705090718.png" alt=""><br></li>
+</ul></li>
+</ul>
 
 	  ]]></description>
 	</item>
@@ -941,37 +889,39 @@ compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
 	  <pubDate>2017-04-30T00:00:00+00:00</pubDate>
 	  <guid>//github-image-dropbox</guid>
 	  <description><![CDATA[
-	     <h4 id="section">구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.</h4>
+	     <h4>구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.</h4>
+
 <ul>
-  <li>드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자</li>
+<li>드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자</li>
 </ul>
 
-<h4 id="section-1">1. 드랍박스 업로드가 쉘로 가능한지 찾기</h4>
+<h4>1. 드랍박스 업로드가 쉘로 가능한지 찾기</h4>
+
 <ul>
-  <li><a href="https://github.com/andreafabrizi/Dropbox-Uploader">https://github.com/andreafabrizi/Dropbox-Uploader</a></li>
-  <li>위 경로에서 쉘스크립트를 제공한다.</li>
-  <li>업로드 와 공유기능을 제공합니다.</li>
-  <li>그래서 기존 구글드라이브와 와 같이 프로그램을 만들어 보자</li>
-  <li>구글드라이브 설명
-    <ul>
-      <li><a href="https://pyeongho.github.io/google-drive-for-image">https://pyeongho.github.io/google-drive-for-image</a></li>
-    </ul>
-  </li>
+<li><a href="https://github.com/andreafabrizi/Dropbox-Uploader">https://github.com/andreafabrizi/Dropbox-Uploader</a></li>
+<li>위 경로에서 쉘스크립트를 제공한다.</li>
+<li>업로드 와 공유기능을 제공합니다.</li>
+<li>그래서 기존 구글드라이브와 와 같이 프로그램을 만들어 보자</li>
+<li>구글드라이브 설명
+
+<ul>
+<li><a href="https://pyeongho.github.io/google-drive-for-image">https://pyeongho.github.io/google-drive-for-image</a></li>
+</ul></li>
 </ul>
 
-<h4 id="section-2">2. 수정된 스크립트만 올리겠습니다.</h4>
+<h4>2. 수정된 스크립트만 올리겠습니다.</h4>
+
 <ul>
-  <li>인자를 받아서 수정하는 부분을 갭쳐실행 -&gt; 업로드 -&gt; 공유 -&gt; 링크 복사</li>
-  <li>
-    <p>인자받는 부분을 모두 지우고 아래 내용을 추가 했습니다.<br />
-<script src="https://gist.github.com/pyeongho/70aa0ea2f17452d3fefbce17ed7b9e10.js"></script></p>
-  </li>
-  <li>그리고 db_share 함수와 get_Share 함수에 내용을 추가 했습니다.<br />
-<script src="https://gist.github.com/pyeongho/d1b3e874b5dd47b6721b16f6f49e5b43.js"></script></li>
+<li>인자를 받아서 수정하는 부분을 갭쳐실행 -&gt; 업로드 -&gt; 공유 -&gt; 링크 복사 </li>
+<li><p>인자받는 부분을 모두 지우고 아래 내용을 추가 했습니다.
+<script src="https://gist.github.com/pyeongho/70aa0ea2f17452d3fefbce17ed7b9e10.js"></script></p></li>
+<li><p>그리고 db<em>share 함수와 get</em>Share 함수에 내용을 추가 했습니다.
+<script src="https://gist.github.com/pyeongho/d1b3e874b5dd47b6721b16f6f49e5b43.js"></script></p></li>
 </ul>
 
-<h4 id="section-3">3. 드랍박스 이미지는 사파리에서 잘 나왔으면 좋겠습니다.</h4>
-<p><img src="http://dl.dropbox.com/s/s5slt9ilsflggrv/201704301038.png" alt="드랍박스공유테스트" /></p>
+<h4>3. 드랍박스 이미지는 사파리에서 잘 나왔으면 좋겠습니다.</h4>
+
+<p><img src="http://dl.dropbox.com/s/s5slt9ilsflggrv/201704301038.png" alt="드랍박스공유테스트"></p>
 
 	  ]]></description>
 	</item>

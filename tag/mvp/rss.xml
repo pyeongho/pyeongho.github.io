@@ -18,100 +18,108 @@
 	  <pubDate>2017-05-07T00:00:00+00:00</pubDate>
 	  <guid>//my-clean-mvp</guid>
 	  <description><![CDATA[
-	     <h3 id="gdg-atsl-on-mvp-">구글 샘플과 GDG-ATSL-ON-MVP를 이용</h3>
+	     <h3>구글 샘플과 GDG-ATSL-ON-MVP를 이용</h3>
+
 <ul>
-  <li>2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.</li>
-  <li>원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
-    <ul>
-      <li><a href="https://github.com/ZeroBrain/GDG-ATSL-ON-MVP">https://github.com/ZeroBrain/GDG-ATSL-ON-MVP</a></li>
-    </ul>
-  </li>
+<li>2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.</li>
+<li>원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
+
+<ul>
+<li><a href="https://github.com/ZeroBrain/GDG-ATSL-ON-MVP">https://github.com/ZeroBrain/GDG-ATSL-ON-MVP</a></li>
+</ul></li>
 </ul>
 
-<h4 id="section">1. 구글샘플 기반으로 앱을 생성하고 제로브레인님의 다음 이미지 검색기능을 추가 하는 형태로 진행</h4>
+<h4>1. 구글샘플 기반으로 앱을 생성하고 제로브레인님의 다음 이미지 검색기능을 추가 하는 형태로 진행</h4>
+
 <ul>
-  <li>기본 샘플 생성</li>
-  <li>버터나이프, 데이터바인딩 은 넣으면 코드가 짧아 지지만 사용 안합니다.</li>
-  <li>구글 샘플이 좋았던 점은 거의 모든 뷰를 프래그먼트에서 구현 하였던 점입니다.
-    <ul>
-      <li>프로가드 적용시 액티비티 코드는 거의 원형이 남아 있는데 이를 프래그먼트에서 구현 하니 프로가드 적용이 조금더 강력한 느낌 이었습니다.</li>
-    </ul>
-  </li>
-  <li>구글 샘플에서 기본적으로 필요한 것들을 복사해옴</li>
-  <li>rx 를 추가하면 많이 없어질걸로 예상</li>
+<li>기본 샘플 생성</li>
+<li>버터나이프, 데이터바인딩 은 넣으면 코드가 짧아 지지만 사용 안합니다.</li>
+<li>구글 샘플이 좋았던 점은 거의 모든 뷰를 프래그먼트에서 구현 하였던 점입니다.
+
+<ul>
+<li>프로가드 적용시 액티비티 코드는 거의 원형이 남아 있는데 이를 프래그먼트에서 구현 하니 프로가드 적용이 조금더 강력한 느낌 이었습니다.</li>
+</ul></li>
+<li>구글 샘플에서 기본적으로 필요한 것들을 복사해옴</li>
+<li>rx 를 추가하면 많이 없어질걸로 예상</li>
 </ul>
 
-<h4 id="section-1">2. 진행 순서</h4>
+<h4>2. 진행 순서</h4>
+
 <ul>
-  <li>샘플앱 기본을 정한다.(나중에 해도 됨)</li>
-  <li>MVP 구현은 거의 구글샘플을 기반으로 한다.(프래그먼트)</li>
-  <li>클린아키텍처 기반으로 앱의 목적을 정한다.
-    <ul>
-      <li>이미지 검색 원하는 문구로 이미지를 검색하고 결과를 클릭하면 이미지가 포함된 URL을 브라우저를 통해서 연다.</li>
-      <li>엔티티 설정 -&gt;  이미지URL, 이미지 타이틀, 이미지를 포함한 오리지널 URL</li>
-    </ul>
-  </li>
-  <li>UseCase 를 만든다.
-    <ul>
-      <li>문자열 입력에 따른 결과값 반환 하는 케이스</li>
-      <li>대략 =&gt; GetImages(String query)  이런 함수로 예상</li>
-    </ul>
-  </li>
-  <li>UseCase가 가지고올 레포지토리 생성</li>
-  <li>원래 구글샘플에 rx 통신 모듈 추가</li>
+<li>샘플앱 기본을 정한다.(나중에 해도 됨)</li>
+<li>MVP 구현은 거의 구글샘플을 기반으로 한다.(프래그먼트)</li>
+<li>클린아키텍처 기반으로 앱의 목적을 정한다. 
+
+<ul>
+<li>이미지 검색 원하는 문구로 이미지를 검색하고 결과를 클릭하면 이미지가 포함된 URL을 브라우저를 통해서 연다.</li>
+<li>엔티티 설정 -&gt;  이미지URL, 이미지 타이틀, 이미지를 포함한 오리지널 URL</li>
+</ul></li>
+<li>UseCase 를 만든다.
+
+<ul>
+<li>문자열 입력에 따른 결과값 반환 하는 케이스</li>
+<li>대략 =&gt; GetImages(String query)  이런 함수로 예상</li>
+</ul></li>
+<li>UseCase가 가지고올 레포지토리 생성</li>
+<li>원래 구글샘플에 rx 통신 모듈 추가</li>
 </ul>
 
-<h4 id="section-2">3. 여러번 반복 하니 편해진다.</h4>
+<h4>3. 여러번 반복 하니 편해진다.</h4>
+
 <ul>
-  <li>아직 대거를 사용하진 못했지만 기본 싱글톤 인젝션 방식으로 구현되어 있어서 대거를 추가하기 쉬어 보인다.</li>
-  <li>기존에는 다음 API 처리문과 use 케이스가 결합되어 있어서 변경 하면 여기 저기 변경이 많이 발생했지만</li>
-  <li>지금은 다음에서 네이버로 변경 된다 하더라고 레포지토리만 변경하고 해당 API맞게 받은후 동일한 usecase 를 사용하기에 쉽게 변경 가능하다.</li>
+<li>아직 대거를 사용하진 못했지만 기본 싱글톤 인젝션 방식으로 구현되어 있어서 대거를 추가하기 쉬어 보인다.</li>
+<li>기존에는 다음 API 처리문과 use 케이스가 결합되어 있어서 변경 하면 여기 저기 변경이 많이 발생했지만</li>
+<li>지금은 다음에서 네이버로 변경 된다 하더라고 레포지토리만 변경하고 해당 API맞게 받은후 동일한 usecase 를 사용하기에 쉽게 변경 가능하다.</li>
 </ul>
 
-<h4 id="mvp--">4. mvp 의 장점</h4>
+<h4>4. mvp 의 장점</h4>
+
 <ul>
-  <li>당연한거지만 다른 레이어와 완전히 분리되어 있어서 로그만 출력하고 추후 개발이 쉽다.</li>
-  <li>UI 쪽만 따로 개발 및 테스트가 가능하다.</li>
+<li>당연한거지만 다른 레이어와 완전히 분리되어 있어서 로그만 출력하고 추후 개발이 쉽다.</li>
+<li>UI 쪽만 따로 개발 및 테스트가 가능하다.</li>
 </ul>
 
-<h4 id="section-3">5. 구글 샘플의 콜백</h4>
+<h4>5. 구글 샘플의 콜백</h4>
+
 <ul>
-  <li>use case 콜백은 상당히 유용하다.</li>
-  <li>처음에는 사용 안하려고 했지만 기본 언어 이외에 사용하는것도 거의 없다.</li>
-  <li>android.os.Handler 만 사용하고 있다.</li>
+<li>use case 콜백은 상당히 유용하다. </li>
+<li>처음에는 사용 안하려고 했지만 기본 언어 이외에 사용하는것도 거의 없다.</li>
+<li>android.os.Handler 만 사용하고 있다.</li>
 </ul>
 
-<h4 id="rx--">6. Rx 콜백으로 변경하기</h4>
+<h4>6. Rx 콜백으로 변경하기</h4>
+
 <ul>
-  <li>기존 rx 샘플에 만들어 놓은 apicallback 를 이용해 보겠습니다.
-    <ul>
-      <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-      <li>폴더이름 Retorfit2T</li>
-    </ul>
-  </li>
-  <li>apicallback 클래스를 복사해서 사용하기</li>
+<li>기존 rx 샘플에 만들어 놓은 apicallback 를 이용해 보겠습니다.
+
+<ul>
+<li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
+<li>폴더이름 Retorfit2T</li>
+</ul></li>
+<li>apicallback 클래스를 복사해서 사용하기</li>
 </ul>
 
-<h4 id="section-4">7. 인젝션</h4>
+<h4>7. 인젝션</h4>
+
 <ul>
-  <li>현재 인젝션을 싱글톤으로 주입 하는 방법을 선택했습니다.</li>
-  <li>이를 대거를 이용하는 방법은 추후 진행 하겠습니다.</li>
+<li>현재 인젝션을 싱글톤으로 주입 하는 방법을 선택했습니다.</li>
+<li>이를 대거를 이용하는 방법은 추후 진행 하겠습니다.</li>
 </ul>
 
-<h4 id="section-5">8. 샘플</h4>
-<ul>
-  <li>입력창에서 문자를 입력하면 핸들러콜백을 이용하는 방식</li>
-  <li>버튼을 누르면 rx 를 이요하는 방법 입니다.</li>
-  <li>샘플 코드
-    <ul>
-      <li>MyCleanMvp 폴더입니다.</li>
-      <li>프로젝트 그래들에 다음 API 키를 추가해야합니다.</li>
-      <li><a href="https://github.com/pyeongho/Sample.git">https://github.com/pyeongho/Sample.git</a></li>
-      <li><img src="http://dl.dropbox.com/s/nnzymkk8a9f3vb3/201705090718.png" alt="" /></li>
-    </ul>
-  </li>
-</ul>
+<h4>8. 샘플</h4>
 
+<ul>
+<li>입력창에서 문자를 입력하면 핸들러콜백을 이용하는 방식</li>
+<li>버튼을 누르면 rx 를 이요하는 방법 입니다.</li>
+<li>샘플 코드 
+
+<ul>
+<li>MyCleanMvp 폴더입니다. </li>
+<li>프로젝트 그래들에 다음 API 키를 추가해야합니다.</li>
+<li><a href="https://github.com/pyeongho/Sample.git">https://github.com/pyeongho/Sample.git</a></li>
+<li><img src="http://dl.dropbox.com/s/nnzymkk8a9f3vb3/201705090718.png" alt=""><br></li>
+</ul></li>
+</ul>
 
 	  ]]></description>
 	</item>
@@ -123,41 +131,51 @@
 	  <pubDate>2017-02-11T00:00:00+00:00</pubDate>
 	  <guid>//mvp</guid>
 	  <description><![CDATA[
-	     <h3 id="mvp----">안드로이드에 mvp를 적극적으로 추가하기 위한 공부중</h3>
+	     <h3>안드로이드에 mvp를 적극적으로 추가하기 위한 공부중</h3>
 
-<h4 id="section">1. 첫번쩨 공부</h4>
+<h4>1. 첫번쩨 공부</h4>
+
 <ul>
-  <li><a href="https://medium.com/@jsuch2362/adapter-누구냐-넌-data-view-2db7eff11c20#.779qihsc4">정승욱님 블로그 게시글 링크</a></li>
-  <li>mvp 적용해야겠다고 생각하고 기본적인 샘플을 만들어 볼려고 이것 저것 시도 하였습니다.</li>
-  <li>앱을 만들면서 필요 하다고 느껴진 통신을 rxjava2 와 mvp 를 적용 하면 기본적인건 모두 적용 가능하다고 생각</li>
-  <li>그래서 네이버 기계 번역을 여기 저기 내용을 짜깁기 해서 만들어 보았습니다.</li>
-  <li>저렇게 샘플을 기반으로 패턴을 이용해서 지속적으로 사용하려 했습니다.</li>
-  <li>블로그를 여기저기 돌아다니다 보면서 좀더 공부 해야 겠다는 생각이 들어서 공부를 시작 합니다.</li>
+<li><a href="https://medium.com/@jsuch2362/adapter-%EB%88%84%EA%B5%AC%EB%83%90-%EB%84%8C-data-view-2db7eff11c20#.779qihsc4">정승욱님 블로그 게시글 링크</a></li>
+<li>mvp 적용해야겠다고 생각하고 기본적인 샘플을 만들어 볼려고 이것 저것 시도 하였습니다.</li>
+<li>앱을 만들면서 필요 하다고 느껴진 통신을 rxjava2 와 mvp 를 적용 하면 기본적인건 모두 적용 가능하다고 생각</li>
+<li>그래서 네이버 기계 번역을 여기 저기 내용을 짜깁기 해서 만들어 보았습니다.</li>
+<li>저렇게 샘플을 기반으로 패턴을 이용해서 지속적으로 사용하려 했습니다.</li>
+<li>블로그를 여기저기 돌아다니다 보면서 좀더 공부 해야 겠다는 생각이 들어서 공부를 시작 합니다.</li>
 </ul>
 
-<h4 id="section-1">2. 정승욱님 블로그 내용 공부</h4>
+<h4>2. 정승욱님 블로그 내용 공부</h4>
+
 <ul>
-  <li>안드로이드 앱 개발의 리스트뷰</li>
-  <li>복사 내용</li>
-  <li>Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.</li>
-  <li>View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행. 또는 UI 처리와 이벤트를 프리젠터로 넘김</li>
-  <li>Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함.</li>
-  <li>Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행, 또는 통신같은 데이터 처리</li>
-  <li><a href="https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample">https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample</a></li>
-  <li>예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.</li>
-  <li>Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다.</li>
+<li>안드로이드 앱 개발의 리스트뷰 </li>
+<li>복사 내용 </li>
+<li>Android 에서 가장 대중화된 Clean Architecture 인 MVP (Model-View-Presenter) 에서는 각각을 다음과 같이 정의하고 있습니다.
+
+<ul>
+<li>View : 실제 View 에 접근하고 화면을 갱신하는 역할을 수행. 또는 UI 처리와 이벤트를 프리젠터로 넘김</li>
+<li>Presenter : View 로부터 이벤트를 전달받고 View 에서 알 수 없는 Data 에 접근하고 로직을 수행하도록 Model 에 요청함. </li>
+<li>Model : Data 에 직접 접근하고 관리함. Presenter 가 요청한 작업을 수행, 또는 통신같은 데이터 처리</li>
+</ul></li>
+<li><a href="https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample">https://github.com/ZeroBrain/Android-MVP-AdapterRoleSample</a>
+
+<ul>
+<li>예제가 있는데 제가 모르는 라이브러리들이 있어서 좀더 공부 해야 알수가 있을거 같습니다.</li>
+<li>Dagger, Lambda를 모르겠어서 좀도 쉬운 예제를 찾아 갑니다. </li>
+</ul></li>
 </ul>
 
-<h4 id="section-2">3. 좀더 자세히 정리된 블로그로 이동</h4>
+<h4>3. 좀더 자세히 정리된 블로그로 이동</h4>
+
 <ul>
-  <li><a href="http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html">꿈많은 개발자가 되자 블로그 링크</a></li>
-  <li><a href="https://github.com/antoniolg/androidmvp">내가 좋아하는 스타일의 mvp </a></li>
+<li><a href="http://thdev.tech/androiddev/2016/06/14/Android-TODO-MVP-Example.html">꿈많은 개발자가 되자 블로그 링크</a></li>
+<li><a href="https://github.com/antoniolg/androidmvp">내가 좋아하는 스타일의 mvp </a></li>
 </ul>
 
-<h4 id="mvp-">4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플</h4>
+<h4>4. 버터나이프를 제거하고 데이터바인딩 변경한 MVP 샘플</h4>
+
 <ul>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
-  <li>위 코드에 새로운 폴더를 생성하였습니다.</li>
+<li> <a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
+<li>위 코드에 새로운 폴더를 생성하였습니다. </li>
 </ul>
 
 	  ]]></description>
@@ -170,13 +188,12 @@
 	  <pubDate>2017-02-10T00:00:00+00:00</pubDate>
 	  <guid>//retrofit2</guid>
 	  <description><![CDATA[
-	     <h4 id="retrofit2--rxandroid2--mvp---">retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
+	     <h4>retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
 
-<h4 id="mvp----">참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
+<h4>참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
 
-<h4 id="dependencies-----">1. dependencies 추가 기존 내용과 동일 합니다.</h4>
-
-<pre><code class="language-gradle">
+<h4>1. dependencies 추가 기존 내용과 동일 합니다.</h4>
+<div class="highlight"><pre><code class="language-gradle" data-lang="gradle">
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
@@ -185,31 +202,33 @@
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    
-</code></pre>
 
-<h4 id="mvp--">2. mvp 패던 링크</h4>
+</code></pre></div>
+<h4>2. mvp 패던 링크</h4>
+
 <ul>
-  <li><a href="http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html">잔디랩의 mvp</a></li>
-  <li><a href="http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/">pluu dev</a></li>
-  <li><a href="http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html">꿈많은 개발자 링크</a></li>
+<li><a href="http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html">잔디랩의 mvp</a></li>
+<li><a href="http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/">pluu dev</a></li>
+<li><a href="http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html">꿈많은 개발자 링크</a></li>
 </ul>
 
-<h4 id="mvp---1">3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
+<h4>3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
 
-<h4 id="mvp--------">4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
+<h4>4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
+
 <ul>
-  <li>mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..</li>
-  <li>다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.</li>
-  <li>mvp가 자리 잡으면 테스트 주도 개발을 도전해 보겠습니다.</li>
-  <li>아래가 코드가 제가 다른 사람걸 참고 만든 전체 코드 입니다.</li>
-  <li>버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.</li>
+<li>mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..</li>
+<li>다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.</li>
+<li>mvp가 자리 잡으면 테스트 주도 개발을 도전해 보겠습니다.</li>
+<li>아래가 코드가 제가 다른 사람걸 참고 만든 전체 코드 입니다.</li>
+<li>버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.</li>
 </ul>
 
-<h4 id="section">5. 전체 샘플코드</h4>
+<h4>5. 전체 샘플코드</h4>
+
 <ul>
-  <li>기존 샘플코드에 폴더를 추가 하였습니다.</li>
-  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
+<li>기존 샘플코드에 폴더를 추가 하였습니다.</li>
+<li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
 </ul>
 
 	  ]]></description>

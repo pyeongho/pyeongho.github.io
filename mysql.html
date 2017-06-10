@@ -137,21 +137,20 @@
 
         <section class="post-content">
             
-            <h3 id="mysql-">리눅스에서 mysql 사용하기</h3>
+            <h3>리눅스에서 mysql 사용하기</h3>
 
-<h4 id="mysql-----">1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
+<h4>1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
+
 <ul>
-  <li>mysql이 설치는 되어 있을거구 없으면 (apt-get install mysql-server)</li>
-  <li>
-    <p>실행은 sudo service mysql start 정도</p>
+<li>mysql이 설치는 되어 있을거구 없으면 (apt-get install mysql-server)</li>
+<li><p>실행은 sudo service mysql start 정도</p>
 
-    <p>sudo apt-get install mysql-server<br />
-sudo service mysql start</p>
-  </li>
+<p>sudo apt-get install mysql-server
+sudo service mysql start</p></li>
 </ul>
 
-<h4 id="mysql------1">2. mysql 접속 및 데이터 베이스 추가</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>  # mysql -u root -p
+<h4>2. mysql 접속 및 데이터 베이스 추가</h4>
+<div class="highlight"><pre><code class="language-" data-lang="">  # mysql -u root -p
   mysql &gt; use mysql; 
   mysql &gt; select host, user, password from user;         
 +--------------+------------------+-------------------------------------------+
@@ -165,88 +164,69 @@ sudo service mysql start</p>
 | %            | xxxxxxxx         |                                           |
 +--------------+------------------+-------------------------------------------+
 6 rows in set (0.00 sec)
-</code></pre>
-</div>
-
+</code></pre></div>
 <ul>
-  <li>위 처럼 동작 하면 기본 적인 sql 테스트 완료</li>
+<li>위 처럼 동작 하면 기본 적인 sql 테스트 완료</li>
 </ul>
 
-<h4 id="section">3. 사용자 추가 및 권한추가</h4>
+<h4>3. 사용자 추가 및 권한추가</h4>
+
 <ul>
-  <li>
-    <p>localhost</p>
+<li><p>localhost </p>
+<div class="highlight"><pre><code class="language-" data-lang="">mysql &gt; create user userid@localhost identified by '비밀번호';
+</code></pre></div>
+<ul>
+<li><p>기존에 사용하던 계정에 외부 접근 권한을 부여하려면, Host를 &#39;%&#39; 로 하여 똑같은 계정을 추가한다</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>mysql &gt; create user userid@localhost identified by '비밀번호';
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>기존에 사용하던 계정에 외부 접근 권한을 부여하려면, Host를 ‘%’ 로 하여 똑같은 계정을 추가한다</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> mysql &gt; create user 'userid'@'%' identified by '비밀번호';  
- // '%' 의 의미는 외부에서의 접근을 허용
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>위 방법 말고 많아요. 다른 방법은 구글에서 검색해서 한다.</p>
-  </li>
+<p>mysql &gt; create user &#39;userid&#39;@&#39;%&#39; identified by &#39;비밀번호&#39;;<br>
+// &#39;%&#39; 의 의미는 외부에서의 접근을 허용</p></li>
+<li><p>위 방법 말고 많아요. 다른 방법은 구글에서 검색해서 한다. </p></li>
+</ul></li>
 </ul>
 
-<h4 id="section-1">4. 데이터 베이스 생성</h4>
+<h4>4. 데이터 베이스 생성</h4>
+
 <ul>
-  <li>
-    <p>databases 확인</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>show databases; 
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>databases 생성</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>create database TEST;
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>database 확인 하면 TEST 가 있다.</p>
-  </li>
+<li><p>databases 확인 </p>
+<div class="highlight"><pre><code class="language-" data-lang="">show databases; 
+</code></pre></div></li>
+<li><p>databases 생성</p>
+<div class="highlight"><pre><code class="language-" data-lang="">create database TEST;
+</code></pre></div></li>
+<li><p>database 확인 하면 TEST 가 있다.</p></li>
 </ul>
 
-<h4 id="section-2">5. 테이블 생성</h4>
+<h4>5. 테이블 생성</h4>
+
 <ul>
-  <li>테이블 생성하기전 사용하려면 데이터 베이스를 선택 해야 합니다.</li>
-  <li>use ‘데이터베이스이름’;  // 데이터베이스 사용하기</li>
-  <li>show tables;  // 데이터베이스 테이블 확인 하기</li>
-  <li>test 데이터베이스 사용</li>
-  <li>
-    <p>그리고 테이블 만들기</p>
+<li>테이블 생성하기전 사용하려면 데이터 베이스를 선택 해야 합니다.</li>
+<li>use &#39;데이터베이스이름&#39;;  // 데이터베이스 사용하기</li>
+<li>show tables;  // 데이터베이스 테이블 확인 하기<br></li>
+<li>test 데이터베이스 사용</li>
+<li><p>그리고 테이블 만들기 </p>
 
-    <p>mysql&gt;use test;</p>
+<p>mysql&gt;use test;</p>
 
-    <p>CREATE TABLE address (<br />
-  name varchar(25) default NULL,<br />
-  address text,<br />
-  tel varchar(25) default NULL<br />
-);</p>
+<p>CREATE TABLE address (
+  name varchar(25) default NULL,
+  address text,
+  tel varchar(25) default NULL
+);     </p>
 
-    <p>mysql&gt;use test;<br />
-+—————-+<br />
-| Tables_in_test |<br />
-+—————-+<br />
-| address        |<br />
-+—————-+<br />
-1 row in set (0.00 sec)</p>
-  </li>
+<p>mysql&gt;use test;
++----------------+
+| Tables<em>in</em>test |
++----------------+
+| address        |
++----------------+
+1 row in set (0.00 sec)</p></li>
 </ul>
 
-<h4 id="section-3">6. 더미데이터 추가</h4>
-<ul>
-  <li>INSERT INTO address VALUES (‘ABC’,’DEFGHIJKLMN’,’031-000-0000’);</li>
-</ul>
+<h4>6. 더미데이터 추가</h4>
 
+<ul>
+<li>INSERT INTO address VALUES (&#39;ABC&#39;,&#39;DEFGHIJKLMN&#39;,&#39;031-000-0000&#39;);</li>
+</ul>
 
 
         </section>

@@ -133,82 +133,83 @@
 
         <section class="post-content">
             
-            <h3 id="gof------">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+            <h3>GoF 의 자바 디자인 패턴, 인프런 강의</h3>
 
-<h4 id="section">코드 링크</h4>
+<h4>코드 링크</h4>
+
 <ul>
-  <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
+<li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
 </ul>
 
-<h4 id="section-1">11. 데코레이션 패턴</h4>
+<h4>11. 데코레이션 패턴</h4>
+
 <ul>
-  <li>학습목표
-    <ul>
-      <li>동적으로 책임 추가가 필요 할때 데코레이션 패턴 추가</li>
-    </ul>
-  </li>
-  <li>키워드
-    <ul>
-      <li>책임(해야 하는일)</li>
-    </ul>
-  </li>
-  <li>예제 : 커피 제조 방법
-    <ul>
-      <li>에스프레소 : 커피의 기본</li>
-      <li>아메리카노 : 에스프레소 + 물</li>
-      <li>카페라떼 : 에스프레소 + 우유</li>
-      <li>헤이즐넛 : 아메리카노 + 헤이즐넛 시럽</li>
-      <li>카페모카 : 카페라떼 + 초코릿</li>
-      <li>캬라멜 마끼아또 : 카페라떼 + 캬라멜 시럽</li>
-    </ul>
-  </li>
+<li>학습목표
+
+<ul>
+<li>동적으로 책임 추가가 필요 할때 데코레이션 패턴 추가</li>
+</ul></li>
+<li>키워드 
+
+<ul>
+<li>책임(해야 하는일)</li>
+</ul></li>
+<li>예제 : 커피 제조 방법
+
+<ul>
+<li>에스프레소 : 커피의 기본</li>
+<li>아메리카노 : 에스프레소 + 물</li>
+<li>카페라떼 : 에스프레소 + 우유</li>
+<li>헤이즐넛 : 아메리카노 + 헤이즐넛 시럽</li>
+<li>카페모카 : 카페라떼 + 초코릿</li>
+<li>캬라멜 마끼아또 : 카페라떼 + 캬라멜 시럽</li>
+</ul></li>
 </ul>
 
-<h4 id="section-2">12. 방문자 패턴</h4>
+<h4>12. 방문자 패턴</h4>
+
 <ul>
-  <li>학습목표
-    <ul>
-      <li>객체에서 처리를 분리해서 사용</li>
-    </ul>
-  </li>
-  <li>수정 불가능한 클래스를 방문자 패턴을 이용해서 분리해서 처리가 가능함</li>
+<li>학습목표
+
+<ul>
+<li>객체에서 처리를 분리해서 사용</li>
+</ul></li>
+<li>수정 불가능한 클래스를 방문자 패턴을 이용해서 분리해서 처리가 가능함</li>
 </ul>
 
-<h4 id="section-3">13. 책임사슬 처리</h4>
+<h4>13. 책임사슬 처리</h4>
+
 <ul>
-  <li>학습목표
-    <ul>
-      <li>다양한 처리방식을 유연하게 처리 할 수 있다.</li>
-      <li>예제 : 사칙 연산
-        <ul>
-          <li>테스트를 위한 슈도 코드를 넣으면서 코딩을 하자</li>
-          <li>테스트 주도 개발을 목표로</li>
-        </ul>
-      </li>
-    </ul>
+<li><p>학습목표</p>
 
-    <p>```java<br />
-    PlusCal plus = new PlusCal();<br />
-    SubCal sub = new SubCal();</p>
+<ul>
+<li>다양한 처리방식을 유연하게 처리 할 수 있다.<br></li>
+<li>예제 : 사칙 연산
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>// 위 내용은 추상화 한다.
-Cal plus = new PlusCal();
-Cal sub = new SubCal();
-plus.setNextCal(sub);
-    
-Request request1 = new Request(1,2,"+");
-Request request2 = new Request(10,2,"-");
-    
-plus.process(request1);
-plus.process(request2);
-</code></pre>
-    </div>
-
-    <p>```<br />
- - 처리를 다음 클래스로 넘겨서 처리 시킨다.</p>
-  </li>
+<ul>
+<li>테스트를 위한 슈도 코드를 넣으면서 코딩을 하자</li>
+<li>테스트 주도 개발을 목표로</li>
+</ul></li>
 </ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">PlusCal</span> <span class="n">plus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlusCal</span><span class="o">();</span>
+    <span class="n">SubCal</span> <span class="n">sub</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubCal</span><span class="o">();</span>
 
+    <span class="c1">// 위 내용은 추상화 한다.</span>
+    <span class="n">Cal</span> <span class="n">plus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlusCal</span><span class="o">();</span>
+    <span class="n">Cal</span> <span class="n">sub</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SubCal</span><span class="o">();</span>
+    <span class="n">plus</span><span class="o">.</span><span class="na">setNextCal</span><span class="o">(</span><span class="n">sub</span><span class="o">);</span>
+
+    <span class="n">Request</span> <span class="n">request1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="s">"+"</span><span class="o">);</span>
+    <span class="n">Request</span> <span class="n">request2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="s">"-"</span><span class="o">);</span>
+
+    <span class="n">plus</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">request1</span><span class="o">);</span>
+    <span class="n">plus</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">request2</span><span class="o">);</span>
+
+</code></pre></div>
+<ul>
+<li>처리를 다음 클래스로 넘겨서 처리 시킨다.</li>
+</ul></li>
+</ul>
 
 
         </section>

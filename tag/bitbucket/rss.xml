@@ -18,72 +18,74 @@
 	  <pubDate>2017-04-29T12:00:00+00:00</pubDate>
 	  <guid>//bitbucket-deploy</guid>
 	  <description><![CDATA[
-	     <h4 id="section">자동배포시스템 적용하기</h4>
+	     <h4>자동배포시스템 적용하기</h4>
+
 <ul>
-  <li>github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함</li>
+<li>github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함</li>
 </ul>
 
-<h4 id="section-1">1. 스태틱으로 변경 후 배포 방법 개선이 필요 하다고 생각</h4>
+<h4>1. 스태틱으로 변경 후 배포 방법 개선이 필요 하다고 생각</h4>
+
 <ul>
-  <li>블로그 업데이트 순서
-    <ul>
-      <li>비트버켓에서 클론</li>
-      <li>글 작성</li>
-      <li>비트버켓에 오리지널 마크다운 푸시</li>
-      <li>로컬에서 지킬 빌드 후 결과를 깃허브에 푸시</li>
-    </ul>
-  </li>
-  <li>위 같은 순서를 하려고 하니 너무 끔직함</li>
-  <li>스크립트를 작성해서 하려 했지만 마크다운 툴을 비주얼스튜디오 코드를 사용하다 보니 스크립트 명령을 부를수가 없다.</li>
-  <li>명령창을 열어서 스크립트 실행? 이것도 귀찮다.</li>
-  <li>만약 로컬에서 지킬 빌드가 안되면 어떻게? 저거 하려면 몇 단계를 거쳐야 하는거야.. 나름 코딩하는 사람인데</li>
+<li>블로그 업데이트 순서
+
+<ul>
+<li>비트버켓에서 클론</li>
+<li>글 작성</li>
+<li>비트버켓에 오리지널 마크다운 푸시</li>
+<li>로컬에서 지킬 빌드 후 결과를 깃허브에 푸시</li>
+</ul></li>
+<li>위 같은 순서를 하려고 하니 너무 끔직함</li>
+<li>스크립트를 작성해서 하려 했지만 마크다운 툴을 비주얼스튜디오 코드를 사용하다 보니 스크립트 명령을 부를수가 없다.</li>
+<li>명령창을 열어서 스크립트 실행? 이것도 귀찮다.</li>
+<li>만약 로컬에서 지킬 빌드가 안되면 어떻게? 저거 하려면 몇 단계를 거쳐야 하는거야.. 나름 코딩하는 사람인데</li>
 </ul>
 
-<h4 id="section-2">2. 트래비스 삽질</h4>
+<h4>2. 트래비스 삽질</h4>
+
 <ul>
-  <li>jekyll/jasper 테마가 트래비스 연동을 추천해서 해당 방법을 계속 찾음</li>
-  <li>깃허브에서도 실패한 트래비스</li>
-  <li>비트버켓에서 트래비스 가능 할거라 생각하고 찾아지만 한글이나 영어 둘다 자료가 너무 없음</li>
-  <li>검색을 조금 바꿔보니 비트버켓은 자체 ci 를 제공하는걸로 보임</li>
-  <li>파이프라인 이라는 용어찾음</li>
+<li>jekyll/jasper 테마가 트래비스 연동을 추천해서 해당 방법을 계속 찾음</li>
+<li>깃허브에서도 실패한 트래비스 </li>
+<li>비트버켓에서 트래비스 가능 할거라 생각하고 찾아지만 한글이나 영어 둘다 자료가 너무 없음</li>
+<li>검색을 조금 바꿔보니 비트버켓은 자체 ci 를 제공하는걸로 보임</li>
+<li>파이프라인 이라는 용어찾음</li>
 </ul>
 
-<h4 id="section-3">3 비트버켓 파이프라인 적응기</h4>
+<h4>3 비트버켓 파이프라인 적응기</h4>
+
 <ul>
-  <li>비트버켓 저장소의 설정을 확인하면 pipeline 설정 항목이 보인다.</li>
-  <li>항목을 설정하면 파이프라인 설정 파일을 만들수있다.</li>
-  <li>지킬을 루비라는것만 알아서 ..</li>
-  <li>다시 검색을 시작</li>
-  <li><a href="https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/">https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/</a></li>
-  <li>위 링크에서 어떻게 해야 할지를 발견함</li>
-  <li>내가 생각했던 순서를 정확하게 똑같이 하려는 분을 만남. 감사합니다.</li>
+<li>비트버켓 저장소의 설정을 확인하면 pipeline 설정 항목이 보인다.</li>
+<li>항목을 설정하면 파이프라인 설정 파일을 만들수있다.</li>
+<li>지킬을 루비라는것만 알아서 ..</li>
+<li>다시 검색을 시작 </li>
+<li><a href="https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/">https://blog.nathanaelcherrier.com/2017/02/01/utiliser-jekyll-avec-bitbucket-pages/</a></li>
+<li>위 링크에서 어떻게 해야 할지를 발견함</li>
+<li>내가 생각했던 순서를 정확하게 똑같이 하려는 분을 만남. 감사합니다.</li>
 </ul>
 
-<h4 id="section-4">4. 자동 배포 시스템</h4>
-<ul>
-  <li>파이프라인 얌 파일 설정</li>
-  <li>
-    <script src="https://gist.github.com/pyeongho/fe5b671a55f6c18d6f6f918af27cfbe7.js"></script>
-  </li>
-  <li>번들 빌드 하기위해서는 Gemfile Gemfile.lock 파일 필요합니다.(재스퍼 테마에서 파일 참고)</li>
-  <li>위 내용중 SITE_A 는 비트버켓 설정에 가능합니다. 공개된곳에 암호를 입력할수 없기에 설정에서 환경 변수 등록이 가능합니다.
-    <ul>
-      <li>setting -&gt; Environment variables -&gt; 문자열 등록</li>
-    </ul>
-  </li>
-  <li>처음에는 토큰을 트래비스가 했던 토큰 방법을 찾아 보았는데 계속 실패하고 설마 했는데 사이트에 환경변수 입력하는 곳 있어서 github push 조건을 만들었습니다.</li>
-  <li>그래서 테스트 푸시를 했지만 컴파일 에러 에러 에러 ..</li>
-  <li>처음에는 루비 버전 문제라 생각 하고 재스퍼의 트래비스와 동일한 버전으로 변경했지만 실패..</li>
-  <li>에러 메시지를 자세히 읽어보니 json 1.8.3 라고 나와 있지만 정확히 안알려줌</li>
-  <li>에러 메시지로 구글링 하니 동일한 증상에 대한 해결책이 있음</li>
-  <li><a href="https://github.com/flori/json/issues/303">https://github.com/flori/json/issues/303</a></li>
-  <li>여기에 보면 ruby 2.4 에서는 1.8.3 버전이 동작 안한다고 함</li>
-  <li>그래서 Gemfile.lock 파일에서 json 1.8.3 을 2.0.2 로 변경 지킬 컴파일 완료</li>
-  <li>자동 배포 완료</li>
-  <li>비트버켓 파이프라인에서 진행상황 또는 결과들을 볼 수있습니다.</li>
-  <li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3REF4SGtfZEhpWVU" alt="결과" /></li>
-</ul>
+<h4>4. 자동 배포 시스템</h4>
 
+<ul>
+<li>파이프라인 얌 파일 설정</li>
+<li><script src="https://gist.github.com/pyeongho/fe5b671a55f6c18d6f6f918af27cfbe7.js"></script></li>
+<li>번들 빌드 하기위해서는 Gemfile Gemfile.lock 파일 필요합니다.(재스퍼 테마에서 파일 참고) </li>
+<li>위 내용중 SITE_A 는 비트버켓 설정에 가능합니다. 공개된곳에 암호를 입력할수 없기에 설정에서 환경 변수 등록이 가능합니다.
+
+<ul>
+<li>setting -&gt; Environment variables -&gt; 문자열 등록</li>
+</ul></li>
+<li>처음에는 토큰을 트래비스가 했던 토큰 방법을 찾아 보았는데 계속 실패하고 설마 했는데 사이트에 환경변수 입력하는 곳 있어서 github push 조건을 만들었습니다.</li>
+<li>그래서 테스트 푸시를 했지만 컴파일 에러 에러 에러 ..</li>
+<li>처음에는 루비 버전 문제라 생각 하고 재스퍼의 트래비스와 동일한 버전으로 변경했지만 실패..</li>
+<li>에러 메시지를 자세히 읽어보니 json 1.8.3 라고 나와 있지만 정확히 안알려줌</li>
+<li>에러 메시지로 구글링 하니 동일한 증상에 대한 해결책이 있음</li>
+<li><a href="https://github.com/flori/json/issues/303">https://github.com/flori/json/issues/303</a></li>
+<li>여기에 보면 ruby 2.4 에서는 1.8.3 버전이 동작 안한다고 함</li>
+<li>그래서 Gemfile.lock 파일에서 json 1.8.3 을 2.0.2 로 변경 지킬 컴파일 완료</li>
+<li>자동 배포 완료 </li>
+<li>비트버켓 파이프라인에서 진행상황 또는 결과들을 볼 수있습니다.</li>
+<li><img src="http://drive.google.com/uc?export=view&amp;id=0BwUadct9RzY3REF4SGtfZEhpWVU" alt="결과"></li>
+</ul>
 
 	  ]]></description>
 	</item>

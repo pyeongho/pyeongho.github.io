@@ -18,317 +18,226 @@
 	  <pubDate>2016-12-23T00:00:00+00:00</pubDate>
 	  <guid>//mobile-sec.-owasp</guid>
 	  <description><![CDATA[
-	     <h4 id="mobile-owasp-top-10--2014">1. Mobile OWASP Top 10 ( 2014)</h4>
+	     <h4>1. Mobile OWASP Top 10 ( 2014)</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>진단 항목</th>
-      <th>내용</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>서버 측 통제 미흡</td>
-      <td>모바일 앱을 통해 모바일 웹 사이트 침해 사고</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>취약한 정보 저장 방식</td>
-      <td>설정파일, DB 파일등에 사용자 정보 저장등</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>취약한 전송 계층 보호</td>
-      <td>평문으로 주요 데이터 전송</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>의도하지 않은 정보 유출</td>
-      <td>웹 브라우져 캐시, 키보드 캐시, 로그등 단말기 OS 에서의 특성에 읜한 정보 유출</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>취약한 인증 및 권한 관리</td>
-      <td>인증 권한을 단말기에 의존, 4자리 PIN 등의 간단한 번호</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>취약한 암호화</td>
-      <td>암호화를 부적절하게 또는 취약한 암호화</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>클라이언트 측 삽입</td>
-      <td>사용자 입력값 통제, SQL injection. XSS, 3자 앱의 무단 기능 호출등</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>신뢰 할 수없는  사용자 입력값</td>
-      <td>보안과 관련된 의사 결정이 필요한 기능을 입력값을 믿고 신뢰 할 경우 3자 앱에 의해 의도치 않는 동작</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>세션 처리 미흡</td>
-      <td>세션 타임 아웃 및 로그인</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>엡 바이너리 보호 미흡</td>
-      <td>악의적으로 변조된 앱</td>
-    </tr>
-  </tbody>
-</table>
+<p>| No | 진단 항목 | 내용 |
+| ---- | ---- | ---- |
+| 1  | 서버 측 통제 미흡  | 모바일 앱을 통해 모바일 웹 사이트 침해 사고 |<br>
+| 2  | 취약한 정보 저장 방식 | 설정파일, DB 파일등에 사용자 정보 저장등  | 
+| 3  | 취약한 전송 계층 보호 | 평문으로 주요 데이터 전송 | 
+| 4  | 의도하지 않은 정보 유출 | 웹 브라우져 캐시, 키보드 캐시, 로그등 단말기 OS 에서의 특성에 읜한 정보 유출 | 
+| 5  | 취약한 인증 및 권한 관리 | 인증 권한을 단말기에 의존, 4자리 PIN 등의 간단한 번호| 
+| 6  | 취약한 암호화 | 암호화를 부적절하게 또는 취약한 암호화  | 
+| 7  | 클라이언트 측 삽입 | 사용자 입력값 통제, SQL injection. XSS, 3자 앱의 무단 기능 호출등  | 
+| 8  | 신뢰 할 수없는  사용자 입력값 | 보안과 관련된 의사 결정이 필요한 기능을 입력값을 믿고 신뢰 할 경우 3자 앱에 의해 의도치 않는 동작 | 
+| 9  | 세션 처리 미흡 |   세션 타임 아웃 및 로그인  | 
+| 10  | 엡 바이너리 보호 미흡 |  악의적으로 변조된 앱  | </p>
 
-<h5 id="section">1. 서버 측 통제 미흡</h5>
+<h5>1. 서버 측 통제 미흡</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>스마트폰 단말기가 아닌 일반 브라우저에서 접근</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>모바일 웹사이트를 일반 브라우저를 이용해서 편리한 환경에서 해킹시도</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>웹 취약점을 공략</li>
-    </ul>
-  </li>
-  <li>발생 가능한 부분
-    <ul>
-      <li>하이브리드 앱에 포함된 웹페이지를 크롬등을 이용해서 분석 및 해킹시도</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>모바일 사이트도 일반 사이트 처럼 보안 절차 필요</li>
-      <li>SQL injection, Cross Site Scripting 등 주기적인 보안 점검 수행</li>
-      <li>단말기 API 에서만 동작하도록 통체</li>
-    </ul>
-  </li>
+<li>위협
+
+<ul>
+<li>스마트폰 단말기가 아닌 일반 브라우저에서 접근</li>
+</ul></li>
+<li>attack vector 
+
+<ul>
+<li>모바일 웹사이트를 일반 브라우저를 이용해서 편리한 환경에서 해킹시도<br></li>
+</ul></li>
+<li>문제점 
+
+<ul>
+<li>웹 취약점을 공략<br></li>
+</ul></li>
+<li>발생 가능한 부분 
+
+<ul>
+<li>하이브리드 앱에 포함된 웹페이지를 크롬등을 이용해서 분석 및 해킹시도</li>
+</ul></li>
+<li>대응 방안
+
+<ul>
+<li>모바일 사이트도 일반 사이트 처럼 보안 절차 필요</li>
+<li>SQL injection, Cross Site Scripting 등 주기적인 보안 점검 수행</li>
+<li>단말기 API 에서만 동작하도록 통체</li>
+</ul></li>
 </ul>
 
-<h5 id="section-1">2. 취약한 정보 저장 방식</h5>
+<h5>2. 취약한 정보 저장 방식</h5>
+
 <ul>
-  <li>위협<br />
-    - 분실한 스마트폰 또는 악성코드로 로컬에 저장된 정보에 접근</li>
-  <li>attack vector
-    <ul>
-      <li>파일 탐색 프로그램이나 로걸 DB 에 접속하여 평문으로 저장된 데이터를 <br />
- 열람 변조등 또는 외부로 유츌</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>루팅을 통한 손쉬운 접근, 암호화된 경우에도 비교적 손쉽게 해결</li>
-    </ul>
-  </li>
-  <li>발생 가능한 부분
-    <ul>
-      <li>저장 기능이 있는 앱의 대부분</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>반드시 필요한 경우를 제외하고는 되도록 스마트폰 로컬에 저장하지 않는다.</li>
-      <li>외부저장소에 민감한 정보를 저장하면 안된다.</li>
-      <li>필요한 경우 OS 에서 제공하는 암호화 API 사용</li>
-    </ul>
-  </li>
+<li>위협
+
+<ul>
+<li>분실한 스마트폰 또는 악성코드로 로컬에 저장된 정보에 접근 </li>
+<li>attack vector </li>
+<li>파일 탐색 프로그램이나 로걸 DB 에 접속하여 평문으로 저장된 데이터를 
+열람 변조등 또는 외부로 유츌</li>
+<li>문제점 </li>
+<li>루팅을 통한 손쉬운 접근, 암호화된 경우에도 비교적 손쉽게 해결<br></li>
+<li>발생 가능한 부분 </li>
+<li>저장 기능이 있는 앱의 대부분 </li>
+<li>대응 방안<br></li>
+<li>반드시 필요한 경우를 제외하고는 되도록 스마트폰 로컬에 저장하지 않는다.</li>
+<li>외부저장소에 민감한 정보를 저장하면 안된다.</li>
+<li>필요한 경우 OS 에서 제공하는 암호화 API 사용 </li>
+</ul></li>
 </ul>
 
-<h5 id="section-2">3. 취약한 전송 정보 계층 보호</h5>
+<h5>3. 취약한 전송 정보 계층 보호</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>서버 클라이언트구간의 평문으로 전송</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>신뢰할 수 없는 네트워크 공간에서 제3자가 평문으로 된정보를 열람/변조하거나 <br />
-외부 서버로 유출</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>서버, 클라이언트 구간에서 제3자가 개입할 수 있다.</li>
-      <li>인터넷에 공개된 가짜 AP를 통한 정보를 열람/변조 또는 외부 서버로 유출</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>SSL/TLS를 사용하거나 주요 정보를 암호화 한다.</li>
-    </ul>
-  </li>
+<li>위협
+
+<ul>
+<li>서버 클라이언트구간의 평문으로 전송 
+
+<ul>
+<li>attack vector </li>
+<li>신뢰할 수 없는 네트워크 공간에서 제3자가 평문으로 된정보를 열람/변조하거나 
+외부 서버로 유출 </li>
+<li>문제점 </li>
+<li>서버, 클라이언트 구간에서 제3자가 개입할 수 있다.<br></li>
+<li>인터넷에 공개된 가짜 AP를 통한 정보를 열람/변조 또는 외부 서버로 유출<br></li>
+<li>대응 방안<br></li>
+<li>SSL/TLS를 사용하거나 주요 정보를 암호화 한다.</li>
+</ul></li>
+</ul></li>
 </ul>
 
-<h5 id="section-3">4. 의도하지 않은 정보 유출</h5>
+<h5>4. 의도하지 않은 정보 유출</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>분실한 스마트폰 또는 악성코드로 로컬에 저장된 정보에 접근</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>신파일 탐색 프로그램이나 로걸 DB 에 접속하여 평문으로 저장된 데이터를 <br />
- 열람 변조등 또는 외부로 유츌</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>개발자가 단말기 OS의 특성, 보안기능 및 이로 인한 보안 영향에 대해 충분히 <br />
+<li>위협
+
+<ul>
+<li>분실한 스마트폰 또는 악성코드로 로컬에 저장된 정보에 접근 
+
+<ul>
+<li>attack vector </li>
+<li>신파일 탐색 프로그램이나 로걸 DB 에 접속하여 평문으로 저장된 데이터를 
+열람 변조등 또는 외부로 유츌</li>
+<li>문제점 </li>
+<li>개발자가 단말기 OS의 특성, 보안기능 및 이로 인한 보안 영향에 대해 충분히 
 파악하지 않고 개발</li>
-    </ul>
-  </li>
-  <li>발생 가능한 부분
-    <ul>
-      <li>로그, 스크린샷 브라우져 캐시, 임시 폴더</li>
-      <li>코드에 있는 테스트용 계정 정보</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>로그는 기록하지 않도록 개발</li>
-      <li>아이디 / 패스워드 등은 스크린샷을 통한 유출 대비(<em>**</em>)</li>
-      <li>인앱브라우져 역시 캐시를 지워준다.</li>
-      <li>소스코드내 민감한 정보를 하드코딩하는것 바람직 하지 않다.</li>
-    </ul>
-  </li>
+<li>발생 가능한 부분</li>
+<li>로그, 스크린샷 브라우져 캐시, 임시 폴더</li>
+<li>코드에 있는 테스트용 계정 정보</li>
+<li>대응 방안<br></li>
+<li>로그는 기록하지 않도록 개발</li>
+<li>아이디 / 패스워드 등은 스크린샷을 통한 유출 대비(****)</li>
+<li>인앱브라우져 역시 캐시를 지워준다.</li>
+<li>소스코드내 민감한 정보를 하드코딩하는것 바람직 하지 않다.</li>
+</ul></li>
+</ul></li>
 </ul>
 
-<h5 id="section-4">5. 취약한 인증 및 권한 관리</h5>
+<h5>5. 취약한 인증 및 권한 관리</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>부적절하게 구현된 인증 절차나 권한 확인 절차를 우회하여 특정사용자 권한도용</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>인증 권한 절차가 없거나 부적절하게 된 경우 다른사용자가 이를 우회하여 접근</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>분실된 경우를 고려하지 않았거나  구현 과정의 실수</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>인증 권한 관리를 구현 해야 한다.</li>
-      <li>기기 분실 위험에 대해서 고려할 필요가 있다.</li>
-      <li>개발 도구를 이용해 앱 위/변조 하여 인증, 권한 관리를 우회 할수 있으므로<br />
+<li>위협
+
+<ul>
+<li>부적절하게 구현된 인증 절차나 권한 확인 절차를 우회하여 특정사용자 권한도용
+
+<ul>
+<li>attack vector </li>
+<li>인증 권한 절차가 없거나 부적절하게 된 경우 다른사용자가 이를 우회하여 접근</li>
+<li>문제점 </li>
+<li>분실된 경우를 고려하지 않았거나  구현 과정의 실수<br></li>
+<li>대응 방안<br></li>
+<li>인증 권한 관리를 구현 해야 한다.</li>
+<li>기기 분실 위험에 대해서 고려할 필요가 있다.</li>
+<li>개발 도구를 이용해 앱 위/변조 하여 인증, 권한 관리를 우회 할수 있으므로
 권한 관리의 최종 점검은 서버측에서 수행해야함</li>
-    </ul>
-  </li>
+</ul></li>
+</ul></li>
 </ul>
 
-<h5 id="section-5">6. 취약한 암호화</h5>
+<h5>6. 취약한 암호화</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>암호화된 정보를 3자가 획득함</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>암호화된 정보를 복호화하여 평문으로 볼 수 있다.</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>암호화가 아닌 방법을 암호화로 착각하여 발생</li>
-      <li>믿을 만한 암호화 이지만 부적절하게 사용하여 발생</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>암호화 키를 모바일 앱 내에 함께 저장하는 방법을 사용하지 않는다.</li>
-      <li>신뢰 할 수 있는 라이브러리를 사용한다.</li>
-      <li>플랫폼에서 제공하는 기능을 사용한다.</li>
-      <li>base64, 난독화, 시리얼라이즈는 암호화가 아니다.</li>
-    </ul>
-  </li>
+<li>위협
+
+<ul>
+<li>암호화된 정보를 3자가 획득함
+
+<ul>
+<li>attack vector </li>
+<li>암호화된 정보를 복호화하여 평문으로 볼 수 있다.</li>
+<li>문제점 </li>
+<li>암호화가 아닌 방법을 암호화로 착각하여 발생</li>
+<li>믿을 만한 암호화 이지만 부적절하게 사용하여 발생<br></li>
+<li>대응 방안<br></li>
+<li>암호화 키를 모바일 앱 내에 함께 저장하는 방법을 사용하지 않는다.</li>
+<li>신뢰 할 수 있는 라이브러리를 사용한다.</li>
+<li>플랫폼에서 제공하는 기능을 사용한다.</li>
+<li>base64, 난독화, 시리얼라이즈는 암호화가 아니다.</li>
+</ul></li>
+</ul></li>
 </ul>
 
-<h5 id="section-6">7. 클라이언트측 삽입</h5>
+<h5>7. 클라이언트측 삽입</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>3자가 앱에 비정상 데이터를 삽입</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>앱, 웹에 비정상 데이터를 삽입하여 해킹</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>3자가 해당 앱의 기능을 호출 하거나 통신 과정에 개입 할 수 없다는 가정 하에  개발 하여 발생</li>
-      <li>사용자 입력 부분의 SQL injection, Cross Site Scripting, 버퍼오버플로우등</li>
-    </ul>
-  </li>
-  <li>발생 가능한 부분
-    <ul>
-      <li>자바스크립트 enable , 자바스크립트 인터페이스를 이용할 수 있음</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>사용자 입력값 검증</li>
-      <li>html tag, javascript 및 sql query 등의 비정상 데이터 방지</li>
-      <li>DB 관련 작업시 prepared statement <a href="http://hackbyr0k.tistory.com/2">SQL injection 링크</a></li>
-      <li>문자열 처리보다 안전한 함수 사용</li>
-    </ul>
-  </li>
+<li>위협
+
+<ul>
+<li>3자가 앱에 비정상 데이터를 삽입
+
+<ul>
+<li>attack vector </li>
+<li>앱, 웹에 비정상 데이터를 삽입하여 해킹</li>
+<li>문제점 </li>
+<li>3자가 해당 앱의 기능을 호출 하거나 통신 과정에 개입 할 수 없다는 가정 하에  개발 하여 발생</li>
+<li>사용자 입력 부분의 SQL injection, Cross Site Scripting, 버퍼오버플로우등<br></li>
+<li>발생 가능한 부분 </li>
+<li>자바스크립트 enable , 자바스크립트 인터페이스를 이용할 수 있음</li>
+<li>대응 방안<br></li>
+<li>사용자 입력값 검증</li>
+<li>html tag, javascript 및 sql query 등의 비정상 데이터 방지</li>
+<li>DB 관련 작업시 prepared statement <a href="http://hackbyr0k.tistory.com/2">SQL injection 링크</a></li>
+<li>문자열 처리보다 안전한 함수 사용</li>
+</ul></li>
+</ul></li>
 </ul>
 
-<h5 id="section-7">8. 신뢰 할 수 없는 사용자의 입력값</h5>
+<h5>8. 신뢰 할 수 없는 사용자의 입력값</h5>
+
 <ul>
-  <li>대응 방안
-    <ul>
-      <li>사용자 입력값 검증, 사용자를 믿지 마라 <br />
-##### 9. 세션 처리 미흡</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>세션 타임 아웃을 단말기에 의존하지 말아야 한다.</li>
-    </ul>
-  </li>
+<li>대응 방안<br>
+
+<ul>
+<li>사용자 입력값 검증, 사용자를 믿지 마라 
+##### 9. 세션 처리 미흡<br></li>
+</ul></li>
+<li>대응 방안<br>
+
+<ul>
+<li>세션 타임 아웃을 단말기에 의존하지 말아야 한다.</li>
+</ul></li>
 </ul>
 
-<h5 id="section-8">10. 앱 바이너리 보호 미흡</h5>
+<h5>10. 앱 바이너리 보호 미흡</h5>
+
 <ul>
-  <li>위협
-    <ul>
-      <li>3자가 앱을 역컴파일하여 분석한후 정상기능 변경한 위변조 바이너리 배포</li>
-    </ul>
-  </li>
-  <li>attack vector
-    <ul>
-      <li>앱 자체를 역컴파일하여 분석</li>
-    </ul>
-  </li>
-  <li>문제점
-    <ul>
-      <li>사용자가 자사가 개발한 정상적인 앱만 사용할 것이라고 가정한 상태에서 개발 하여 발생</li>
-    </ul>
-  </li>
-  <li>대응 방안
-    <ul>
-      <li>바이너리 위변조 방지 및 분석 방지를 위한 보안도구 사용(프로가드 등)</li>
-      <li>솔루션??</li>
-    </ul>
-  </li>
+<li>위협
+
+<ul>
+<li>3자가 앱을 역컴파일하여 분석한후 정상기능 변경한 위변조 바이너리 배포
+
+<ul>
+<li>attack vector </li>
+<li>앱 자체를 역컴파일하여 분석<br></li>
+<li>문제점 </li>
+<li>사용자가 자사가 개발한 정상적인 앱만 사용할 것이라고 가정한 상태에서 개발 하여 발생<br></li>
+<li>대응 방안<br></li>
+<li>바이너리 위변조 방지 및 분석 방지를 위한 보안도구 사용(프로가드 등) </li>
+<li>솔루션??</li>
+</ul></li>
+</ul></li>
 </ul>
 
 	  ]]></description>
@@ -341,94 +250,86 @@
 	  <pubDate>2016-12-23T00:00:00+00:00</pubDate>
 	  <guid>//mobile-sec-reverse</guid>
 	  <description><![CDATA[
-	     <h3 id="apk----">4. APK 바이너리 분석 및 리패키징</h3>
+	     <h3>4. APK 바이너리 분석 및 리패키징</h3>
 
-<h4 id="apk-----1">1.첨부된 apk 의 코드를 확인 한다.</h4>
+<h4>1.첨부된 apk 의 코드를 확인 한다.</h4>
 
 <ul>
-  <li>이용하는 툴은 jd-gui-windows-1.4.0.zip , dex2jar-2.0.zip</li>
-  <li>iamaboy.apk</li>
-  <li>d2j-dex2jar.bat iamaboy.apk</li>
-  <li>iamaboy-dex2jar.jar  파일 생성을 확인한다.</li>
-  <li>다른 툴인 jd-gui.exe 를 실행하여 jd-gui.exe 파일을 연다.</li>
-  <li>코드를 확인 하면 됩니다.</li>
+<li>이용하는 툴은 jd-gui-windows-1.4.0.zip , dex2jar-2.0.zip<br></li>
+<li>iamaboy.apk</li>
+<li>d2j-dex2jar.bat iamaboy.apk</li>
+<li>iamaboy-dex2jar.jar  파일 생성을 확인한다.</li>
+<li>다른 툴인 jd-gui.exe 를 실행하여 jd-gui.exe 파일을 연다.</li>
+<li>코드를 확인 하면 됩니다.</li>
 </ul>
 
-<h4 id="section">2.루팅 체크 앱을 무력화 하여 동작 하도록 한다.</h4>
+<h4>2.루팅 체크 앱을 무력화 하여 동작 하도록 한다.</h4>
+
 <ul>
-  <li>기본 안드로이드 앱에서 루팅 체크 하는 코드를 추가 한다.</li>
+<li>기본 안드로이드 앱에서 루팅 체크 하는 코드를 추가 한다. </li>
 </ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">rootCheck</span><span class="o">()){</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"root"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="n">finish</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-<p>```java <br />
-    @Override<br />
-    protected void onCreate(Bundle savedInstanceState) {<br />
-        super.onCreate(savedInstanceState);<br />
-        setContentView(R.layout.activity_main);<br />
-        if (rootCheck()){<br />
-            Toast.makeText(this, “root”, Toast.LENGTH_SHORT).show();<br />
-            finish();<br />
-        }<br />
-    }</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public boolean rootCheck(){
-    String[] arrayOfString = new String[5];
-    arrayOfString[0] = "/sbin/su";
-    arrayOfString[1] = "/system/su";
-    arrayOfString[2] = "/system/sbin/su";
-    arrayOfString[3] = "/system/xbin/su";
-    arrayOfString[4] = "/data/data/com.noshufou.android.su";
-    int i = 0;
-    while (true)
-    {
-        if (i &gt;= arrayOfString.length)
-            return false;
-        if (new File(arrayOfString[i]).exists())
-            return true;
-        i += 1;
-    }
-}   ```
-</code></pre>
-</div>
-
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">rootCheck</span><span class="o">(){</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">arrayOfString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">5</span><span class="o">];</span>
+        <span class="n">arrayOfString</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/sbin/su"</span><span class="o">;</span>
+        <span class="n">arrayOfString</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/system/su"</span><span class="o">;</span>
+        <span class="n">arrayOfString</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/system/sbin/su"</span><span class="o">;</span>
+        <span class="n">arrayOfString</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/system/xbin/su"</span><span class="o">;</span>
+        <span class="n">arrayOfString</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/data/data/com.noshufou.android.su"</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">arrayOfString</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">arrayOfString</span><span class="o">[</span><span class="n">i</span><span class="o">]).</span><span class="na">exists</span><span class="o">())</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div>
 <ul>
-  <li>apktool_2.2.1.jar 을 이용하여 루팅 테스트 앱을 smali 코드로 변경 한다.</li>
-  <li>java -jar apktool_2.2.1.jar d root.apk</li>
-  <li>MainActivity.smali  파일에서 루팅 검사를 무력화 시킨다</li>
-  <li>변경 방법은 문자열을 아래처럼 변경 해도 되고 <br />
-  const-string v5, “/system/sbin/su1”</li>
-  <li>조건문을 변경해도 됩니다. 아래는 원래 코드 입니다.</li>
-  <li>
-    <p>if-eqz v0 v0 ==0 이면 cond_0 으로 간다는 내용 정도</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  invoke-virtual {p0}, Lkr/test/hello/MainActivity;-&gt;rootCheck()Z
+<li>apktool_2.2.1.jar 을 이용하여 루팅 테스트 앱을 smali 코드로 변경 한다.</li>
+<li>java -jar apktool_2.2.1.jar d root.apk </li>
+<li>MainActivity.smali  파일에서 루팅 검사를 무력화 시킨다</li>
+<li>변경 방법은 문자열을 아래처럼 변경 해도 되고 
+  const-string v5, &quot;/system/sbin/su1&quot;</li>
+<li>조건문을 변경해도 됩니다. 아래는 원래 코드 입니다.</li>
+<li><p>if-eqz v0 v0 ==0 이면 cond_0 으로 간다는 내용 정도 </p>
+<div class="highlight"><pre><code class="language-" data-lang="">  invoke-virtual {p0}, Lkr/test/hello/MainActivity;-&gt;rootCheck()Z
   move-result v0
   if-eqz v0, :cond_0
-</code></pre>
-    </div>
-  </li>
-  <li>if-eqz v0, :cond_0  =&gt;  if-nez v0, :cond_0</li>
-  <li>위 처럼 조건문을 변경해도 됩니다.</li>
-  <li>smali 코드를 잘분석해서 변경 해야 합니다.</li>
-  <li>java -jar apktool_2.2.1.jar b root  으로 다시 컴파일 (폴더 이름임)</li>
-  <li>dist 폴더에 apk 가 생성됨</li>
-  <li>apk 를 서명하여 앱을 실행하면 앱이</li>
+</code></pre></div></li>
+<li><p>if-eqz v0, :cond<em>0  =&gt;  if-nez v0, :cond</em>0 </p></li>
+<li><p>위 처럼 조건문을 변경해도 됩니다.</p></li>
+<li><p>smali 코드를 잘분석해서 변경 해야 합니다.</p></li>
+<li><p>java -jar apktool_2.2.1.jar b root  으로 다시 컴파일 (폴더 이름임)</p></li>
+<li><p>dist 폴더에 apk 가 생성됨</p></li>
+<li><p>apk 를 서명하여 앱을 실행하면 앱이 </p></li>
 </ul>
 
-<h4 id="section-1">3.  로그 추가 하기</h4>
-<ul>
-  <li>함수위에 .local 숫자 이렇게 있는데 변수 개수 입니다.</li>
-  <li>만약 기존 함수에 .local 3 이 있으면 .local 5 로 변경 하고</li>
-  <li>
-    <p>아래와 같은 코드를 추가 하면 로그를 추력 할 수 있습니다.</p>
+<h4>3.  로그 추가 하기</h4>
 
-    <p><code class="highlighter-rouge">
- const-string v3, "[Injected Message]"		
- const-string v4, "Called onCreate() Method"	
- invoke-static {v3, v4}, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I 
-</code></p>
-  </li>
-  <li>Log 클래스의 함수는 는 인자를 2개 받기 때문에 변수 v3,v4 에 각각 원하는 문자열을 넣고 함수를 호출 하는 내용입니다.</li>
-  <li>참고로 Log 클래스의 각 함수는 int 형을 반화하기에 위처럼 마지막 문자열에 I  가 있습니다.</li>
+<ul>
+<li> 함수위에 .local 숫자 이렇게 있는데 변수 개수 입니다.</li>
+<li>만약 기존 함수에 .local 3 이 있으면 .local 5 로 변경 하고</li>
+<li><p>아래와 같은 코드를 추가 하면 로그를 추력 할 수 있습니다.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">const-string v3, "[Injected Message]"       
+const-string v4, "Called onCreate() Method" 
+invoke-static {v3, v4}, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I 
+</code></pre></div>
+<ul>
+<li>Log 클래스의 함수는 는 인자를 2개 받기 때문에 변수 v3,v4 에 각각 원하는 문자열을 넣고 함수를 호출 하는 내용입니다.</li>
+<li>참고로 Log 클래스의 각 함수는 int 형을 반화하기에 위처럼 마지막 문자열에 I  가 있습니다.</li>
+</ul></li>
 </ul>
 
 	  ]]></description>
@@ -441,161 +342,57 @@
 	  <pubDate>2016-12-23T00:00:00+00:00</pubDate>
 	  <guid>//mobile-sec-coding</guid>
 	  <description><![CDATA[
-	     <h3 id="andorid-java---">andorid-java 시큐어 코딩 가이드</h3>
-<p><br /><br /></p>
+	     <h3>andorid-java 시큐어 코딩 가이드</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>뷴류</th>
-      <th>취약점 명칭</th>
-      <th>위험도</th>
-      <th>CWE-ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>입력데이터 검증 및 표현</td>
-      <td>상대 디렉터리 경로 조작</td>
-      <td>매우 높음</td>
-      <td>CWE-23</td>
-    </tr>
-    <tr>
-      <td>입력데이터 검증 및 표현</td>
-      <td>절대 디렉터리 경로 조작</td>
-      <td>매우 높음</td>
-      <td>CWE-36</td>
-    </tr>
-    <tr>
-      <td>API악용</td>
-      <td>Null 매개변수 미검사</td>
-      <td>높음</td>
-      <td>CWE-398</td>
-    </tr>
-    <tr>
-      <td>API악용</td>
-      <td>equals()와 hasCode()하나만 정의</td>
-      <td>높음</td>
-      <td>CWE-581</td>
-    </tr>
-    <tr>
-      <td>보안특성</td>
-      <td>기밀 정보의 단순한 텍스트전송</td>
-      <td>높음</td>
-      <td>CWE-319</td>
-    </tr>
-    <tr>
-      <td>보안특성</td>
-      <td>취악한 암호화 알고리즘의 사용</td>
-      <td>높음</td>
-      <td>CWE-327</td>
-    </tr>
-    <tr>
-      <td>보안특성</td>
-      <td>적절하지 않은 난수 값의 사용</td>
-      <td>높음</td>
-      <td>CWE-330</td>
-    </tr>
-    <tr>
-      <td>보안특성</td>
-      <td>전역적으로 접근가능한 파일</td>
-      <td>높음</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>보안특성</td>
-      <td>외부에서 접근하여 활성화 가능한 컴포넌트</td>
-      <td>높음</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>보안특성</td>
-      <td>공유 아이디에 의한 접근제어통과</td>
-      <td>높음</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>시간 및 상태</td>
-      <td>경쟁 조건 : 검사시점과 사용시점</td>
-      <td>높음</td>
-      <td>CWE-367</td>
-    </tr>
-    <tr>
-      <td>시간 및 상태</td>
-      <td>제대로 제어 되지 않은 재귀</td>
-      <td>높음</td>
-      <td>CWE-674</td>
-    </tr>
-    <tr>
-      <td>에러처리</td>
-      <td>오류 메시지를 통한 정보 노출</td>
-      <td>높음</td>
-      <td>CWE-209</td>
-    </tr>
-    <tr>
-      <td>에러처리</td>
-      <td>오류 상황에 대한 처리  부재</td>
-      <td>높음</td>
-      <td>CWE-390</td>
-    </tr>
-    <tr>
-      <td>코드 품질</td>
-      <td>널 포인터 역 참조</td>
-      <td>높음</td>
-      <td>CWE-476</td>
-    </tr>
-    <tr>
-      <td>캡슐화</td>
-      <td>공용 메소드로부터 리턴 된 private 배열 –유형필드</td>
-      <td>높음</td>
-      <td>CWE-495</td>
-    </tr>
-    <tr>
-      <td>캡슐화</td>
-      <td>private 배열-유형 필드에 공용 데이터 할당</td>
-      <td>높음</td>
-      <td>CWE-496</td>
-    </tr>
-    <tr>
-      <td>캡슐화</td>
-      <td>시스템 데이터 정보누출</td>
-      <td>높음</td>
-      <td>CWE-497</td>
-    </tr>
-  </tbody>
-</table>
+<p><br><br></p>
 
-<h4 id="section">1.입력데이터 검증및 표현 상대 디텍토리 조작</h4>
+<p>| 뷴류 | 취약점 명칭 | 위험도 |CWE-ID|
+| ---- | ---- | ---- |---- |
+|입력데이터 검증 및 표현|상대 디렉터리 경로 조작| 매우 높음|CWE-23 |
+|입력데이터 검증 및 표현|절대 디렉터리 경로 조작| 매우 높음|CWE-36|
+|API악용|Null 매개변수 미검사| 높음|CWE-398|
+|API악용|equals()와 hasCode()하나만 정의|높음|CWE-581|
+|보안특성|기밀 정보의 단순한 텍스트전송 |높음|CWE-319|
+|보안특성|취악한 암호화 알고리즘의 사용  |높음|CWE-327|
+|보안특성|적절하지 않은 난수 값의 사용  |높음|CWE-330|
+|보안특성|전역적으로 접근가능한 파일  |높음| -|
+|보안특성|외부에서 접근하여 활성화 가능한 컴포넌트 |높음|-|
+|보안특성|공유 아이디에 의한 접근제어통과 |높음|-|
+|시간 및 상태|경쟁 조건 : 검사시점과 사용시점 |높음|CWE-367|
+|시간 및 상태 | 제대로 제어 되지 않은 재귀 |높음|CWE-674|
+|에러처리 |오류 메시지를 통한 정보 노출 |높음|CWE-209|
+|에러처리 |오류 상황에 대한 처리  부재 |높음|CWE-390|
+|코드 품질 |널 포인터 역 참조 |높음|CWE-476|
+|캡슐화 |공용 메소드로부터 리턴 된 private 배열 –유형필드 |높음|CWE-495|
+|캡슐화 |private 배열-유형 필드에 공용 데이터 할당 |높음|CWE-496|
+|캡슐화 |시스템 데이터 정보누출 |높음|CWE-497|</p>
+
+<h4>1.입력데이터 검증및 표현 상대 디텍토리 조작</h4>
+
 <ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : 외부의 입력을 통하여 “디렉터리 경로 문자열” 생성이 필요한 경우,<br />
-외부 입력 에서 경로조작에 사용될 수 있는 문자를 필터링하지 않으면, 경로에 <br />
-대한 문자열이 입력되어 시스템 정보누출, 서비스 장애 등을 유발 시킬 수 있다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<li>안전하지 않음 코드
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Properties</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>문제점 : 외부의 입력을 통하여 “디렉터리 경로 문자열” 생성이 필요한 경우,
+외부 입력 에서 경로조작에 사용될 수 있는 문자를 필터링하지 않으면, 경로에 
+대한 문자열이 입력되어 시스템 정보누출, 서비스 장애 등을 유발 시킬 수 있다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Properties</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"filename"</span><span class="o">);</span>
     <span class="k">if</span><span class="o">(</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
       <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/usr/local/tmp/"</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
       <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
     <span class="o">}</span>
   <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : 외부 입력값에 대하여 Null 여부를 체크하고, 외부에서 입력되는 파일이름(name)에서 상대경로(/,\,&amp;등의 특수문자)를 설정 할 수 없도록 replaceAll을 이용하여 특수문자를 제거한다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Properties</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : 외부 입력값에 대하여 Null 여부를 체크하고, 외부에서 입력되는 파일이름(name)에서 상대경로(/,\,&amp;등의 특수문자)를 설정 할 수 없도록 replaceAll을 이용하여 특수문자를 제거한다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Properties</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"filename"</span><span class="o">);</span>
         <span class="n">String</span> <span class="n">dentry</span> <span class="o">=</span> <span class="s">"/usr/local/tmp"</span><span class="o">;</span>
         <span class="k">if</span> <span class="o">(</span> <span class="n">name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="s">""</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">)</span> <span class="o">{</span>
@@ -608,22 +405,19 @@
             <span class="k">if</span> <span class="o">(</span><span class="n">file</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">file</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-1">2.입력데이터 검증및 표현 절대 디텍토리 조작</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : 외부의 입력으로부터 직접 파일을 생성하게 되는 경우 임의의 파일 이름을 입력 받을 수 있도록  되어있어, 다른 파일에 접근이 가능 해져 의도하지 않은 정보가 노출될 수 있다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>2.입력데이터 검증및 표현 절대 디텍토리 조작</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : 외부의 입력으로부터 직접 파일을 생성하게 되는 경우 임의의 파일 이름을 입력 받을 수 있도록  되어있어, 다른 파일에 접근이 가능 해져 의도하지 않은 정보가 노출될 수 있다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">(),</span> <span class="s">"inputFile"</span><span class="o">);</span>
         <span class="k">try</span> <span class="o">{</span>
@@ -638,18 +432,14 @@
             <span class="n">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Error"</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : 외부의 입력이 파일이름으로 사용될 경우 절대 경로명이 사용되지 못하도록, 문자열이 “\”또는 “/”를 포함하거나 해당 문자열로 시작할 경우 관련동작 수행을 거부하는 것이 바람직하다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : 외부의 입력이 파일이름으로 사용될 경우 절대 경로명이 사용되지 못하도록, 문자열이 “\”또는 “/”를 포함하거나 해당 문자열로 시작할 경우 관련동작 수행을 거부하는 것이 바람직하다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">(),</span> <span class="s">"inputFile"</span><span class="o">);</span>
         <span class="k">try</span> <span class="o">{</span>
@@ -665,39 +455,32 @@
             <span class="n">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Error"</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="api----null--">3. API 악용 - null 매개변수 미검사</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : Object.equals(), Comparable.compareTo(), omparator.compare()에서는 매개변수를 null과 비교 해야한다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>3. API 악용 - null 매개변수 미검사</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : Object.equals(), Comparable.compareTo(), omparator.compare()에서는 매개변수를 null과 비교 해야한다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">object</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="o">(</span><span class="n">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : 매개변수를 null과 비교하는 코드를 작성한다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : 매개변수를 null과 비교하는 코드를 작성한다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">object</span><span class="o">){</span>
@@ -705,22 +488,19 @@
             <span class="k">return</span> <span class="o">(</span><span class="n">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">object</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
         <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span> <span class="o">;</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="api----equals-hascode">4. API 악용 - equals와 hasCode정의</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : equals와 hasCode를 같이 사용하지 않았다<a href="http://egloos.zum.com/playpc/v/1173713">참고링크</a></li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>4. API 악용 - equals와 hasCode정의</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : equals와 hasCode를 같이 사용하지 않았다<a href="http://egloos.zum.com/playpc/v/1173713">참고링크</a></li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
@@ -733,18 +513,14 @@
         <span class="k">else</span>
             <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : equals와 hasCode를 같이 작성하여해결한다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : equals와 hasCode를 같이 작성하여해결한다.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
             <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
@@ -758,22 +534,19 @@
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">hashCode</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="k">new</span> <span class="n">HashCodeBuilder</span><span class="o">(</span><span class="mi">17</span><span class="o">,</span> <span class="mi">37</span><span class="o">).</span><span class="na">toHashCode</span><span class="o">();</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-2">5. 보안특성 - 기밀정보의 단순 텍스트 전송</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : 443 Port로 데이터 외부 전송코드 스니핑이 발생할 수 있다</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>5. 보안특성 - 기밀정보의 단순 텍스트 전송</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : 443 Port로 데이터 외부 전송코드 스니핑이 발생할 수 있다</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span><span class="o">;</span>
         <span class="n">String</span> <span class="n">hostname</span> <span class="o">=</span> <span class="s">"hostname"</span><span class="o">;</span>
         <span class="n">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Socket</span><span class="o">(</span><span class="n">hostname</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
@@ -784,18 +557,14 @@
         <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
         <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : 민감한 정보를 전달 할 때에는  일반 소켓보다는 SSL을 사용하여 전송한다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : 민감한 정보를 전달 할 때에는  일반 소켓보다는 SSL을 사용하여 전송한다.<br></li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">hostname</span> <span class="o">=</span> <span class="s">"hostname"</span><span class="o">;</span>
     <span class="n">SocketFactory</span> <span class="n">socketFactory</span> <span class="o">=</span> <span class="n">SSLSocketFactory</span><span class="o">.</span><span class="na">getDefault</span><span class="o">();</span>
@@ -806,22 +575,19 @@
     <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
     <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-3">6. 보안특성 - 취약한 암호화 알고리즘의 사용</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : 보안적으로 취약하거나 위험한 암호화 알고리즘을 사용했다. RC2,RC4,RC6, MD4,MD5,SHA1,DES.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>6. 보안특성 - 취약한 암호화 알고리즘의 사용</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">,</span> <span class="n">Key</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : 보안적으로 취약하거나 위험한 암호화 알고리즘을 사용했다. RC2,RC4,RC6, MD4,MD5,SHA1,DES.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">,</span> <span class="n">Key</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">byte</span><span class="o">[]</span> <span class="n">rslt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
         <span class="k">try</span> <span class="o">{</span>
@@ -833,18 +599,14 @@
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">rslt</span><span class="o">;</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : 취약하다고 알려진 알고리즘 대신 AES 알고리즘을 최소한 128비트 길이를 이용하여 사용하는 것이 바람직하다</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">,</span> <span class="n">Key</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : 취약하다고 알려진 알고리즘 대신 AES 알고리즘을 최소한 128비트 길이를 이용하여 사용하는 것이 바람직하다</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">,</span> <span class="n">Key</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
      <span class="kt">byte</span><span class="o">[]</span> <span class="n">rslt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
     <span class="k">try</span> <span class="o">{</span>
@@ -857,54 +619,48 @@
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">rslt</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-4">7. 보안특성 - 적절하지 않은 난수값의 사용</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : seed를 설정 할 수 없기 때문에 위험.</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>7. 보안특성 - 적절하지 않은 난수값의 사용</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">double</span> <span class="nf">roledice</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : seed를 설정 할 수 없기 때문에 위험.</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">double</span> <span class="nf">roledice</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
      <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">();</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : seed를 설정 하는 코드를 사용.</li>
-    </ul>
-  </li>
-  <li>샘플코드 <br />
-<code class="highlighter-rouge">java
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
+
+<ul>
+<li>해결코드 : seed를 설정 하는 코드를 사용.</li>
+</ul></li>
+<li><p>샘플코드 
+<code>java
 public int roledice() {
      Random r = new Random();
     // setSeed
     r.setSeed(new Date().getTime());
     return (r.nextInt()%6) + 1;
 }
-</code></li>
+</code>        </p></li>
 </ul>
 
-<h4 id="section-5">8. 보안특성 - 전역적으로 접근 가능한 파일</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 : MODE_WORLD_READABLE은 다른 응용프로그램이 접근가능</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>8. 보안특성 - 전역적으로 접근 가능한 파일</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : MODE<em>WORLD</em>READABLE은 다른 응용프로그램이 접근가능</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="k">try</span> <span class="o">{</span>
         <span class="n">FileOutputStream</span> <span class="n">fOut</span> <span class="o">=</span> <span class="n">openFileOutput</span><span class="o">(</span><span class="s">"test"</span><span class="o">,</span>  <span class="n">MODE_WORLD_READABLE</span><span class="o">);</span>
@@ -915,18 +671,14 @@ public int roledice() {
     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 : MODE_PRIVATE을 사용하면 외부에서 접근이 불가능하다</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : MODE_PRIVATE을 사용하면 외부에서 접근이 불가능하다</li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">FileOutputStream</span> <span class="n">fOut</span> <span class="o">=</span> <span class="n">openFileOutput</span><span class="o">(</span><span class="s">"test"</span><span class="o">,</span> <span class="n">MODE_PRIVATE</span><span class="o">);</span>
@@ -937,87 +689,70 @@ public int roledice() {
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-6">9. 보안특성 -외부에서 접근하여 활성화 가능한 컴포넌트</h4>
+<h4>9. 보안특성 -외부에서 접근하여 활성화 가능한 컴포넌트</h4>
+
 <ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<li>안전하지 않음 코드
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">".syncadapter.SyncService"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">".syncadapter.SyncService"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">".syncadapter.SyncService"</span> <span class="na">android:exported=</span><span class="s">"false"</span><span class="nt">&gt;</span>
-</code></pre>
-    </div>
-  </li>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">".syncadapter.SyncService"</span> <span class="na">android:exported=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-7">10. 보안특성 - 공유 아이디에 의한 접근제어 통과</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>10. 보안특성 - 공유 아이디에 의한 접근제어 통과</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;manifest</span> 
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
     <span class="na">xmlns:android=</span><span class="s">http://schemas.android.com/apk/res/android</span>
     <span class="na">package=</span><span class="s">"com.example.android.apis"</span>
     <span class="na">android:versionCode=</span><span class="s">"1"</span>
     <span class="na">android:versionName=</span><span class="s">"1.0"</span>
     <span class="na">android:sharedUserId=</span><span class="s">"android.uid.developer1"</span><span class="nt">&gt;</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">http://schemas.android.com/apk/res/android</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">http://schemas.android.com/apk/res/android</span>
     <span class="na">package=</span><span class="s">"com.example.android.apis"</span>
     <span class="na">android:versionCode=</span><span class="s">"1"</span>
     <span class="na">android:versionName=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
 <span class="c">&lt;!-- android:sharedUserId="android.uid.developer1“ --&gt;</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-8">11. 보안특성 - 경쟁조건: 검사시점과 사용시점</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>11. 보안특성 - 경쟁조건: 검사시점과 사용시점</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UA367</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UA367</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
     <span class="nd">@override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
@@ -1055,18 +790,14 @@ public int roledice() {
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SA367</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SA367</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
             <span class="n">FileAccessThread</span> <span class="n">fileAccess</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileAccessThread</span><span class="o">();</span>
@@ -1097,36 +828,29 @@ public int roledice() {
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-9">12. 시간 및 상태 - 제대로 제어되지 않은 재귀</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>12. 시간 및 상태 - 제대로 제어되지 않은 재귀</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
@@ -1135,22 +859,19 @@ public int roledice() {
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-10">13. 에러처리 - 오류 메세지를 통한 정보 노출</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>13. 에러처리 - 오류 메세지를 통한 정보 노출</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="k">try</span><span class="o">{</span> 
         <span class="k">throw</span> <span class="k">new</span> <span class="n">IOException</span><span class="o">();</span> 
@@ -1158,18 +879,14 @@ public int roledice() {
         <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span> 
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="k">try</span><span class="o">{</span>
         <span class="k">throw</span> <span class="k">new</span> <span class="n">IOException</span><span class="o">();</span>
@@ -1177,22 +894,19 @@ public int roledice() {
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">“예외발생"</span><span class="o">);</span> 
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-11">14. 에러처리 - 오류 상황에 대한 처리 부재</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>14. 에러처리 - 오류 상황에 대한 처리 부재</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span><span class="o">;</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span><span class="o">;</span>
 <span class="kd">public</span> <span class="n">Connection</span> <span class="nf">DBConnect</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">try</span> <span class="o">{</span>
         <span class="n">String</span> <span class="n">CONNECT_STRING</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">password</span><span class="o">;</span>
@@ -1206,18 +920,14 @@ public int roledice() {
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">conn</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span><span class="o">;</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">Connection</span> <span class="n">conn</span><span class="o">;</span>
 <span class="kd">public</span> <span class="n">Connection</span> <span class="nf">DBConnect</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">,</span> <span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">try</span> <span class="o">{</span>
         <span class="n">String</span> <span class="n">CONNECT_STRING</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span> <span class="s">":"</span> <span class="o">+</span> <span class="n">password</span><span class="o">;</span>
@@ -1243,39 +953,32 @@ public int roledice() {
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="section-12">15. 코드품질 - 널포인터 역참조</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>15. 코드품질 - 널포인터 역참조</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">String</span> <span class="n">cmd</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"cmd"</span><span class="o">);</span>
     <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">cmd</span><span class="o">);</span>
 <span class="o">}</span>
 
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">boolean</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">String</span> <span class="n">cmd</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"cmd"</span><span class="o">);</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">cmd</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> 
         <span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
@@ -1284,38 +987,31 @@ public int roledice() {
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"null command"</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="private-">16. 캡슐화 - 공용 메소드로 부터 리턴된 private 배열</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>16. 캡슐화 - 공용 메소드로 부터 리턴된 private 배열</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// private인 배열을 public인 메소드가 return한다</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// private인 배열을 public인 메소드가 return한다</span>
 <span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">colors</span><span class="o">;</span>
 <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getColors</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span> 
     <span class="k">return</span> <span class="n">colors</span><span class="o">;</span> 
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">colors</span><span class="o">;</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">colors</span><span class="o">;</span>
 <span class="c1">//메소드를 private으로 하거나, 복제본 반환,수정하는 public메소드를 별도로 만든다</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
@@ -1330,38 +1026,31 @@ public int roledice() {
     <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
 <span class="o">}</span>
 
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
-<h4 id="private--">17. 캡슐화 – private배열-유형필드에 공용데이터할당</h4>
-<ul>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+<h4>17. 캡슐화 – private배열-유형필드에 공용데이터할당</h4>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// userRoles 필드는 private 이지만 public인 setUserRoles()를 통해 외부의 배열이 할당 되면 사실상 public필드가된다.</span>
+<ul>
+<li>안전하지 않음 코드
+
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// userRoles 필드는 private 이지만 public인 setUserRoles()를 통해 외부의 배열이 할당 되면 사실상 public필드가된다.</span>
 <span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserRoles</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">userRoles</span> <span class="o">=</span> <span class="n">userRoles</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// 객체가 클래스의 private member를 수정하지 않도록 한다.</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// 객체가 클래스의 private member를 수정하지 않도록 한다.</span>
     <span class="kd">private</span> <span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="n">setUserRoles</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">userRoles</span><span class="o">)</span> <span class="o">{</span>
@@ -1370,19 +1059,15 @@ public int roledice() {
             <span class="k">this</span><span class="o">.</span><span class="na">userRoles</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">userRoles</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-    </div>
-    <p>#### 18. 캡슐화 - 시스템 데이터 정보 누출</p>
-  </li>
-  <li>안전하지 않음 코드
-    <ul>
-      <li>문제점 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div>
+<h4>18. 캡슐화 - 시스템 데이터 정보 누출</h4></li>
+<li><p>안전하지 않음 코드</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>문제점 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">try</span> <span class="o">{</span> 
         <span class="n">g</span><span class="o">();</span>
     <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
@@ -1392,18 +1077,14 @@ public int roledice() {
     <span class="o">}</span>
 <span class="o">}</span>
 <span class="kd">private</span> <span class="kt">void</span> <span class="nf">g</span><span class="p">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span> <span class="err">……</span> <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
-  <li>안전한 코드
-    <ul>
-      <li>해결코드 :</li>
-    </ul>
-  </li>
-  <li>
-    <p>샘플코드</p>
+</code></pre></div></li>
+<li><p>안전한 코드 </p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+<ul>
+<li>해결코드 : </li>
+</ul></li>
+<li><p>샘플코드 </p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span> 
             <span class="n">g</span><span class="o">();</span>
         <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
@@ -1412,9 +1093,7 @@ public int roledice() {
         <span class="o">}</span>
     <span class="o">}</span>
     <span class="kd">private</span> <span class="kt">void</span> <span class="n">g</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span> <span class="err">……</span> <span class="o">}</span>
-</code></pre>
-    </div>
-  </li>
+</code></pre></div></li>
 </ul>
 
 	  ]]></description>
