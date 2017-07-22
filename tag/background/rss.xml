@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>롤리팝 이상에서 백그라운드 푸시 보내기</title>
+	  <link>//push</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-07-22T00:00:00+00:00</pubDate>
+	  <guid>//push</guid>
+	  <description><![CDATA[
+	     <h3>백그라운드 푸시 적용</h3>
+
+<ul>
+<li>롤리팝 이상에서 앱이 백그라운드 상태에서는 푸시를 수신하는 코드가 동작 하지 않고 운영체제에서 알림을 발생시킨다.</li>
+<li>파이어베이스 콘솔에서 푸시를 발송하면 OS 에서만 수신 
+
+<ul>
+<li>이유를 찾아 보니 푸시 메시지 notification 이 있을 때 앱에서 푸시를 수신 안하고 OS 가 처리함</li>
+</ul></li>
+<li>notification 영역을 제거하고 페이로드 영역(data) 부분만 으로 푸시를 보내면 됩니다.</li>
+<li>커스텀 푸시는 아니지만 노티 알림 클릭시 원하는 동작을 만들고 싶을때가 많다.</li>
+<li><p>그래서 푸시 규격에 대해서 자세히 찾아 봄</p>
+
+<ul>
+<li><a href="https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko">https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko</a></li>
+<li>위 링크에서 보면 click_action 이 존재 하고 하고 이를 이용하면 시작 액티비티를 지정이 가능하다.</li>
+<li>그래서 서버쪽 전송 영역을 아래 처러 지정 하였습니다.
+<code>json
+data: {
+  hello: &quot;good job&quot;,
+},
+notification: {
+  title: &quot;Hello, World&quot;,
+  body: &quot;This is a notification that will be displayed if your app is in the background.&quot;,
+  click_action:&quot;OPEN_ACTIVITY_1&quot;,
+  icon:&quot;white&quot;,
+  color:&quot;#FF0000&quot;,
+  sound:&quot;default&quot;
+}
+</code></li>
+</ul>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".BasicNotificationActivity"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter&gt;</span>
+          <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"OPEN_ACTIVITY_1"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+  <span class="nt">&lt;/activity&gt;</span>
+</code></pre></div>
+<ul>
+<li>내용
+
+<ul>
+<li>title 와 body 로 제목과 내용이 나옵니다. </li>
+<li>icon 은 리소스에 있는 아이콘이 선택되어서 나옵니다.(되도록 흰색 알파 이미지선택이 필요합니다.)</li>
+<li>icon 배경색은 빨간색</li>
+<li>소리는 기본 알림 소리 입니다.</li>
+<li>알림을 클릭 시 BasicNotificationActivity 가 실행됩니다.</li>
+<li>intent 로 hello 가 있습니다.<br></li>
+</ul></li>
+</ul></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

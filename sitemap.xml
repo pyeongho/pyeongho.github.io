@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//push</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//docker</loc>
     </url>
     
@@ -557,6 +561,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/android/page5/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/android/page6/</loc>
     </url>
     
     
@@ -1381,6 +1393,38 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/docker/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/fcm/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/fcm/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/background/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/background/</loc>
     </url>
     
     

@@ -12,6 +12,68 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>롤리팝 이상에서 백그라운드 푸시 보내기</title>
+	  <link>//push</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-07-22T00:00:00+00:00</pubDate>
+	  <guid>//push</guid>
+	  <description><![CDATA[
+	     <h3>백그라운드 푸시 적용</h3>
+
+<ul>
+<li>롤리팝 이상에서 앱이 백그라운드 상태에서는 푸시를 수신하는 코드가 동작 하지 않고 운영체제에서 알림을 발생시킨다.</li>
+<li>파이어베이스 콘솔에서 푸시를 발송하면 OS 에서만 수신 
+
+<ul>
+<li>이유를 찾아 보니 푸시 메시지 notification 이 있을 때 앱에서 푸시를 수신 안하고 OS 가 처리함</li>
+</ul></li>
+<li>notification 영역을 제거하고 페이로드 영역(data) 부분만 으로 푸시를 보내면 됩니다.</li>
+<li>커스텀 푸시는 아니지만 노티 알림 클릭시 원하는 동작을 만들고 싶을때가 많다.</li>
+<li><p>그래서 푸시 규격에 대해서 자세히 찾아 봄</p>
+
+<ul>
+<li><a href="https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko">https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko</a></li>
+<li>위 링크에서 보면 click_action 이 존재 하고 하고 이를 이용하면 시작 액티비티를 지정이 가능하다.</li>
+<li>그래서 서버쪽 전송 영역을 아래 처러 지정 하였습니다.
+<code>json
+data: {
+  hello: &quot;good job&quot;,
+},
+notification: {
+  title: &quot;Hello, World&quot;,
+  body: &quot;This is a notification that will be displayed if your app is in the background.&quot;,
+  click_action:&quot;OPEN_ACTIVITY_1&quot;,
+  icon:&quot;white&quot;,
+  color:&quot;#FF0000&quot;,
+  sound:&quot;default&quot;
+}
+</code></li>
+</ul>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".BasicNotificationActivity"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter&gt;</span>
+          <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"OPEN_ACTIVITY_1"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+  <span class="nt">&lt;/activity&gt;</span>
+</code></pre></div>
+<ul>
+<li>내용
+
+<ul>
+<li>title 와 body 로 제목과 내용이 나옵니다. </li>
+<li>icon 은 리소스에 있는 아이콘이 선택되어서 나옵니다.(되도록 흰색 알파 이미지선택이 필요합니다.)</li>
+<li>icon 배경색은 빨간색</li>
+<li>소리는 기본 알림 소리 입니다.</li>
+<li>알림을 클릭 시 BasicNotificationActivity 가 실행됩니다.</li>
+<li>intent 로 hello 가 있습니다.<br></li>
+</ul></li>
+</ul></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>로그를 편하게 사용하자</title>
 	  <link>//log</link>
 	  <author>PyeongHo</author>
@@ -879,72 +941,6 @@ compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
 <li>TasksDataSource(데이터레이어) &lt;- usecase(도메인레이어) &lt;- 프리젠테이션레이어(사용자)</li>
 <li>처음에는 별로 마음에 안들었지만 보다 보면 볼수록 마음에 듬</li>
 <li>정리중</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>크롬 40+ 버전에서 의 앱 실행 문제</title>
-	  <link>//chrome-40</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-04-22T00:00:00+00:00</pubDate>
-	  <guid>//chrome-40</guid>
-	  <description><![CDATA[
-	     <h3>크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.</h3>
-
-<ul>
-<li>탐색할수없음</li>
-</ul>
-
-<h4>1. javascript 의 body onload 에 마켓 이동하는 코드를 추가</h4>
-
-<ul>
-<li>아래와 같이 간단하게 추가 했는데 마켓으로 이동 안하는 기기들이 있음
-<script src="https://gist.github.com/pyeongho/b26f2f488f00f487a19ab823bbbca27a.js"></script></li>
-<li>크롬 인스펙트를 이용해서 콘솔로그를 확인하니 &quot;탐색할수없음&quot; 이라는 문구가 나옴</li>
-</ul>
-
-<h4>2. 구글 검색 시작</h4>
-
-<ul>
-<li>이것 저것 검색 하다 보니 chrome 40+ 이상에서는 동작 안하는다는 내용 확인 </li>
-<li><p><a href="https://devtalk.kakao.com/t/onload/15293/2">https://devtalk.kakao.com/t/onload/15293/2</a></p></li>
-<li><p>그래서 조금더 검색</p></li>
-<li><p><a href="http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/">http://blog.tapstream.com/google-changes-chrome-to-prevent-abusive/</a></p></li>
-<li><p>에서 내용을 잘 정리해줌 </p></li>
-</ul>
-
-<h4>3. 내용 요약</h4>
-
-<ul>
-<li>구글엔지니어가 판도라 앱을 설치</li>
-<li>주소창에 pandora.com 을 크롬에서 입력</li>
-<li>웹사이트로 이동되지 않고 판도앱이 실행됨</li>
-<li>버그로 접수 </li>
-<li>수정해 버림 </li>
-</ul>
-
-<h4>4. 구글의 답변</h4>
-
-<ul>
-<li><p>원문 : From the omnibox, no, there is no plans to allow external redirects.  If typing in the omnibox, the user is showing a strong intent to stay within chrome, so we made the decision to not allow external redirects (too many of them led to what we believed to be bad user experiences).
-Clicking on a link should still behave as before and redirect to market:// links. As it stands, how can I programmatically redirect a user to the play store?
-There is no plans to support a redirect without a user gesture.</p>
-
-<ul>
-<li>번역기 : 검색 주소창에서 외부로 리디렉션을 허용 할 계획이 없습니다. 검색 주소창에 검색어를 입력하면 사용자는 크롬 내에 머물러야한다는 강한 의지를 나타내고 있으므로 외부 리디렉션을 허용하지 않기로 결정했습니다. 너무 많은 사용자가 사용자 경험이 좋지 않다고 생각하는 것으로 이끌었습니다. 
-링크를 클릭하면 이전과 같이 작동하고 market : // 링크로 리디렉션되어야합니다. 그대로, 어떻게 프로그래밍 방식으로 사용자를 플레이 스토어 로 리디렉션 할 수 있습니까? 
-사용자 gestur e 없이 리디렉션을 지원할 계획은 없습니다 .</li>
-</ul></li>
-</ul>
-
-<h4>5. 수정 사용자 제스처로 이동하게 하면 됩니다.</h4>
-
-<ul>
-<li>사용자 액션안에서 처리하면 됩니다. 아래는 컨펌창으로 한 예제 입니다.</li>
-<li>사용자 액션만 추가 하면 됩니다.
-<script src="https://gist.github.com/pyeongho/af47412cd50a3579484f0d3db285cd73.js"></script></li>
 </ul>
 
 	  ]]></description>

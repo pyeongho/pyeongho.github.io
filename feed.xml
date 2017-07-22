@@ -8,6 +8,51 @@
     
       
       <item>
+        <title>롤리팝 이상에서 백그라운드 푸시 보내기</title>
+        
+          <description>&lt;h3&gt;백그라운드 푸시 적용&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;롤리팝 이상에서 앱이 백그라운드 상태에서는 푸시를 수신하는 코드가 동작 하지 않고 운영체제에서 알림을 발생시킨다.&lt;/li&gt;
+&lt;li&gt;파이어베이스 콘솔에서 푸시를 발송하면 OS 에서만 수신 
+
+&lt;ul&gt;
+&lt;li&gt;이유를 찾아 보니 푸시 메시지 notification 이 있을 때 앱에서 푸시를 수신 안하고 OS 가 처리함&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;notification 영역을 제거하고 페이로드 영역(data) 부분만 으로 푸시를 보내면 됩니다.&lt;/li&gt;
+&lt;li&gt;커스텀 푸시는 아니지만 노티 알림 클릭시 원하는 동작을 만들고 싶을때가 많다.&lt;/li&gt;
+&lt;li&gt;그래서 푸시 규격에 대해서 자세히 찾아 봄
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko&quot;&gt;https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;위 링크에서 보면 click_action 이 존재 하고 하고 이를 이용하면 시작 액티비티를 지정이 가능하다.&lt;/li&gt;
+&lt;li&gt;그래서 서버쪽 전송 영역을 아래 처러 지정 하였습니다.
+&lt;code&gt;json
+data: {
+  hello: &amp;quot;good job&amp;quot;,
+},
+notification: {
+  title: &amp;quot;Hello, World&amp;quot;,
+  body: &amp;quot;This is a notification that will be displayed if your app is in the background.&amp;quot;,
+  click_action:&amp;quot;OPEN_ACTIVITY_1&amp;quot;,
+  icon:&amp;quot;white&amp;quot;,
+  color:&amp;quot;#FF0000&amp;quot;,
+  sound:&amp;quot;default&amp;quot;
+}
+&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//push</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//push</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>osx 도커</title>
         
           <description>&lt;h3&gt;개발공부도 도커에서 하기&lt;/h3&gt;
