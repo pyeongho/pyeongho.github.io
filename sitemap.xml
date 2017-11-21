@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//sharedelements</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//push</loc>
     </url>
     
@@ -1425,6 +1429,54 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/background/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/Sharedelements/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/Sharedelements/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%EB%A8%B8%ED%8B%B0%EB%A6%AC%EC%96%BC/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%EB%A8%B8%ED%8B%B0%EB%A6%AC%EC%96%BC/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%ED%99%94%EB%A9%B4%EC%A0%84%ED%99%94/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%ED%99%94%EB%A9%B4%EC%A0%84%ED%99%94/</loc>
     </url>
     
     
