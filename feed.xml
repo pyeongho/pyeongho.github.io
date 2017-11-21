@@ -17,7 +17,10 @@
 &lt;li&gt;처음에는 엄청난 라이브러리를 사용한지 알았지만 안드로이드 기본을 이용하면 된다.&lt;/li&gt;
 &lt;li&gt;안드로이는 구현보다 무엇을 사용하지만 알면 금방 적용 할수 있습니다. &lt;/li&gt;
 &lt;li&gt;일단 처음 발견한 링크 입니다.
--&lt;a href=&quot;https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb&quot;&gt;fragment-transitions-with-shared-elements&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb&quot;&gt;fragment-transitions-with-shared-elements&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;위 링크를 보고 사용하는 내용이 shared-elements 라는것을 알고 사용하기로 함&lt;/li&gt;
 &lt;li&gt;5.0 이상만 가능하지만 이제는 5.0 미만에서의 애니메이션은 신경 안쓰기로 결정함 &lt;/li&gt;
 &lt;li&gt;shared-elements 를 키워드로 검색&lt;/li&gt;
@@ -36,17 +39,15 @@
 &lt;ul&gt;
 &lt;li&gt;각각의 상황에 맞는 내용은 위 링크 샘플에 잘 정리 되어 있습니다.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A 프래그먼트에 이미지 뷰를 추가
-&lt;code&gt;xml
-&amp;lt;ImageView
-    android:id=&amp;quot;@+id/logo&amp;quot;
-    android:src=&amp;quot;@mipmap/ic_launcher_round&amp;quot;
-    android:layout_centerInParent=&amp;quot;true&amp;quot;
-    android:transitionName=&amp;quot;simple_fragment_transition&amp;quot;
-    android:layout_width=&amp;quot;wrap_content&amp;quot;
-    android:layout_height=&amp;quot;wrap_content&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;li&gt;&lt;p&gt;A 프래그먼트에 이미지 뷰를 추가&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/logo&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher_round&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:transitionName=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;simple_fragment_transition&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;android:transitionName 속성이 2번째 프래그먼트에도 동일하게 사용됩니다.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;

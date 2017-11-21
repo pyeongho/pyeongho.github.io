@@ -25,7 +25,10 @@
 <li>처음에는 엄청난 라이브러리를 사용한지 알았지만 안드로이드 기본을 이용하면 된다.</li>
 <li>안드로이는 구현보다 무엇을 사용하지만 알면 금방 적용 할수 있습니다. </li>
 <li>일단 처음 발견한 링크 입니다.
--<a href="https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb">fragment-transitions-with-shared-elements</a><br></li>
+
+<ul>
+<li><a href="https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb">fragment-transitions-with-shared-elements</a><br></li>
+</ul></li>
 <li>위 링크를 보고 사용하는 내용이 shared-elements 라는것을 알고 사용하기로 함</li>
 <li>5.0 이상만 가능하지만 이제는 5.0 미만에서의 애니메이션은 신경 안쓰기로 결정함 </li>
 <li>shared-elements 를 키워드로 검색</li>
@@ -44,17 +47,15 @@
 <ul>
 <li>각각의 상황에 맞는 내용은 위 링크 샘플에 잘 정리 되어 있습니다.</li>
 </ul></li>
-<li><p>A 프래그먼트에 이미지 뷰를 추가
-<code>xml
-&lt;ImageView
-    android:id=&quot;@+id/logo&quot;
-    android:src=&quot;@mipmap/ic_launcher_round&quot;
-    android:layout_centerInParent=&quot;true&quot;
-    android:transitionName=&quot;simple_fragment_transition&quot;
-    android:layout_width=&quot;wrap_content&quot;
-    android:layout_height=&quot;wrap_content&quot; /&gt;
-</code></p>
-
+<li><p>A 프래그먼트에 이미지 뷰를 추가</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ImageView</span>
+    <span class="na">android:id=</span><span class="s">"@+id/logo"</span>
+    <span class="na">android:src=</span><span class="s">"@mipmap/ic_launcher_round"</span>
+    <span class="na">android:layout_centerInParent=</span><span class="s">"true"</span>
+    <span class="na">android:transitionName=</span><span class="s">"simple_fragment_transition"</span>
+    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
+</code></pre></div>
 <ul>
 <li>android:transitionName 속성이 2번째 프래그먼트에도 동일하게 사용됩니다.</li>
 </ul></li>
@@ -95,18 +96,20 @@
 <li>B 프래그먼트에 이미지뷰 추가</li>
 <li>이번에도 transitionName 필드에 주의해 주세요</li>
 <li>사이즈를 고정한건 이동하면서 객체가 작아지는걸 볼려고 추가한 내용입니다.
-``` xml
-<ImageView
-    android:layout_centerHorizontal="true"
-    android:id="@+id/fragment_b_imaged"
-    android:layout_width="30dp"
-    android:layout_height="30dp"
-    android:scaleType="centerCrop"
-    android:src="@mipmap/ic_launcher_round"
-    android:transitionName="simple_fragment_transition"
-    tools:ignore="UnusedAttribute" /></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang=""></code></pre></div></li>
+<code>xml
+&lt;ImageView
+    android:layout_centerHorizontal=&quot;true&quot;
+    android:id=&quot;@+id/fragment_b_imaged&quot;
+    android:layout_width=&quot;30dp&quot;
+    android:layout_height=&quot;30dp&quot;
+    android:scaleType=&quot;centerCrop&quot;
+    android:src=&quot;@mipmap/ic_launcher_round&quot;
+    android:transitionName=&quot;simple_fragment_transition&quot;
+    tools:ignore=&quot;UnusedAttribute&quot; /&gt;
+</code></li>
+<li>여기까지 추가 하면 기본적인 동작을 확인 가능합니다.</li>
+<li>좀더 많은 내용은 중간에 추가된 샘플이 좋습니다.<br></li>
+</ul></li>
 </ul>
 
 	  ]]></description>
