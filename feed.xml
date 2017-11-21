@@ -10,7 +10,7 @@
       <item>
         <title>Shared elements</title>
         
-          <description>&lt;h3&gt;백그라운드 푸시 적용&lt;/h3&gt;
+          <description>&lt;h3&gt;머티리얼 화면 전환, Shared Elements&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;플레이스토어에서 앱을 선택하면 리스트의 이미지가 스르르하면서 커지면서 화면 전환이 발생&lt;/li&gt;
