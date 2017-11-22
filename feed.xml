@@ -8,6 +8,20 @@
     
       
       <item>
+        <title>파이썬을 크로스도메인 허용</title>
+        
+          <description>&lt;h3&gt;플라스크에서 크로스도메인 허용&lt;/h3&gt;
+</description>
+        
+        <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//flaskcross</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//flaskcross</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Shared elements</title>
         
           <description>&lt;h3&gt;머티리얼 화면 전환, Shared Elements&lt;/h3&gt;

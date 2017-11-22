@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="paged archive-template nav-closed">
+<body class="tag-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -68,7 +68,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
         <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
@@ -89,12 +89,14 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
+
+
+<!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="background-image: url(/assets/images/cover1.jpg) ">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="background-image: url(/assets/images/cover2.jpg) ">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -103,11 +105,14 @@
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">PyeongHo Factory</h1>
-            <h2 class="page-description">즐거운 공장</h2>
+            <h1 class="page-title">Cross</h1>
+            <h2 class="page-description">
+            
+			    A 1-post collection
+            
+            </h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
 <!-- The main content area on the homepage -->
@@ -119,13 +124,7 @@
         
             <nav class="pagination" role="pagination">
     
-        
-            <a class="newer-posts" href="/page8/" title="Previous Page">&laquo; Newer Posts</a>
-      
-    
-    <span class="page-number"> Page 9 of 11 </span>
-     
-        <a class="older-posts" href="/page10/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
         
@@ -135,10 +134,10 @@
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/rxandroid_1">RxAndroid2 를 이용해서 앱을 만들어 보자</a></h2>
+            <h2 class="post-title"><a href="/flaskcross">파이썬을 크로스도메인 허용</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자 인터넷에 rxjava, RxAndroid 내용들이 너무 많아서 해당 내용은 따로 기술 안함 공부하기 좋은 링크... <a class="read-more" href="/rxandroid_1">&raquo;</a></p>
+            <p>플라스크에서 크로스도메인 허용 파이썬 서버에 크로스도메인 허용 요청내용은 응답 헤더에 아래 내용 추가 였습니다. &#39;Access-Control-Allow-Origin: *&#39; &#39;Access-Control-Allow-Methods: GET&#39; &#39;Access-Control-Allow-Headers: X-Requested-With, Content-Type&#39; 내용을 찾아 보니 크로스 도메인... <a class="read-more" href="/flaskcross">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
@@ -149,127 +148,19 @@
                 on 
                 
                     
-                       <a href='/tag/android'>Android</a>,
+                       <a href='/tag/python'>Python</a>,
                        
                 
                     
-                       <a href='/tag/rxandroid2'>Rxandroid2</a>
+                       <a href='/tag/cross'>Cross</a>,
+                       
+                
+                    
+                       <a href='/tag/heroku'>Heroku</a>
                        
                 
             
-            <time class="post-date" datetime="2017-01-22">22 Jan 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/webview-53">안드로이드 WebView 53 SSL 버그</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유 webview 버전 53 에서 인증서 버그 여기 저기에서 문제 발생에 대한 공지 내용 다음 공지 KG 이니시스... <a class="read-more" href="/webview-53">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/webview53'>Webview53</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-01-15">15 Jan 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/edit_search">EditText 를 이용한 RecyclerView 검색 기능</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>1. EditText에서 한두 글자를 입력하면 리스트에서 해당 결과를 보여주는 방법 RecyclerView 에 검색 기능을 추가하여 한두 글자를 입력으로 원하는 결과만 확인 하는 방법 RecyclerView에 원하는 내용만... <a class="read-more" href="/edit_search">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-01-15">15 Jan 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/add-comment">jekyll 댓글 추가 하기</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계 Disqus 가입하기 Disqus 설정하기 github 연동하기 2. Disqus 가입하기 Disqus 홈페이지 에서 회원 가입을 한다. 계정은... <a class="read-more" href="/add-comment">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/githubpage'>Githubpage</a>,
-                       
-                
-                    
-                       <a href='/tag/jekyll'>Jekyll</a>,
-                       
-                
-                    
-                       <a href='/tag/disqus'>Disqus</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-01-14">14 Jan 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/studio-korean">안드로이드 스튜디오 한글 깨짐</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>1. 안드로이드 스튜디오 2.X 버전에서 한글깨짐 수정 안드로이드 스튜디오 최신버전에서 레이아웃 미리보기에서 한글깨짐 현상 수정 안드로이드 스튜디오가 설치된 경로 내의 다음 파일을 확인합니다. (OS X의 경우... <a class="read-more" href="/studio-korean">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/한글깨짐'>한글깨짐</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-01-09">09 Jan 2017</time>
+            <time class="post-date" datetime="2017-11-22">22 Nov 2017</time>
         </footer>
     </article>
     
@@ -278,20 +169,13 @@
     
         <nav class="pagination" role="pagination">
     
-        
-            <a class="newer-posts" href="/page8/" title="Previous Page">&laquo; Newer Posts</a>
-      
-    
-    <span class="page-number"> Page 9 of 11 </span>
-     
-        <a class="older-posts" href="/page10/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
     
 
 
 </main>
-
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2017</section>
