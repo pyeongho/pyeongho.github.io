@@ -8,6 +8,49 @@
     
       
       <item>
+        <title>안드로이드 알쓸신잡 1</title>
+        
+          <description>&lt;h3&gt;NavigationView 상단 그림자&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46&quot; alt=&quot;이렇게&quot;&gt;&lt;/li&gt;
+&lt;li&gt;for tag:  NavigationView remove shadow &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
+
+&lt;ul&gt;
+&lt;li&gt;DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능&lt;/li&gt;
+&lt;li&gt;정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음&lt;/li&gt;
+&lt;li&gt;NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 &lt;/li&gt;
+&lt;li&gt;그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&amp;quot;-24dp&amp;quot; 발견하기 까지 많은 시간이 걸렸습니다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.design.widget.NavigationView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/nav_view&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_marginTop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-24dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;start&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:fitsSystemWindows=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:headerLayout=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@layout/nav_header_main&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:menu=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@menu/activity_main_drawer&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 24 Nov 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//tips1</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//tips1</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>파이썬을 크로스도메인 허용</title>
         
           <description>&lt;h3&gt;플라스크에서 크로스도메인 허용&lt;/h3&gt;

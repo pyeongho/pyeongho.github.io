@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>파이썬을 크로스도메인 허용</title>
+    <title>안드로이드 알쓸신잡 1</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -97,7 +97,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/cover6.jpg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -108,27 +108,35 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-python">
+    <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">파이썬을 크로스도메인 허용</h1>
+            <h1 class="post-title">안드로이드 알쓸신잡 1</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2017-11-22">22 Nov 2017</time>
+            <time class="post-date" datetime="2017-11-24">24 Nov 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/python'>Python</a>,
+                       <a href='/tag/android'>Android</a>,
                        
                 
                     
-                       <a href='/tag/cross'>Cross</a>,
+                       <a href='/tag/DrawerLayout'>Drawerlayout</a>,
                        
                 
                     
-                       <a href='/tag/heroku'>Heroku</a>
+                       <a href='/tag/NavigationView'>Navigationview</a>,
+                       
+                
+                    
+                       <a href='/tag/toDP'>Todp</a>,
+                       
+                
+                    
+                       <a href='/tag/toPX'>Topx</a>
                        
                 
                 
@@ -137,31 +145,53 @@
 
         <section class="post-content">
             
-            <h3>플라스크에서 크로스도메인 허용</h3>
-
-<h4>파이썬 서버에 크로스도메인 허용</h4>
+            <h3>NavigationView 상단 그림자</h3>
 
 <ul>
-<li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
-<code>
- &#39;Access-Control-Allow-Origin: *&#39;
- &#39;Access-Control-Allow-Methods: GET&#39;
- &#39;Access-Control-Allow-Headers: X-Requested-With, Content-Type&#39;
-</code></li>
-<li>내용을 찾아 보니 크로스 도메인 허용</li>
-<li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.<br></li>
-<li>오리지널 참고 코드 입니다.
+<li>안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
 
 <ul>
-<li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46" alt="이렇게"></li>
+<li>for tag:  NavigationView remove shadow </li>
 </ul></li>
-<li><p>필요한 코드
-<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p></li>
-<li><p>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.</p>
+<li>처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
 
 <ul>
-<li>@crossdomain(origin=&#39;*&#39;)<br></li>
+<li>DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능</li>
+<li>정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음</li>
+<li>NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌</li>
 </ul></li>
+<li>설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 </li>
+<li>그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 </li>
+<li><p>24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&quot;-24dp&quot; 발견하기 까지 많은 시간이 걸렸습니다.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.design.widget.NavigationView</span>
+    <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
+    <span class="na">android:layout_marginTop=</span><span class="s">"-24dp"</span>
+    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
+    <span class="na">app:headerLayout=</span><span class="s">"@layout/nav_header_main"</span>
+    <span class="na">app:menu=</span><span class="s">"@menu/activity_main_drawer"</span> <span class="nt">/&gt;</span>
+</code></pre></div></li>
+</ul>
+
+<h3>Kotlin DP &lt;-&gt; PX 변경 함수</h3>
+
+<ul>
+<li>베이스 액티비티나,  베이스 프래그먼트에 추가해 놓으면 편합니다.</li>
+<li><p>사용법</p>
+
+<ul>
+<li>144.toDP</li>
+<li>36.toPx</li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val Int.toDp: Int
+    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+
+val Int.toPx: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
+</code></pre></div></li>
 </ul>
 
 
@@ -194,15 +224,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=파이썬을 크로스도메인 허용&amp;url=https://pyeongho.github.io/flaskcross"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 알쓸신잡 1&amp;url=https://pyeongho.github.io/tips1"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/flaskcross"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/tips1"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/flaskcross"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/tips1"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -240,20 +270,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/tips1">
-            <section class="post">
-                <h2>안드로이드 알쓸신잡 1</h2>
-                <p>### NavigationView 상단 그림자 - 안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/sharedelements">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover6.jpg)" href="/flaskcross">
             <section class="post">
-                <h2>Shared elements</h2>
-                <p>머티리얼 화면 전환, Shared Elements 플레이스토어에서 앱을 선택하면 리스트의 이미지가 스르르하면서 커지면서 화면 전환이 발생...</p>
+                <h2>파이썬을 크로스도메인 허용</h2>
+                <p>플라스크에서 크로스도메인 허용 파이썬 서버에 크로스도메인 허용 요청내용은 응답 헤더에 아래 내용 추가 였습니다. &#39;Access-Control-Allow-Origin:...</p>
             </section>
         </a>
     

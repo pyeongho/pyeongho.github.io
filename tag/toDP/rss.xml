@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>안드로이드 알쓸신잡 1</title>
+	  <link>//tips1</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-11-24T00:00:00+00:00</pubDate>
+	  <guid>//tips1</guid>
+	  <description><![CDATA[
+	     <h3>NavigationView 상단 그림자</h3>
+
+<ul>
+<li>안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+
+<ul>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46" alt="이렇게"></li>
+<li>for tag:  NavigationView remove shadow </li>
+</ul></li>
+<li>처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
+
+<ul>
+<li>DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능</li>
+<li>정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음</li>
+<li>NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌</li>
+</ul></li>
+<li>설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 </li>
+<li>그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 </li>
+<li><p>24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&quot;-24dp&quot; 발견하기 까지 많은 시간이 걸렸습니다.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.design.widget.NavigationView</span>
+    <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
+    <span class="na">android:layout_marginTop=</span><span class="s">"-24dp"</span>
+    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
+    <span class="na">app:headerLayout=</span><span class="s">"@layout/nav_header_main"</span>
+    <span class="na">app:menu=</span><span class="s">"@menu/activity_main_drawer"</span> <span class="nt">/&gt;</span>
+</code></pre></div></li>
+</ul>
+
+<h3>Kotlin DP &lt;-&gt; PX 변경 함수</h3>
+
+<ul>
+<li>베이스 액티비티나,  베이스 프래그먼트에 추가해 놓으면 편합니다.</li>
+<li><p>사용법</p>
+
+<ul>
+<li>144.toDP</li>
+<li>36.toPx</li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val Int.toDp: Int
+    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+
+val Int.toPx: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
+</code></pre></div></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
