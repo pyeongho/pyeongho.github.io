@@ -49,6 +49,20 @@
 </code></pre></div></li>
 </ul>
 
+<h3>안드로이드 스튜디오 실행기기 다중 선택</h3>
+
+<ul>
+<li>한개만 선택해야 한다는 고정 관념</li>
+<li>shift f10 을 이용해서 실행 단일 기기 선택 </li>
+<li>원하는 디바이스 선택 후 테스트 </li>
+<li>너무 고정 관념 처럼 사용함</li>
+<li>안드로이드 스튜디오 3.0 에서는 이 방법을 사용하기 힘든 이상하게 타겟이 고정됨</li>
+<li>그런데 다른 방법으로 해결 고정 관념 타파</li>
+<li>아래 그림 처럼 실행시 기기를 여러개 선택 가능하다.</li>
+<li>여러개 선택하면 동시에 설치되고 실행
+<img src="https://drive.google.com/uc?export=view&amp;id=1T2U0bqErnqhc1G39-BvWyTjCRbfdPkUI" alt="다중선택"></li>
+</ul>
+
 <h3>Kotlin DP &lt;-&gt; PX 변경 함수</h3>
 
 <ul>
