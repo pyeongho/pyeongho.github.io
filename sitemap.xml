@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//no_padding_textview</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//tips1</loc>
     </url>
     
@@ -1573,6 +1577,38 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/toPX/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/no-padding/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/no-padding/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/TextView/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/TextView/</loc>
     </url>
     
     

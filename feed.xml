@@ -8,6 +8,31 @@
     
       
       <item>
+        <title>안드로이드 TextView Padding 문제</title>
+        
+          <description>&lt;h3&gt;디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐&lt;/li&gt;
+&lt;li&gt;처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.&lt;/li&gt;
+&lt;li&gt;아래 이미지&lt;br&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-&quot; alt=&quot;이렇게&quot;&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//no_padding_textview</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//no_padding_textview</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 알쓸신잡 1</title>
         
           <description>&lt;h3&gt;NavigationView 상단 그림자&lt;/h3&gt;

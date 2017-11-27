@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 알쓸신잡 1</title>
+    <title>안드로이드 TextView Padding 문제</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 알쓸신잡 1</h1>
+            <h1 class="post-title">안드로이드 TextView Padding 문제</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2017-11-24">24 Nov 2017</time>
+            <time class="post-date" datetime="2017-11-27">27 Nov 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,19 +124,11 @@
                        
                 
                     
-                       <a href='/tag/DrawerLayout'>Drawerlayout</a>,
+                       <a href='/tag/no-padding'>No-padding</a>,
                        
                 
                     
-                       <a href='/tag/NavigationView'>Navigationview</a>,
-                       
-                
-                    
-                       <a href='/tag/toDP'>Todp</a>,
-                       
-                
-                    
-                       <a href='/tag/toPX'>Topx</a>
+                       <a href='/tag/TextView'>Textview</a>
                        
                 
                 
@@ -145,68 +137,40 @@
 
         <section class="post-content">
             
-            <h3>NavigationView 상단 그림자</h3>
+            <h3>디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩</h3>
 
 <ul>
-<li>안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+<li>TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐</li>
+<li>처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함<br></li>
+<li>약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.</li>
+<li><p>아래 이미지     </p>
 
 <ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46" alt="이렇게"></li>
-<li>for tag:  NavigationView remove shadow </li>
-</ul></li>
-<li>처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
-
-<ul>
-<li>DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능</li>
-<li>정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음</li>
-<li>NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌</li>
-</ul></li>
-<li>설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 </li>
-<li>그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 </li>
-<li><p>24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&quot;-24dp&quot; 발견하기 까지 많은 시간이 걸렸습니다.</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.design.widget.NavigationView</span>
-    <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
-    <span class="na">android:layout_marginTop=</span><span class="s">"-24dp"</span>
-    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-    <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
-    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
-    <span class="na">app:headerLayout=</span><span class="s">"@layout/nav_header_main"</span>
-    <span class="na">app:menu=</span><span class="s">"@menu/activity_main_drawer"</span> <span class="nt">/&gt;</span>
-</code></pre></div></li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-" alt="이렇게"><br></li>
+<li>왼쪽이 일반 TextView에 includeFontPadding를 적용한 버전, 패딩을 완전히 제거한 버전 입니다.</li>
+<li>xml 코드 첨부하였습니다.
+``` xml
+<TextView
+    android:includeFontPadding="false"
+    android:background="#00ff00"
+    android:text="ABCD"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" /></li>
 </ul>
 
-<h3>안드로이드 스튜디오 실행기기 다중 선택</h3>
-
-<ul>
-<li>한개만 선택해야 한다는 고정 관념</li>
-<li>shift f10 을 이용해서 실행 단일 기기 선택 </li>
-<li>원하는 디바이스 선택 후 테스트 </li>
-<li>너무 고정 관념 처럼 사용함</li>
-<li>안드로이드 스튜디오 3.0 에서는 이 방법을 사용하기 힘든 이상하게 타겟이 고정됨</li>
-<li>그런데 다른 방법으로 해결 고정 관념 타파</li>
-<li>아래 그림 처럼 실행시 기기를 여러개 선택 가능하다.</li>
-<li>여러개 선택하면 동시에 설치되고 실행
-<img src="https://drive.google.com/uc?export=view&amp;id=1T2U0bqErnqhc1G39-BvWyTjCRbfdPkUI" alt="다중선택"></li>
+<p><NPTextView
+        android:includeFontPadding="false"
+        android:background="#00ff00"
+        android:text="ABCD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+```</p></li>
+<li><p>NPTextView는 1줄 짜리에만 적용해서 사용해야 합니다. 여러줄은 아직 동작 안합니다.</p></li>
+<li><p>그리고 직접 추가한 패딩 역시 제거하기때문에 잘 사용해야 합니다.</p></li>
+<li><p>코드 내용은 텍스트 크기를 읽어서 Rect 사이즈를 타이트하게 고정하는 내용입니다.</p></li>
 </ul>
 
-<h3>Kotlin DP &lt;-&gt; PX 변경 함수</h3>
-
-<ul>
-<li>베이스 액티비티나,  베이스 프래그먼트에 추가해 놓으면 편합니다.</li>
-<li><p>사용법</p>
-
-<ul>
-<li>144.toDP</li>
-<li>36.toPx</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val Int.toDp: Int
-    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
-
-val Int.toPx: Int
-    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
-</code></pre></div></li>
-</ul>
+<p><script src="https://gist.github.com/pyeongho/859d82d7f30a4005ad7fd1e38ddd6512.js"></script></p>
 
 
         </section>
@@ -238,15 +202,15 @@ val Int.toPx: Int
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 알쓸신잡 1&amp;url=https://pyeongho.github.io/tips1"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 TextView Padding 문제&amp;url=https://pyeongho.github.io/no_padding_textview"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/tips1"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/no_padding_textview"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/tips1"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/no_padding_textview"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -284,20 +248,13 @@ val Int.toPx: Int
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/no_padding_textview">
-            <section class="post">
-                <h2>안드로이드 TextView Padding 문제</h2>
-                <p>### 디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩 - TextView로 구성된 화면에서 마진으로 간격이...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover6.jpg)" href="/flaskcross">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/tips1">
             <section class="post">
-                <h2>파이썬을 크로스도메인 허용</h2>
-                <p>플라스크에서 크로스도메인 허용 파이썬 서버에 크로스도메인 허용 요청내용은 응답 헤더에 아래 내용 추가 였습니다. &#39;Access-Control-Allow-Origin:...</p>
+                <h2>안드로이드 알쓸신잡 1</h2>
+                <p>NavigationView 상단 그림자 안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법...</p>
             </section>
         </a>
     
