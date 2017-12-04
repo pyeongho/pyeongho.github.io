@@ -12,6 +12,40 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>안드로이드 네스티드 웹뷰</title>
+	  <link>//nested_webview</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-11-27T00:00:00+00:00</pubDate>
+	  <guid>//nested_webview</guid>
+	  <description><![CDATA[
+	     <h3>웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장</h3>
+
+<ul>
+<li>웹뷰를 스크롤 하면 툴바가 사라지거나 </li>
+<li>BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때 </li>
+</ul>
+
+<h2>bottom sheets 샘플은 <a href="http://thdev.tech/">꿈 많은 개발자가 되자</a> 코드 입니다.</h2>
+
+<h3>네스티드 웹뷰 동작</h3>
+
+<ul>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=10ht2zV7vkXuKizDFTHpM7eQqmkuOjnIV" alt="webview"> </li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1L1XlYTFKd4d5VOMggToi01wTywhdO_Hj" alt="네스티드"><br></li>
+</ul>
+
+<h3>네스티드 웹뷰 코드</h3>
+
+<ul>
+<li>참고 : <a href="https://github.com/takahirom/webview-in-coordinatorlayout">https://github.com/takahirom/webview-in-coordinatorlayout</a></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/fbe0ecd55df127365179b65098ad4b25.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>안드로이드 TextView Padding 문제</title>
 	  <link>//no_padding_textview</link>
 	  <author>PyeongHo</author>
@@ -657,72 +691,6 @@ dependencies {
 </ul></li>
 </ul>
 
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>웹에서 앱 설치 여부를 확인하자</title>
-	  <link>//app_check</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-05-27T00:00:00+00:00</pubDate>
-	  <guid>//app_check</guid>
-	  <description><![CDATA[
-	     <h3>Web 에서 앱 설치 여부를 확인 하자</h3>
-
-<ul>
-<li>시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.</li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API">https://developer.mozilla.org/ko/docs/Web/API/Page<em>Visibility</em>API</a> </li>
-<li>2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.</li>
-<li>하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지 
-
-<ul>
-<li><a href="https://devtalk.kakao.com/t/topic/20684/3">https://devtalk.kakao.com/t/topic/20684/3</a></li>
-</ul></li>
-</ul>
-
-<h4>1. 내용</h4>
-
-<ul>
-<li>인터벌 함수를 이용해서 hidden 을 계속 확인한다.</li>
-<li>타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.</li>
-</ul>
-
-<h4>2. 문제</h4>
-
-<ul>
-<li>단순참고용 정도로 사용하면 좋을거 같습니다.</li>
-<li>많이 테스트 안해보았습니다.</li>
-<li>document.webkitHidden || document.hidden 를 이용해서 설치 여부를 확인 하는 방법 입니다.</li>
-<li>크롬에서 지원하는 intent 방식을 사용하면 항상 마켓이 실행되서 체크하기 어려우니 꼭 커스텀 스킴으로 테스트 해야 합니다.</li>
-</ul>
-
-<h4>3. 코드</h4>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">appSchem</span> <span class="o">=</span> <span class="s1">'mayapp://launch?Data=abcdefg'</span><span class="p">;</span>
-
-<span class="nx">isMyApp</span><span class="p">();</span>
-<span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">appSchem</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">isMyApp</span><span class="p">(){</span>
-  <span class="kd">function</span> <span class="nx">clearTimers</span><span class="p">(){</span>
-        <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">heartbeat</span><span class="p">);</span>
-        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kd">function</span> <span class="nx">intervalHeartbeat</span><span class="p">(){</span>
-        <span class="k">if</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">webkitHidden</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">hidden</span><span class="p">){</span>
-            <span class="nx">clearTimers</span><span class="p">();</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'앱이 설치 되어 있습니다.'</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nx">heartbeat</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">intervalHeartbeat</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">deLay</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'앱이 없습니다.'</span><span class="p">);</span>
-    <span class="p">},</span> <span class="nx">deLay</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre></div>
 	  ]]></description>
 	</item>
 

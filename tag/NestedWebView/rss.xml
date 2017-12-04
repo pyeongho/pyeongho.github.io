@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>안드로이드 네스티드 웹뷰</title>
+	  <link>//nested_webview</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-11-27T00:00:00+00:00</pubDate>
+	  <guid>//nested_webview</guid>
+	  <description><![CDATA[
+	     <h3>웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장</h3>
+
+<ul>
+<li>웹뷰를 스크롤 하면 툴바가 사라지거나 </li>
+<li>BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때 </li>
+</ul>
+
+<h2>bottom sheets 샘플은 <a href="http://thdev.tech/">꿈 많은 개발자가 되자</a> 코드 입니다.</h2>
+
+<h3>네스티드 웹뷰 동작</h3>
+
+<ul>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=10ht2zV7vkXuKizDFTHpM7eQqmkuOjnIV" alt="webview"> </li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1L1XlYTFKd4d5VOMggToi01wTywhdO_Hj" alt="네스티드"><br></li>
+</ul>
+
+<h3>네스티드 웹뷰 코드</h3>
+
+<ul>
+<li>참고 : <a href="https://github.com/takahirom/webview-in-coordinatorlayout">https://github.com/takahirom/webview-in-coordinatorlayout</a></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/fbe0ecd55df127365179b65098ad4b25.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

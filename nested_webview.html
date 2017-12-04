@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 TextView Padding 문제</title>
+    <title>안드로이드 네스티드 웹뷰</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,7 +111,7 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 TextView Padding 문제</h1>
+            <h1 class="post-title">안드로이드 네스티드 웹뷰</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
             <time class="post-date" datetime="2017-11-27">27 Nov 2017</time>
@@ -124,11 +124,11 @@
                        
                 
                     
-                       <a href='/tag/no-padding'>No-padding</a>,
+                       <a href='/tag/NestedWebView'>Nestedwebview</a>,
                        
                 
                     
-                       <a href='/tag/TextView'>Textview</a>
+                       <a href='/tag/NestedScrollingChild'>Nestedscrollingchild</a>
                        
                 
                 
@@ -137,40 +137,29 @@
 
         <section class="post-content">
             
-            <h3>디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩</h3>
+            <h3>웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장</h3>
 
 <ul>
-<li>TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐</li>
-<li>처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함<br></li>
-<li>약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.</li>
-<li><p>아래 이미지     </p>
+<li>웹뷰를 스크롤 하면 툴바가 사라지거나 </li>
+<li>BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때 </li>
+</ul>
+
+<h2>bottom sheets 샘플은 <a href="http://thdev.tech/">꿈 많은 개발자가 되자</a> 코드 입니다.</h2>
+
+<h3>네스티드 웹뷰 동작</h3>
 
 <ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-" alt="이렇게"><br></li>
-<li>왼쪽이 일반 TextView에 includeFontPadding를 적용한 버전, 패딩을 완전히 제거한 버전 입니다.</li>
-<li>xml 코드 첨부하였습니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;TextView</span>
-          <span class="na">android:includeFontPadding=</span><span class="s">"false"</span>
-          <span class="na">android:background=</span><span class="s">"#00ff00"</span>
-          <span class="na">android:text=</span><span class="s">"ABCD"</span>
-          <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;NPTextView</span>
-          <span class="na">android:includeFontPadding=</span><span class="s">"false"</span>
-          <span class="na">android:background=</span><span class="s">"#00ff00"</span>
-          <span class="na">android:text=</span><span class="s">"ABCD"</span>
-          <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
-
-</code></pre></div></li>
-<li><p>NPTextView는 1줄 짜리에만 적용해서 사용해야 합니다. 여러줄은 아직 동작 안합니다.</p></li>
-<li><p>그리고 직접 추가한 패딩 역시 제거하기때문에 잘 사용해야 합니다.</p></li>
-<li><p>코드 내용은 텍스트 크기를 읽어서 Rect 사이즈를 타이트하게 고정하는 내용입니다.</p></li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=10ht2zV7vkXuKizDFTHpM7eQqmkuOjnIV" alt="webview"> </li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1L1XlYTFKd4d5VOMggToi01wTywhdO_Hj" alt="네스티드"><br></li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/859d82d7f30a4005ad7fd1e38ddd6512.js"></script></p>
+<h3>네스티드 웹뷰 코드</h3>
+
+<ul>
+<li>참고 : <a href="https://github.com/takahirom/webview-in-coordinatorlayout">https://github.com/takahirom/webview-in-coordinatorlayout</a></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/fbe0ecd55df127365179b65098ad4b25.js"></script></p>
 
 
         </section>
@@ -202,15 +191,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 TextView Padding 문제&amp;url=https://pyeongho.github.io/no_padding_textview"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 네스티드 웹뷰&amp;url=https://pyeongho.github.io/nested_webview"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/no_padding_textview"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/nested_webview"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/no_padding_textview"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/nested_webview"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -248,20 +237,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/nested_webview">
-            <section class="post">
-                <h2>안드로이드 네스티드 웹뷰</h2>
-                <p>### 웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장 - 웹뷰를 스크롤 하면 툴바가 사라지거나 - BottomSheet...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/tips1">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/no_padding_textview">
             <section class="post">
-                <h2>안드로이드 알쓸신잡 1</h2>
-                <p>NavigationView 상단 그림자 안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법...</p>
+                <h2>안드로이드 TextView Padding 문제</h2>
+                <p>디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩 TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인...</p>
             </section>
         </a>
     

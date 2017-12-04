@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>안드로이드 네스티드 웹뷰</title>
+        
+          <description>&lt;h3&gt;웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;웹뷰를 스크롤 하면 툴바가 사라지거나 &lt;/li&gt;
+&lt;li&gt;BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때 &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//nested_webview</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//nested_webview</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 TextView Padding 문제</title>
         
           <description>&lt;h3&gt;디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩&lt;/h3&gt;

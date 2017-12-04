@@ -12,6 +12,40 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>안드로이드 네스티드 웹뷰</title>
+	  <link>//nested_webview</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-11-27T00:00:00+00:00</pubDate>
+	  <guid>//nested_webview</guid>
+	  <description><![CDATA[
+	     <h3>웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장</h3>
+
+<ul>
+<li>웹뷰를 스크롤 하면 툴바가 사라지거나 </li>
+<li>BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때 </li>
+</ul>
+
+<h2>bottom sheets 샘플은 <a href="http://thdev.tech/">꿈 많은 개발자가 되자</a> 코드 입니다.</h2>
+
+<h3>네스티드 웹뷰 동작</h3>
+
+<ul>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=10ht2zV7vkXuKizDFTHpM7eQqmkuOjnIV" alt="webview"> </li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1L1XlYTFKd4d5VOMggToi01wTywhdO_Hj" alt="네스티드"><br></li>
+</ul>
+
+<h3>네스티드 웹뷰 코드</h3>
+
+<ul>
+<li>참고 : <a href="https://github.com/takahirom/webview-in-coordinatorlayout">https://github.com/takahirom/webview-in-coordinatorlayout</a></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/fbe0ecd55df127365179b65098ad4b25.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>안드로이드 TextView Padding 문제</title>
 	  <link>//no_padding_textview</link>
 	  <author>PyeongHo</author>
@@ -826,63 +860,6 @@ if (x in 1..y-1)
 <li>현재 여기까지 진행하고 조금씩 앱을 만들어 보도록 하겠습니다.</li>
 <li>코틀린 문서 링크 입니다.</li>
 <li><a href="http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc">http://javacan.tistory.com/entry/Korea-Kotlin-Ref-Doc</a></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
-	  <link>//firebase_remoteconfig</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-05-22T00:00:00+00:00</pubDate>
-	  <guid>//firebase_remoteconfig</guid>
-	  <description><![CDATA[
-	     <h3>파이어베이스 리모트 컨피그 사용</h3>
-
-<ul>
-<li>앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함</li>
-<li>공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음</li>
-</ul>
-
-<h4>0. 목적</h4>
-
-<ul>
-<li>앱 재배포 없이 기능을 선택 하려고함</li>
-<li>firebase reomte config 기능이 눈에 들어옴 </li>
-<li>테스트도 할겸 도전 </li>
-</ul>
-
-<h4>1. 앱에 파이어 베이스 리모트 컨피그 기능 추가</h4>
-
-<ul>
-<li>안드로이드 스튜디오에서 편하게 추가 가능하다.</li>
-<li>tools -&gt; Firebase 선택시 편집기 오른쪽에 사용 가능한 기능이 나옵니다.</li>
-<li>Remote Config  를 선택해서 순서대로 하면 사용상 문제는 없습니다.</li>
-</ul>
-
-<h4>2. 처음 한두번은 문제 없다가 갑자기 에러가 나기 시작함</h4>
-
-<ul>
-<li>순서 대로 진행 하면 &#39;Fetch Failed&#39; 에러로 정확한 이유를 알수 없음</li>
-<li>그래서 addOnFailureListener 리스너를 이용해서 exception 클래스 이름을 확인 하였습니다.</li>
-<li>FirebaseRemoteConfigFetchThrottledException</li>
-<li>위 내용으로 에러가 발생</li>
-<li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
-<li>구글 검색으로 위와 같은 내용이 찾음</li>
-<li>아래 코드로 동작 확인<br>
-<code>java
-FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
-  .setDeveloperModeEnabled(BuildConfig.DEBUG)
-  .build();
-mFirebaseRemoteConfig.setConfigSettings(setting);
-</code></li>
-</ul>
-
-<h4>3. Remote Config 사용시 주의 사항</h4>
-
-<ul>
-<li>개발 모드 일때는 꼭 개발 설정을 하자</li>
 </ul>
 
 	  ]]></description>
