@@ -137,7 +137,7 @@
 
         <section class="post-content">
             
-            <h3>웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장</h3>
+            <h3>조금더 편한 액티비 종료</h3>
 
 <ul>
 <li>손가락으로 드래그하여 액티비티 종료 하는 라이브러리 입니다.</li>
@@ -168,14 +168,15 @@
 <li>SwipeBackActivity 를 조금만 변경하여 아래 처럼 만들었습니다.</li>
 <li>사용할 프래그먼트에서 SwipeBackFragment를 상속 받고 아래 처럼 사용하면 됩니다. </li>
 <li>아래와 같이 setContentView 를 호출 하여 사용하면 동작 합니다.</li>
-<li><p>기본적인 사용법은 swipeBack 과 동일합니다.
-<code>kotlin 
+<li><p>기본적인 사용법은 swipeBack 과 동일합니다.</p>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">
   override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setContentView(R.layout.layout_notice)
         setDragEdge(SwipeBackLayout.DragEdge.TOP) // 스와이프 방향
         return super.onCreateView(inflater, container, savedInstanceState)
     }
-</code></p></li>
+
+</code></pre></div></li>
 <li><script src="https://gist.github.com/pyeongho/80330d4b1218e4aeaf67ba8fd7327acc.js"></script> </li>
 </ul>
 
