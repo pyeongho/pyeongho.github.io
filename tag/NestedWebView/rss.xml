@@ -13,10 +13,10 @@
    
 	<item>
 	  <title>안드로이드 네스티드 웹뷰</title>
-	  <link>//nested_webview</link>
+	  <link>//nested_webview.1</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2017-11-27T00:00:00+00:00</pubDate>
-	  <guid>//nested_webview</guid>
+	  <guid>//nested_webview.1</guid>
 	  <description><![CDATA[
 	     <h3>웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장</h3>
 
