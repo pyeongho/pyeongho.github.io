@@ -151,19 +151,18 @@
 <li><p>애플리케이션 시작하면서 확인 하는 코드 </p>
 
 <ul>
-<li>enable 가 0 보다 크면 소프트 키가 안보이는 상태 입니다.
-<code>kotlin 
-var enable = 0
-try {
-    enable = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-        Settings.Global.getInt(activity.contentResolver, &quot;navigationbar_hide_bar_enabled&quot;)
-    } else {
-        -1
+<li>enable 가 0 보다 크면 소프트 키가 안보이는 상태 입니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    var enable = 0
+    try {
+        enable = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            Settings.Global.getInt(activity.contentResolver, "navigationbar_hide_bar_enabled")
+        } else {
+            -1
+        }
+    }catch (e: Exception){
     }
-}catch (e: Exception){
-}
-</code><br></li>
-</ul></li>
+</code></pre></div></li>
 <li><p>런타임에서 리스너로 확인 하는 방법</p>
 
 <ul>
