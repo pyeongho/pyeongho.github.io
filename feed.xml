@@ -8,6 +8,31 @@
     
       
       <item>
+        <title>안드로이드 immersive</title>
+        
+          <description>&lt;h3&gt;갤럭시 s8 의 이상한 기능&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상&lt;/li&gt;
+&lt;li&gt;애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.&lt;/li&gt;
+&lt;li&gt;알아야 하는 내용
+
+&lt;ul&gt;
+&lt;li&gt;애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부&lt;/li&gt;
+&lt;li&gt;에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//immersive</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//immersive</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 스와이프백</title>
         
           <description>&lt;h3&gt;조금더 편한 액티비 종료&lt;/h3&gt;
