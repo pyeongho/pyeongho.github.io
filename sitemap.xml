@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//lifecycle</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//immersive</loc>
     </url>
     
@@ -389,6 +393,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//author/pyeongho/page12/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//author/pyeongho/page13/</loc>
     </url>
     
     
@@ -1732,6 +1744,38 @@
     
     
     <url>
+        <loc>https://pyeongho.github.io//tag/lifecycle/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/lifecycle/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/foreground/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/foreground/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>https://pyeongho.github.io//page2/</loc>
     </url>
     
@@ -1813,6 +1857,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//page12/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//page13/</loc>
     </url>
     
     

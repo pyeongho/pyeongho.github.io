@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 immersive</title>
+    <title>애플리케이션 Foreground 확인</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 immersive</h1>
+            <h1 class="post-title">애플리케이션 Foreground 확인</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2018-01-26">26 Jan 2018</time>
+            <time class="post-date" datetime="2018-02-12">12 Feb 2018</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,11 +124,11 @@
                        
                 
                     
-                       <a href='/tag/immersive'>Immersive</a>,
+                       <a href='/tag/lifecycle'>Lifecycle</a>,
                        
                 
                     
-                       <a href='/tag/galaxy s8'>Galaxy s8</a>
+                       <a href='/tag/foreground'>Foreground</a>
                        
                 
                 
@@ -137,48 +137,48 @@
 
         <section class="post-content">
             
-            <h3>갤럭시 s8 의 이상한 기능</h3>
+            <h3>애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.</h3>
 
 <ul>
-<li>갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상</li>
-<li>애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.</li>
-<li><p>알아야 하는 내용</p>
+<li>안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.</li>
+<li>백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.</li>
+<li>api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.</li>
+<li>Application.ActivityLifecycleCallbacks 를 이용하는 방법</li>
+<li>Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다. </li>
+<li>사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.</li>
+<li><div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">
+    class OnApplication: Application() {
+        override fun onCreate() {
+            super.onCreate()
+            Foreground.init(this)
+
+        }
+    }
+
+</code></pre></div></li>
+<li><p>애프리케이션 생성자에서 클래스를 초기화 합니다.</p></li>
+<li><p>싱글톤 클래스라서 사용은 편하게 하시면 됩니다. 아래 처럼 원하는걸로 편하게 사용하면 됩니다.</p>
 
 <ul>
-<li>애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부</li>
-<li>에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.</li>
+<li>Foreground.get().isBackground</li>
+<li>Foreground.get().appStatus</li>
 </ul></li>
-<li><p>애플리케이션 시작하면서 확인 하는 코드 </p>
+<li><p>전체 코드는 아래에 있습니다.</p>
 
 <ul>
-<li>enable 가 0 보다 크면 소프트 키가 안보이는 상태 입니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    var enable = 0
-    try {
-        enable = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            Settings.Global.getInt(activity.contentResolver, "navigationbar_hide_bar_enabled")
-        } else {
-            -1
-        }
-    }catch (e: Exception){
-    }
-</code></pre></div></li>
-<li><p>런타임에서 리스너로 확인 하는 방법</p>
+<li>간단한 동작 설명<br>
 
 <ul>
-<li>arg 가 2일때 소프트 키가 안보이는 상태 입니다.</li>
+<li>onActivityStarted 추가 되면 카운트 +1</li>
+<li>onActivityStopped 추가 되면 카운트 -1</li>
+<li>카운트가 0 이면 백그라운드</li>
+<li>카운트가 1 보다 크면 포그라운드</li>
+<li>카운트가 1 이면 포그라운드 전환<br></li>
+</ul></li>
+</ul></li>
 </ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val decorView = activity.window.decorView
-    decorView.setOnSystemUiVisibilityChangeListener {arg -&gt;
-        log.d("Current arg: " + arg)
-        if(arg == 2){
-          //TODO 소포트키 안보임
-        }else{
-          //TODO 소포트 보임
-        }
-    }
-</code></pre></div></li>
-</ul>
+
+<p><script src="https://gist.github.com/pyeongho/59944e4e9e8d76f45c6f395dccd1d8e8.js"></script></p>
 
 
         </section>
@@ -210,15 +210,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 immersive&amp;url=https://pyeongho.github.io/immersive"
+                <a class="icon-twitter" href="http://twitter.com/share?text=애플리케이션 Foreground 확인&amp;url=https://pyeongho.github.io/lifecycle"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/immersive"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/lifecycle"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/immersive"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/lifecycle"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -256,20 +256,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/lifecycle">
-            <section class="post">
-                <h2>애플리케이션 Foreground 확인</h2>
-                <p>### 애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다. - 안드로이드 사용자중 홈버튼으로 앱을 종료...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/swipe_back">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/immersive">
             <section class="post">
-                <h2>안드로이드 스와이프백</h2>
-                <p>조금더 편한 액티비 종료 손가락으로 드래그하여 액티비티 종료 하는 라이브러리 입니다. iOS에서 자주 사용 되지만...</p>
+                <h2>안드로이드 immersive</h2>
+                <p>갤럭시 s8 의 이상한 기능 갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가...</p>
             </section>
         </a>
     

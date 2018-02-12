@@ -8,6 +8,30 @@
     
       
       <item>
+        <title>애플리케이션 Foreground 확인</title>
+        
+          <description>&lt;h3&gt;애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.&lt;/li&gt;
+&lt;li&gt;백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.&lt;/li&gt;
+&lt;li&gt;api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.&lt;/li&gt;
+&lt;li&gt;Application.ActivityLifecycleCallbacks 를 이용하는 방법&lt;/li&gt;
+&lt;li&gt;Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다. &lt;/li&gt;
+&lt;li&gt;사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//lifecycle</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//lifecycle</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 immersive</title>
         
           <description>&lt;h3&gt;갤럭시 s8 의 이상한 기능&lt;/h3&gt;
