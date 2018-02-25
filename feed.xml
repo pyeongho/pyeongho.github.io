@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>안드로이드 띵스</title>
+        
+          <description>&lt;h4&gt;구글 랩스 안드로이드 띵즈&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;안드로이드 띵즈 : 운영체제 이름&lt;/li&gt;
+&lt;li&gt;2월24일 구글코라아에서 진행 하는 발표에 참석&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//android_things</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//android_things</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>애플리케이션 Foreground 확인</title>
         
           <description>&lt;h3&gt;애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.&lt;/h3&gt;
