@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//nav_manual</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//android_things</loc>
     </url>
     
@@ -1837,6 +1841,22 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/CodeLaps/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%EB%A7%A4%EB%89%B4%EC%96%BC/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%EB%A7%A4%EB%89%B4%EC%96%BC/</loc>
     </url>
     
     
