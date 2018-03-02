@@ -12,10 +12,10 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>프로가드라도 강항게</title>
+	  <title>프로가드라 알차게 사용하기</title>
 	  <link>//pro_guard</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2016-12-23T00:00:00+00:00</pubDate>
+	  <pubDate>2018-03-02T00:00:00+00:00</pubDate>
 	  <guid>//pro_guard</guid>
 	  <description><![CDATA[
 	     <h4>1. 코드난독화를 위해서 사용하는 프로가드</h4>
