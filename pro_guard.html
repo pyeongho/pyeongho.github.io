@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>butterknife 라이브러리 사용</title>
+    <title>프로가드라도 강항게</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -97,7 +97,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover7.jpg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -108,23 +108,23 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-android">
+    <article class="post tag-security">
 
         <header class="post-header">
-            <h1 class="post-title">butterknife 라이브러리 사용</h1>
+            <h1 class="post-title">프로가드라도 강항게</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2016-12-29">29 Dec 2016</time>
+            <time class="post-date" datetime="2016-12-23">23 Dec 2016</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/android'>Android</a>,
+                       <a href='/tag/security'>Security</a>,
                        
                 
                     
-                       <a href='/tag/butterknife'>Butterknife</a>
+                       <a href='/tag/proguard'>Proguard</a>
                        
                 
                 
@@ -133,32 +133,22 @@
 
         <section class="post-content">
             
-            <h3>butterknife 를 사용해 보자</h3>
-
-<p><a href="https://github.com/JakeWharton/butterknife">butterknife github</a></p>
-
-<h4>1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함</h4>
-<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">ImageButton</span> <span class="n">btn_send</span><span class="o">;</span> 
-    <span class="n">btn_send</span> <span class="o">=</span> <span class="o">(</span><span class="n">ImageButton</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btn_send</span><span class="o">);</span>
-    <span class="n">ib_chat_photo</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
-</code></pre></div>
-<h4>2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.</h4>
+            <h4>1. 코드난독화를 위해서 사용하는 프로가드</h4>
 
 <ul>
-<li>안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다</li>
-<li><p>아래 내용을 모듈의 적당한 위치 시켜야 합니다.
-<script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script></p></li>
-<li><p>프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
-<script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script></p></li>
-</ul>
-
-<h4>3. 안드로이드 스튜디오 플러그인을 설치</h4>
+<li>자세한 프로가드 사용법은 아닙니다.</li>
+<li>패키지 구성을 어떻게 하면 좋을지에 대한 내용입니다.</li>
+<li>프로가드 적용시 패키명과 클래스명이 유지 되는것중 액티비티가 있습니다.</li>
+<li>그렇게 되면 기본적인 구성을 확인 가능하면 그 안에 있는 하위 패키지 이름을 보면서 내용 유추가 가능해 진다.</li>
+<li>아주 간단한 방법으로 액티비티를 따로 모아서 패키지를 만들어서 관리혀면 생각보다 좋다.</li>
+<li>액티비티 뿐만 아니라 클래스명과 패키지명이 유지되어야 하는 내용을 따로 관리하면 생각보다 큰 효과를 얻습니다.</li>
+<li><p><a href="https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/">https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/</a></p></li>
+<li><p>보안의 명언 </p>
 
 <ul>
-<li>setting -&gt; plugins -&gt; browse repositories   에서 butterknife zelezny 찾아서 설치 (안드로이드 스튜디오 재시작함)</li>
-<li>레이아웃 xml 파일에서 마우스 오른쪽 버튼 클릭후 generate 를 선택 합니다.</li>
-<li>butterknife 가 보입니다. 선택합니다.</li>
-<li>체크박스 선택 창이 나옵니다.  원하는 속성을 체크 체크 해서 완료 하면 됩니다.</li>
+<li>&quot;정말 보안이 필요한 것이 있다면 앱에 넣지 마세요.&quot;</li>
+<li>앱을 완벽하게 보호할 수는 없습니다. 투입할 수 있는 시간의 양과 보안 정도와 공격자 수 사이에 절충해야 합니다</li>
+</ul></li>
 </ul>
 
 
@@ -191,15 +181,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=butterknife 라이브러리 사용&amp;url=https://pyeongho.github.io/butterknifr"
+                <a class="icon-twitter" href="http://twitter.com/share?text=프로가드라도 강항게&amp;url=https://pyeongho.github.io/pro_guard"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/butterknifr"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/pro_guard"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/butterknifr"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/pro_guard"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -237,20 +227,20 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/firebase1">
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/butterknifr">
             <section class="post">
-                <h2>파이어베이스를 사용해보자</h2>
-                <p>#### 1. firebase authentication 를 사용해 보자 - 안드로이드 스튜디오 에서 tools -> firebase 를...</p>
+                <h2>butterknife 라이브러리 사용</h2>
+                <p>### butterknife 를 사용해 보자 [butterknife github](https://github.com/JakeWharton/butterknife) #### 1. 안드로이드 xml 레이아웃 사용시 아래 와...</p>
             </section>
         </a>
     
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/pro_guard">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/mobile-sec.-owasp">
             <section class="post">
-                <h2>프로가드라도 강항게</h2>
-                <p>1. 코드난독화를 위해서 사용하는 프로가드 자세한 프로가드 사용법은 아닙니다. 패키지 구성을 어떻게 하면 좋을지에 대한...</p>
+                <h2>OWASP top 10 항목을 이용한 취약점 확인</h2>
+                <p>1. Mobile OWASP Top 10 ( 2014) | No | 진단 항목 | 내용 |...</p>
             </section>
         </a>
     

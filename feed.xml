@@ -1195,6 +1195,30 @@ notification: {
     
       
       <item>
+        <title>프로가드라도 강항게</title>
+        
+          <description>&lt;h4&gt;1. 코드난독화를 위해서 사용하는 프로가드&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;자세한 프로가드 사용법은 아닙니다.&lt;/li&gt;
+&lt;li&gt;패키지 구성을 어떻게 하면 좋을지에 대한 내용입니다.&lt;/li&gt;
+&lt;li&gt;프로가드 적용시 패키명과 클래스명이 유지 되는것중 액티비티가 있습니다.&lt;/li&gt;
+&lt;li&gt;그렇게 되면 기본적인 구성을 확인 가능하면 그 안에 있는 하위 패키지 이름을 보면서 내용 유추가 가능해 진다.&lt;/li&gt;
+&lt;li&gt;아주 간단한 방법으로 액티비티를 따로 모아서 패키지를 만들어서 관리혀면 생각보다 좋다.&lt;/li&gt;
+&lt;li&gt;액티비티 뿐만 아니라 클래스명과 패키지명이 유지되어야 하는 내용을 따로 관리하면 생각보다 큰 효과를 얻습니다.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/&quot;&gt;https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//pro_guard</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//pro_guard</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>OWASP top 10 항목을 이용한 취약점 확인</title>
         
           <description>&lt;h4&gt;1. Mobile OWASP Top 10 ( 2014)&lt;/h4&gt;
