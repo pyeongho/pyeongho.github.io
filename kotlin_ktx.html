@@ -148,8 +148,8 @@
 <li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. 
 <br>
 | kotlin | kotlin with KTX |
-| ---- | ---- | 
-|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() | 
+| ---- | ---- |
+|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
 |sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</li>
 </ul></li>
 </ul>
