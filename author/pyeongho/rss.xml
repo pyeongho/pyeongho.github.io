@@ -30,14 +30,18 @@
 <br>
 | kotlin | kotlin with KTX |
 | ---- | ---- | 
-|val uri = Uri.parse(myUriString) |val uri = myUriString.toUri()| 
-|sharedPreferences.edit().putBoolean(key, value).apply()|sharedPreferences.edit { putBoolean(key, value) } |
-<br></li>
+|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() | 
+|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul>
 <li>위 내용 이외에 많은 부분이 있습니다.</li>
 <li>기존 코틀린 또는 람다 표기법보다 코드 양이 더욱 줄어 들고 어떤 코드는 직관적 입니다.( =&gt; toUri())</li>
 <li>하지만 이런 내용들은 API를 코틀린의 기능을 이용해서 확장 시킨 기능이어서 새롭게 시작 개발자 들에게 좋지 못하다고 생각합니다.(교육을 못하는 개발환경)</li>
 <li>toUri() 를 사용할때 기본적인 함수를 모를때 발생 할 수 있는 일들, sharedPreferences apply 를 사용 안 할 가능성등 많은 부분이 초급 개발자들이 사용 하면 추후 발생 할 내용 들이 부담 스럽게 다가 옵니다. </li>
-</ul></li>
 </ul>
 
 	  ]]></description>
