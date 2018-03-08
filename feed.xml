@@ -8,6 +8,26 @@
     
       
       <item>
+        <title>윈도우즈에서 파이어베이스 CLI 에러</title>
+        
+          <description>&lt;h3&gt;윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;기본적인 파이어베이스 CLI 사용법 아닙니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;firebase deploy 진행중 발생하는 에러&lt;/h4&gt;
+</description>
+        
+        <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//firebase_cli_error</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//firebase_cli_error</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>코틀린 KTX</title>
         
           <description>&lt;h3&gt;코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각&lt;/h3&gt;

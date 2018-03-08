@@ -26,16 +26,14 @@
 <ul>
 <li><a href="https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+blogspot%2FhsDu+%28Android+Developers+Blog%29">KTX 안드로이드 구글 블로그 영문</a></li>
 <li><a href="https://developers-kr.googleblog.com/2018/02/introducing-android-ktx-even-sweeter-kotlin-development-for-android.html">KTX 안드로이드 구글 블로그 번역리뷰</a></li>
-<li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. 
-<br>
-| kotlin | kotlin with KTX |
-| ---- | ---- |
-|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
-|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</li>
+<li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. </li>
 </ul></li>
 </ul>
 
-<p><br></p>
+<p>| kotlin | kotlin with KTX |
+| ---- | ---- |
+|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
+|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</p>
 
 <ul>
 <li>위 내용 이외에 많은 부분이 있습니다.</li>

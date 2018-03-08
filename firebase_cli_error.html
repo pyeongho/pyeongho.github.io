@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>코틀린 KTX</title>
+    <title>윈도우즈에서 파이어베이스 CLI 에러</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">코틀린 KTX</h1>
+            <h1 class="post-title">윈도우즈에서 파이어베이스 CLI 에러</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2018-03-05">05 Mar 2018</time>
+            <time class="post-date" datetime="2018-03-08">08 Mar 2018</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,11 +124,11 @@
                        
                 
                     
-                       <a href='/tag/kotlin'>Kotlin</a>,
+                       <a href='/tag/firebase'>Firebase</a>,
                        
                 
                     
-                       <a href='/tag/ktx'>Ktx</a>
+                       <a href='/tag/windows'>Windows</a>
                        
                 
                 
@@ -137,28 +137,33 @@
 
         <section class="post-content">
             
-            <h3>코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각</h3>
+            <h3>윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그</h3>
 
 <ul>
-<li><p>코틀린 KTX 내용 블로그</p>
-
-<ul>
-<li><a href="https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+blogspot%2FhsDu+%28Android+Developers+Blog%29">KTX 안드로이드 구글 블로그 영문</a></li>
-<li><a href="https://developers-kr.googleblog.com/2018/02/introducing-android-ktx-even-sweeter-kotlin-development-for-android.html">KTX 안드로이드 구글 블로그 번역리뷰</a></li>
-<li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. </li>
-</ul></li>
+<li>기본적인 파이어베이스 CLI 사용법 아닙니다.</li>
 </ul>
 
-<p>| kotlin | kotlin with KTX |
-| ---- | ---- |
-|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
-|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</p>
+<h4>firebase deploy 진행중 발생하는 에러</h4>
+<div class="highlight"><pre><code class="language-" data-lang="">    i  deploying functions, hosting
+    Running command: npm --prefix $RESOURCE_DIR run lint
+    npm ERR! path D:\abcd\$RESOURCE_DIR\package.json
+    npm ERR! code ENOENT
+    npm ERR! errno -4058
+    npm ERR! syscall open
+    npm ERR! enoent ENOENT: no such file or directory, open 'D:\abcd\$RESOURCE_D
+    IR\package.json'
+    npm ERR! enoent This is related to npm not being able to find a file.
+    npm ERR! enoent
+    ...
+</code></pre></div>
+<ul>
+<li>윈도우에서 최종 배포 명령을 하니 위처럼 에러가 발생 여기 저기 찾아 보니 수정을 해야함 
 
 <ul>
-<li>위 내용 이외에 많은 부분이 있습니다.</li>
-<li>기존 코틀린 또는 람다 표기법보다 코드 양이 더욱 줄어 들고 어떤 코드는 직관적 입니다.( =&gt; toUri())</li>
-<li>하지만 이런 내용들은 API를 코틀린의 기능을 이용해서 확장 시킨 기능이어서 새롭게 시작 개발자 들에게 좋지 못하다고 생각합니다.(교육을 못하는 개발환경)</li>
-<li>toUri() 를 사용할때 기본적인 함수를 모를때 발생 할 수 있는 일들, sharedPreferences apply 를 사용 안 할 가능성등 많은 부분이 초급 개발자들이 사용 하면 추후 발생 할 내용 들이 부담 스럽게 다가 옵니다. </li>
+<li>$RESOURCE<em>DIR -&gt; %RESOURCE</em>DIR%</li>
+<li>윈도우와 리눅스계열 컴퓨터의 경로 설정 방법에 의한 차이로 보입니다. </li>
+<li>firebase.json 파일을 열어서 위 내용처럼 바꾸어 주면 됩니다.</li>
+</ul></li>
 </ul>
 
 
@@ -191,15 +196,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=코틀린 KTX&amp;url=https://pyeongho.github.io/kotlin_ktx"
+                <a class="icon-twitter" href="http://twitter.com/share?text=윈도우즈에서 파이어베이스 CLI 에러&amp;url=https://pyeongho.github.io/firebase_cli_error"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/kotlin_ktx"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/firebase_cli_error"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/kotlin_ktx"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/firebase_cli_error"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -237,20 +242,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/firebase_cli_error">
-            <section class="post">
-                <h2>윈도우즈에서 파이어베이스 CLI 에러</h2>
-                <p>### 윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그 - 기본적인 파이어베이스 CLI 사용법 아닙니다. #### firebase...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/pro_guard">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/kotlin_ktx">
             <section class="post">
-                <h2>프로가드라 알차게 사용하기</h2>
-                <p>1. 코드난독화를 위해서 사용하는 프로가드 자세한 프로가드 사용법은 아닙니다. 패키지 구성을 어떻게 하면 좋을지에 대한...</p>
+                <h2>코틀린 KTX</h2>
+                <p>코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각 코틀린 KTX 내용 블로그 KTX 안드로이드...</p>
             </section>
         </a>
     

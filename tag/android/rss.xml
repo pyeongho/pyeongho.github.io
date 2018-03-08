@@ -12,6 +12,45 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>윈도우즈에서 파이어베이스 CLI 에러</title>
+	  <link>//firebase_cli_error</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-03-08T00:00:00+00:00</pubDate>
+	  <guid>//firebase_cli_error</guid>
+	  <description><![CDATA[
+	     <h3>윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그</h3>
+
+<ul>
+<li>기본적인 파이어베이스 CLI 사용법 아닙니다.</li>
+</ul>
+
+<h4>firebase deploy 진행중 발생하는 에러</h4>
+<div class="highlight"><pre><code class="language-" data-lang="">    i  deploying functions, hosting
+    Running command: npm --prefix $RESOURCE_DIR run lint
+    npm ERR! path D:\abcd\$RESOURCE_DIR\package.json
+    npm ERR! code ENOENT
+    npm ERR! errno -4058
+    npm ERR! syscall open
+    npm ERR! enoent ENOENT: no such file or directory, open 'D:\abcd\$RESOURCE_D
+    IR\package.json'
+    npm ERR! enoent This is related to npm not being able to find a file.
+    npm ERR! enoent
+    ...
+</code></pre></div>
+<ul>
+<li>윈도우에서 최종 배포 명령을 하니 위처럼 에러가 발생 여기 저기 찾아 보니 수정을 해야함 
+
+<ul>
+<li>$RESOURCE<em>DIR -&gt; %RESOURCE</em>DIR%</li>
+<li>윈도우와 리눅스계열 컴퓨터의 경로 설정 방법에 의한 차이로 보입니다. </li>
+<li>firebase.json 파일을 열어서 위 내용처럼 바꾸어 주면 됩니다.</li>
+</ul></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>코틀린 KTX</title>
 	  <link>//kotlin_ktx</link>
 	  <author>PyeongHo</author>
@@ -26,16 +65,14 @@
 <ul>
 <li><a href="https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+blogspot%2FhsDu+%28Android+Developers+Blog%29">KTX 안드로이드 구글 블로그 영문</a></li>
 <li><a href="https://developers-kr.googleblog.com/2018/02/introducing-android-ktx-even-sweeter-kotlin-development-for-android.html">KTX 안드로이드 구글 블로그 번역리뷰</a></li>
-<li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. 
-<br>
-| kotlin | kotlin with KTX |
-| ---- | ---- |
-|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
-|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</li>
+<li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. </li>
 </ul></li>
 </ul>
 
-<p><br></p>
+<p>| kotlin | kotlin with KTX |
+| ---- | ---- |
+|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
+|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</p>
 
 <ul>
 <li>위 내용 이외에 많은 부분이 있습니다.</li>
@@ -523,28 +560,6 @@ notification: {
 </ul></li>
 </ul></li>
 </ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>로그를 편하게 사용하자</title>
-	  <link>//log</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-06-06T00:00:00+00:00</pubDate>
-	  <guid>//log</guid>
-	  <description><![CDATA[
-	     <h3>Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.</h3>
-
-<ul>
-<li>Log -&gt; log 로 변경해서 대문자를 사용안한다.</li>
-<li>TAG 입력이 귀찮아서 제거함</li>
-<li>파일이름과 라인 함수 이름을 출력 하도록 함</li>
-<li>릴리즈에서는 로그가 출력 안되도록 하였습니다.</li>
-<li>그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l() </li>
-</ul>
-
-<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script>
 
 	  ]]></description>
 	</item>
