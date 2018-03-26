@@ -12,6 +12,88 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>방법을 생각해 보자</title>
+	  <link>//thinks</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-03-16T00:00:00+00:00</pubDate>
+	  <guid>//thinks</guid>
+	  <description><![CDATA[
+	     <h4>1. 안드로이드 보안을 위한 방법들</h4>
+
+<ul>
+<li>중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면</li>
+<li><p>아래 내용들은 최대한 지저분하게 여기 저기 막 넣어 둔다.</p></li>
+<li><p>인증서를 확인 한다.</p>
+
+<ul>
+<li>자바와 네이티브 양쪽</li>
+<li>자바 코드는 많으니 네이티브 코드만 추후에 라이브러리를 만들어 볼 생각 입니다.
+<script src="https://gist.github.com/pyeongho/a67c34db9cfb06ff1162ec834919b4fb.js"></script></li>
+</ul></li>
+<li><p>루팅 차단</p></li>
+<li><p>설치 프로그램을 확인한다.</p>
+
+<ul>
+<li>플레이스토어 설치 인지, 아마존 설치 인지</li>
+<li>java, c 둘다 추가 해야 한다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">private static final String PLAY_STORE_APP_ID = "com.android.vending";
+public static boolean verifyInstaller(final Context context) {
+
+    final String installer = context.getPackageManager()
+            .getInstallerPackageName(context.getPackageName());
+    return installer != null
+            &amp;&amp; installer.startsWith(PLAY_STORE_APP_ID);
+
+}
+</code></pre></div></li>
+<li><p>에뮬레이터 동작을 차단 한다.</p>
+
+<ul>
+<li>에뮬레이터에서 동작 하면 보안에 더욱 취약 하다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">public static boolean checkEmulator() {
+    try {
+        boolean goldfish = getSystemProperty("ro.hardware").contains("goldfish");
+        boolean emu = getSystemProperty("ro.kernel.qemu").length() &gt; 0;
+        boolean sdk = getSystemProperty("ro.product.model").equals("sdk");
+        if (emu || goldfish || sdk) {
+            return true;
+        }
+    } catch (Exception e) {
+    }
+    return false;
+}
+</code></pre></div></li>
+<li><p>ndk 통신을 이용한 구글 파이어베이스 서버로 통신</p>
+
+<ul>
+<li>base.apk md5 비교</li>
+</ul></li>
+<li><p>덱스 로더 활용    </p>
+
+<ul>
+<li><a href="https://github.com/Instagram/ig-lazy-module-loader">https://github.com/Instagram/ig-lazy-module-loader</a></li>
+</ul></li>
+<li><p>구 버전 jdgui 버그 코드 추가</p>
+
+<ul>
+<li>아래 코드를 추가하면 인터널 에러 발생 </li>
+<li>코틀린의 경우 companion object 이 있으면 해당 객체 안에 넣어야합니다. </li>
+<li><a href="http://www.programering.com/q/MTMyQDMwATc.html">http://www.programering.com/q/MTMyQDMwATc.html</a></li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">wJ</span> <span class="o">=</span> <span class="s">"0123456789abcdef"</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">imsi</span> <span class="o">=</span> <span class="s">"204046330839890"</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">p</span> <span class="o">=</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">keyword</span> <span class="o">=</span> <span class="s">"Telephone"</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">tranlateKeyword</span> <span class="o">=</span> <span class="s">"%E7%94%B5%E8%AF%9D"</span><span class="o">;</span>
+</code></pre></div></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>윈도우즈에서 파이어베이스 CLI 에러</title>
 	  <link>//firebase_cli_error</link>
 	  <author>PyeongHo</author>
@@ -429,51 +511,6 @@
 </ul>
 
 <p><script src="https://gist.github.com/pyeongho/fbe0ecd55df127365179b65098ad4b25.js"></script></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 TextView Padding 문제</title>
-	  <link>//no_padding_textview</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2017-11-27T00:00:00+00:00</pubDate>
-	  <guid>//no_padding_textview</guid>
-	  <description><![CDATA[
-	     <h3>디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩</h3>
-
-<ul>
-<li>TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐</li>
-<li>처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함<br></li>
-<li>약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.</li>
-<li><p>아래 이미지     </p>
-
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-" alt="이렇게"><br></li>
-<li>왼쪽이 일반 TextView에 includeFontPadding를 적용한 버전, 패딩을 완전히 제거한 버전 입니다.</li>
-<li>xml 코드 첨부하였습니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;TextView</span>
-          <span class="na">android:includeFontPadding=</span><span class="s">"false"</span>
-          <span class="na">android:background=</span><span class="s">"#00ff00"</span>
-          <span class="na">android:text=</span><span class="s">"ABCD"</span>
-          <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;NPTextView</span>
-          <span class="na">android:includeFontPadding=</span><span class="s">"false"</span>
-          <span class="na">android:background=</span><span class="s">"#00ff00"</span>
-          <span class="na">android:text=</span><span class="s">"ABCD"</span>
-          <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
-
-</code></pre></div></li>
-<li><p>NPTextView는 1줄 짜리에만 적용해서 사용해야 합니다. 여러줄은 아직 동작 안합니다.</p></li>
-<li><p>그리고 직접 추가한 패딩 역시 제거하기때문에 잘 사용해야 합니다.</p></li>
-<li><p>코드 내용은 텍스트 크기를 읽어서 Rect 사이즈를 타이트하게 고정하는 내용입니다.</p></li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/859d82d7f30a4005ad7fd1e38ddd6512.js"></script></p>
 
 	  ]]></description>
 	</item>

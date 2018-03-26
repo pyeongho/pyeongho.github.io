@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="home-template nav-closed">
+<body class="paged archive-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -68,7 +68,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
         <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
@@ -78,7 +78,7 @@
         <li class="nav-githubpage " role="presentation"><a href="/tag/githubpage">githubpage</a></li>
         <li class="nav-ios " role="presentation"><a href="/tag/iOS">iOS</a></li>
         <li class="nav-python " role="presentation"><a href="/tag/python">Python</a></li>
-        <li class="nav-security " role="presentation"><a href="/tag/security">Security</a></li>
+        <li class="nav-security  nav-current" role="presentation"><a href="/tag/security">Security</a></li>
  
     </ul>
     <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
@@ -89,12 +89,14 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
+
+
+<!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="background-image: url(/assets/images/cover1.jpg) ">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="background-image: url(/assets/images/cover2.jpg) ">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -103,11 +105,14 @@
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">PyeongHo Factory</h1>
-            <h2 class="page-description">즐거운 공장</h2>
+            <h1 class="page-title">Security</h1>
+            <h2 class="page-description">
+            
+			    A 6-post collection
+            
+            </h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
 <!-- The main content area on the homepage -->
@@ -119,9 +124,11 @@
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 14 </span>
-     
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+        
+            <a class="newer-posts" href="/tag/security" title="Previous Page">&laquo; Newer Posts</a>
+        
+    
+    <span class="page-number"> Page 2 of 2 </span>
      
 </nav>
         
@@ -131,98 +138,10 @@
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/thinks">방법을 생각해 보자</a></h2>
+            <h2 class="post-title"><a href="/mobile-sec-coding">모바일앱 보안코딩</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>1. 안드로이드 보안을 위한 방법들 중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면 아래 내용들은 최대한 지저분하게 여기 저기 막 넣어 둔다. 인증서를 확인 한다.... <a class="read-more" href="/thinks">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/security'>Security</a>
-                       
-                
-            
-            <time class="post-date" datetime="2018-03-16">16 Mar 2018</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/firebase_cli_error">윈도우즈에서 파이어베이스 CLI 에러</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그 기본적인 파이어베이스 CLI 사용법 아닙니다. firebase deploy 진행중 발생하는 에러 i deploying functions, hosting Running command: npm --prefix $RESOURCE_DIR run... <a class="read-more" href="/firebase_cli_error">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/firebase'>Firebase</a>,
-                       
-                
-                    
-                       <a href='/tag/windows'>Windows</a>
-                       
-                
-            
-            <time class="post-date" datetime="2018-03-08">08 Mar 2018</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/kotlin_ktx">코틀린 KTX</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각 코틀린 KTX 내용 블로그 KTX 안드로이드 구글 블로그 영문 KTX 안드로이드 구글 블로그 번역리뷰 샘플만 사용해 본... <a class="read-more" href="/kotlin_ktx">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/kotlin'>Kotlin</a>,
-                       
-                
-                    
-                       <a href='/tag/ktx'>Ktx</a>
-                       
-                
-            
-            <time class="post-date" datetime="2018-03-05">05 Mar 2018</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/pro_guard">프로가드라 알차게 사용하기</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>1. 코드난독화를 위해서 사용하는 프로가드 자세한 프로가드 사용법은 아닙니다. 패키지 구성을 어떻게 하면 좋을지에 대한 내용입니다. 프로가드 적용시 패키명과 클래스명이 유지 되는것중 액티비티가 있습니다. 그렇게 되면... <a class="read-more" href="/pro_guard">&raquo;</a></p>
+            <p>andorid-java 시큐어 코딩 가이드 | 뷴류 | 취약점 명칭 | 위험도 |CWE-ID| | ---- | ---- | ---- |---- | |입력데이터 검증 및 표현|상대 디렉터리 경로... <a class="read-more" href="/mobile-sec-coding">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
@@ -237,39 +156,15 @@
                        
                 
                     
-                       <a href='/tag/proguard'>Proguard</a>
-                       
-                
-            
-            <time class="post-date" datetime="2018-03-02">02 Mar 2018</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/nav_manual">작은가게 성공 매뉴얼</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>본것 깨달은것 적용할것 1. 혼자 읽기 작은 가게 성공 매뉴얼 본것 62: 혼자 일한다고 해도 매뉴얼은 필요합니다. 내 생각과 철학, 일하는 방식과 순서를 글로만 정리해 두어도... <a class="read-more" href="/nav_manual">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/book'>Book</a>,
+                       <a href='/tag/OWASP'>Owasp</a>,
                        
                 
                     
-                       <a href='/tag/매뉴얼'>매뉴얼</a>
+                       <a href='/tag/시큐어코딩'>시큐어코딩</a>
                        
                 
             
-            <time class="post-date" datetime="2018-02-27">27 Feb 2018</time>
+            <time class="post-date" datetime="2016-12-23">23 Dec 2016</time>
         </footer>
     </article>
     
@@ -278,16 +173,17 @@
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 14 </span>
-     
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+        
+            <a class="newer-posts" href="/tag/security" title="Previous Page">&laquo; Newer Posts</a>
+        
+    
+    <span class="page-number"> Page 2 of 2 </span>
      
 </nav>
     
 
 
 </main>
-
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2018</section>

@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>방법을 생각해 보자</title>
+        
+          <description>&lt;h4&gt;1. 안드로이드 보안을 위한 방법들&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면&lt;/li&gt;
+&lt;li&gt;아래 내용들은 최대한 지저분하게 여기 저기 막 넣어 둔다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//thinks</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//thinks</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>윈도우즈에서 파이어베이스 CLI 에러</title>
         
           <description>&lt;h3&gt;윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그&lt;/h3&gt;

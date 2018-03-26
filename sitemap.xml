@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//thinks</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//firebase_cli_error</loc>
     </url>
     
@@ -525,6 +529,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/security/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/security/page2/</loc>
     </url>
     
     
