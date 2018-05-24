@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>방법을 생각해 보자</title>
+    <title>푸시 내용 업데이트</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -97,7 +97,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/cover7.jpg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -108,19 +108,31 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-security">
+    <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">방법을 생각해 보자</h1>
+            <h1 class="post-title">푸시 내용 업데이트</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2018-03-16">16 Mar 2018</time>
+            <time class="post-date" datetime="2018-05-24">24 May 2018</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/security'>Security</a>
+                       <a href='/tag/android'>Android</a>,
+                       
+                
+                    
+                       <a href='/tag/fcm'>Fcm</a>,
+                       
+                
+                    
+                       <a href='/tag/background'>Background</a>,
+                       
+                
+                    
+                       <a href='/tag/old'>Old</a>
                        
                 
                 
@@ -129,76 +141,19 @@
 
         <section class="post-content">
             
-            <h4>1. 안드로이드 보안을 위한 방법들</h4>
+            <h3>푸시 적용</h3>
 
 <ul>
-<li>중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면</li>
-<li><p>아래 내용들은 최대한 지저분하게 여기 저기 막 넣어 둔다.</p></li>
-<li><p>인증서를 확인 한다.</p>
+<li><a href="https://pyeongho.github.io/push">https://pyeongho.github.io/push</a></li>
+<li><p>위 글에서 푸시 관련 내용을 작성 하였습니다.</p></li>
+<li><p>좀더 명확 하게 하기 위한 내용입니다.</p></li>
+<li><p>푸시 발송 json 내용에 notification 있으면 백그라운드 앱에서는 os 가 처리합니다.</p></li>
+<li><p>기존 처럼 직접 노티피케이션을 만들어서 사용 하고 싶을때는 꼭  notification 내용을 제거 하고 data 만 보내서 원하는 형태로 사용하면 됩니다. </p>
 
 <ul>
-<li>자바와 네이티브 양쪽</li>
-<li>자바 코드는 많으니 네이티브 코드만 추후에 라이브러리를 만들어 볼 생각 입니다.
-<script src="https://gist.github.com/pyeongho/a67c34db9cfb06ff1162ec834919b4fb.js"></script></li>
+<li>이미지를 노티피케이션을 만들거나 </li>
+<li>확장 되는 이미지를 만들거나<br></li>
 </ul></li>
-<li><p>루팅 차단</p></li>
-<li><p>설치 프로그램을 확인한다.</p>
-
-<ul>
-<li>플레이스토어 설치 인지, 아마존 설치 인지</li>
-<li>java, c 둘다 추가 해야 한다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">private static final String PLAY_STORE_APP_ID = "com.android.vending";
-public static boolean verifyInstaller(final Context context) {
-
-    final String installer = context.getPackageManager()
-            .getInstallerPackageName(context.getPackageName());
-    return installer != null
-            &amp;&amp; installer.startsWith(PLAY_STORE_APP_ID);
-
-}
-</code></pre></div></li>
-<li><p>에뮬레이터 동작을 차단 한다.</p>
-
-<ul>
-<li>에뮬레이터에서 동작 하면 보안에 더욱 취약 하다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">public static boolean checkEmulator() {
-    try {
-        boolean goldfish = getSystemProperty("ro.hardware").contains("goldfish");
-        boolean emu = getSystemProperty("ro.kernel.qemu").length() &gt; 0;
-        boolean sdk = getSystemProperty("ro.product.model").equals("sdk");
-        if (emu || goldfish || sdk) {
-            return true;
-        }
-    } catch (Exception e) {
-    }
-    return false;
-}
-</code></pre></div></li>
-<li><p>ndk 통신을 이용한 구글 파이어베이스 서버로 통신</p>
-
-<ul>
-<li>base.apk md5 비교</li>
-</ul></li>
-<li><p>덱스 로더 활용    </p>
-
-<ul>
-<li><a href="https://github.com/Instagram/ig-lazy-module-loader">https://github.com/Instagram/ig-lazy-module-loader</a></li>
-</ul></li>
-<li><p>구 버전 jdgui 버그 코드 추가</p>
-
-<ul>
-<li>아래 코드를 추가하면 인터널 에러 발생 </li>
-<li>코틀린의 경우 companion object 이 있으면 해당 객체 안에 넣어야합니다. </li>
-<li><a href="http://www.programering.com/q/MTMyQDMwATc.html">http://www.programering.com/q/MTMyQDMwATc.html</a></li>
-</ul>
-<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">wJ</span> <span class="o">=</span> <span class="s">"0123456789abcdef"</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">imsi</span> <span class="o">=</span> <span class="s">"204046330839890"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">p</span> <span class="o">=</span> <span class="s">"0"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">keyword</span> <span class="o">=</span> <span class="s">"Telephone"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">tranlateKeyword</span> <span class="o">=</span> <span class="s">"%E7%94%B5%E8%AF%9D"</span><span class="o">;</span>
-</code></pre></div></li>
 </ul>
 
 
@@ -231,15 +186,15 @@ public static boolean verifyInstaller(final Context context) {
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=방법을 생각해 보자&amp;url=https://pyeongho.github.io/thinks"
+                <a class="icon-twitter" href="http://twitter.com/share?text=푸시 내용 업데이트&amp;url=https://pyeongho.github.io/push2"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/thinks"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/push2"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/thinks"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/push2"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -277,20 +232,13 @@ public static boolean verifyInstaller(final Context context) {
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/push2">
-            <section class="post">
-                <h2>푸시 내용 업데이트</h2>
-                <p>### 푸시 적용 - [https://pyeongho.github.io/push](https://pyeongho.github.io/push) - 위 글에서 푸시 관련 내용을 작성 하였습니다. - 좀더...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/firebase_cli_error">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/thinks">
             <section class="post">
-                <h2>윈도우즈에서 파이어베이스 CLI 에러</h2>
-                <p>윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그 기본적인 파이어베이스 CLI 사용법 아닙니다. firebase deploy 진행중 발생하는...</p>
+                <h2>방법을 생각해 보자</h2>
+                <p>1. 안드로이드 보안을 위한 방법들 중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면 아래...</p>
             </section>
         </a>
     
