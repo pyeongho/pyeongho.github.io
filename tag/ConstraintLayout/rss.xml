@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>ConstraintLayout 이제 사용 할 듯</title>
+	  <link>//constraint</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-07-03T00:00:00+00:00</pubDate>
+	  <guid>//constraint</guid>
+	  <description><![CDATA[
+	     <h3>출처</h3>
+
+<ul>
+<li><a href="https://android-developers.googleblog.com/2017/08/understanding-performance-benefits-of.html">https://android-developers.googleblog.com/2017/08/understanding-performance-benefits-of.html</a></li>
+<li><a href="http://abandonia.tistory.com/1">http://abandonia.tistory.com/1</a></li>
+</ul>
+
+<h3>주저리</h3>
+
+<ul>
+<li>언제 부턴가 새로운 앱을 만들면  ConstraintLayout 으로 hello world 나왔음에도 불구 하고   RelativeLayout 과 LinearLayout 를 이용하여 디자인을 구성 하였다. 잘 사용 하고 있는데 또 나와서 공부 하기 귀찮아서 ㅎㅎㅎ</li>
+</ul>
+
+<h3>성능 이슈</h3>
+
+<ul>
+<li> ConstraintLayout 이걸 사용 하면 많은 이야기가 있지만 일단 기존 방법 보다 빠르다고 한다. 트리구조의 뷰를 찾아서 계산 하는게 아니라 1 depth 구조로  만드는게 핵심 처럼 보인다. 수평적인 계층 구조라고 한다. 그리고 실제 테스트 했을때 빨라 졌다고 합니다.</li>
+<li><p>테스트 소스</p>
+
+<ul>
+<li><a href="https://github.com/googlesamples/android-constraint-layout-performance">https://github.com/googlesamples/android-constraint-layout-performance</a></li>
+</ul></li>
+<li><h3>애니메이션</h3></li>
+<li><p>구글에서 제공하는 샘플이 있어서 공부도 할겸 다운 받아서 공부</p>
+
+<ul>
+<li><a href="https://github.com/googlesamples/android-ConstraintLayoutExamples">https://github.com/googlesamples/android-ConstraintLayoutExamples</a></li>
+</ul></li>
+<li><p>레이아웃도 레이아웃 이지만 MotionLayout 이용한 샘플이 사용 할 수 밖에 없는 이유를 제공 했습니다. </p></li>
+<li><p>일단 부드러운 애니메이션이 있으니 무조건 사용하기로 결심   </p></li>
+</ul>
+
+<h3>문제점</h3>
+
+<ul>
+<li>tool 에서 제공해주는 ConstraintLayout 컨버팅 기능을 사용하려고 했지만 레이아웃이 죄다 깨지는 현상이 발생 했습니다.</li>
+<li>역시 한땀 한땀 공부 하며 바꿔야 겠습니다.</li>
+</ul>
+
+<h3>현재까지 팁</h3>
+
+<ul>
+<li>마법사 지팡이를 잘 누르자 </li>
+<li>정렬 기능은 너무 좋은것(마치 포토샵의 정릴 기능 처럼)</li>
+<li>팩 기능, 여러가지를 묶어서 사용 할때 좋아요</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
