@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>안드로이드 Jetpack 중 네비게이션 에디터 사용</title>
+        
+          <description>&lt;h3&gt;안드로이드 Jetpack&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;가중 눈에 가는 네비게이션 에디터를 사용해 보려고 했지만 사용법은 금방 나오지만 어떻게 해야 에디터가 나오는지 안보인다.&lt;/li&gt;
+&lt;li&gt;File -&amp;gt; Settings -&amp;gt; Experimental -&amp;gt; Enable Navigation Editor 을 활성화 하자&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//navigation-editor</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//navigation-editor</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>ConstraintLayout 이제 사용 할 듯</title>
         
           <description>&lt;h3&gt;출처&lt;/h3&gt;
