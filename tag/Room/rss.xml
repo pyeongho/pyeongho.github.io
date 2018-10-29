@@ -155,23 +155,6 @@
 	  ]]></description>
 	</item>
 
-	<item>
-	  <title>안드로이드 Jetpack 중 네비게이션 에디터 사용</title>
-	  <link>//navigation-editor</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-07-03T00:00:00+00:00</pubDate>
-	  <guid>//navigation-editor</guid>
-	  <description><![CDATA[
-	     <h3>안드로이드 Jetpack</h3>
-
-<ul>
-<li>가중 눈에 가는 네비게이션 에디터를 사용해 보려고 했지만 사용법은 금방 나오지만 어떻게 해야 에디터가 나오는지 안보인다.</li>
-<li>File -&gt; Settings -&gt; Experimental -&gt; Enable Navigation Editor 을 활성화 하자<br></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
 
 </channel>
 </rss>

@@ -1,4 +1,24 @@
-<h3>샘플은 구글</h3>
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io/</title>
+   
+   <link>https://pyeongho.github.io/</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Jetpack 사용을 위한 기초 공부 AAC(Room)</title>
+	  <link>//aac_c1</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-10-29T00:00:00+00:00</pubDate>
+	  <guid>//aac_c1</guid>
+	  <description><![CDATA[
+	     <h3>샘플은 구글</h3>
 
 <ul>
 <li><a href="https://github.com/googlesamples/android-sunflower">해바라기</a><br></li>
@@ -132,3 +152,9 @@
 
 
 </code></pre></div>
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

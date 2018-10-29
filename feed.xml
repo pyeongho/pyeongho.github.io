@@ -8,14 +8,29 @@
     
       
       <item>
-        <title></title>
+        <title>Jetpack 사용을 위한 기초 공부 AAC(Room)</title>
         
-          <description></description>
+          <description>&lt;h3&gt;샘플은 구글&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-sunflower&quot;&gt;해바라기&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-architecture-components&quot;&gt;구글 샘플&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.android.com/training/data-storage/room/defining-data&quot;&gt;Room 엔터티&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bsidesoft.com/?p=6003&quot;&gt;비사이드소프트&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;샘플 내용 요약&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sunflower, 구글 AAC 샘플을 적용하기전 기초지식 부터&lt;/li&gt;
+&lt;li&gt;짧은 샘플이지만 기본적인 내용부터 알아야 가능 &lt;/li&gt;
+&lt;/ul&gt;
+</description>
         
-        <pubDate>Mon, 29 Oct 2018 05:00:09 +0000</pubDate>
+        <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
         <link>
-        https://pyeongho.github.io//2018-10-29-AAC_c1</link>
-        <guid isPermaLink="true">https://pyeongho.github.io//2018-10-29-AAC_c1</guid>
+        https://pyeongho.github.io//aac_c1</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//aac_c1</guid>
       </item>
       
     

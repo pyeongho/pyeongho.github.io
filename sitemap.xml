@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>https://pyeongho.github.io//2018-10-29-AAC_c1</loc>
+        <loc>https://pyeongho.github.io//aac_c1</loc>
     </url>
     
     <url>
@@ -449,6 +449,14 @@
     
     <url>
         <loc>https://pyeongho.github.io//author/pyeongho/page14/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//author/pyeongho/page15/</loc>
     </url>
     
     
@@ -2025,6 +2033,38 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/NavigationEditor/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/AAC/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/AAC/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/Room/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/Room/</loc>
     </url>
     
     
