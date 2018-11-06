@@ -8,6 +8,32 @@
     
       
       <item>
+        <title>앱 아이콘 동적 변경</title>
+        
+          <description>&lt;h3&gt;아이콘을 동적 변경해야 하는일도 있는 세상&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;세상은 어떤일들이 일어 날지 모른다. 앱 아이콘을 조건에 따라 변경하고 싶어 하는 일도 있다.&lt;/li&gt;
+&lt;li&gt;정말 가능하다 ㅎㅎ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;동적 아이콘 변경&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/myinnos/AppIconNameChanger&quot;&gt;AppIconNameChanger&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;동작은 github 에 라이브러리가 잘 처리해 줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//change-icon</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//change-icon</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Jetpack 사용을 위한 기초 공부 AAC(ViewModel)</title>
         
           <description>&lt;h3&gt;샘플은 구글&lt;/h3&gt;
