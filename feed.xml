@@ -8,6 +8,33 @@
     
       
       <item>
+        <title>No toolchains found in the NDK</title>
+        
+          <description>&lt;h3&gt;NDK 를 사용하지 않는데&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. &lt;/li&gt;
+&lt;li&gt;&amp;quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;나만의 해결&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;그래들 버전 업&lt;/li&gt;
+&lt;li&gt;다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.&lt;/li&gt;
+&lt;li&gt;&amp;quot;classpath &amp;#39;com.android.tools.build:gradle:3.2.1&amp;#39;&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//no-ndk</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//no-ndk</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>앱 아이콘 동적 변경</title>
         
           <description>&lt;h3&gt;아이콘을 동적 변경해야 하는일도 있는 세상&lt;/h3&gt;

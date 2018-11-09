@@ -12,6 +12,31 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>No toolchains found in the NDK</title>
+	  <link>//no-ndk</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-11-09T00:00:00+00:00</pubDate>
+	  <guid>//no-ndk</guid>
+	  <description><![CDATA[
+	     <h3>NDK 를 사용하지 않는데</h3>
+
+<ul>
+<li>안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. </li>
+<li>&quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&quot;</li>
+</ul>
+
+<h3>나만의 해결</h3>
+
+<ul>
+<li>그래들 버전 업</li>
+<li>다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.</li>
+<li>&quot;classpath &#39;com.android.tools.build:gradle:3.2.1&#39;&quot;</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>앱 아이콘 동적 변경</title>
 	  <link>//change-icon</link>
 	  <author>PyeongHo</author>
@@ -524,34 +549,6 @@ public static boolean verifyInstaller(final Context context) {
 <li>기존 코틀린 또는 람다 표기법보다 코드 양이 더욱 줄어 들고 어떤 코드는 직관적 입니다.( =&gt; toUri())</li>
 <li>하지만 이런 내용들은 API를 코틀린의 기능을 이용해서 확장 시킨 기능이어서 새롭게 시작 개발자 들에게 좋지 못하다고 생각합니다.(교육을 못하는 개발환경)</li>
 <li>toUri() 를 사용할때 기본적인 함수를 모를때 발생 할 수 있는 일들, sharedPreferences apply 를 사용 안 할 가능성등 많은 부분이 초급 개발자들이 사용 하면 추후 발생 할 내용 들이 부담 스럽게 다가 옵니다. </li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>프로가드라 알차게 사용하기</title>
-	  <link>//pro_guard</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-03-02T00:00:00+00:00</pubDate>
-	  <guid>//pro_guard</guid>
-	  <description><![CDATA[
-	     <h4>1. 코드난독화를 위해서 사용하는 프로가드</h4>
-
-<ul>
-<li>자세한 프로가드 사용법은 아닙니다.</li>
-<li>패키지 구성을 어떻게 하면 좋을지에 대한 내용입니다.</li>
-<li>프로가드 적용시 패키명과 클래스명이 유지 되는것중 액티비티가 있습니다.</li>
-<li>그렇게 되면 기본적인 구성을 확인 가능하면 그 안에 있는 하위 패키지 이름을 보면서 내용 유추가 가능해 진다.</li>
-<li>아주 간단한 방법으로 액티비티를 따로 모아서 패키지를 만들어서 관리혀면 생각보다 좋다.</li>
-<li>액티비티 뿐만 아니라 클래스명과 패키지명이 유지되어야 하는 내용을 따로 관리하면 생각보다 큰 효과를 얻습니다.</li>
-<li><p><a href="https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/">https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/</a></p></li>
-<li><p>보안의 명언 </p>
-
-<ul>
-<li>&quot;정말 보안이 필요한 것이 있다면 앱에 넣지 마세요.&quot;</li>
-<li>앱을 완벽하게 보호할 수는 없습니다. 투입할 수 있는 시간의 양과 보안 정도와 공격자 수 사이에 절충해야 합니다</li>
-</ul></li>
 </ul>
 
 	  ]]></description>

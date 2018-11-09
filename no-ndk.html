@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>앱 아이콘 동적 변경</title>
+    <title>No toolchains found in the NDK</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">앱 아이콘 동적 변경</h1>
+            <h1 class="post-title">No toolchains found in the NDK</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2018-11-06">06 Nov 2018</time>
+            <time class="post-date" datetime="2018-11-09">09 Nov 2018</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,11 +124,7 @@
                        
                 
                     
-                       <a href='/tag/AppIconNameChanger'>Appiconnamechanger</a>,
-                       
-                
-                    
-                       <a href='/tag/activity-alias'>Activity-alias</a>
+                       <a href='/tag/studio3.2'>Studio3.2</a>
                        
                 
                 
@@ -137,43 +133,20 @@
 
         <section class="post-content">
             
-            <h3>아이콘을 동적 변경해야 하는일도 있는 세상</h3>
+            <h3>NDK 를 사용하지 않는데</h3>
 
 <ul>
-<li>세상은 어떤일들이 일어 날지 모른다. 앱 아이콘을 조건에 따라 변경하고 싶어 하는 일도 있다.</li>
-<li>정말 가능하다 ㅎㅎ</li>
+<li>안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. </li>
+<li>&quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&quot;</li>
 </ul>
 
-<h3>동적 아이콘 변경</h3>
+<h3>나만의 해결</h3>
 
 <ul>
-<li><a href="https://github.com/myinnos/AppIconNameChanger">AppIconNameChanger</a> </li>
-<li>동작은 github 에 라이브러리가 잘 처리해 줍니다.</li>
+<li>그래들 버전 업</li>
+<li>다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.</li>
+<li>&quot;classpath &#39;com.android.tools.build:gradle:3.2.1&#39;&quot;</li>
 </ul>
-
-<h3>기본적인 알리아스 사용</h3>
-
-<ul>
-<li>애플리케이션 배포후에 런처 액티비티를 변경해야하는 일이 발생 할때 사용하면 좋다.</li>
-<li>앱 업데이트로 바탕화면의 아이콘이 없어지는건 앱이 동작 안하는것과 같다.</li>
-<li>아래 코드와 같이 기존 액티비티의 이름(기존 이름을 알리아스로 설정)이 실행되면 신규 액티비타를 실행 시켜 주는 방법 </li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/57ea15753697fd8c3e35a87d18e8fa64.js"></script></p>
-
-<h3>동작 확인</h3>
-
-<ul>
-<li>메니페스트의 activity-alias 를 이용하는 방식이다.</li>
-<li>알리아스의 번역처럼 별명을 지어 주는 내용입니다.</li>
-<li>알리아스를 만들어서 각각의 속성을 주고 targetActivity 를 이용해서 실행 시킬 액티비티를 설정</li>
-<li>동작해야 하는 액티비티는 하나가 되지만 각각의 별칭을 이용해서 접근이 가능하다.</li>
-<li>기본동작 해양하는 알리아스를  android:enabled=&quot;true&quot; 활성화 하면 된다.</li>
-<li>코드에서 해당 알리아스를 기본으로 동작 시켜 주면 된다.<br></li>
-<li>아래 코드 내용처럼 패키지매니저를 이용해서 패키지 구성 요소를 변경 할수 있다.</li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/ce5b9f9862ab86312bd6203e2dd8648e.js"></script></p>
 
 
         </section>
@@ -205,15 +178,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=앱 아이콘 동적 변경&amp;url=https://pyeongho.github.io/change-icon"
+                <a class="icon-twitter" href="http://twitter.com/share?text=No toolchains found in the NDK&amp;url=https://pyeongho.github.io/no-ndk"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/change-icon"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/no-ndk"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/change-icon"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/no-ndk"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -251,20 +224,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/no-ndk">
-            <section class="post">
-                <h2>No toolchains found in the NDK</h2>
-                <p>### NDK 를 사용하지 않는데 - 안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/aac_c2">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/change-icon">
             <section class="post">
-                <h2>Jetpack 사용을 위한 기초 공부 AAC(ViewModel)</h2>
-                <p>샘플은 구글 해바라기 구글 샘플 ViewModel 패턴의 변화 ViewModel클래스는 UI 관련 데이터를 라이프 사이클을 고려한...</p>
+                <h2>앱 아이콘 동적 변경</h2>
+                <p>아이콘을 동적 변경해야 하는일도 있는 세상 세상은 어떤일들이 일어 날지 모른다. 앱 아이콘을 조건에 따라...</p>
             </section>
         </a>
     

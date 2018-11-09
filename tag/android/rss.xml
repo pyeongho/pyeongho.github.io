@@ -12,6 +12,31 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>No toolchains found in the NDK</title>
+	  <link>//no-ndk</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-11-09T00:00:00+00:00</pubDate>
+	  <guid>//no-ndk</guid>
+	  <description><![CDATA[
+	     <h3>NDK 를 사용하지 않는데</h3>
+
+<ul>
+<li>안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. </li>
+<li>&quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&quot;</li>
+</ul>
+
+<h3>나만의 해결</h3>
+
+<ul>
+<li>그래들 버전 업</li>
+<li>다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.</li>
+<li>&quot;classpath &#39;com.android.tools.build:gradle:3.2.1&#39;&quot;</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>앱 아이콘 동적 변경</title>
 	  <link>//change-icon</link>
 	  <author>PyeongHo</author>
@@ -496,59 +521,6 @@
 </ul>
 
 <p><script src="https://gist.github.com/pyeongho/59944e4e9e8d76f45c6f395dccd1d8e8.js"></script></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 immersive</title>
-	  <link>//immersive</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-01-26T00:00:00+00:00</pubDate>
-	  <guid>//immersive</guid>
-	  <description><![CDATA[
-	     <h3>갤럭시 s8 의 이상한 기능</h3>
-
-<ul>
-<li>갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상</li>
-<li>애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.</li>
-<li><p>알아야 하는 내용</p>
-
-<ul>
-<li>애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부</li>
-<li>에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.</li>
-</ul></li>
-<li><p>애플리케이션 시작하면서 확인 하는 코드 </p>
-
-<ul>
-<li>enable 가 0 보다 크면 소프트 키가 안보이는 상태 입니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    var enable = 0
-    try {
-        enable = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            Settings.Global.getInt(activity.contentResolver, "navigationbar_hide_bar_enabled")
-        } else {
-            -1
-        }
-    }catch (e: Exception){
-    }
-</code></pre></div></li>
-<li><p>런타임에서 리스너로 확인 하는 방법</p>
-
-<ul>
-<li>arg 가 2일때 소프트 키가 안보이는 상태 입니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val decorView = activity.window.decorView
-    decorView.setOnSystemUiVisibilityChangeListener {arg -&gt;
-        log.d("Current arg: " + arg)
-        if(arg == 2){
-          //TODO 소포트키 안보임
-        }else{
-          //TODO 소포트 보임
-        }
-    }
-</code></pre></div></li>
-</ul>
 
 	  ]]></description>
 	</item>
