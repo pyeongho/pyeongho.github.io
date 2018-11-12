@@ -8,6 +8,46 @@
     
       
       <item>
+        <title>App Version Name 가지고 오기</title>
+        
+          <description>&lt;h3&gt;몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;        &lt;span class=&quot;n&quot;&gt;PackageManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;n&quot;&gt;PackageInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+           &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packageName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;packageName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+           &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;versionCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;versionCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+           &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;versionName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;versionName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+           &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NameNotFoundException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated catch block&lt;/span&gt;
+           &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.&lt;/li&gt;
+&lt;li&gt;우선 문제 해결 먼저 진행&lt;/li&gt;
+&lt;li&gt;처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함&lt;/li&gt;
+&lt;li&gt;그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;      /*version name*/
+      BuildConfig.VERSION_NAME
+
+      /*version code*/
+      BuildConfig.VERSION_CODE
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        
+        <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//appVersion</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//appVersion</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>No toolchains found in the NDK</title>
         
           <description>&lt;h3&gt;NDK 를 사용하지 않는데&lt;/h3&gt;

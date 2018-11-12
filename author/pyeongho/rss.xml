@@ -12,6 +12,75 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>App Version Name 가지고 오기</title>
+	  <link>//appVersion</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-11-12T00:00:00+00:00</pubDate>
+	  <guid>//appVersion</guid>
+	  <description><![CDATA[
+	     <h3>몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?</h3>
+
+<ul>
+<li>그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">        <span class="n">PackageManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+           <span class="n">PackageInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="na">getPackageInfo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
+           <span class="n">String</span> <span class="n">packageName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">packageName</span><span class="o">;</span>
+           <span class="kt">int</span> <span class="n">versionCode</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionCode</span><span class="o">;</span>
+           <span class="n">String</span> <span class="n">versionName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionName</span><span class="o">;</span>
+           <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NameNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="c1">// TODO Auto-generated catch block</span>
+           <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.</li>
+<li>우선 문제 해결 먼저 진행</li>
+<li>처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함</li>
+<li>그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 </li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">      /*version name*/
+      BuildConfig.VERSION_NAME
+
+      /*version code*/
+      BuildConfig.VERSION_CODE
+
+</code></pre></div>
+<h3>BuildConfig 에 나만의 상수 추가</h3>
+
+<ul>
+<li>위 방법을 찾기 전에는 아래와 같은 방법으로 진행했지만 이제는 다른 상수 추가 할때 사용 중<br></li>
+<li>프로젝트 build.gradle 에서 appVersion 을 추가</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">ext {
+    appVersion = "1.0.5"
+}
+
+</code></pre></div>
+<ul>
+<li>versionName &quot;$rootProject.appVersion&quot;</li>
+<li>build.gradle buildTypes 에 추가 한 내용</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">    def version=  '\"' + "$rootProject.appVersion" +'\"'
+    debug{
+        buildConfigField "String", "APP_VERSION", version
+    }
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        buildConfigField "String", "APP_VERSION", version
+    }
+
+</code></pre></div>
+<ul>
+<li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
+<li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>No toolchains found in the NDK</title>
 	  <link>//no-ndk</link>
 	  <author>PyeongHo</author>
@@ -515,40 +584,6 @@ public static boolean verifyInstaller(final Context context) {
 <li>윈도우와 리눅스계열 컴퓨터의 경로 설정 방법에 의한 차이로 보입니다. </li>
 <li>firebase.json 파일을 열어서 위 내용처럼 바꾸어 주면 됩니다.</li>
 </ul></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>코틀린 KTX</title>
-	  <link>//kotlin_ktx</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-03-05T00:00:00+00:00</pubDate>
-	  <guid>//kotlin_ktx</guid>
-	  <description><![CDATA[
-	     <h3>코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각</h3>
-
-<ul>
-<li><p>코틀린 KTX 내용 블로그</p>
-
-<ul>
-<li><a href="https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+blogspot%2FhsDu+%28Android+Developers+Blog%29">KTX 안드로이드 구글 블로그 영문</a></li>
-<li><a href="https://developers-kr.googleblog.com/2018/02/introducing-android-ktx-even-sweeter-kotlin-development-for-android.html">KTX 안드로이드 구글 블로그 번역리뷰</a></li>
-<li>샘플만 사용해 본 느낌 이고 현재 개발 환경으로 인해서 생각한 내용 입니다. 한줄로 나온 부분은 잘 확인해 보셔야 합니다. </li>
-</ul></li>
-</ul>
-
-<p>| kotlin | kotlin with KTX |
-| ---- | ---- |
-|val uri = Uri.parse(myUriString) | val uri = myUriString.toUri() |
-|sharedPreferences.edit().putBoolean(key, value).apply() | sharedPreferences.edit { putBoolean(key, value) } |</p>
-
-<ul>
-<li>위 내용 이외에 많은 부분이 있습니다.</li>
-<li>기존 코틀린 또는 람다 표기법보다 코드 양이 더욱 줄어 들고 어떤 코드는 직관적 입니다.( =&gt; toUri())</li>
-<li>하지만 이런 내용들은 API를 코틀린의 기능을 이용해서 확장 시킨 기능이어서 새롭게 시작 개발자 들에게 좋지 못하다고 생각합니다.(교육을 못하는 개발환경)</li>
-<li>toUri() 를 사용할때 기본적인 함수를 모를때 발생 할 수 있는 일들, sharedPreferences apply 를 사용 안 할 가능성등 많은 부분이 초급 개발자들이 사용 하면 추후 발생 할 내용 들이 부담 스럽게 다가 옵니다. </li>
 </ul>
 
 	  ]]></description>

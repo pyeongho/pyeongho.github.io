@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>No toolchains found in the NDK</title>
+    <title>App Version Name 가지고 오기</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">No toolchains found in the NDK</h1>
+            <h1 class="post-title">App Version Name 가지고 오기</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2018-11-09">09 Nov 2018</time>
+            <time class="post-date" datetime="2018-11-12">12 Nov 2018</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,7 +124,7 @@
                        
                 
                     
-                       <a href='/tag/studio3.2'>Studio3.2</a>
+                       <a href='/tag/나에게만'>나에게만</a>
                        
                 
                 
@@ -133,19 +133,63 @@
 
         <section class="post-content">
             
-            <h3>NDK 를 사용하지 않는데</h3>
+            <h3>몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?</h3>
 
 <ul>
-<li>안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. </li>
-<li>&quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&quot;</li>
+<li>그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.</li>
 </ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">        <span class="n">PackageManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+           <span class="n">PackageInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="na">getPackageInfo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
+           <span class="n">String</span> <span class="n">packageName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">packageName</span><span class="o">;</span>
+           <span class="kt">int</span> <span class="n">versionCode</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionCode</span><span class="o">;</span>
+           <span class="n">String</span> <span class="n">versionName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionName</span><span class="o">;</span>
+           <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NameNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="c1">// TODO Auto-generated catch block</span>
+           <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.</li>
+<li>우선 문제 해결 먼저 진행</li>
+<li>처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함</li>
+<li>그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 </li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">      /*version name*/
+      BuildConfig.VERSION_NAME
 
-<h3>나만의 해결</h3>
+      /*version code*/
+      BuildConfig.VERSION_CODE
+
+</code></pre></div>
+<h3>BuildConfig 에 나만의 상수 추가</h3>
 
 <ul>
-<li>그래들 버전 업</li>
-<li>다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.</li>
-<li>&quot;classpath &#39;com.android.tools.build:gradle:3.2.1&#39;&quot;</li>
+<li>위 방법을 찾기 전에는 아래와 같은 방법으로 진행했지만 이제는 다른 상수 추가 할때 사용 중<br></li>
+<li>프로젝트 build.gradle 에서 appVersion 을 추가</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">ext {
+    appVersion = "1.0.5"
+}
+
+</code></pre></div>
+<ul>
+<li>versionName &quot;$rootProject.appVersion&quot;</li>
+<li>build.gradle buildTypes 에 추가 한 내용</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">    def version=  '\"' + "$rootProject.appVersion" +'\"'
+    debug{
+        buildConfigField "String", "APP_VERSION", version
+    }
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        buildConfigField "String", "APP_VERSION", version
+    }
+
+</code></pre></div>
+<ul>
+<li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
+<li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
 </ul>
 
 
@@ -178,15 +222,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=No toolchains found in the NDK&amp;url=https://pyeongho.github.io/no-ndk"
+                <a class="icon-twitter" href="http://twitter.com/share?text=App Version Name 가지고 오기&amp;url=https://pyeongho.github.io/appVersion"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/no-ndk"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/appVersion"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/no-ndk"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/appVersion"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -224,20 +268,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/appVersion">
-            <section class="post">
-                <h2>App Version Name 가지고 오기</h2>
-                <p>### 몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까? - 그냥 버전이름과 코드를...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/change-icon">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/no-ndk">
             <section class="post">
-                <h2>앱 아이콘 동적 변경</h2>
-                <p>아이콘을 동적 변경해야 하는일도 있는 세상 세상은 어떤일들이 일어 날지 모른다. 앱 아이콘을 조건에 따라...</p>
+                <h2>No toolchains found in the NDK</h2>
+                <p>NDK 를 사용하지 않는데 안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와...</p>
             </section>
         </a>
     

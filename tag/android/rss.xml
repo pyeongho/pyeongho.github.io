@@ -12,6 +12,75 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>App Version Name 가지고 오기</title>
+	  <link>//appVersion</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-11-12T00:00:00+00:00</pubDate>
+	  <guid>//appVersion</guid>
+	  <description><![CDATA[
+	     <h3>몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?</h3>
+
+<ul>
+<li>그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-java" data-lang="java">        <span class="n">PackageManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+           <span class="n">PackageInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="na">getPackageInfo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
+           <span class="n">String</span> <span class="n">packageName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">packageName</span><span class="o">;</span>
+           <span class="kt">int</span> <span class="n">versionCode</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionCode</span><span class="o">;</span>
+           <span class="n">String</span> <span class="n">versionName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionName</span><span class="o">;</span>
+           <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NameNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+           <span class="c1">// TODO Auto-generated catch block</span>
+           <span class="o">}</span>
+</code></pre></div>
+<ul>
+<li>특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.</li>
+<li>우선 문제 해결 먼저 진행</li>
+<li>처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함</li>
+<li>그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 </li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">      /*version name*/
+      BuildConfig.VERSION_NAME
+
+      /*version code*/
+      BuildConfig.VERSION_CODE
+
+</code></pre></div>
+<h3>BuildConfig 에 나만의 상수 추가</h3>
+
+<ul>
+<li>위 방법을 찾기 전에는 아래와 같은 방법으로 진행했지만 이제는 다른 상수 추가 할때 사용 중<br></li>
+<li>프로젝트 build.gradle 에서 appVersion 을 추가</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">ext {
+    appVersion = "1.0.5"
+}
+
+</code></pre></div>
+<ul>
+<li>versionName &quot;$rootProject.appVersion&quot;</li>
+<li>build.gradle buildTypes 에 추가 한 내용</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">    def version=  '\"' + "$rootProject.appVersion" +'\"'
+    debug{
+        buildConfigField "String", "APP_VERSION", version
+    }
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        buildConfigField "String", "APP_VERSION", version
+    }
+
+</code></pre></div>
+<ul>
+<li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
+<li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>No toolchains found in the NDK</title>
 	  <link>//no-ndk</link>
 	  <author>PyeongHo</author>
@@ -468,59 +537,6 @@
 <li>하지만 이런 내용들은 API를 코틀린의 기능을 이용해서 확장 시킨 기능이어서 새롭게 시작 개발자 들에게 좋지 못하다고 생각합니다.(교육을 못하는 개발환경)</li>
 <li>toUri() 를 사용할때 기본적인 함수를 모를때 발생 할 수 있는 일들, sharedPreferences apply 를 사용 안 할 가능성등 많은 부분이 초급 개발자들이 사용 하면 추후 발생 할 내용 들이 부담 스럽게 다가 옵니다. </li>
 </ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>애플리케이션 Foreground 확인</title>
-	  <link>//lifecycle</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-02-12T00:00:00+00:00</pubDate>
-	  <guid>//lifecycle</guid>
-	  <description><![CDATA[
-	     <h3>애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.</h3>
-
-<ul>
-<li>안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.</li>
-<li>백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.</li>
-<li>api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.</li>
-<li>Application.ActivityLifecycleCallbacks 를 이용하는 방법</li>
-<li>Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다. </li>
-<li>사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.</li>
-<li><div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">
-    class OnApplication: Application() {
-        override fun onCreate() {
-            super.onCreate()
-            Foreground.init(this)
-
-        }
-    }
-
-</code></pre></div></li>
-<li><p>애프리케이션 생성자에서 클래스를 초기화 합니다.</p></li>
-<li><p>싱글톤 클래스라서 사용은 편하게 하시면 됩니다. 아래 처럼 원하는걸로 편하게 사용하면 됩니다.</p>
-
-<ul>
-<li>Foreground.get().isBackground</li>
-<li>Foreground.get().appStatus</li>
-</ul></li>
-<li><p>전체 코드는 아래에 있습니다.</p>
-
-<ul>
-<li>간단한 동작 설명<br>
-
-<ul>
-<li>onActivityStarted 추가 되면 카운트 +1</li>
-<li>onActivityStopped 추가 되면 카운트 -1</li>
-<li>카운트가 0 이면 백그라운드</li>
-<li>카운트가 1 보다 크면 포그라운드</li>
-<li>카운트가 1 이면 포그라운드 전환<br></li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/59944e4e9e8d76f45c6f395dccd1d8e8.js"></script></p>
 
 	  ]]></description>
 	</item>
