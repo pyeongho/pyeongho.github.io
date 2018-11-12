@@ -12,7 +12,7 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>App Version Name 가지고 오기</title>
+	  <title>App Version Name 다양한 방법</title>
 	  <link>//appVersion</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2018-11-12T00:00:00+00:00</pubDate>
