@@ -8,6 +8,20 @@
     
       
       <item>
+        <title>파이썬 텔레그램 봇 만들기</title>
+        
+          <description>&lt;h3&gt;텔래그램 봇을 이용해서 알림을 만들어 보자&lt;/h3&gt;
+</description>
+        
+        <pubDate>Wed, 14 Nov 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//telefram_bot_father</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//telefram_bot_father</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>App Version Name 다양한 방법</title>
         
           <description>&lt;h3&gt;몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?&lt;/h3&gt;
@@ -512,20 +526,6 @@
         <link>
         https://pyeongho.github.io//tips1</link>
         <guid isPermaLink="true">https://pyeongho.github.io//tips1</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>파이썬 텔레그램 봇 만들기</title>
-        
-          <description>&lt;h3&gt;텔래그램 봇을 이용해서 알림을 만들어 보자&lt;/h3&gt;
-</description>
-        
-        <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
-        <link>
-        https://pyeongho.github.io//telefram_bot_father</link>
-        <guid isPermaLink="true">https://pyeongho.github.io//telefram_bot_father</guid>
       </item>
       
     

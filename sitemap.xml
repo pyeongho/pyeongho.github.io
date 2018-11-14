@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//telefram_bot_father</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//appVersion</loc>
     </url>
     
@@ -79,10 +83,6 @@
     
     <url>
         <loc>https://pyeongho.github.io//tips1</loc>
-    </url>
-    
-    <url>
-        <loc>https://pyeongho.github.io//telefram_bot_father</loc>
     </url>
     
     <url>
@@ -1668,22 +1668,6 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io//tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8/rss.xml</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io//tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
         <loc>https://pyeongho.github.io//tag/DrawerLayout/rss.xml</loc>
     </url>
     
@@ -2205,6 +2189,22 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/%EB%82%98%EC%97%90%EA%B2%8C%EB%A7%8C/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8/</loc>
     </url>
     
     
