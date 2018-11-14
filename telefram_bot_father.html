@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 알쓸신잡 1</title>
+    <title>파이썬 텔레그램 봇 만들기</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -97,7 +97,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover6.jpg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -108,35 +108,27 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-android">
+    <article class="post tag-python">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 알쓸신잡 1</h1>
+            <h1 class="post-title">파이썬 텔레그램 봇 만들기</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2017-11-24">24 Nov 2017</time>
+            <time class="post-date" datetime="2017-11-22">22 Nov 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/android'>Android</a>,
+                       <a href='/tag/python'>Python</a>,
                        
                 
                     
-                       <a href='/tag/DrawerLayout'>Drawerlayout</a>,
+                       <a href='/tag/텔레그램'>텔레그램</a>,
                        
                 
                     
-                       <a href='/tag/NavigationView'>Navigationview</a>,
-                       
-                
-                    
-                       <a href='/tag/toDP'>Todp</a>,
-                       
-                
-                    
-                       <a href='/tag/toPX'>Topx</a>
+                       <a href='/tag/c9'>C9</a>
                        
                 
                 
@@ -145,67 +137,73 @@
 
         <section class="post-content">
             
-            <h3>NavigationView 상단 그림자</h3>
+            <h3>텔래그램 봇을 이용해서 알림을 만들어 보자</h3>
+
+<h4>왜</h4>
 
 <ul>
-<li>안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+<li>라즈베리파이에서 20초 정도에 한번씩 DI 값을 읽어서 서버로 전송 한다. 
+가끔 라즈베리파이의 와이파이 연결이 끊겨서 동작 안할때가 있어서 라즈베리파이 동작 알림을 만들고 있습니다.</li>
+</ul>
+
+<h4>우선 텔레그램 알림 봇 부터 설정</h4>
 
 <ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46" alt="이렇게"></li>
-<li>for tag:  NavigationView remove shadow </li>
+<li>텔래그램에서 BotFather 친구 추가</li>
+<li>시작 버튼을 누른 후</li>
+<li>설명서에 나온 /newbot 클릭 또는 명령어 실행</li>
+<li>영어를 읽으면서 봇 이름 입력 하면 됩니다.</li>
+<li>대략 xxx<em>bot -&gt; xxyy</em>bot 이런식으로 두번 입력<br></li>
+<li>토큰이 발급 됩니다.</li>
+</ul>
+
+<h4>파이썬 라이브러리 설치</h4>
+
+<ul>
+<li>pip install python<em>telegram</em>bot</li>
+<li>혹시 cryptography 가 없다고 나오면 </li>
+<li>pip install cryptography </li>
+<li>업그레이드와 setuptools 버전등은 설치에 맞게 해야 합니다.
+
+<ul>
+<li>c9 에서 작업 할때 setuptools 버전이 3.3 이라 설치가 안되어 폴더에서 직접 지우는 만행을 </li>
+<li>pip에서 안되어 pip3 에서 테스트</li>
+<li>테스트만 할거라 빨리 하고 싶어서 되는곳에서 진행 </li>
 </ul></li>
-<li>처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
+<li>설치 버전은 아래와 같습니다. 
 
 <ul>
-<li>DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능</li>
-<li>정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음</li>
-<li>NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌</li>
+<li>cryptography==2.4.1</li>
+<li>python<em>telegram</em>bot==11.1.0</li>
 </ul></li>
-<li>설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 </li>
-<li>그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 </li>
-<li><p>24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&quot;-24dp&quot; 발견하기 까지 많은 시간이 걸렸습니다.</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.design.widget.NavigationView</span>
-    <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
-    <span class="na">android:layout_marginTop=</span><span class="s">"-24dp"</span>
-    <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-    <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
-    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
-    <span class="na">app:headerLayout=</span><span class="s">"@layout/nav_header_main"</span>
-    <span class="na">app:menu=</span><span class="s">"@menu/activity_main_drawer"</span> <span class="nt">/&gt;</span>
-</code></pre></div></li>
 </ul>
 
-<h3>안드로이드 스튜디오 실행기기 다중 선택</h3>
+<h4>봇을 만들기 완료</h4>
 
 <ul>
-<li>한개만 선택해야 한다는 고정 관념</li>
-<li>shift f10 을 이용해서 실행 단일 기기 선택 </li>
-<li>원하는 디바이스 선택 후 테스트 </li>
-<li>너무 고정 관념 처럼 사용함</li>
-<li>안드로이드 스튜디오 3.0 에서는 이 방법을 사용하기 힘든 이상하게 타겟이 고정됨</li>
-<li>그런데 다른 방법으로 해결 고정 관념 타파</li>
-<li>아래 그림 처럼 실행시 기기를 여러개 선택 가능하다.</li>
-<li>여러개 선택하면 동시에 설치되고 실행
-<img src="https://drive.google.com/uc?export=view&amp;id=1T2U0bqErnqhc1G39-BvWyTjCRbfdPkUI" alt="다중선택"></li>
+<li>명령어로 동작 하는 방식이 기본적인 봇<br></li>
 </ul>
 
-<h3>Kotlin DP &lt;-&gt; PX 변경 함수</h3>
+<p><script src="https://gist.github.com/pyeongho/5b61fc108e4888a76d2ef44e9026c88d.js"></script></p>
 
 <ul>
-<li>베이스 액티비티나,  베이스 프래그먼트에 추가해 놓으면 편합니다.</li>
-<li><p>사용법</p>
-
-<ul>
-<li>144.toDP</li>
-<li>36.toPx</li>
+<li>위와 같은 코드를 작성하면 /start 를 입력하면 &quot;I&#39;m a bot, please talk to me!&quot; 를 출력합니다.</li>
+<li>start 가 아닌 다른 명령어들을 추가해서 원하는 기능을 만들 수 있습니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val Int.toDp: Int
-    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
 
-val Int.toPx: Int
-    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
-</code></pre></div></li>
+<h4>알림봇이라 말하지만 그냥 텔레그램 메시지 보내기</h4>
+
+<ul>
+<li>다른곳과 살짝 달라서 아직 어떻게 해야 하는지 몰라서 막 만들었습니다.</li>
+<li>아무리 봐도 너무 이상한 코드지만 사용자가 없을 때 동작 만 확인하기 좋은 코드</li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/d8e99a95e6352af3c1cc0b0527eaea57.js"></script></p>
+
+<ul>
+<li>메시지에서 chat_id 를 찾아서 해당 id에 메시지를 보내는 샘플 입니다.</li>
+<li>set() 자료구조를 이용해서 동일한 id 를 필터링 하였습니다. </li>
+<li>그냥 참고용 이에요 </li>
 </ul>
 
 
@@ -238,15 +236,15 @@ val Int.toPx: Int
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 알쓸신잡 1&amp;url=https://pyeongho.github.io/tips1"
+                <a class="icon-twitter" href="http://twitter.com/share?text=파이썬 텔레그램 봇 만들기&amp;url=https://pyeongho.github.io/telefram_bot_father"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/tips1"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.io/telefram_bot_father"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/tips1"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.io/telefram_bot_father"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -284,20 +282,20 @@ val Int.toPx: Int
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/no_padding_textview">
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/tips1">
             <section class="post">
-                <h2>안드로이드 TextView Padding 문제</h2>
-                <p>### 디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩 - TextView로 구성된 화면에서 마진으로 간격이...</p>
+                <h2>안드로이드 알쓸신잡 1</h2>
+                <p>### NavigationView 상단 그림자 - 안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때...</p>
             </section>
         </a>
     
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover6.jpg)" href="/telefram_bot_father">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover6.jpg)" href="/flaskcross">
             <section class="post">
-                <h2>파이썬 텔레그램 봇 만들기</h2>
-                <p>텔래그램 봇을 이용해서 알림을 만들어 보자 왜 라즈베리파이에서 20초 정도에 한번씩 DI 값을 읽어서 서버로...</p>
+                <h2>파이썬을 크로스도메인 허용</h2>
+                <p>플라스크에서 크로스도메인 허용 파이썬 서버에 크로스도메인 허용 요청내용은 응답 헤더에 아래 내용 추가 였습니다. &#39;Access-Control-Allow-Origin:...</p>
             </section>
         </a>
     

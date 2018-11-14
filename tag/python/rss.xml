@@ -12,6 +12,85 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>파이썬 텔레그램 봇 만들기</title>
+	  <link>//telefram_bot_father</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2017-11-22T00:00:00+00:00</pubDate>
+	  <guid>//telefram_bot_father</guid>
+	  <description><![CDATA[
+	     <h3>텔래그램 봇을 이용해서 알림을 만들어 보자</h3>
+
+<h4>왜</h4>
+
+<ul>
+<li>라즈베리파이에서 20초 정도에 한번씩 DI 값을 읽어서 서버로 전송 한다. 
+가끔 라즈베리파이의 와이파이 연결이 끊겨서 동작 안할때가 있어서 라즈베리파이 동작 알림을 만들고 있습니다.</li>
+</ul>
+
+<h4>우선 텔레그램 알림 봇 부터 설정</h4>
+
+<ul>
+<li>텔래그램에서 BotFather 친구 추가</li>
+<li>시작 버튼을 누른 후</li>
+<li>설명서에 나온 /newbot 클릭 또는 명령어 실행</li>
+<li>영어를 읽으면서 봇 이름 입력 하면 됩니다.</li>
+<li>대략 xxx<em>bot -&gt; xxyy</em>bot 이런식으로 두번 입력<br></li>
+<li>토큰이 발급 됩니다.</li>
+</ul>
+
+<h4>파이썬 라이브러리 설치</h4>
+
+<ul>
+<li>pip install python<em>telegram</em>bot</li>
+<li>혹시 cryptography 가 없다고 나오면 </li>
+<li>pip install cryptography </li>
+<li>업그레이드와 setuptools 버전등은 설치에 맞게 해야 합니다.
+
+<ul>
+<li>c9 에서 작업 할때 setuptools 버전이 3.3 이라 설치가 안되어 폴더에서 직접 지우는 만행을 </li>
+<li>pip에서 안되어 pip3 에서 테스트</li>
+<li>테스트만 할거라 빨리 하고 싶어서 되는곳에서 진행 </li>
+</ul></li>
+<li>설치 버전은 아래와 같습니다. 
+
+<ul>
+<li>cryptography==2.4.1</li>
+<li>python<em>telegram</em>bot==11.1.0</li>
+</ul></li>
+</ul>
+
+<h4>봇을 만들기 완료</h4>
+
+<ul>
+<li>명령어로 동작 하는 방식이 기본적인 봇<br></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/5b61fc108e4888a76d2ef44e9026c88d.js"></script></p>
+
+<ul>
+<li>위와 같은 코드를 작성하면 /start 를 입력하면 &quot;I&#39;m a bot, please talk to me!&quot; 를 출력합니다.</li>
+<li>start 가 아닌 다른 명령어들을 추가해서 원하는 기능을 만들 수 있습니다.</li>
+</ul>
+
+<h4>알림봇이라 말하지만 그냥 텔레그램 메시지 보내기</h4>
+
+<ul>
+<li>다른곳과 살짝 달라서 아직 어떻게 해야 하는지 몰라서 막 만들었습니다.</li>
+<li>아무리 봐도 너무 이상한 코드지만 사용자가 없을 때 동작 만 확인하기 좋은 코드</li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/d8e99a95e6352af3c1cc0b0527eaea57.js"></script></p>
+
+<ul>
+<li>메시지에서 chat_id 를 찾아서 해당 id에 메시지를 보내는 샘플 입니다.</li>
+<li>set() 자료구조를 이용해서 동일한 id 를 필터링 하였습니다. </li>
+<li>그냥 참고용 이에요 </li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>파이썬을 크로스도메인 허용</title>
 	  <link>//flaskcross</link>
 	  <author>PyeongHo</author>
