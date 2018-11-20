@@ -8,6 +8,55 @@
     
       
       <item>
+        <title>kotlin init 사용시 편집기 주의사항</title>
+        
+          <description>&lt;h3&gt;kotlin constructor , init&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;생성자 사용하면서 사용하는 코틀린 내용입니다.&lt;/li&gt;
+&lt;li&gt;참고 &lt;a href=&quot;https://kotlinlang.org/docs/reference/classes.html&quot;&gt;kotlinlang.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;참고 &lt;a href=&quot;https://thdev.tech/kotlin/2017/03/09/Kotlin-Constructor-Init/&quot;&gt;꿈많은 개발자가 되자 Kotlin constructor init 이란?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;문서의 소중함&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The primary constructor cannot contain any code. Initialization code can be placed in initializer blocks, which are prefixed with the init keyword.&lt;br&gt;
+During an instance initialization, the initializer blocks are executed in the same order as they appear in the class body, interleaved with the property initializers:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;파파고 번역&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;기본 생성자는 코드를 포함할 수 없습니다. 초기화 코드는 init 키워드가 앞에 붙는 initializer 블록에 배치할 수 있습니다.&lt;br&gt;
+인스턴스 초기화 중에 이니셜라이저 블록은 속성 이니셜라이저와 함께 클래스 본체에 나타나는 것과 동일한 순서로 실행됩니다.(위에서부터 실행 한다.)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;다시 한번 확인 하는 이유는 역시나  NullPointerException&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;아래 코드를 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/b5aa08641cdfa05a6ca56f18a4d30d3e.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;편집기에서 에러가 발생 하지 않는게 문제&lt;/li&gt;
+&lt;li&gt;열심히 문서 보고 공부 했으면 문제가 없었겠지만  nullPoint -&amp;gt; sb.append(&amp;quot; hahaha&amp;quot;) 에서 에러가 발생 한다.&lt;/li&gt;
+&lt;li&gt;순서대로 초기화 하기 때무에 val sb = StringBuilder(name) 하기 전에 사용, 널포인트 &lt;/li&gt;
+&lt;li&gt;sb.append(&amp;quot; hahaha&amp;quot;) 를 첫번째 init 블럭에 사용하면 에러 표시를 하지만 함수를 이용하면 나타 나지 않는다.&lt;/li&gt;
+&lt;li&gt;문서 확인과 편집기 완벽 하지 않음으로 발생하는 내용으로 잘 알고 있어야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//kotlin_init</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//kotlin_init</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>파이썬 텔레그램 봇 만들기</title>
         
           <description>&lt;h3&gt;텔래그램 봇을 이용해서 알림을 만들어 보자&lt;/h3&gt;
