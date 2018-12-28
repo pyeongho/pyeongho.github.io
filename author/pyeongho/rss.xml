@@ -12,7 +12,7 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>kotlin init 사용시 편집기 주의사항</title>
+	  <title>데이터바인딩과 뷰모델</title>
 	  <link>//viewmodel</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2018-11-20T00:00:00+00:00</pubDate>
