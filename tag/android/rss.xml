@@ -13,6 +13,32 @@
    
 	<item>
 	  <title>kotlin init 사용시 편집기 주의사항</title>
+	  <link>//viewmodel</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-11-20T00:00:00+00:00</pubDate>
+	  <guid>//viewmodel</guid>
+	  <description><![CDATA[
+	     <h3>데이터바인딩을 이용한 뷰모델</h3>
+
+<ul>
+<li>기존 프로젝트중 화면 하나를 변경</li>
+<li>화면은 viewpager에 이미지 추가(횡으로 한칸 한칸 이동)</li>
+<li><p>LinearLayout 에 현재 이미지 위치를 표시해 주는 포인트 추가</p>
+
+<ul>
+<li>이미지 개수가 최대 몇개인지 알수 없는 API 인지라 imageview를 동적 할당 하여 넣어줌 </li>
+</ul></li>
+<li><p>아래가 XML 
+<script src="https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js"></script></p></li>
+<li><p>뷰모델 
+<script src="https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js"></script>    </p></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>kotlin init 사용시 편집기 주의사항</title>
 	  <link>//kotlin_init</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2018-11-20T00:00:00+00:00</pubDate>
@@ -509,45 +535,6 @@ During an instance initialization, the initializer blocks are executed in the sa
 <ul>
 <li>이미지를 노티피케이션을 만들거나 </li>
 <li>확장 되는 이미지를 만들거나<br></li>
-</ul></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>윈도우즈에서 파이어베이스 CLI 에러</title>
-	  <link>//firebase_cli_error</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-03-08T00:00:00+00:00</pubDate>
-	  <guid>//firebase_cli_error</guid>
-	  <description><![CDATA[
-	     <h3>윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그</h3>
-
-<ul>
-<li>기본적인 파이어베이스 CLI 사용법 아닙니다.</li>
-</ul>
-
-<h4>firebase deploy 진행중 발생하는 에러</h4>
-<div class="highlight"><pre><code class="language-" data-lang="">    i  deploying functions, hosting
-    Running command: npm --prefix $RESOURCE_DIR run lint
-    npm ERR! path D:\abcd\$RESOURCE_DIR\package.json
-    npm ERR! code ENOENT
-    npm ERR! errno -4058
-    npm ERR! syscall open
-    npm ERR! enoent ENOENT: no such file or directory, open 'D:\abcd\$RESOURCE_D
-    IR\package.json'
-    npm ERR! enoent This is related to npm not being able to find a file.
-    npm ERR! enoent
-    ...
-</code></pre></div>
-<ul>
-<li>윈도우에서 최종 배포 명령을 하니 위처럼 에러가 발생 여기 저기 찾아 보니 수정을 해야함 
-
-<ul>
-<li>$RESOURCE<em>DIR -&gt; %RESOURCE</em>DIR%</li>
-<li>윈도우와 리눅스계열 컴퓨터의 경로 설정 방법에 의한 차이로 보입니다. </li>
-<li>firebase.json 파일을 열어서 위 내용처럼 바꾸어 주면 됩니다.</li>
 </ul></li>
 </ul>
 

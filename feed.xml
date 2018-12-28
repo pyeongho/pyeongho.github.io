@@ -10,6 +10,34 @@
       <item>
         <title>kotlin init 사용시 편집기 주의사항</title>
         
+          <description>&lt;h3&gt;데이터바인딩을 이용한 뷰모델&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;기존 프로젝트중 화면 하나를 변경&lt;/li&gt;
+&lt;li&gt;화면은 viewpager에 이미지 추가(횡으로 한칸 한칸 이동)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;LinearLayout 에 현재 이미지 위치를 표시해 주는 포인트 추가&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;이미지 개수가 최대 몇개인지 알수 없는 API 인지라 imageview를 동적 할당 하여 넣어줌 &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;아래가 XML 
+&lt;script src=&quot;https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;뷰모델 
+&lt;script src=&quot;https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js&quot;&gt;&lt;/script&gt;    &lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io//viewmodel</link>
+        <guid isPermaLink="true">https://pyeongho.github.io//viewmodel</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>kotlin init 사용시 편집기 주의사항</title>
+        
           <description>&lt;h3&gt;kotlin constructor , init&lt;/h3&gt;
 
 &lt;ul&gt;

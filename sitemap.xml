@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io//viewmodel</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io//kotlin_init</loc>
     </url>
     
@@ -2225,6 +2229,38 @@
     
     <url>
         <loc>https://pyeongho.github.io//tag/init/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/databinding/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/databinding/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/viewmodel/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io//tag/viewmodel/</loc>
     </url>
     
     

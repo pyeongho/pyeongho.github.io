@@ -13,6 +13,32 @@
    
 	<item>
 	  <title>kotlin init 사용시 편집기 주의사항</title>
+	  <link>//viewmodel</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2018-11-20T00:00:00+00:00</pubDate>
+	  <guid>//viewmodel</guid>
+	  <description><![CDATA[
+	     <h3>데이터바인딩을 이용한 뷰모델</h3>
+
+<ul>
+<li>기존 프로젝트중 화면 하나를 변경</li>
+<li>화면은 viewpager에 이미지 추가(횡으로 한칸 한칸 이동)</li>
+<li><p>LinearLayout 에 현재 이미지 위치를 표시해 주는 포인트 추가</p>
+
+<ul>
+<li>이미지 개수가 최대 몇개인지 알수 없는 API 인지라 imageview를 동적 할당 하여 넣어줌 </li>
+</ul></li>
+<li><p>아래가 XML 
+<script src="https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js"></script></p></li>
+<li><p>뷰모델 
+<script src="https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js"></script>    </p></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>kotlin init 사용시 편집기 주의사항</title>
 	  <link>//kotlin_init</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2018-11-20T00:00:00+00:00</pubDate>
@@ -564,31 +590,6 @@ During an instance initialization, the initializer blocks are executed in the sa
 <li>마법사 지팡이를 잘 누르자 </li>
 <li>정렬 기능은 너무 좋은것(마치 포토샵의 정릴 기능 처럼)</li>
 <li>팩 기능, 여러가지를 묶어서 사용 할때 좋아요</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>푸시 내용 업데이트</title>
-	  <link>//push2</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-05-24T00:00:00+00:00</pubDate>
-	  <guid>//push2</guid>
-	  <description><![CDATA[
-	     <h3>푸시 적용</h3>
-
-<ul>
-<li><a href="https://pyeongho.github.io/push">https://pyeongho.github.io/push</a></li>
-<li><p>위 글에서 푸시 관련 내용을 작성 하였습니다.</p></li>
-<li><p>좀더 명확 하게 하기 위한 내용입니다.</p></li>
-<li><p>푸시 발송 json 내용에 notification 있으면 백그라운드 앱에서는 os 가 처리합니다.</p></li>
-<li><p>기존 처럼 직접 노티피케이션을 만들어서 사용 하고 싶을때는 꼭  notification 내용을 제거 하고 data 만 보내서 원하는 형태로 사용하면 됩니다. </p>
-
-<ul>
-<li>이미지를 노티피케이션을 만들거나 </li>
-<li>확장 되는 이미지를 만들거나<br></li>
-</ul></li>
 </ul>
 
 	  ]]></description>
