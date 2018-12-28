@@ -21,7 +21,7 @@
 	     <h3>데이터바인딩을 이용한 뷰모델</h3>
 
 <ul>
-<li>기존 프로젝트중 화면 하나를 변경</li>
+<li>기존 프로젝트중 화면 하나를 변경<br></li>
 <li>화면은 viewpager에 이미지 추가(횡으로 한칸 한칸 이동)</li>
 <li><p>LinearLayout 에 현재 이미지 위치를 표시해 주는 포인트 추가</p>
 
@@ -31,7 +31,9 @@
 <li><p>아래가 XML 
 <script src="https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js"></script></p></li>
 <li><p>뷰모델 
-<script src="https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js"></script>    </p></li>
+<script src="https://gist.github.com/pyeongho/7b47e6abfb5f1c8b1ffb03fc5f0d2dcd.js"></script></p></li>
+<li><p>생각보다 괜찮은 방법으로 보임</p></li>
+<li><p>해야할 작업은 많아 지지만 매우 마족 스러움</p></li>
 </ul>
 
 	  ]]></description>
