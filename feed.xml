@@ -35,6 +35,26 @@
     
       
       <item>
+        <title>안드로이드 UI 모음</title>
+        
+          <description>&lt;h3&gt;디자이너가 원하는 라이브러리를 찾아보자&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;앱을 만들다 보면 커스텀 UI 가 필요한 경우가 너무 많다.&lt;/li&gt;
+&lt;li&gt;시간이 있는것도 아니고 시간이 있어도 기존에 나온것 보다 잘 만들기 어려우니&lt;/li&gt;
+&lt;li&gt;디자이너가 원하는 라이브러리를 찾아서 라이브러를 커스텀 해서 사용하자&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 07 Jan 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/collect_ui_link</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/collect_ui_link</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>데이터바인딩과 뷰모델</title>
         
           <description>&lt;h3&gt;데이터바인딩을 이용한 뷰모델&lt;/h3&gt;
@@ -56,7 +76,7 @@
 &lt;/ul&gt;
 </description>
         
-        <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/viewmodel</link>
         <guid isPermaLink="true">https://pyeongho.github.io/viewmodel</guid>
