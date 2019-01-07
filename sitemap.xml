@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/trendl</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/viewmodel</loc>
     </url>
     
@@ -2261,6 +2265,54 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/viewmodel/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/2019/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/2019/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/trend%20korea/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/trend%20korea/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/PIGGY%20DREAM/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/PIGGY%20DREAM/</loc>
     </url>
     
     
