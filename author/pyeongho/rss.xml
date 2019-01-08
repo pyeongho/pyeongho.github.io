@@ -12,6 +12,29 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>야근은 하기 싫은데 일은 잘하고 싶다</title>
+	  <link>//brain_not_multi</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-01-08T00:00:00+00:00</pubDate>
+	  <guid>//brain_not_multi</guid>
+	  <description><![CDATA[
+	     <h3>야근은 하기 싫은데 일은 잘하고 싶다</h3>
+
+<ul>
+<li>뇌에 대한 책</li>
+<li>사람의 뇌는 멀티태스킹을 못한다.</li>
+<li>한번에 할 수 있는 있는 최대 4개 평상시 3개 안좋을때 2개</li>
+<li>그냥 한번에 한 가지 일만 하자</li>
+<li>집중 할 때 한가지 일만 열심히 하자</li>
+<li>집중력이 떨어지는 오후 시간에는 반복적인 작업이 좋다.</li>
+<li>3가지 이상을 기억해야 할때는 메모 하자</li>
+<li>메모를 이용해 해야 할 일을 정리 하자</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>트렌드 코리아 2019</title>
 	  <link>//trendl</link>
 	  <author>PyeongHo</author>
@@ -434,150 +457,6 @@ During an instance initialization, the initializer blocks are executed in the sa
                     .subscribe({ update_user_button.isEnabled = true },
                             { error -&gt; Log.e(TAG, "Unable to update username", error) }))
         }
-
-</code></pre></div>
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Jetpack 사용을 위한 기초 공부 AAC(Room)</title>
-	  <link>//aac_c1</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-10-29T00:00:00+00:00</pubDate>
-	  <guid>//aac_c1</guid>
-	  <description><![CDATA[
-	     <h3>샘플은 구글</h3>
-
-<ul>
-<li><a href="https://github.com/googlesamples/android-sunflower">해바라기</a><br></li>
-<li><a href="https://github.com/googlesamples/android-architecture-components">구글 샘플</a></li>
-<li><a href="https://developer.android.com/training/data-storage/room/defining-data">Room 엔터티</a></li>
-<li><a href="https://www.bsidesoft.com/?p=6003">비사이드소프트</a><br></li>
-</ul>
-
-<h3>샘플 내용 요약</h3>
-
-<ul>
-<li>sunflower, 구글 AAC 샘플을 적용하기전 기초지식 부터</li>
-<li>짧은 샘플이지만 기본적인 내용부터 알아야 가능 </li>
-</ul>
-
-<h3>라이브데이터</h3>
-
-<ul>
-<li>기존 데이터를 DB 에 넣어 오프라인에서도 기존데이터는 볼수 있도록 하자</li>
-<li>항상 최신데이터가 필요 할 수도 있지만 예전 데이터라도 보고 싶을때가 있다. </li>
-</ul>
-
-<h3>기초 지식 1: ROOM</h3>
-
-<ul>
-<li>라이브 데이터를 사용하기 위해서 기초인 room<br></li>
-<li>일반적인 DB 에서는 테이블을 만들어 사용하지만 room 은 orm 형태로 클래스를 만들어 사용한다.</li>
-<li>아래와 같이 테이블을 만들어 사용 해야 한다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    create table Items(
-        id int NOT NULL,
-        name varchar(255) NOT NULL,
-        description varchar(255),
-        price int,
-        PRIMARY KEY (id)
-    )
-</code></pre></div>
-<ul>
-<li>Room 의 Entity 형태로 변경하면 아래와 같이 클래스 선언후 필요한 어노테이션을 추가하면 된다.</li>
-<li>참고내용으로 실제 적용 할때는 찾아서 하는게 좋습니다.
-
-<ul>
-<li>어노테이션들
-
-<ul>
-<li>@Entity(primaryKeys = {“firstName”, “lastName”})  : 복합키 </li>
-<li>@ColumnInfo(name = “first_name”)String firstName : 객체 필드명과 실제 테이블 필드명이 다를 때의 처리</li>
-<li>@Ignore Bitmap picture : 무시할 객체의 필드</li>
-<li>@Entity(indices = {@Index(“name”), @Index(value = {“last_name”, “address”})}) : 인덱스설정 </li>
-<li>@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = “id”, childColumns = “user_id”)) : 외래키 설정 </li>
-<li>@Embedded OtherEntity data : 중첩엔티티로 표현하기</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    @Entity(tableName = "Items")
-    data class ItemEntity(
-        @PrimaryKey
-        val id:Int,
-        val name:String ,
-        val description:String, 
-        val price:Int
-    )
-</code></pre></div>
-<h3>DAO : 쿼리 인터페이스</h3>
-
-<ul>
-<li>Room 전체 적인 DB 개념이니 데이터의 추가 삭제를 담당 하는 인터페이스</li>
-<li>SQLite3 를 사용하기에 쿼리문을 직접 사용하거나 제공 되는 어노테이션을 사용하면 된다.</li>
-<li>아래는 오너테이션 사용 관련 자바 입니다. 공부하는 코드가 자바라 </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  // 예제 1
-  @Dao
-  public interface MyDao {
-      @Query("SELECT * FROM user")
-      public User[] loadAllUsers();
-  }
-
-  // 예제 2
-  @Dao
-  public interface MyDao {
-      @Delete
-      public void deleteUsers(User... users);
-  }
-
-  // 예제 2
-  @Dao
-  public interface MyDao {
-      @Update
-      public void updateUsers(User... users);
-  }
-
-  // 예제 3 
-  @Dao
-  public interface MyDao {
-      @Insert(onConflict = OnConflictStrategy.REPLACE)
-      public void insertUsers(User... users);
-
-      @Insert
-      public void insertBothUsers(User user1, User user2);
-
-      @Insert
-      public void insertUsersAndFriends(User user, List&lt;User&gt; friends);
-  }
-</code></pre></div>
-<h3>엔터티, DAO 를 이용한 데이터베이스 생성</h3>
-
-<ul>
-<li>빌더 패턴이 적용된 데이터 베이스</li>
-<li>여기 까지는 기본적인 내용으로 실제 적용은 다른 포스트에서...</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    @Database(entities = arrayOf(User::class), version = 1)
-    abstract class UsersDatabase : RoomDatabase() {
-
-        abstract fun userDao(): UserDao
-
-        companion object {
-
-            @Volatile private var INSTANCE: UsersDatabase? = null
-
-            fun getInstance(context: Context): UsersDatabase =
-                    INSTANCE ?: synchronized(this) {
-                        INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
-                    }
-
-            private fun buildDatabase(context: Context) =
-                    Room.databaseBuilder(context.applicationContext,
-                            UsersDatabase::class.java, "Sample.db")
-                            .build()
-        }
-    }
-
 
 </code></pre></div>
 	  ]]></description>

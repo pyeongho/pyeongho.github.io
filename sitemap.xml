@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/brain_not_multi</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/trendl</loc>
     </url>
     
@@ -501,6 +505,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/author/pyeongho/page16/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page17/</loc>
     </url>
     
     
@@ -2348,6 +2360,22 @@
     
     
     <url>
+        <loc>https://pyeongho.github.io/tag/%EB%87%8C%EA%B3%BC%ED%95%99/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/%EB%87%8C%EA%B3%BC%ED%95%99/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>https://pyeongho.github.io/page2/</loc>
     </url>
     
@@ -2461,6 +2489,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/page16/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/page17/</loc>
     </url>
     
     
