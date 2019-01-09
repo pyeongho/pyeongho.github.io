@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>안드로이드 나인패치 그림자 만들어 주는 사이트</title>
+	  <link>//nine_shadow_link</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <guid>//nine_shadow_link</guid>
+	  <description><![CDATA[
+	     <h3>그림자를 빠르게 만들기위한 사이트 링크</h3>
+
+<ul>
+<li>라운드</li>
+<li>그림자 색상</li>
+<li>블러 사이즈</li>
+<li>위치 오프셋 등 원하는대로 금방 만들수 있어요</li>
+<li><a href="http://inloop.github.io/shadow4android/">그림자만들기</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
