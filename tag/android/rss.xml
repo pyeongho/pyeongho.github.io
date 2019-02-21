@@ -12,6 +12,80 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>그냥 지식</title>
+	  <link>//how_phkim</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <guid>//how_phkim</guid>
+	  <description><![CDATA[
+	     <h3>PublishSubject , BehaviorSubject 비교</h3>
+
+<ul>
+<li><p>PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.</p></li>
+<li><p>BehaviorSubject : 초기 값이 필요하고 새로운 가입자에게 최신 요소를 재생합니다. BehaviorSubject는 항상 최신 요소를 방출하기 때문에 기본 초기 값을 제공하지 않고 만들 수 없습니다. BehaviorSubject는 &quot;시간 경과에 따른 값&quot;을 묘사 할 때 유용합니다. 예를 들어, 생일의 이벤트 스트림은 제목이지만, 사람의 나이의 흐름은 BehaviorSubject가됩니다.</p></li>
+</ul>
+
+<h3>복사 하기</h3>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"> val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+ clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+</code></pre></div>
+<h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val qrCodeWriter = QRCodeWriter()
+val hintMap = EnumMap&lt;EncodeHintType, Any&gt;(EncodeHintType::class.java)
+hintMap[EncodeHintType.CHARACTER_SET] = "UTF-8"
+hintMap[EncodeHintType.MARGIN] = 0 /* default = 4 */
+hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
+
+
+Observable.just(content)
+    .subscribeOn(Schedulers.computation())
+    .map{
+        toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
+    }
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(
+            {
+                view.setImageBitmap(it)
+            },
+            {
+                log.e(it.message)
+            },
+            {}
+    )
+
+    private fun toBitmap(matrix: BitMatrix): Bitmap {
+        val height = matrix.height
+        val width = matrix.width
+        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bmp
+    }
+</code></pre></div>
+<h3>zxing QR 코드 코드만</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">    val qrCodeWriter = QRCodeWriter()
+    val bitmap = toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
+    view.setImageBitmap(bitmap)
+
+    private fun toBitmap(matrix: BitMatrix): Bitmap {
+        val height = matrix.height
+        val width = matrix.width
+        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bmp
+    }
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>안드로이드 나인패치 그림자 만들어 주는 사이트</title>
 	  <link>//nine_shadow_link</link>
 	  <author>PyeongHo</author>
@@ -487,23 +561,6 @@ During an instance initialization, the initializer blocks are executed in the sa
 
 
 </code></pre></div>
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 Jetpack 중 네비게이션 에디터 사용</title>
-	  <link>//navigation-editor</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-07-03T00:00:00+00:00</pubDate>
-	  <guid>//navigation-editor</guid>
-	  <description><![CDATA[
-	     <h3>안드로이드 Jetpack</h3>
-
-<ul>
-<li>가중 눈에 가는 네비게이션 에디터를 사용해 보려고 했지만 사용법은 금방 나오지만 어떻게 해야 에디터가 나오는지 안보인다.</li>
-<li>File -&gt; Settings -&gt; Experimental -&gt; Enable Navigation Editor 을 활성화 하자<br></li>
-</ul>
-
 	  ]]></description>
 	</item>
 

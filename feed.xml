@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>그냥 지식</title>
+        
+          <description>&lt;h3&gt;PublishSubject , BehaviorSubject 비교&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/how_phkim</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/how_phkim</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 나인패치 그림자 만들어 주는 사이트</title>
         
           <description>&lt;h3&gt;그림자를 빠르게 만들기위한 사이트 링크&lt;/h3&gt;

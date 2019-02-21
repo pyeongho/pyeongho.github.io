@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>그냥 지식</title>
+	  <link>//how_phkim</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <guid>//how_phkim</guid>
+	  <description><![CDATA[
+	     <h3>PublishSubject , BehaviorSubject 비교</h3>
+
+<ul>
+<li><p>PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.</p></li>
+<li><p>BehaviorSubject : 초기 값이 필요하고 새로운 가입자에게 최신 요소를 재생합니다. BehaviorSubject는 항상 최신 요소를 방출하기 때문에 기본 초기 값을 제공하지 않고 만들 수 없습니다. BehaviorSubject는 &quot;시간 경과에 따른 값&quot;을 묘사 할 때 유용합니다. 예를 들어, 생일의 이벤트 스트림은 제목이지만, 사람의 나이의 흐름은 BehaviorSubject가됩니다.</p></li>
+</ul>
+
+<h3>복사 하기</h3>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"> val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+ clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+</code></pre></div>
+<h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val qrCodeWriter = QRCodeWriter()
+val hintMap = EnumMap&lt;EncodeHintType, Any&gt;(EncodeHintType::class.java)
+hintMap[EncodeHintType.CHARACTER_SET] = "UTF-8"
+hintMap[EncodeHintType.MARGIN] = 0 /* default = 4 */
+hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
+
+
+Observable.just(content)
+    .subscribeOn(Schedulers.computation())
+    .map{
+        toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
+    }
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(
+            {
+                view.setImageBitmap(it)
+            },
+            {
+                log.e(it.message)
+            },
+            {}
+    )
+
+    private fun toBitmap(matrix: BitMatrix): Bitmap {
+        val height = matrix.height
+        val width = matrix.width
+        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bmp
+    }
+</code></pre></div>
+<h3>zxing QR 코드 코드만</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">    val qrCodeWriter = QRCodeWriter()
+    val bitmap = toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
+    view.setImageBitmap(bitmap)
+
+    private fun toBitmap(matrix: BitMatrix): Bitmap {
+        val height = matrix.height
+        val width = matrix.width
+        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bmp
+    }
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

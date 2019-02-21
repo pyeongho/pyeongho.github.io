@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 나인패치 그림자 만들어 주는 사이트</title>
+    <title>그냥 지식</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,7 +111,7 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 나인패치 그림자 만들어 주는 사이트</h1>
+            <h1 class="post-title">그냥 지식</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
             <time class="post-date" datetime="2019-01-09">09 Jan 2019</time>
@@ -124,7 +124,7 @@
                        
                 
                     
-                       <a href='/tag/shadow'>Shadow</a>
+                       <a href='/tag/Rx'>Rx</a>
                        
                 
                 
@@ -133,16 +133,70 @@
 
         <section class="post-content">
             
-            <h3>그림자를 빠르게 만들기위한 사이트 링크</h3>
+            <h3>PublishSubject , BehaviorSubject 비교</h3>
 
 <ul>
-<li>라운드</li>
-<li>그림자 색상</li>
-<li>블러 사이즈</li>
-<li>위치 오프셋 등 원하는대로 금방 만들수 있어요</li>
-<li><a href="http://inloop.github.io/shadow4android/">그림자만들기</a></li>
+<li><p>PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.</p></li>
+<li><p>BehaviorSubject : 초기 값이 필요하고 새로운 가입자에게 최신 요소를 재생합니다. BehaviorSubject는 항상 최신 요소를 방출하기 때문에 기본 초기 값을 제공하지 않고 만들 수 없습니다. BehaviorSubject는 &quot;시간 경과에 따른 값&quot;을 묘사 할 때 유용합니다. 예를 들어, 생일의 이벤트 스트림은 제목이지만, 사람의 나이의 흐름은 BehaviorSubject가됩니다.</p></li>
 </ul>
 
+<h3>복사 하기</h3>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"> val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+ clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+</code></pre></div>
+<h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val qrCodeWriter = QRCodeWriter()
+val hintMap = EnumMap&lt;EncodeHintType, Any&gt;(EncodeHintType::class.java)
+hintMap[EncodeHintType.CHARACTER_SET] = "UTF-8"
+hintMap[EncodeHintType.MARGIN] = 0 /* default = 4 */
+hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
+
+
+Observable.just(content)
+    .subscribeOn(Schedulers.computation())
+    .map{
+        toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
+    }
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(
+            {
+                view.setImageBitmap(it)
+            },
+            {
+                log.e(it.message)
+            },
+            {}
+    )
+
+    private fun toBitmap(matrix: BitMatrix): Bitmap {
+        val height = matrix.height
+        val width = matrix.width
+        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bmp
+    }
+</code></pre></div>
+<h3>zxing QR 코드 코드만</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">    val qrCodeWriter = QRCodeWriter()
+    val bitmap = toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
+    view.setImageBitmap(bitmap)
+
+    private fun toBitmap(matrix: BitMatrix): Bitmap {
+        val height = matrix.height
+        val width = matrix.width
+        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
+            }
+        }
+        return bmp
+    }
+</code></pre></div>
 
         </section>
 
@@ -173,15 +227,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 나인패치 그림자 만들어 주는 사이트&amp;url=https://pyeongho.github.ionine_shadow_link"
+                <a class="icon-twitter" href="http://twitter.com/share?text=그냥 지식&amp;url=https://pyeongho.github.iohow_phkim"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ionine_shadow_link"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iohow_phkim"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ionine_shadow_link"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iohow_phkim"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -219,20 +273,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/how_phkim">
-            <section class="post">
-                <h2>그냥 지식</h2>
-                <p>### PublishSubject , BehaviorSubject 비교 - PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover2.jpg)" href="/brain_not_multi">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/nine_shadow_link">
             <section class="post">
-                <h2>야근은 하기 싫은데 일은 잘하고 싶다</h2>
-                <p>야근은 하기 싫은데 일은 잘하고 싶다 뇌에 대한 책 사람의 뇌는 멀티태스킹을 못한다. 한번에 할...</p>
+                <h2>안드로이드 나인패치 그림자 만들어 주는 사이트</h2>
+                <p>그림자를 빠르게 만들기위한 사이트 링크 라운드 그림자 색상 블러 사이즈 위치 오프셋 등 원하는대로 금방...</p>
             </section>
         </a>
     
