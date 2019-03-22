@@ -8,6 +8,34 @@
     
       
       <item>
+        <title>기본 레프트 메뉴의 활용</title>
+        
+          <description>&lt;h3&gt;레프트 메뉴의 다양화&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.&lt;/li&gt;
+&lt;li&gt;디자이너가 요청 하는 내용
+
+&lt;ul&gt;
+&lt;li&gt;안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태&lt;/li&gt;
+&lt;li&gt;메인 화면을 밀고 가는 내용&lt;/li&gt;
+&lt;li&gt;메인 화면이 작아 지면서 메뉴가 나오는 형태&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;위 내용 처럼 대략 3가지 정도로 요약 됨&lt;/li&gt;
+&lt;li&gt;처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.&lt;/li&gt;
+&lt;li&gt;다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/left_menu</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/left_menu</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>그냥 지식</title>
         
           <description>&lt;h3&gt;PublishSubject , BehaviorSubject 비교&lt;/h3&gt;

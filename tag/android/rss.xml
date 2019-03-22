@@ -12,6 +12,63 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>기본 레프트 메뉴의 활용</title>
+	  <link>//left_menu</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <guid>//left_menu</guid>
+	  <description><![CDATA[
+	     <h3>레프트 메뉴의 다양화</h3>
+
+<ul>
+<li>애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.</li>
+<li>디자이너가 요청 하는 내용
+
+<ul>
+<li>안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태</li>
+<li>메인 화면을 밀고 가는 내용</li>
+<li>메인 화면이 작아 지면서 메뉴가 나오는 형태</li>
+</ul></li>
+<li>위 내용 처럼 대략 3가지 정도로 요약 됨</li>
+<li>처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.</li>
+<li>다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.</li>
+</ul>
+
+<h3>기본적인 내용을 이용하는 방법</h3>
+
+<ul>
+<li>DrawerLayout 기본 샘플은  새로운 프로젝트를 시작 하여 네비게이션 드로어를 선택</li>
+<li>메뉴 사이즈는  android:layout_gravity=&quot;start&quot; 속성을 가지는 레이아웃을 폭을 조정 하면 된다.</li>
+<li>메뉴가 나올때 그림자 색상은 아래 처럼 옵션을 설정 한다. 아래는 그림자 제거
+
+<ul>
+<li>drawerLayout.setScrimColor(Color.TRANSPARENT);</li>
+</ul></li>
+<li><p>메인화면 밀기는 아래 코드 처럼 사용 하였습니댜.</p>
+
+<ul>
+<li>contentFrame 메인화면 레이아웃 입니다.</li>
+<li>slideOffset 을 이용하여 메인화면의 좌표를 변경 하는 방법 입니다.</li>
+<li><script src="https://gist.github.com/pyeongho/02c696d302047ee3aa5d859fb73c16e6.js"></script></li>
+</ul></li>
+<li><p>메인 화면을 이동하는 코드를 확용 하면 원하는 형태를 만들 수 있습니다.</p>
+
+<ul>
+<li><script src="https://gist.github.com/pyeongho/b77bd2e392a7e8355c068d5fb28098b9.js"></script></li>
+<li>위와 같이 적용 하면 메인 화면의 사이즈가 작아 지면서 처리가 됩니다.</li>
+</ul></li>
+</ul>
+
+<h3>참고</h3>
+
+<ul>
+<li><a href="http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/">http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>그냥 지식</title>
 	  <link>//how_phkim</link>
 	  <author>PyeongHo</author>
@@ -26,62 +83,17 @@
 </ul>
 
 <h3>복사 하기</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"> val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
- clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+     clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
 </code></pre></div>
 <h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val qrCodeWriter = QRCodeWriter()
-val hintMap = EnumMap&lt;EncodeHintType, Any&gt;(EncodeHintType::class.java)
-hintMap[EncodeHintType.CHARACTER_SET] = "UTF-8"
-hintMap[EncodeHintType.MARGIN] = 0 /* default = 4 */
-hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
 
+<script src="https://gist.github.com/pyeongho/a648449d43ca2bafd5d075a1c6382055.js"></script>
 
-Observable.just(content)
-    .subscribeOn(Schedulers.computation())
-    .map{
-        toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
-    }
-    .observeOn(AndroidSchedulers.mainThread())
-    .subscribe(
-            {
-                view.setImageBitmap(it)
-            },
-            {
-                log.e(it.message)
-            },
-            {}
-    )
-
-    private fun toBitmap(matrix: BitMatrix): Bitmap {
-        val height = matrix.height
-        val width = matrix.width
-        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
-            }
-        }
-        return bmp
-    }
-</code></pre></div>
 <h3>zxing QR 코드 코드만</h3>
-<div class="highlight"><pre><code class="language-" data-lang="">    val qrCodeWriter = QRCodeWriter()
-    val bitmap = toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
-    view.setImageBitmap(bitmap)
 
-    private fun toBitmap(matrix: BitMatrix): Bitmap {
-        val height = matrix.height
-        val width = matrix.width
-        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
-            }
-        }
-        return bmp
-    }
-</code></pre></div>
+<script src="https://gist.github.com/pyeongho/140951225375239ed0567b60ca55e112.js"></script>
+
 	  ]]></description>
 	</item>
 
@@ -415,150 +427,6 @@ During an instance initialization, the initializer blocks are executed in the sa
                     .subscribe({ update_user_button.isEnabled = true },
                             { error -&gt; Log.e(TAG, "Unable to update username", error) }))
         }
-
-</code></pre></div>
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Jetpack 사용을 위한 기초 공부 AAC(Room)</title>
-	  <link>//aac_c1</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-10-29T00:00:00+00:00</pubDate>
-	  <guid>//aac_c1</guid>
-	  <description><![CDATA[
-	     <h3>샘플은 구글</h3>
-
-<ul>
-<li><a href="https://github.com/googlesamples/android-sunflower">해바라기</a><br></li>
-<li><a href="https://github.com/googlesamples/android-architecture-components">구글 샘플</a></li>
-<li><a href="https://developer.android.com/training/data-storage/room/defining-data">Room 엔터티</a></li>
-<li><a href="https://www.bsidesoft.com/?p=6003">비사이드소프트</a><br></li>
-</ul>
-
-<h3>샘플 내용 요약</h3>
-
-<ul>
-<li>sunflower, 구글 AAC 샘플을 적용하기전 기초지식 부터</li>
-<li>짧은 샘플이지만 기본적인 내용부터 알아야 가능 </li>
-</ul>
-
-<h3>라이브데이터</h3>
-
-<ul>
-<li>기존 데이터를 DB 에 넣어 오프라인에서도 기존데이터는 볼수 있도록 하자</li>
-<li>항상 최신데이터가 필요 할 수도 있지만 예전 데이터라도 보고 싶을때가 있다. </li>
-</ul>
-
-<h3>기초 지식 1: ROOM</h3>
-
-<ul>
-<li>라이브 데이터를 사용하기 위해서 기초인 room<br></li>
-<li>일반적인 DB 에서는 테이블을 만들어 사용하지만 room 은 orm 형태로 클래스를 만들어 사용한다.</li>
-<li>아래와 같이 테이블을 만들어 사용 해야 한다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    create table Items(
-        id int NOT NULL,
-        name varchar(255) NOT NULL,
-        description varchar(255),
-        price int,
-        PRIMARY KEY (id)
-    )
-</code></pre></div>
-<ul>
-<li>Room 의 Entity 형태로 변경하면 아래와 같이 클래스 선언후 필요한 어노테이션을 추가하면 된다.</li>
-<li>참고내용으로 실제 적용 할때는 찾아서 하는게 좋습니다.
-
-<ul>
-<li>어노테이션들
-
-<ul>
-<li>@Entity(primaryKeys = {“firstName”, “lastName”})  : 복합키 </li>
-<li>@ColumnInfo(name = “first_name”)String firstName : 객체 필드명과 실제 테이블 필드명이 다를 때의 처리</li>
-<li>@Ignore Bitmap picture : 무시할 객체의 필드</li>
-<li>@Entity(indices = {@Index(“name”), @Index(value = {“last_name”, “address”})}) : 인덱스설정 </li>
-<li>@Entity(foreignKeys = @ForeignKey(entity = User.class, parentColumns = “id”, childColumns = “user_id”)) : 외래키 설정 </li>
-<li>@Embedded OtherEntity data : 중첩엔티티로 표현하기</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    @Entity(tableName = "Items")
-    data class ItemEntity(
-        @PrimaryKey
-        val id:Int,
-        val name:String ,
-        val description:String, 
-        val price:Int
-    )
-</code></pre></div>
-<h3>DAO : 쿼리 인터페이스</h3>
-
-<ul>
-<li>Room 전체 적인 DB 개념이니 데이터의 추가 삭제를 담당 하는 인터페이스</li>
-<li>SQLite3 를 사용하기에 쿼리문을 직접 사용하거나 제공 되는 어노테이션을 사용하면 된다.</li>
-<li>아래는 오너테이션 사용 관련 자바 입니다. 공부하는 코드가 자바라 </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  // 예제 1
-  @Dao
-  public interface MyDao {
-      @Query("SELECT * FROM user")
-      public User[] loadAllUsers();
-  }
-
-  // 예제 2
-  @Dao
-  public interface MyDao {
-      @Delete
-      public void deleteUsers(User... users);
-  }
-
-  // 예제 2
-  @Dao
-  public interface MyDao {
-      @Update
-      public void updateUsers(User... users);
-  }
-
-  // 예제 3 
-  @Dao
-  public interface MyDao {
-      @Insert(onConflict = OnConflictStrategy.REPLACE)
-      public void insertUsers(User... users);
-
-      @Insert
-      public void insertBothUsers(User user1, User user2);
-
-      @Insert
-      public void insertUsersAndFriends(User user, List&lt;User&gt; friends);
-  }
-</code></pre></div>
-<h3>엔터티, DAO 를 이용한 데이터베이스 생성</h3>
-
-<ul>
-<li>빌더 패턴이 적용된 데이터 베이스</li>
-<li>여기 까지는 기본적인 내용으로 실제 적용은 다른 포스트에서...</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    @Database(entities = arrayOf(User::class), version = 1)
-    abstract class UsersDatabase : RoomDatabase() {
-
-        abstract fun userDao(): UserDao
-
-        companion object {
-
-            @Volatile private var INSTANCE: UsersDatabase? = null
-
-            fun getInstance(context: Context): UsersDatabase =
-                    INSTANCE ?: synchronized(this) {
-                        INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
-                    }
-
-            private fun buildDatabase(context: Context) =
-                    Room.databaseBuilder(context.applicationContext,
-                            UsersDatabase::class.java, "Sample.db")
-                            .build()
-        }
-    }
-
 
 </code></pre></div>
 	  ]]></description>

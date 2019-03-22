@@ -26,62 +26,17 @@
 </ul>
 
 <h3>복사 하기</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"> val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
- clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+     clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
 </code></pre></div>
 <h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val qrCodeWriter = QRCodeWriter()
-val hintMap = EnumMap&lt;EncodeHintType, Any&gt;(EncodeHintType::class.java)
-hintMap[EncodeHintType.CHARACTER_SET] = "UTF-8"
-hintMap[EncodeHintType.MARGIN] = 0 /* default = 4 */
-hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
 
+<script src="https://gist.github.com/pyeongho/a648449d43ca2bafd5d075a1c6382055.js"></script>
 
-Observable.just(content)
-    .subscribeOn(Schedulers.computation())
-    .map{
-        toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
-    }
-    .observeOn(AndroidSchedulers.mainThread())
-    .subscribe(
-            {
-                view.setImageBitmap(it)
-            },
-            {
-                log.e(it.message)
-            },
-            {}
-    )
-
-    private fun toBitmap(matrix: BitMatrix): Bitmap {
-        val height = matrix.height
-        val width = matrix.width
-        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
-            }
-        }
-        return bmp
-    }
-</code></pre></div>
 <h3>zxing QR 코드 코드만</h3>
-<div class="highlight"><pre><code class="language-" data-lang="">    val qrCodeWriter = QRCodeWriter()
-    val bitmap = toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
-    view.setImageBitmap(bitmap)
 
-    private fun toBitmap(matrix: BitMatrix): Bitmap {
-        val height = matrix.height
-        val width = matrix.width
-        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
-            }
-        }
-        return bmp
-    }
-</code></pre></div>
+<script src="https://gist.github.com/pyeongho/140951225375239ed0567b60ca55e112.js"></script>
+
 	  ]]></description>
 	</item>
 

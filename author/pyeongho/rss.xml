@@ -12,6 +12,63 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>기본 레프트 메뉴의 활용</title>
+	  <link>//left_menu</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <guid>//left_menu</guid>
+	  <description><![CDATA[
+	     <h3>레프트 메뉴의 다양화</h3>
+
+<ul>
+<li>애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.</li>
+<li>디자이너가 요청 하는 내용
+
+<ul>
+<li>안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태</li>
+<li>메인 화면을 밀고 가는 내용</li>
+<li>메인 화면이 작아 지면서 메뉴가 나오는 형태</li>
+</ul></li>
+<li>위 내용 처럼 대략 3가지 정도로 요약 됨</li>
+<li>처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.</li>
+<li>다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.</li>
+</ul>
+
+<h3>기본적인 내용을 이용하는 방법</h3>
+
+<ul>
+<li>DrawerLayout 기본 샘플은  새로운 프로젝트를 시작 하여 네비게이션 드로어를 선택</li>
+<li>메뉴 사이즈는  android:layout_gravity=&quot;start&quot; 속성을 가지는 레이아웃을 폭을 조정 하면 된다.</li>
+<li>메뉴가 나올때 그림자 색상은 아래 처럼 옵션을 설정 한다. 아래는 그림자 제거
+
+<ul>
+<li>drawerLayout.setScrimColor(Color.TRANSPARENT);</li>
+</ul></li>
+<li><p>메인화면 밀기는 아래 코드 처럼 사용 하였습니댜.</p>
+
+<ul>
+<li>contentFrame 메인화면 레이아웃 입니다.</li>
+<li>slideOffset 을 이용하여 메인화면의 좌표를 변경 하는 방법 입니다.</li>
+<li><script src="https://gist.github.com/pyeongho/02c696d302047ee3aa5d859fb73c16e6.js"></script></li>
+</ul></li>
+<li><p>메인 화면을 이동하는 코드를 확용 하면 원하는 형태를 만들 수 있습니다.</p>
+
+<ul>
+<li><script src="https://gist.github.com/pyeongho/b77bd2e392a7e8355c068d5fb28098b9.js"></script></li>
+<li>위와 같이 적용 하면 메인 화면의 사이즈가 작아 지면서 처리가 됩니다.</li>
+</ul></li>
+</ul>
+
+<h3>참고</h3>
+
+<ul>
+<li><a href="http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/">http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>그냥 지식</title>
 	  <link>//how_phkim</link>
 	  <author>PyeongHo</author>
@@ -26,62 +83,17 @@
 </ul>
 
 <h3>복사 하기</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"> val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
- clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+     clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
 </code></pre></div>
 <h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val qrCodeWriter = QRCodeWriter()
-val hintMap = EnumMap&lt;EncodeHintType, Any&gt;(EncodeHintType::class.java)
-hintMap[EncodeHintType.CHARACTER_SET] = "UTF-8"
-hintMap[EncodeHintType.MARGIN] = 0 /* default = 4 */
-hintMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.L
 
+<script src="https://gist.github.com/pyeongho/a648449d43ca2bafd5d075a1c6382055.js"></script>
 
-Observable.just(content)
-    .subscribeOn(Schedulers.computation())
-    .map{
-        toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
-    }
-    .observeOn(AndroidSchedulers.mainThread())
-    .subscribe(
-            {
-                view.setImageBitmap(it)
-            },
-            {
-                log.e(it.message)
-            },
-            {}
-    )
-
-    private fun toBitmap(matrix: BitMatrix): Bitmap {
-        val height = matrix.height
-        val width = matrix.width
-        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
-            }
-        }
-        return bmp
-    }
-</code></pre></div>
 <h3>zxing QR 코드 코드만</h3>
-<div class="highlight"><pre><code class="language-" data-lang="">    val qrCodeWriter = QRCodeWriter()
-    val bitmap = toBitmap(qrCodeWriter.encode(it , BarcodeFormat.QR_CODE, size, size,hintMap))
-    view.setImageBitmap(bitmap)
 
-    private fun toBitmap(matrix: BitMatrix): Bitmap {
-        val height = matrix.height
-        val width = matrix.width
-        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                bmp.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
-            }
-        }
-        return bmp
-    }
-</code></pre></div>
+<script src="https://gist.github.com/pyeongho/140951225375239ed0567b60ca55e112.js"></script>
+
 	  ]]></description>
 	</item>
 
@@ -406,31 +418,6 @@ During an instance initialization, the initializer blocks are executed in the sa
 <ul>
 <li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
 <li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>No toolchains found in the NDK</title>
-	  <link>//no-ndk</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-11-09T00:00:00+00:00</pubDate>
-	  <guid>//no-ndk</guid>
-	  <description><![CDATA[
-	     <h3>NDK 를 사용하지 않는데</h3>
-
-<ul>
-<li>안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. </li>
-<li>&quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&quot;</li>
-</ul>
-
-<h3>나만의 해결</h3>
-
-<ul>
-<li>그래들 버전 업</li>
-<li>다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.</li>
-<li>&quot;classpath &#39;com.android.tools.build:gradle:3.2.1&#39;&quot;</li>
 </ul>
 
 	  ]]></description>
