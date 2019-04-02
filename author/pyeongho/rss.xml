@@ -12,10 +12,54 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>플레이스토어 확용</title>
+	  <link>//playstore</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-04-02T00:00:00+00:00</pubDate>
+	  <guid>//playstore</guid>
+	  <description><![CDATA[
+	     <h3>플레이스토어 활용</h3>
+
+<ul>
+<li><p>예약게시 기능</p>
+
+<ul>
+<li>플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다.</li>
+<li>원하는 날짜에 자동으로 되는 예약이 아니다.</li>
+<li>스토어 등록 정보 하단에 있는 예약 게시 기능을 활성화 하면 바이너리 활성화 이후 스토어 배포 준비가 되면 사용자가 직접 게시 버튼을 눌러서 원하는 시간에 업데이트가 가능하다.</li>
+<li>기존에는 바이너리 업데이트후 검토 완료후 자동으로 게시 되어 정확한 시간을 알수가 없었다.</li>
+<li>예약게시를 활성화 이후에는 검토가 완료 되면 게시 버튼이 활성화가 된다.</li>
+<li>원하는 시간 몇분전에(플레이스토어 반영 시간) 게시 버튼만 누르면 된다.</li>
+</ul></li>
+<li><p>비공개 트랙, 알파 트랙</p>
+
+<ul>
+<li>테스트를 진행하면서 바이너리를 전달하기 힘들때 사용하면 좋다.</li>
+<li>비공개 트랙을 만들어서 테스트를 진행하면 실제 스토어에서 다운 받아서 테스가 가능하다</li>
+<li>심지어 업데이트도 가능</li>
+<li>비공개 트랙도 바이너리 업데이트 이기 때문에 예야 게시와 함께 사용 됩니다.</li>
+<li>예를 들어 예약 게시 활성후에는 비공개 트랙도 영향받아서 게시 버튼을 눌러야 기능이 활성화 됩니다.</li>
+<li>자동화 테스트</li>
+<li>파이어 베이스에도 있는 기능 이지만 로보 테스트를 활용하여 기본적인 테스트 가능하다.</li>
+<li>클릭 스와이프등을 자동으로 테스트 하여 준다.</li>
+<li>구글이 원하는 기본적인 버튼 규격 또는 성능에 미달하는것도 테스트 가능하다.</li>
+<li>현재 공부 중인 내용은 input 필드에 내용 추가 하는 방법이다
+
+<ul>
+<li>리소스 아이디 입력후 원하는 값을 입력 하면 된다고 하지만</li>
+<li>5개중에 2개만 성공 하여서 원인 파악하면서 진행 하고 있다.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>기본 레프트 메뉴의 활용</title>
 	  <link>//left_menu</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <pubDate>2019-03-22T00:00:00+00:00</pubDate>
 	  <guid>//left_menu</guid>
 	  <description><![CDATA[
 	     <h3>레프트 메뉴의 다양화</h3>
@@ -72,7 +116,7 @@
 	  <title>그냥 지식</title>
 	  <link>//how_phkim</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
+	  <pubDate>2019-02-21T00:00:00+00:00</pubDate>
 	  <guid>//how_phkim</guid>
 	  <description><![CDATA[
 	     <h3>PublishSubject , BehaviorSubject 비교</h3>
@@ -349,75 +393,6 @@ During an instance initialization, the initializer blocks are executed in the sa
 <li>메시지에서 chat_id 를 찾아서 해당 id에 메시지를 보내는 샘플 입니다.</li>
 <li>set() 자료구조를 이용해서 동일한 id 를 필터링 하였습니다. </li>
 <li>그냥 참고용 이에요 </li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>App Version Name 다양한 방법</title>
-	  <link>//appVersion</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-11-12T00:00:00+00:00</pubDate>
-	  <guid>//appVersion</guid>
-	  <description><![CDATA[
-	     <h3>몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?</h3>
-
-<ul>
-<li>그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-java" data-lang="java">        <span class="n">PackageManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
-        <span class="k">try</span> <span class="o">{</span>
-           <span class="n">PackageInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="na">getPackageInfo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
-           <span class="n">String</span> <span class="n">packageName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">packageName</span><span class="o">;</span>
-           <span class="kt">int</span> <span class="n">versionCode</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionCode</span><span class="o">;</span>
-           <span class="n">String</span> <span class="n">versionName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">versionName</span><span class="o">;</span>
-           <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NameNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-           <span class="c1">// TODO Auto-generated catch block</span>
-           <span class="o">}</span>
-</code></pre></div>
-<ul>
-<li>특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.</li>
-<li>우선 문제 해결 먼저 진행</li>
-<li>처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함</li>
-<li>그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">      /*version name*/
-      BuildConfig.VERSION_NAME
-
-      /*version code*/
-      BuildConfig.VERSION_CODE
-
-</code></pre></div>
-<h3>BuildConfig 에 나만의 상수 추가</h3>
-
-<ul>
-<li>위 방법을 찾기 전에는 아래와 같은 방법으로 진행했지만 이제는 다른 상수 추가 할때 사용 중<br></li>
-<li>프로젝트 build.gradle 에서 appVersion 을 추가</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">ext {
-    appVersion = "1.0.5"
-}
-
-</code></pre></div>
-<ul>
-<li>versionName &quot;$rootProject.appVersion&quot;</li>
-<li>build.gradle buildTypes 에 추가 한 내용</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    def version=  '\"' + "$rootProject.appVersion" +'\"'
-    debug{
-        buildConfigField "String", "APP_VERSION", version
-    }
-    release {
-        minifyEnabled false
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        buildConfigField "String", "APP_VERSION", version
-    }
-
-</code></pre></div>
-<ul>
-<li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
-<li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
 </ul>
 
 	  ]]></description>

@@ -8,6 +8,33 @@
     
       
       <item>
+        <title>플레이스토어 확용</title>
+        
+          <description>&lt;h3&gt;플레이스토어 활용&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;예약게시 기능
+
+&lt;ul&gt;
+&lt;li&gt;플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다.&lt;/li&gt;
+&lt;li&gt;원하는 날짜에 자동으로 되는 예약이 아니다.&lt;/li&gt;
+&lt;li&gt;스토어 등록 정보 하단에 있는 예약 게시 기능을 활성화 하면 바이너리 활성화 이후 스토어 배포 준비가 되면 사용자가 직접 게시 버튼을 눌러서 원하는 시간에 업데이트가 가능하다.&lt;/li&gt;
+&lt;li&gt;기존에는 바이너리 업데이트후 검토 완료후 자동으로 게시 되어 정확한 시간을 알수가 없었다.&lt;/li&gt;
+&lt;li&gt;예약게시를 활성화 이후에는 검토가 완료 되면 게시 버튼이 활성화가 된다.&lt;/li&gt;
+&lt;li&gt;원하는 시간 몇분전에(플레이스토어 반영 시간) 게시 버튼만 누르면 된다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/playstore</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/playstore</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>기본 레프트 메뉴의 활용</title>
         
           <description>&lt;h3&gt;레프트 메뉴의 다양화&lt;/h3&gt;
@@ -27,7 +54,7 @@
 &lt;/ul&gt;
 </description>
         
-        <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 22 Mar 2019 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/left_menu</link>
         <guid isPermaLink="true">https://pyeongho.github.io/left_menu</guid>
@@ -45,7 +72,7 @@
 &lt;/ul&gt;
 </description>
         
-        <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/how_phkim</link>
         <guid isPermaLink="true">https://pyeongho.github.io/how_phkim</guid>

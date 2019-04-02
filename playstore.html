@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>기본 레프트 메뉴의 활용</title>
+    <title>플레이스토어 확용</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,10 +111,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">기본 레프트 메뉴의 활용</h1>
+            <h1 class="post-title">플레이스토어 확용</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2019-03-22">22 Mar 2019</time>
+            <time class="post-date" datetime="2019-04-02">02 Apr 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -124,11 +124,7 @@
                        
                 
                     
-                       <a href='/tag/left-menu'>Left-menu</a>,
-                       
-                
-                    
-                       <a href='/tag/DrawerLayout'>Drawerlayout</a>
+                       <a href='/tag/Playstore'>Playstore</a>
                        
                 
                 
@@ -137,51 +133,38 @@
 
         <section class="post-content">
             
-            <h3>레프트 메뉴의 다양화</h3>
+            <h3>플레이스토어 활용</h3>
 
 <ul>
-<li>애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.</li>
-<li>디자이너가 요청 하는 내용
+<li><p>예약게시 기능</p>
 
 <ul>
-<li>안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태</li>
-<li>메인 화면을 밀고 가는 내용</li>
-<li>메인 화면이 작아 지면서 메뉴가 나오는 형태</li>
+<li>플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다.</li>
+<li>원하는 날짜에 자동으로 되는 예약이 아니다.</li>
+<li>스토어 등록 정보 하단에 있는 예약 게시 기능을 활성화 하면 바이너리 활성화 이후 스토어 배포 준비가 되면 사용자가 직접 게시 버튼을 눌러서 원하는 시간에 업데이트가 가능하다.</li>
+<li>기존에는 바이너리 업데이트후 검토 완료후 자동으로 게시 되어 정확한 시간을 알수가 없었다.</li>
+<li>예약게시를 활성화 이후에는 검토가 완료 되면 게시 버튼이 활성화가 된다.</li>
+<li>원하는 시간 몇분전에(플레이스토어 반영 시간) 게시 버튼만 누르면 된다.</li>
 </ul></li>
-<li>위 내용 처럼 대략 3가지 정도로 요약 됨</li>
-<li>처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.</li>
-<li>다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.</li>
-</ul>
-
-<h3>기본적인 내용을 이용하는 방법</h3>
+<li><p>비공개 트랙, 알파 트랙</p>
 
 <ul>
-<li>DrawerLayout 기본 샘플은  새로운 프로젝트를 시작 하여 네비게이션 드로어를 선택</li>
-<li>메뉴 사이즈는  android:layout_gravity=&quot;start&quot; 속성을 가지는 레이아웃을 폭을 조정 하면 된다.</li>
-<li>메뉴가 나올때 그림자 색상은 아래 처럼 옵션을 설정 한다. 아래는 그림자 제거
+<li>테스트를 진행하면서 바이너리를 전달하기 힘들때 사용하면 좋다.</li>
+<li>비공개 트랙을 만들어서 테스트를 진행하면 실제 스토어에서 다운 받아서 테스가 가능하다</li>
+<li>심지어 업데이트도 가능</li>
+<li>비공개 트랙도 바이너리 업데이트 이기 때문에 예야 게시와 함께 사용 됩니다.</li>
+<li>예를 들어 예약 게시 활성후에는 비공개 트랙도 영향받아서 게시 버튼을 눌러야 기능이 활성화 됩니다.</li>
+<li>자동화 테스트</li>
+<li>파이어 베이스에도 있는 기능 이지만 로보 테스트를 활용하여 기본적인 테스트 가능하다.</li>
+<li>클릭 스와이프등을 자동으로 테스트 하여 준다.</li>
+<li>구글이 원하는 기본적인 버튼 규격 또는 성능에 미달하는것도 테스트 가능하다.</li>
+<li>현재 공부 중인 내용은 input 필드에 내용 추가 하는 방법이다
 
 <ul>
-<li>drawerLayout.setScrimColor(Color.TRANSPARENT);</li>
+<li>리소스 아이디 입력후 원하는 값을 입력 하면 된다고 하지만</li>
+<li>5개중에 2개만 성공 하여서 원인 파악하면서 진행 하고 있다.</li>
 </ul></li>
-<li><p>메인화면 밀기는 아래 코드 처럼 사용 하였습니댜.</p>
-
-<ul>
-<li>contentFrame 메인화면 레이아웃 입니다.</li>
-<li>slideOffset 을 이용하여 메인화면의 좌표를 변경 하는 방법 입니다.</li>
-<li><script src="https://gist.github.com/pyeongho/02c696d302047ee3aa5d859fb73c16e6.js"></script></li>
 </ul></li>
-<li><p>메인 화면을 이동하는 코드를 확용 하면 원하는 형태를 만들 수 있습니다.</p>
-
-<ul>
-<li><script src="https://gist.github.com/pyeongho/b77bd2e392a7e8355c068d5fb28098b9.js"></script></li>
-<li>위와 같이 적용 하면 메인 화면의 사이즈가 작아 지면서 처리가 됩니다.</li>
-</ul></li>
-</ul>
-
-<h3>참고</h3>
-
-<ul>
-<li><a href="http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/">http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/</a></li>
 </ul>
 
 
@@ -214,15 +197,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=기본 레프트 메뉴의 활용&amp;url=https://pyeongho.github.ioleft_menu"
+                <a class="icon-twitter" href="http://twitter.com/share?text=플레이스토어 확용&amp;url=https://pyeongho.github.ioplaystore"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioleft_menu"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioplaystore"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioleft_menu"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioplaystore"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -260,20 +243,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/playstore">
-            <section class="post">
-                <h2>플레이스토어 확용</h2>
-                <p>### 플레이스토어 활용 - 예약게시 기능 - 플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다. -...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/how_phkim">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/left_menu">
             <section class="post">
-                <h2>그냥 지식</h2>
-                <p>PublishSubject , BehaviorSubject 비교 PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시...</p>
+                <h2>기본 레프트 메뉴의 활용</h2>
+                <p>레프트 메뉴의 다양화 애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다. 디자이너가 요청 하는...</p>
             </section>
         </a>
     
