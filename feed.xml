@@ -8,7 +8,28 @@
     
       
       <item>
-        <title>플레이스토어 확용</title>
+        <title>인증서 피닝, 인증서 고정</title>
+        
+          <description>&lt;h3&gt;https 사용 시 인증서를 고정 하자&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;frida를 이용해서 인증서를 변경해서 공격이 가능해 보인다.&lt;/li&gt;
+&lt;li&gt;보안팀에서 인증서 피닝을 해달라고 요청이 왔다.&lt;/li&gt;
+&lt;li&gt;내용을 물어 보고 찾아보니 인증서 값을 공정 하는 내용&lt;/li&gt;
+&lt;li&gt;인증서를 미리 확인해서 핀으로 고정 한다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/cert_pinning</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/cert_pinning</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>플레이스토어 활용</title>
         
           <description>&lt;h3&gt;플레이스토어 활용&lt;/h3&gt;
 
@@ -192,7 +213,7 @@
 &lt;li&gt;&lt;p&gt;뷰모델 
 &lt;script src=&quot;https://gist.github.com/pyeongho/7b47e6abfb5f1c8b1ffb03fc5f0d2dcd.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;생각보다 괜찮은 방법으로 보임&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;해야할 작업은 많아 지지만 매우 마족 스러움&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;해야할 작업은 많아 지지만 매우 만족 스러움&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         

@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/cert_pinning</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/playstore</loc>
     </url>
     
@@ -392,150 +396,6 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/rss.xml</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page2/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page3/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page4/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page5/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page6/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page7/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page8/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page9/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page10/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page11/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page12/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page13/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page14/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page15/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page16/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://pyeongho.github.io/author/pyeongho/page17/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
         <loc>https://pyeongho.github.io/tag/python/rss.xml</loc>
     </url>
     
@@ -793,6 +653,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/android/page10/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android/page11/</loc>
     </url>
     
     
@@ -2424,6 +2292,190 @@
     
     
     <url>
+        <loc>https://pyeongho.github.io/tag/CertificatePinning/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/CertificatePinning/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/okhttp3/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/okhttp3/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page2/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page3/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page4/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page5/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page6/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page7/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page8/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page9/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page10/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page11/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page12/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page13/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page14/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page15/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page16/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page17/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page18/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
         <loc>https://pyeongho.github.io/page2/</loc>
     </url>
     
@@ -2545,6 +2597,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/page17/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/page18/</loc>
     </url>
     
     
