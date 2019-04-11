@@ -8,6 +8,22 @@
     
       
       <item>
+        <title>루팅 기기에서 원격 ADB</title>
+        
+          <description>&lt;h3&gt;루팅 기기에서 ADB 원격 가능하도록 하는 방법&lt;/h3&gt;
+
+&lt;p&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+        
+        <pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/root_adb</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/root_adb</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>인증서 피닝, 인증서 고정</title>
         
           <description>&lt;h3&gt;https 사용 시 인증서를 고정 하자&lt;/h3&gt;

@@ -12,6 +12,20 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>루팅 기기에서 원격 ADB</title>
+	  <link>//root_adb</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-04-04T00:00:00+00:00</pubDate>
+	  <guid>//root_adb</guid>
+	  <description><![CDATA[
+	     <h3>루팅 기기에서 ADB 원격 가능하도록 하는 방법</h3>
+
+<p><script src="https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>인증서 피닝, 인증서 고정</title>
 	  <link>//cert_pinning</link>
 	  <author>PyeongHo</author>
@@ -397,31 +411,6 @@ During an instance initialization, the initializer blocks are executed in the sa
 <ul>
 <li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
 <li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>No toolchains found in the NDK</title>
-	  <link>//no-ndk</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-11-09T00:00:00+00:00</pubDate>
-	  <guid>//no-ndk</guid>
-	  <description><![CDATA[
-	     <h3>NDK 를 사용하지 않는데</h3>
-
-<ul>
-<li>안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. </li>
-<li>&quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&quot;</li>
-</ul>
-
-<h3>나만의 해결</h3>
-
-<ul>
-<li>그래들 버전 업</li>
-<li>다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.</li>
-<li>&quot;classpath &#39;com.android.tools.build:gradle:3.2.1&#39;&quot;</li>
 </ul>
 
 	  ]]></description>

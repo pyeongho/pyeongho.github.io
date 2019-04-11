@@ -12,6 +12,20 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>루팅 기기에서 원격 ADB</title>
+	  <link>//root_adb</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-04-04T00:00:00+00:00</pubDate>
+	  <guid>//root_adb</guid>
+	  <description><![CDATA[
+	     <h3>루팅 기기에서 ADB 원격 가능하도록 하는 방법</h3>
+
+<p><script src="https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>인증서 피닝, 인증서 고정</title>
 	  <link>//cert_pinning</link>
 	  <author>PyeongHo</author>
@@ -338,53 +352,6 @@
 <script src="https://gist.github.com/pyeongho/7b47e6abfb5f1c8b1ffb03fc5f0d2dcd.js"></script></p></li>
 <li><p>생각보다 괜찮은 방법으로 보임</p></li>
 <li><p>해야할 작업은 많아 지지만 매우 만족 스러움</p></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>kotlin init 사용시 편집기 주의사항</title>
-	  <link>//kotlin_init</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2018-11-20T00:00:00+00:00</pubDate>
-	  <guid>//kotlin_init</guid>
-	  <description><![CDATA[
-	     <h3>kotlin constructor , init</h3>
-
-<ul>
-<li>생성자 사용하면서 사용하는 코틀린 내용입니다.</li>
-<li>참고 <a href="https://kotlinlang.org/docs/reference/classes.html">kotlinlang.org</a></li>
-<li>참고 <a href="https://thdev.tech/kotlin/2017/03/09/Kotlin-Constructor-Init/">꿈많은 개발자가 되자 Kotlin constructor init 이란?</a></li>
-</ul>
-
-<h4>문서의 소중함</h4>
-
-<ul>
-<li><p>The primary constructor cannot contain any code. Initialization code can be placed in initializer blocks, which are prefixed with the init keyword.<br>
-During an instance initialization, the initializer blocks are executed in the same order as they appear in the class body, interleaved with the property initializers:</p></li>
-<li><p>파파고 번역</p>
-
-<ul>
-<li>기본 생성자는 코드를 포함할 수 없습니다. 초기화 코드는 init 키워드가 앞에 붙는 initializer 블록에 배치할 수 있습니다.<br>
-인스턴스 초기화 중에 이니셜라이저 블록은 속성 이니셜라이저와 함께 클래스 본체에 나타나는 것과 동일한 순서로 실행됩니다.(위에서부터 실행 한다.)</li>
-</ul></li>
-</ul>
-
-<h4>다시 한번 확인 하는 이유는 역시나  NullPointerException</h4>
-
-<ul>
-<li>아래 코드를 확인</li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/b5aa08641cdfa05a6ca56f18a4d30d3e.js"></script></p>
-
-<ul>
-<li>편집기에서 에러가 발생 하지 않는게 문제</li>
-<li>열심히 문서 보고 공부 했으면 문제가 없었겠지만  nullPoint -&gt; sb.append(&quot; hahaha&quot;) 에서 에러가 발생 한다.</li>
-<li>순서대로 초기화 하기 때무에 val sb = StringBuilder(name) 하기 전에 사용, 널포인트 </li>
-<li>sb.append(&quot; hahaha&quot;) 를 첫번째 init 블럭에 사용하면 에러 표시를 하지만 함수를 이용하면 나타 나지 않는다.</li>
-<li>문서 확인과 편집기 완벽 하지 않음으로 발생하는 내용으로 잘 알고 있어야 합니다.</li>
 </ul>
 
 	  ]]></description>
