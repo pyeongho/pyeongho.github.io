@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/log_link</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/root_adb</loc>
     </url>
     
@@ -2525,6 +2529,38 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/adb/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android_studio/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android_studio/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/log_link/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/log_link/</loc>
     </url>
     
     

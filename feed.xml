@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>안드로이드 스튜디오 로그에 링크 추가하기</title>
+        
+          <description>&lt;h3&gt;안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;로그출력 기능의 추가&lt;/li&gt;
+&lt;li&gt;로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함 &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 12 Apr 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/log_link</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/log_link</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>루팅 기기에서 원격 ADB</title>
         
           <description>&lt;h3&gt;루팅 기기에서 ADB 원격 가능하도록 하는 방법&lt;/h3&gt;
@@ -15,7 +34,7 @@
 &lt;p&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
         
-        <pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/root_adb</link>
         <guid isPermaLink="true">https://pyeongho.github.io/root_adb</guid>

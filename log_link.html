@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>루팅 기기에서 원격 ADB</title>
+    <title>안드로이드 스튜디오 로그에 링크 추가하기</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,20 +111,20 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">루팅 기기에서 원격 ADB</h1>
+            <h1 class="post-title">안드로이드 스튜디오 로그에 링크 추가하기</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2019-04-11">11 Apr 2019</time>
+            <time class="post-date" datetime="2019-04-12">12 Apr 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/android'>Android</a>,
+                       <a href='/tag/android_studio'>Android_studio</a>,
                        
                 
                     
-                       <a href='/tag/root'>Root</a>,
+                       <a href='/tag/log_link'>Log_link</a>,
                        
                 
                     
@@ -137,9 +137,43 @@
 
         <section class="post-content">
             
-            <h3>루팅 기기에서 ADB 원격 가능하도록 하는 방법</h3>
+            <h3>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h3>
 
-<p><script src="https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js"></script></p>
+<ul>
+<li>로그출력 기능의 추가</li>
+<li>로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함 </li>
+</ul>
+
+<h2>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h2>
+
+<ul>
+<li>아래 코드와 비슷하게 만들어 로그를 사용하고 있습니다. </li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  new Exception().getStackTrace()[0]
+</code></pre></div>
+<ul>
+<li>getFileName(), getLineNumber(), getMethodName() 등을 Log.d 에 출력 해서 사용하고 있습니다.</li>
+<li><p>기존에 작성 했던 내용을 업데이트 할 예정 입니다. 
+<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script></p></li>
+<li><p>element  인텍스 값은 현재 함수, 호출 함수를 찾는 내용</p></li>
+</ul>
+
+<h2>안드로이드 스튜디오 로그 링크 추가 하기</h2>
+
+<ul>
+<li><p>간단하게 아래와 같은 내용으로 로그를 출력하면 마지막에 링크가 걸리는 내용이 있습니다.
+<code>
+Exception().getStackTrace()[0].toString()
+</code></p></li>
+<li><p>문제는 로그 내용이 너무 길어 화면 밖으로 출력되어 불편 </p></li>
+<li><p>찍기 신공, 로그에 링크를 어떻게 줄까?</p></li>
+<li><p>(파일이름:라인)</p></li>
+<li><p>결론은 위와 같은 형태로 출력하면 링크가 걸린다. </p></li>
+<li><p>최종 로그 클래서는 아래와 같습니다.</p></li>
+<li><p>사용법은 log.l() , log.d(&quot;test&quot;) 등등을 이용 하면 링크걸린 내용과 함께 원하는 내용이 출력 </p></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/9033b0d6201bd205214489cdcb4caf11.js"></script></p>
 
 
         </section>
@@ -171,15 +205,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=루팅 기기에서 원격 ADB&amp;url=https://pyeongho.github.ioroot_adb"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 스튜디오 로그에 링크 추가하기&amp;url=https://pyeongho.github.iolog_link"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioroot_adb"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iolog_link"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioroot_adb"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iolog_link"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -217,20 +251,16 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/log_link">
-            <section class="post">
-                <h2>안드로이드 스튜디오 로그에 링크 추가하기</h2>
-                <p>### 안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기 - 로그출력 기능의 추가 - 로그...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/cert_pinning">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/root_adb">
             <section class="post">
-                <h2>인증서 피닝, 인증서 고정</h2>
-                <p>https 사용 시 인증서를 고정 하자 frida를 이용해서 인증서를 변경해서 공격이 가능해 보인다. 보안팀에서 인증서...</p>
+                <h2>루팅 기기에서 원격 ADB</h2>
+                <p>루팅 기기에서 ADB 원격 가능하도록 하는 방법
+
+
+</p>
             </section>
         </a>
     
