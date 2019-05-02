@@ -13,10 +13,10 @@
    
 	<item>
 	  <title>드로이드나이츠 2019 후기</title>
-	  <link>//droid_2919</link>
+	  <link>//droid_2019</link>
 	  <author>PyeongHo</author>
 	  <pubDate>2018-02-24T00:00:00+00:00</pubDate>
-	  <guid>//droid_2919</guid>
+	  <guid>//droid_2019</guid>
 	  <description><![CDATA[
 	     <h3>드로이드 나이츠 2019 후기</h3>
 
@@ -54,7 +54,7 @@
 <ul>
 <li>RxBinding 사용법</li>
 <li>RxBinding 코틀린</li>
-<li>view.Clickes 가능 하다.</li>
+<li>view.Clicks 가능 하다.</li>
 </ul>
 
 <h3>Clean Architecture Revised</h3>
@@ -71,6 +71,12 @@
 </ul>
 
 <h3>코루틴 너 은행에서 뭐하니</h3>
+
+<ul>
+<li>Rx 는 생각보다 거대 하다.</li>
+<li>간단한 비동기 처리를 위해서는 그냥 코루틴으로 충분하다.</li>
+<li>Rx 를 이미 사용하고 있다면 그냥 Rx 사용해도 될듯 하다.</li>
+</ul>
 
 <h3>Dagger Vs Koin</h3>
 
