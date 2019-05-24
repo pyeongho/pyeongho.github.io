@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 스튜디오 로그에 링크 추가하기</title>
+    <title>안드로이드 context</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -111,24 +111,20 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 스튜디오 로그에 링크 추가하기</h1>
+            <h1 class="post-title">안드로이드 context</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2019-04-12">12 Apr 2019</time>
+            <time class="post-date" datetime="2019-05-24">24 May 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/android_studio'>Android_studio</a>,
+                       <a href='/tag/android'>Android</a>,
                        
                 
                     
-                       <a href='/tag/log_link'>Log_link</a>,
-                       
-                
-                    
-                       <a href='/tag/adb'>Adb</a>
+                       <a href='/tag/context'>Context</a>
                        
                 
                 
@@ -137,43 +133,50 @@
 
         <section class="post-content">
             
-            <h3>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h3>
+            <h3>참고</h3>
 
 <ul>
-<li>로그출력 기능의 추가</li>
-<li>로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함 </li>
+<li>참고 글이 원본 입니다. </li>
+<li>공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.</li>
+<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
 </ul>
 
-<h2>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h2>
+<h3>Context</h3>
 
 <ul>
-<li>아래 코드와 비슷하게 만들어 로그를 사용하고 있습니다. </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  new Exception().getStackTrace()[0]
-</code></pre></div>
+<li><p><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">안드로이드 개발자사이트 Context</a>
+```
+Interface to global information about an application environment. 
+This is an abstract class whose implementation is provided by the Android system.
+It allows access to application-specific resources and classes, 
+as well as up-calls for application-level operations such as launching activities, 
+broadcasting and receiving intents, etc.</p>
+
+<p>어플리케이션 환경에 관한 글로벌 정보에 접근하기위한 인터페이스. Abstract 클래스이며 실재 구현은<br>
+안드로이드 시스템에 의해 제공된다. Context를 통해, 어플리케이션에 특화된 리소스나 클래스에 접근할 수 있을뿐 아니라,
+추가적으로 어플리케이션 레벨의 작업. activity 실행, intent 브로드캐스트, intent 수신 등을 한다. 
+```</p></li>
+<li><p>Context 는 크게 두 가지 역할을 수행하는 Abstract 클래스 입니다.</p>
+
 <ul>
-<li>getFileName(), getLineNumber(), getMethodName() 등을 Log.d 에 출력 해서 사용하고 있습니다.</li>
-<li><p>기존에 작성 했던 내용을 업데이트 할 예정 입니다. 
-<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script></p></li>
-<li><p>element  인텍스 값은 현재 함수, 호출 함수를 찾는 내용</p></li>
-</ul>
-
-<h2>안드로이드 스튜디오 로그 링크 추가 하기</h2>
+<li>어플리케이션에 관하여 시스템이 관리하고 있는 정보에 접근하기(getPackageName() 등)<br></li>
+<li>안드로이드 시스템 서비에서 제공하는 API 호출 (startActivity() 등)</li>
+</ul></li>
+<li><p>Context 는 어플리케이션과 관련된 정보에 접근하고자 하거나 어플리케이션과 연관된 시스템 레벨의 함수를 호출하고자 할 때 사용됩니다. 그런데 안드로이드 시스템에서 어플리케이션 정보를 관리하고 있는 것은 시스템이 아닌, ActivityManagerService 라는 일종의 또 다른 어플리케이션입니다. 따라서 다른 일반적은 플랫폼과는 달리, 안드로이드에서는 어플리케이션과 관련된 정보에 접근하고자 할때는 ActivityManagerService 를 통해야만 합니다. 당연히 정보를 얻고자 하는 어플리케이션이 어떤 어플리케이션인지에 관한 키 값도 필요해집니다.</p></li>
+<li><p>Context 역할</p>
 
 <ul>
-<li><p>간단하게 아래와 같은 내용으로 로그를 출력하면 마지막에 링크가 걸리는 내용이 있습니다.
-<code>
-Exception().getStackTrace()[0].toString()
-</code></p></li>
-<li><p>문제는 로그 내용이 너무 길어 화면 밖으로 출력되어 불편 </p></li>
-<li><p>찍기 신공, 로그에 링크를 어떻게 줄까?</p></li>
-<li><p>(파일이름:라인)</p></li>
-<li><p>결론은 위와 같은 형태로 출력하면 링크가 걸린다. </p></li>
-<li><p>최종 로그 클래서는 아래와 같습니다.</p></li>
-<li><p>사용법은 log.l() , log.d(&quot;test&quot;) 등등을 이용 하면 링크걸린 내용과 함께 원하는 내용이 출력 </p></li>
+<li>자신이 어떤 어플리케이션을 나타내고 있는지 알려주는 ID 역할</li>
+<li>ActivityManagerService 에 접근할 수 있도록 하는 통로 역할 </li>
+</ul></li>
+<li><p>Context 를 가지고 다른 시스템 애플리케이션들에게 명령하거나 값을 가지고 온다. </p></li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/9033b0d6201bd205214489cdcb4caf11.js"></script></p>
+<h3>참고</h3>
+
+<ul>
+<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
+</ul>
 
 
         </section>
@@ -205,15 +208,15 @@ Exception().getStackTrace()[0].toString()
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 스튜디오 로그에 링크 추가하기&amp;url=https://pyeongho.github.iolog_link"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 context&amp;url=https://pyeongho.github.iocontext"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iolog_link"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iocontext"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iolog_link"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iocontext"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -251,23 +254,13 @@ Exception().getStackTrace()[0].toString()
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/context">
-            <section class="post">
-                <h2>안드로이드 context</h2>
-                <p>### 참고 - 참고 글이 원본 입니다. - 공부하기 위해서 재 작성한 내용입니다. 원본을 확인해...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/root_adb">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/log_link">
             <section class="post">
-                <h2>루팅 기기에서 원격 ADB</h2>
-                <p>루팅 기기에서 ADB 원격 가능하도록 하는 방법
-
-
-</p>
+                <h2>안드로이드 스튜디오 로그에 링크 추가하기</h2>
+                <p>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기 로그출력 기능의 추가 로그 출력시 파일명과 메소드...</p>
             </section>
         </a>
     

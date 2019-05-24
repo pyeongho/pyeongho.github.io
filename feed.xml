@@ -8,6 +8,26 @@
     
       
       <item>
+        <title>안드로이드 context</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
+&lt;li&gt;공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://arabiannight.tistory.com/entry/272&quot;&gt;안드로이드/Android Context 란?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/context</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/context</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 스튜디오 로그에 링크 추가하기</title>
         
           <description>&lt;h3&gt;안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기&lt;/h3&gt;

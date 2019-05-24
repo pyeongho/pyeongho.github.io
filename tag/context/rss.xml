@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>안드로이드 context</title>
+	  <link>//context</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-05-24T00:00:00+00:00</pubDate>
+	  <guid>//context</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li>참고 글이 원본 입니다. </li>
+<li>공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.</li>
+<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
+</ul>
+
+<h3>Context</h3>
+
+<ul>
+<li><p><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">안드로이드 개발자사이트 Context</a>
+```
+Interface to global information about an application environment. 
+This is an abstract class whose implementation is provided by the Android system.
+It allows access to application-specific resources and classes, 
+as well as up-calls for application-level operations such as launching activities, 
+broadcasting and receiving intents, etc.</p>
+
+<p>어플리케이션 환경에 관한 글로벌 정보에 접근하기위한 인터페이스. Abstract 클래스이며 실재 구현은<br>
+안드로이드 시스템에 의해 제공된다. Context를 통해, 어플리케이션에 특화된 리소스나 클래스에 접근할 수 있을뿐 아니라,
+추가적으로 어플리케이션 레벨의 작업. activity 실행, intent 브로드캐스트, intent 수신 등을 한다. 
+```</p></li>
+<li><p>Context 는 크게 두 가지 역할을 수행하는 Abstract 클래스 입니다.</p>
+
+<ul>
+<li>어플리케이션에 관하여 시스템이 관리하고 있는 정보에 접근하기(getPackageName() 등)<br></li>
+<li>안드로이드 시스템 서비에서 제공하는 API 호출 (startActivity() 등)</li>
+</ul></li>
+<li><p>Context 는 어플리케이션과 관련된 정보에 접근하고자 하거나 어플리케이션과 연관된 시스템 레벨의 함수를 호출하고자 할 때 사용됩니다. 그런데 안드로이드 시스템에서 어플리케이션 정보를 관리하고 있는 것은 시스템이 아닌, ActivityManagerService 라는 일종의 또 다른 어플리케이션입니다. 따라서 다른 일반적은 플랫폼과는 달리, 안드로이드에서는 어플리케이션과 관련된 정보에 접근하고자 할때는 ActivityManagerService 를 통해야만 합니다. 당연히 정보를 얻고자 하는 어플리케이션이 어떤 어플리케이션인지에 관한 키 값도 필요해집니다.</p></li>
+<li><p>Context 역할</p>
+
+<ul>
+<li>자신이 어떤 어플리케이션을 나타내고 있는지 알려주는 ID 역할</li>
+<li>ActivityManagerService 에 접근할 수 있도록 하는 통로 역할 </li>
+</ul></li>
+<li><p>Context 를 가지고 다른 시스템 애플리케이션들에게 명령하거나 값을 가지고 온다. </p></li>
+</ul>
+
+<h3>참고</h3>
+
+<ul>
+<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
