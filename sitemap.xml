@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/basic</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/context</loc>
     </url>
     
@@ -557,6 +561,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/author/pyeongho/page18/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/author/pyeongho/page19/</loc>
     </url>
     
     
@@ -2717,6 +2729,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/page18/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/page19/</loc>
     </url>
     
     
