@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>SOLID 를 공부해 보자</title>
+	  <link>//oop-solid</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-06-25T00:00:00+00:00</pubDate>
+	  <guid>//oop-solid</guid>
+	  <description><![CDATA[
+	     <h3>SOLID</h3>
+
+<ul>
+<li><p>침착하게 습습 후후 </p></li>
+<li><p><a href="https://gmlwjd9405.github.io/2018/07/05/oop-solid.html">참고</a></p></li>
+<li><p>OOP(객체지향 프로그래밍) 설계 원칙 ‘SOLID’를 이해한다.</p>
+
+<ul>
+<li>S: 단일 책임 원칙(SRP)를 이해할 수 있다. </li>
+<li>O: 개방-폐쇄 원칙(OCP)을 이해할 수 있다.</li>
+<li>L: 리스코프 치환 원칙(LSP)을 이해할 수 있다.</li>
+<li>I: 인터페이스 분리 원칙(ISP)을 이해할 수 있다.</li>
+<li>D: 의존 역전 원칙(DIP)을 이해할 수 있다.</li>
+</ul></li>
+<li><p>단일 책임 원칙(SRP, Single Responsibility Principle)</p>
+
+<ul>
+<li>객체는 단 하나의 책임만 가져야 한다.</li>
+</ul></li>
+<li><p>개방-폐쇄의 원칙(OCP, Open Closed Principle)</p>
+
+<ul>
+<li>기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다.</li>
+<li>클래스를 변경하지 않고도 대상 클래스의 환경을 변경할 수 있는 설계가 되어야 한다.</li>
+</ul></li>
+<li><p>리스코프 치환 원칙(LSP, Liskov Substitution Principle)</p>
+
+<ul>
+<li>일반화 관계에 대한 이야기며, 자식 클래스는 최소한 자신의 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다.</li>
+<li>LSP는 부모 클래스와 자식 클래스 사이의 행위가 일관성이 있어야 한다는 의미다. 즉, LSP를 만족하면 프로그램에서 부모 클래스의 인스턴스 대신에 자식 클래스의 인스턴스로 대체해도 프로그램의 의미는 변화되지 않는다.</li>
+<li>일반화 관계
+
+<ul>
+<li>“is a kind of” 의 관계</li>
+<li>예를 들어, 원숭이 is a kind of 포유류</li>
+<li>포유류(부모 클래스), 원숭이(자식 클래스)</li>
+</ul></li>
+<li>LSP를 만족시키는 간단한 방법은 재정의하지 않는 것이다. 즉, 부모 클래스에서 상속받은 메서드들이 자식 클래스에 오버라이드, 즉 재정의되지 않도록 하면 된다.</li>
+</ul></li>
+<li><p>인터페이스 분리 원칙(ISP, Interface Segregation Principle)</p>
+
+<ul>
+<li>인터페이스를 클라이언트에 특화되도록 분리시키라는 설계 원칙이다.</li>
+<li>클라이언트 자신이 이용하지 않는 기능에는 영향을 받지 않아야 한다.</li>
+</ul></li>
+<li><p>의존 역전 원칙(DIP, Dependency Inversion Principle)</p>
+
+<ul>
+<li>의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것.</li>
+</ul></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
