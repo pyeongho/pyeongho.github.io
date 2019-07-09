@@ -8,6 +8,25 @@
     
       
       <item>
+        <title>redux</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://voidsatisfaction.github.io/2017/02/24/what-is-redux/&quot;&gt;리덕스(Redux)란 무엇인가?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/redux</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/redux</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>SOLID 를 공부해 보자</title>
         
           <description>&lt;h3&gt;SOLID&lt;/h3&gt;
@@ -83,7 +102,7 @@
 &lt;/ul&gt;
 </description>
         
-        <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/basic</link>
         <guid isPermaLink="true">https://pyeongho.github.io/basic</guid>
