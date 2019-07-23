@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>PyeongHo Factory</title>
+    <title>redux 공부 중</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="tag-template nav-closed">
+<body class="home-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -90,98 +90,34 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
+        <!-- < default -->
 
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
 
-<!-- < default}} -->
-<!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
 
-<!-- If we have a tag cover, display that - else blog cover - else nothing -->
-<header class="main-header tag-head " style="background-image: url(/assets/images/cover2.jpg) ">
-    <nav class="main-nav overlay clearfix">
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         
     </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Redux</h1>
-            <h2 class="page-description">
-            
-			    A 2-post collection
-            
-            </h2>
-        </div>
-    </div>
 </header>
 
-<!-- The main content area on the homepage -->
-<main id="content" class="content" role="main">
+<main class="content" role="main">
 
-    <!-- The tag below includes the post loop - partials/loop.hbs -->
-        <!-- Previous/next page links - only displayed on page 2+ -->
-    <div class="extra-pagination inner">
-        
-            <nav class="pagination" role="pagination">
-    
-    <span class="page-number"> Page 1 of 1 </span>
-     
-</nav>
-        
-    </div>
+    <article class="post tag-android">
 
-    <!-- This is the post loop - each post will be output using this markup -->
-    
-    <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/redux_study">redux 공부 중</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>참고
-
-
-참고 글이 원본 입니다. 
-샘플 공부
-샘플 코드
-참고라이브러리
-
- <a class="read-more" href="/redux_study">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/redux'>Redux</a>
-                       
-                
-            
+            <h1 class="post-title">redux 공부 중</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>PyeongHo</a> -->
             <time class="post-date" datetime="2019-07-12">12 Jul 2019</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/redux">redux</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>참고 참고 글이 원본 입니다. 리덕스(Redux)란 무엇인가? 리덕스 안드로이드용 공식 리덕스는 아니지만 리덕스의 기본적인 개념을 알고 일ㄹ 리덕스는 어플리케이션의 클라이언트쪽 state를 관리하기 위한 거대한 이벤트 루프이다.... <a class="read-more" href="/redux">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
+                <!-- [[tags prefix=" on "]] -->
+                 
                 on 
                 
                     
@@ -192,23 +128,119 @@
                        <a href='/tag/redux'>Redux</a>
                        
                 
+                
+            </section>
+        </header>
+
+        <section class="post-content">
             
-            <time class="post-date" datetime="2019-07-09">09 Jul 2019</time>
+            <h3>참고</h3>
+
+<ul>
+<li>참고 글이 원본 입니다. </li>
+<li><a href="https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd">샘플 공부</a></li>
+<li><a href="https://github.com/Urotea/AndroidBoilerplate">샘플 코드</a></li>
+<li><a href="https://github.com/freeletics/RxRedux">참고라이브러리</a></li>
+</ul>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/PyeongHo" style="background-image: url(/assets/images/casper.png)"><span class="hidden">'s Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/PyeongHo">PyeongHo</a></h4>
+                
+                
+                    <p> 즐겁게 또 즐겁게</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location">  KOREA</span> 
+                    <span class="author-link icon-link"><a href="https://pyeongho.github.io"> pyeongho.github.io</a></span> 
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=redux 공부 중&amp;url=https://pyeongho.github.ioredux_study"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioredux_study"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioredux_study"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+            
+            <!-- Add Disqus Comments -->
+            
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = '//pyeongho-factory.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
         </footer>
+
     </article>
-    
-
-    <!-- Previous/next page links - displayed on every page -->
-    
-        <nav class="pagination" role="pagination">
-    
-    <span class="page-number"> Page 1 of 1 </span>
-     
-</nav>
-    
-
 
 </main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/r8_error">
+            <section class="post">
+                <h2>R8 NullPointerException</h2>
+                <p>### 참고 - [https://github.com/square/okhttp/issues/4604](https://github.com/square/okhttp/issues/4604) ### 그래들 수정후 성공 - okhttp 와 문제가 발생하는걸로 보입니다. -...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/redux">
+            <section class="post">
+                <h2>redux</h2>
+                <p>참고 참고 글이 원본 입니다. 리덕스(Redux)란 무엇인가? 리덕스 안드로이드용 공식 리덕스는 아니지만 리덕스의 기본적인 개념을...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2019</section>

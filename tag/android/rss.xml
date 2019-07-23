@@ -12,6 +12,139 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>R8 NullPointerException</title>
+	  <link>//r8_error</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-07-12T00:00:00+00:00</pubDate>
+	  <guid>//r8_error</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://github.com/square/okhttp/issues/4604">https://github.com/square/okhttp/issues/4604</a></li>
+</ul>
+
+<h3>그래들 수정후 성공</h3>
+
+<ul>
+<li>okhttp 와 문제가 발생하는걸로 보입니다.</li>
+<li>아래와 같은 내용을 그래들에 추가 하여 해결하였습니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang=""> buildscript {
+     ...
+     repositories {
+         ...
+         maven {
+             url 'http://storage.googleapis.com/r8-releases/raw'
+         }
+     }
+
+     dependencies {
+         classpath 'com.android.tools:r8:1.5.50'  // Must be before the Gradle Plugin for Android.
+         classpath 'com.android.tools.build:gradle:3.3.1'  // You don't need to upgrade this to use a newer R8 version.
+         ...
+      }
+ }
+
+
+</code></pre></div>
+<h3>에러 내용</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:transformClassesAndResourcesWithR8ForDebug'.
+    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:103)
+    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:73)
+    at org.gradle.api.internal.tasks.execution.OutputDirectoryCreatingTaskExecuter.execute(OutputDirectoryCreatingTaskExecuter.java:51)
+    at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:59)
+    at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute(ResolveTaskOutputCachingStateExecuter.java:54)
+    at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:59)
+    at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:101)
+    at org.gradle.api.internal.tasks.execution.FinalizeInputFilePropertiesTaskExecuter.execute(FinalizeInputFilePropertiesTaskExecuter.java:44)
+    at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:91)
+    at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute(ResolveTaskArtifactStateTaskExecuter.java:62)
+    at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:59)
+    at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:54)
+    at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+    at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:34)
+    at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker$1.run(DefaultTaskGraphExecuter.java:256)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:336)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:328)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:199)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:110)
+    at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:249)
+    at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:238)
+    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.processTask(DefaultTaskPlanExecutor.java:123)
+    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.access$200(DefaultTaskPlanExecutor.java:79)
+    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$1.execute(DefaultTaskPlanExecutor.java:104)
+    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$1.execute(DefaultTaskPlanExecutor.java:98)
+    at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.execute(DefaultTaskExecutionPlan.java:663)
+    at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.executeWithTask(DefaultTaskExecutionPlan.java:597)
+    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.run(DefaultTaskPlanExecutor.java:98)
+    at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+    at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+    at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+    at com.android.tools.r8.shaking.Enqueuer.transitionDefaultMethodsForInstantiatedClass(Enqueuer.java:744)
+    at com.android.tools.r8.shaking.Enqueuer.transitionDefaultMethodsForInstantiatedClass(Enqueuer.java:745)
+    at com.android.tools.r8.shaking.Enqueuer.transitionMethodsForInstantiatedClass(Enqueuer.java:730)
+    at com.android.tools.r8.shaking.Enqueuer.processNewlyInstantiatedClass(Enqueuer.java:674)
+    at com.android.tools.r8.shaking.Enqueuer.trace(Enqueuer.java:1091)
+    at com.android.tools.r8.shaking.Enqueuer.traceApplication(Enqueuer.java:1074)
+    at com.android.tools.r8.R8.run(R8.java:286)
+    at com.android.tools.r8.R8.run(R8.java:228)
+    at com.android.tools.r8.R8.lambda$run$0(R8.java:133)
+    at com.android.tools.r8.utils.ExceptionUtils.withCompilationHandler(ExceptionUtils.java:55)
+    at com.android.tools.r8.utils.ExceptionUtils.withR8CompilationHandler(ExceptionUtils.java:48)
+    at com.android.tools.r8.R8.run(R8.java:129)
+    at com.android.builder.dexing.R8Tool.runR8(r8Tool.kt:145)
+    at com.android.build.gradle.internal.transforms.R8Transform.transform(R8Transform.kt:202)
+    at com.android.build.gradle.internal.pipeline.TransformTask$2.call(TransformTask.java:239)
+    at com.android.build.gradle.internal.pipeline.TransformTask$2.call(TransformTask.java:235)
+    at com.android.builder.profile.ThreadRecorder.record(ThreadRecorder.java:102)
+    at com.android.build.gradle.internal.pipeline.TransformTask.transform(TransformTask.java:230)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:73)
+    at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:50)
+    at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:39)
+    at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:26)
+    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$1.run(ExecuteActionsTaskExecuter.java:124)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:336)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:328)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:199)
+    at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:110)
+    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:113)
+    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:95)
+    ... 33 more
+
+
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>redux 공부 중</title>
+	  <link>//redux_study</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-07-12T00:00:00+00:00</pubDate>
+	  <guid>//redux_study</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li>참고 글이 원본 입니다. </li>
+<li><a href="https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd">샘플 공부</a></li>
+<li><a href="https://github.com/Urotea/AndroidBoilerplate">샘플 코드</a></li>
+<li><a href="https://github.com/freeletics/RxRedux">참고라이브러리</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>redux</title>
 	  <link>//redux</link>
 	  <author>PyeongHo</author>
@@ -415,52 +548,6 @@
 <h3>zxing QR 코드 코드만</h3>
 
 <script src="https://gist.github.com/pyeongho/140951225375239ed0567b60ca55e112.js"></script>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 나인패치 그림자 만들어 주는 사이트</title>
-	  <link>//nine_shadow_link</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-01-09T00:00:00+00:00</pubDate>
-	  <guid>//nine_shadow_link</guid>
-	  <description><![CDATA[
-	     <h3>그림자를 빠르게 만들기위한 사이트 링크</h3>
-
-<ul>
-<li>라운드</li>
-<li>그림자 색상</li>
-<li>블러 사이즈</li>
-<li>위치 오프셋 등 원하는대로 금방 만들수 있어요</li>
-<li><a href="http://inloop.github.io/shadow4android/">그림자만들기</a></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 UI 모음</title>
-	  <link>//collect_ui_link</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-01-07T00:00:00+00:00</pubDate>
-	  <guid>//collect_ui_link</guid>
-	  <description><![CDATA[
-	     <h3>디자이너가 원하는 라이브러리를 찾아보자</h3>
-
-<ul>
-<li>앱을 만들다 보면 커스텀 UI 가 필요한 경우가 너무 많다.</li>
-<li>시간이 있는것도 아니고 시간이 있어도 기존에 나온것 보다 잘 만들기 어려우니</li>
-<li>디자이너가 원하는 라이브러리를 찾아서 라이브러를 커스텀 해서 사용하자</li>
-</ul>
-
-<h3>링크 모음</h3>
-
-<ul>
-<li>GIF로 기본적인 동작이 잘 나와 있으니 보면서 필요 한걸 찾아서 사용 하면 좋다.</li>
-<li><a href="https://github.com/wasabeef/awesome-android-ui">안드로이드  UI 모음 1</a></li>
-<li><a href="https://www.ctolib.com/topics-113375.html">안드로이드  UI 모음 2</a></li>
-</ul>
 
 	  ]]></description>
 	</item>

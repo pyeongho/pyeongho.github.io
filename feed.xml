@@ -8,6 +8,71 @@
     
       
       <item>
+        <title>R8 NullPointerException</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/square/okhttp/issues/4604&quot;&gt;https://github.com/square/okhttp/issues/4604&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;그래들 수정후 성공&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;okhttp 와 문제가 발생하는걸로 보입니다.&lt;/li&gt;
+&lt;li&gt;아래와 같은 내용을 그래들에 추가 하여 해결하였습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt; buildscript {
+     ...
+     repositories {
+         ...
+         maven {
+             url &#39;http://storage.googleapis.com/r8-releases/raw&#39;
+         }
+     }
+
+     dependencies {
+         classpath &#39;com.android.tools:r8:1.5.50&#39;  // Must be before the Gradle Plugin for Android.
+         classpath &#39;com.android.tools.build:gradle:3.3.1&#39;  // You don&#39;t need to upgrade this to use a newer R8 version.
+         ...
+      }
+ }
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;에러 내용&lt;/h3&gt;
+</description>
+        
+        <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/r8_error</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/r8_error</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>redux 공부 중</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd&quot;&gt;샘플 공부&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Urotea/AndroidBoilerplate&quot;&gt;샘플 코드&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/freeletics/RxRedux&quot;&gt;참고라이브러리&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/redux_study</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/redux_study</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>redux</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;

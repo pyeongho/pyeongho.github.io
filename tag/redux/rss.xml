@@ -12,6 +12,25 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>redux 공부 중</title>
+	  <link>//redux_study</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-07-12T00:00:00+00:00</pubDate>
+	  <guid>//redux_study</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li>참고 글이 원본 입니다. </li>
+<li><a href="https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd">샘플 공부</a></li>
+<li><a href="https://github.com/Urotea/AndroidBoilerplate">샘플 코드</a></li>
+<li><a href="https://github.com/freeletics/RxRedux">참고라이브러리</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>redux</title>
 	  <link>//redux</link>
 	  <author>PyeongHo</author>

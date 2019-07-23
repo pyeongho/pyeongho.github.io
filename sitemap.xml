@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/r8_error</loc>
+    </url>
+    
+    <url>
+        <loc>https://pyeongho.github.io/redux_study</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/redux</loc>
     </url>
     
@@ -849,6 +857,14 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/android/page11/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android/page12/</loc>
     </url>
     
     
@@ -2641,6 +2657,22 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/redux/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/r8_error/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/r8_error/</loc>
     </url>
     
     
