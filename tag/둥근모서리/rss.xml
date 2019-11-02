@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>round rect 마스크</title>
+	  <link>//round_rect_mask</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-10-17T00:00:00+00:00</pubDate>
+	  <guid>//round_rect_mask</guid>
+	  <description><![CDATA[
+	     <h3>안쪽이 둥근 모서리</h3>
+
+<ul>
+<li>둥근 모서리로 특정 뷰를 보여 줘야 할때</li>
+<li>안쪽에 차트나 이미지가 있고 외부에서 마스킹 할때?!</li>
+<li>편한 방법은 나인패치로 작업 하셔도 됩니다.</li>
+<li>아래 리소스 처럼 하면 가운데가 뻥 뚫린 레이어를 만들 수 있습니다.</li>
+<li>색상은 이해되기 쉽게 빨간색과 검정색을 사용 했습니다.</li>
+<li>색상을 같은 색으로 하면 마스킹은 가능 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;layer-list</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span>
+        <span class="na">android:bottom=</span><span class="s">"-20dp"</span>
+        <span class="na">android:left=</span><span class="s">"-20dp"</span>
+        <span class="na">android:right=</span><span class="s">"-20dp"</span>
+        <span class="na">android:top=</span><span class="s">"-20dp"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;shape</span> <span class="na">android:shape=</span><span class="s">"rectangle"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;stroke</span>
+                <span class="na">android:width=</span><span class="s">"37dp"</span>
+                <span class="na">android:color=</span><span class="s">"#ff0000"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;corners</span> <span class="na">android:radius=</span><span class="s">"10dp"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/shape&gt;</span>
+    <span class="nt">&lt;/item&gt;</span>
+
+
+    <span class="nt">&lt;item</span> <span class="na">android:bottom=</span><span class="s">"6dp"</span>
+        <span class="na">android:left=</span><span class="s">"6dp"</span>
+        <span class="na">android:right=</span><span class="s">"6dp"</span>
+        <span class="na">android:top=</span><span class="s">"6dp"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;shape</span> <span class="na">android:shape=</span><span class="s">"rectangle"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;stroke</span>
+                <span class="na">android:width=</span><span class="s">"12dp"</span>
+                <span class="na">android:color=</span><span class="s">"#000000"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;corners</span> <span class="na">android:radius=</span><span class="s">"10dp"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/shape&gt;</span>
+    <span class="nt">&lt;/item&gt;</span>
+
+<span class="nt">&lt;/layer-list&gt;</span>
+
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

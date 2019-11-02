@@ -8,6 +8,66 @@
     
       
       <item>
+        <title>round rect 마스크</title>
+        
+          <description>&lt;h3&gt;안쪽이 둥근 모서리&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;둥근 모서리로 특정 뷰를 보여 줘야 할때&lt;/li&gt;
+&lt;li&gt;안쪽에 차트나 이미지가 있고 외부에서 마스킹 할때?!&lt;/li&gt;
+&lt;li&gt;편한 방법은 나인패치로 작업 하셔도 됩니다.&lt;/li&gt;
+&lt;li&gt;아래 리소스 처럼 하면 가운데가 뻥 뚫린 레이어를 만들 수 있습니다.&lt;/li&gt;
+&lt;li&gt;색상은 이해되기 쉽게 빨간색과 검정색을 사용 했습니다.&lt;/li&gt;
+&lt;li&gt;색상을 같은 색으로 하면 마스킹은 가능 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/round_rect_mask</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/round_rect_mask</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>fragmentTransaction 사용 관련</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/&quot;&gt;https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=zoomen1004&amp;amp;logNo=220198317501&amp;amp;targetKeyword=&amp;amp;targetRecommendationCode=1&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;commit vs commitAllowingStateLoss&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;commit vs commitAllowingStateLoss&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fragment 실행은 commit 호출 이후, 하지만 commit는 ListCycle상 onSaveInstanceState()가 호출 되기 전에 수행되어야함 , 이를 어길 시 에러 발생 &lt;/li&gt;
+&lt;li&gt;onSaveInstanceState 이후 수행가능한 상황에서만 commit 사용&lt;/li&gt;
+&lt;li&gt;onSaveInstanceState 무관하게 동작 시키기 위해서는 commitAllowingStateLoss 를 사용하자&lt;/li&gt;
+&lt;li&gt;에러 발생이 무섭다면 commitAllowingStateLoss 사용을 추천 &lt;/li&gt;
+&lt;li&gt;에러 : java.lang.IllegalStateException:  Can not perform this action after onSaveInstanceState&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;commit vs commitNow&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;commitNow()라는 메소드 이름 그대로이지만 동기적으로 트랜잭션 처리를 해주는 것 같습니다. &lt;/li&gt;
+&lt;li&gt;자세한 내용은 참고 사이트에서 확인 가능합니다.&lt;/li&gt;
+&lt;li&gt;요약은 조금더 편리 commitNow()&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/commit</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/commit</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>R8 NullPointerException</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;
@@ -43,7 +103,7 @@
 &lt;h3&gt;에러 내용&lt;/h3&gt;
 </description>
         
-        <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/r8_error</link>
         <guid isPermaLink="true">https://pyeongho.github.io/r8_error</guid>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>fragmentTransaction 사용 관련</title>
+	  <link>//commit</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-10-10T00:00:00+00:00</pubDate>
+	  <guid>//commit</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/">https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/</a></li>
+<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=zoomen1004&amp;logNo=220198317501&amp;targetKeyword=&amp;targetRecommendationCode=1&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">commit vs commitAllowingStateLoss</a></li>
+</ul>
+
+<h3>commit vs commitAllowingStateLoss</h3>
+
+<ul>
+<li>Fragment 실행은 commit 호출 이후, 하지만 commit는 ListCycle상 onSaveInstanceState()가 호출 되기 전에 수행되어야함 , 이를 어길 시 에러 발생 </li>
+<li>onSaveInstanceState 이후 수행가능한 상황에서만 commit 사용</li>
+<li>onSaveInstanceState 무관하게 동작 시키기 위해서는 commitAllowingStateLoss 를 사용하자</li>
+<li>에러 발생이 무섭다면 commitAllowingStateLoss 사용을 추천 </li>
+<li>에러 : java.lang.IllegalStateException:  Can not perform this action after onSaveInstanceState</li>
+</ul>
+
+<h3>commit vs commitNow</h3>
+
+<ul>
+<li>commitNow()라는 메소드 이름 그대로이지만 동기적으로 트랜잭션 처리를 해주는 것 같습니다. </li>
+<li>자세한 내용은 참고 사이트에서 확인 가능합니다.</li>
+<li>요약은 조금더 편리 commitNow()</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -3,7 +3,7 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: ruby:2.4.0
+image: ruby:2.6.0
 
 pipelines:  
   default:
@@ -15,7 +15,7 @@ pipelines:
           - bundle install
           - rm -rf .git
           - git clone https://pyeongho:$SITE_A@github.com/pyeongho/pyeongho.github.io.git _site
-          - jekyll build --incremental
+          - bundle exec jekyll build --incremental
           - cd _site
           - git add . && git commit -m "New version - $BITBUCKET_COMMIT"
           - git push origin master
