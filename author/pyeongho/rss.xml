@@ -69,7 +69,7 @@
 	  <title>단색 bmp 생성</title>
 	  <link>//monobmp</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-10-17T00:00:00+00:00</pubDate>
+	  <pubDate>2019-11-27T00:00:00+00:00</pubDate>
 	  <guid>//monobmp</guid>
 	  <description><![CDATA[
 	     <h3>단색 BMP 생성</h3>
@@ -185,6 +185,78 @@
         arrayOfByte[61] = 0 
 
 </code></pre></div>
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>android headup notification</title>
+	  <link>//headup</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-10-27T00:00:00+00:00</pubDate>
+	  <guid>//headup</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://codechacha.com/ko/notifications-in-android/">안드로이드의 다양한 Notification 종류와 구현 방법</a></li>
+<li><a href="https://github.com/codechacha/notifications-with-styles">샘플</a></li>
+</ul>
+
+<h3>푸시 채널 이야기</h3>
+
+<ul>
+<li>P 버전 이상에서는 채널을 추가해야 노티피케이션을 사용 할 수 있습니다.</li>
+</ul>
+
+<h3>headup  notification 매우 강조 되는 표시</h3>
+
+<ul>
+<li>문자등이 올때 상태바에서 뚝 떨어지는 노티피케이션 입니다.</li>
+</ul>
+
+<h3>Head Up Notifiation</h3>
+
+<ul>
+<li>Head up Notification은 전면에 노티가 뜨는 것을 말합니다. 사용자가 Statusbar를 내려서 확인하지 않아도 바로 화면에 뜨기 때문에 쉽게 눈에 띕니다. 전화와 같은 중요한 작업을 알릴 때 이런 노티를 적용하면 좋을 것 같습니다. 중요하지 않은데 사용된다면 사용자가 이 앱이 거슬리다고 생각할 수 있습니다.<br>
+아래 화면은 Head up notification입니다. 예제는 기본 노티에 적용하였지만 모든 스타일의 노티에 적용할 수 있습니다. </li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/341435dcb47b87b81026f3afd00434ea.js"></script></p>
+
+<ul>
+<li>1. 채널을 만들 때 중요도를 IMPORTANCE_HIGH로 설정해야 합니다.</li>
+<li>2. PendingIntent를 만듭니다. Builder에 fullScreenPendingIntent를 등록하기 때문에 변수 이름을 fullScreenPendingIntent라고 했습니다.</li>
+<li>3. Builder의 priority를 PRIORITY_HIGH로 설정해야 합니다.</li>
+<li>4. fullScreenPendingIntent를 등록합니다.</li>
+<li>그리고 가장 중요한 것은 앱의 AndroidManifest.xml에 다음 퍼미션을 꼭 추가해야 합니다. Install 퍼미션이기 때문에 설치만 하면 바로 권한을 받습니다.
+
+<ul>
+<li> <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/></li>
+<li>Head up notification은 채널의 중요도를 IMPORTANCE<em>HIGH, 노티의 중요도를 PRIORITY</em>HIGH로 설정해야 합니다. 그리고 fullScreenIntent를 추가해야 합니다. 마지막으로 가장 중요한 것은 Q부터 USE<em>FULL</em>SCREEN_INTENT 권한이 없으면 Head up 노티를 띄울 수 없기 때문에 꼭 추가해줘야 합니다.</li>
+</ul></li>
+</ul>
+
+<h3>문제점</h3>
+
+<ul>
+<li>포그라운드 푸시 에서는 위 코드를 적용해서 헤드업 노티피케이션을 만들수 있습니다.</li>
+<li>background 에서는 onMessageReceived 에서 작업하는 내용이 동작하지 않아서 head-up notification 동작을 고민하고 찾아 보았습니다.</li>
+<li>결론은 푸시전송시 아래와 같은 형태로 하여 보내고 있습니다. </li>
+<li>아래와 같은 형태는 포그라운드 상태에서 onMessageReceived 메소드를 이용하여 원하는 작업이 가능합니다.</li>
+<li>백그라운드 상태에서는 priority : high 를 추가해도 head-up 은 동작 하지 않았습니다.</li>
+<li>동작 안할때는 역시 옛날 방식 notification 필드 자체를 제거해서 하면 onMessageReceived 에서 head up 이 동작 가능합니다.</li>
+<li>꼭 필요한 경우 예날 방식 처림 notification 없는 버전으로 작업 해야 할거 같습니다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"토큰"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"notification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 	  ]]></description>
 	</item>
 
@@ -601,62 +673,6 @@ Caused by: java.lang.NullPointerException
 <li>메모리가 부족해 진다면, Service 가 작동중인 프로세스 또한 강제로 종료</li>
 <li>Service 는 안드로이드 시스템에 미리 자신을 &#39;Foreground&#39; 상태로 간주해 달라고 이야기할 수도 있습니다. 이것은, &quot;나를 죽이지 마세요&quot; 라는 뜻인데, 이 경우 해당 Service 는 사용자에게 자신이 현재 작동중임을 Notification (안드로이드 화면 상단의 상태바) 을 통해 표시해 주어야 합니다</li>
 </ul></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 context</title>
-	  <link>//context</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-05-24T00:00:00+00:00</pubDate>
-	  <guid>//context</guid>
-	  <description><![CDATA[
-	     <h3>참고</h3>
-
-<ul>
-<li>참고 글이 원본 입니다. </li>
-<li>공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.</li>
-<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
-</ul>
-
-<h3>Context</h3>
-
-<ul>
-<li> <a href="https://developer.android.com/reference/kotlin/android/content/Context.html">안드로이드 개발자사이트 Context</a></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    Interface to global information about an application environment. 
-    This is an abstract class whose implementation is provided by the Android system.
-    It allows access to application-specific resources and classes, 
-    as well as up-calls for application-level operations such as launching activities, 
-    broadcasting and receiving intents, etc.
-
-    어플리케이션 환경에 관한 글로벌 정보에 접근하기위한 인터페이스. Abstract 클래스이며 실재 구현은  
-    안드로이드 시스템에 의해 제공된다. Context를 통해, 어플리케이션에 특화된 리소스나 클래스에 접근할 수 있을뿐 아니라,
-    추가적으로 어플리케이션 레벨의 작업. activity 실행, intent 브로드캐스트, intent 수신 등을 한다. 
-</code></pre></div>
-<ul>
-<li><p>Context 는 크게 두 가지 역할을 수행하는 Abstract 클래스 입니다.</p>
-
-<ul>
-<li>어플리케이션에 관하여 시스템이 관리하고 있는 정보에 접근하기(getPackageName() 등)<br></li>
-<li>안드로이드 시스템 서비에서 제공하는 API 호출 (startActivity() 등)</li>
-</ul></li>
-<li><p>Context 는 어플리케이션과 관련된 정보에 접근하고자 하거나 어플리케이션과 연관된 시스템 레벨의 함수를 호출하고자 할 때 사용됩니다. 그런데 안드로이드 시스템에서 어플리케이션 정보를 관리하고 있는 것은 시스템이 아닌, ActivityManagerService 라는 일종의 또 다른 어플리케이션입니다. 따라서 다른 일반적은 플랫폼과는 달리, 안드로이드에서는 어플리케이션과 관련된 정보에 접근하고자 할때는 ActivityManagerService 를 통해야만 합니다. 당연히 정보를 얻고자 하는 어플리케이션이 어떤 어플리케이션인지에 관한 키 값도 필요해집니다.</p></li>
-<li><p>Context 역할</p>
-
-<ul>
-<li>자신이 어떤 어플리케이션을 나타내고 있는지 알려주는 ID 역할</li>
-<li>ActivityManagerService 에 접근할 수 있도록 하는 통로 역할 </li>
-</ul></li>
-<li><p>Context 를 가지고 다른 시스템 애플리케이션들에게 명령하거나 값을 가지고 온다. </p></li>
-</ul>
-
-<h3>참고</h3>
-
-<ul>
-<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
 </ul>
 
 	  ]]></description>

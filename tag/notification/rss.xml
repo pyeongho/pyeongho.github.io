@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>android headup notification</title>
+	  <link>//headup</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-10-27T00:00:00+00:00</pubDate>
+	  <guid>//headup</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://codechacha.com/ko/notifications-in-android/">안드로이드의 다양한 Notification 종류와 구현 방법</a></li>
+<li><a href="https://github.com/codechacha/notifications-with-styles">샘플</a></li>
+</ul>
+
+<h3>푸시 채널 이야기</h3>
+
+<ul>
+<li>P 버전 이상에서는 채널을 추가해야 노티피케이션을 사용 할 수 있습니다.</li>
+</ul>
+
+<h3>headup  notification 매우 강조 되는 표시</h3>
+
+<ul>
+<li>문자등이 올때 상태바에서 뚝 떨어지는 노티피케이션 입니다.</li>
+</ul>
+
+<h3>Head Up Notifiation</h3>
+
+<ul>
+<li>Head up Notification은 전면에 노티가 뜨는 것을 말합니다. 사용자가 Statusbar를 내려서 확인하지 않아도 바로 화면에 뜨기 때문에 쉽게 눈에 띕니다. 전화와 같은 중요한 작업을 알릴 때 이런 노티를 적용하면 좋을 것 같습니다. 중요하지 않은데 사용된다면 사용자가 이 앱이 거슬리다고 생각할 수 있습니다.<br>
+아래 화면은 Head up notification입니다. 예제는 기본 노티에 적용하였지만 모든 스타일의 노티에 적용할 수 있습니다. </li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/341435dcb47b87b81026f3afd00434ea.js"></script></p>
+
+<ul>
+<li>1. 채널을 만들 때 중요도를 IMPORTANCE_HIGH로 설정해야 합니다.</li>
+<li>2. PendingIntent를 만듭니다. Builder에 fullScreenPendingIntent를 등록하기 때문에 변수 이름을 fullScreenPendingIntent라고 했습니다.</li>
+<li>3. Builder의 priority를 PRIORITY_HIGH로 설정해야 합니다.</li>
+<li>4. fullScreenPendingIntent를 등록합니다.</li>
+<li>그리고 가장 중요한 것은 앱의 AndroidManifest.xml에 다음 퍼미션을 꼭 추가해야 합니다. Install 퍼미션이기 때문에 설치만 하면 바로 권한을 받습니다.
+
+<ul>
+<li> <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/></li>
+<li>Head up notification은 채널의 중요도를 IMPORTANCE<em>HIGH, 노티의 중요도를 PRIORITY</em>HIGH로 설정해야 합니다. 그리고 fullScreenIntent를 추가해야 합니다. 마지막으로 가장 중요한 것은 Q부터 USE<em>FULL</em>SCREEN_INTENT 권한이 없으면 Head up 노티를 띄울 수 없기 때문에 꼭 추가해줘야 합니다.</li>
+</ul></li>
+</ul>
+
+<h3>문제점</h3>
+
+<ul>
+<li>포그라운드 푸시 에서는 위 코드를 적용해서 헤드업 노티피케이션을 만들수 있습니다.</li>
+<li>background 에서는 onMessageReceived 에서 작업하는 내용이 동작하지 않아서 head-up notification 동작을 고민하고 찾아 보았습니다.</li>
+<li>결론은 푸시전송시 아래와 같은 형태로 하여 보내고 있습니다. </li>
+<li>아래와 같은 형태는 포그라운드 상태에서 onMessageReceived 메소드를 이용하여 원하는 작업이 가능합니다.</li>
+<li>백그라운드 상태에서는 priority : high 를 추가해도 head-up 은 동작 하지 않았습니다.</li>
+<li>동작 안할때는 역시 옛날 방식 notification 필드 자체를 제거해서 하면 onMessageReceived 에서 head up 이 동작 가능합니다.</li>
+<li>꼭 필요한 경우 예날 방식 처림 notification 없는 버전으로 작업 해야 할거 같습니다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"토큰"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"notification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -10,6 +10,10 @@
     </url>
     
     <url>
+        <loc>https://pyeongho.github.io/headup</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/round_rect_mask</loc>
     </url>
     
@@ -2593,6 +2597,38 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/%EB%91%A5%EA%B7%BC%EB%AA%A8%EC%84%9C%EB%A6%AC/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/headup/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/headup/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/notification/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/notification/</loc>
     </url>
     
     
