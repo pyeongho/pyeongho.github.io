@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="home-template nav-closed">
+<body class="tag-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -68,7 +68,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
         <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
@@ -90,12 +90,14 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default -->
+        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
+
+
+<!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- The big featured header  -->
-<header class="main-header "
-        style="background-image: url(/assets/images/cover1.jpg) ">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="background-image: url(/assets/images/cover2.jpg) ">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
         
@@ -104,11 +106,14 @@
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">PyeongHo Factory</h1>
-            <h2 class="page-description">즐거운 공장</h2>
+            <h1 class="page-title">Bmp</h1>
+            <h2 class="page-description">
+            
+			    A 1-post collection
+            
+            </h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
 <!-- The main content area on the homepage -->
@@ -120,47 +125,13 @@
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 20 </span>
-     
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
         
     </div>
 
     <!-- This is the post loop - each post will be output using this markup -->
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/ssl">intellij 계열 인증서 오류 수정</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>참고 intellij Server Certificates 문제 안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제 아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)... <a class="read-more" href="/ssl">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/sslerror'>Sslerror</a>,
-                       
-                
-                    
-                       <a href='/tag/intellij'>Intellij</a>,
-                       
-                
-                    
-                       <a href='/tag/ServerCertificates'>Servercertificates</a>
-                       
-                
-            
-            <time class="post-date" datetime="2019-11-27">27 Nov 2019</time>
-        </footer>
-    </article>
     
     <article class="post">
         <header class="post-header">
@@ -190,105 +161,18 @@
         </footer>
     </article>
     
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/round_rect_mask">round rect 마스크</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>안쪽이 둥근 모서리 둥근 모서리로 특정 뷰를 보여 줘야 할때 안쪽에 차트나 이미지가 있고 외부에서 마스킹 할때?! 편한 방법은 나인패치로 작업 하셔도 됩니다. 아래 리소스 처럼... <a class="read-more" href="/round_rect_mask">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/둥근모서리'>둥근모서리</a>
-                       
-                
-            
-            <time class="post-date" datetime="2019-10-17">17 Oct 2019</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/commit">fragmentTransaction 사용 관련</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>참고 https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/ commit vs commitAllowingStateLoss commit vs commitAllowingStateLoss Fragment 실행은 commit 호출 이후, 하지만 commit는 ListCycle상 onSaveInstanceState()가 호출 되기 전에 수행되어야함 , 이를 어길 시 에러... <a class="read-more" href="/commit">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/fragmentTransaction'>Fragmenttransaction</a>,
-                       
-                
-                    
-                       <a href='/tag/commitNow'>Commitnow</a>,
-                       
-                
-                    
-                       <a href='/tag/commitNowAllowingStateLoss'>Commitnowallowingstateloss</a>
-                       
-                
-            
-            <time class="post-date" datetime="2019-10-10">10 Oct 2019</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/r8_error">R8 NullPointerException</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>참고 https://github.com/square/okhttp/issues/4604 그래들 수정후 성공 okhttp 와 문제가 발생하는걸로 보입니다. 아래와 같은 내용을 그래들에 추가 하여 해결하였습니다. buildscript { ... repositories { ... maven { url... <a class="read-more" href="/r8_error">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/casper.png" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/PyeongHo'>PyeongHo</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/android'>Android</a>,
-                       
-                
-                    
-                       <a href='/tag/r8_error'>R8_error</a>
-                       
-                
-            
-            <time class="post-date" datetime="2019-07-23">23 Jul 2019</time>
-        </footer>
-    </article>
-    
 
     <!-- Previous/next page links - displayed on every page -->
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 20 </span>
-     
-        <a class="older-posts" href="/page2/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
     
 
 
 </main>
-
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2019</section>

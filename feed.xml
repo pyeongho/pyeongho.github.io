@@ -8,6 +8,89 @@
     
       
       <item>
+        <title>intellij 계열 인증서 오류 수정</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;amp;logNo=221192794441&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;intellij Server Certificates 문제&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
+
+&lt;ul&gt;
+&lt;li&gt;PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException&lt;/li&gt;
+&lt;li&gt;Server&amp;#39;s Certificate is not trusted pop-up&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;참고 사이트&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;설정 변경&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt; SSL 통신 관련 옵션을 해제
+
+&lt;ul&gt;
+&lt;li&gt;File &amp;gt; Settings &amp;gt; Tools &amp;gt; Server Certificates &amp;gt; Accept non-trusted certificates automatically 체크&lt;/li&gt;
+&lt;li&gt;저는 실패 했습니다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/ssl</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/ssl</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>단색 bmp 생성</title>
+        
+          <description>&lt;h3&gt;단색 BMP 생성&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ&lt;/li&gt;
+&lt;li&gt;128 * 64 사이즈의 단색 BMP 파일 생성 입니다.&lt;/li&gt;
+&lt;li&gt;단색의 경우 1비트가 1픽셀을 나타 냅니다.&lt;/li&gt;
+&lt;li&gt;1바이트는 8픽셀 입니다.&lt;/li&gt;
+&lt;li&gt;128 * 64 = 8192 픽셀&lt;/li&gt;
+&lt;li&gt;8192 =&amp;gt;  1024바이트 &lt;/li&gt;
+&lt;li&gt;헤더는 무식하게 하드코딩으로 넣었습니다.&lt;/li&gt;
+&lt;li&gt;색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0
+``` kotlin
+    val width = bitmap.width
+    val height = bitmap.height
+    var R: Int
+    var G: Int
+    var B: Int
+    var pixel: Int
+    var i = 62
+    var bit = 7
+    for (x in height-1  downTo  0) {  // 위아래 반전을 제거 하기 위해서 63부터 역순, 
+        for (y in 0 until width) {
+            pixel = bitmap.getPixel(y, x)&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/monobmp</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/monobmp</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>round rect 마스크</title>
         
           <description>&lt;h3&gt;안쪽이 둥근 모서리&lt;/h3&gt;

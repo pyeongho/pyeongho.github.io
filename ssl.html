@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>round rect 마스크</title>
+    <title>intellij 계열 인증서 오류 수정</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -109,19 +109,27 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-android">
+    <article class="post tag-etc">
 
         <header class="post-header">
-            <h1 class="post-title">round rect 마스크</h1>
+            <h1 class="post-title">intellij 계열 인증서 오류 수정</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2019-10-17">17 Oct 2019</time>
+            <time class="post-date" datetime="2019-11-27">27 Nov 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/둥근모서리'>둥근모서리</a>
+                       <a href='/tag/sslerror'>Sslerror</a>,
+                       
+                
+                    
+                       <a href='/tag/intellij'>Intellij</a>,
+                       
+                
+                    
+                       <a href='/tag/ServerCertificates'>Servercertificates</a>
                        
                 
                 
@@ -130,47 +138,50 @@
 
         <section class="post-content">
             
-            <h3>안쪽이 둥근 모서리</h3>
+            <h3>참고</h3>
 
 <ul>
-<li>둥근 모서리로 특정 뷰를 보여 줘야 할때</li>
-<li>안쪽에 차트나 이미지가 있고 외부에서 마스킹 할때?!</li>
-<li>편한 방법은 나인패치로 작업 하셔도 됩니다.</li>
-<li>아래 리소스 처럼 하면 가운데가 뻥 뚫린 레이어를 만들 수 있습니다.</li>
-<li>색상은 이해되기 쉽게 빨간색과 검정색을 사용 했습니다.</li>
-<li>색상을 같은 색으로 하면 마스킹은 가능 합니다.</li>
+<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
 </ul>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="nt">&lt;layer-list</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span>
-        <span class="na">android:bottom=</span><span class="s">"-20dp"</span>
-        <span class="na">android:left=</span><span class="s">"-20dp"</span>
-        <span class="na">android:right=</span><span class="s">"-20dp"</span>
-        <span class="na">android:top=</span><span class="s">"-20dp"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;shape</span> <span class="na">android:shape=</span><span class="s">"rectangle"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;stroke</span>
-                <span class="na">android:width=</span><span class="s">"37dp"</span>
-                <span class="na">android:color=</span><span class="s">"#ff0000"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;corners</span> <span class="na">android:radius=</span><span class="s">"10dp"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/shape&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
 
+<h3>안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
 
-    <span class="nt">&lt;item</span> <span class="na">android:bottom=</span><span class="s">"6dp"</span>
-        <span class="na">android:left=</span><span class="s">"6dp"</span>
-        <span class="na">android:right=</span><span class="s">"6dp"</span>
-        <span class="na">android:top=</span><span class="s">"6dp"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;shape</span> <span class="na">android:shape=</span><span class="s">"rectangle"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;stroke</span>
-                <span class="na">android:width=</span><span class="s">"12dp"</span>
-                <span class="na">android:color=</span><span class="s">"#000000"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;corners</span> <span class="na">android:radius=</span><span class="s">"10dp"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/shape&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
+<ul>
+<li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
 
-<span class="nt">&lt;/layer-list&gt;</span>
+<ul>
+<li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
+<li>Server&#39;s Certificate is not trusted pop-up</li>
+</ul></li>
+</ul>
 
-</code></pre></div>
+<h3>참고 사이트</h3>
+
+<ul>
+<li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
+</ul>
+
+<h2>설정 변경</h2>
+
+<ul>
+<li> SSL 통신 관련 옵션을 해제
+
+<ul>
+<li>File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크</li>
+<li>저는 실패 했습니다.</li>
+</ul></li>
+</ul>
+
+<h2>사내 인증서 허용</h2>
+
+<ul>
+<li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
+<li>저는 이걸로 성공 했습니다.</li>
+<li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
+<li>해당 경로의 파일들은 따로 백업</li>
+<li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
+</ul>
+
 
         </section>
 
@@ -201,15 +212,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=round rect 마스크&amp;url=https://pyeongho.github.ioround_rect_mask"
+                <a class="icon-twitter" href="http://twitter.com/share?text=intellij 계열 인증서 오류 수정&amp;url=https://pyeongho.github.iossl"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioround_rect_mask"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iossl"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioround_rect_mask"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iossl"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -247,20 +258,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/monobmp">
-            <section class="post">
-                <h2>단색 bmp 생성</h2>
-                <p>### 단색 BMP 생성 - BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ - 128 *...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/commit">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/monobmp">
             <section class="post">
-                <h2>fragmentTransaction 사용 관련</h2>
-                <p>참고 https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/ commit vs commitAllowingStateLoss commit vs commitAllowingStateLoss Fragment 실행은 commit 호출 이후, 하지만 commit는...</p>
+                <h2>단색 bmp 생성</h2>
+                <p>단색 BMP 생성 BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ 128 * 64 사이즈의 단색...</p>
             </section>
         </a>
     

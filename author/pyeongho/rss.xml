@@ -12,6 +12,183 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>intellij 계열 인증서 오류 수정</title>
+	  <link>//ssl</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-11-27T00:00:00+00:00</pubDate>
+	  <guid>//ssl</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
+</ul>
+
+<h3>안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
+
+<ul>
+<li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
+
+<ul>
+<li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
+<li>Server&#39;s Certificate is not trusted pop-up</li>
+</ul></li>
+</ul>
+
+<h3>참고 사이트</h3>
+
+<ul>
+<li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
+</ul>
+
+<h2>설정 변경</h2>
+
+<ul>
+<li> SSL 통신 관련 옵션을 해제
+
+<ul>
+<li>File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크</li>
+<li>저는 실패 했습니다.</li>
+</ul></li>
+</ul>
+
+<h2>사내 인증서 허용</h2>
+
+<ul>
+<li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
+<li>저는 이걸로 성공 했습니다.</li>
+<li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
+<li>해당 경로의 파일들은 따로 백업</li>
+<li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>단색 bmp 생성</title>
+	  <link>//monobmp</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-10-17T00:00:00+00:00</pubDate>
+	  <guid>//monobmp</guid>
+	  <description><![CDATA[
+	     <h3>단색 BMP 생성</h3>
+
+<ul>
+<li>BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ</li>
+<li>128 * 64 사이즈의 단색 BMP 파일 생성 입니다.</li>
+<li>단색의 경우 1비트가 1픽셀을 나타 냅니다.</li>
+<li>1바이트는 8픽셀 입니다.</li>
+<li>128 * 64 = 8192 픽셀</li>
+<li>8192 =&gt;  1024바이트 </li>
+<li>헤더는 무식하게 하드코딩으로 넣었습니다.</li>
+<li><p>색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0
+``` kotlin
+    val width = bitmap.width
+    val height = bitmap.height
+    var R: Int
+    var G: Int
+    var B: Int
+    var pixel: Int
+    var i = 62
+    var bit = 7
+    for (x in height-1  downTo  0) {  // 위아래 반전을 제거 하기 위해서 63부터 역순, 
+        for (y in 0 until width) {
+            pixel = bitmap.getPixel(y, x)   </p>
+<div class="highlight"><pre><code class="language-" data-lang="">        R = Color.red(pixel)
+        G = Color.green(pixel)
+        B = Color.blue(pixel)
+        val gray = R+G+B/3
+        if(gray  &gt; 128){
+            arrayOfByte[i] = arrayOfByte[i]  or  (1 shl bit).toByte()  
+        }
+
+        if(bit ==0){  // 알아보기 쉽게, 엔디안 처리 
+            i++
+            bit = 8
+        }
+        bit--
+    }
+}
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">
+
+
+
+### e BMP 헤더
+  - 128 * 64 입니다.
+  - [헤더참고](https://heinek.tistory.com/13)
+  ``` kotlin
+        val arrayOfByte = ByteArray(1086)
+        arrayOfByte[0] = 66
+        arrayOfByte[1] = 77
+        arrayOfByte[2] = 62   // 사이즈  0x3E
+        arrayOfByte[3] = 4    // 사이즈  0x04
+        arrayOfByte[4] = 0    // 사이즈  0x00   
+        arrayOfByte[5] = 0    // 사이즈  0x00   1086
+        arrayOfByte[6] = 0
+        arrayOfByte[7] = 0
+        arrayOfByte[8] = 0
+        arrayOfByte[9] = 0
+        arrayOfByte[10] = 62  // 이미지 데이터가 있는 곳의 포인터 실제 데이터는 62번째 주소 부터 
+        arrayOfByte[11] = 0
+        arrayOfByte[12] = 0
+        arrayOfByte[13] = 0
+        arrayOfByte[14] = 40
+        arrayOfByte[15] = 0
+        arrayOfByte[16] = 0
+        arrayOfByte[17] = 0
+        arrayOfByte[18] = Byte.MIN_VALUE  // -128  폭
+        arrayOfByte[19] = 0
+        arrayOfByte[20] = 0
+        arrayOfByte[21] = 0
+        arrayOfByte[22] = 64  // 높이
+        arrayOfByte[23] = 0   // 높이
+        arrayOfByte[24] = 0   // 높이
+        arrayOfByte[25] = 0   // 높이  0 0 0 64
+        arrayOfByte[26] = 1  
+        arrayOfByte[27] = 0
+        arrayOfByte[28] = 1
+        arrayOfByte[29] = 0
+        arrayOfByte[30] = 0
+        arrayOfByte[31] = 0
+        arrayOfByte[32] = 0
+        arrayOfByte[33] = 0
+        arrayOfByte[34] = 0
+        arrayOfByte[35] = 4
+        arrayOfByte[36] = 0
+        arrayOfByte[37] = 0
+        arrayOfByte[38] = 0
+        arrayOfByte[39] = 0
+        arrayOfByte[40] = 0
+        arrayOfByte[41] = 0
+        arrayOfByte[42] = 0
+        arrayOfByte[43] = 0
+        arrayOfByte[44] = 0
+        arrayOfByte[45] = 0
+        arrayOfByte[46] = 0
+        arrayOfByte[47] = 0
+        arrayOfByte[48] = 0
+        arrayOfByte[49] = 0
+        arrayOfByte[50] = 0
+        arrayOfByte[51] = 0
+        arrayOfByte[52] = 0
+        arrayOfByte[53] = 0
+        arrayOfByte[54] = 0
+        arrayOfByte[55] = 0
+        arrayOfByte[56] = 0
+        arrayOfByte[57] = 0
+        arrayOfByte[58] = -1
+        arrayOfByte[59] = -1
+        arrayOfByte[60] = -1
+        arrayOfByte[61] = 0 
+
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>round rect 마스크</title>
 	  <link>//round_rect_mask</link>
 	  <author>PyeongHo</author>
@@ -481,68 +658,6 @@ Caused by: java.lang.NullPointerException
 <ul>
 <li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
 </ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 스튜디오 로그에 링크 추가하기</title>
-	  <link>//log_link</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-04-12T00:00:00+00:00</pubDate>
-	  <guid>//log_link</guid>
-	  <description><![CDATA[
-	     <h3>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h3>
-
-<ul>
-<li>로그출력 기능의 추가</li>
-<li>로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함 </li>
-</ul>
-
-<h2>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h2>
-
-<ul>
-<li>아래 코드와 비슷하게 만들어 로그를 사용하고 있습니다. </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  new Exception().getStackTrace()[0]
-</code></pre></div>
-<ul>
-<li>getFileName(), getLineNumber(), getMethodName() 등을 Log.d 에 출력 해서 사용하고 있습니다.</li>
-<li><p>기존에 작성 했던 내용을 업데이트 할 예정 입니다. 
-<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script></p></li>
-<li><p>element  인텍스 값은 현재 함수, 호출 함수를 찾는 내용</p></li>
-</ul>
-
-<h2>안드로이드 스튜디오 로그 링크 추가 하기</h2>
-
-<ul>
-<li><p>간단하게 아래와 같은 내용으로 로그를 출력하면 마지막에 링크가 걸리는 내용이 있습니다.
-<code>
-Exception().getStackTrace()[0].toString()
-</code></p></li>
-<li><p>문제는 로그 내용이 너무 길어 화면 밖으로 출력되어 불편 </p></li>
-<li><p>찍기 신공, 로그에 링크를 어떻게 줄까?</p></li>
-<li><p>(파일이름:라인)</p></li>
-<li><p>결론은 위와 같은 형태로 출력하면 링크가 걸린다. </p></li>
-<li><p>최종 로그 클래서는 아래와 같습니다.</p></li>
-<li><p>사용법은 log.l() , log.d(&quot;test&quot;) 등등을 이용 하면 링크걸린 내용과 함께 원하는 내용이 출력 </p></li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/9033b0d6201bd205214489cdcb4caf11.js"></script></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>루팅 기기에서 원격 ADB</title>
-	  <link>//root_adb</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-04-11T00:00:00+00:00</pubDate>
-	  <guid>//root_adb</guid>
-	  <description><![CDATA[
-	     <h3>루팅 기기에서 ADB 원격 가능하도록 하는 방법</h3>
-
-<p><script src="https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js"></script></p>
 
 	  ]]></description>
 	</item>
