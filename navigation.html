@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>intellij 계열 인증서 오류 수정</title>
+    <title>androidx navigation , Safe Arg</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -109,27 +109,27 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-etc">
+    <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">intellij 계열 인증서 오류 수정</h1>
+            <h1 class="post-title">androidx navigation , Safe Arg</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2019-11-27">27 Nov 2019</time>
+            <time class="post-date" datetime="2019-12-04">04 Dec 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/sslerror'>Sslerror</a>,
+                       <a href='/tag/androidx'>Androidx</a>,
                        
                 
                     
-                       <a href='/tag/intellij'>Intellij</a>,
+                       <a href='/tag/navigation'>Navigation</a>,
                        
                 
                     
-                       <a href='/tag/ServerCertificates'>Servercertificates</a>
+                       <a href='/tag/Safe_Arg'>Safe_arg</a>
                        
                 
                 
@@ -141,45 +141,98 @@
             <h3>참고</h3>
 
 <ul>
-<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
+<li><a href="https://developer.android.com/guide/navigation/navigation-pass-data">https://developer.android.com/guide/navigation/navigation-pass-data</a></li>
+<li><a href="https://developer.android.com/jetpack/androidx/releases/navigation">https://developer.android.com/jetpack/androidx/releases/navigation</a></li>
+<li><a href="https://www.charlezz.com/?p=354">https://www.charlezz.com/?p=354</a></li>
+<li><a href="https://blog.naver.com/yoonhok_524/221530058636">https://blog.naver.com/yoonhok_524/221530058636</a></li>
 </ul>
 
-<h3>안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
+<h3>종속성 추가</h3>
 
 <ul>
-<li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
+<li>프로젝트 레벨 </li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        def nav_version = "2.1.0"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+    }
+}
+
+</code></pre></div>
+<ul>
+<li>앱 레벨</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">apply plugin: "androidx.navigation.safeargs" or  apply plugin: "androidx.navigation.safeargs.kotlin"
+
+dependencies {
+  def nav_version = "2.1.0"
+
+  // Java language implementation
+  implementation "androidx.navigation:navigation-fragment:$nav_version"
+  implementation "androidx.navigation:navigation-ui:$nav_version"
+
+  // Kotlin
+  implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+  implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+}
+
+
+</code></pre></div>
+<h3>Safe Arg</h3>
 
 <ul>
-<li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
-<li>Server&#39;s Certificate is not trusted pop-up</li>
+<li>번들을 사용해도 되지만 안전하게 변수로 사용하는 방법</li>
+<li><p>방법</p>
+
+<ul>
+<li>액션을 만든다.</li>
+<li>액션에 arg를 추가 한다.</li>
+<li>도착지에 arg 를 추가한다.</li>
 </ul></li>
-</ul>
+<li><p>네비게이션 샘플</p>
 
-<h3>참고 사이트</h3>
-
-<ul>
-<li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
-</ul>
-
-<h2>설정 변경</h2>
+<p><script src="https://gist.github.com/pyeongho/616fc4d88b8bd1f3bc3bb5ce2987b9b4.js"></script>  </p></li>
+<li><p>시작 지 액션 실행</p>
 
 <ul>
-<li> SSL 통신 관련 옵션을 해제
-
-<ul>
-<li>File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크</li>
-<li>저는 실패 했습니다.</li>
+<li>자신이 정의 프래그먼트 이름(Register1Fragment)으로  xxxxxDirections 클래스(Register1FragmentDirections)가 자동 생성 되며 해당 클래스에 액션이 정의 되어 있다.<br>
+<code>kotlin
+val action = Register1FragmentDirections.actionNavRegister1ToNavRegister2(it.arg)
+Navigation.findNavController(v).navigate(action)
+</code></li>
 </ul></li>
-</ul>
-
-<h2>사내 인증서 허용</h2>
+<li><p>종착지 확인</p>
 
 <ul>
-<li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
-<li>저는 이걸로 성공 했습니다.</li>
-<li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
-<li>해당 경로의 파일들은 따로 백업</li>
-<li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
+<li>자신이 정의한 이름에(Register2Fragment)  xxxArgs 가 추가된 클래스가 자동 생성되되 미리 정의된 변수를 확인 할 수 있습니다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val args :Register2FragmentArgs by navArgs()
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        log.d(args.name)
+}
+
+</code></pre></div></li>
+</ul>
+
+<h3>에러 발생 주의점</h3>
+
+<ul>
+<li>cannot inline bytecode built with jvm target 1.8 into bytecode that is being built with jvm target 1.6. please specify proper &#39;-jvm-target&#39; option</li>
+<li>File-settings안의 kotlin compiler 안의 target JVM version을 바꿔준다 
+
+<ul>
+<li>File-Invalidate Caches / Restart 후 Build - Clean Project </li>
+</ul></li>
+<li>안되면 
+
+<ul>
+<li>build.gradle(module:app)안의  android{} 안에 kotlinOptions{jvmTarget = &quot;1.8&quot;} 을 넣는다<br></li>
+</ul></li>
 </ul>
 
 
@@ -212,15 +265,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=intellij 계열 인증서 오류 수정&amp;url=https://pyeongho.github.iossl"
+                <a class="icon-twitter" href="http://twitter.com/share?text=androidx navigation , Safe Arg&amp;url=https://pyeongho.github.ionavigation"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iossl"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ionavigation"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iossl"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ionavigation"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -258,20 +311,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/navigation">
-            <section class="post">
-                <h2>androidx navigation , Safe Arg</h2>
-                <p>### 참고 - [https://developer.android.com/guide/navigation/navigation-pass-data](https://developer.android.com/guide/navigation/navigation-pass-data) - [https://developer.android.com/jetpack/androidx/releases/navigation](https://developer.android.com/jetpack/androidx/releases/navigation) - [https://www.charlezz.com/?p=354](https://www.charlezz.com/?p=354) - [https://blog.naver.com/yoonhok_524/221530058636](https://blog.naver.com/yoonhok_524/221530058636) ### 종속성 추가 - 프로젝트...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/monobmp">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/ssl">
             <section class="post">
-                <h2>단색 bmp 생성</h2>
-                <p>단색 BMP 생성 BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ 128 * 64 사이즈의 단색...</p>
+                <h2>intellij 계열 인증서 오류 수정</h2>
+                <p>참고 intellij Server Certificates 문제 안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서...</p>
             </section>
         </a>
     
