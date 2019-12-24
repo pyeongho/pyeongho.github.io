@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>androidx navigation , Safe Arg</title>
+    <title>구글 스프레드 시트 자동 언어(안드로이드)</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -109,27 +109,27 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-android">
+    <article class="post tag-etc">
 
         <header class="post-header">
-            <h1 class="post-title">androidx navigation , Safe Arg</h1>
+            <h1 class="post-title">구글 스프레드 시트 자동 언어(안드로이드)</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2019-12-04">04 Dec 2019</time>
+            <time class="post-date" datetime="2019-12-24">24 Dec 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/androidx'>Androidx</a>,
+                       <a href='/tag/android'>Android</a>,
                        
                 
                     
-                       <a href='/tag/navigation'>Navigation</a>,
+                       <a href='/tag/google'>Google</a>,
                        
                 
                     
-                       <a href='/tag/Safe_Arg'>Safe_arg</a>
+                       <a href='/tag/gdata'>Gdata</a>
                        
                 
                 
@@ -141,99 +141,31 @@
             <h3>참고</h3>
 
 <ul>
-<li><a href="https://developer.android.com/guide/navigation/navigation-pass-data">https://developer.android.com/guide/navigation/navigation-pass-data</a></li>
-<li><a href="https://developer.android.com/jetpack/androidx/releases/navigation">https://developer.android.com/jetpack/androidx/releases/navigation</a></li>
-<li><a href="https://www.charlezz.com/?p=354">https://www.charlezz.com/?p=354</a></li>
-<li><a href="https://blog.naver.com/yoonhok_524/221530058636">https://blog.naver.com/yoonhok_524/221530058636</a></li>
+<li><a href="https://dunji.tistory.com/2">https://dunji.tistory.com/2</a></li>
 </ul>
 
-<h3>종속성 추가</h3>
+<h3>구글 스프레드 시트 자동 번역을 이용하려고 python 을 사용하려고 할때 발생하는 에러</h3>
 
 <ul>
-<li>프로젝트 레벨 </li>
+<li>=GOOGLETRANSLATE(B592,&quot;ko&quot;,&quot;en&quot;) 요런 구글 자동 번역</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">buildscript {
-    repositories {
-        google()
-    }
-    dependencies {
-        def nav_version = "2.1.0"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-    }
-}
 
+<h3>문제는 실행하면   Moved Permanently  요런 에러가 발생하면서 안된다.</h3>
+
+<ul>
+<li>항상 기본 설치 이기에 C:\Python27\Lib\site-packages\gdata  이곳에 설치 된다.</li>
+<li>수정해야 할 부분은 C:\Python27\Lib\site-packages\gdata\docs\service.py 파일</li>
+<li>server_response.status 로 검색 하면 302 만 처리되어 있습니다. 이를 아래와 같이 수정 하면 Moved Permanently 수정 할 수 있습니다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-python" data-lang="python">    <span class="k">while</span> <span class="n">server_response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">302</span> <span class="ow">or</span> <span class="n">server_response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">301</span> <span class="ow">and</span> <span class="n">timeout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 </code></pre></div>
-<ul>
-<li>앱 레벨</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">apply plugin: "androidx.navigation.safeargs" or  apply plugin: "androidx.navigation.safeargs.kotlin"
-
-dependencies {
-  def nav_version = "2.1.0"
-
-  // Java language implementation
-  implementation "androidx.navigation:navigation-fragment:$nav_version"
-  implementation "androidx.navigation:navigation-ui:$nav_version"
-
-  // Kotlin
-  implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-  implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
-}
-
-
-</code></pre></div>
-<h3>Safe Arg</h3>
+<h3>string.xml 을 csv 로 만들고 그걸 구글 자동 번역으로 변경하고 다시 xml 로 변경하는 프로그램</h3>
 
 <ul>
-<li>번들을 사용해도 되지만 안전하게 변수로 사용하는 방법</li>
-<li><p>방법</p>
-
-<ul>
-<li>액션을 만든다.</li>
-<li>액션에 arg를 추가 한다.</li>
-<li>도착지에 arg 를 추가한다.</li>
-</ul></li>
-<li><p>네비게이션 샘플</p>
-
-<p><script src="https://gist.github.com/pyeongho/616fc4d88b8bd1f3bc3bb5ce2987b9b4.js"></script>  </p></li>
-<li><p>시작 지 액션 실행</p>
-
-<ul>
-<li>자신이 정의 프래그먼트 이름(Register1Fragment)으로  xxxxxDirections 클래스(Register1FragmentDirections)가 자동 생성 되며 해당 클래스에 액션이 정의 되어 있다.<br>
-<code>kotlin
-val action = Register1FragmentDirections.actionNavRegister1ToNavRegister2(it.arg)
-Navigation.findNavController(v).navigate(action)
-</code></li>
-</ul></li>
-<li><p>종착지 확인</p>
-
-<ul>
-<li>자신이 정의한 이름에(Register2Fragment)  xxxArgs 가 추가된 클래스가 자동 생성되되 미리 정의된 변수를 확인 할 수 있습니다.<br></li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val args :Register2FragmentArgs by navArgs()
-override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        log.d(args.name)
-}
-
-</code></pre></div></li>
+<li>파이썬 프로그램 코드 </li>
 </ul>
 
-<h3>에러 발생 주의점</h3>
-
-<ul>
-<li>cannot inline bytecode built with jvm target 1.8 into bytecode that is being built with jvm target 1.6. please specify proper &#39;-jvm-target&#39; option</li>
-<li>File-settings안의 kotlin compiler 안의 target JVM version을 바꿔준다 
-
-<ul>
-<li>File-Invalidate Caches / Restart 후 Build - Clean Project </li>
-</ul></li>
-<li>안되면 
-
-<ul>
-<li>build.gradle(module:app)안의  android{} 안에 kotlinOptions{jvmTarget = &quot;1.8&quot;} 을 넣는다<br></li>
-</ul></li>
-</ul>
+<p><script src="https://gist.github.com/pyeongho/fd6975c221e1ac00f0fa8728bf649daa.js"></script></p>
 
 
         </section>
@@ -265,15 +197,15 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=androidx navigation , Safe Arg&amp;url=https://pyeongho.github.ionavigation"
+                <a class="icon-twitter" href="http://twitter.com/share?text=구글 스프레드 시트 자동 언어(안드로이드)&amp;url=https://pyeongho.github.iogdata"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ionavigation"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iogdata"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ionavigation"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iogdata"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -311,20 +243,13 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/gdata">
-            <section class="post">
-                <h2>구글 스프레드 시트 자동 언어(안드로이드)</h2>
-                <p>### 참고 - [https://dunji.tistory.com/2](https://dunji.tistory.com/2) ### 구글 스프레드 시트 자동 번역을 이용하려고 python 을 사용하려고 할때...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/ssl">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/navigation">
             <section class="post">
-                <h2>intellij 계열 인증서 오류 수정</h2>
-                <p>참고 intellij Server Certificates 문제 안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서...</p>
+                <h2>androidx navigation , Safe Arg</h2>
+                <p>참고 https://developer.android.com/guide/navigation/navigation-pass-data https://developer.android.com/jetpack/androidx/releases/navigation https://www.charlezz.com/?p=354 https://blog.naver.com/yoonhok_524/221530058636 종속성 추가 프로젝트 레벨 buildscript { repositories { google() }...</p>
             </section>
         </a>
     
