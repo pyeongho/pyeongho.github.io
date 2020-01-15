@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>UndeliverableException 발생</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/&quot;&gt;https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/undeliverableException</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/undeliverableException</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>구글 스프레드 시트 자동 언어(안드로이드)</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;

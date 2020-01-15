@@ -12,6 +12,32 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>UndeliverableException 발생</title>
+	  <link>//undeliverableException</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-01-15T00:00:00+00:00</pubDate>
+	  <guid>//undeliverableException</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/">https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/</a></li>
+</ul>
+
+<h3>UndeliverableException</h3>
+
+<ul>
+<li>최근 들어 UndeliverableException이 자주 발생 하여 블로그를 참고 하여 코드를 그냥 쓰려고 하였지만 에러가 있어 아주 조금 수정 하였습니다.</li>
+<li>자세한 내용은 참고 링크에 있습니다.</li>
+<li>rxjava disposable 이후 이벤트가 들어 올때 발생 합니다.</li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/8a50d38c8957a070098b8ebb71ae8ccc.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>RxJava</title>
 	  <link>//rx</link>
 	  <author>PyeongHo</author>
