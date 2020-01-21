@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>카카오 SDK 사용하기</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.kakao.com/docs/android/getting-started&quot;&gt;https://developers.kakao.com/docs/android/getting-started&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/plusfriend</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/plusfriend</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>UndeliverableException 발생</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;
