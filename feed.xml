@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>플레이스토어 referrer 데이터 넘기기</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play&quot;&gt;https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/store_referrer</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/store_referrer</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>카카오 SDK 사용하기</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;

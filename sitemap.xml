@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/store_referrer</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/plusfriend</loc>
     </url>
     
@@ -2821,6 +2825,38 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/plusfriend/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/referrer/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/referrer/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/intent/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/intent/</loc>
     </url>
     
     

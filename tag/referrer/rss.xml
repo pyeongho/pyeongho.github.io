@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>플레이스토어 referrer 데이터 넘기기</title>
+	  <link>//store_referrer</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-02-04T00:00:00+00:00</pubDate>
+	  <guid>//store_referrer</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play">https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play</a></li>
+</ul>
+
+<h3>랜딩 페이지 제작 시  referrer 데이터 전송</h3>
+
+<ul>
+<li>검색 하면 항상 나오는 형태로 아래와 같이 사용이 가능 하다.</li>
+</ul>
+
+<p><code>market://details?id=com.패키지.이름&amp;referrer=xxxx</code></p>
+
+<ul>
+<li>위와 같이사용하기 위해서는 웹에서 앱의 설치 유무를 판단 하여 앱실행 또는 마켓이동으로 분기를 처리해야한다. 분기 처리가 완벽하면 문제가 없겠지만 타임아웃을 이용해서 처리하는게 일반적이어서 문제가 발생 한다.</li>
+<li>차라리 아래와 같은 일반 적인 형태에서 처리가 가능하면 어떨까 해서 찾아 보았습니다.(전달 데이터는 URL인코딩 사용 추천)</li>
+</ul>
+
+<p><code>Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;end</code></p>
+
+<h2>intent:// 스토어 이동시 리퍼러(referrer) 및 extra 데이터 전달</h2>
+
+<ul>
+<li>S.market_referrer= 를 추가하면 플레이스토어어 리퍼러에 데이터 전달 가능</li>
+<li>아래 처럼 넣으면 InstallReferrerClient 에서 데이터를 확인 가능 합니다.</li>
+</ul>
+
+<p><code>Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;S.market_referrer=데이터A=AAAAAAAA&amp;데이터B=BBBBBBB;end</code></p>
+
+<ul>
+<li>참고 
+<script src="https://gist.github.com/pyeongho/a129329471269e1b9fcf09d6a19c24b5.js"></script></li>
+</ul>
+
+<h2>intent 로 데이터를 보내는 형태가 미리 정의 되어 있다.</h2>
+
+<ul>
+<li>타입</li>
+<li>S.market<em>referrer 이면 스트링 타입의 market</em>referrer 이다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  String =&gt; 'S'
+  Boolean =&gt;'B'
+  Byte =&gt; 'b'
+  Character =&gt; 'c'
+  Double =&gt; 'd'
+  Float =&gt; 'f'
+  Integer =&gt; 'i'
+  Long =&gt; 'l'
+  Short =&gt; 's'
+
+</code></pre></div>
+<ul>
+<li> 웹에서 앱을 시작 할때 쿼리문 말고 아래 처러 보내서 데이터를 확인 가능 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">// 웹 
+&lt;a href="intent://whatever/#Intent;scheme=myapp;package=com.what.ever.myapp;S.name=Perico%20de%20los%20Palotes;i.age=35;end"&gt;Do Whatever&lt;/a&gt;
+
+
+// 앱 
+val  name = it.getString("name")
+val  age = it.getInt("age")
+
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
