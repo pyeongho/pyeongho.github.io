@@ -78,8 +78,10 @@
 
 
 // 앱 
-val  name = it.getString("name")
-val  age = it.getInt("age")
+intent.extras?.let {
+    val  name = it.getString("name")
+    val  age = it.getInt("age")
+}
 
 </code></pre></div>
 	  ]]></description>
