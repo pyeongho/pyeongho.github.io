@@ -12,6 +12,54 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
+	  <link>//androidx_webview</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-02-07T00:00:00+00:00</pubDate>
+	  <guid>//androidx_webview</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/57783707/webview-inflateexception">https://stackoverflow.com/questions/57783707/webview-inflateexception</a></li>
+</ul>
+
+<h3>androidx 에서 Error inflating class android.webkit.WebView 에러 발생</h3>
+
+<ul>
+<li>롤리팝 버전에서 해당 에러로 앱 크래시</li>
+</ul>
+
+<h3>콜라보레이션</h3>
+
+<ul>
+<li>androidx.appcompat:appcompat:1.1.0</li>
+<li>com.google.android.material:material:1.1.0</li>
+<li>위 2개의 라이브러리의 콜라브레이션으로 에러 발생  1.1.0 이 2개모두 추가되어 있으면 100% 크래시(롤리팝 버전에서)</li>
+</ul>
+
+<h3>appcompat 버전 수정</h3>
+
+<ul>
+<li>androidx.appcompat:appcompat:1.1.0 -&gt; androidx.appcompat:appcompat:1.0.2 </li>
+<li>com.google.android.material:material:1.1.0</li>
+<li>appcompat:1.0.2를 사용한다고 하면 안죽는다고 하지만 </li>
+<li>appcompat:1.0.2 과 material:1.0.0 을 사용할때만 정상 동작 합니다.</li>
+</ul>
+
+<h3>웹뷰 커스텀 버전을 사용하는게 마음이 편할거 같습니다.</h3>
+
+<ul>
+<li><p>코틀린 버전 (자동 변환)
+<script src="https://gist.github.com/pyeongho/44f8bd5cac7c26a9d6110550535cbefa.js"></script></p></li>
+<li><p>자바 버전
+<script src="https://gist.github.com/pyeongho/70dc3d9c1035a9082756f7982059876a.js"></script></p></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>플레이스토어 referrer 데이터 넘기기</title>
 	  <link>//store_referrer</link>
 	  <author>PyeongHo</author>
@@ -602,41 +650,6 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 <span class="nt">&lt;/layer-list&gt;</span>
 
 </code></pre></div>
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>fragmentTransaction 사용 관련</title>
-	  <link>//commit</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-10-10T00:00:00+00:00</pubDate>
-	  <guid>//commit</guid>
-	  <description><![CDATA[
-	     <h3>참고</h3>
-
-<ul>
-<li><a href="https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/">https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/</a></li>
-<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=zoomen1004&amp;logNo=220198317501&amp;targetKeyword=&amp;targetRecommendationCode=1&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">commit vs commitAllowingStateLoss</a></li>
-</ul>
-
-<h3>commit vs commitAllowingStateLoss</h3>
-
-<ul>
-<li>Fragment 실행은 commit 호출 이후, 하지만 commit는 ListCycle상 onSaveInstanceState()가 호출 되기 전에 수행되어야함 , 이를 어길 시 에러 발생 </li>
-<li>onSaveInstanceState 이후 수행가능한 상황에서만 commit 사용</li>
-<li>onSaveInstanceState 무관하게 동작 시키기 위해서는 commitAllowingStateLoss 를 사용하자</li>
-<li>에러 발생이 무섭다면 commitAllowingStateLoss 사용을 추천 </li>
-<li>에러 : java.lang.IllegalStateException:  Can not perform this action after onSaveInstanceState</li>
-</ul>
-
-<h3>commit vs commitNow</h3>
-
-<ul>
-<li>commitNow()라는 메소드 이름 그대로이지만 동기적으로 트랜잭션 처리를 해주는 것 같습니다. </li>
-<li>자세한 내용은 참고 사이트에서 확인 가능합니다.</li>
-<li>요약은 조금더 편리 commitNow()</li>
-</ul>
-
 	  ]]></description>
 	</item>
 

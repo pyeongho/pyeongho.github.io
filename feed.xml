@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
+        
+          <description>&lt;h3&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/57783707/webview-inflateexception&quot;&gt;https://stackoverflow.com/questions/57783707/webview-inflateexception&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/androidx_webview</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/androidx_webview</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>플레이스토어 referrer 데이터 넘기기</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>플레이스토어 referrer 데이터 넘기기</title>
+    <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -70,7 +70,7 @@
     <ul>
         <li class="nav-home " role="presentation"><a href="/">Home</a></li>
     
-        <li class="nav-android " role="presentation"><a href="/tag/android">Android</a></li>
+        <li class="nav-android  nav-current" role="presentation"><a href="/tag/android">Android</a></li>
         <li class="nav-java " role="presentation"><a href="/tag/java">Java</a></li>
         <li class="nav-book " role="presentation"><a href="/tag/book">Book</a></li>
   
@@ -112,20 +112,24 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">플레이스토어 referrer 데이터 넘기기</h1>
+            <h1 class="post-title">안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2020-02-04">04 Feb 2020</time>
+            <time class="post-date" datetime="2020-02-07">07 Feb 2020</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/referrer'>Referrer</a>,
+                       <a href='/tag/Error'>Error</a>,
                        
                 
                     
-                       <a href='/tag/intent'>Intent</a>
+                       <a href='/tag/inflating'>Inflating</a>,
+                       
+                
+                    
+                       <a href='/tag/WebView'>Webview</a>
                        
                 
                 
@@ -137,69 +141,41 @@
             <h3>참고</h3>
 
 <ul>
-<li><a href="https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play">https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play</a></li>
+<li><a href="https://stackoverflow.com/questions/57783707/webview-inflateexception">https://stackoverflow.com/questions/57783707/webview-inflateexception</a></li>
 </ul>
 
-<h3>랜딩 페이지 제작 시  referrer 데이터 전송</h3>
+<h3>androidx 에서 Error inflating class android.webkit.WebView 에러 발생</h3>
 
 <ul>
-<li>검색 하면 항상 나오는 형태로 아래와 같이 사용이 가능 하다.</li>
+<li>롤리팝 버전에서 해당 에러로 앱 크래시</li>
 </ul>
 
-<p><code>market://details?id=com.패키지.이름&amp;referrer=xxxx</code></p>
+<h3>콜라보레이션</h3>
 
 <ul>
-<li>위와 같이사용하기 위해서는 웹에서 앱의 설치 유무를 판단 하여 앱실행 또는 마켓이동으로 분기를 처리해야한다. 분기 처리가 완벽하면 문제가 없겠지만 타임아웃을 이용해서 처리하는게 일반적이어서 문제가 발생 한다.</li>
-<li>차라리 아래와 같은 일반 적인 형태에서 처리가 가능하면 어떨까 해서 찾아 보았습니다.(전달 데이터는 URL인코딩 사용 추천)</li>
+<li>androidx.appcompat:appcompat:1.1.0</li>
+<li>com.google.android.material:material:1.1.0</li>
+<li>위 2개의 라이브러리의 콜라브레이션으로 에러 발생  1.1.0 이 2개모두 추가되어 있으면 100% 크래시(롤리팝 버전에서)</li>
 </ul>
 
-<p><code>Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;end</code></p>
-
-<h2>intent:// 스토어 이동시 리퍼러(referrer) 및 extra 데이터 전달</h2>
+<h3>appcompat 버전 수정</h3>
 
 <ul>
-<li>S.market_referrer= 를 추가하면 플레이스토어어 리퍼러에 데이터 전달 가능</li>
-<li>아래 처럼 넣으면 InstallReferrerClient 에서 데이터를 확인 가능 합니다.</li>
+<li>androidx.appcompat:appcompat:1.1.0 -&gt; androidx.appcompat:appcompat:1.0.2 </li>
+<li>com.google.android.material:material:1.1.0</li>
+<li>appcompat:1.0.2를 사용한다고 하면 안죽는다고 하지만 </li>
+<li>appcompat:1.0.2 과 material:1.0.0 을 사용할때만 정상 동작 합니다.</li>
 </ul>
 
-<p><code>Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;S.market_referrer=데이터A=AAAAAAAA&amp;데이터B=BBBBBBB;end</code></p>
+<h3>웹뷰 커스텀 버전을 사용하는게 마음이 편할거 같습니다.</h3>
 
 <ul>
-<li>참고 
-<script src="https://gist.github.com/pyeongho/a129329471269e1b9fcf09d6a19c24b5.js"></script></li>
+<li><p>코틀린 버전 (자동 변환)
+<script src="https://gist.github.com/pyeongho/44f8bd5cac7c26a9d6110550535cbefa.js"></script></p></li>
+<li><p>자바 버전
+<script src="https://gist.github.com/pyeongho/70dc3d9c1035a9082756f7982059876a.js"></script></p></li>
 </ul>
 
-<h2>intent 로 데이터를 보내는 형태가 미리 정의 되어 있다.</h2>
-
-<ul>
-<li>타입</li>
-<li>S.market<em>referrer 이면 스트링 타입의 market</em>referrer 이다.<br></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  String =&gt; 'S'
-  Boolean =&gt;'B'
-  Byte =&gt; 'b'
-  Character =&gt; 'c'
-  Double =&gt; 'd'
-  Float =&gt; 'f'
-  Integer =&gt; 'i'
-  Long =&gt; 'l'
-  Short =&gt; 's'
-
-</code></pre></div>
-<ul>
-<li> 웹에서 앱을 시작 할때 쿼리문 말고 아래 처러 보내서 데이터를 확인 가능 합니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">// 웹 
-&lt;a href="intent://whatever/#Intent;scheme=myapp;package=com.what.ever.myapp;S.name=Perico%20de%20los%20Palotes;i.age=35;end"&gt;Do Whatever&lt;/a&gt;
-
-
-// 앱 
-intent.extras?.let {
-    val  name = it.getString("name")
-    val  age = it.getInt("age")
-}
-
-</code></pre></div>
 
         </section>
 
@@ -230,15 +206,15 @@ intent.extras?.let {
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=플레이스토어 referrer 데이터 넘기기&amp;url=https://pyeongho.github.iostore_referrer"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)&amp;url=https://pyeongho.github.ioandroidx_webview"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iostore_referrer"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioandroidx_webview"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iostore_referrer"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioandroidx_webview"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -276,20 +252,13 @@ intent.extras?.let {
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/androidx_webview">
-            <section class="post">
-                <h2>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</h2>
-                <p>### 참고 - [https://stackoverflow.com/questions/57783707/webview-inflateexception](https://stackoverflow.com/questions/57783707/webview-inflateexception) ### androidx 에서 Error inflating class android.webkit.WebView 에러 발생 - 롤리팝...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/plusfriend">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/store_referrer">
             <section class="post">
-                <h2>카카오 SDK 사용하기</h2>
-                <p>참고 https://developers.kakao.com/docs/android/getting-started SDK 연동 및 사용 기본 적인 내용은 개발자 사이트에서 사용 가능하지만 이상하게 없는...</p>
+                <h2>플레이스토어 referrer 데이터 넘기기</h2>
+                <p>참고 https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play 랜딩 페이지 제작 시 referrer 데이터 전송 검색 하면 항상 나오는 형태로 아래와...</p>
             </section>
         </a>
     
