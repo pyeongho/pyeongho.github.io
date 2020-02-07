@@ -29,25 +29,22 @@
 <ul>
 <li>검색 하면 항상 나오는 형태로 아래와 같이 사용이 가능 하다.</li>
 </ul>
-
-<p><code>market://details?id=com.패키지.이름&amp;referrer=xxxx</code></p>
-
+<div class="highlight"><pre><code class="language-" data-lang="">  market://details?id=com.패키지.이름&amp;referrer=xxxx 
+</code></pre></div>
 <ul>
 <li>위와 같이사용하기 위해서는 웹에서 앱의 설치 유무를 판단 하여 앱실행 또는 마켓이동으로 분기를 처리해야한다. 분기 처리가 완벽하면 문제가 없겠지만 타임아웃을 이용해서 처리하는게 일반적이어서 문제가 발생 한다.</li>
 <li>차라리 아래와 같은 일반 적인 형태에서 처리가 가능하면 어떨까 해서 찾아 보았습니다.(전달 데이터는 URL인코딩 사용 추천)</li>
 </ul>
-
-<p><code>Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;end</code></p>
-
+<div class="highlight"><pre><code class="language-" data-lang="">  Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;end 
+</code></pre></div>
 <h2>intent:// 스토어 이동시 리퍼러(referrer) 및 extra 데이터 전달</h2>
 
 <ul>
 <li>S.market_referrer= 를 추가하면 플레이스토어어 리퍼러에 데이터 전달 가능</li>
 <li>아래 처럼 넣으면 InstallReferrerClient 에서 데이터를 확인 가능 합니다.</li>
 </ul>
-
-<p><code>Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;S.market_referrer=데이터A=AAAAAAAA&amp;데이터B=BBBBBBB;end</code></p>
-
+<div class="highlight"><pre><code class="language-" data-lang="">  Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;S.market_referrer=데이터A=AAAAAAAA&amp;데이터B=BBBBBBB;end 
+</code></pre></div>
 <ul>
 <li>참고 
 <script src="https://gist.github.com/pyeongho/a129329471269e1b9fcf09d6a19c24b5.js"></script></li>
@@ -73,15 +70,15 @@
 <ul>
 <li> 웹에서 앱을 시작 할때 쿼리문 말고 아래 처러 보내서 데이터를 확인 가능 합니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">// 웹 
-&lt;a href="intent://whatever/#Intent;scheme=myapp;package=com.what.ever.myapp;S.name=Perico%20de%20los%20Palotes;i.age=35;end"&gt;Do Whatever&lt;/a&gt;
+<div class="highlight"><pre><code class="language-" data-lang="">  // 웹 
+  &lt;a href="intent://whatever/#Intent;scheme=myapp;package=com.what.ever.myapp;S.name=Perico%20de%20los%20Palotes;i.age=35;end"&gt;Do Whatever&lt;/a&gt;
 
 
-// 앱 
-intent.extras?.let {
-    val  name = it.getString("name")
-    val  age = it.getInt("age")
-}
+  // 앱 
+  intent.extras?.let {
+      val  name = it.getString("name")
+      val  age = it.getInt("age")
+  }
 
 </code></pre></div>
 	  ]]></description>
