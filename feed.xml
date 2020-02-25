@@ -8,6 +8,26 @@
     
       
       <item>
+        <title>안드로이드 adid 가져오기</title>
+        
+          <description>&lt;h3&gt;앱을 개발하다 보면 adid 를 가져와야 하는 일도 있습니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;최종적으로 사용할 함수는 아래와 같습니다. &lt;/li&gt;
+&lt;li&gt;비동기 처리는 필수 입니다.&lt;/li&gt;
+&lt;li&gt;그리고 의존성도 추가 해야 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/adid</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/adid</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
         
           <description>&lt;h3&gt;참고&lt;/h3&gt;
