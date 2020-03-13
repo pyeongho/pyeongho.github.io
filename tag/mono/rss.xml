@@ -28,109 +28,20 @@
 <li>128 * 64 = 8192 픽셀</li>
 <li>8192 =&gt;  1024바이트 </li>
 <li>헤더는 무식하게 하드코딩으로 넣었습니다.</li>
-<li><p>색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0
-``` kotlin
-    val width = bitmap.width
-    val height = bitmap.height
-    var R: Int
-    var G: Int
-    var B: Int
-    var pixel: Int
-    var i = 62
-    var bit = 7
-    for (x in height-1  downTo  0) {  // 위아래 반전을 제거 하기 위해서 63부터 역순, 
-        for (y in 0 until width) {
-            pixel = bitmap.getPixel(y, x)   </p>
-<div class="highlight"><pre><code class="language-" data-lang="">        R = Color.red(pixel)
-        G = Color.green(pixel)
-        B = Color.blue(pixel)
-        val gray = R+G+B/3
-        if(gray  &gt; 128){
-            arrayOfByte[i] = arrayOfByte[i]  or  (1 shl bit).toByte()  
-        }
-
-        if(bit ==0){  // 알아보기 쉽게, 엔디안 처리 
-            i++
-            bit = 8
-        }
-        bit--
-    }
-}
-</code></pre></div></li>
+<li>색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">
 
+<script src="https://gist.github.com/pyeongho/ae31ee6bca03a044c39e28de7ca0aeaf.js"></script> 
+  
 
+<h3>BMP 헤더</h3>
 
-### e BMP 헤더
-  - 128 * 64 입니다.
-  - [헤더참고](https://heinek.tistory.com/13)
-  ``` kotlin
-        val arrayOfByte = ByteArray(1086)
-        arrayOfByte[0] = 66
-        arrayOfByte[1] = 77
-        arrayOfByte[2] = 62   // 사이즈  0x3E
-        arrayOfByte[3] = 4    // 사이즈  0x04
-        arrayOfByte[4] = 0    // 사이즈  0x00   
-        arrayOfByte[5] = 0    // 사이즈  0x00   1086
-        arrayOfByte[6] = 0
-        arrayOfByte[7] = 0
-        arrayOfByte[8] = 0
-        arrayOfByte[9] = 0
-        arrayOfByte[10] = 62  // 이미지 데이터가 있는 곳의 포인터 실제 데이터는 62번째 주소 부터 
-        arrayOfByte[11] = 0
-        arrayOfByte[12] = 0
-        arrayOfByte[13] = 0
-        arrayOfByte[14] = 40
-        arrayOfByte[15] = 0
-        arrayOfByte[16] = 0
-        arrayOfByte[17] = 0
-        arrayOfByte[18] = Byte.MIN_VALUE  // -128  폭
-        arrayOfByte[19] = 0
-        arrayOfByte[20] = 0
-        arrayOfByte[21] = 0
-        arrayOfByte[22] = 64  // 높이
-        arrayOfByte[23] = 0   // 높이
-        arrayOfByte[24] = 0   // 높이
-        arrayOfByte[25] = 0   // 높이  0 0 0 64
-        arrayOfByte[26] = 1  
-        arrayOfByte[27] = 0
-        arrayOfByte[28] = 1
-        arrayOfByte[29] = 0
-        arrayOfByte[30] = 0
-        arrayOfByte[31] = 0
-        arrayOfByte[32] = 0
-        arrayOfByte[33] = 0
-        arrayOfByte[34] = 0
-        arrayOfByte[35] = 4
-        arrayOfByte[36] = 0
-        arrayOfByte[37] = 0
-        arrayOfByte[38] = 0
-        arrayOfByte[39] = 0
-        arrayOfByte[40] = 0
-        arrayOfByte[41] = 0
-        arrayOfByte[42] = 0
-        arrayOfByte[43] = 0
-        arrayOfByte[44] = 0
-        arrayOfByte[45] = 0
-        arrayOfByte[46] = 0
-        arrayOfByte[47] = 0
-        arrayOfByte[48] = 0
-        arrayOfByte[49] = 0
-        arrayOfByte[50] = 0
-        arrayOfByte[51] = 0
-        arrayOfByte[52] = 0
-        arrayOfByte[53] = 0
-        arrayOfByte[54] = 0
-        arrayOfByte[55] = 0
-        arrayOfByte[56] = 0
-        arrayOfByte[57] = 0
-        arrayOfByte[58] = -1
-        arrayOfByte[59] = -1
-        arrayOfByte[60] = -1
-        arrayOfByte[61] = 0 
+<ul>
+<li>128 * 64 입니다.</li>
+<li><a href="https://heinek.tistory.com/13">헤더참고</a>
+<script src="https://gist.github.com/pyeongho/eabb74ca82b6f2f7c31084c7d9950edd.js"></script><br></li>
+</ul>
 
-</code></pre></div>
 	  ]]></description>
 	</item>
 

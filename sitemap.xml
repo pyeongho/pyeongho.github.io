@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/app</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/adid</loc>
     </url>
     
@@ -2929,6 +2933,22 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/adid/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/%EC%95%B1%EC%83%81%ED%83%9C/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/%EC%95%B1%EC%83%81%ED%83%9C/</loc>
     </url>
     
     

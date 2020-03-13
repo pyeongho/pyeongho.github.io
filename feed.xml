@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>안드로이드 앱 상태(foreground, background)</title>
+        
+          <description>&lt;h3&gt;외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Foreground 라는 클래스를 사용 했지만 라이프 사이클을 이용하면 쉽게 처리 가능합니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/app</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/app</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 adid 가져오기</title>
         
           <description>&lt;h3&gt;앱을 개발하다 보면 adid 를 가져와야 하는 일도 있습니다.&lt;/h3&gt;
@@ -197,19 +215,7 @@
 &lt;li&gt;128 * 64 = 8192 픽셀&lt;/li&gt;
 &lt;li&gt;8192 =&amp;gt;  1024바이트 &lt;/li&gt;
 &lt;li&gt;헤더는 무식하게 하드코딩으로 넣었습니다.&lt;/li&gt;
-&lt;li&gt;색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0
-``` kotlin
-    val width = bitmap.width
-    val height = bitmap.height
-    var R: Int
-    var G: Int
-    var B: Int
-    var pixel: Int
-    var i = 62
-    var bit = 7
-    for (x in height-1  downTo  0) {  // 위아래 반전을 제거 하기 위해서 63부터 역순, 
-        for (y in 0 until width) {
-            pixel = bitmap.getPixel(y, x)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
