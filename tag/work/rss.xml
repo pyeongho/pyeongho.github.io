@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>소소한 재택 근무</title>
+	  <link>//home</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-08-26T00:00:00+00:00</pubDate>
+	  <guid>//home</guid>
+	  <description><![CDATA[
+	     <h3>처음으로 재택</h3>
+
+<ul>
+<li>집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요</li>
+<li>생각보다 적응은 잘되요 ㅎㅎ</li>
+<li></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>안드로이드 앱 상태(foreground, background)</title>
+    <title>소소한 재택 근무</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -109,27 +109,23 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-android">
+    <article class="post tag-etc">
 
         <header class="post-header">
-            <h1 class="post-title">안드로이드 앱 상태(foreground, background)</h1>
+            <h1 class="post-title">소소한 재택 근무</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2020-03-12">12 Mar 2020</time>
+            <time class="post-date" datetime="2020-08-26">26 Aug 2020</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/앱상태'>앱상태</a>,
+                       <a href='/tag/home'>Home</a>,
                        
                 
                     
-                       <a href='/tag/foreground'>Foreground</a>,
-                       
-                
-                    
-                       <a href='/tag/background'>Background</a>
+                       <a href='/tag/work'>Work</a>
                        
                 
                 
@@ -138,40 +134,12 @@
 
         <section class="post-content">
             
-            <h3>외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다.</h3>
+            <h3>처음으로 재택</h3>
 
 <ul>
-<li>Foreground 라는 클래스를 사용 했지만 라이프 사이클을 이용하면 쉽게 처리 가능합니다.</li>
-</ul>
-
-<h3>라이프 사이클 클래스</h3>
-
-<ul>
-<li>상태는 3개로 실행 안됨</li>
-<li>백그라운드</li>
-<li>포그라운드<br>
-<script src="https://gist.github.com/pyeongho/5a3a3bcfa25b9b85e1dd4c3a6d474c2b.js"></script></li>
-</ul>
-
-<h3>애플리케이션 클래스에 추가</h3>
-
-<ul>
-<li>앱에서 사용하는 애플리케이션 클래스를 상속 받은 곳에서 아래 내용을 추가해서 활성화 한다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">ProcessLifecycleOwner.get()
-            .lifecycle
-            .addObserver(OnAppObserver())
-
-</code></pre></div>
-<h3>유의사항</h3>
-
-<ul>
-<li>아래 내용 참고 해서 원하는상태를 체크해서 동작 하면 됩니다.</li>
-<li>외부 딥링크에서 앱 호출시 포그라운드 동작한다.
-
-<ul>
-<li>스키마로 앱을 실행하면서 백그라운드에서 포그라운드로 변경되면서 포그라운드 동작 </li>
-</ul></li>
+<li>집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요</li>
+<li>생각보다 적응은 잘되요 ㅎㅎ</li>
+<li></li>
 </ul>
 
 
@@ -204,15 +172,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 앱 상태(foreground, background)&amp;url=https://pyeongho.github.ioapp"
+                <a class="icon-twitter" href="http://twitter.com/share?text=소소한 재택 근무&amp;url=https://pyeongho.github.iohome"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioapp"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iohome"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioapp"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iohome"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -250,20 +218,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/home">
-            <section class="post">
-                <h2>소소한 재택 근무</h2>
-                <p>### 처음으로 재택 - 집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요 -...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/adid">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/app">
             <section class="post">
-                <h2>안드로이드 adid 가져오기</h2>
-                <p>앱을 개발하다 보면 adid 를 가져와야 하는 일도 있습니다. 최종적으로 사용할 함수는 아래와 같습니다. 비동기...</p>
+                <h2>안드로이드 앱 상태(foreground, background)</h2>
+                <p>외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다. Foreground 라는...</p>
             </section>
         </a>
     
