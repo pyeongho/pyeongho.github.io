@@ -12,6 +12,80 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>github action 사용하기</title>
+	  <link>//action</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-09-22T00:00:00+00:00</pubDate>
+	  <guid>//action</guid>
+	  <description><![CDATA[
+	     <h3>Github action 을 이용한 CI/CD</h3>
+
+<ul>
+<li>기본적인 액션 사용법은 너무 간단합니다.
+
+<ul>
+<li>깃허브에서 액션 누르고 새로 만들기 누르고 안드로이드 선택 하면 기본적인 생성은 가능합니다.</li>
+</ul></li>
+<li><p>원하는 방법이 모두 다를수 있지만 간단하게 작성해 보았습니다.</p>
+
+<ul>
+<li>특정 태그가 푸시 되면 빌드를 시작 한다.</li>
+<li>원하는 flavor 로 빌드 한다.</li>
+<li>태그 이름으로 바이너리를 생성한다.</li>
+<li>바이너리를 아티팩트로 만들어서 업로드 한다.</li>
+<li>슬랙으로 공유한다.</li>
+<li>아티팩트 주소가 아닌 슬랙 액션 주소를 공유해서 찾아서 다운 받아야 하지만 빌드 상태를 알수 있어서 그냥 유지 하였습니다.</li>
+</ul></li>
+<li><p>참고 내용</p>
+
+<ul>
+<li>태그 필터 아래 내용이 DEV 로 시작하는 태그를 감지하여 빌드를 시작하는 코드
+~~~
+on:
+push:
+tags:
+  - DEV*
+~~~</li>
+<li>flavor 로 빌드 하기
+
+<ul>
+<li>run: bash ./gradlew assembleDevDebug</li>
+<li>bash 퍼미션 오류 수정</li>
+<li>assembleDevDebug 원하는 flavor 로 apk 생성
+~~~
+- uses: actions/checkout@v2
+- name: set up JDK 1.8
+uses: actions/setup-java@v1
+with:
+java-version: 1.8
+- name: Build with Gradle
+run: bash ./gradlew assembleDevDebug
+~~~</li>
+</ul></li>
+<li>태그 이름 환경 변수 설정 및 사용
+~~~
+- name: Set tag name env
+  run: echo ::set-env name=DEVELOP<em>VERSION::${GITHUB</em>REF#refs/*/}
+- name: check tag name
+  run: |
+    echo $DEVELOP_VERSION
+    echo $<br>
+~~~</li>
+<li>파일 이름 변경, 아티팩트 업로드(라이브러리 사용)</li>
+<li>슬랙 알림 라이브러리
+
+<ul>
+<li><a href="https://github.com/marketplace/actions/slack-notify">https://github.com/marketplace/actions/slack-notify</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><script src="https://gist.github.com/pyeongho/72c897d81aeb4b9e03404d0289a31fa0.js"></script></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>소소한 재택 근무</title>
 	  <link>//home</link>
 	  <author>PyeongHo</author>
@@ -455,60 +529,6 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 <ul>
 <li>build.gradle(module:app)안의  android{} 안에 kotlinOptions{jvmTarget = &quot;1.8&quot;} 을 넣는다<br></li>
 </ul></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>intellij 계열 인증서 오류 수정</title>
-	  <link>//ssl</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-11-27T00:00:00+00:00</pubDate>
-	  <guid>//ssl</guid>
-	  <description><![CDATA[
-	     <h3>참고</h3>
-
-<ul>
-<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
-</ul>
-
-<h3>안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
-
-<ul>
-<li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
-
-<ul>
-<li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
-<li>Server&#39;s Certificate is not trusted pop-up</li>
-</ul></li>
-</ul>
-
-<h3>참고 사이트</h3>
-
-<ul>
-<li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
-</ul>
-
-<h2>설정 변경</h2>
-
-<ul>
-<li> SSL 통신 관련 옵션을 해제
-
-<ul>
-<li>File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크</li>
-<li>저는 실패 했습니다.</li>
-</ul></li>
-</ul>
-
-<h2>사내 인증서 허용</h2>
-
-<ul>
-<li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
-<li>저는 이걸로 성공 했습니다.</li>
-<li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
-<li>해당 경로의 파일들은 따로 백업</li>
-<li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
 </ul>
 
 	  ]]></description>

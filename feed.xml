@@ -8,6 +8,38 @@
     
       
       <item>
+        <title>github action 사용하기</title>
+        
+          <description>&lt;h3&gt;Github action 을 이용한 CI/CD&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;기본적인 액션 사용법은 너무 간단합니다.
+
+&lt;ul&gt;
+&lt;li&gt;깃허브에서 액션 누르고 새로 만들기 누르고 안드로이드 선택 하면 기본적인 생성은 가능합니다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;원하는 방법이 모두 다를수 있지만 간단하게 작성해 보았습니다.
+
+&lt;ul&gt;
+&lt;li&gt;특정 태그가 푸시 되면 빌드를 시작 한다.&lt;/li&gt;
+&lt;li&gt;원하는 flavor 로 빌드 한다.&lt;/li&gt;
+&lt;li&gt;태그 이름으로 바이너리를 생성한다.&lt;/li&gt;
+&lt;li&gt;바이너리를 아티팩트로 만들어서 업로드 한다.&lt;/li&gt;
+&lt;li&gt;슬랙으로 공유한다.&lt;/li&gt;
+&lt;li&gt;아티팩트 주소가 아닌 슬랙 액션 주소를 공유해서 찾아서 다운 받아야 하지만 빌드 상태를 알수 있어서 그냥 유지 하였습니다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/action</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/action</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>소소한 재택 근무</title>
         
           <description>&lt;h3&gt;처음으로 재택&lt;/h3&gt;
