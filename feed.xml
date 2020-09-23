@@ -8,6 +8,24 @@
     
       
       <item>
+        <title>안드로이드 리뷰 요청하기</title>
+        
+          <description>&lt;h3&gt;안드로이드도 리뷰를 요청 할 수 있습니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.android.com/guide/playcore/in-app-review&quot;&gt;https://developer.android.com/guide/playcore/in-app-review&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/review</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/review</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>github action 사용하기</title>
         
           <description>&lt;h3&gt;Github action 을 이용한 CI/CD&lt;/h3&gt;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>안드로이드 리뷰 요청하기</title>
+	  <link>//review</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-09-23T00:00:00+00:00</pubDate>
+	  <guid>//review</guid>
+	  <description><![CDATA[
+	     <h3>안드로이드도 리뷰를 요청 할 수 있습니다.</h3>
+
+<ul>
+<li><a href="https://developer.android.com/guide/playcore/in-app-review">https://developer.android.com/guide/playcore/in-app-review</a></li>
+</ul>
+
+<h3>사용법</h3>
+
+<ul>
+<li>참고 문서에도 있지만 천천히 따라하기</li>
+<li>의존성 주입 :  implementation &#39;com.google.android.play:core-ktx:1.8.1&#39;</li>
+<li><p>추가 코드 : 결과 처리 예외 처리 역시 가능함</p>
+
+<ul>
+<li></li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">    val manager = ReviewManagerFactory.create(context)
+    val request = manager.requestReviewFlow()
+    request.addOnCompleteListener { request -&gt;
+        if (request.isSuccessful) {
+            // We got the ReviewInfo object
+            val reviewInfo = request.result
+        } else {
+            // There was some problem, continue regardless of the result.
+        }
+    }  
+</code></pre></div></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
