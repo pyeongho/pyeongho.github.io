@@ -8,6 +8,48 @@
     
       
       <item>
+        <title>RN 헬로우 월드</title>
+        
+          <description>&lt;h3&gt;RN 을 시작해 보자&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;필요 패키지 설치
+~~~
+brew install watchman
+brew install flow
+brew install nvm
+nvm install node
+nvm alias default node
+brew install caskroom/cask/brew-cask
+brew cask install virtualbox
+brew install yarn
+~~~&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/rn_beginner</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/rn_beginner</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>헤로쿠 기본 설정</title>
+        
+          <description>&lt;h3&gt;헤로쿠 기본 공부&lt;/h3&gt;
+</description>
+        
+        <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/heroku</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/heroku</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 리뷰 요청하기</title>
         
           <description>&lt;h3&gt;안드로이드도 리뷰를 요청 할 수 있습니다.&lt;/h3&gt;
@@ -53,6 +95,32 @@
         <link>
         https://pyeongho.github.io/action</link>
         <guid isPermaLink="true">https://pyeongho.github.io/action</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>안드로이드 fastlane 빌드</title>
+        
+          <description>&lt;h3&gt;azure, fastlane&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;azure
+
+&lt;ul&gt;
+&lt;li&gt;회원가입&lt;/li&gt;
+&lt;li&gt;파이프라인 생성&lt;/li&gt;
+&lt;li&gt;깃허브 연결&lt;/li&gt;
+&lt;li&gt;yml 파일 생성(자동생성 사용)&lt;/li&gt;
+&lt;li&gt;필요에 따라 내용 추가&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/fastlane</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/fastlane</guid>
       </item>
       
     

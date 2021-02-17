@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>안드로이드 fastlane 빌드</title>
+	  <link>//fastlane</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-09-10T00:00:00+00:00</pubDate>
+	  <guid>//fastlane</guid>
+	  <description><![CDATA[
+	     <h3>azure, fastlane</h3>
+
+<ul>
+<li><p>azure</p>
+
+<ul>
+<li>회원가입</li>
+<li>파이프라인 생성</li>
+<li>깃허브 연결</li>
+<li>yml 파일 생성(자동생성 사용)</li>
+<li>필요에 따라 내용 추가</li>
+</ul></li>
+<li><p>fastlane</p>
+
+<ul>
+<li>안드로이드 앱 루트 폴더로 이동</li>
+<li>fastlane init 실행
+
+<ul>
+<li>json 파일은 플레이콘솔 액세스 용으로 콘솔에서 생성 가능</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3>참고</h3>
+
+<ul>
+<li><a href="https://dev-yakuza.github.io/ko/react-native/fastlane/">https://dev-yakuza.github.io/ko/react-native/fastlane/</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
