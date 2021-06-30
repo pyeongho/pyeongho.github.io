@@ -8,6 +8,28 @@
     
       
       <item>
+        <title>안드로이드 빌드 실패 with github actions</title>
+        
+          <description>&lt;h3&gt;깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.&lt;/li&gt;
+&lt;li&gt;처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.&lt;/li&gt;
+&lt;li&gt;정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.&lt;/li&gt;
+&lt;li&gt;빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.&lt;/li&gt;
+&lt;li&gt;gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/gradle_action</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/gradle_action</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>RN 헬로우 월드</title>
         
           <description>&lt;h3&gt;RN 을 시작해 보자&lt;/h3&gt;

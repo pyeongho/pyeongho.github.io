@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>RN 헬로우 월드</title>
+    <title>안드로이드 빌드 실패 with github actions</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -109,19 +109,27 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-etc">
+    <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">RN 헬로우 월드</h1>
+            <h1 class="post-title">안드로이드 빌드 실패 with github actions</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2021-02-17">17 Feb 2021</time>
+            <time class="post-date" datetime="2021-02-25">25 Feb 2021</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/rn'>Rn</a>
+                       <a href='/tag/actions'>Actions</a>,
+                       
+                
+                    
+                       <a href='/tag/github'>Github</a>,
+                       
+                
+                    
+                       <a href='/tag/gradle'>Gradle</a>
                        
                 
                 
@@ -130,44 +138,27 @@
 
         <section class="post-content">
             
-            <h3>RN 을 시작해 보자</h3>
+            <h3>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생</h3>
 
 <ul>
-<li><p>필요 패키지 설치
-~~~
-brew install watchman
-brew install flow
-brew install nvm
-nvm install node
-nvm alias default node
-brew install caskroom/cask/brew-cask
-brew cask install virtualbox
-brew install yarn
-~~~</p></li>
-<li><p>렘의 문서를 따라 하다 보면 2곳에서 에러가 발생합니다.</p>
-
-<ul>
-<li>첫번째 에러 해결
-
-<ul>
-<li>open AwesomeProject/ios/AwesomeProject.xcodeproj -&gt; 이걸로 하면 에러 발생</li>
-<li>open AwesomeProject/ios/AwesomProject.xcworkspace  이걸로 해야 합니다.</li>
-</ul></li>
-<li>두번째 에러 해결
-
-<ul>
-<li>main.jsbundle 에러 가 발생하면</li>
-<li>Build Pharse에 Copy Bundle Resource 에 &#39;+&#39; 버튼을 누르고 main.jsbundle을 선택해서 추가해주자.</li>
-</ul></li>
-</ul></li>
+<li>깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.</li>
+<li>처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.</li>
+<li>정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.</li>
+<li>빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.</li>
+<li>gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.</li>
 </ul>
-
-<h3>참고</h3>
-
+<div class="highlight"><pre><code class="language-" data-lang="">  org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+</code></pre></div>
 <ul>
-<li><a href="https://academy.realm.io/kr/posts/react-native/">https://academy.realm.io/kr/posts/react-native/</a></li>
-<li><a href="https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-">https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-</a></li>
-<li><a href="https://alpoxdev.tistory.com/18">https://alpoxdev.tistory.com/18</a></li>
+<li>데몬이 없어 졌다고 해서 그래들옵션에 no-daemon 을 추가해 보았지만 그래도 에러는 지속 되었습니다.</li>
+<li>(https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)[https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners]</li>
+<li>깃허브 액션에 대해서 조금만 더 알아보기로 하였습니다.</li>
+<li>일단 깃허브 액션의 머신 스펙을 확인 하였습니다. 그런데 스펙에 보이는 마음에 들지 않는 숫자 메모리 7기가</li>
+<li><p>설마 설마 그래들 속성을 확인 했습니다. 역시나 아래 처럼 최대 메모리가 8기가로 설정 되어 있었습니다.
+<code>
+org.gradle.jvmargs=-Xms4096m -Xmx8192m -XX:MaxPermSize=1024m
+</code></p></li>
+<li><p>여러분도 원인 모를 actions 의 빌드 실패가 발생하면 메모리를 확인해 보세요</p></li>
 </ul>
 
 
@@ -200,15 +191,15 @@ brew install yarn
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=RN 헬로우 월드&amp;url=https://pyeongho.github.iorn_beginner"
+                <a class="icon-twitter" href="http://twitter.com/share?text=안드로이드 빌드 실패 with github actions&amp;url=https://pyeongho.github.iogradle_action"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iorn_beginner"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iogradle_action"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iorn_beginner"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iogradle_action"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -246,20 +237,13 @@ brew install yarn
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/gradle_action">
-            <section class="post">
-                <h2>안드로이드 빌드 실패 with github actions</h2>
-                <p>### 깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생 - 깃허브 액션 +...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/heroku">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/rn_beginner">
             <section class="post">
-                <h2>헤로쿠 기본 설정</h2>
-                <p>헤로쿠 기본 공부 헤로쿠 가입후 앱 생성 : 앱이름은 : &quot;random-bot-17&quot; cli 설치 ~~~ brew...</p>
+                <h2>RN 헬로우 월드</h2>
+                <p>RN 을 시작해 보자 필요 패키지 설치 ~~~ brew install watchman brew install flow brew...</p>
             </section>
         </a>
     
