@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>RN 헬로우 월드</title>
+    <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -109,19 +109,23 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-etc">
+    <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">RN 헬로우 월드</h1>
+            <h1 class="post-title">웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2021-02-17">17 Feb 2021</time>
+            <time class="post-date" datetime="2021-07-05">05 Jul 2021</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/rn'>Rn</a>
+                       <a href='/tag/webview'>Webview</a>,
+                       
+                
+                    
+                       <a href='/tag/async'>Async</a>
                        
                 
                 
@@ -130,50 +134,36 @@
 
         <section class="post-content">
             
-            <h3>RN 을 시작해 보자</h3>
+            <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
 
 <ul>
-<li><p>필요 패키지 설치
-~~~
-brew install watchman
-brew install flow
-brew install nvm
-nvm install node
-nvm alias default node
-brew install caskroom/cask/brew-cask
-brew cask install virtualbox
-brew install yarn
-~~~</p>
+<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
+<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
+<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
+<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
+<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
+  val binding get() = _binding!!
 
+  override fun onDestroyView() {
+          super.onDestroyView()
+          _binding = null
+      }
+</code></pre></div>
 <ul>
-<li>React/RCTBridgeDelegate.h&#39; file not found
-
-<ul>
-<li>cd /ios</li>
-<li>pod install</li>
-<li>cd ..</li>
-<li>react-native run-ios</li>
-</ul></li>
-<li>&#39;React&#39; requires CocoaPods version &gt;= 1.10.1, which is not satisfied by your current version, 1.10.0. #153
-
-<ul>
-<li>sudo gem install cocoapods</li>
-</ul></li>
-<li> &#39;No bundle URL present&#39; in react-native?
-
-<ul>
-<li>react-native start</li>
-</ul></li>
-<li>서버가 동작 하고 그게 에뮬레이터에서 돌아간다.</li>
-</ul></li>
+<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
+<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
+<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
+<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
 </ul>
 
-<h3>참고</h3>
+<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
 
 <ul>
-<li><a href="https://academy.realm.io/kr/posts/react-native/">https://academy.realm.io/kr/posts/react-native/</a></li>
-<li><a href="https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-">https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-</a></li>
-<li><a href="https://alpoxdev.tistory.com/18">https://alpoxdev.tistory.com/18</a></li>
+<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
+<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
+<li>꼭 신경 써야 합니다.</li>
 </ul>
 
 
@@ -206,15 +196,15 @@ brew install yarn
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=RN 헬로우 월드&amp;url=https://pyeongho.github.iorn_beginner"
+                <a class="icon-twitter" href="http://twitter.com/share?text=웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)&amp;url=https://pyeongho.github.iowebview_async"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iorn_beginner"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iowebview_async"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iorn_beginner"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iowebview_async"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -252,20 +242,13 @@ brew install yarn
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/gradle_action">
-            <section class="post">
-                <h2>안드로이드 빌드 실패 with github actions</h2>
-                <p>### 깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생 - 깃허브 액션 +...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/heroku">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/gradle_action">
             <section class="post">
-                <h2>헤로쿠 기본 설정</h2>
-                <p>헤로쿠 기본 공부 헤로쿠 가입후 앱 생성 : 앱이름은 : &quot;random-bot-17&quot; cli 설치 ~~~ brew...</p>
+                <h2>안드로이드 빌드 실패 with github actions</h2>
+                <p>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생 깃허브 액션 + 패스트레인 을...</p>
             </section>
         </a>
     

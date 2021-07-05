@@ -12,10 +12,52 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
+	  <link>//webview_async</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-07-05T00:00:00+00:00</pubDate>
+	  <guid>//webview_async</guid>
+	  <description><![CDATA[
+	     <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
+
+<ul>
+<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
+<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
+<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
+<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
+<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
+  val binding get() = _binding!!
+
+  override fun onDestroyView() {
+          super.onDestroyView()
+          _binding = null
+      }
+</code></pre></div>
+<ul>
+<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
+<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
+<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
+<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
+</ul>
+
+<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+
+<ul>
+<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
+<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
+<li>꼭 신경 써야 합니다.</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>안드로이드 빌드 실패 with github actions</title>
 	  <link>//gradle_action</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2021-02-25T00:00:00+00:00</pubDate>
+	  <pubDate>2021-06-30T00:00:00+00:00</pubDate>
 	  <guid>//gradle_action</guid>
 	  <description><![CDATA[
 	     <h3>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생</h3>
@@ -64,22 +106,28 @@ nvm alias default node
 brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew install yarn
-~~~</p></li>
-<li><p>렘의 문서를 따라 하다 보면 2곳에서 에러가 발생합니다.</p>
+~~~</p>
 
 <ul>
-<li>첫번째 에러 해결
+<li>React/RCTBridgeDelegate.h&#39; file not found
 
 <ul>
-<li>open AwesomeProject/ios/AwesomeProject.xcodeproj -&gt; 이걸로 하면 에러 발생</li>
-<li>open AwesomeProject/ios/AwesomProject.xcworkspace  이걸로 해야 합니다.</li>
+<li>cd /ios</li>
+<li>pod install</li>
+<li>cd ..</li>
+<li>react-native run-ios</li>
 </ul></li>
-<li>두번째 에러 해결
+<li>&#39;React&#39; requires CocoaPods version &gt;= 1.10.1, which is not satisfied by your current version, 1.10.0. #153
 
 <ul>
-<li>main.jsbundle 에러 가 발생하면</li>
-<li>Build Pharse에 Copy Bundle Resource 에 &#39;+&#39; 버튼을 누르고 main.jsbundle을 선택해서 추가해주자.</li>
+<li>sudo gem install cocoapods</li>
 </ul></li>
+<li> &#39;No bundle URL present&#39; in react-native?
+
+<ul>
+<li>react-native start</li>
+</ul></li>
+<li>서버가 동작 하고 그게 에뮬레이터에서 돌아간다.</li>
 </ul></li>
 </ul>
 
@@ -381,54 +429,6 @@ run: bash ./gradlew assembleDevDebug
             )
 
 </code></pre></div>
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
-	  <link>//androidx_webview</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2020-02-07T00:00:00+00:00</pubDate>
-	  <guid>//androidx_webview</guid>
-	  <description><![CDATA[
-	     <h3>참고</h3>
-
-<ul>
-<li><a href="https://stackoverflow.com/questions/57783707/webview-inflateexception">https://stackoverflow.com/questions/57783707/webview-inflateexception</a></li>
-</ul>
-
-<h3>androidx 에서 Error inflating class android.webkit.WebView 에러 발생</h3>
-
-<ul>
-<li>롤리팝 버전에서 해당 에러로 앱 크래시</li>
-</ul>
-
-<h3>콜라보레이션</h3>
-
-<ul>
-<li>androidx.appcompat:appcompat:1.1.0</li>
-<li>com.google.android.material:material:1.1.0</li>
-<li>위 2개의 라이브러리의 콜라브레이션으로 에러 발생  1.1.0 이 2개모두 추가되어 있으면 100% 크래시(롤리팝 버전에서)</li>
-</ul>
-
-<h3>appcompat 버전 수정</h3>
-
-<ul>
-<li>androidx.appcompat:appcompat:1.1.0 -&gt; androidx.appcompat:appcompat:1.0.2 </li>
-<li>com.google.android.material:material:1.1.0</li>
-<li>appcompat:1.0.2를 사용한다고 하면 안죽는다고 하지만 </li>
-<li>appcompat:1.0.2 과 material:1.0.0 을 사용할때만 정상 동작 합니다.</li>
-</ul>
-
-<h3>웹뷰 커스텀 버전을 사용하는게 마음이 편할거 같습니다.</h3>
-
-<ul>
-<li><p>코틀린 버전 (자동 변환)
-<script src="https://gist.github.com/pyeongho/44f8bd5cac7c26a9d6110550535cbefa.js"></script></p></li>
-<li><p>자바 버전
-<script src="https://gist.github.com/pyeongho/70dc3d9c1035a9082756f7982059876a.js"></script></p></li>
-</ul>
-
 	  ]]></description>
 	</item>
 

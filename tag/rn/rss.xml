@@ -31,22 +31,28 @@ nvm alias default node
 brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew install yarn
-~~~</p></li>
-<li><p>렘의 문서를 따라 하다 보면 2곳에서 에러가 발생합니다.</p>
+~~~</p>
 
 <ul>
-<li>첫번째 에러 해결
+<li>React/RCTBridgeDelegate.h&#39; file not found
 
 <ul>
-<li>open AwesomeProject/ios/AwesomeProject.xcodeproj -&gt; 이걸로 하면 에러 발생</li>
-<li>open AwesomeProject/ios/AwesomProject.xcworkspace  이걸로 해야 합니다.</li>
+<li>cd /ios</li>
+<li>pod install</li>
+<li>cd ..</li>
+<li>react-native run-ios</li>
 </ul></li>
-<li>두번째 에러 해결
+<li>&#39;React&#39; requires CocoaPods version &gt;= 1.10.1, which is not satisfied by your current version, 1.10.0. #153
 
 <ul>
-<li>main.jsbundle 에러 가 발생하면</li>
-<li>Build Pharse에 Copy Bundle Resource 에 &#39;+&#39; 버튼을 누르고 main.jsbundle을 선택해서 추가해주자.</li>
+<li>sudo gem install cocoapods</li>
 </ul></li>
+<li> &#39;No bundle URL present&#39; in react-native?
+
+<ul>
+<li>react-native start</li>
+</ul></li>
+<li>서버가 동작 하고 그게 에뮬레이터에서 돌아간다.</li>
 </ul></li>
 </ul>
 

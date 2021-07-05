@@ -8,6 +8,28 @@
     
       
       <item>
+        <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
+        
+          <description>&lt;h3&gt;웹뷰 사용시 비동기 처리를 주의 해야 합니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.&lt;/li&gt;
+&lt;li&gt;크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.&lt;/li&gt;
+&lt;li&gt;예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.&lt;/li&gt;
+&lt;li&gt;onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&amp;gt; binding.loading.isVisible = false)&lt;/li&gt;
+&lt;li&gt;binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/webview_async</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/webview_async</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>안드로이드 빌드 실패 with github actions</title>
         
           <description>&lt;h3&gt;깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생&lt;/h3&gt;
@@ -21,7 +43,7 @@
 &lt;/ul&gt;
 </description>
         
-        <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
         <link>
         https://pyeongho.github.io/gradle_action</link>
         <guid isPermaLink="true">https://pyeongho.github.io/gradle_action</guid>
