@@ -8,6 +8,27 @@
     
       
       <item>
+        <title>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</title>
+        
+          <description>&lt;h3&gt;TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;http://drive.google.com/uc?export=view&amp;amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;li&gt;간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.&lt;/li&gt;
+&lt;li&gt;들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
+&lt;script src=&quot;https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/textview_leadingmargin</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/textview_leadingmargin</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
         
           <description>&lt;h3&gt;웹뷰 사용시 비동기 처리를 주의 해야 합니다.&lt;/h3&gt;

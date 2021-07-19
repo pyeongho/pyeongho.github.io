@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
+    <title>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -112,20 +112,20 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</h1>
+            <h1 class="post-title">TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2021-07-05">05 Jul 2021</time>
+            <time class="post-date" datetime="2021-07-19">19 Jul 2021</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/webview'>Webview</a>,
+                       <a href='/tag/TextView'>Textview</a>,
                        
                 
                     
-                       <a href='/tag/async'>Async</a>
+                       <a href='/tag/LeadingMarginSpan'>Leadingmarginspan</a>
                        
                 
                 
@@ -134,36 +134,25 @@
 
         <section class="post-content">
             
-            <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
+            <h3>TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.</h3>
 
 <ul>
-<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
-<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
-<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
-<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
-<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
-  val binding get() = _binding!!
-
-  override fun onDestroyView() {
-          super.onDestroyView()
-          _binding = null
-      }
-</code></pre></div>
-<ul>
-<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
-<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
-<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
-<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
+<li><img src="http://drive.google.com/uc?export=view&amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz" alt=""></li>
+<li>간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.</li>
+<li><p>들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
+<script src="https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js"></script></p></li>
+<li><p>first = 200 =&gt; 들여쓰기 픽셀</p></li>
+<li><p>rest = 1 =&gt; 단락의 나머지줄 들여쓰기 (the indent for the remaining lines of the paragraph)</p></li>
+<li><p>start = 0, end =  1, flags = 0 =&gt; span 의 인자값</p></li>
+<li><p>end =  1 이 왜 1인지 궁금해 할수 있습니다. 이는 디자인상 요청 사항으로 두번째 문단은 들여쓰기가 안되어야 해서 입니다.</p></li>
+<li><p>일반적인 들여쓰기에서는 길이를 넣으면 됩니다.</p></li>
 </ul>
 
-<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+<h3>참고</h3>
 
 <ul>
-<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
-<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
-<li>꼭 신경 써야 합니다.</li>
+<li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan">https://developer.android.com/reference/android/text/style/LeadingMarginSpan</a></li>
+<li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard">https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard</a></li>
 </ul>
 
 
@@ -196,15 +185,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)&amp;url=https://pyeongho.github.iowebview_async"
+                <a class="icon-twitter" href="http://twitter.com/share?text=TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치&amp;url=https://pyeongho.github.iotextview_leadingmargin"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iowebview_async"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iotextview_leadingmargin"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iowebview_async"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iotextview_leadingmargin"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -242,20 +231,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/textview_leadingmargin">
-            <section class="post">
-                <h2>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</h2>
-                <p>### TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다. -...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/gradle_action">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/webview_async">
             <section class="post">
-                <h2>안드로이드 빌드 실패 with github actions</h2>
-                <p>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생 깃허브 액션 + 패스트레인 을...</p>
+                <h2>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</h2>
+                <p>웹뷰 사용시 비동기 처리를 주의 해야 합니다. 웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고...</p>
             </section>
         </a>
     
