@@ -8,6 +8,31 @@
     
       
       <item>
+        <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
+        
+          <description>&lt;h3&gt;TextView setTextAppearance 동작 확인하기&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.&lt;/li&gt;
+&lt;li&gt;setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.&lt;/li&gt;
+&lt;li&gt;setTextAppearance 를 따라가다 보면 모든 속성이없다.
+
+&lt;ul&gt;
+&lt;li&gt;TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.&lt;/li&gt;
+&lt;li&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/textview_setTextAppearance</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/textview_setTextAppearance</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</title>
         
           <description>&lt;h3&gt;TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.&lt;/h3&gt;

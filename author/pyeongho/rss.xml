@@ -12,6 +12,31 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
+	  <link>//textview_setTextAppearance</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-07-30T00:00:00+00:00</pubDate>
+	  <guid>//textview_setTextAppearance</guid>
+	  <description><![CDATA[
+	     <h3>TextView setTextAppearance 동작 확인하기</h3>
+
+<ul>
+<li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
+<li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
+<li><p>setTextAppearance 를 따라가다 보면 모든 속성이없다.</p>
+
+<ul>
+<li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
+<li><script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script></li>
+</ul></li>
+<li><p>아래는 동작 가능한 속성들을 정리해 보았습니다.
+<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></p></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</title>
 	  <link>//textview_leadingmargin</link>
 	  <author>PyeongHo</author>
@@ -366,52 +391,6 @@ run: bash ./gradlew assembleDevDebug
 <li>집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요</li>
 <li>생각보다 적응은 잘되요 ㅎㅎ</li>
 <li></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 앱 상태(foreground, background)</title>
-	  <link>//app</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2020-03-12T00:00:00+00:00</pubDate>
-	  <guid>//app</guid>
-	  <description><![CDATA[
-	     <h3>외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다.</h3>
-
-<ul>
-<li>Foreground 라는 클래스를 사용 했지만 라이프 사이클을 이용하면 쉽게 처리 가능합니다.</li>
-</ul>
-
-<h3>라이프 사이클 클래스</h3>
-
-<ul>
-<li>상태는 3개로 실행 안됨</li>
-<li>백그라운드</li>
-<li>포그라운드<br>
-<script src="https://gist.github.com/pyeongho/5a3a3bcfa25b9b85e1dd4c3a6d474c2b.js"></script></li>
-</ul>
-
-<h3>애플리케이션 클래스에 추가</h3>
-
-<ul>
-<li>앱에서 사용하는 애플리케이션 클래스를 상속 받은 곳에서 아래 내용을 추가해서 활성화 한다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">ProcessLifecycleOwner.get()
-            .lifecycle
-            .addObserver(OnAppObserver())
-
-</code></pre></div>
-<h3>유의사항</h3>
-
-<ul>
-<li>아래 내용 참고 해서 원하는상태를 체크해서 동작 하면 됩니다.</li>
-<li>외부 딥링크에서 앱 호출시 포그라운드 동작한다.
-
-<ul>
-<li>스키마로 앱을 실행하면서 백그라운드에서 포그라운드로 변경되면서 포그라운드 동작 </li>
-</ul></li>
 </ul>
 
 	  ]]></description>

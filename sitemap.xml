@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/textview_setTextAppearance</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/textview_leadingmargin</loc>
     </url>
     
@@ -793,6 +797,30 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/android/page12/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android/page13/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android/page14/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/android/page15/</loc>
     </url>
     
     
@@ -2656,7 +2684,7 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/tag/%EB%91%A5%EA%B7%BC%EB%AA%A8%EC%84%9C%EB%A6%AC/rss.xml</loc>
+        <loc>https://pyeongho.github.io/tag/round_rect/rss.xml</loc>
     </url>
     
     
@@ -2664,7 +2692,7 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/tag/%EB%91%A5%EA%B7%BC%EB%AA%A8%EC%84%9C%EB%A6%AC/</loc>
+        <loc>https://pyeongho.github.io/tag/round_rect/</loc>
     </url>
     
     
@@ -2976,7 +3004,7 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/tag/%EC%95%B1%EC%83%81%ED%83%9C/rss.xml</loc>
+        <loc>https://pyeongho.github.io/tag/app_status/rss.xml</loc>
     </url>
     
     
@@ -2984,7 +3012,7 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/tag/%EC%95%B1%EC%83%81%ED%83%9C/</loc>
+        <loc>https://pyeongho.github.io/tag/app_status/</loc>
     </url>
     
     
@@ -3024,7 +3052,7 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/tag/%EC%9E%90%EB%8F%99%ED%99%94/rss.xml</loc>
+        <loc>https://pyeongho.github.io/tag/ci/cd/rss.xml</loc>
     </url>
     
     
@@ -3032,7 +3060,7 @@
     
     
     <url>
-        <loc>https://pyeongho.github.io/tag/%EC%9E%90%EB%8F%99%ED%99%94/</loc>
+        <loc>https://pyeongho.github.io/tag/ci/cd/</loc>
     </url>
     
     
@@ -3225,6 +3253,22 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/LeadingMarginSpan/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/setTextAppearance/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/setTextAppearance/</loc>
     </url>
     
     

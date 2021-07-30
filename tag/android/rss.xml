@@ -12,553 +12,425 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>구글 스프레드 시트 자동 언어(안드로이드)</title>
-	  <link>//gdata</link>
+	  <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
+	  <link>//textview_setTextAppearance</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-12-24T00:00:00+00:00</pubDate>
-	  <guid>//gdata</guid>
+	  <pubDate>2021-07-30T00:00:00+00:00</pubDate>
+	  <guid>//textview_setTextAppearance</guid>
 	  <description><![CDATA[
-	     <h3>참고</h3>
+	     <h3>TextView setTextAppearance 동작 확인하기</h3>
 
 <ul>
-<li><a href="https://dunji.tistory.com/2">https://dunji.tistory.com/2</a></li>
-</ul>
-
-<h3>구글 스프레드 시트 자동 번역을 이용하려고 python 을 사용하려고 할때 발생하는 에러</h3>
-
-<ul>
-<li>=GOOGLETRANSLATE(B592,&quot;ko&quot;,&quot;en&quot;) 요런 구글 자동 번역</li>
-</ul>
-
-<h3>문제는 실행하면   Moved Permanently  요런 에러가 발생하면서 안된다.</h3>
+<li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
+<li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
+<li><p>setTextAppearance 를 따라가다 보면 모든 속성이없다.</p>
 
 <ul>
-<li>항상 기본 설치 이기에 C:\Python27\Lib\site-packages\gdata  이곳에 설치 된다.</li>
-<li>수정해야 할 부분은 C:\Python27\Lib\site-packages\gdata\docs\service.py 파일</li>
-<li>server_response.status 로 검색 하면 302 만 처리되어 있습니다. 이를 아래와 같이 수정 하면 Moved Permanently 수정 할 수 있습니다.<br></li>
+<li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
+<li><script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script></li>
+</ul></li>
+<li><p>아래는 동작 가능한 속성들을 정리해 보았습니다.
+<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></p></li>
 </ul>
-<div class="highlight"><pre><code class="language-python" data-lang="python">    <span class="k">while</span> <span class="n">server_response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">302</span> <span class="ow">or</span> <span class="n">server_response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">301</span> <span class="ow">and</span> <span class="n">timeout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</code></pre></div>
-<h3>string.xml 을 csv 로 만들고 그걸 구글 자동 번역으로 변경하고 다시 xml 로 변경하는 프로그램</h3>
-
-<ul>
-<li>파이썬 프로그램 코드 </li>
-</ul>
-
-<p><script src="https://gist.github.com/pyeongho/fd6975c221e1ac00f0fa8728bf649daa.js"></script></p>
 
 	  ]]></description>
 	</item>
 
 	<item>
-	  <title>R8 NullPointerException</title>
-	  <link>//r8_error</link>
+	  <title>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</title>
+	  <link>//textview_leadingmargin</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-07-23T00:00:00+00:00</pubDate>
-	  <guid>//r8_error</guid>
+	  <pubDate>2021-07-19T00:00:00+00:00</pubDate>
+	  <guid>//textview_leadingmargin</guid>
 	  <description><![CDATA[
-	     <h3>참고</h3>
+	     <h3>TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.</h3>
 
 <ul>
-<li><a href="https://github.com/square/okhttp/issues/4604">https://github.com/square/okhttp/issues/4604</a></li>
+<li><img src="http://drive.google.com/uc?export=view&amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz" alt=""></li>
+<li>간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.</li>
+<li><p>들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
+<script src="https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js"></script></p></li>
+<li><p>first = 200 =&gt; 들여쓰기 픽셀</p></li>
+<li><p>rest = 1 =&gt; 단락의 나머지줄 들여쓰기 (the indent for the remaining lines of the paragraph)</p></li>
+<li><p>start = 0, end =  1, flags = 0 =&gt; span 의 인자값</p></li>
+<li><p>end =  1 이 왜 1인지 궁금해 할수 있습니다. 이는 디자인상 요청 사항으로 두번째 문단은 들여쓰기가 안되어야 해서 입니다.</p></li>
+<li><p>일반적인 들여쓰기에서는 길이를 넣으면 됩니다.</p></li>
 </ul>
 
-<h3>그래들 수정후 성공</h3>
+<h3>참고</h3>
 
 <ul>
-<li>okhttp 와 문제가 발생하는걸로 보입니다.</li>
-<li>아래와 같은 내용을 그래들에 추가 하여 해결하였습니다.</li>
+<li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan">https://developer.android.com/reference/android/text/style/LeadingMarginSpan</a></li>
+<li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard">https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard</a></li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang=""> buildscript {
-     ...
-     repositories {
-         ...
-         maven {
-             url 'http://storage.googleapis.com/r8-releases/raw'
-         }
-     }
 
-     dependencies {
-         classpath 'com.android.tools:r8:1.5.50'  // Must be before the Gradle Plugin for Android.
-         classpath 'com.android.tools.build:gradle:3.3.1'  // You don't need to upgrade this to use a newer R8 version.
-         ...
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
+	  <link>//webview_async</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-07-05T00:00:00+00:00</pubDate>
+	  <guid>//webview_async</guid>
+	  <description><![CDATA[
+	     <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
+
+<ul>
+<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
+<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
+<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
+<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
+<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
+  val binding get() = _binding!!
+
+  override fun onDestroyView() {
+          super.onDestroyView()
+          _binding = null
       }
- }
-
-
 </code></pre></div>
-<h3>에러 내용</h3>
-<div class="highlight"><pre><code class="language-" data-lang="">org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:transformClassesAndResourcesWithR8ForDebug'.
-    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:103)
-    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:73)
-    at org.gradle.api.internal.tasks.execution.OutputDirectoryCreatingTaskExecuter.execute(OutputDirectoryCreatingTaskExecuter.java:51)
-    at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:59)
-    at org.gradle.api.internal.tasks.execution.ResolveTaskOutputCachingStateExecuter.execute(ResolveTaskOutputCachingStateExecuter.java:54)
-    at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:59)
-    at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:101)
-    at org.gradle.api.internal.tasks.execution.FinalizeInputFilePropertiesTaskExecuter.execute(FinalizeInputFilePropertiesTaskExecuter.java:44)
-    at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:91)
-    at org.gradle.api.internal.tasks.execution.ResolveTaskArtifactStateTaskExecuter.execute(ResolveTaskArtifactStateTaskExecuter.java:62)
-    at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:59)
-    at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:54)
-    at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
-    at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:34)
-    at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker$1.run(DefaultTaskGraphExecuter.java:256)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:336)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:328)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:199)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:110)
-    at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:249)
-    at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:238)
-    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.processTask(DefaultTaskPlanExecutor.java:123)
-    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.access$200(DefaultTaskPlanExecutor.java:79)
-    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$1.execute(DefaultTaskPlanExecutor.java:104)
-    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker$1.execute(DefaultTaskPlanExecutor.java:98)
-    at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.execute(DefaultTaskExecutionPlan.java:663)
-    at org.gradle.execution.taskgraph.DefaultTaskExecutionPlan.executeWithTask(DefaultTaskExecutionPlan.java:597)
-    at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor$TaskExecutorWorker.run(DefaultTaskPlanExecutor.java:98)
-    at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-    at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-    at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-    at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-    at com.android.tools.r8.shaking.Enqueuer.transitionDefaultMethodsForInstantiatedClass(Enqueuer.java:744)
-    at com.android.tools.r8.shaking.Enqueuer.transitionDefaultMethodsForInstantiatedClass(Enqueuer.java:745)
-    at com.android.tools.r8.shaking.Enqueuer.transitionMethodsForInstantiatedClass(Enqueuer.java:730)
-    at com.android.tools.r8.shaking.Enqueuer.processNewlyInstantiatedClass(Enqueuer.java:674)
-    at com.android.tools.r8.shaking.Enqueuer.trace(Enqueuer.java:1091)
-    at com.android.tools.r8.shaking.Enqueuer.traceApplication(Enqueuer.java:1074)
-    at com.android.tools.r8.R8.run(R8.java:286)
-    at com.android.tools.r8.R8.run(R8.java:228)
-    at com.android.tools.r8.R8.lambda$run$0(R8.java:133)
-    at com.android.tools.r8.utils.ExceptionUtils.withCompilationHandler(ExceptionUtils.java:55)
-    at com.android.tools.r8.utils.ExceptionUtils.withR8CompilationHandler(ExceptionUtils.java:48)
-    at com.android.tools.r8.R8.run(R8.java:129)
-    at com.android.builder.dexing.R8Tool.runR8(r8Tool.kt:145)
-    at com.android.build.gradle.internal.transforms.R8Transform.transform(R8Transform.kt:202)
-    at com.android.build.gradle.internal.pipeline.TransformTask$2.call(TransformTask.java:239)
-    at com.android.build.gradle.internal.pipeline.TransformTask$2.call(TransformTask.java:235)
-    at com.android.builder.profile.ThreadRecorder.record(ThreadRecorder.java:102)
-    at com.android.build.gradle.internal.pipeline.TransformTask.transform(TransformTask.java:230)
-    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    at java.lang.reflect.Method.invoke(Method.java:498)
-    at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:73)
-    at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:50)
-    at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:39)
-    at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:26)
-    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$1.run(ExecuteActionsTaskExecuter.java:124)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:336)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor$RunnableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:328)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:199)
-    at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:110)
-    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:113)
-    at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:95)
-    ... 33 more
+<ul>
+<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
+<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
+<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
+<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
+</ul>
 
-
-</code></pre></div>
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>redux 공부 중</title>
-	  <link>//redux_study</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-07-12T00:00:00+00:00</pubDate>
-	  <guid>//redux_study</guid>
-	  <description><![CDATA[
-	     <h3>참고</h3>
+<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
 
 <ul>
-<li>참고 글이 원본 입니다. </li>
-<li><a href="https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd">샘플 공부</a></li>
-<li><a href="https://github.com/Urotea/AndroidBoilerplate">샘플 코드</a></li>
-<li><a href="https://github.com/freeletics/RxRedux">참고라이브러리</a></li>
+<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
+<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
+<li>꼭 신경 써야 합니다.</li>
 </ul>
 
 	  ]]></description>
 	</item>
 
 	<item>
-	  <title>redux</title>
-	  <link>//redux</link>
+	  <title>안드로이드 빌드 실패 with github actions</title>
+	  <link>//gradle_action</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-07-09T00:00:00+00:00</pubDate>
-	  <guid>//redux</guid>
+	  <pubDate>2021-06-30T00:00:00+00:00</pubDate>
+	  <guid>//gradle_action</guid>
 	  <description><![CDATA[
-	     <h3>참고</h3>
+	     <h3>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생</h3>
 
 <ul>
-<li>참고 글이 원본 입니다. </li>
-<li><a href="https://voidsatisfaction.github.io/2017/02/24/what-is-redux/">리덕스(Redux)란 무엇인가?</a></li>
+<li>깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.</li>
+<li>처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.</li>
+<li>정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.</li>
+<li>빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.</li>
+<li>gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+</code></pre></div>
+<ul>
+<li>데몬이 없어 졌다고 해서 그래들옵션에 no-daemon 을 추가해 보았지만 그래도 에러는 지속 되었습니다.</li>
+<li>(https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)[https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners]</li>
+<li>깃허브 액션에 대해서 조금만 더 알아보기로 하였습니다.</li>
+<li>일단 깃허브 액션의 머신 스펙을 확인 하였습니다. 그런데 스펙에 보이는 마음에 들지 않는 숫자 메모리 7기가</li>
+<li><p>설마 설마 그래들 속성을 확인 했습니다. 역시나 아래 처럼 최대 메모리가 8기가로 설정 되어 있었습니다.
+<code>
+org.gradle.jvmargs=-Xms4096m -Xmx8192m -XX:MaxPermSize=1024m
+</code></p></li>
+<li><p>여러분도 원인 모를 actions 의 빌드 실패가 발생하면 메모리를 확인해 보세요</p></li>
 </ul>
 
-<h3>리덕스</h3>
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>안드로이드 리뷰 요청하기</title>
+	  <link>//review</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-09-23T00:00:00+00:00</pubDate>
+	  <guid>//review</guid>
+	  <description><![CDATA[
+	     <h3>안드로이드도 리뷰를 요청 할 수 있습니다.</h3>
 
 <ul>
-<li>안드로이드용 공식 리덕스는 아니지만 리덕스의 기본적인 개념을 알고 일ㄹ</li>
-<li><p>리덕스는 어플리케이션의 클라이언트쪽 state를 관리하기 위한 거대한 이벤트 루프이다.</p>
-
-<ul>
-<li>액션 = 이벤트</li>
-<li>리듀서 = 이벤트에 대한 반응</li>
-</ul></li>
-<li><p>Redux의 동기</p>
-
-<ul>
-<li>Redux공식 문서(참조)에 의하면 리덕스는 클라이언트 앱의 복잡성을 제어하기 위한 하나의 state제어 수단이라고 한다(정확히는 방법론이 맞는것 같다.)</li>
-<li>Redux를 제안하고 개발한 Dan Abramov는 클라이언트앱의 복잡성을 증가시키는게 Mutation과 Asynchronicity라며 그 둘을 멘토스와 콜라와 같다고 한다.</li>
-<li>Mutation과 Asynchronicity는 각각 존재할때에는 대단한 것임에 틀림없지만 같이 존재할때 크나큰 복잡성을 유도한다는 것이다.</li>
-<li>여기서 Redux는 Mutation, 즉 클라이언트의 종합적인 State를 관리하기 위한 아키텍쳐 방법론인 것이다. </li>
-</ul></li>
-<li><p>Redux의 원리</p>
-
-<ul>
-<li>어플리케이션 전체에는 store라는 커다란 하나의 state가 존재하는데 이것이 어플리케이션의 state를 총괄한다.</li>
-<li>store의 state는 그 자체를 직접 변형할 수 없고, 오직 순수 함수인 리듀서로만 새로운 형태로 갈아치우는 것이 가능하다.</li>
-<li>리듀서는 type과 payloads(꼭 속성이름이 이렇지 않아도 됨)를 속성으로 갖는 단순 객체인 action이벤트가 발생했을 때에만 작동하며</li>
-<li>action이벤트를 발생시키는 방법은 dispatch라는 함수에 단순 객체인 action을 넣는것으로 가능하게 한다.</li>
-<li>dispatch(action) =&gt; 리듀서 작동 =&gt; store의 state변경 =&gt; 변경된 state가 state를 subscribe하고 있는 컴포넌트에 전달</li>
-</ul></li>
-<li><p>Redux의 장점</p>
-
-<ul>
-<li>application state의 변화가 예측가능하게 변한다는 점이다</li>
-<li>이는 특정 액션이벤트 발생에만 reducer가 작동하게 했기때문에 store state가 변한경우 그것이 정확히 어떠한 액션 이벤트로 부터변경된 것인지 알 수 있다.</li>
-<li>정확히 어떤 액션 이벤트로 부터 변경된 것인지 알기 때문에 Time travel debugging이 가능해진다. 간단하게 얘기하자면 이제까지 store state가 변화해온 과정을 마치 뒤로가기 버튼이 있는것 처럼 하나하나 확인해볼 수 있는 것이다.</li>
-<li>리듀서가 순수 함수(외부에 영향을 끼치지 않는 함수. ex: api calling이 없는 함수)이기 때문에 test코드를 짤 수 있다는 장점도 존재한다.</li>
-<li>선언적으로 프로그래밍을 할 수 있다는 점이다(Declarative Programming)</li>
-</ul></li>
-<li><p>Redux와 Middleware</p>
-
-<ul>
-<li>action이 단순 객체이기 때문에 다음과 같은 행동이 불가능하다
-
-<ol>
-<li>로그인 요청을 보내며 로딩중이라는 표시를 뜨게 하기</li>
-<li>회원가입 요청을 보내는데에 만약 이미 있는 id라면 에러 메세지를 보내고 아니라면 성공시킨다.</li>
-</ol></li>
-<li>action이 단순 객체라는 얘기는 조건 분기나 다른 action 이벤트를 생성할 수 없기 떄문에 우리는 action creator라는 action을 생성하는 함수를 생성한다. </li>
-<li>action creator는 함수이기 때문에 Promise나 Callback을 적절히 조화하는 것으로 다른 action 이벤트를 생성할 수 있고, 조건 분기도 가능해진다. 사실 이름만 action creator이지 action자체를 반환하지 않아도 된다.</li>
-<li>redux thunk는 함수를 반환하는 함수인데 dispatch를 가지고 함수를 warpping하고 있으므로 일일이 dispatch를 불러와야하는 귀찮음이 경감된다.</li>
-</ul></li>
+<li><a href="https://developer.android.com/guide/playcore/in-app-review">https://developer.android.com/guide/playcore/in-app-review</a></li>
 </ul>
 
-<h4>리덕스의 정체</h4>
+<h3>사용법</h3>
 
 <ul>
-<li>redux는 state관리를 위한 거대한 event loop
+<li>참고 문서에도 있지만 천천히 따라하기</li>
+<li>의존성 주입 :  implementation &#39;com.google.android.play:core-ktx:1.8.1&#39;</li>
+<li><p>추가 코드 : 결과 처리 예외 처리 역시 가능함</p>
 
 <ul>
-<li>액션 = 이벤트</li>
-<li>리듀서 = 이벤트에 대한 반응</li>
-</ul></li>
-<li>액션이벤트를 발생시켜서 리듀서라는 이벤트에 대한 반응을 일으키므로서 어플리케이션의 state를 a라는 상태에서 b라는 상태로 만든다.(a is b)<br></li>
-<li><p>실제로 Dan Abramov는 공식 tutorial문서에서 이렇게 얘기하고 있다.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">    Following in the steps of Flux, CQRS, and Event Sourcing, Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. These restrictions are reflected in the three principles of Redux.
+<li></li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">    val manager = ReviewManagerFactory.create(context)
+    val request = manager.requestReviewFlow()
+    request.addOnCompleteListener { request -&gt;
+        if (request.isSuccessful) {
+            // We got the ReviewInfo object
+            val reviewInfo = request.result
+        } else {
+            // There was some problem, continue regardless of the result.
+        }
+    }  
 </code></pre></div></li>
-<li><p>이벤트 기반의 프로그래밍론이 redux에 사상적으로 들어가 있는 것이다.     </p></li>
 </ul>
 
 	  ]]></description>
 	</item>
 
 	<item>
-	  <title>안드로이드 태생</title>
-	  <link>//basic</link>
+	  <title>안드로이드 fastlane 빌드</title>
+	  <link>//fastlane</link>
 	  <author>PyeongHo</author>
-	  <pubDate>2019-06-12T00:00:00+00:00</pubDate>
-	  <guid>//basic</guid>
+	  <pubDate>2020-09-10T00:00:00+00:00</pubDate>
+	  <guid>//fastlane</guid>
 	  <description><![CDATA[
-	     <h3>참고</h3>
+	     <h3>azure, fastlane</h3>
 
 <ul>
-<li>참고 글이 원본 입니다. </li>
-<li>공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.</li>
-<li><a href="http://blog.naver.com/huewu/110085391353">안드로이드의 멀티태스킹 (Multitasking the Android Way)</a></li>
-</ul>
-
-<h3>메모리는 부족하지만 모든 어플리케이션은 항상 실행 중 인것처럼</h3>
+<li><p>azure</p>
 
 <ul>
-<li>우리는 사용자에게 특정 어플리케이션 사용을 끝마쳤을 때, 명시적으로 어플리케이션을 종료하지 않아도 되기를 원했다. 사용자들은 다양한 종류의 어플리케이션을 아주 짧게 그리고 반복적으로 사용하기 때문이다.</li>
-<li>휴대용 장치들은 풍족한 스왑 메모리 공간을 갖고 있지 못하며, 메모리 사용에 빡빡한 제한을 갖고 있다. (첨:아주 짧게 여러개를 사용하면 부족해 질 수 있다.)</li>
-<li>모바일 디바이스에서 어플리케이션 스위칭은 중요하다. 우리는 새로운 어플리케이션이 1초 이내에 시작될 수 있도록 굉장한 노력을 기울였다. 비디오를 보다가 새로 도착한 SMS 문자를 확인하고 다시 비디오 플레이 어플리케이션으로 돌아가는 등의 사용자 시나리오를 생각해 본다면, 몇몇 어플리케이션간의 빠른 스위칭은 특히 더 중요한 문제이다.</li>
-<li>사용할 수 있는 API 는 안드로이드에 기본 내장된 구글 어플리케이션을 만들 수 있을 만큼 충분히 강력해야 한다. 이것은 우리의 &#39;모든 어플리케이션은 동등하다,&#39; 라는 철학의 문제이다. 즉, 백그라운드 음악 재생, 데이타 동기화, GPS 네비게이션, 어플리케이션 다운로드등의 기능은 서드 파티 어플리케이션 개발자들이 사용가능한 API 와 동일한 API 를 이용해서 작성되어야 한다. </li>
-</ul>
-
-<h3>안드로이드에서 프로세스 와 어플리케이션</h3>
-
-<ul>
-<li>안드로이드에서 프로세스와 어플리케이션은 밀접하게 연결(tightly coupled)되어 있는 요소가 아니며, 어플리케이션은 해당 어플리케이션을 작동시키고 있는 프로세스가 없음에도 사용자에게 현재 작동하고 있는 것 처럼 보일 수도 있고, 또, 여러 어플리케이션이 프로세스를 공유 할 수도 있습니다. 혹은 필요에 따라 하나의 어플리케이션이 여러개의 프로세스를 사용할 수도 있고, 실재로 어플리케이션이 작동 중이 아님에도, 어플리케이션을 구동했던 프로세스들은 종료되지 않고 안드로이드 시스템에 의해 유지될 수 있습니다.</li>
-<li>어플리케이션의 프로세스는 단순히 안드로이드 시스템이 해당 프로세스가 필요 했었고, 이 후에 해당 프로세스가 다시 사용될 경우에 대비해서 프로세스를 유지하기로 결정했기 때문에 살아있는 것 뿐입니다.</li>
-<li>안드로이드가 어플리케이션을 관리하는 핵심은 프로세스를 깔끔하게 종료시키지 않는 것입니다.</li>
-</ul>
-
-<h3>Explicitly running in the background : 명시적으로 백그라운드 작업</h3>
-
-<ul>
-<li>어플리케이션은 안드로이드 시스템에게 명시적으로 백그라운드 상에서 작업이 수행되어야 함을 알릴 필요가 있습니다. 어플리케이션은 메니페스트 상에 &#39;Broadcast Receiver&#39; 혹은 &#39;Service&#39; 요소를 선언할 수 있으며, 이 두가지 요소를 통해 명시적으로 백그라운드 작업을 수행 할 수 있습니다.</li>
-<li>Broadcast Receiver
-
-<ul>
-<li> Broadcast Receiver 는 어플리케이션이 특정한 이벤트가 발생하는 경우에, 아주 짧은 시간동안 백그라운드에서 작업 가능</li>
+<li>회원가입</li>
+<li>파이프라인 생성</li>
+<li>깃허브 연결</li>
+<li>yml 파일 생성(자동생성 사용)</li>
+<li>필요에 따라 내용 추가</li>
 </ul></li>
-<li>Service
+<li><p>fastlane</p>
 
 <ul>
-<li>어플리케이션이 안드로이드 시스템에게 &quot;헤이~ 나는 내가 종료되었다고 하기 전까지 백그라운드에서 계속해서 작동했으면 좋겠어!&quot; 라고 알려주는 것입니다. 어플리케이션은 명시적으로 Service 를 시작 하거나 종료 시킬 수 있습니다.</li>
-<li>메모리가 부족해 진다면, Service 가 작동중인 프로세스 또한 강제로 종료</li>
-<li>Service 는 안드로이드 시스템에 미리 자신을 &#39;Foreground&#39; 상태로 간주해 달라고 이야기할 수도 있습니다. 이것은, &quot;나를 죽이지 마세요&quot; 라는 뜻인데, 이 경우 해당 Service 는 사용자에게 자신이 현재 작동중임을 Notification (안드로이드 화면 상단의 상태바) 을 통해 표시해 주어야 합니다</li>
+<li>안드로이드 앱 루트 폴더로 이동</li>
+<li>fastlane init 실행
+
+<ul>
+<li>json 파일은 플레이콘솔 액세스 용으로 콘솔에서 생성 가능</li>
 </ul></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 context</title>
-	  <link>//context</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-05-24T00:00:00+00:00</pubDate>
-	  <guid>//context</guid>
-	  <description><![CDATA[
-	     <h3>참고</h3>
-
-<ul>
-<li>참고 글이 원본 입니다. </li>
-<li>공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.</li>
-<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
-</ul>
-
-<h3>Context</h3>
-
-<ul>
-<li> <a href="https://developer.android.com/reference/kotlin/android/content/Context.html">안드로이드 개발자사이트 Context</a></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    Interface to global information about an application environment. 
-    This is an abstract class whose implementation is provided by the Android system.
-    It allows access to application-specific resources and classes, 
-    as well as up-calls for application-level operations such as launching activities, 
-    broadcasting and receiving intents, etc.
-
-    어플리케이션 환경에 관한 글로벌 정보에 접근하기위한 인터페이스. Abstract 클래스이며 실재 구현은  
-    안드로이드 시스템에 의해 제공된다. Context를 통해, 어플리케이션에 특화된 리소스나 클래스에 접근할 수 있을뿐 아니라,
-    추가적으로 어플리케이션 레벨의 작업. activity 실행, intent 브로드캐스트, intent 수신 등을 한다. 
-</code></pre></div>
-<ul>
-<li><p>Context 는 크게 두 가지 역할을 수행하는 Abstract 클래스 입니다.</p>
-
-<ul>
-<li>어플리케이션에 관하여 시스템이 관리하고 있는 정보에 접근하기(getPackageName() 등)<br></li>
-<li>안드로이드 시스템 서비에서 제공하는 API 호출 (startActivity() 등)</li>
-</ul></li>
-<li><p>Context 는 어플리케이션과 관련된 정보에 접근하고자 하거나 어플리케이션과 연관된 시스템 레벨의 함수를 호출하고자 할 때 사용됩니다. 그런데 안드로이드 시스템에서 어플리케이션 정보를 관리하고 있는 것은 시스템이 아닌, ActivityManagerService 라는 일종의 또 다른 어플리케이션입니다. 따라서 다른 일반적은 플랫폼과는 달리, 안드로이드에서는 어플리케이션과 관련된 정보에 접근하고자 할때는 ActivityManagerService 를 통해야만 합니다. 당연히 정보를 얻고자 하는 어플리케이션이 어떤 어플리케이션인지에 관한 키 값도 필요해집니다.</p></li>
-<li><p>Context 역할</p>
-
-<ul>
-<li>자신이 어떤 어플리케이션을 나타내고 있는지 알려주는 ID 역할</li>
-<li>ActivityManagerService 에 접근할 수 있도록 하는 통로 역할 </li>
-</ul></li>
-<li><p>Context 를 가지고 다른 시스템 애플리케이션들에게 명령하거나 값을 가지고 온다. </p></li>
-</ul>
-
-<h3>참고</h3>
-
-<ul>
-<li><a href="https://arabiannight.tistory.com/entry/272">안드로이드/Android Context 란?</a></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>루팅 기기에서 원격 ADB</title>
-	  <link>//root_adb</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-04-11T00:00:00+00:00</pubDate>
-	  <guid>//root_adb</guid>
-	  <description><![CDATA[
-	     <h3>루팅 기기에서 ADB 원격 가능하도록 하는 방법</h3>
-
-<p><script src="https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js"></script></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>인증서 피닝, 인증서 고정</title>
-	  <link>//cert_pinning</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-04-04T00:00:00+00:00</pubDate>
-	  <guid>//cert_pinning</guid>
-	  <description><![CDATA[
-	     <h3>https 사용 시 인증서를 고정 하자</h3>
-
-<ul>
-<li>frida를 이용해서 인증서를 변경해서 공격이 가능해 보인다.</li>
-<li>보안팀에서 인증서 피닝을 해달라고 요청이 왔다.</li>
-<li>내용을 물어 보고 찾아보니 인증서 값을 공정 하는 내용</li>
-<li>인증서를 미리 확인해서 핀으로 고정 한다.</li>
-</ul>
-
-<h3>okhhtp를 사용 하기에 해당 내용만 기술</h3>
-
-<ul>
-<li>방법
-
-<ul>
-<li>API 서버의 정보를 찾는다.</li>
-<li>찾은 인증서 정보를 okhttp client 에 추가해 준다.</li>
-</ul></li>
-</ul>
-
-<h3>okhhtp를 활용해 인증서 정보 찾기</h3>
-
-<ul>
-<li><p>아래 클래스를 활용해서 코드를 실행
-<script src="https://gist.github.com/pyeongho/7fdab667be595ec8e77af3ffb6478410.js"></script></p></li>
-<li><p>Rx 를 사용하기 때문에 아래 처럼 대충 코드를만들어서 실행
-<script src="https://gist.github.com/pyeongho/2b149508ef2d92583298e26f8f2fde60.js"></script></p></li>
-<li><p>아래처럼 에러가 출력 됩니다. 발견한 개수는 도메인 마다 다를수 있습니다.</p></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  Certificate pinning failure!
-        Peer certificate chain:
-          sha256/발견한 내용1=: CN=*.도메인,OU=Domain Control Validated
-          sha256/발견한 내용2=: CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE
-          sha256/발견한 내용3=: CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R3
-        Pinned certificates for 도메인:
-          sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
-
-</code></pre></div>
-<h3>okhhtp를 활용해 인증서 고정</h3>
-
-<ul>
-<li>에러로 출력되는 내용을 자신의 okhttp client에 추가  아래와 같은 형태로 추가후 동작 확인</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">      private val client: OkHttpClient = OkHttpClient.Builder()
-              .certificatePinner(
-                      CertificatePinner.Builder()
-                              .add(dmoain, "sha256/발견한 내용1 =")
-                              .add(dmoain, "sha256/발견한 내용2 =")
-                              .add(dmoain, "sha256/발견한 내용3 =")
-                              .build())
-              .build()
-
-</code></pre></div>
-<h3>API 통신후 문제 없으면 성공 입니다.</h3>
-
-<ul>
-<li>운영이슈 조심</li>
-<li>인증서 갱신에는 해당 내용이 안 바뀐다는 첩보 수신</li>
-<li>인증서 교체나 재바급은 당연히 이슈 발생 하니 잘 확인해야 합니다.</li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>플레이스토어 활용</title>
-	  <link>//playstore</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-04-02T00:00:00+00:00</pubDate>
-	  <guid>//playstore</guid>
-	  <description><![CDATA[
-	     <h3>플레이스토어 활용</h3>
-
-<ul>
-<li><p>예약게시 기능</p>
-
-<ul>
-<li>플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다.</li>
-<li>원하는 날짜에 자동으로 되는 예약이 아니다.</li>
-<li>스토어 등록 정보 하단에 있는 예약 게시 기능을 활성화 하면 바이너리 활성화 이후 스토어 배포 준비가 되면 사용자가 직접 게시 버튼을 눌러서 원하는 시간에 업데이트가 가능하다.</li>
-<li>기존에는 바이너리 업데이트후 검토 완료후 자동으로 게시 되어 정확한 시간을 알수가 없었다.</li>
-<li>예약게시를 활성화 이후에는 검토가 완료 되면 게시 버튼이 활성화가 된다.</li>
-<li>원하는 시간 몇분전에(플레이스토어 반영 시간) 게시 버튼만 누르면 된다.</li>
-</ul></li>
-<li><p>비공개 트랙, 알파 트랙</p>
-
-<ul>
-<li>테스트를 진행하면서 바이너리를 전달하기 힘들때 사용하면 좋다.</li>
-<li>비공개 트랙을 만들어서 테스트를 진행하면 실제 스토어에서 다운 받아서 테스가 가능하다</li>
-<li>심지어 업데이트도 가능</li>
-<li>비공개 트랙도 바이너리 업데이트 이기 때문에 예야 게시와 함께 사용 됩니다.</li>
-<li>예를 들어 예약 게시 활성후에는 비공개 트랙도 영향받아서 게시 버튼을 눌러야 기능이 활성화 됩니다.</li>
-<li>자동화 테스트</li>
-<li>파이어 베이스에도 있는 기능 이지만 로보 테스트를 활용하여 기본적인 테스트 가능하다.</li>
-<li>클릭 스와이프등을 자동으로 테스트 하여 준다.</li>
-<li>구글이 원하는 기본적인 버튼 규격 또는 성능에 미달하는것도 테스트 가능하다.</li>
-<li>현재 공부 중인 내용은 input 필드에 내용 추가 하는 방법이다
-
-<ul>
-<li>리소스 아이디 입력후 원하는 값을 입력 하면 된다고 하지만</li>
-<li>5개중에 2개만 성공 하여서 원인 파악하면서 진행 하고 있다.</li>
-</ul></li>
-</ul></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>기본 레프트 메뉴의 활용</title>
-	  <link>//left_menu</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2019-03-22T00:00:00+00:00</pubDate>
-	  <guid>//left_menu</guid>
-	  <description><![CDATA[
-	     <h3>레프트 메뉴의 다양화</h3>
-
-<ul>
-<li>애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.</li>
-<li>디자이너가 요청 하는 내용
-
-<ul>
-<li>안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태</li>
-<li>메인 화면을 밀고 가는 내용</li>
-<li>메인 화면이 작아 지면서 메뉴가 나오는 형태</li>
-</ul></li>
-<li>위 내용 처럼 대략 3가지 정도로 요약 됨</li>
-<li>처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.</li>
-<li>다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.</li>
-</ul>
-
-<h3>기본적인 내용을 이용하는 방법</h3>
-
-<ul>
-<li>DrawerLayout 기본 샘플은  새로운 프로젝트를 시작 하여 네비게이션 드로어를 선택</li>
-<li>메뉴 사이즈는  android:layout_gravity=&quot;start&quot; 속성을 가지는 레이아웃을 폭을 조정 하면 된다.</li>
-<li>메뉴가 나올때 그림자 색상은 아래 처럼 옵션을 설정 한다. 아래는 그림자 제거
-
-<ul>
-<li>drawerLayout.setScrimColor(Color.TRANSPARENT);</li>
-</ul></li>
-<li><p>메인화면 밀기는 아래 코드 처럼 사용 하였습니댜.</p>
-
-<ul>
-<li>contentFrame 메인화면 레이아웃 입니다.</li>
-<li>slideOffset 을 이용하여 메인화면의 좌표를 변경 하는 방법 입니다.</li>
-<li><script src="https://gist.github.com/pyeongho/02c696d302047ee3aa5d859fb73c16e6.js"></script></li>
-</ul></li>
-<li><p>메인 화면을 이동하는 코드를 확용 하면 원하는 형태를 만들 수 있습니다.</p>
-
-<ul>
-<li><script src="https://gist.github.com/pyeongho/b77bd2e392a7e8355c068d5fb28098b9.js"></script></li>
-<li>위와 같이 적용 하면 메인 화면의 사이즈가 작아 지면서 처리가 됩니다.</li>
 </ul></li>
 </ul>
 
 <h3>참고</h3>
 
 <ul>
-<li><a href="http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/">http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/</a></li>
+<li><a href="https://dev-yakuza.github.io/ko/react-native/fastlane/">https://dev-yakuza.github.io/ko/react-native/fastlane/</a></li>
 </ul>
 
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>안드로이드 앱 상태(foreground, background)</title>
+	  <link>//app</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-03-12T00:00:00+00:00</pubDate>
+	  <guid>//app</guid>
+	  <description><![CDATA[
+	     <h3>외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다.</h3>
+
+<ul>
+<li>Foreground 라는 클래스를 사용 했지만 라이프 사이클을 이용하면 쉽게 처리 가능합니다.</li>
+</ul>
+
+<h3>라이프 사이클 클래스</h3>
+
+<ul>
+<li>상태는 3개로 실행 안됨</li>
+<li>백그라운드</li>
+<li>포그라운드<br>
+<script src="https://gist.github.com/pyeongho/5a3a3bcfa25b9b85e1dd4c3a6d474c2b.js"></script></li>
+</ul>
+
+<h3>애플리케이션 클래스에 추가</h3>
+
+<ul>
+<li>앱에서 사용하는 애플리케이션 클래스를 상속 받은 곳에서 아래 내용을 추가해서 활성화 한다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">ProcessLifecycleOwner.get()
+            .lifecycle
+            .addObserver(OnAppObserver())
+
+</code></pre></div>
+<h3>유의사항</h3>
+
+<ul>
+<li>아래 내용 참고 해서 원하는상태를 체크해서 동작 하면 됩니다.</li>
+<li>외부 딥링크에서 앱 호출시 포그라운드 동작한다.
+
+<ul>
+<li>스키마로 앱을 실행하면서 백그라운드에서 포그라운드로 변경되면서 포그라운드 동작 </li>
+</ul></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>안드로이드 adid 가져오기</title>
+	  <link>//adid</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-02-25T00:00:00+00:00</pubDate>
+	  <guid>//adid</guid>
+	  <description><![CDATA[
+	     <h3>앱을 개발하다 보면 adid 를 가져와야 하는 일도 있습니다.</h3>
+
+<ul>
+<li>최종적으로 사용할 함수는 아래와 같습니다. </li>
+<li>비동기 처리는 필수 입니다.</li>
+<li>그리고 의존성도 추가 해야 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  AdvertisingIdClient.getAdvertisingIdInfo(context).getId()
+</code></pre></div>
+<h3>추가 내용 및 최종 카드</h3>
+
+<ul>
+<li>의존성 이름은 아래와 같으면 버전은 선택해서 넣으면 됩니다. </li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  implementation 'com.google.android.gms:play-services-ads:18.3.0'
+
+</code></pre></div>
+<ul>
+<li>대충 코드는 아래와 같으면 어싱크 태스크 등을 이용하셔도 됩니다.</li>
+<li>AdvertisingIdClient.getAdvertisingIdInfo(context).getId()  함수를 비동기로 사용 하면 됩니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">
+    Observable.just(context)
+            .map {AdvertisingIdClient.getAdvertisingIdInfo(it).getId()}
+            .subscribeOn(Schedulers.io())
+            .subscribe(
+                    {
+                        log.d("adid  "+it)
+                    },
+                    {
+                        log.e(it.message)
+                    },
+                    {}
+            )
+
+</code></pre></div>
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
+	  <link>//androidx_webview</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-02-07T00:00:00+00:00</pubDate>
+	  <guid>//androidx_webview</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/57783707/webview-inflateexception">https://stackoverflow.com/questions/57783707/webview-inflateexception</a></li>
+</ul>
+
+<h3>androidx 에서 Error inflating class android.webkit.WebView 에러 발생</h3>
+
+<ul>
+<li>롤리팝 버전에서 해당 에러로 앱 크래시</li>
+</ul>
+
+<h3>콜라보레이션</h3>
+
+<ul>
+<li>androidx.appcompat:appcompat:1.1.0</li>
+<li>com.google.android.material:material:1.1.0</li>
+<li>위 2개의 라이브러리의 콜라브레이션으로 에러 발생  1.1.0 이 2개모두 추가되어 있으면 100% 크래시(롤리팝 버전에서)</li>
+</ul>
+
+<h3>appcompat 버전 수정</h3>
+
+<ul>
+<li>androidx.appcompat:appcompat:1.1.0 -&gt; androidx.appcompat:appcompat:1.0.2 </li>
+<li>com.google.android.material:material:1.1.0</li>
+<li>appcompat:1.0.2를 사용한다고 하면 안죽는다고 하지만 </li>
+<li>appcompat:1.0.2 과 material:1.0.0 을 사용할때만 정상 동작 합니다.</li>
+</ul>
+
+<h3>웹뷰 커스텀 버전을 사용하는게 마음이 편할거 같습니다.</h3>
+
+<ul>
+<li><p>코틀린 버전 (자동 변환)
+<script src="https://gist.github.com/pyeongho/44f8bd5cac7c26a9d6110550535cbefa.js"></script></p></li>
+<li><p>자바 버전
+<script src="https://gist.github.com/pyeongho/70dc3d9c1035a9082756f7982059876a.js"></script></p></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>플레이스토어 referrer 데이터 넘기기</title>
+	  <link>//store_referrer</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-02-04T00:00:00+00:00</pubDate>
+	  <guid>//store_referrer</guid>
+	  <description><![CDATA[
+	     <h3>참고</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play">https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play</a></li>
+</ul>
+
+<h3>랜딩 페이지 제작 시  referrer 데이터 전송</h3>
+
+<ul>
+<li>검색 하면 항상 나오는 형태로 아래와 같이 사용이 가능 하다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  market://details?id=com.패키지.이름&amp;referrer=xxxx 
+</code></pre></div>
+<ul>
+<li>위와 같이사용하기 위해서는 웹에서 앱의 설치 유무를 판단 하여 앱실행 또는 마켓이동으로 분기를 처리해야한다. 분기 처리가 완벽하면 문제가 없겠지만 타임아웃을 이용해서 처리하는게 일반적이어서 문제가 발생 한다.</li>
+<li>차라리 아래와 같은 일반 적인 형태에서 처리가 가능하면 어떨까 해서 찾아 보았습니다.(전달 데이터는 URL인코딩 사용 추천)</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;end 
+</code></pre></div>
+<h2>intent:// 스토어 이동시 리퍼러(referrer) 및 extra 데이터 전달</h2>
+
+<ul>
+<li>S.market_referrer= 를 추가하면 플레이스토어어 리퍼러에 데이터 전달 가능</li>
+<li>아래 처럼 넣으면 InstallReferrerClient 에서 데이터를 확인 가능 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  Intent://호스트?데이터A=AAAAAAAA&amp;데이터B=BBBBBBB#Intent;scheme=스키마;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.패키지.이름;S.market_referrer=데이터A=AAAAAAAA&amp;데이터B=BBBBBBB;end 
+</code></pre></div>
+<ul>
+<li>참고 
+<script src="https://gist.github.com/pyeongho/a129329471269e1b9fcf09d6a19c24b5.js"></script></li>
+</ul>
+
+<h2>intent 로 데이터를 보내는 형태가 미리 정의 되어 있다.</h2>
+
+<ul>
+<li>타입</li>
+<li>S.market<em>referrer 이면 스트링 타입의 market</em>referrer 이다.<br></li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  String =&gt; 'S'
+  Boolean =&gt;'B'
+  Byte =&gt; 'b'
+  Character =&gt; 'c'
+  Double =&gt; 'd'
+  Float =&gt; 'f'
+  Integer =&gt; 'i'
+  Long =&gt; 'l'
+  Short =&gt; 's'
+
+</code></pre></div>
+<ul>
+<li> 웹에서 앱을 시작 할때 쿼리문 말고 아래 처러 보내서 데이터를 확인 가능 합니다.</li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">  // 웹 
+  &lt;a href="intent://whatever/#Intent;scheme=myapp;package=com.what.ever.myapp;S.name=Perico%20de%20los%20Palotes;i.age=35;end"&gt;Do Whatever&lt;/a&gt;
+
+
+  // 앱 
+  intent.extras?.let {
+      val  name = it.getString("name")
+      val  age = it.getInt("age")
+  }
+
+</code></pre></div>
 	  ]]></description>
 	</item>
 
