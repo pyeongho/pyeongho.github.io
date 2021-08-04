@@ -184,6 +184,8 @@ brew install yarn
 <li>react-native start</li>
 </ul></li>
 <li>서버가 동작 하고 그게 에뮬레이터에서 돌아간다.</li>
+<li>역시나 제일 중요한건 아래와 같은 사이트가 아닌 메인 사이트 였습니다.</li>
+<li>https://reactnative.dev/docs/environment-setup</li>
 </ul></li>
 </ul>
 
