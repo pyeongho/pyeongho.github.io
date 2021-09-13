@@ -68,39 +68,6 @@ repositories {
 	  ]]></description>
 	</item>
 
-	<item>
-	  <title>안드로이드 빌드 실패 with github actions</title>
-	  <link>//gradle_action</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2021-06-30T00:00:00+00:00</pubDate>
-	  <guid>//gradle_action</guid>
-	  <description><![CDATA[
-	     <h3>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생</h3>
-
-<ul>
-<li>깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.</li>
-<li>처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.</li>
-<li>정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.</li>
-<li>빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.</li>
-<li>gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
-</code></pre></div>
-<ul>
-<li>데몬이 없어 졌다고 해서 그래들옵션에 no-daemon 을 추가해 보았지만 그래도 에러는 지속 되었습니다.</li>
-<li>(https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)[https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners]</li>
-<li>깃허브 액션에 대해서 조금만 더 알아보기로 하였습니다.</li>
-<li>일단 깃허브 액션의 머신 스펙을 확인 하였습니다. 그런데 스펙에 보이는 마음에 들지 않는 숫자 메모리 7기가</li>
-<li><p>설마 설마 그래들 속성을 확인 했습니다. 역시나 아래 처럼 최대 메모리가 8기가로 설정 되어 있었습니다.
-<code>
-org.gradle.jvmargs=-Xms4096m -Xmx8192m -XX:MaxPermSize=1024m
-</code></p></li>
-<li><p>여러분도 원인 모를 actions 의 빌드 실패가 발생하면 메모리를 확인해 보세요</p></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
 
 </channel>
 </rss>

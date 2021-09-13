@@ -12,6 +12,63 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>깃허브 액션 에러 사건 일지</title>
+	  <link>//github_actions</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-09-13T00:00:00+00:00</pubDate>
+	  <guid>//github_actions</guid>
+	  <description><![CDATA[
+	     <h3>깃허브 액션이 빌드 에러 발생</h3>
+
+<ul>
+<li>라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러</li>
+<li>로걸에서 캐시 클리어 이후로 빌드 실패
+~~~
+ ./gradlew build --refresh-dependencies --stacktrace
+~~~</li>
+<li>터미널에서 --refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행</li>
+<li>/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.</li>
+<li>결국 로컬에서도 에러가 발생한다.</li>
+<li><p>특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.
+~~~
+org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
+~~~</p></li>
+<li><p>이후 해당 에러로 검색 하기 시작
+-루트의 그래들을 수정 했습니다.</p></li>
+<li><p>allprojects -&gt; repositories 위치의 내용을 확인 했습니다.</p></li>
+<li><p>순서를 변경 했습니다.</p></li>
+<li><p>mavenCentral , maven, google, jcenter
+~~~
+// 변경 전
+repositories {
+      maven { url &#39;https://maven.google.com&#39; }
+      maven { url &#39;https://jitpack.io&#39; }
+      maven { url &#39;https://jcenter.bintray.com&#39; }
+      maven { url &#39;https://naver.jfrog.io/artifactory/maven/&#39; }
+      jcenter()
+      flatDir { dirs &#39;libs&#39; }
+      google()
+      mavenCentral()
+  }</p></li>
+</ul>
+
+<p>// 변경 후
+  repositories {
+          mavenCentral()
+          maven { url &#39;https://maven.google.com&#39; }
+          maven { url &#39;https://jitpack.io&#39; }
+          maven { url &#39;https://jcenter.bintray.com&#39; }
+          maven { url &#39;https://naver.jfrog.io/artifactory/maven/&#39; }
+          google()
+          jcenter()
+          flatDir { dirs &#39;libs&#39; }
+      }
+  ~~~</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
 	  <link>//textview_setTextAppearance</link>
 	  <author>PyeongHo</author>
@@ -375,24 +432,6 @@ run: bash ./gradlew assembleDevDebug
 
 <ul>
 <li><a href="https://dev-yakuza.github.io/ko/react-native/fastlane/">https://dev-yakuza.github.io/ko/react-native/fastlane/</a></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>소소한 재택 근무</title>
-	  <link>//home</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2020-08-26T00:00:00+00:00</pubDate>
-	  <guid>//home</guid>
-	  <description><![CDATA[
-	     <h3>처음으로 재택</h3>
-
-<ul>
-<li>집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요</li>
-<li>생각보다 적응은 잘되요 ㅎㅎ</li>
-<li></li>
 </ul>
 
 	  ]]></description>

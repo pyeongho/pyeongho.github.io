@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
+    <title>깃허브 액션 에러 사건 일지</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -112,24 +112,20 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</h1>
+            <h1 class="post-title">깃허브 액션 에러 사건 일지</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2021-07-30">30 Jul 2021</time>
+            <time class="post-date" datetime="2021-09-13">13 Sep 2021</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/android'>Android</a>,
+                       <a href='/tag/github_actions'>Github_actions</a>,
                        
                 
                     
-                       <a href='/tag/TextView'>Textview</a>,
-                       
-                
-                    
-                       <a href='/tag/setTextAppearance'>Settextappearance</a>
+                       <a href='/tag/gradle'>Gradle</a>
                        
                 
                 
@@ -138,20 +134,52 @@
 
         <section class="post-content">
             
-            <h3>TextView setTextAppearance 동작 확인하기</h3>
+            <h3>깃허브 액션이 빌드 에러 발생</h3>
 
 <ul>
-<li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
-<li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
-<li><p>setTextAppearance 를 따라가다 보면 모든 속성이없다.</p>
-
-<ul>
-<li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
-<li><script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script></li>
-</ul></li>
-<li><p>아래는 동작 가능한 속성들을 정리해 보았습니다.
-<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></p></li>
+<li>라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러</li>
+<li>로걸에서 캐시 클리어 이후로 빌드 실패
+~~~
+ ./gradlew build --refresh-dependencies --stacktrace
+~~~</li>
+<li>터미널에서 --refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행</li>
+<li>/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.</li>
+<li>결국 로컬에서도 에러가 발생한다.</li>
+<li><p>특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.
+~~~
+org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
+~~~</p></li>
+<li><p>이후 해당 에러로 검색 하기 시작
+-루트의 그래들을 수정 했습니다.</p></li>
+<li><p>allprojects -&gt; repositories 위치의 내용을 확인 했습니다.</p></li>
+<li><p>순서를 변경 했습니다.</p></li>
+<li><p>mavenCentral , maven, google, jcenter
+~~~
+// 변경 전
+repositories {
+      maven { url &#39;https://maven.google.com&#39; }
+      maven { url &#39;https://jitpack.io&#39; }
+      maven { url &#39;https://jcenter.bintray.com&#39; }
+      maven { url &#39;https://naver.jfrog.io/artifactory/maven/&#39; }
+      jcenter()
+      flatDir { dirs &#39;libs&#39; }
+      google()
+      mavenCentral()
+  }</p></li>
 </ul>
+
+<p>// 변경 후
+  repositories {
+          mavenCentral()
+          maven { url &#39;https://maven.google.com&#39; }
+          maven { url &#39;https://jitpack.io&#39; }
+          maven { url &#39;https://jcenter.bintray.com&#39; }
+          maven { url &#39;https://naver.jfrog.io/artifactory/maven/&#39; }
+          google()
+          jcenter()
+          flatDir { dirs &#39;libs&#39; }
+      }
+  ~~~</p>
 
 
         </section>
@@ -183,15 +211,15 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.&amp;url=https://pyeongho.github.iotextview_setTextAppearance"
+                <a class="icon-twitter" href="http://twitter.com/share?text=깃허브 액션 에러 사건 일지&amp;url=https://pyeongho.github.iogithub_actions"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iotextview_setTextAppearance"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iogithub_actions"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iotextview_setTextAppearance"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iogithub_actions"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -229,20 +257,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/github_actions">
-            <section class="post">
-                <h2>깃허브 액션 에러 사건 일지</h2>
-                <p>### 깃허브 액션이 빌드 에러 발생 - 라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러 -...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/textview_leadingmargin">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/textview_setTextAppearance">
             <section class="post">
-                <h2>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</h2>
-                <p>TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다. 간단 합니다....</p>
+                <h2>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</h2>
+                <p>TextView setTextAppearance 동작 확인하기 lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다. setTextAppearance 를 이용해서 TextView...</p>
             </section>
         </a>
     

@@ -8,6 +8,35 @@
     
       
       <item>
+        <title>깃허브 액션 에러 사건 일지</title>
+        
+          <description>&lt;h3&gt;깃허브 액션이 빌드 에러 발생&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러&lt;/li&gt;
+&lt;li&gt;로걸에서 캐시 클리어 이후로 빌드 실패
+~~~
+ ./gradlew build --refresh-dependencies --stacktrace
+~~~&lt;/li&gt;
+&lt;li&gt;터미널에서 --refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행&lt;/li&gt;
+&lt;li&gt;/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.&lt;/li&gt;
+&lt;li&gt;결국 로컬에서도 에러가 발생한다.&lt;/li&gt;
+&lt;li&gt;특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.
+~~~
+org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
+~~~&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/github_actions</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/github_actions</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
         
           <description>&lt;h3&gt;TextView setTextAppearance 동작 확인하기&lt;/h3&gt;

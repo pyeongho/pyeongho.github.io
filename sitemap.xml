@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/github_actions</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/textview_setTextAppearance</loc>
     </url>
     
@@ -3269,6 +3273,22 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/setTextAppearance/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/github_actions/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/github_actions/</loc>
     </url>
     
     
