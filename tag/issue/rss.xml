@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>사소한 경고도 무시하지 말자 svg to vector</title>
+	  <link>//svg_to_vector</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-09-15T00:00:00+00:00</pubDate>
+	  <guid>//svg_to_vector</guid>
+	  <description><![CDATA[
+	     <h3>회사에서 제플린을 사용하지 않고 피그마를 사용하고 있습니다.</h3>
+
+<ul>
+<li>피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.</li>
+<li>그래서 거의 대부분의 파일을 svg 로 다운 받고 이를 vector 로 변경하고 있습니다.</li>
+<li>최근 들어 벡터 이미지가 23 이하 부터 이상하게 나오는 경우들이 발생</li>
+<li>대수롭지 않게 넘어 가고 png 를 다운받아 사용</li>
+<li>문득 버전 이슈가 있으면 알려줘야지 하는 생각을 했습니다.</li>
+<li><p>디자인 작업을 하면서 아래와 같은 화면에서 아무 생각 없이 다음을 눌러서 벡터를 생성 했습니다.
+<img src="http://drive.google.com/uc?export=view&amp;id=1FQFiElRYrIRK6lX21_JtQh9wElxUajDc" alt="만들기"></p></li>
+<li><p>문제는 qa 에서 버전별 검사를 하면 하위호환성 이슈로 알려주었습니다.</p></li>
+<li><p>자세히 보면 느낌표도 있고 클릭하면 아래 처럼 에러가 있다고 알려 주었습니다.
+<img src="http://drive.google.com/uc?export=view&amp;id=1RfbchNoIZUQQWfRS6uoIJ_hRl3ulYv3P" alt="만들기"></p></li>
+<li><p>여기 저기 해당 내용으로 검색하니 버전별로 지원 안할수 있고 그라데이션은 지원 안한다는 내용도 있습니다.</p></li>
+<li><p>사소해 보이는것도 자세히 보는걸 추천 합니다. ㅎㅎ</p></li>
+<li><p><a href="http://inloop.github.io/svg2android/">에러확인용 사이트</a></p></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -8,6 +8,30 @@
     
       
       <item>
+        <title>사소한 경고도 무시하지 말자 svg to vector</title>
+        
+          <description>&lt;h3&gt;회사에서 제플린을 사용하지 않고 피그마를 사용하고 있습니다.&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.&lt;/li&gt;
+&lt;li&gt;그래서 거의 대부분의 파일을 svg 로 다운 받고 이를 vector 로 변경하고 있습니다.&lt;/li&gt;
+&lt;li&gt;최근 들어 벡터 이미지가 23 이하 부터 이상하게 나오는 경우들이 발생&lt;/li&gt;
+&lt;li&gt;대수롭지 않게 넘어 가고 png 를 다운받아 사용&lt;/li&gt;
+&lt;li&gt;문득 버전 이슈가 있으면 알려줘야지 하는 생각을 했습니다.&lt;/li&gt;
+&lt;li&gt;디자인 작업을 하면서 아래와 같은 화면에서 아무 생각 없이 다음을 눌러서 벡터를 생성 했습니다.
+&lt;img src=&quot;http://drive.google.com/uc?export=view&amp;amp;id=1FQFiElRYrIRK6lX21_JtQh9wElxUajDc&quot; alt=&quot;만들기&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/svg_to_vector</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/svg_to_vector</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>깃허브 액션 에러 사건 일지</title>
         
           <description>&lt;h3&gt;깃허브 액션이 빌드 에러 발생&lt;/h3&gt;
