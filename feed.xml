@@ -10,7 +10,7 @@
       <item>
         <title>사소한 경고도 무시하지 말자 svg to vector</title>
         
-          <description>&lt;h3&gt;회사에서 제플린을 사용하지 않고 피그마를 사용하고 있습니다.&lt;/h3&gt;
+          <description>&lt;h3&gt;SVG 를 Vector 로 변경하면서 발생한 이슈&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.&lt;/li&gt;

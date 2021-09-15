@@ -18,7 +18,7 @@
 	  <pubDate>2021-09-15T00:00:00+00:00</pubDate>
 	  <guid>//svg_to_vector</guid>
 	  <description><![CDATA[
-	     <h3>회사에서 제플린을 사용하지 않고 피그마를 사용하고 있습니다.</h3>
+	     <h3>SVG 를 Vector 로 변경하면서 발생한 이슈</h3>
 
 <ul>
 <li>피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.</li>
