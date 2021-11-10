@@ -8,6 +8,48 @@
     
       
       <item>
+        <title>SVG 사용할때 조심 해야 할 점</title>
+        
+          <description>&lt;h3&gt;SVG&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;이런 SVG 를 보셨다면 꼭 읽어 주세요
+
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee&quot; alt=&quot;깨진 svg&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/svg_use</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/svg_use</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>플레이스토어 UGC 정책 위반 사태</title>
+        
+          <description>&lt;h3&gt;플레이스토어 거부 사태&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;지금 까지 아무 문제 없었지만 갑자기 스토어 업데이트가 거부 되었습니다.&lt;/li&gt;
+&lt;li&gt;지금까지 운이 좋았던 건지 한번도 겪어보지 못한 거부 였습니다.&lt;/li&gt;
+&lt;li&gt;지금은 해결되어 마음이 편하지만 거부 해결하기 까지는 너무 힘들었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/reject</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/reject</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>사소한 경고도 무시하지 말자 svg to vector</title>
         
           <description>&lt;h3&gt;SVG 를 Vector 로 변경하면서 발생한 이슈&lt;/h3&gt;
@@ -266,7 +308,6 @@ brew install yarn
 &lt;ul&gt;
 &lt;li&gt;집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요&lt;/li&gt;
 &lt;li&gt;생각보다 적응은 잘되요 ㅎㅎ&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
