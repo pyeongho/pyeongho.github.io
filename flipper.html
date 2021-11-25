@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>SVG 사용할때 조심 해야 할 점</title>
+    <title>Flipper 연동시 주의 할점</title>
     <meta name="description" content="PyeongHo Factory - 즐거운 공장" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -112,10 +112,10 @@
     <article class="post tag-android">
 
         <header class="post-header">
-            <h1 class="post-title">SVG 사용할때 조심 해야 할 점</h1>
+            <h1 class="post-title">Flipper 연동시 주의 할점</h1>
             <section class="post-meta">
             <!-- <a href='/'>PyeongHo</a> -->
-            <time class="post-date" datetime="2021-11-10">10 Nov 2021</time>
+            <time class="post-date" datetime="2021-11-25">25 Nov 2021</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -125,11 +125,11 @@
                        
                 
                     
-                       <a href='/tag/svg'>Svg</a>,
+                       <a href='/tag/flipper'>Flipper</a>,
                        
                 
                     
-                       <a href='/tag/AppCompatResources'>Appcompatresources</a>
+                       <a href='/tag/release'>Release</a>
                        
                 
                 
@@ -138,47 +138,34 @@
 
         <section class="post-content">
             
-            <h3>SVG</h3>
+            <h3>Flipper 문서를 잘 확인하자</h3>
 
 <ul>
-<li><p>이런 SVG 를 보셨다면 꼭 읽어 주세요</p>
+<li>Flipper 릴리즈 빌드시 import 에러가 발생하면
 
 <ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee" alt="깨진 svg"></li>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz" alt="문서중 그래들 파일"></li>
 </ul></li>
-<li><p><a href="https://developer.android.com/studio/write/vector-asset-studio?hl=ko#svg">SVG 추가 방법 개발 문서</a></p></li>
-<li><p>os6(sdk23이상) 을 지원 할때는 꼭 확인 해야 합니다.</p></li>
-<li><p>개발을 하면서 특히 Figma 를 사용하면서 svg 사용이 많아지고 있습니다.</p></li>
-<li><p>저번 게시글에서도 언급한것 처럼 약간의 호환성 문제들이 나타나고 있었습니다.
-호환성 문제체크 하는 방법은 이전 게시글에 있으니 꼭 확인해 주세요</p></li>
-<li><p>호환은 되지만 잘못된 경우가 있을때는 아래 내용을 확인해 보면 좋습니다.
-예를 들어 23 이상에서만 android:fillType=“evenOdd” 사용되는 svg 속성들이 제대로 동작 하지 않는 경우도 있었습니다.</p>
-
-<ul>
-<li>xml 에서 사용법
-
-<ul>
-<li>android:src 과 app:srcCompat 는 완전히 동일하게 동작 하지 않는다. app:srcCompat 만 사용하자</li>
-<li>xml 에서 svg 추가 할때 android:src=&quot;리소스 파일&quot; 습관적으로 이렇게 사용을 합니다.
-minsdk 21 이상이면 신경도 안쓰고 사용 할수도 있습니다. 하지만 습관을 바꿔야 할 때입니다.
-app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속성값이 제대로 동작 하지만 android:src 에서는 동작 하지 않습니다.</li>
-</ul></li>
-<li>자바나 코틀린에서의 사용법
-
-<ul>
-<li>AppCompatResources.getDrawable 를 사용한다.</li>
-<li>코드상으로 벡터 이미지를 넣을때도 습관적으로 context.getDrawable 을 사용하는데 이건 android:src 과 같다고 생각해야 합니다.
-그래서 깨진 벡터 이미지를 확인 할수 있습니다.</li>
-<li>AppCompatResources.getDrawable 를 사용해서 drawable 를 가지고 오면 문제가 해결 됩니다.</li>
-</ul></li>
-</ul></li>
+<li><p><a href="https://fbflipper.com/docs/getting-started/android-native/">공식문서</a></p></li>
+<li><p>검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.</p></li>
+<li><p>하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.</p></li>
+<li><p>import 에서 flipper 이 없다는 내용입니다.</p></li>
+<li><p>그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다. </p></li>
+<li><p>releaseImplementation 에서 순수한 flipper 만 있습니다.  </p></li>
+<li><p>공식 문서를 다시 한번 확인 했습니다.</p></li>
+<li><p>첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.</p></li>
+<li><p>releaseImplementation &#39;com.github.theGlenn:flipper-android-no-op:0.9.0&#39; </p></li>
+<li><p>2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.</p></li>
 </ul>
-
+<div class="highlight"><pre><code class="language-" data-lang="">    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
+    debugImplementation "com.facebook.soloader:soloader:$soloaderVersion"
+    debugImplementation "com.facebook.flipper:flipper-network-plugin:$flipperVersion"
+    releaseImplementation "com.facebook.flipper:flipper-noop:$flipperVersion"
+</code></pre></div>
 <h3>결론</h3>
 
 <ul>
-<li>android:src 을 사용하지 말고  app:srcCompat 이것만 사용하자</li>
-<li>java, kt 에서 벡터이미지를 추가 할때 getDrawable 가 아닌 AppCompatResources.getDrawable 를 사용하자</li>
+<li>공식 문서는 꼼꼼히 확인하자</li>
 </ul>
 
 
@@ -211,15 +198,15 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=SVG 사용할때 조심 해야 할 점&amp;url=https://pyeongho.github.iosvg_use"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Flipper 연동시 주의 할점&amp;url=https://pyeongho.github.ioflipper"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.iosvg_use"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://pyeongho.github.ioflipper"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.iosvg_use"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://pyeongho.github.ioflipper"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -257,20 +244,13 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover1.jpg)" href="/flipper">
-            <section class="post">
-                <h2>Flipper 연동시 주의 할점</h2>
-                <p>### Flipper 문서를 잘 확인하자 - Flipper 릴리즈 빌드시 import 에러가 발생하면 - ![문서중 그래들...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/reject">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover1.jpg)" href="/svg_use">
             <section class="post">
-                <h2>플레이스토어 UGC 정책 위반 사태</h2>
-                <p>플레이스토어 거부 사태 지금 까지 아무 문제 없었지만 갑자기 스토어 업데이트가 거부 되었습니다. 지금까지 운이...</p>
+                <h2>SVG 사용할때 조심 해야 할 점</h2>
+                <p>SVG 이런 SVG 를 보셨다면 꼭 읽어 주세요 SVG 추가 방법 개발 문서 os6(sdk23이상) 을...</p>
             </section>
         </a>
     

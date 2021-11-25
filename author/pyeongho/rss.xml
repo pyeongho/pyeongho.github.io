@@ -12,6 +12,46 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Flipper 연동시 주의 할점</title>
+	  <link>//flipper</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-11-25T00:00:00+00:00</pubDate>
+	  <guid>//flipper</guid>
+	  <description><![CDATA[
+	     <h3>Flipper 문서를 잘 확인하자</h3>
+
+<ul>
+<li>Flipper 릴리즈 빌드시 import 에러가 발생하면
+
+<ul>
+<li><img src="https://drive.google.com/uc?export=view&amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz" alt="문서중 그래들 파일"></li>
+</ul></li>
+<li><p><a href="https://fbflipper.com/docs/getting-started/android-native/">공식문서</a></p></li>
+<li><p>검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.</p></li>
+<li><p>하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.</p></li>
+<li><p>import 에서 flipper 이 없다는 내용입니다.</p></li>
+<li><p>그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다. </p></li>
+<li><p>releaseImplementation 에서 순수한 flipper 만 있습니다.  </p></li>
+<li><p>공식 문서를 다시 한번 확인 했습니다.</p></li>
+<li><p>첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.</p></li>
+<li><p>releaseImplementation &#39;com.github.theGlenn:flipper-android-no-op:0.9.0&#39; </p></li>
+<li><p>2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.</p></li>
+</ul>
+<div class="highlight"><pre><code class="language-" data-lang="">    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
+    debugImplementation "com.facebook.soloader:soloader:$soloaderVersion"
+    debugImplementation "com.facebook.flipper:flipper-network-plugin:$flipperVersion"
+    releaseImplementation "com.facebook.flipper:flipper-noop:$flipperVersion"
+</code></pre></div>
+<h3>결론</h3>
+
+<ul>
+<li>공식 문서는 꼼꼼히 확인하자</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>SVG 사용할때 조심 해야 할 점</title>
 	  <link>//svg_use</link>
 	  <author>PyeongHo</author>
@@ -395,36 +435,6 @@ brew install yarn
 <li><a href="https://academy.realm.io/kr/posts/react-native/">https://academy.realm.io/kr/posts/react-native/</a></li>
 <li><a href="https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-">https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-</a></li>
 <li><a href="https://alpoxdev.tistory.com/18">https://alpoxdev.tistory.com/18</a></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>헤로쿠 기본 설정</title>
-	  <link>//heroku</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2020-11-27T00:00:00+00:00</pubDate>
-	  <guid>//heroku</guid>
-	  <description><![CDATA[
-	     <h3>헤로쿠 기본 공부</h3>
-
-<ul>
-<li>헤로쿠 가입후</li>
-<li>앱 생성 : 앱이름은 :  &quot;random-bot-17&quot;</li>
-<li><p>cli 설치
-~~~
-brew tap heroku/brew &amp;&amp; brew install heroku
-~~~</p></li>
-<li><p>heroku login 실행</p></li>
-<li><p>브라우저 로그인 실패(ip 다름)</p></li>
-<li><p>heroku login --interactive 을 이용해서 터미널 로그인(이메일, 비밀번호 로그인 완료)</p></li>
-<li><p>https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up</p>
-
-<ul>
-<li>node --version  설치확인</li>
-<li>npm --version 설치확인</li>
-</ul></li>
 </ul>
 
 	  ]]></description>

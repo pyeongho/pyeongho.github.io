@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/flipper</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/svg_use</loc>
     </url>
     
@@ -3405,6 +3409,38 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/AppCompatResources/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/flipper/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/flipper/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/release/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/release/</loc>
     </url>
     
     

@@ -8,6 +8,38 @@
     
       
       <item>
+        <title>Flipper 연동시 주의 할점</title>
+        
+          <description>&lt;h3&gt;Flipper 문서를 잘 확인하자&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Flipper 릴리즈 빌드시 import 에러가 발생하면
+
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz&quot; alt=&quot;문서중 그래들 파일&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://fbflipper.com/docs/getting-started/android-native/&quot;&gt;공식문서&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;import 에서 flipper 이 없다는 내용입니다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;releaseImplementation 에서 순수한 flipper 만 있습니다.  &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;공식 문서를 다시 한번 확인 했습니다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;releaseImplementation &amp;#39;com.github.theGlenn:flipper-android-no-op:0.9.0&amp;#39; &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/flipper</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/flipper</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>SVG 사용할때 조심 해야 할 점</title>
         
           <description>&lt;h3&gt;SVG&lt;/h3&gt;
