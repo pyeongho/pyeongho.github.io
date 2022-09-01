@@ -12,6 +12,48 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>shouldOverrideUrlLoading 동작 안할때 확인할 내용</title>
+	  <link>//spa</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-11-25T00:00:00+00:00</pubDate>
+	  <guid>//spa</guid>
+	  <description><![CDATA[
+	     <h3>앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우</h3>
+
+<ul>
+<li>하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다</li>
+<li>현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다</li>
+<li>최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
+
+<ul>
+<li>잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.</li>
+<li>잘못 사용한 경우에 대한 내용은 아닙니다.</li>
+</ul></li>
+<li>그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.</li>
+<li>로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.</li>
+<li>그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.</li>
+<li>SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.</li>
+<li>저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.</li>
+<li>결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다. </li>
+<li>그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.</li>
+<li>SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.</li>
+<li><p>안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">   override fun doUpdateVisitedHistory(view: WebView?, url: String?, isReload: Boolean) {
+</code></pre></div></li>
+<li><p>이건 회사 마다 다르니 웹 개발자와 잘 이야기 해서 작업 하면 좋습니다.  </p></li>
+</ul>
+
+<p>### 결론
+   - 다른 플랫폼 개발자 들과의 대화는 꼭 필요합니다.
+   - 항상 대화하고 협업은 필수 입니다.</p>
+
+<p>### 참고
+   - <a href="https://www.huskyhoochu.com/what-is-spa/">SPA 란</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Flipper 연동시 주의 할점</title>
 	  <link>//flipper</link>
 	  <author>PyeongHo</author>
@@ -382,45 +424,6 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 org.gradle.jvmargs=-Xms4096m -Xmx8192m -XX:MaxPermSize=1024m
 </code></p></li>
 <li><p>여러분도 원인 모를 actions 의 빌드 실패가 발생하면 메모리를 확인해 보세요</p></li>
-</ul>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>안드로이드 리뷰 요청하기</title>
-	  <link>//review</link>
-	  <author>PyeongHo</author>
-	  <pubDate>2020-09-23T00:00:00+00:00</pubDate>
-	  <guid>//review</guid>
-	  <description><![CDATA[
-	     <h3>안드로이드도 리뷰를 요청 할 수 있습니다.</h3>
-
-<ul>
-<li><a href="https://developer.android.com/guide/playcore/in-app-review">https://developer.android.com/guide/playcore/in-app-review</a></li>
-</ul>
-
-<h3>사용법</h3>
-
-<ul>
-<li>참고 문서에도 있지만 천천히 따라하기</li>
-<li>의존성 주입 :  implementation &#39;com.google.android.play:core-ktx:1.8.1&#39;</li>
-<li><p>추가 코드 : 결과 처리 예외 처리 역시 가능함</p>
-
-<ul>
-<li></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    val manager = ReviewManagerFactory.create(context)
-    val request = manager.requestReviewFlow()
-    request.addOnCompleteListener { request -&gt;
-        if (request.isSuccessful) {
-            // We got the ReviewInfo object
-            val reviewInfo = request.result
-        } else {
-            // There was some problem, continue regardless of the result.
-        }
-    }  
-</code></pre></div></li>
 </ul>
 
 	  ]]></description>
