@@ -15,7 +15,7 @@ pipelines:
           - gem install jekyll
           - bundle install
           - rm -rf .git
-          - git clone https://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@github.com/pyeongho/pyeongho.github.io.git _site
+          - git clone https://$SITE_B@github.com/pyeongho/pyeongho.github.io.git _site
           - bundle exec jekyll build --incremental
           - cd _site
           - git add . && git commit -m "New version - $BITBUCKET_COMMIT"

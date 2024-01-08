@@ -12,6 +12,369 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>kmm이란?</title>
+	  <link>//kmm</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2023-03-20T00:00:00+00:00</pubDate>
+	  <guid>//kmm</guid>
+	  <description><![CDATA[
+	     <h3 id="kmm---">kmm 을 학습해 보자</h3>
+<ul>
+  <li>RN, 플러터 등 멀티 플랫폼을 학습 하던지 이번에는 kmm 확인해 보기로 함</li>
+  <li>기존에는 언어와 너무 다른 환경이라서 시간이 오래 걸렸지만 안드로이드 스튜디오에서 코틀린 이라는 엄청난 장점이 있어서 바로 도전함</li>
+  <li><a href="https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html">공식</a></li>
+</ul>
+
+<h3 id="section">학습은 우선 코드랩 부터</h3>
+<ul>
+  <li>공식 문서를 보고 하나씩 따라가다 보니 어느 순간 iOS, Android 양쪽에서 사용 가능한 라이브러리까지 금방 완성</li>
+  <li>iOS 를 잘하진 못해서 이것 저것 하면서 겨우 겨우 하긴 했지만 결국 pod 라이브러리를 만들고 이를 사용함
+    <ul>
+      <li>이런 저런 우여 곡절이 많았지만 어렵진 않고 iOS 개발자와 보면 금방 처리 가능함</li>
+    </ul>
+  </li>
+  <li>iOS 개발 환경(xcode) 만 있으면 안드로이드 스튜디오 에서도 ios 빌드및 실행</li>
+</ul>
+
+<h3 id="section-1">왜 이런 멀티 플랫폼을 학습 하는가?</h3>
+<ul>
+  <li>안드로이드 전용 플랫폼의 장점이 거의 희석 되어 없어지고 있기 때문이다.
+    <ul>
+      <li>코틀린으로 개발하면 다른 것들 보다 빠른가? 조금?!</li>
+      <li>속도가 빠른가? 늦다</li>
+      <li>호환성이 좋은가? 좋지 않다.</li>
+      <li>개발자가 많이 필요 한가? 그렇다.</li>
+    </ul>
+  </li>
+  <li>이런 저런 생각을 하면서 학습을 시작 했고 하면 할 수록 네이티브 환경의 장점이 없어 보임
+    <ul>
+      <li>RN vs 플로터 : rn 이 나을거 같다, 웹 개발자가 많은 시점이다. 공식적인 코드푸시</li>
+    </ul>
+  </li>
+  <li>왜 rn 을 더욱 깊이 학습하지 않고 갑자기 kmm?
+    <ul>
+      <li>네이티브 는 버릴수 없다.</li>
+      <li>어떤 환경에서도 기본적인 네이티브는 필요하다</li>
+      <li>그리고 기존 환경에서의 개발을 갑자기 변경은 어렵다</li>
+      <li>차라리 기본 네이티브에서 ios, Android 함께 사용 하는 방법이 현실적이지 않을까 생각이 들어서 이다.</li>
+      <li>서비스 앱을 구조화 하고 단순화 하면 간단하다.
+        <ul>
+          <li>서버에서 필요한 데이터 가지고 와서 보여준다.</li>
+          <li>서버에서 필요한 데이터를 가지고 와서 가공해서 보여준다.</li>
+        </ul>
+      </li>
+      <li>iOS, ANDROID 2개의 플랫폼을 보면 서버에서 데이터를 가지고와서 가공 하는 부분은 동일해야 한다.
+        <ul>
+          <li>심지어 웹, RN, 플로터 등도 동일해야 한다.</li>
+        </ul>
+      </li>
+      <li>그리고 보여 주는 부분은 각각의 플랫폼에 맞게 보여준다.</li>
+      <li>데이터를 가지고 와서 가공하는 부분이 동일한 코드로 라이브러리로 만들어 져서 제공된다면?
+        <ul>
+          <li>이부분이 KMM 이 해줄수 있는 부분이라고 생각한다.</li>
+          <li>서로 다르게 개발될 내용도 없고 양쪽에서 해야 할일ㅇ르 한쪽에서 하거나 kmm 개발 전담이 생길수도 있는거다.</li>
+        </ul>
+      </li>
+      <li>기존 네이티브 환경에서 빠르게 개발 할 수 있는 방법이 kmm 이 되지 않을까 생각함</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-2">현재 개발 하고 있는 앱은 2016년 정도 부터 개발된 서비스이고 해당 앱에 잘 적용 될까?</h3>
+<ul>
+  <li>YES</li>
+  <li>iOS , Android 둘다 api 콜에서 원하는 데이터를 가지고 오는데 전혀 문제가 없다.</li>
+  <li>해당 라이브러리 작업을 하면 데이터를 가지고 오는 로직이 모두 분리 되어 한결 깔끔해 진다.</li>
+  <li>개발 하면서 UI 동작에 집중 할 수 있다.</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>RN 헬로우 월드</title>
+	  <link>//rn_beginner</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2021-02-17T00:00:00+00:00</pubDate>
+	  <guid>//rn_beginner</guid>
+	  <description><![CDATA[
+	     <h3 id="rn---">RN 을 시작해 보자</h3>
+<ul>
+  <li>
+    <p>필요 패키지 설치
+  ~~~
+  brew install watchman
+  brew install flow
+  brew install nvm
+  nvm install node
+  nvm alias default node
+  brew install caskroom/cask/brew-cask
+  brew cask install virtualbox
+  brew install yarn
+  ~~~</p>
+
+    <ul>
+      <li>React/RCTBridgeDelegate.h’ file not found
+        <ul>
+          <li>cd /ios</li>
+          <li>pod install</li>
+          <li>cd ..</li>
+          <li>react-native run-ios</li>
+        </ul>
+      </li>
+      <li>‘React’ requires CocoaPods version &gt;= 1.10.1, which is not satisfied by your current version, 1.10.0. #153
+        <ul>
+          <li>sudo gem install cocoapods</li>
+        </ul>
+      </li>
+      <li>‘No bundle URL present’ in react-native?</li>
+      <li>
+        <p>react-native start</p>
+      </li>
+      <li>서버가 동작 하고 그게 에뮬레이터에서 돌아간다.</li>
+      <li>역시나 제일 중요한건 아래와 같은 사이트가 아닌 메인 사이트 였습니다.</li>
+      <li>https://reactnative.dev/docs/environment-setup</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section">참고</h3>
+<ul>
+  <li><a href="https://academy.realm.io/kr/posts/react-native/">https://academy.realm.io/kr/posts/react-native/</a></li>
+  <li><a href="https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-">https://velog.io/@dody_/RN-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-main.jsbundle-does-not-exist-</a></li>
+  <li><a href="https://alpoxdev.tistory.com/18">https://alpoxdev.tistory.com/18</a></li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>헤로쿠 기본 설정</title>
+	  <link>//heroku</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-11-27T00:00:00+00:00</pubDate>
+	  <guid>//heroku</guid>
+	  <description><![CDATA[
+	     <h3 id="section">헤로쿠 기본 공부</h3>
+
+<ul>
+  <li>헤로쿠 가입후</li>
+  <li>앱 생성 : 앱이름은 :  “random-bot-17”</li>
+  <li>
+    <p>cli 설치
+~~~
+brew tap heroku/brew &amp;&amp; brew install heroku
+~~~</p>
+  </li>
+  <li>heroku login 실행</li>
+  <li>브라우저 로그인 실패(ip 다름)</li>
+  <li>heroku login –interactive 을 이용해서 터미널 로그인(이메일, 비밀번호 로그인 완료)</li>
+  <li>https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+    <ul>
+      <li>node –version  설치확인</li>
+      <li>npm –version 설치확인</li>
+    </ul>
+  </li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>github action 사용하기</title>
+	  <link>//action</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-09-22T00:00:00+00:00</pubDate>
+	  <guid>//action</guid>
+	  <description><![CDATA[
+	     <h3 id="github-action---cicd">Github action 을 이용한 CI/CD</h3>
+<ul>
+  <li>기본적인 액션 사용법은 너무 간단합니다.
+    <ul>
+      <li>깃허브에서 액션 누르고 새로 만들기 누르고 안드로이드 선택 하면 기본적인 생성은 가능합니다.</li>
+    </ul>
+  </li>
+  <li>원하는 방법이 모두 다를수 있지만 간단하게 작성해 보았습니다.
+    <ul>
+      <li>특정 태그가 푸시 되면 빌드를 시작 한다.</li>
+      <li>원하는 flavor 로 빌드 한다.</li>
+      <li>태그 이름으로 바이너리를 생성한다.</li>
+      <li>바이너리를 아티팩트로 만들어서 업로드 한다.</li>
+      <li>슬랙으로 공유한다.</li>
+      <li>아티팩트 주소가 아닌 슬랙 액션 주소를 공유해서 찾아서 다운 받아야 하지만 빌드 상태를 알수 있어서 그냥 유지 하였습니다.</li>
+    </ul>
+  </li>
+  <li>참고 내용
+    <ul>
+      <li>
+        <p>태그 필터 아래 내용이 DEV 로 시작하는 태그를 감지하여 빌드를 시작하는 코드</p>
+
+        <p><code class="highlighter-rouge">
+  on:
+  push:
+  tags:
+    - DEV*
+ </code></p>
+      </li>
+      <li>flavor 로 빌드 하기
+        <ul>
+          <li>run: bash ./gradlew assembleDevDebug</li>
+          <li>bash 퍼미션 오류 수정</li>
+          <li>
+            <p>assembleDevDebug 원하는 flavor 로 apk 생성</p>
+
+            <div class="highlighter-rouge"><pre class="highlight"><code>- uses: actions/checkout@v2
+- name: set up JDK 1.8
+uses: actions/setup-java@v1
+with:
+  java-version: 1.8
+- name: Build with Gradle
+run: bash ./gradlew assembleDevDebug
+</code></pre>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>태그 이름 환경 변수 설정 및 사용</p>
+
+        <p><code class="highlighter-rouge">
+  - name: Set tag name env
+    run: echo ::set-env name=DEVELOP_VERSION::${GITHUB_REF#refs/*/}
+  - name: check tag name
+    run: |
+      echo $DEVELOP_VERSION
+      echo $  
+ </code></p>
+      </li>
+      <li>파일 이름 변경, 아티팩트 업로드(라이브러리 사용), 자신의 경로에 맞게 수정해야 합니다.</li>
+      <li>슬랙 알림 라이브러리
+        <ul>
+          <li><a href="https://github.com/marketplace/actions/slack-notify">https://github.com/marketplace/actions/slack-notify</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<script src="https://gist.github.com/pyeongho/72c897d81aeb4b9e03404d0289a31fa0.js"></script>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>소소한 재택 근무</title>
+	  <link>//home</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2020-08-26T00:00:00+00:00</pubDate>
+	  <guid>//home</guid>
+	  <description><![CDATA[
+	     <h3 id="section">처음으로 재택</h3>
+<ul>
+  <li>집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요</li>
+  <li>생각보다 적응은 잘되요 ㅎㅎ</li>
+</ul>
+
+<h3 id="section-1">재택 1년후</h3>
+<ul>
+  <li>작성날짜를 보니 어느덧 1년이 넘었네요 ㅠㅠ</li>
+  <li>처음 시작 할때 환경을 꾸몄어야 했는데 하는 아쉬움만 남습니다.</li>
+  <li>집을 바꾸고 싶어요 ㅎㅎ</li>
+  <li>아직도 재택중</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>구글 스프레드 시트 자동 언어(안드로이드)</title>
+	  <link>//gdata</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-12-24T00:00:00+00:00</pubDate>
+	  <guid>//gdata</guid>
+	  <description><![CDATA[
+	     <h3 id="section">참고</h3>
+<ul>
+  <li><a href="https://dunji.tistory.com/2">https://dunji.tistory.com/2</a></li>
+</ul>
+
+<h3 id="python-----">구글 스프레드 시트 자동 번역을 이용하려고 python 을 사용하려고 할때 발생하는 에러</h3>
+<ul>
+  <li>=GOOGLETRANSLATE(B592,”ko”,”en”) 요런 구글 자동 번역</li>
+</ul>
+
+<h3 id="moved-permanently-----">문제는 실행하면   Moved Permanently  요런 에러가 발생하면서 안된다.</h3>
+<ul>
+  <li>항상 기본 설치 이기에 C:\Python27\Lib\site-packages\gdata  이곳에 설치 된다.</li>
+  <li>수정해야 할 부분은 C:\Python27\Lib\site-packages\gdata\docs\service.py 파일</li>
+  <li>server_response.status 로 검색 하면 302 만 처리되어 있습니다. 이를 아래와 같이 수정 하면 Moved Permanently 수정 할 수 있습니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>    <span class="k">while</span> <span class="n">server_response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">302</span> <span class="ow">or</span> <span class="n">server_response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">301</span> <span class="ow">and</span> <span class="n">timeout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</code></pre>
+</div>
+
+<h3 id="stringxml--csv---------xml---">string.xml 을 csv 로 만들고 그걸 구글 자동 번역으로 변경하고 다시 xml 로 변경하는 프로그램</h3>
+<ul>
+  <li>파이썬 프로그램 코드</li>
+</ul>
+
+<script src="https://gist.github.com/pyeongho/fd6975c221e1ac00f0fa8728bf649daa.js"></script>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>intellij 계열 인증서 오류 수정</title>
+	  <link>//ssl</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2019-11-27T00:00:00+00:00</pubDate>
+	  <guid>//ssl</guid>
+	  <description><![CDATA[
+	     <h3 id="section">참고</h3>
+<ul>
+  <li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
+</ul>
+
+<h3 id="intellij--------">안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
+<ul>
+  <li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
+    <ul>
+      <li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
+      <li>Server’s Certificate is not trusted pop-up</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-1">참고 사이트</h3>
+<ul>
+  <li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
+</ul>
+
+<h2 id="section-2">설정 변경</h2>
+<ul>
+  <li>SSL 통신 관련 옵션을 해제
+    - File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크
+    - 저는 실패 했습니다.</li>
+</ul>
+
+<h2 id="section-3">사내 인증서 허용</h2>
+<ul>
+  <li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
+  <li>저는 이걸로 성공 했습니다.</li>
+  <li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
+  <li>해당 경로의 파일들은 따로 백업</li>
+  <li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>osx 도커</title>
 	  <link>//docker</link>
 	  <author>PyeongHo</author>
