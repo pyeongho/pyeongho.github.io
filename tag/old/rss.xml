@@ -18,19 +18,20 @@
 	  <pubDate>2018-05-24T00:00:00+00:00</pubDate>
 	  <guid>//push2</guid>
 	  <description><![CDATA[
-	     <h3>푸시 적용</h3>
-
+	     <h3 id="section">푸시 적용</h3>
 <ul>
-<li><a href="https://pyeongho.github.io/push">https://pyeongho.github.io/push</a></li>
-<li><p>위 글에서 푸시 관련 내용을 작성 하였습니다.</p></li>
-<li><p>좀더 명확 하게 하기 위한 내용입니다.</p></li>
-<li><p>푸시 발송 json 내용에 notification 있으면 백그라운드 앱에서는 os 가 처리합니다.</p></li>
-<li><p>기존 처럼 직접 노티피케이션을 만들어서 사용 하고 싶을때는 꼭  notification 내용을 제거 하고 data 만 보내서 원하는 형태로 사용하면 됩니다. </p>
-
-<ul>
-<li>이미지를 노티피케이션을 만들거나 </li>
-<li>확장 되는 이미지를 만들거나<br></li>
-</ul></li>
+  <li><a href="https://pyeongho.github.io/push">https://pyeongho.github.io/push</a></li>
+  <li>
+    <p>위 글에서 푸시 관련 내용을 작성 하였습니다.</p>
+  </li>
+  <li>좀더 명확 하게 하기 위한 내용입니다.</li>
+  <li>푸시 발송 json 내용에 notification 있으면 백그라운드 앱에서는 os 가 처리합니다.</li>
+  <li>기존 처럼 직접 노티피케이션을 만들어서 사용 하고 싶을때는 꼭  notification 내용을 제거 하고 data 만 보내서 원하는 형태로 사용하면 됩니다.
+    <ul>
+      <li>이미지를 노티피케이션을 만들거나</li>
+      <li>확장 되는 이미지를 만들거나</li>
+    </ul>
+  </li>
 </ul>
 
 	  ]]></description>

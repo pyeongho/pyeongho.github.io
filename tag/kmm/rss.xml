@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>pyeongho.github.io</title>
+   
+   <link>https://pyeongho.github.io</link>
+   <description>즐거운 공장</description>
+   <language>en-uk</language>
+   <managingEditor> PyeongHo</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>kmm이란?</title>
+	  <link>//kmm</link>
+	  <author>PyeongHo</author>
+	  <pubDate>2023-03-20T00:00:00+00:00</pubDate>
+	  <guid>//kmm</guid>
+	  <description><![CDATA[
+	     <h3 id="kmm---">kmm 을 학습해 보자</h3>
+<ul>
+  <li>RN, 플러터 등 멀티 플랫폼을 학습 하던지 이번에는 kmm 확인해 보기로 함</li>
+  <li>기존에는 언어와 너무 다른 환경이라서 시간이 오래 걸렸지만 안드로이드 스튜디오에서 코틀린 이라는 엄청난 장점이 있어서 바로 도전함</li>
+  <li><a href="https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html">공식</a></li>
+</ul>
+
+<h3 id="section">학습은 우선 코드랩 부터</h3>
+<ul>
+  <li>공식 문서를 보고 하나씩 따라가다 보니 어느 순간 iOS, Android 양쪽에서 사용 가능한 라이브러리까지 금방 완성</li>
+  <li>iOS 를 잘하진 못해서 이것 저것 하면서 겨우 겨우 하긴 했지만 결국 pod 라이브러리를 만들고 이를 사용함
+    <ul>
+      <li>이런 저런 우여 곡절이 많았지만 어렵진 않고 iOS 개발자와 보면 금방 처리 가능함</li>
+    </ul>
+  </li>
+  <li>iOS 개발 환경(xcode) 만 있으면 안드로이드 스튜디오 에서도 ios 빌드및 실행</li>
+</ul>
+
+<h3 id="section-1">왜 이런 멀티 플랫폼을 학습 하는가?</h3>
+<ul>
+  <li>안드로이드 전용 플랫폼의 장점이 거의 희석 되어 없어지고 있기 때문이다.
+    <ul>
+      <li>코틀린으로 개발하면 다른 것들 보다 빠른가? 조금?!</li>
+      <li>속도가 빠른가? 늦다</li>
+      <li>호환성이 좋은가? 좋지 않다.</li>
+      <li>개발자가 많이 필요 한가? 그렇다.</li>
+    </ul>
+  </li>
+  <li>이런 저런 생각을 하면서 학습을 시작 했고 하면 할 수록 네이티브 환경의 장점이 없어 보임
+    <ul>
+      <li>RN vs 플로터 : rn 이 나을거 같다, 웹 개발자가 많은 시점이다. 공식적인 코드푸시</li>
+    </ul>
+  </li>
+  <li>왜 rn 을 더욱 깊이 학습하지 않고 갑자기 kmm?
+    <ul>
+      <li>네이티브 는 버릴수 없다.</li>
+      <li>어떤 환경에서도 기본적인 네이티브는 필요하다</li>
+      <li>그리고 기존 환경에서의 개발을 갑자기 변경은 어렵다</li>
+      <li>차라리 기본 네이티브에서 ios, Android 함께 사용 하는 방법이 현실적이지 않을까 생각이 들어서 이다.</li>
+      <li>서비스 앱을 구조화 하고 단순화 하면 간단하다.
+        <ul>
+          <li>서버에서 필요한 데이터 가지고 와서 보여준다.</li>
+          <li>서버에서 필요한 데이터를 가지고 와서 가공해서 보여준다.</li>
+        </ul>
+      </li>
+      <li>iOS, ANDROID 2개의 플랫폼을 보면 서버에서 데이터를 가지고와서 가공 하는 부분은 동일해야 한다.
+        <ul>
+          <li>심지어 웹, RN, 플로터 등도 동일해야 한다.</li>
+        </ul>
+      </li>
+      <li>그리고 보여 주는 부분은 각각의 플랫폼에 맞게 보여준다.</li>
+      <li>데이터를 가지고 와서 가공하는 부분이 동일한 코드로 라이브러리로 만들어 져서 제공된다면?
+        <ul>
+          <li>이부분이 KMM 이 해줄수 있는 부분이라고 생각한다.</li>
+          <li>서로 다르게 개발될 내용도 없고 양쪽에서 해야 할일ㅇ르 한쪽에서 하거나 kmm 개발 전담이 생길수도 있는거다.</li>
+        </ul>
+      </li>
+      <li>기존 네이티브 환경에서 빠르게 개발 할 수 있는 방법이 kmm 이 되지 않을까 생각함</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-2">현재 개발 하고 있는 앱은 2016년 정도 부터 개발된 서비스이고 해당 앱에 잘 적용 될까?</h3>
+<ul>
+  <li>YES</li>
+  <li>iOS , Android 둘다 api 콜에서 원하는 데이터를 가지고 오는데 전혀 문제가 없다.</li>
+  <li>해당 라이브러리 작업을 하면 데이터를 가지고 오는 로직이 모두 분리 되어 한결 깔끔해 진다.</li>
+  <li>개발 하면서 UI 동작에 집중 할 수 있다.</li>
+</ul>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -18,43 +18,48 @@
 	  <pubDate>2019-04-12T00:00:00+00:00</pubDate>
 	  <guid>//log_link</guid>
 	  <description><![CDATA[
-	     <h3>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h3>
-
+	     <h3 id="section">안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h3>
 <ul>
-<li>로그출력 기능의 추가</li>
-<li>로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함 </li>
+  <li>로그출력 기능의 추가</li>
+  <li>로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함</li>
 </ul>
 
-<h2>안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h2>
-
+<h2 id="section-1">안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기</h2>
 <ul>
-<li>아래 코드와 비슷하게 만들어 로그를 사용하고 있습니다. </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  new Exception().getStackTrace()[0]
-</code></pre></div>
-<ul>
-<li>getFileName(), getLineNumber(), getMethodName() 등을 Log.d 에 출력 해서 사용하고 있습니다.</li>
-<li><p>기존에 작성 했던 내용을 업데이트 할 예정 입니다. 
-<script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script></p></li>
-<li><p>element  인텍스 값은 현재 함수, 호출 함수를 찾는 내용</p></li>
+  <li>아래 코드와 비슷하게 만들어 로그를 사용하고 있습니다.</li>
 </ul>
 
-<h2>안드로이드 스튜디오 로그 링크 추가 하기</h2>
+<p><code class="highlighter-rouge">
+  new Exception().getStackTrace()[0]
+ </code></p>
 
 <ul>
-<li><p>간단하게 아래와 같은 내용으로 로그를 출력하면 마지막에 링크가 걸리는 내용이 있습니다.
-<code>
-Exception().getStackTrace()[0].toString()
-</code></p></li>
-<li><p>문제는 로그 내용이 너무 길어 화면 밖으로 출력되어 불편 </p></li>
-<li><p>찍기 신공, 로그에 링크를 어떻게 줄까?</p></li>
-<li><p>(파일이름:라인)</p></li>
-<li><p>결론은 위와 같은 형태로 출력하면 링크가 걸린다. </p></li>
-<li><p>최종 로그 클래서는 아래와 같습니다.</p></li>
-<li><p>사용법은 log.l() , log.d(&quot;test&quot;) 등등을 이용 하면 링크걸린 내용과 함께 원하는 내용이 출력 </p></li>
+  <li>getFileName(), getLineNumber(), getMethodName() 등을 Log.d 에 출력 해서 사용하고 있습니다.</li>
+  <li>
+    <p>기존에 작성 했던 내용을 업데이트 할 예정 입니다. 
+  <script src="https://gist.github.com/pyeongho/9b3caab3a7173a6890f64117ff483a0b.js"></script></p>
+  </li>
+  <li>element  인텍스 값은 현재 함수, 호출 함수를 찾는 내용</li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/9033b0d6201bd205214489cdcb4caf11.js"></script></p>
+<h2 id="section-2">안드로이드 스튜디오 로그 링크 추가 하기</h2>
+<ul>
+  <li>
+    <p>간단하게 아래와 같은 내용으로 로그를 출력하면 마지막에 링크가 걸리는 내용이 있습니다.
+  <code class="highlighter-rouge"> 
+  Exception().getStackTrace()[0].toString()
+ </code></p>
+  </li>
+  <li>문제는 로그 내용이 너무 길어 화면 밖으로 출력되어 불편</li>
+  <li>찍기 신공, 로그에 링크를 어떻게 줄까?</li>
+  <li>(파일이름:라인)</li>
+  <li>결론은 위와 같은 형태로 출력하면 링크가 걸린다.</li>
+  <li>최종 로그 클래서는 아래와 같습니다.</li>
+  <li>사용법은 log.l() , log.d(“test”) 등등을 이용 하면 링크걸린 내용과 함께 원하는 내용이 출력</li>
+</ul>
+
+<script src="https://gist.github.com/pyeongho/9033b0d6201bd205214489cdcb4caf11.js"></script>
+
 
 	  ]]></description>
 	</item>

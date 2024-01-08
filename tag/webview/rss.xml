@@ -18,42 +18,43 @@
 	  <pubDate>2021-11-25T00:00:00+00:00</pubDate>
 	  <guid>//spa</guid>
 	  <description><![CDATA[
-	     <h3>앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우</h3>
-
+	     <h3 id="shouldoverrideurlloading--------">앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우</h3>
 <ul>
-<li>하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다</li>
-<li>현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다</li>
-<li>최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
+  <li>하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다</li>
+  <li>현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다</li>
+  <li>최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
+    <ul>
+      <li>잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.</li>
+      <li>잘못 사용한 경우에 대한 내용은 아닙니다.</li>
+    </ul>
+  </li>
+  <li>그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.</li>
+  <li>로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.</li>
+  <li>그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.</li>
+  <li>SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.</li>
+  <li>저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.</li>
+  <li>결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다.</li>
+  <li>그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.</li>
+  <li>SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.</li>
+  <li>
+    <p>안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.</p>
 
-<ul>
-<li>잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.</li>
-<li>잘못 사용한 경우에 대한 내용은 아닙니다.</li>
-</ul></li>
-<li>그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.</li>
-<li>로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.</li>
-<li>그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.</li>
-<li>SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.</li>
-<li>저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.</li>
-<li>결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다. </li>
-<li>그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.</li>
-<li>SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.</li>
-<li><p>안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">   override fun doUpdateVisitedHistory(view: WebView?, url: String?, isReload: Boolean) {
-</code></pre></div></li>
-<li><p>이건 회사 마다 다르니 웹 개발자와 잘 이야기 해서 작업 하면 좋습니다.  </p></li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>   override fun doUpdateVisitedHistory(view: WebView?, url: String?, isReload: Boolean) {
+</code></pre>
+    </div>
+  </li>
+  <li>이건 회사 마다 다르니 웹 개발자와 잘 이야기 해서 작업 하면 좋습니다.</li>
 </ul>
 
-<h3>결론</h3>
-
+<h3 id="section">결론</h3>
 <ul>
-<li>다른 플랫폼 개발자 들과의 대화는 꼭 필요합니다.</li>
-<li>항상 대화하고 협업은 필수 입니다.</li>
+  <li>다른 플랫폼 개발자 들과의 대화는 꼭 필요합니다.</li>
+  <li>항상 대화하고 협업은 필수 입니다.</li>
 </ul>
 
-<h3>참고</h3>
-
+<h3 id="section-1">참고</h3>
 <ul>
-<li><a href="https://www.huskyhoochu.com/what-is-spa/">SPA 란</a></li>
+  <li><a href="https://www.huskyhoochu.com/what-is-spa/">SPA 란</a></li>
 </ul>
 
 	  ]]></description>
@@ -66,37 +67,39 @@
 	  <pubDate>2021-07-05T00:00:00+00:00</pubDate>
 	  <guid>//webview_async</guid>
 	  <description><![CDATA[
-	     <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
-
+	     <h3 id="section">웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
 <ul>
-<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
-<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
-<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
-<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
-<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
+  <li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
+  <li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
+  <li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
+  <li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
+  <li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
-  val binding get() = _binding!!
 
-  override fun onDestroyView() {
+<p>~~~
+  private var _binding: xxxxxxxxxBinding? = null
+  val binding get() = _binding!!</p>
+
+<p>override fun onDestroyView() {
           super.onDestroyView()
           _binding = null
       }
-</code></pre></div>
-<ul>
-<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
-<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
-<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
-<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
-</ul>
-
-<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+  ~~~</p>
 
 <ul>
-<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
-<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
-<li>꼭 신경 써야 합니다.</li>
+  <li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
+  <li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
+  <li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
+  <li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
 </ul>
+
+<h3 id="section-1">웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+<ul>
+  <li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
+  <li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
+  <li>꼭 신경 써야 합니다.</li>
+</ul>
+
 
 	  ]]></description>
 	</item>

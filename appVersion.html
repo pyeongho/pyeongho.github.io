@@ -134,12 +134,12 @@
 
         <section class="post-content">
             
-            <h3>몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?</h3>
-
+            <h3 id="section">몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?</h3>
 <ul>
-<li>그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.</li>
+  <li>그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-java" data-lang="java">        <span class="n">PackageManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">PackageManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getPackageManager</span><span class="o">();</span>
         <span class="k">try</span> <span class="o">{</span>
            <span class="n">PackageInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="na">getPackageInfo</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
            <span class="n">String</span> <span class="n">packageName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">packageName</span><span class="o">;</span>
@@ -148,36 +148,45 @@
            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NameNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
            <span class="c1">// TODO Auto-generated catch block</span>
            <span class="o">}</span>
-</code></pre></div>
-<ul>
-<li>특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.</li>
-<li>우선 문제 해결 먼저 진행</li>
-<li>처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함</li>
-<li>그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 </li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">      /*version name*/
-      BuildConfig.VERSION_NAME
-
-      /*version code*/
-      BuildConfig.VERSION_CODE
-
-</code></pre></div>
-<h3>BuildConfig 에 나만의 상수 추가</h3>
+</code></pre>
+</div>
 
 <ul>
-<li>위 방법을 찾기 전에는 아래와 같은 방법으로 진행했지만 이제는 다른 상수 추가 할때 사용 중<br></li>
-<li>프로젝트 build.gradle 에서 appVersion 을 추가</li>
+  <li>특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.</li>
+  <li>우선 문제 해결 먼저 진행</li>
+  <li>처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함</li>
+  <li>그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">ext {
+
+<p>```
+      /<em>version name</em>/
+      BuildConfig.VERSION_NAME</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  /*version code*/
+  BuildConfig.VERSION_CODE
+</code></pre>
+</div>
+
+<p>```</p>
+
+<h3 id="buildconfig----">BuildConfig 에 나만의 상수 추가</h3>
+<ul>
+  <li>위 방법을 찾기 전에는 아래와 같은 방법으로 진행했지만 이제는 다른 상수 추가 할때 사용 중</li>
+  <li>프로젝트 build.gradle 에서 appVersion 을 추가</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ext {
     appVersion = "1.0.5"
 }
 
-</code></pre></div>
+</code></pre>
+</div>
 <ul>
-<li>versionName &quot;$rootProject.appVersion&quot;</li>
-<li>build.gradle buildTypes 에 추가 한 내용</li>
+  <li>versionName “$rootProject.appVersion”</li>
+  <li>build.gradle buildTypes 에 추가 한 내용</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    def version=  '\"' + "$rootProject.appVersion" +'\"'
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    def version=  '\"' + "$rootProject.appVersion" +'\"'
     debug{
         buildConfigField "String", "APP_VERSION", version
     }
@@ -187,11 +196,14 @@
         buildConfigField "String", "APP_VERSION", version
     }
 
-</code></pre></div>
+</code></pre>
+</div>
+
 <ul>
-<li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
-<li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
+  <li>BuildConfig.APP_VERSION  이런 상수를 사용 가능하다.</li>
+  <li>필요한 상수등을 정의해서 편하게 사용하면 된다.</li>
 </ul>
+
 
 
         </section>
@@ -293,7 +305,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

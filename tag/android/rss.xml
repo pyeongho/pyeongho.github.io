@@ -18,42 +18,43 @@
 	  <pubDate>2021-11-25T00:00:00+00:00</pubDate>
 	  <guid>//spa</guid>
 	  <description><![CDATA[
-	     <h3>앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우</h3>
-
+	     <h3 id="shouldoverrideurlloading--------">앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우</h3>
 <ul>
-<li>하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다</li>
-<li>현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다</li>
-<li>최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
+  <li>하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다</li>
+  <li>현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다</li>
+  <li>최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
+    <ul>
+      <li>잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.</li>
+      <li>잘못 사용한 경우에 대한 내용은 아닙니다.</li>
+    </ul>
+  </li>
+  <li>그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.</li>
+  <li>로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.</li>
+  <li>그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.</li>
+  <li>SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.</li>
+  <li>저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.</li>
+  <li>결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다.</li>
+  <li>그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.</li>
+  <li>SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.</li>
+  <li>
+    <p>안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.</p>
 
-<ul>
-<li>잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.</li>
-<li>잘못 사용한 경우에 대한 내용은 아닙니다.</li>
-</ul></li>
-<li>그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.</li>
-<li>로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.</li>
-<li>그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.</li>
-<li>SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.</li>
-<li>저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.</li>
-<li>결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다. </li>
-<li>그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.</li>
-<li>SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.</li>
-<li><p>안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">   override fun doUpdateVisitedHistory(view: WebView?, url: String?, isReload: Boolean) {
-</code></pre></div></li>
-<li><p>이건 회사 마다 다르니 웹 개발자와 잘 이야기 해서 작업 하면 좋습니다.  </p></li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>   override fun doUpdateVisitedHistory(view: WebView?, url: String?, isReload: Boolean) {
+</code></pre>
+    </div>
+  </li>
+  <li>이건 회사 마다 다르니 웹 개발자와 잘 이야기 해서 작업 하면 좋습니다.</li>
 </ul>
 
-<h3>결론</h3>
-
+<h3 id="section">결론</h3>
 <ul>
-<li>다른 플랫폼 개발자 들과의 대화는 꼭 필요합니다.</li>
-<li>항상 대화하고 협업은 필수 입니다.</li>
+  <li>다른 플랫폼 개발자 들과의 대화는 꼭 필요합니다.</li>
+  <li>항상 대화하고 협업은 필수 입니다.</li>
 </ul>
 
-<h3>참고</h3>
-
+<h3 id="section-1">참고</h3>
 <ul>
-<li><a href="https://www.huskyhoochu.com/what-is-spa/">SPA 란</a></li>
+  <li><a href="https://www.huskyhoochu.com/what-is-spa/">SPA 란</a></li>
 </ul>
 
 	  ]]></description>
@@ -66,39 +67,42 @@
 	  <pubDate>2021-11-25T00:00:00+00:00</pubDate>
 	  <guid>//flipper</guid>
 	  <description><![CDATA[
-	     <h3>Flipper 문서를 잘 확인하자</h3>
-
+	     <h3 id="flipper---">Flipper 문서를 잘 확인하자</h3>
 <ul>
-<li>Flipper 릴리즈 빌드시 import 에러가 발생하면
-
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz" alt="문서중 그래들 파일"></li>
-</ul></li>
-<li><p><a href="https://fbflipper.com/docs/getting-started/android-native/">공식문서</a></p></li>
-<li><p>검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.</p></li>
+  <li>Flipper 릴리즈 빌드시 import 에러가 발생하면
+    <ul>
+      <li><img src="https://drive.google.com/uc?export=view&amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz" alt="문서중 그래들 파일" /></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://fbflipper.com/docs/getting-started/android-native/">공식문서</a></p>
+  </li>
+  <li>검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
     debugImplementation "com.facebook.soloader:soloader:$soloaderVersion"
     debugImplementation "com.facebook.flipper:flipper-network-plugin:$flipperVersion"
     releaseImplementation "com.facebook.flipper:flipper-noop:$flipperVersion"
-</code></pre></div>
+</code></pre>
+</div>
+
 <ul>
-<li>하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.</li>
-<li>import 에서 flipper 이 없다는 내용입니다.</li>
-<li>그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다. </li>
-<li>releaseImplementation 에서 순수한 flipper 만 있습니다.<br></li>
-<li>공식 문서를 다시 한번 확인 했습니다.</li>
-<li>첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.</li>
-<li>releaseImplementation &#39;com.github.theGlenn:flipper-android-no-op:0.9.0&#39; </li>
-<li>2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.</li>
+  <li>하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.</li>
+  <li>import 에서 flipper 이 없다는 내용입니다.</li>
+  <li>그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다.</li>
+  <li>releaseImplementation 에서 순수한 flipper 만 있습니다.</li>
+  <li>공식 문서를 다시 한번 확인 했습니다.</li>
+  <li>첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.</li>
+  <li>releaseImplementation ‘com.github.theGlenn:flipper-android-no-op:0.9.0’</li>
+  <li>2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.</li>
 </ul>
 
 <script src="https://gist.github.com/pyeongho/9384a672e29083a20fe87dd6dfe55a31.js"></script>
 
-<h3>결론</h3>
-
+<h3 id="section">결론</h3>
 <ul>
-<li>공식 문서는 꼼꼼히 확인하자</li>
+  <li>공식 문서는 꼼꼼히 확인하자</li>
 </ul>
 
 	  ]]></description>
@@ -111,47 +115,49 @@
 	  <pubDate>2021-11-10T00:00:00+00:00</pubDate>
 	  <guid>//svg_use</guid>
 	  <description><![CDATA[
-	     <h3>SVG</h3>
-
+	     <h3 id="svg">SVG</h3>
 <ul>
-<li><p>이런 SVG 를 보셨다면 꼭 읽어 주세요</p>
-
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee" alt="깨진 svg"></li>
-</ul></li>
-<li><p><a href="https://developer.android.com/studio/write/vector-asset-studio?hl=ko#svg">SVG 추가 방법 개발 문서</a></p></li>
-<li><p>os6(sdk23이상) 을 지원 할때는 꼭 확인 해야 합니다.</p></li>
-<li><p>개발을 하면서 특히 Figma 를 사용하면서 svg 사용이 많아지고 있습니다.</p></li>
-<li><p>저번 게시글에서도 언급한것 처럼 약간의 호환성 문제들이 나타나고 있었습니다.
-호환성 문제체크 하는 방법은 이전 게시글에 있으니 꼭 확인해 주세요</p></li>
-<li><p>호환은 되지만 잘못된 경우가 있을때는 아래 내용을 확인해 보면 좋습니다.
+  <li>이런 SVG 를 보셨다면 꼭 읽어 주세요
+    <ul>
+      <li><img src="https://drive.google.com/uc?export=view&amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee" alt="깨진 svg" /></li>
+    </ul>
+  </li>
+  <li><a href="https://developer.android.com/studio/write/vector-asset-studio?hl=ko#svg">SVG 추가 방법 개발 문서</a></li>
+  <li>os6(sdk23이상) 을 지원 할때는 꼭 확인 해야 합니다.</li>
+  <li>개발을 하면서 특히 Figma 를 사용하면서 svg 사용이 많아지고 있습니다.</li>
+  <li>
+    <p>저번 게시글에서도 언급한것 처럼 약간의 호환성 문제들이 나타나고 있었습니다.
+호환성 문제체크 하는 방법은 이전 게시글에 있으니 꼭 확인해 주세요</p>
+  </li>
+  <li>
+    <p>호환은 되지만 잘못된 경우가 있을때는 아래 내용을 확인해 보면 좋습니다.
 예를 들어 23 이상에서만 android:fillType=“evenOdd” 사용되는 svg 속성들이 제대로 동작 하지 않는 경우도 있었습니다.</p>
 
-<ul>
-<li>xml 에서 사용법
-
-<ul>
-<li>android:src 과 app:srcCompat 는 완전히 동일하게 동작 하지 않는다. app:srcCompat 만 사용하자</li>
-<li>xml 에서 svg 추가 할때 android:src=&quot;리소스 파일&quot; 습관적으로 이렇게 사용을 합니다.
-minsdk 21 이상이면 신경도 안쓰고 사용 할수도 있습니다. 하지만 습관을 바꿔야 할 때입니다.
-app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속성값이 제대로 동작 하지만 android:src 에서는 동작 하지 않습니다.</li>
-</ul></li>
-<li>자바나 코틀린에서의 사용법
-
-<ul>
-<li>AppCompatResources.getDrawable 를 사용한다.</li>
-<li>코드상으로 벡터 이미지를 넣을때도 습관적으로 context.getDrawable 을 사용하는데 이건 android:src 과 같다고 생각해야 합니다.
+    <ul>
+      <li>xml 에서 사용법
+        <ul>
+          <li>android:src 과 app:srcCompat 는 완전히 동일하게 동작 하지 않는다. app:srcCompat 만 사용하자</li>
+          <li>xml 에서 svg 추가 할때 android:src=”리소스 파일” 습관적으로 이렇게 사용을 합니다.
+ minsdk 21 이상이면 신경도 안쓰고 사용 할수도 있습니다. 하지만 습관을 바꿔야 할 때입니다.
+ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속성값이 제대로 동작 하지만 android:src 에서는 동작 하지 않습니다.</li>
+        </ul>
+      </li>
+      <li>자바나 코틀린에서의 사용법
+        <ul>
+          <li>AppCompatResources.getDrawable 를 사용한다.</li>
+          <li>코드상으로 벡터 이미지를 넣을때도 습관적으로 context.getDrawable 을 사용하는데 이건 android:src 과 같다고 생각해야 합니다.
 그래서 깨진 벡터 이미지를 확인 할수 있습니다.</li>
-<li>AppCompatResources.getDrawable 를 사용해서 drawable 를 가지고 오면 문제가 해결 됩니다.</li>
-</ul></li>
-</ul></li>
+          <li>AppCompatResources.getDrawable 를 사용해서 drawable 를 가지고 오면 문제가 해결 됩니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h3>결론</h3>
-
+<h3 id="section">결론</h3>
 <ul>
-<li>android:src 을 사용하지 말고  app:srcCompat 이것만 사용하자</li>
-<li>java, kt 에서 벡터이미지를 추가 할때 getDrawable 가 아닌 AppCompatResources.getDrawable 를 사용하자</li>
+  <li>android:src 을 사용하지 말고  app:srcCompat 이것만 사용하자</li>
+  <li>java, kt 에서 벡터이미지를 추가 할때 getDrawable 가 아닌 AppCompatResources.getDrawable 를 사용하자</li>
 </ul>
 
 	  ]]></description>
@@ -164,61 +170,59 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-11-10T00:00:00+00:00</pubDate>
 	  <guid>//reject</guid>
 	  <description><![CDATA[
-	     <h3>플레이스토어 거부 사태</h3>
-
+	     <h3 id="section">플레이스토어 거부 사태</h3>
 <ul>
-<li>지금 까지 아무 문제 없었지만 갑자기 스토어 업데이트가 거부 되었습니다.</li>
-<li>지금까지 운이 좋았던 건지 한번도 겪어보지 못한 거부 였습니다.</li>
-<li>지금은 해결되어 마음이 편하지만 거부 해결하기 까지는 너무 힘들었습니다.</li>
+  <li>지금 까지 아무 문제 없었지만 갑자기 스토어 업데이트가 거부 되었습니다.</li>
+  <li>지금까지 운이 좋았던 건지 한번도 겪어보지 못한 거부 였습니다.</li>
+  <li>지금은 해결되어 마음이 편하지만 거부 해결하기 까지는 너무 힘들었습니다.</li>
 </ul>
 
-<h3>사건 일기</h3>
-
+<h3 id="section-1">사건 일기</h3>
 <ul>
-<li>갑자기 플레이스토어 리젝 메일을 수령
-
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1xGks9lYvHu_Z3Av8hc9HrM4cqrvpwIfg" alt="거부 메일"></li>
-<li>실시간 스트리밍 앱도 아닌데 갑자기 무슨 일이지 하는 생각이 들었습니다.</li>
-<li>참고로 신고 기능과 사용자 숨기기 기능은 제공 하고 있었습니다.</li>
-</ul></li>
-<li>UGC 정책 위반(사용자가 게시글, 댓글등을 추가 할 수 있으면 UGC(User-Generated Contents) 입니다. 제가 개발하고 있는 앱은 게시글과 댓글 모두 있습니다.</li>
-<li>코로나 시국이라 채팅과 전화 연결이 되지 않아 메일로 문의 했더니 다시 한번 제출 해 보라고 해서 제출함</li>
-<li>2~3일 뒤에 다시 리젝</li>
-<li>뭔가 불안해서 긴급 회의로 내용을 공유하고 대처 방안을 모색</li>
-<li>신고 기능이 문제다 , 게시글을 바로 안보이게 해야 한다 등등 많은 의견이 나왔지만 해답은 없었다.</li>
-<li>그래서 단계적으로 모든걸 처리하기로 함</li>
-<li>첨부된 내용중에 팝업이 있어서 팝업에 사용자 숨기기 기능을 추가해서 업데이트 제출</li>
-<li>신고했을때 바로 게시글 숨기기 관련해서 배포</li>
-<li>7일이 넘도록 검토중에서 변경 되지 않음
-
-<ul>
-<li>7일동안 여러곳에 소셜의 힘을 빌렸습니다.</li>
-<li>동일한 문제로 리젝 당한곳이 많았다.</li>
-<li>자신이 해결했던 내용을 서로서로 공유</li>
-</ul></li>
-<li>이메일로 다시 문의 함</li>
-<li>업데이트를 제출 하면 검토 순번이 뒤로 밀리니 다시 제출 하면 안된다고 함
-
-<ul>
-<li>검토 순번이 밀린다니 여기서 충격</li>
-</ul></li>
-<li>8일때 되던날 거부 당함
-
-<ul>
-<li>거부 당한 내용을 보니 첫번째로 올렸던 버전으로 테스트된걸 확인</li>
-<li>대처한 버전들 모두 빨간색으로 업데이트 취소됨 으로 변경</li>
-</ul></li>
-<li>그래서 버전을 하나 올려서 모든 처리 방안이 올라간 버전으로 검토 요청</li>
-<li>다행히 10일째 아침에 승인 되었습니다.</li>
+  <li>갑자기 플레이스토어 리젝 메일을 수령
+    <ul>
+      <li><img src="https://drive.google.com/uc?export=view&amp;id=1xGks9lYvHu_Z3Av8hc9HrM4cqrvpwIfg" alt="거부 메일" /></li>
+      <li>실시간 스트리밍 앱도 아닌데 갑자기 무슨 일이지 하는 생각이 들었습니다.</li>
+      <li>참고로 신고 기능과 사용자 숨기기 기능은 제공 하고 있었습니다.</li>
+    </ul>
+  </li>
+  <li>UGC 정책 위반(사용자가 게시글, 댓글등을 추가 할 수 있으면 UGC(User-Generated Contents) 입니다. 제가 개발하고 있는 앱은 게시글과 댓글 모두 있습니다.</li>
+  <li>코로나 시국이라 채팅과 전화 연결이 되지 않아 메일로 문의 했더니 다시 한번 제출 해 보라고 해서 제출함</li>
+  <li>2~3일 뒤에 다시 리젝</li>
+  <li>뭔가 불안해서 긴급 회의로 내용을 공유하고 대처 방안을 모색</li>
+  <li>신고 기능이 문제다 , 게시글을 바로 안보이게 해야 한다 등등 많은 의견이 나왔지만 해답은 없었다.</li>
+  <li>그래서 단계적으로 모든걸 처리하기로 함</li>
+  <li>첨부된 내용중에 팝업이 있어서 팝업에 사용자 숨기기 기능을 추가해서 업데이트 제출</li>
+  <li>신고했을때 바로 게시글 숨기기 관련해서 배포</li>
+  <li>7일이 넘도록 검토중에서 변경 되지 않음
+    <ul>
+      <li>7일동안 여러곳에 소셜의 힘을 빌렸습니다.</li>
+      <li>동일한 문제로 리젝 당한곳이 많았다.</li>
+      <li>자신이 해결했던 내용을 서로서로 공유</li>
+    </ul>
+  </li>
+  <li>이메일로 다시 문의 함</li>
+  <li>업데이트를 제출 하면 검토 순번이 뒤로 밀리니 다시 제출 하면 안된다고 함
+    <ul>
+      <li>검토 순번이 밀린다니 여기서 충격</li>
+    </ul>
+  </li>
+  <li>8일때 되던날 거부 당함
+    <ul>
+      <li>거부 당한 내용을 보니 첫번째로 올렸던 버전으로 테스트된걸 확인</li>
+      <li>대처한 버전들 모두 빨간색으로 업데이트 취소됨 으로 변경</li>
+    </ul>
+  </li>
+  <li>그래서 버전을 하나 올려서 모든 처리 방안이 올라간 버전으로 검토 요청</li>
+  <li>다행히 10일째 아침에 승인 되었습니다.</li>
 </ul>
 
-<h3>후기</h3>
-
+<h3 id="section-2">후기</h3>
 <ul>
-<li>순번제도가 있으니 무조건 업데이트 요청 하지 말자</li>
-<li>애플 처럼 자세한 내용으로 거부 되지 않는다. 뉘앙스를 파악하고 다양한 공간에서 확인해야 한다.</li>
+  <li>순번제도가 있으니 무조건 업데이트 요청 하지 말자</li>
+  <li>애플 처럼 자세한 내용으로 거부 되지 않는다. 뉘앙스를 파악하고 다양한 공간에서 확인해야 한다.</li>
 </ul>
+
 
 	  ]]></description>
 	</item>
@@ -230,22 +234,27 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-09-15T00:00:00+00:00</pubDate>
 	  <guid>//svg_to_vector</guid>
 	  <description><![CDATA[
-	     <h3>SVG 를 Vector 로 변경하면서 발생한 이슈</h3>
-
+	     <h3 id="svg--vector----">SVG 를 Vector 로 변경하면서 발생한 이슈</h3>
 <ul>
-<li>피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.</li>
-<li>그래서 거의 대부분의 파일을 svg 로 다운 받고 이를 vector 로 변경하고 있습니다.</li>
-<li>최근 들어 벡터 이미지가 23 이하 부터 이상하게 나오는 경우들이 발생</li>
-<li>대수롭지 않게 넘어 가고 png 를 다운받아 사용</li>
-<li>문득 버전 이슈가 있으면 알려줘야지 하는 생각을 했습니다.</li>
-<li><p>디자인 작업을 하면서 아래와 같은 화면에서 아무 생각 없이 다음을 눌러서 벡터를 생성 했습니다.
-<img src="http://drive.google.com/uc?export=view&amp;id=1FQFiElRYrIRK6lX21_JtQh9wElxUajDc" alt="만들기"></p></li>
-<li><p>문제는 qa 에서 버전별 검사를 하면 하위호환성 이슈로 알려주었습니다.</p></li>
-<li><p>자세히 보면 느낌표도 있고 클릭하면 아래 처럼 에러가 있다고 알려 주었습니다.
-<img src="http://drive.google.com/uc?export=view&amp;id=1RfbchNoIZUQQWfRS6uoIJ_hRl3ulYv3P" alt="만들기"></p></li>
-<li><p>여기 저기 해당 내용으로 검색하니 버전별로 지원 안할수 있고 그라데이션은 지원 안한다는 내용도 있습니다.</p></li>
-<li><p>사소해 보이는것도 자세히 보는걸 추천 합니다. ㅎㅎ</p></li>
-<li><p><a href="http://inloop.github.io/svg2android/">에러확인용 사이트</a></p></li>
+  <li>피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.</li>
+  <li>그래서 거의 대부분의 파일을 svg 로 다운 받고 이를 vector 로 변경하고 있습니다.</li>
+  <li>최근 들어 벡터 이미지가 23 이하 부터 이상하게 나오는 경우들이 발생</li>
+  <li>대수롭지 않게 넘어 가고 png 를 다운받아 사용</li>
+  <li>문득 버전 이슈가 있으면 알려줘야지 하는 생각을 했습니다.</li>
+  <li>
+    <p>디자인 작업을 하면서 아래와 같은 화면에서 아무 생각 없이 다음을 눌러서 벡터를 생성 했습니다.
+   <img src="http://drive.google.com/uc?export=view&amp;id=1FQFiElRYrIRK6lX21_JtQh9wElxUajDc" alt="만들기" /></p>
+  </li>
+  <li>문제는 qa 에서 버전별 검사를 하면 하위호환성 이슈로 알려주었습니다.</li>
+  <li>
+    <p>자세히 보면 느낌표도 있고 클릭하면 아래 처럼 에러가 있다고 알려 주었습니다.
+  <img src="http://drive.google.com/uc?export=view&amp;id=1RfbchNoIZUQQWfRS6uoIJ_hRl3ulYv3P" alt="만들기" /></p>
+  </li>
+  <li>여기 저기 해당 내용으로 검색하니 버전별로 지원 안할수 있고 그라데이션은 지원 안한다는 내용도 있습니다.</li>
+  <li>
+    <p>사소해 보이는것도 자세히 보는걸 추천 합니다. ㅎㅎ</p>
+  </li>
+  <li><a href="http://inloop.github.io/svg2android/">에러확인용 사이트</a></li>
 </ul>
 
 	  ]]></description>
@@ -258,49 +267,59 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-09-13T00:00:00+00:00</pubDate>
 	  <guid>//github_actions</guid>
 	  <description><![CDATA[
-	     <h3>깃허브 액션이 빌드 에러 발생</h3>
-
+	     <h3 id="section">깃허브 액션이 빌드 에러 발생</h3>
 <ul>
-<li>라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러</li>
-<li><p>로걸에서 캐시 클리어 이후로 빌드 실패</p>
-<div class="highlight"><pre><code class="language-" data-lang=""> ./gradlew build --refresh-dependencies --stacktrace
-</code></pre></div></li>
-<li><p>터미널에서 --refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행</p></li>
-<li><p>/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.</p></li>
-<li><p>결국 로컬에서도 에러가 발생한다.</p></li>
-<li><p>특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
-</code></pre></div></li>
-<li><p>이후 해당 에러로 검색 하기 시작
--루트의 그래들을 수정 했습니다.</p></li>
-<li><p>allprojects -&gt; repositories 위치의 내용을 확인 했습니다.</p></li>
-<li><p>순서를 변경 했습니다.</p></li>
-<li><p>mavenCentral , maven, google, jcenter</p></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  // 변경 전
-  repositories {
-          maven { url 'https://maven.google.com' }
-          maven { url 'https://jitpack.io' }
-          maven { url 'https://jcenter.bintray.com' }
-          maven { url 'https://naver.jfrog.io/artifactory/maven/' }
-          jcenter()
-          flatDir { dirs 'libs' }
-          google()
-          mavenCentral()
-      }
+  <li>라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러</li>
+  <li>
+    <p>로걸에서 캐시 클리어 이후로 빌드 실패</p>
 
- // 변경 후
+    <div class="highlighter-rouge"><pre class="highlight"><code> ./gradlew build --refresh-dependencies --stacktrace
+</code></pre>
+    </div>
+  </li>
+  <li>터미널에서 –refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행</li>
+  <li>/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.</li>
+  <li>결국 로컬에서도 에러가 발생한다.</li>
+  <li>
+    <p>특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
+</code></pre>
+    </div>
+  </li>
+  <li>이후 해당 에러로 검색 하기 시작
+  -루트의 그래들을 수정 했습니다.</li>
+  <li>allprojects -&gt; repositories 위치의 내용을 확인 했습니다.</li>
+  <li>순서를 변경 했습니다.</li>
+  <li>mavenCentral , maven, google, jcenter</li>
+</ul>
+
+<p>```
+  // 변경 전
+  repositories {
+          maven { url ‘https://maven.google.com’ }
+          maven { url ‘https://jitpack.io’ }
+          maven { url ‘https://jcenter.bintray.com’ }
+          maven { url ‘https://naver.jfrog.io/artifactory/maven/’ }
+          jcenter()
+          flatDir { dirs ‘libs’ }
+          google()
+          mavenCentral()
+      }</p>
+
+<p>// 변경 후
   repositories {
           mavenCentral()
-          maven { url 'https://maven.google.com' }
-          maven { url 'https://jitpack.io' }
-          maven { url 'https://jcenter.bintray.com' }
-          maven { url 'https://naver.jfrog.io/artifactory/maven/' }
+          maven { url ‘https://maven.google.com’ }
+          maven { url ‘https://jitpack.io’ }
+          maven { url ‘https://jcenter.bintray.com’ }
+          maven { url ‘https://naver.jfrog.io/artifactory/maven/’ }
           google()
           jcenter()
-          flatDir { dirs 'libs' }
+          flatDir { dirs ‘libs’ }
       }
-</code></pre></div>
+  ```</p>
+
 	  ]]></description>
 	</item>
 
@@ -311,19 +330,20 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-07-30T00:00:00+00:00</pubDate>
 	  <guid>//textview_setTextAppearance</guid>
 	  <description><![CDATA[
-	     <h3>TextView setTextAppearance 동작 확인하기</h3>
-
+	     <h3 id="textview-settextappearance--">TextView setTextAppearance 동작 확인하기</h3>
 <ul>
-<li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
-<li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
-<li><p>setTextAppearance 를 따라가다 보면 모든 속성이없다.</p>
-
-<ul>
-<li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
-<li><script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script></li>
-</ul></li>
-<li><p>아래는 동작 가능한 속성들을 정리해 보았습니다.
-<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></p></li>
+  <li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
+  <li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
+  <li>setTextAppearance 를 따라가다 보면 모든 속성이없다.
+    <ul>
+      <li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
+      <li>
+        <script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script>
+      </li>
+    </ul>
+  </li>
+  <li>아래는 동작 가능한 속성들을 정리해 보았습니다.
+<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></li>
 </ul>
 
 	  ]]></description>
@@ -336,26 +356,27 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-07-19T00:00:00+00:00</pubDate>
 	  <guid>//textview_leadingmargin</guid>
 	  <description><![CDATA[
-	     <h3>TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.</h3>
-
+	     <h3 id="textview------------">TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.</h3>
 <ul>
-<li><img src="http://drive.google.com/uc?export=view&amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz" alt=""></li>
-<li>간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.</li>
-<li><p>들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
-<script src="https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js"></script></p></li>
-<li><p>first = 200 =&gt; 들여쓰기 픽셀</p></li>
-<li><p>rest = 1 =&gt; 단락의 나머지줄 들여쓰기 (the indent for the remaining lines of the paragraph)</p></li>
-<li><p>start = 0, end =  1, flags = 0 =&gt; span 의 인자값</p></li>
-<li><p>end =  1 이 왜 1인지 궁금해 할수 있습니다. 이는 디자인상 요청 사항으로 두번째 문단은 들여쓰기가 안되어야 해서 입니다.</p></li>
-<li><p>일반적인 들여쓰기에서는 길이를 넣으면 됩니다.</p></li>
+  <li><img src="http://drive.google.com/uc?export=view&amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz" alt="" /></li>
+  <li>간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.</li>
+  <li>
+    <p>들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
+  <script src="https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js"></script></p>
+  </li>
+  <li>first = 200 =&gt; 들여쓰기 픽셀</li>
+  <li>rest = 1 =&gt; 단락의 나머지줄 들여쓰기 (the indent for the remaining lines of the paragraph)</li>
+  <li>start = 0, end =  1, flags = 0 =&gt; span 의 인자값</li>
+  <li>end =  1 이 왜 1인지 궁금해 할수 있습니다. 이는 디자인상 요청 사항으로 두번째 문단은 들여쓰기가 안되어야 해서 입니다.</li>
+  <li>일반적인 들여쓰기에서는 길이를 넣으면 됩니다.</li>
 </ul>
 
-<h3>참고</h3>
-
+<h3 id="section">참고</h3>
 <ul>
-<li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan">https://developer.android.com/reference/android/text/style/LeadingMarginSpan</a></li>
-<li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard">https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard</a></li>
+  <li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan">https://developer.android.com/reference/android/text/style/LeadingMarginSpan</a></li>
+  <li><a href="https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard">https://developer.android.com/reference/android/text/style/LeadingMarginSpan.Standard</a></li>
 </ul>
+
 
 	  ]]></description>
 	</item>
@@ -367,37 +388,39 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-07-05T00:00:00+00:00</pubDate>
 	  <guid>//webview_async</guid>
 	  <description><![CDATA[
-	     <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
-
+	     <h3 id="section">웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
 <ul>
-<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
-<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
-<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
-<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
-<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
+  <li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
+  <li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
+  <li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
+  <li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
+  <li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
-  val binding get() = _binding!!
 
-  override fun onDestroyView() {
+<p>~~~
+  private var _binding: xxxxxxxxxBinding? = null
+  val binding get() = _binding!!</p>
+
+<p>override fun onDestroyView() {
           super.onDestroyView()
           _binding = null
       }
-</code></pre></div>
-<ul>
-<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
-<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
-<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
-<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
-</ul>
-
-<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+  ~~~</p>
 
 <ul>
-<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
-<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
-<li>꼭 신경 써야 합니다.</li>
+  <li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
+  <li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
+  <li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
+  <li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
 </ul>
+
+<h3 id="section-1">웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+<ul>
+  <li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
+  <li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
+  <li>꼭 신경 써야 합니다.</li>
+</ul>
+
 
 	  ]]></description>
 	</item>
@@ -409,27 +432,31 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 	  <pubDate>2021-06-30T00:00:00+00:00</pubDate>
 	  <guid>//gradle_action</guid>
 	  <description><![CDATA[
-	     <h3>깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생</h3>
+	     <h3 id="cicd-------">깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생</h3>
+<ul>
+  <li>깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.</li>
+  <li>처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.</li>
+  <li>정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.</li>
+  <li>빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.</li>
+  <li>gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">
+  org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+ </code></p>
 
 <ul>
-<li>깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.</li>
-<li>처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.</li>
-<li>정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.</li>
-<li>빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.</li>
-<li>gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
-</code></pre></div>
-<ul>
-<li>데몬이 없어 졌다고 해서 그래들옵션에 no-daemon 을 추가해 보았지만 그래도 에러는 지속 되었습니다.</li>
-<li>(https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)[https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners]</li>
-<li>깃허브 액션에 대해서 조금만 더 알아보기로 하였습니다.</li>
-<li>일단 깃허브 액션의 머신 스펙을 확인 하였습니다. 그런데 스펙에 보이는 마음에 들지 않는 숫자 메모리 7기가</li>
-<li><p>설마 설마 그래들 속성을 확인 했습니다. 역시나 아래 처럼 최대 메모리가 8기가로 설정 되어 있었습니다.
-<code>
-org.gradle.jvmargs=-Xms4096m -Xmx8192m -XX:MaxPermSize=1024m
-</code></p></li>
-<li><p>여러분도 원인 모를 actions 의 빌드 실패가 발생하면 메모리를 확인해 보세요</p></li>
+  <li>데몬이 없어 졌다고 해서 그래들옵션에 no-daemon 을 추가해 보았지만 그래도 에러는 지속 되었습니다.</li>
+  <li>(https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)[https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners]</li>
+  <li>깃허브 액션에 대해서 조금만 더 알아보기로 하였습니다.</li>
+  <li>일단 깃허브 액션의 머신 스펙을 확인 하였습니다. 그런데 스펙에 보이는 마음에 들지 않는 숫자 메모리 7기가</li>
+  <li>
+    <p>설마 설마 그래들 속성을 확인 했습니다. 역시나 아래 처럼 최대 메모리가 8기가로 설정 되어 있었습니다.
+  <code class="highlighter-rouge">
+  org.gradle.jvmargs=-Xms4096m -Xmx8192m -XX:MaxPermSize=1024m
+ </code></p>
+  </li>
+  <li>여러분도 원인 모를 actions 의 빌드 실패가 발생하면 메모리를 확인해 보세요</li>
 </ul>
 
 	  ]]></description>

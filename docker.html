@@ -134,59 +134,59 @@
 
         <section class="post-content">
             
-            <h3>개발공부도 도커에서 하기</h3>
-
+            <h3 id="section">개발공부도 도커에서 하기</h3>
 <ul>
-<li>이런 저런 이유로 도커는 공부해 놓으면 좋을거 같습니다.</li>
+  <li>이런 저런 이유로 도커는 공부해 놓으면 좋을거 같습니다.</li>
 </ul>
 
-<h4>1. 도커란</h4>
-
+<h4 id="section-1">1. 도커란</h4>
 <ul>
-<li><a href="https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html">https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html</a>에서 공부 하였습니다. </li>
-<li>버처박스 보다 관리하고 편하고 좋은거 같습니다.</li>
-<li>초기 환경 설정이 어려운데 이런 부분을 쉽게 해결 할 수 있을걸로 예상합니다.</li>
+  <li><a href="https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html">https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html</a>에서 공부 하였습니다.</li>
+  <li>버처박스 보다 관리하고 편하고 좋은거 같습니다.</li>
+  <li>초기 환경 설정이 어려운데 이런 부분을 쉽게 해결 할 수 있을걸로 예상합니다.</li>
 </ul>
 
-<h4>2. 설치 해서 사용해 보기</h4>
-
+<h4 id="section-2">2. 설치 해서 사용해 보기</h4>
 <ul>
-<li><p>이런 저런 방법으로 설치 가능하지만 UI를 좋아해서 <a href="https://docs.docker.com/docker-for-mac/">https://docs.docker.com/docker-for-mac/</a>를 이용 하려 합니다.</p></li>
-<li><p>안정화 버전을 다운로드후 설치 완료, 도커 실행 가능, 메뉴바에 고래가 나옵니다</p></li>
-<li><p>터미널에서 docker --version 실행으로 도커 설치 여부 및 실행을 확인 합니다.</p></li>
+  <li>
+    <p>이런 저런 방법으로 설치 가능하지만 UI를 좋아해서 <a href="https://docs.docker.com/docker-for-mac/">https://docs.docker.com/docker-for-mac/</a>를 이용 하려 합니다.</p>
+  </li>
+  <li>안정화 버전을 다운로드후 설치 완료, 도커 실행 가능, 메뉴바에 고래가 나옵니다</li>
+  <li>터미널에서 docker –version 실행으로 도커 설치 여부 및 실행을 확인 합니다.</li>
 </ul>
 
-<h4>3.Hello World</h4>
-
+<h4 id="hello-world">3.Hello World</h4>
 <ul>
-<li> docker run hello-world </li>
-<li>도커 실행과 정상동작을 다시 한번 확인 가능하다.</li>
+  <li>docker run hello-world</li>
+  <li>도커 실행과 정상동작을 다시 한번 확인 가능하다.</li>
 </ul>
 
-<h4>4. 텐서플로우 이미지를 다운받아 보자</h4>
-
+<h4 id="section-3">4. 텐서플로우 이미지를 다운받아 보자</h4>
 <ul>
-<li>docker run -it b.gcr.io/tensorflow/tensorflow-full </li>
+  <li>docker run -it b.gcr.io/tensorflow/tensorflow-full</li>
 </ul>
 
-<h4>5. 문제 발생</h4>
-
+<h4 id="section-4">5. 문제 발생</h4>
 <ul>
-<li>위 컨테이너로 아래 내용을 따라 하려 했는데 vi 만 사용해야 해서 다른 방법을 찾고 있습니다.</li>
-<li><a href="https://gist.github.com/haje01/202ac276bace4b25dd3f">https://gist.github.com/haje01/202ac276bace4b25dd3f</a></li>
+  <li>위 컨테이너로 아래 내용을 따라 하려 했는데 vi 만 사용해야 해서 다른 방법을 찾고 있습니다.</li>
+  <li><a href="https://gist.github.com/haje01/202ac276bace4b25dd3f">https://gist.github.com/haje01/202ac276bace4b25dd3f</a></li>
 </ul>
 
-<h4>6. 도커에서 편집기 사용을 편하게 하자</h4>
-
+<h4 id="section-5">6. 도커에서 편집기 사용을 편하게 하자</h4>
 <ul>
-<li><a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html">https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get<em>started/os</em>setup.html</a></li>
-<li><p><a href="https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html">https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html</a></p></li>
-<li><p>아직 정확히 뭐가 뭔지 모르겠지만 방법은 하나 찾음</p></li>
-<li><p>$ sudo docker run -p 8888:8888 -it b.gcr.io/tensorflow/tensorflow-full </p></li>
-<li><h1>jupyter notebook</h1></li>
-<li><p>호스트에서 브라우저에서 localhost:8888 </p></li>
-<li><p>파이썬을 만들어서 가능함</p></li>
+  <li><a href="https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html">https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/get_started/os_setup.html</a></li>
+  <li>
+    <p><a href="https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html">https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html</a></p>
+  </li>
+  <li>아직 정확히 뭐가 뭔지 모르겠지만 방법은 하나 찾음</li>
+  <li>$ sudo docker run -p 8888:8888 -it b.gcr.io/tensorflow/tensorflow-full</li>
+  <li>
+    <h1 id="jupyter-notebook">jupyter notebook</h1>
+  </li>
+  <li>호스트에서 브라우저에서 localhost:8888</li>
+  <li>파이썬을 만들어서 가능함</li>
 </ul>
+
 
 
         </section>
@@ -288,7 +288,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

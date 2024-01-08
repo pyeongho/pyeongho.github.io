@@ -18,74 +18,70 @@
 	  <pubDate>2018-11-14T00:00:00+00:00</pubDate>
 	  <guid>//telefram_bot_father</guid>
 	  <description><![CDATA[
-	     <h3>텔래그램 봇을 이용해서 알림을 만들어 보자</h3>
+	     <h3 id="section">텔래그램 봇을 이용해서 알림을 만들어 보자</h3>
 
-<h4>왜</h4>
-
+<h4 id="section-1">왜</h4>
 <ul>
-<li>라즈베리파이에서 20초 정도에 한번씩 DI 값을 읽어서 서버로 전송 한다. 
-가끔 라즈베리파이의 와이파이 연결이 끊겨서 동작 안할때가 있어서 라즈베리파이 동작 알림을 만들고 있습니다.</li>
+  <li>라즈베리파이에서 20초 정도에 한번씩 DI 값을 읽어서 서버로 전송 한다. 
+  가끔 라즈베리파이의 와이파이 연결이 끊겨서 동작 안할때가 있어서 라즈베리파이 동작 알림을 만들고 있습니다.</li>
 </ul>
 
-<h4>우선 텔레그램 알림 봇 부터 설정</h4>
-
+<h4 id="section-2">우선 텔레그램 알림 봇 부터 설정</h4>
 <ul>
-<li>텔래그램에서 BotFather 친구 추가</li>
-<li>시작 버튼을 누른 후</li>
-<li>설명서에 나온 /newbot 클릭 또는 명령어 실행</li>
-<li>영어를 읽으면서 봇 이름 입력 하면 됩니다.</li>
-<li>대략 xxx<em>bot -&gt; xxyy</em>bot 이런식으로 두번 입력<br></li>
-<li>토큰이 발급 됩니다.</li>
+  <li>텔래그램에서 BotFather 친구 추가</li>
+  <li>시작 버튼을 누른 후</li>
+  <li>설명서에 나온 /newbot 클릭 또는 명령어 실행</li>
+  <li>영어를 읽으면서 봇 이름 입력 하면 됩니다.</li>
+  <li>대략 xxx_bot -&gt; xxyy_bot 이런식으로 두번 입력</li>
+  <li>토큰이 발급 됩니다.</li>
 </ul>
 
-<h4>파이썬 라이브러리 설치</h4>
-
+<h4 id="section-3">파이썬 라이브러리 설치</h4>
 <ul>
-<li>pip install python<em>telegram</em>bot</li>
-<li>혹시 cryptography 가 없다고 나오면 </li>
-<li>pip install cryptography </li>
-<li>업그레이드와 setuptools 버전등은 설치에 맞게 해야 합니다.
-
-<ul>
-<li>c9 에서 작업 할때 setuptools 버전이 3.3 이라 설치가 안되어 폴더에서 직접 지우는 만행을 </li>
-<li>pip에서 안되어 pip3 에서 테스트</li>
-<li>테스트만 할거라 빨리 하고 싶어서 되는곳에서 진행 </li>
-</ul></li>
-<li>설치 버전은 아래와 같습니다. 
-
-<ul>
-<li>cryptography==2.4.1</li>
-<li>python<em>telegram</em>bot==11.1.0</li>
-</ul></li>
+  <li>pip install python_telegram_bot</li>
+  <li>혹시 cryptography 가 없다고 나오면</li>
+  <li>pip install cryptography</li>
+  <li>업그레이드와 setuptools 버전등은 설치에 맞게 해야 합니다.
+    <ul>
+      <li>c9 에서 작업 할때 setuptools 버전이 3.3 이라 설치가 안되어 폴더에서 직접 지우는 만행을</li>
+      <li>pip에서 안되어 pip3 에서 테스트</li>
+      <li>테스트만 할거라 빨리 하고 싶어서 되는곳에서 진행</li>
+    </ul>
+  </li>
+  <li>설치 버전은 아래와 같습니다.
+    <ul>
+      <li>cryptography==2.4.1</li>
+      <li>python_telegram_bot==11.1.0</li>
+    </ul>
+  </li>
 </ul>
 
-<h4>봇을 만들기 완료</h4>
-
+<h4 id="section-4">봇을 만들기 완료</h4>
 <ul>
-<li>명령어로 동작 하는 방식이 기본적인 봇<br></li>
+  <li>명령어로 동작 하는 방식이 기본적인 봇</li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/5b61fc108e4888a76d2ef44e9026c88d.js"></script></p>
+<script src="https://gist.github.com/pyeongho/5b61fc108e4888a76d2ef44e9026c88d.js"></script>
 
 <ul>
-<li>위와 같은 코드를 작성하면 /start 를 입력하면 &quot;I&#39;m a bot, please talk to me!&quot; 를 출력합니다.</li>
-<li>start 가 아닌 다른 명령어들을 추가해서 원하는 기능을 만들 수 있습니다.</li>
+  <li>위와 같은 코드를 작성하면 /start 를 입력하면 “I’m a bot, please talk to me!” 를 출력합니다.</li>
+  <li>start 가 아닌 다른 명령어들을 추가해서 원하는 기능을 만들 수 있습니다.</li>
 </ul>
 
-<h4>알림봇이라 말하지만 그냥 텔레그램 메시지 보내기</h4>
+<h4 id="section-5">알림봇이라 말하지만 그냥 텔레그램 메시지 보내기</h4>
+<ul>
+  <li>다른곳과 살짝 달라서 아직 어떻게 해야 하는지 몰라서 막 만들었습니다.</li>
+  <li>아무리 봐도 너무 이상한 코드지만 사용자가 없을 때 동작 만 확인하기 좋은 코드</li>
+</ul>
+
+<script src="https://gist.github.com/pyeongho/d8e99a95e6352af3c1cc0b0527eaea57.js"></script>
 
 <ul>
-<li>다른곳과 살짝 달라서 아직 어떻게 해야 하는지 몰라서 막 만들었습니다.</li>
-<li>아무리 봐도 너무 이상한 코드지만 사용자가 없을 때 동작 만 확인하기 좋은 코드</li>
+  <li>메시지에서 chat_id 를 찾아서 해당 id에 메시지를 보내는 샘플 입니다.</li>
+  <li>set() 자료구조를 이용해서 동일한 id 를 필터링 하였습니다.</li>
+  <li>그냥 참고용 이에요</li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/d8e99a95e6352af3c1cc0b0527eaea57.js"></script></p>
-
-<ul>
-<li>메시지에서 chat_id 를 찾아서 해당 id에 메시지를 보내는 샘플 입니다.</li>
-<li>set() 자료구조를 이용해서 동일한 id 를 필터링 하였습니다. </li>
-<li>그냥 참고용 이에요 </li>
-</ul>
 
 	  ]]></description>
 	</item>
@@ -97,31 +93,32 @@
 	  <pubDate>2017-11-22T00:00:00+00:00</pubDate>
 	  <guid>//flaskcross</guid>
 	  <description><![CDATA[
-	     <h3>플라스크에서 크로스도메인 허용</h3>
+	     <h3 id="section">플라스크에서 크로스도메인 허용</h3>
 
-<h4>파이썬 서버에 크로스도메인 허용</h4>
-
+<h4 id="section-1">파이썬 서버에 크로스도메인 허용</h4>
 <ul>
-<li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
-<code>
- &#39;Access-Control-Allow-Origin: *&#39;
- &#39;Access-Control-Allow-Methods: GET&#39;
- &#39;Access-Control-Allow-Headers: X-Requested-With, Content-Type&#39;
+  <li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
+<code class="highlighter-rouge">
+ 'Access-Control-Allow-Origin: *'
+ 'Access-Control-Allow-Methods: GET'
+ 'Access-Control-Allow-Headers: X-Requested-With, Content-Type'
 </code></li>
-<li>내용을 찾아 보니 크로스 도메인 허용</li>
-<li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.<br></li>
-<li>오리지널 참고 코드 입니다.
-
-<ul>
-<li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
-</ul></li>
-<li><p>필요한 코드
-<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p></li>
-<li><p>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.</p>
-
-<ul>
-<li>@crossdomain(origin=&#39;*&#39;)<br></li>
-</ul></li>
+  <li>내용을 찾아 보니 크로스 도메인 허용</li>
+  <li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.</li>
+  <li>오리지널 참고 코드 입니다.
+    <ul>
+      <li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>필요한 코드
+<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p>
+  </li>
+  <li>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.
+    <ul>
+      <li>@crossdomain(origin=’*’)</li>
+    </ul>
+  </li>
 </ul>
 
 	  ]]></description>
@@ -134,61 +131,62 @@
 	  <pubDate>2017-03-20T00:00:00+00:00</pubDate>
 	  <guid>//flask</guid>
 	  <description><![CDATA[
-	     <h3>클라우드 서버 구축</h3>
+	     <h3 id="section">클라우드 서버 구축</h3>
 
-<h4>1 환경 설정</h4>
-
+<h4 id="section-1">1 환경 설정</h4>
 <ul>
-<li>클라우드9 에서 테스트 </li>
-<li>heroku 에 상시 서버 실행</li>
-<li>클라우드9는 개발 환경을 제공하기에 상시 서버로 사용하기 어렵다.(무료로)</li>
-<li>heroku는 18시간 사용 6시간휴식으로 서버 사용 가능</li>
-<li>heroku는 git 으로 코드를 관리하며 추가 하면 바로 서버에 추가됨</li>
-<li>디버깅은 어떻게 하는지 찾아봐야 함</li>
-<li>2개 모두 거의 모든 언어를 지원 한다.</li>
+  <li>클라우드9 에서 테스트</li>
+  <li>heroku 에 상시 서버 실행</li>
+  <li>클라우드9는 개발 환경을 제공하기에 상시 서버로 사용하기 어렵다.(무료로)</li>
+  <li>heroku는 18시간 사용 6시간휴식으로 서버 사용 가능</li>
+  <li>heroku는 git 으로 코드를 관리하며 추가 하면 바로 서버에 추가됨</li>
+  <li>디버깅은 어떻게 하는지 찾아봐야 함</li>
+  <li>2개 모두 거의 모든 언어를 지원 한다.</li>
 </ul>
 
-<h4>2. 목표</h4>
-
+<h4 id="section-2">2. 목표</h4>
 <ul>
-<li>파이썬 서버 </li>
-<li>phaser 클라이언트</li>
+  <li>파이썬 서버</li>
+  <li>phaser 클라이언트</li>
 </ul>
 
-<h4>3. 기본 코드</h4>
-
+<h4 id="section-3">3. 기본 코드</h4>
 <ul>
-<li> c9 에서 기본 파이썬 코드는 아래와 같습니다.</li>
-<li><script src="https://gist.github.com/anonymous/2aaf522bb68ffbc1d28e1d5698a70f32.js"></script><br></li>
-<li>폴더 구조는 2개가 필요합니다. 트리를 어떻게 그리는지 몰라서... 아래처럼 생겼습니다.</li>
-<li>파이썬 파일과 템플릿 폴더, 스트택 폭더가 필요합니다.</li>
-<li>플라스크가 아래와 같은 내용을 지원해서 입니다.
-
-<ul>
-<li>hello.py</li>
-<li>templates
-
-<ul>
-<li>hello.html</li>
-</ul></li>
-<li>static
-
-<ul>
-<li>js</li>
-<li>test.js</li>
-<li>hello.js</li>
-<li>hello.png<br></li>
-</ul></li>
-</ul></li>
-<li>스태틱 폴더는 html 에서 js 파일이나 이미지 파일 경로를 나타내기 위해서 입니다.</li>
-<li>경로를 나타 내는 방법은 아래처럼 url_for 를 사용합니다. 
+  <li>c9 에서 기본 파이썬 코드는 아래와 같습니다.</li>
+  <li>
+    <script src="https://gist.github.com/anonymous/2aaf522bb68ffbc1d28e1d5698a70f32.js"></script>
+  </li>
+  <li>폴더 구조는 2개가 필요합니다. 트리를 어떻게 그리는지 몰라서… 아래처럼 생겼습니다.</li>
+  <li>파이썬 파일과 템플릿 폴더, 스트택 폭더가 필요합니다.</li>
+  <li>플라스크가 아래와 같은 내용을 지원해서 입니다.
+    <ul>
+      <li>hello.py</li>
+      <li>templates
+        <ul>
+          <li>hello.html</li>
+        </ul>
+      </li>
+      <li>static
+        <ul>
+          <li>js
+            <ul>
+              <li>test.js</li>
+              <li>hello.js</li>
+            </ul>
+          </li>
+          <li>hello.png</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>스태틱 폴더는 html 에서 js 파일이나 이미지 파일 경로를 나타내기 위해서 입니다.</li>
+  <li>경로를 나타 내는 방법은 아래처럼 url_for 를 사용합니다. 
 <script src="https://gist.github.com/anonymous/62e4bb32d428839989d208e4c6b55b80.js"></script></li>
 </ul>
 
-<h4>4. heroku 파이썬 패키지 설치</h4>
-
+<h4 id="heroku---">4. heroku 파이썬 패키지 설치</h4>
 <ul>
-<li> pip freeze &gt; requirements.txt 를 이용해서 파일을 같이 푸시 한다.</li>
+  <li>pip freeze &gt; requirements.txt 를 이용해서 파일을 같이 푸시 한다.</li>
 </ul>
 
 	  ]]></description>
@@ -201,35 +199,38 @@
 	  <pubDate>2016-12-21T00:00:00+00:00</pubDate>
 	  <guid>//pythonClib</guid>
 	  <description><![CDATA[
-	     <h3>python 사용 할 C 라이브러리 만들기</h3>
+	     <h3 id="python---c--">python 사용 할 C 라이브러리 만들기</h3>
 
-<h4>1. mylib.c 원형 함수를 만든다.</h4>
-
+<h4 id="mylibc---">1. mylib.c 원형 함수를 만든다.</h4>
 <ul>
-<li>python 에서 호출 하는 함수는 wlog 입니다. </li>
-<li>PyMethodDef를 보면 jni 와 비슷합니다.<br></li>
+  <li>python 에서 호출 하는 함수는 wlog 입니다.</li>
+  <li>PyMethodDef를 보면 jni 와 비슷합니다.</li>
 </ul>
 
-<h4>2. setup.py</h4>
-
+<h4 id="setuppy">2. setup.py</h4>
 <ul>
-<li>컴파일 과 install 하는 python 코드 원형</li>
-<li>python setup.py install (sudo 가 필요 할 경우가 많습니다.)</li>
+  <li>컴파일 과 install 하는 python 코드 원형</li>
+  <li>python setup.py install (sudo 가 필요 할 경우가 많습니다.)</li>
 </ul>
 
-<h4>3. test.py</h4>
-
+<h4 id="testpy">3. test.py</h4>
 <ul>
-<li>python test.py 를 실행 하면 pylog.txt 파일을 만들고 I love U 문구넣습니다.</li>
+  <li>python test.py 를 실행 하면 pylog.txt 파일을 만들고 I love U 문구넣습니다.</li>
 </ul>
 
-<h4>4. 참고 코드</h4>
-
+<h4 id="section">4. 참고 코드</h4>
 <ul>
-<li><script src="https://gist.github.com/pyeongho/09b03c195395e2f8879c5f97686735a5.js"></script></li>
-<li><script src="https://gist.github.com/pyeongho/abcad87180768a30091457630d38dc40.js"></script></li>
-<li><script src="https://gist.github.com/pyeongho/7053f0fb7f15931a82ab927d11a5e206.js"></script></li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/09b03c195395e2f8879c5f97686735a5.js"></script>
+  </li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/abcad87180768a30091457630d38dc40.js"></script>
+  </li>
+  <li>
+    <script src="https://gist.github.com/pyeongho/7053f0fb7f15931a82ab927d11a5e206.js"></script>
+  </li>
 </ul>
+
 
 	  ]]></description>
 	</item>
@@ -241,20 +242,21 @@
 	  <pubDate>2016-12-21T00:00:00+00:00</pubDate>
 	  <guid>//mysql</guid>
 	  <description><![CDATA[
-	     <h3>리눅스에서 mysql 사용하기</h3>
+	     <h3 id="mysql-">리눅스에서 mysql 사용하기</h3>
 
-<h4>1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
-
+<h4 id="mysql-----">1. mysql 기본 (그냥 참고용 테스트 안함)</h4>
 <ul>
-<li>mysql이 설치는 되어 있을거구 없으면 (apt-get install mysql-server)</li>
-<li><p>실행은 sudo service mysql start 정도</p>
+  <li>mysql이 설치는 되어 있을거구 없으면 (apt-get install mysql-server)</li>
+  <li>
+    <p>실행은 sudo service mysql start 정도</p>
 
-<p>sudo apt-get install mysql-server
-sudo service mysql start</p></li>
+    <p>sudo apt-get install mysql-server
+sudo service mysql start</p>
+  </li>
 </ul>
 
-<h4>2. mysql 접속 및 데이터 베이스 추가</h4>
-<div class="highlight"><pre><code class="language-" data-lang="">  # mysql -u root -p
+<h4 id="mysql------1">2. mysql 접속 및 데이터 베이스 추가</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>  # mysql -u root -p
   mysql &gt; use mysql; 
   mysql &gt; select host, user, password from user;         
 +--------------+------------------+-------------------------------------------+
@@ -268,69 +270,88 @@ sudo service mysql start</p></li>
 | %            | xxxxxxxx         |                                           |
 +--------------+------------------+-------------------------------------------+
 6 rows in set (0.00 sec)
-</code></pre></div>
+</code></pre>
+</div>
+
 <ul>
-<li>위 처럼 동작 하면 기본 적인 sql 테스트 완료</li>
+  <li>위 처럼 동작 하면 기본 적인 sql 테스트 완료</li>
 </ul>
 
-<h4>3. 사용자 추가 및 권한추가</h4>
-
+<h4 id="section">3. 사용자 추가 및 권한추가</h4>
 <ul>
-<li><p>localhost </p>
-<div class="highlight"><pre><code class="language-" data-lang="">mysql &gt; create user userid@localhost identified by '비밀번호';
-</code></pre></div>
-<ul>
-<li><p>기존에 사용하던 계정에 외부 접근 권한을 부여하려면, Host를 &#39;%&#39; 로 하여 똑같은 계정을 추가한다</p>
+  <li>
+    <p>localhost</p>
 
-<p>mysql &gt; create user &#39;userid&#39;@&#39;%&#39; identified by &#39;비밀번호&#39;;<br>
-// &#39;%&#39; 의 의미는 외부에서의 접근을 허용</p></li>
-<li><p>위 방법 말고 많아요. 다른 방법은 구글에서 검색해서 한다. </p></li>
-</ul></li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>mysql &gt; create user userid@localhost identified by '비밀번호';
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>기존에 사용하던 계정에 외부 접근 권한을 부여하려면, Host를 ‘%’ 로 하여 똑같은 계정을 추가한다</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> mysql &gt; create user 'userid'@'%' identified by '비밀번호';  
+ // '%' 의 의미는 외부에서의 접근을 허용
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>위 방법 말고 많아요. 다른 방법은 구글에서 검색해서 한다.</p>
+  </li>
 </ul>
 
-<h4>4. 데이터 베이스 생성</h4>
-
+<h4 id="section-1">4. 데이터 베이스 생성</h4>
 <ul>
-<li><p>databases 확인 </p>
-<div class="highlight"><pre><code class="language-" data-lang="">show databases; 
-</code></pre></div></li>
-<li><p>databases 생성</p>
-<div class="highlight"><pre><code class="language-" data-lang="">create database TEST;
-</code></pre></div></li>
-<li><p>database 확인 하면 TEST 가 있다.</p></li>
+  <li>
+    <p>databases 확인</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>show databases; 
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>databases 생성</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>create database TEST;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>database 확인 하면 TEST 가 있다.</p>
+  </li>
 </ul>
 
-<h4>5. 테이블 생성</h4>
-
+<h4 id="section-2">5. 테이블 생성</h4>
 <ul>
-<li>테이블 생성하기전 사용하려면 데이터 베이스를 선택 해야 합니다.</li>
-<li>use &#39;데이터베이스이름&#39;;  // 데이터베이스 사용하기</li>
-<li>show tables;  // 데이터베이스 테이블 확인 하기<br></li>
-<li>test 데이터베이스 사용</li>
-<li><p>그리고 테이블 만들기 </p>
+  <li>테이블 생성하기전 사용하려면 데이터 베이스를 선택 해야 합니다.</li>
+  <li>use ‘데이터베이스이름’;  // 데이터베이스 사용하기</li>
+  <li>show tables;  // 데이터베이스 테이블 확인 하기</li>
+  <li>test 데이터베이스 사용</li>
+  <li>
+    <p>그리고 테이블 만들기</p>
 
-<p>mysql&gt;use test;</p>
+    <p>mysql&gt;use test;</p>
 
-<p>CREATE TABLE address (
+    <p>CREATE TABLE address (
   name varchar(25) default NULL,
   address text,
   tel varchar(25) default NULL
-);     </p>
+);</p>
 
-<p>mysql&gt;use test;
-+----------------+
-| Tables<em>in</em>test |
-+----------------+
+    <p>mysql&gt;use test;
++—————-+
+| Tables_in_test |
++—————-+
 | address        |
-+----------------+
-1 row in set (0.00 sec)</p></li>
++—————-+
+1 row in set (0.00 sec)</p>
+  </li>
 </ul>
 
-<h4>6. 더미데이터 추가</h4>
-
+<h4 id="section-3">6. 더미데이터 추가</h4>
 <ul>
-<li>INSERT INTO address VALUES (&#39;ABC&#39;,&#39;DEFGHIJKLMN&#39;,&#39;031-000-0000&#39;);</li>
+  <li>INSERT INTO address VALUES (‘ABC’,’DEFGHIJKLMN’,’031-000-0000’);</li>
 </ul>
+
 
 	  ]]></description>
 	</item>
@@ -342,63 +363,58 @@ sudo service mysql start</p></li>
 	  <pubDate>2016-12-20T00:00:00+00:00</pubDate>
 	  <guid>//xls</guid>
 	  <description><![CDATA[
-	     <h3>python에서 사용 할 C 모듈 만들기</h3>
+	     <h3 id="python---c--">python에서 사용 할 C 모듈 만들기</h3>
 
-<h4>0. 진행 이유</h4>
-
+<h4 id="section">0. 진행 이유</h4>
 <ul>
-<li> python 에서 엑셀 만들기 사용하면 느리다고 함</li>
+  <li>python 에서 엑셀 만들기 사용하면 느리다고 함</li>
 </ul>
 
-<h4>1.속도 테스트</h4>
-
+<h4 id="section-1">1.속도 테스트</h4>
 <ul>
-<li><p>xlsxwriter 라이브러리 사용  </p>
-
-<ul>
-<li>python 테스트
-<script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script><br></li>
-<li>C 테스트 코드
-<script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
-
-<ul>
-<li>속도 측정</li>
-<li>python : 약 12초</li>
-<li>c : 약 1.221초</li>
-</ul></li>
-</ul></li>
+  <li>xlsxwriter 라이브러리 사용
+    <ul>
+      <li>python 테스트
+ <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script></li>
+      <li>C 테스트 코드
+ <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script></li>
+    </ul>
+  </li>
+  <li>속도 측정
+    <ul>
+      <li>python : 약 12초</li>
+      <li>c : 약 1.221초</li>
+    </ul>
+  </li>
 </ul>
 
-<h4>2. C 라이브러리 만들기</h4>
-
+<h4 id="c--">2. C 라이브러리 만들기</h4>
 <ul>
-<li>기본 C module 링크: <a href="https://pyeongho.github.io/python/2016/12/21/pythonClib.html">C module</a></li>
+  <li>기본 C module 링크: <a href="https://pyeongho.github.io/python/2016/12/21/pythonClib.html">C module</a></li>
 </ul>
 
-<h4>3. setup.py 의 문제점</h4>
-
+<h4 id="setuppy--">3. setup.py 의 문제점</h4>
 <ul>
-<li>기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함</li>
+  <li>기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함</li>
 </ul>
 
-<h4>4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
-
+<h4 id="python--c--libxlsxwriter----c--">4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
 <ul>
-<li>리눅스에 libxlsxwriter 를 설치 한다.</li>
-<li>setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
-
-<ul>
-<li>ext<em>modules = [Extension(&quot;mylib&quot;, [&quot;mylib.c&quot;],extra</em>link_args=[&#39;-lxlsxwriter&#39;])]</li>
-</ul></li>
-<li>mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조</li>
+  <li>리눅스에 libxlsxwriter 를 설치 한다.</li>
+  <li>setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
+    <ul>
+      <li>ext_modules = [Extension(“mylib”, [“mylib.c”],extra_link_args=[‘-lxlsxwriter’])]</li>
+    </ul>
+  </li>
+  <li>mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조</li>
 </ul>
 
-<h4>참고 코드</h4>
-
+<h4 id="section-2">참고 코드</h4>
 <ul>
-<li>python 에서 호출, C 에서 엑셀 파일 생성
-<script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script></li>
+  <li>python 에서 호출, C 에서 엑셀 파일 생성
+   <script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script></li>
 </ul>
+
 
 	  ]]></description>
 	</item>

@@ -3,20 +3,20 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: ruby:2.6.0
+image: ruby:2.7.1
 
-pipelines:  
+pipelines:
   default:
     - step:
         script:
           - git config --global user.email "pyeongho@bitbucket.com"
           - git config --global user.name "pyeongho"
+          - gem i "rubygems-update:=3.4.22" --no-document && update_rubygems
           - gem install jekyll
           - bundle install
           - rm -rf .git
-          - git clone https://pyeongho:$SITE_A@github.com/pyeongho/pyeongho.github.io.git _site
+          - git clone https://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@github.com/pyeongho/pyeongho.github.io.git _site
           - bundle exec jekyll build --incremental
           - cd _site
           - git add . && git commit -m "New version - $BITBUCKET_COMMIT"
           - git push origin master
-          

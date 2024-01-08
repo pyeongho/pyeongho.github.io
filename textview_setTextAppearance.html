@@ -138,19 +138,20 @@
 
         <section class="post-content">
             
-            <h3>TextView setTextAppearance 동작 확인하기</h3>
-
+            <h3 id="textview-settextappearance--">TextView setTextAppearance 동작 확인하기</h3>
 <ul>
-<li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
-<li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
-<li><p>setTextAppearance 를 따라가다 보면 모든 속성이없다.</p>
-
-<ul>
-<li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
-<li><script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script></li>
-</ul></li>
-<li><p>아래는 동작 가능한 속성들을 정리해 보았습니다.
-<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></p></li>
+  <li>lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.</li>
+  <li>setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.</li>
+  <li>setTextAppearance 를 따라가다 보면 모든 속성이없다.
+    <ul>
+      <li>TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.</li>
+      <li>
+        <script src="https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js"></script>
+      </li>
+    </ul>
+  </li>
+  <li>아래는 동작 가능한 속성들을 정리해 보았습니다.
+<script src="https://gist.github.com/pyeongho/b369691948ee30c4918d175b6212fe11.js"></script></li>
 </ul>
 
 
@@ -253,7 +254,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

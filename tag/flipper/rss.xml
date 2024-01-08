@@ -18,39 +18,42 @@
 	  <pubDate>2021-11-25T00:00:00+00:00</pubDate>
 	  <guid>//flipper</guid>
 	  <description><![CDATA[
-	     <h3>Flipper 문서를 잘 확인하자</h3>
-
+	     <h3 id="flipper---">Flipper 문서를 잘 확인하자</h3>
 <ul>
-<li>Flipper 릴리즈 빌드시 import 에러가 발생하면
-
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz" alt="문서중 그래들 파일"></li>
-</ul></li>
-<li><p><a href="https://fbflipper.com/docs/getting-started/android-native/">공식문서</a></p></li>
-<li><p>검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.</p></li>
+  <li>Flipper 릴리즈 빌드시 import 에러가 발생하면
+    <ul>
+      <li><img src="https://drive.google.com/uc?export=view&amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz" alt="문서중 그래들 파일" /></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://fbflipper.com/docs/getting-started/android-native/">공식문서</a></p>
+  </li>
+  <li>검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
     debugImplementation "com.facebook.soloader:soloader:$soloaderVersion"
     debugImplementation "com.facebook.flipper:flipper-network-plugin:$flipperVersion"
     releaseImplementation "com.facebook.flipper:flipper-noop:$flipperVersion"
-</code></pre></div>
+</code></pre>
+</div>
+
 <ul>
-<li>하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.</li>
-<li>import 에서 flipper 이 없다는 내용입니다.</li>
-<li>그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다. </li>
-<li>releaseImplementation 에서 순수한 flipper 만 있습니다.<br></li>
-<li>공식 문서를 다시 한번 확인 했습니다.</li>
-<li>첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.</li>
-<li>releaseImplementation &#39;com.github.theGlenn:flipper-android-no-op:0.9.0&#39; </li>
-<li>2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.</li>
+  <li>하지만 릴리즈 빌드를 실행하면 에러가 발생합니다.</li>
+  <li>import 에서 flipper 이 없다는 내용입니다.</li>
+  <li>그래들 코드를 다시 한번 보면 왜그런지 알 수 있습니다.</li>
+  <li>releaseImplementation 에서 순수한 flipper 만 있습니다.</li>
+  <li>공식 문서를 다시 한번 확인 했습니다.</li>
+  <li>첨부된 캡처화면 처럼 노란색으로 서드파티 no-op 라이브러리를 이용하라고 나왔습니다.</li>
+  <li>releaseImplementation ‘com.github.theGlenn:flipper-android-no-op:0.9.0’</li>
+  <li>2가지 옵션이 있는 위 내용을 추가해서 빌드를 완료 했습니다.</li>
 </ul>
 
 <script src="https://gist.github.com/pyeongho/9384a672e29083a20fe87dd6dfe55a31.js"></script>
 
-<h3>결론</h3>
-
+<h3 id="section">결론</h3>
 <ul>
-<li>공식 문서는 꼼꼼히 확인하자</li>
+  <li>공식 문서는 꼼꼼히 확인하자</li>
 </ul>
 
 	  ]]></description>

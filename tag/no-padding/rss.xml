@@ -18,40 +18,36 @@
 	  <pubDate>2017-11-27T00:00:00+00:00</pubDate>
 	  <guid>//no_padding_textview</guid>
 	  <description><![CDATA[
-	     <h3>디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩</h3>
-
+	     <h3 id="textview-">디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩</h3>
 <ul>
-<li>TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐</li>
-<li>처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함<br></li>
-<li>약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.</li>
-<li><p>아래 이미지     </p>
+  <li>TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐</li>
+  <li>처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함</li>
+  <li>약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.</li>
+  <li>아래 이미지
+    <ul>
+      <li>
+        <p><img src="https://drive.google.com/uc?export=view&amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-" alt="이렇게" /></p>
+      </li>
+      <li>왼쪽이 일반 TextView에 includeFontPadding를 적용한 버전, 패딩을 완전히 제거한 버전 입니다.</li>
+      <li>
+        <p>xml 코드 첨부하였습니다.</p>
 
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-" alt="이렇게"><br></li>
-<li>왼쪽이 일반 TextView에 includeFontPadding를 적용한 버전, 패딩을 완전히 제거한 버전 입니다.</li>
-<li>xml 코드 첨부하였습니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;TextView</span>
-          <span class="na">android:includeFontPadding=</span><span class="s">"false"</span>
-          <span class="na">android:background=</span><span class="s">"#00ff00"</span>
-          <span class="na">android:text=</span><span class="s">"ABCD"</span>
-          <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
+        <p>``` xml</p>
+        <TextView android:includeFontPadding="false" android:background="#00ff00" android:text="ABCD" android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
-    <span class="nt">&lt;NPTextView</span>
-          <span class="na">android:includeFontPadding=</span><span class="s">"false"</span>
-          <span class="na">android:background=</span><span class="s">"#00ff00"</span>
-          <span class="na">android:text=</span><span class="s">"ABCD"</span>
-          <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span> <span class="nt">/&gt;</span>
+        <NPTextView android:includeFontPadding="false" android:background="#00ff00" android:text="ABCD" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+      </li>
+    </ul>
 
-</code></pre></div></li>
-<li><p>NPTextView는 1줄 짜리에만 적용해서 사용해야 합니다. 여러줄은 아직 동작 안합니다.</p></li>
-<li><p>그리고 직접 추가한 패딩 역시 제거하기때문에 잘 사용해야 합니다.</p></li>
-<li><p>코드 내용은 텍스트 크기를 읽어서 Rect 사이즈를 타이트하게 고정하는 내용입니다.</p></li>
+    <p>```</p>
+  </li>
+  <li>NPTextView는 1줄 짜리에만 적용해서 사용해야 합니다. 여러줄은 아직 동작 안합니다.</li>
+  <li>그리고 직접 추가한 패딩 역시 제거하기때문에 잘 사용해야 합니다.</li>
+  <li>코드 내용은 텍스트 크기를 읽어서 Rect 사이즈를 타이트하게 고정하는 내용입니다.</li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/859d82d7f30a4005ad7fd1e38ddd6512.js"></script></p>
+<script src="https://gist.github.com/pyeongho/859d82d7f30a4005ad7fd1e38ddd6512.js"></script>
+
 
 	  ]]></description>
 	</item>

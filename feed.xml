@@ -8,29 +8,49 @@
     
       
       <item>
+        <title>kmm이란?</title>
+        
+          <description>&lt;h3 id=&quot;kmm---&quot;&gt;kmm 을 학습해 보자&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;RN, 플러터 등 멀티 플랫폼을 학습 하던지 이번에는 kmm 확인해 보기로 함&lt;/li&gt;
+  &lt;li&gt;기존에는 언어와 너무 다른 환경이라서 시간이 오래 걸렸지만 안드로이드 스튜디오에서 코틀린 이라는 엄청난 장점이 있어서 바로 도전함&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html&quot;&gt;공식&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+        <link>
+        https://pyeongho.github.io/kmm</link>
+        <guid isPermaLink="true">https://pyeongho.github.io/kmm</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>shouldOverrideUrlLoading 동작 안할때 확인할 내용</title>
         
-          <description>&lt;h3&gt;앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;shouldoverrideurlloading--------&quot;&gt;앱에서 웹뷰를 연동 하면 shouldOverrideUrlLoading 가 필요 할때가 많은데 동작 하지 않는 경우&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다&lt;/li&gt;
-&lt;li&gt;현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다&lt;/li&gt;
-&lt;li&gt;최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
-
-&lt;ul&gt;
-&lt;li&gt;잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.&lt;/li&gt;
-&lt;li&gt;잘못 사용한 경우에 대한 내용은 아닙니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.&lt;/li&gt;
-&lt;li&gt;로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.&lt;/li&gt;
-&lt;li&gt;그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.&lt;/li&gt;
-&lt;li&gt;SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.&lt;/li&gt;
-&lt;li&gt;저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.&lt;/li&gt;
-&lt;li&gt;결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다. &lt;/li&gt;
-&lt;li&gt;그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.&lt;/li&gt;
-&lt;li&gt;SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.&lt;/li&gt;
-&lt;li&gt;안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.&lt;/li&gt;
+  &lt;li&gt;하이브리드? 앱을 개발 하다 보면 shouldOverrideUrlLoading 필요한 경우가 많습니다&lt;/li&gt;
+  &lt;li&gt;현재 개발 중인 앱은 거의 네이티브라고 생각해도 될만큼의 비중이었지만 최근 들어 웹이 추가 되는 경우가 있습니다&lt;/li&gt;
+  &lt;li&gt;최긘에 url 에 따라서 이벤트 처리를 하려고 하니 shouldOverrideUrlLoading 첫 진입 이외에는 동작 하지 않고 있었습니다.
+    &lt;ul&gt;
+      &lt;li&gt;잘못 추가 되거나 deprecated 된 shouldOverrideUrlLoading 사용등의 문제는 아닙니다.&lt;/li&gt;
+      &lt;li&gt;잘못 사용한 경우에 대한 내용은 아닙니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그래서 업데이트 되어서 그런가 해서 네이버나 구글등의 사이트에서는 정상 동작 하는걸 확인 했습니다.&lt;/li&gt;
+  &lt;li&gt;로그를 찌고 이것 저것 확인 했지만 원인을 파악하지 못하고 있었습니다.&lt;/li&gt;
+  &lt;li&gt;그래서 웹 개발자 분과 대화를 하다가 원인을 찾았습니다.&lt;/li&gt;
+  &lt;li&gt;SPA(Sigle Page Applications) 형태로 개발을 진행 하고 있었습니다.&lt;/li&gt;
+  &lt;li&gt;저는 위 기술을 몰라서 앞으로 가기 뒤로가기 등 모든게 잘 동작 해서 페이지 이동이라고 생각하고 있었습니다.&lt;/li&gt;
+  &lt;li&gt;결론은 동일한 페이지에서 렌더링이 바뀌는 거라 shouldOverrideUrlLoading 는 동작 안하는게 맞았습니다.&lt;/li&gt;
+  &lt;li&gt;그러면 어떻게 처리 해야 할지 고민을 잠시 했습니다.&lt;/li&gt;
+  &lt;li&gt;SPA 하려면 필수 처리가 history api 를 이요해서 앞으로, 뒤로 가기가 정상 동작 하도록 해줘야 한다는걸 착안해서 처리 했습니다.&lt;/li&gt;
+  &lt;li&gt;안드로이드의 경우 아래와 같이 히스토리가 변경 될때 발생하는 콜백이 있어서 해결 하였습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
@@ -44,17 +64,19 @@
       <item>
         <title>Flipper 연동시 주의 할점</title>
         
-          <description>&lt;h3&gt;Flipper 문서를 잘 확인하자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;flipper---&quot;&gt;Flipper 문서를 잘 확인하자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Flipper 릴리즈 빌드시 import 에러가 발생하면
-
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz&quot; alt=&quot;문서중 그래들 파일&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://fbflipper.com/docs/getting-started/android-native/&quot;&gt;공식문서&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;Flipper 릴리즈 빌드시 import 에러가 발생하면
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1EXqHAFCSAC1InGdBjHUNaq0xbqxMgyiz&quot; alt=&quot;문서중 그래들 파일&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://fbflipper.com/docs/getting-started/android-native/&quot;&gt;공식문서&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;검정색 부분의 코드만 확인해서 그래들에 넣고 디버그 빌드에서 잘 동작 하는것 확인 하고 완료 했다고 생각 했습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
@@ -68,15 +90,15 @@
       <item>
         <title>SVG 사용할때 조심 해야 할 점</title>
         
-          <description>&lt;h3&gt;SVG&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;svg&quot;&gt;SVG&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;이런 SVG 를 보셨다면 꼭 읽어 주세요
-
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee&quot; alt=&quot;깨진 svg&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;이런 SVG 를 보셨다면 꼭 읽어 주세요
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee&quot; alt=&quot;깨진 svg&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
@@ -90,13 +112,13 @@
       <item>
         <title>플레이스토어 UGC 정책 위반 사태</title>
         
-          <description>&lt;h3&gt;플레이스토어 거부 사태&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;플레이스토어 거부 사태&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;지금 까지 아무 문제 없었지만 갑자기 스토어 업데이트가 거부 되었습니다.&lt;/li&gt;
-&lt;li&gt;지금까지 운이 좋았던 건지 한번도 겪어보지 못한 거부 였습니다.&lt;/li&gt;
-&lt;li&gt;지금은 해결되어 마음이 편하지만 거부 해결하기 까지는 너무 힘들었습니다.&lt;/li&gt;
+  &lt;li&gt;지금 까지 아무 문제 없었지만 갑자기 스토어 업데이트가 거부 되었습니다.&lt;/li&gt;
+  &lt;li&gt;지금까지 운이 좋았던 건지 한번도 겪어보지 못한 거부 였습니다.&lt;/li&gt;
+  &lt;li&gt;지금은 해결되어 마음이 편하지만 거부 해결하기 까지는 너무 힘들었습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
@@ -110,17 +132,17 @@
       <item>
         <title>사소한 경고도 무시하지 말자 svg to vector</title>
         
-          <description>&lt;h3&gt;SVG 를 Vector 로 변경하면서 발생한 이슈&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;svg--vector----&quot;&gt;SVG 를 Vector 로 변경하면서 발생한 이슈&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.&lt;/li&gt;
-&lt;li&gt;그래서 거의 대부분의 파일을 svg 로 다운 받고 이를 vector 로 변경하고 있습니다.&lt;/li&gt;
-&lt;li&gt;최근 들어 벡터 이미지가 23 이하 부터 이상하게 나오는 경우들이 발생&lt;/li&gt;
-&lt;li&gt;대수롭지 않게 넘어 가고 png 를 다운받아 사용&lt;/li&gt;
-&lt;li&gt;문득 버전 이슈가 있으면 알려줘야지 하는 생각을 했습니다.&lt;/li&gt;
-&lt;li&gt;디자인 작업을 하면서 아래와 같은 화면에서 아무 생각 없이 다음을 눌러서 벡터를 생성 했습니다.
-&lt;img src=&quot;http://drive.google.com/uc?export=view&amp;amp;id=1FQFiElRYrIRK6lX21_JtQh9wElxUajDc&quot; alt=&quot;만들기&quot;&gt;&lt;/li&gt;
+  &lt;li&gt;피그마가 다 좋은데 아직까지 png 를 제플린 처럼 쉽게 추가하는 방법을 찾지 못했습니다.&lt;/li&gt;
+  &lt;li&gt;그래서 거의 대부분의 파일을 svg 로 다운 받고 이를 vector 로 변경하고 있습니다.&lt;/li&gt;
+  &lt;li&gt;최근 들어 벡터 이미지가 23 이하 부터 이상하게 나오는 경우들이 발생&lt;/li&gt;
+  &lt;li&gt;대수롭지 않게 넘어 가고 png 를 다운받아 사용&lt;/li&gt;
+  &lt;li&gt;문득 버전 이슈가 있으면 알려줘야지 하는 생각을 했습니다.&lt;/li&gt;
+  &lt;li&gt;디자인 작업을 하면서 아래와 같은 화면에서 아무 생각 없이 다음을 눌러서 벡터를 생성 했습니다.
+   &lt;img src=&quot;http://drive.google.com/uc?export=view&amp;amp;id=1FQFiElRYrIRK6lX21_JtQh9wElxUajDc&quot; alt=&quot;만들기&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
@@ -134,12 +156,12 @@
       <item>
         <title>깃허브 액션 에러 사건 일지</title>
         
-          <description>&lt;h3&gt;깃허브 액션이 빌드 에러 발생&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;깃허브 액션이 빌드 에러 발생&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러&lt;/li&gt;
-&lt;li&gt;로걸에서 캐시 클리어 이후로 빌드 실패&lt;/li&gt;
+  &lt;li&gt;라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러&lt;/li&gt;
+  &lt;li&gt;로걸에서 캐시 클리어 이후로 빌드 실패&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
@@ -153,18 +175,20 @@
       <item>
         <title>TextView 에 setTextAppearance 모든 속성은 동작하지 않는다. 주의해야 한다.</title>
         
-          <description>&lt;h3&gt;TextView setTextAppearance 동작 확인하기&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;textview-settextappearance--&quot;&gt;TextView setTextAppearance 동작 확인하기&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.&lt;/li&gt;
-&lt;li&gt;setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.&lt;/li&gt;
-&lt;li&gt;setTextAppearance 를 따라가다 보면 모든 속성이없다.
-
-&lt;ul&gt;
-&lt;li&gt;TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.&lt;/li&gt;
-&lt;li&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;lineSpacingMultiplier 이 동작하지 않아서 확인 작업을 했습니다.&lt;/li&gt;
+  &lt;li&gt;setTextAppearance 를 이용해서 TextView 의 스타일을 적용할때 몇몇 속성이 동작 안하는 걸 확인 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;setTextAppearance 를 따라가다 보면 모든 속성이없다.
+    &lt;ul&gt;
+      &lt;li&gt;TextView 의 코드의 setTextAppearance 따라가다 보면 아래와 같은 함수를 만나는데 setTextAppearance 관련 내용이 없다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;script src=&quot;https://gist.github.com/pyeongho/fe4db5c76404c43877424ce99132e6ff.js&quot;&gt;&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
@@ -178,14 +202,14 @@
       <item>
         <title>TextView 에 LeadingMarginSpan 들여쓰기 및 이미지 배치</title>
         
-          <description>&lt;h3&gt;TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;textview------------&quot;&gt;TextView 에 문단 들여 쓰기 및 이미지 배치 관련 디자인이 들어 올수 있습니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;http://drive.google.com/uc?export=view&amp;amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
-&lt;li&gt;간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.&lt;/li&gt;
-&lt;li&gt;들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
-&lt;script src=&quot;https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;http://drive.google.com/uc?export=view&amp;amp;id=1yH8gvaJWOt0bEzz98YpMnj6YWl1GPdWz&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;간단 합니다. LeadingMarginSpan 만 기억하고 있으면 적용하기 쉽습니다.&lt;/li&gt;
+  &lt;li&gt;들여쓰기 기능이라서 아래 처럼 사용 하면 됩니다.
+  &lt;script src=&quot;https://gist.github.com/pyeongho/2b2e21f254b5fd173f456afced74218d.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
@@ -199,15 +223,15 @@
       <item>
         <title>웹뷰 사용시 비동기 주의 사항(뷰바인딩 사용)</title>
         
-          <description>&lt;h3&gt;웹뷰 사용시 비동기 처리를 주의 해야 합니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;웹뷰 사용시 비동기 처리를 주의 해야 합니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.&lt;/li&gt;
-&lt;li&gt;크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.&lt;/li&gt;
-&lt;li&gt;예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.&lt;/li&gt;
-&lt;li&gt;onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&amp;gt; binding.loading.isVisible = false)&lt;/li&gt;
-&lt;li&gt;binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.&lt;/li&gt;
+  &lt;li&gt;웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.&lt;/li&gt;
+  &lt;li&gt;크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.&lt;/li&gt;
+  &lt;li&gt;예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.&lt;/li&gt;
+  &lt;li&gt;onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&amp;gt; binding.loading.isVisible = false)&lt;/li&gt;
+  &lt;li&gt;binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
@@ -221,15 +245,15 @@
       <item>
         <title>안드로이드 빌드 실패 with github actions</title>
         
-          <description>&lt;h3&gt;깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;cicd-------&quot;&gt;깃허브 액션을 CI/CD 를 사용하던 중 랜덤으로 빌드 실패가 발생&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.&lt;/li&gt;
-&lt;li&gt;처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.&lt;/li&gt;
-&lt;li&gt;정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.&lt;/li&gt;
-&lt;li&gt;빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.&lt;/li&gt;
-&lt;li&gt;gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.&lt;/li&gt;
+  &lt;li&gt;깃허브 액션 + 패스트레인 을 이용해서 자동화 빌드를 사용하고 있습니다.&lt;/li&gt;
+  &lt;li&gt;처음에는 별다른 이슈 없이 잘 사용 하고 있었습니다. 최근 한달전 정도 부터 빌드 실패가 발생하기 시작 했습니다.&lt;/li&gt;
+  &lt;li&gt;정말 빌드 실패가 아닌 재시도 하면 성공 하는 이상한일이 발생하기 시작 했습니다.&lt;/li&gt;
+  &lt;li&gt;빌드 로그를 보아도 딱히 이유를 알수가 없었습니다.&lt;/li&gt;
+  &lt;li&gt;gradle 빌드에 로그를 추가해서(stacktrace , debug) 확인을 했습니다. 아래와 같은 로그만 남아 있었습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
@@ -243,21 +267,21 @@
       <item>
         <title>RN 헬로우 월드</title>
         
-          <description>&lt;h3&gt;RN 을 시작해 보자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;rn---&quot;&gt;RN 을 시작해 보자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;필요 패키지 설치
-~~~
-brew install watchman
-brew install flow
-brew install nvm
-nvm install node
-nvm alias default node
-brew install caskroom/cask/brew-cask
-brew cask install virtualbox
-brew install yarn
-~~~&lt;/li&gt;
+  &lt;li&gt;필요 패키지 설치
+  ~~~
+  brew install watchman
+  brew install flow
+  brew install nvm
+  nvm install node
+  nvm alias default node
+  brew install caskroom/cask/brew-cask
+  brew cask install virtualbox
+  brew install yarn
+  ~~~&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
@@ -271,7 +295,8 @@ brew install yarn
       <item>
         <title>헤로쿠 기본 설정</title>
         
-          <description>&lt;h3&gt;헤로쿠 기본 공부&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;section&quot;&gt;헤로쿠 기본 공부&lt;/h3&gt;
+
 </description>
         
         <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
@@ -285,11 +310,11 @@ brew install yarn
       <item>
         <title>안드로이드 리뷰 요청하기</title>
         
-          <description>&lt;h3&gt;안드로이드도 리뷰를 요청 할 수 있습니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;안드로이드도 리뷰를 요청 할 수 있습니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.android.com/guide/playcore/in-app-review&quot;&gt;https://developer.android.com/guide/playcore/in-app-review&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/guide/playcore/in-app-review&quot;&gt;https://developer.android.com/guide/playcore/in-app-review&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
@@ -303,25 +328,25 @@ brew install yarn
       <item>
         <title>github action 사용하기</title>
         
-          <description>&lt;h3&gt;Github action 을 이용한 CI/CD&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;github-action---cicd&quot;&gt;Github action 을 이용한 CI/CD&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;기본적인 액션 사용법은 너무 간단합니다.
-
-&lt;ul&gt;
-&lt;li&gt;깃허브에서 액션 누르고 새로 만들기 누르고 안드로이드 선택 하면 기본적인 생성은 가능합니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;원하는 방법이 모두 다를수 있지만 간단하게 작성해 보았습니다.
-
-&lt;ul&gt;
-&lt;li&gt;특정 태그가 푸시 되면 빌드를 시작 한다.&lt;/li&gt;
-&lt;li&gt;원하는 flavor 로 빌드 한다.&lt;/li&gt;
-&lt;li&gt;태그 이름으로 바이너리를 생성한다.&lt;/li&gt;
-&lt;li&gt;바이너리를 아티팩트로 만들어서 업로드 한다.&lt;/li&gt;
-&lt;li&gt;슬랙으로 공유한다.&lt;/li&gt;
-&lt;li&gt;아티팩트 주소가 아닌 슬랙 액션 주소를 공유해서 찾아서 다운 받아야 하지만 빌드 상태를 알수 있어서 그냥 유지 하였습니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;기본적인 액션 사용법은 너무 간단합니다.
+    &lt;ul&gt;
+      &lt;li&gt;깃허브에서 액션 누르고 새로 만들기 누르고 안드로이드 선택 하면 기본적인 생성은 가능합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;원하는 방법이 모두 다를수 있지만 간단하게 작성해 보았습니다.
+    &lt;ul&gt;
+      &lt;li&gt;특정 태그가 푸시 되면 빌드를 시작 한다.&lt;/li&gt;
+      &lt;li&gt;원하는 flavor 로 빌드 한다.&lt;/li&gt;
+      &lt;li&gt;태그 이름으로 바이너리를 생성한다.&lt;/li&gt;
+      &lt;li&gt;바이너리를 아티팩트로 만들어서 업로드 한다.&lt;/li&gt;
+      &lt;li&gt;슬랙으로 공유한다.&lt;/li&gt;
+      &lt;li&gt;아티팩트 주소가 아닌 슬랙 액션 주소를 공유해서 찾아서 다운 받아야 하지만 빌드 상태를 알수 있어서 그냥 유지 하였습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
@@ -335,19 +360,19 @@ brew install yarn
       <item>
         <title>안드로이드 fastlane 빌드</title>
         
-          <description>&lt;h3&gt;azure, fastlane&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;azure-fastlane&quot;&gt;azure, fastlane&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;azure
-
-&lt;ul&gt;
-&lt;li&gt;회원가입&lt;/li&gt;
-&lt;li&gt;파이프라인 생성&lt;/li&gt;
-&lt;li&gt;깃허브 연결&lt;/li&gt;
-&lt;li&gt;yml 파일 생성(자동생성 사용)&lt;/li&gt;
-&lt;li&gt;필요에 따라 내용 추가&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;azure
+    &lt;ul&gt;
+      &lt;li&gt;회원가입&lt;/li&gt;
+      &lt;li&gt;파이프라인 생성&lt;/li&gt;
+      &lt;li&gt;깃허브 연결&lt;/li&gt;
+      &lt;li&gt;yml 파일 생성(자동생성 사용)&lt;/li&gt;
+      &lt;li&gt;필요에 따라 내용 추가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
@@ -361,12 +386,12 @@ brew install yarn
       <item>
         <title>소소한 재택 근무</title>
         
-          <description>&lt;h3&gt;처음으로 재택&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;처음으로 재택&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요&lt;/li&gt;
-&lt;li&gt;생각보다 적응은 잘되요 ㅎㅎ&lt;/li&gt;
+  &lt;li&gt;집에 책상 의자가 없어서 바닥에 앉아서 하는데 엉덩이가 너무 아퍼요&lt;/li&gt;
+  &lt;li&gt;생각보다 적응은 잘되요 ㅎㅎ&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
@@ -380,11 +405,11 @@ brew install yarn
       <item>
         <title>안드로이드 앱 상태(foreground, background)</title>
         
-          <description>&lt;h3&gt;외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;외부에서 앱을 실행 하거나 푸시 도착 했을때 앱 상태가 필요 한 경우가 있습니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Foreground 라는 클래스를 사용 했지만 라이프 사이클을 이용하면 쉽게 처리 가능합니다.&lt;/li&gt;
+  &lt;li&gt;Foreground 라는 클래스를 사용 했지만 라이프 사이클을 이용하면 쉽게 처리 가능합니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
@@ -398,13 +423,13 @@ brew install yarn
       <item>
         <title>안드로이드 adid 가져오기</title>
         
-          <description>&lt;h3&gt;앱을 개발하다 보면 adid 를 가져와야 하는 일도 있습니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;adid-----&quot;&gt;앱을 개발하다 보면 adid 를 가져와야 하는 일도 있습니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;최종적으로 사용할 함수는 아래와 같습니다. &lt;/li&gt;
-&lt;li&gt;비동기 처리는 필수 입니다.&lt;/li&gt;
-&lt;li&gt;그리고 의존성도 추가 해야 합니다.&lt;/li&gt;
+  &lt;li&gt;최종적으로 사용할 함수는 아래와 같습니다.&lt;/li&gt;
+  &lt;li&gt;비동기 처리는 필수 입니다.&lt;/li&gt;
+  &lt;li&gt;그리고 의존성도 추가 해야 합니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
@@ -418,11 +443,11 @@ brew install yarn
       <item>
         <title>안드로이드 5.0 ~ 5.1 Error inflating class android.webkit.WebView (21~22)</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/57783707/webview-inflateexception&quot;&gt;https://stackoverflow.com/questions/57783707/webview-inflateexception&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/57783707/webview-inflateexception&quot;&gt;https://stackoverflow.com/questions/57783707/webview-inflateexception&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
@@ -436,11 +461,11 @@ brew install yarn
       <item>
         <title>플레이스토어 referrer 데이터 넘기기</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play&quot;&gt;https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play&quot;&gt;https://stackoverflow.com/questions/24833801/pass-referrer-data-through-chrome-intent-to-google-play&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
@@ -454,11 +479,11 @@ brew install yarn
       <item>
         <title>카카오 SDK 사용하기</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers.kakao.com/docs/android/getting-started&quot;&gt;https://developers.kakao.com/docs/android/getting-started&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.kakao.com/docs/android/getting-started&quot;&gt;https://developers.kakao.com/docs/android/getting-started&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
@@ -472,11 +497,11 @@ brew install yarn
       <item>
         <title>UndeliverableException 발생</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/&quot;&gt;https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/&quot;&gt;https://thdev.tech/android/2019/03/04/RxJava2-Error-handling/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
@@ -490,11 +515,11 @@ brew install yarn
       <item>
         <title>구글 스프레드 시트 자동 언어(안드로이드)</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://dunji.tistory.com/2&quot;&gt;https://dunji.tistory.com/2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dunji.tistory.com/2&quot;&gt;https://dunji.tistory.com/2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
@@ -508,14 +533,14 @@ brew install yarn
       <item>
         <title>androidx navigation , Safe Arg</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.android.com/guide/navigation/navigation-pass-data&quot;&gt;https://developer.android.com/guide/navigation/navigation-pass-data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.android.com/jetpack/androidx/releases/navigation&quot;&gt;https://developer.android.com/jetpack/androidx/releases/navigation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.charlezz.com/?p=354&quot;&gt;https://www.charlezz.com/?p=354&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.naver.com/yoonhok_524/221530058636&quot;&gt;https://blog.naver.com/yoonhok_524/221530058636&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/guide/navigation/navigation-pass-data&quot;&gt;https://developer.android.com/guide/navigation/navigation-pass-data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/jetpack/androidx/releases/navigation&quot;&gt;https://developer.android.com/jetpack/androidx/releases/navigation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.charlezz.com/?p=354&quot;&gt;https://www.charlezz.com/?p=354&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/yoonhok_524/221530058636&quot;&gt;https://blog.naver.com/yoonhok_524/221530058636&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
@@ -529,39 +554,33 @@ brew install yarn
       <item>
         <title>intellij 계열 인증서 오류 수정</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;amp;logNo=221192794441&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;intellij Server Certificates 문제&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;amp;logNo=221192794441&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;intellij Server Certificates 문제&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제&lt;/h3&gt;
-
+&lt;h3 id=&quot;intellij--------&quot;&gt;안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
-
-&lt;ul&gt;
-&lt;li&gt;PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException&lt;/li&gt;
-&lt;li&gt;Server&amp;#39;s Certificate is not trusted pop-up&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
+    &lt;ul&gt;
+      &lt;li&gt;PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException&lt;/li&gt;
+      &lt;li&gt;Server’s Certificate is not trusted pop-up&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;참고 사이트&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;참고 사이트&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.&lt;/li&gt;
+  &lt;li&gt;3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;설정 변경&lt;/h2&gt;
-
+&lt;h2 id=&quot;section-2&quot;&gt;설정 변경&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt; SSL 통신 관련 옵션을 해제
-
-&lt;ul&gt;
-&lt;li&gt;File &amp;gt; Settings &amp;gt; Tools &amp;gt; Server Certificates &amp;gt; Accept non-trusted certificates automatically 체크&lt;/li&gt;
-&lt;li&gt;저는 실패 했습니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;SSL 통신 관련 옵션을 해제
+    - File &amp;gt; Settings &amp;gt; Tools &amp;gt; Server Certificates &amp;gt; Accept non-trusted certificates automatically 체크
+    - 저는 실패 했습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
@@ -575,18 +594,18 @@ brew install yarn
       <item>
         <title>단색 bmp 생성</title>
         
-          <description>&lt;h3&gt;단색 BMP 생성&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;bmp-&quot;&gt;단색 BMP 생성&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ&lt;/li&gt;
-&lt;li&gt;128 * 64 사이즈의 단색 BMP 파일 생성 입니다.&lt;/li&gt;
-&lt;li&gt;단색의 경우 1비트가 1픽셀을 나타 냅니다.&lt;/li&gt;
-&lt;li&gt;1바이트는 8픽셀 입니다.&lt;/li&gt;
-&lt;li&gt;128 * 64 = 8192 픽셀&lt;/li&gt;
-&lt;li&gt;8192 =&amp;gt;  1024바이트 &lt;/li&gt;
-&lt;li&gt;헤더는 무식하게 하드코딩으로 넣었습니다.&lt;/li&gt;
-&lt;li&gt;색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0&lt;/li&gt;
+  &lt;li&gt;BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ&lt;/li&gt;
+  &lt;li&gt;128 * 64 사이즈의 단색 BMP 파일 생성 입니다.&lt;/li&gt;
+  &lt;li&gt;단색의 경우 1비트가 1픽셀을 나타 냅니다.&lt;/li&gt;
+  &lt;li&gt;1바이트는 8픽셀 입니다.&lt;/li&gt;
+  &lt;li&gt;128 * 64 = 8192 픽셀&lt;/li&gt;
+  &lt;li&gt;8192 =&amp;gt;  1024바이트&lt;/li&gt;
+  &lt;li&gt;헤더는 무식하게 하드코딩으로 넣었습니다.&lt;/li&gt;
+  &lt;li&gt;색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 27 Nov 2019 00:00:00 +0000</pubDate>
@@ -600,46 +619,61 @@ brew install yarn
       <item>
         <title>android headup notification</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://codechacha.com/ko/notifications-in-android/&quot;&gt;안드로이드의 다양한 Notification 종류와 구현 방법&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/codechacha/notifications-with-styles&quot;&gt;샘플&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codechacha.com/ko/notifications-in-android/&quot;&gt;안드로이드의 다양한 Notification 종류와 구현 방법&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/codechacha/notifications-with-styles&quot;&gt;샘플&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;푸시 채널 이야기&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;푸시 채널 이야기&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;P 버전 이상에서는 채널을 추가해야 노티피케이션을 사용 할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;P 버전 이상에서는 채널을 추가해야 노티피케이션을 사용 할 수 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;headup  notification 매우 강조 되는 표시&lt;/h3&gt;
-
+&lt;h3 id=&quot;headup--notification----&quot;&gt;headup  notification 매우 강조 되는 표시&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;문자등이 올때 상태바에서 뚝 떨어지는 노티피케이션 입니다.&lt;/li&gt;
+  &lt;li&gt;문자등이 올때 상태바에서 뚝 떨어지는 노티피케이션 입니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Head Up Notifiation&lt;/h3&gt;
-
+&lt;h3 id=&quot;head-up-notifiation&quot;&gt;Head Up Notifiation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Head up Notification은 전면에 노티가 뜨는 것을 말합니다. 사용자가 Statusbar를 내려서 확인하지 않아도 바로 화면에 뜨기 때문에 쉽게 눈에 띕니다. 전화와 같은 중요한 작업을 알릴 때 이런 노티를 적용하면 좋을 것 같습니다. 중요하지 않은데 사용된다면 사용자가 이 앱이 거슬리다고 생각할 수 있습니다.&lt;br&gt;
-아래 화면은 Head up notification입니다. 예제는 기본 노티에 적용하였지만 모든 스타일의 노티에 적용할 수 있습니다. &lt;/li&gt;
+  &lt;li&gt;Head up Notification은 전면에 노티가 뜨는 것을 말합니다. 사용자가 Statusbar를 내려서 확인하지 않아도 바로 화면에 뜨기 때문에 쉽게 눈에 띕니다. 전화와 같은 중요한 작업을 알릴 때 이런 노티를 적용하면 좋을 것 같습니다. 중요하지 않은데 사용된다면 사용자가 이 앱이 거슬리다고 생각할 수 있습니다. &lt;br /&gt;
+아래 화면은 Head up notification입니다. 예제는 기본 노티에 적용하였지만 모든 스타일의 노티에 적용할 수 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/341435dcb47b87b81026f3afd00434ea.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script src=&quot;https://gist.github.com/pyeongho/341435dcb47b87b81026f3afd00434ea.js&quot;&gt;&lt;/script&gt;
 
 &lt;ul&gt;
-&lt;li&gt;1. 채널을 만들 때 중요도를 IMPORTANCE_HIGH로 설정해야 합니다.&lt;/li&gt;
-&lt;li&gt;2. PendingIntent를 만듭니다. Builder에 fullScreenPendingIntent를 등록하기 때문에 변수 이름을 fullScreenPendingIntent라고 했습니다.&lt;/li&gt;
-&lt;li&gt;3. Builder의 priority를 PRIORITY_HIGH로 설정해야 합니다.&lt;/li&gt;
-&lt;li&gt;4. fullScreenPendingIntent를 등록합니다.&lt;/li&gt;
-&lt;li&gt;그리고 가장 중요한 것은 앱의 AndroidManifest.xml에 다음 퍼미션을 꼭 추가해야 합니다. Install 퍼미션이기 때문에 설치만 하면 바로 권한을 받습니다.
-
-&lt;ul&gt;
-&lt;li&gt; &lt;uses-permission android:name=&quot;android.permission.USE_FULL_SCREEN_INTENT&quot;/&gt;&lt;/li&gt;
-&lt;li&gt;Head up notification은 채널의 중요도를 IMPORTANCE&lt;em&gt;HIGH, 노티의 중요도를 PRIORITY&lt;/em&gt;HIGH로 설정해야 합니다. 그리고 fullScreenIntent를 추가해야 합니다. 마지막으로 가장 중요한 것은 Q부터 USE&lt;em&gt;FULL&lt;/em&gt;SCREEN_INTENT 권한이 없으면 Head up 노티를 띄울 수 없기 때문에 꼭 추가해줘야 합니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;채널을 만들 때 중요도를 IMPORTANCE_HIGH로 설정해야 합니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;PendingIntent를 만듭니다. Builder에 fullScreenPendingIntent를 등록하기 때문에 변수 이름을 fullScreenPendingIntent라고 했습니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Builder의 priority를 PRIORITY_HIGH로 설정해야 합니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;fullScreenPendingIntent를 등록합니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그리고 가장 중요한 것은 앱의 AndroidManifest.xml에 다음 퍼미션을 꼭 추가해야 합니다. Install 퍼미션이기 때문에 설치만 하면 바로 권한을 받습니다.
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;uses-permission android:name=&quot;android.permission.USE_FULL_SCREEN_INTENT&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Head up notification은 채널의 중요도를 IMPORTANCE_HIGH, 노티의 중요도를 PRIORITY_HIGH로 설정해야 합니다. 그리고 fullScreenIntent를 추가해야 합니다. 마지막으로 가장 중요한 것은 Q부터 USE_FULL_SCREEN_INTENT 권한이 없으면 Head up 노티를 띄울 수 없기 때문에 꼭 추가해줘야 합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
@@ -653,16 +687,16 @@ brew install yarn
       <item>
         <title>round rect 마스크</title>
         
-          <description>&lt;h3&gt;안쪽이 둥근 모서리&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;안쪽이 둥근 모서리&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;둥근 모서리로 특정 뷰를 보여 줘야 할때&lt;/li&gt;
-&lt;li&gt;안쪽에 차트나 이미지가 있고 외부에서 마스킹 할때?!&lt;/li&gt;
-&lt;li&gt;편한 방법은 나인패치로 작업 하셔도 됩니다.&lt;/li&gt;
-&lt;li&gt;아래 리소스 처럼 하면 가운데가 뻥 뚫린 레이어를 만들 수 있습니다.&lt;/li&gt;
-&lt;li&gt;색상은 이해되기 쉽게 빨간색과 검정색을 사용 했습니다.&lt;/li&gt;
-&lt;li&gt;색상을 같은 색으로 하면 마스킹은 가능 합니다.&lt;/li&gt;
+  &lt;li&gt;둥근 모서리로 특정 뷰를 보여 줘야 할때&lt;/li&gt;
+  &lt;li&gt;안쪽에 차트나 이미지가 있고 외부에서 마스킹 할때?!&lt;/li&gt;
+  &lt;li&gt;편한 방법은 나인패치로 작업 하셔도 됩니다.&lt;/li&gt;
+  &lt;li&gt;아래 리소스 처럼 하면 가운데가 뻥 뚫린 레이어를 만들 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;색상은 이해되기 쉽게 빨간색과 검정색을 사용 했습니다.&lt;/li&gt;
+  &lt;li&gt;색상을 같은 색으로 하면 마스킹은 가능 합니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
@@ -676,29 +710,26 @@ brew install yarn
       <item>
         <title>fragmentTransaction 사용 관련</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/&quot;&gt;https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=zoomen1004&amp;amp;logNo=220198317501&amp;amp;targetKeyword=&amp;amp;targetRecommendationCode=1&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;commit vs commitAllowingStateLoss&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/&quot;&gt;https://pluu.github.io/blog/android/2017/01/26/fragmentTransaction/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=zoomen1004&amp;amp;logNo=220198317501&amp;amp;targetKeyword=&amp;amp;targetRecommendationCode=1&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;commit vs commitAllowingStateLoss&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;commit vs commitAllowingStateLoss&lt;/h3&gt;
-
+&lt;h3 id=&quot;commit-vs-commitallowingstateloss&quot;&gt;commit vs commitAllowingStateLoss&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fragment 실행은 commit 호출 이후, 하지만 commit는 ListCycle상 onSaveInstanceState()가 호출 되기 전에 수행되어야함 , 이를 어길 시 에러 발생 &lt;/li&gt;
-&lt;li&gt;onSaveInstanceState 이후 수행가능한 상황에서만 commit 사용&lt;/li&gt;
-&lt;li&gt;onSaveInstanceState 무관하게 동작 시키기 위해서는 commitAllowingStateLoss 를 사용하자&lt;/li&gt;
-&lt;li&gt;에러 발생이 무섭다면 commitAllowingStateLoss 사용을 추천 &lt;/li&gt;
-&lt;li&gt;에러 : java.lang.IllegalStateException:  Can not perform this action after onSaveInstanceState&lt;/li&gt;
+  &lt;li&gt;Fragment 실행은 commit 호출 이후, 하지만 commit는 ListCycle상 onSaveInstanceState()가 호출 되기 전에 수행되어야함 , 이를 어길 시 에러 발생&lt;/li&gt;
+  &lt;li&gt;onSaveInstanceState 이후 수행가능한 상황에서만 commit 사용&lt;/li&gt;
+  &lt;li&gt;onSaveInstanceState 무관하게 동작 시키기 위해서는 commitAllowingStateLoss 를 사용하자&lt;/li&gt;
+  &lt;li&gt;에러 발생이 무섭다면 commitAllowingStateLoss 사용을 추천&lt;/li&gt;
+  &lt;li&gt;에러 : java.lang.IllegalStateException:  Can not perform this action after onSaveInstanceState&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;commit vs commitNow&lt;/h3&gt;
-
+&lt;h3 id=&quot;commit-vs-commitnow&quot;&gt;commit vs commitNow&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;commitNow()라는 메소드 이름 그대로이지만 동기적으로 트랜잭션 처리를 해주는 것 같습니다. &lt;/li&gt;
-&lt;li&gt;자세한 내용은 참고 사이트에서 확인 가능합니다.&lt;/li&gt;
-&lt;li&gt;요약은 조금더 편리 commitNow()&lt;/li&gt;
+  &lt;li&gt;commitNow()라는 메소드 이름 그대로이지만 동기적으로 트랜잭션 처리를 해주는 것 같습니다.&lt;/li&gt;
+  &lt;li&gt;자세한 내용은 참고 사이트에서 확인 가능합니다.&lt;/li&gt;
+  &lt;li&gt;요약은 조금더 편리 commitNow()&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
@@ -713,37 +744,39 @@ brew install yarn
       <item>
         <title>R8 NullPointerException</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/square/okhttp/issues/4604&quot;&gt;https://github.com/square/okhttp/issues/4604&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/square/okhttp/issues/4604&quot;&gt;https://github.com/square/okhttp/issues/4604&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;그래들 수정후 성공&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;그래들 수정후 성공&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;okhttp 와 문제가 발생하는걸로 보입니다.&lt;/li&gt;
-&lt;li&gt;아래와 같은 내용을 그래들에 추가 하여 해결하였습니다.&lt;/li&gt;
+  &lt;li&gt;okhttp 와 문제가 발생하는걸로 보입니다.&lt;/li&gt;
+  &lt;li&gt;아래와 같은 내용을 그래들에 추가 하여 해결하였습니다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt; buildscript {
-     ...
+
+&lt;p&gt;```
+ buildscript {
+     …
      repositories {
-         ...
+         …
          maven {
-             url &#39;http://storage.googleapis.com/r8-releases/raw&#39;
+             url ‘http://storage.googleapis.com/r8-releases/raw’
          }
-     }
+     }&lt;/p&gt;
 
-     dependencies {
-         classpath &#39;com.android.tools:r8:1.5.50&#39;  // Must be before the Gradle Plugin for Android.
-         classpath &#39;com.android.tools.build:gradle:3.3.1&#39;  // You don&#39;t need to upgrade this to use a newer R8 version.
-         ...
-      }
- }
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; dependencies {
+     classpath 'com.android.tools:r8:1.5.50'  // Must be before the Gradle Plugin for Android.
+     classpath 'com.android.tools.build:gradle:3.3.1'  // You don't need to upgrade this to use a newer R8 version.
+     ...
+  }  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
+&lt;p&gt;```&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;에러 내용&lt;/h3&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;에러 내용&lt;/h3&gt;
+
 </description>
         
         <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
@@ -757,14 +790,14 @@ brew install yarn
       <item>
         <title>redux 공부 중</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd&quot;&gt;샘플 공부&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Urotea/AndroidBoilerplate&quot;&gt;샘플 코드&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/freeletics/RxRedux&quot;&gt;참고라이브러리&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;참고 글이 원본 입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://qiita.com/Urotea/items/8cbc8f55406b6ff32bbd&quot;&gt;샘플 공부&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Urotea/AndroidBoilerplate&quot;&gt;샘플 코드&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/freeletics/RxRedux&quot;&gt;참고라이브러리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
@@ -778,12 +811,12 @@ brew install yarn
       <item>
         <title>redux</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://voidsatisfaction.github.io/2017/02/24/what-is-redux/&quot;&gt;리덕스(Redux)란 무엇인가?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;참고 글이 원본 입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://voidsatisfaction.github.io/2017/02/24/what-is-redux/&quot;&gt;리덕스(Redux)란 무엇인가?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
@@ -797,57 +830,63 @@ brew install yarn
       <item>
         <title>SOLID 를 공부해 보자</title>
         
-          <description>&lt;h3&gt;SOLID&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;solid&quot;&gt;SOLID&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;침착하게 습습 후후 &lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/07/05/oop-solid.html&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OOP(객체지향 프로그래밍) 설계 원칙 ‘SOLID’를 이해한다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;S: 단일 책임 원칙(SRP)를 이해할 수 있다. &lt;/li&gt;
-&lt;li&gt;O: 개방-폐쇄 원칙(OCP)을 이해할 수 있다.&lt;/li&gt;
-&lt;li&gt;L: 리스코프 치환 원칙(LSP)을 이해할 수 있다.&lt;/li&gt;
-&lt;li&gt;I: 인터페이스 분리 원칙(ISP)을 이해할 수 있다.&lt;/li&gt;
-&lt;li&gt;D: 의존 역전 원칙(DIP)을 이해할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;단일 책임 원칙(SRP, Single Responsibility Principle)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;객체는 단 하나의 책임만 가져야 한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;개방-폐쇄의 원칙(OCP, Open Closed Principle)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다.&lt;/li&gt;
-&lt;li&gt;클래스를 변경하지 않고도 대상 클래스의 환경을 변경할 수 있는 설계가 되어야 한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;리스코프 치환 원칙(LSP, Liskov Substitution Principle)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;일반화 관계에 대한 이야기며, 자식 클래스는 최소한 자신의 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다.&lt;/li&gt;
-&lt;li&gt;LSP는 부모 클래스와 자식 클래스 사이의 행위가 일관성이 있어야 한다는 의미다. 즉, LSP를 만족하면 프로그램에서 부모 클래스의 인스턴스 대신에 자식 클래스의 인스턴스로 대체해도 프로그램의 의미는 변화되지 않는다.&lt;/li&gt;
-&lt;li&gt;일반화 관계
-
-&lt;ul&gt;
-&lt;li&gt;“is a kind of” 의 관계&lt;/li&gt;
-&lt;li&gt;예를 들어, 원숭이 is a kind of 포유류&lt;/li&gt;
-&lt;li&gt;포유류(부모 클래스), 원숭이(자식 클래스)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;LSP를 만족시키는 간단한 방법은 재정의하지 않는 것이다. 즉, 부모 클래스에서 상속받은 메서드들이 자식 클래스에 오버라이드, 즉 재정의되지 않도록 하면 된다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;인터페이스 분리 원칙(ISP, Interface Segregation Principle)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;인터페이스를 클라이언트에 특화되도록 분리시키라는 설계 원칙이다.&lt;/li&gt;
-&lt;li&gt;클라이언트 자신이 이용하지 않는 기능에는 영향을 받지 않아야 한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;의존 역전 원칙(DIP, Dependency Inversion Principle)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;침착하게 습습 후후&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2018/07/05/oop-solid.html&quot;&gt;참고&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;OOP(객체지향 프로그래밍) 설계 원칙 ‘SOLID’를 이해한다.
+    &lt;ul&gt;
+      &lt;li&gt;S: 단일 책임 원칙(SRP)를 이해할 수 있다.&lt;/li&gt;
+      &lt;li&gt;O: 개방-폐쇄 원칙(OCP)을 이해할 수 있다.&lt;/li&gt;
+      &lt;li&gt;L: 리스코프 치환 원칙(LSP)을 이해할 수 있다.&lt;/li&gt;
+      &lt;li&gt;I: 인터페이스 분리 원칙(ISP)을 이해할 수 있다.&lt;/li&gt;
+      &lt;li&gt;D: 의존 역전 원칙(DIP)을 이해할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;단일 책임 원칙(SRP, Single Responsibility Principle)
+    &lt;ul&gt;
+      &lt;li&gt;객체는 단 하나의 책임만 가져야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개방-폐쇄의 원칙(OCP, Open Closed Principle)
+    &lt;ul&gt;
+      &lt;li&gt;기존의 코드를 변경하지 않으면서 기능을 추가할 수 있도록 설계가 되어야 한다.&lt;/li&gt;
+      &lt;li&gt;클래스를 변경하지 않고도 대상 클래스의 환경을 변경할 수 있는 설계가 되어야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;리스코프 치환 원칙(LSP, Liskov Substitution Principle)
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;일반화 관계에 대한 이야기며, 자식 클래스는 최소한 자신의 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;LSP는 부모 클래스와 자식 클래스 사이의 행위가 일관성이 있어야 한다는 의미다. 즉, LSP를 만족하면 프로그램에서 부모 클래스의 인스턴스 대신에 자식 클래스의 인스턴스로 대체해도 프로그램의 의미는 변화되지 않는다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;일반화 관계
+        &lt;ul&gt;
+          &lt;li&gt;“is a kind of” 의 관계&lt;/li&gt;
+          &lt;li&gt;예를 들어, 원숭이 is a kind of 포유류&lt;/li&gt;
+          &lt;li&gt;포유류(부모 클래스), 원숭이(자식 클래스)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;LSP를 만족시키는 간단한 방법은 재정의하지 않는 것이다. 즉, 부모 클래스에서 상속받은 메서드들이 자식 클래스에 오버라이드, 즉 재정의되지 않도록 하면 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인터페이스 분리 원칙(ISP, Interface Segregation Principle)
+    &lt;ul&gt;
+      &lt;li&gt;인터페이스를 클라이언트에 특화되도록 분리시키라는 설계 원칙이다.&lt;/li&gt;
+      &lt;li&gt;클라이언트 자신이 이용하지 않는 기능에는 영향을 받지 않아야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;의존 역전 원칙(DIP, Dependency Inversion Principle)
+    &lt;ul&gt;
+      &lt;li&gt;의존 관계를 맺을 때 변화하기 쉬운 것 또는 자주 변화하는 것보다는 변화하기 어려운 것, 거의 변화가 없는 것에 의존하라는 것.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
@@ -861,13 +900,13 @@ brew install yarn
       <item>
         <title>안드로이드 태생</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
-&lt;li&gt;공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.naver.com/huewu/110085391353&quot;&gt;안드로이드의 멀티태스킹 (Multitasking the Android Way)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;참고 글이 원본 입니다.&lt;/li&gt;
+  &lt;li&gt;공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.naver.com/huewu/110085391353&quot;&gt;안드로이드의 멀티태스킹 (Multitasking the Android Way)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
@@ -881,13 +920,13 @@ brew install yarn
       <item>
         <title>안드로이드 context</title>
         
-          <description>&lt;h3&gt;참고&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;참고 글이 원본 입니다. &lt;/li&gt;
-&lt;li&gt;공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://arabiannight.tistory.com/entry/272&quot;&gt;안드로이드/Android Context 란?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;참고 글이 원본 입니다.&lt;/li&gt;
+  &lt;li&gt;공부하기 위해서 재 작성한 내용입니다. 원본을 확인해 주세요.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arabiannight.tistory.com/entry/272&quot;&gt;안드로이드/Android Context 란?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
@@ -901,12 +940,12 @@ brew install yarn
       <item>
         <title>안드로이드 스튜디오 로그에 링크 추가하기</title>
         
-          <description>&lt;h3&gt;안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;안드로이드 개발중에 로그를 출력하면서 불편한 점 개선 하기&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;로그출력 기능의 추가&lt;/li&gt;
-&lt;li&gt;로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함 &lt;/li&gt;
+  &lt;li&gt;로그출력 기능의 추가&lt;/li&gt;
+  &lt;li&gt;로그 출력시 파일명과 메소드 명으로 찾기 불편한 사람들을 위함&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 12 Apr 2019 00:00:00 +0000</pubDate>
@@ -920,9 +959,9 @@ brew install yarn
       <item>
         <title>루팅 기기에서 원격 ADB</title>
         
-          <description>&lt;h3&gt;루팅 기기에서 ADB 원격 가능하도록 하는 방법&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;adb----&quot;&gt;루팅 기기에서 ADB 원격 가능하도록 하는 방법&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/20bc05ab4648c13cf29d2fb7eff583ad.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
         
         <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
@@ -936,14 +975,14 @@ brew install yarn
       <item>
         <title>인증서 피닝, 인증서 고정</title>
         
-          <description>&lt;h3&gt;https 사용 시 인증서를 고정 하자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;https-----&quot;&gt;https 사용 시 인증서를 고정 하자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;frida를 이용해서 인증서를 변경해서 공격이 가능해 보인다.&lt;/li&gt;
-&lt;li&gt;보안팀에서 인증서 피닝을 해달라고 요청이 왔다.&lt;/li&gt;
-&lt;li&gt;내용을 물어 보고 찾아보니 인증서 값을 공정 하는 내용&lt;/li&gt;
-&lt;li&gt;인증서를 미리 확인해서 핀으로 고정 한다.&lt;/li&gt;
+  &lt;li&gt;frida를 이용해서 인증서를 변경해서 공격이 가능해 보인다.&lt;/li&gt;
+  &lt;li&gt;보안팀에서 인증서 피닝을 해달라고 요청이 왔다.&lt;/li&gt;
+  &lt;li&gt;내용을 물어 보고 찾아보니 인증서 값을 공정 하는 내용&lt;/li&gt;
+  &lt;li&gt;인증서를 미리 확인해서 핀으로 고정 한다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 04 Apr 2019 00:00:00 +0000</pubDate>
@@ -957,20 +996,20 @@ brew install yarn
       <item>
         <title>플레이스토어 활용</title>
         
-          <description>&lt;h3&gt;플레이스토어 활용&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;플레이스토어 활용&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;예약게시 기능
-
-&lt;ul&gt;
-&lt;li&gt;플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다.&lt;/li&gt;
-&lt;li&gt;원하는 날짜에 자동으로 되는 예약이 아니다.&lt;/li&gt;
-&lt;li&gt;스토어 등록 정보 하단에 있는 예약 게시 기능을 활성화 하면 바이너리 활성화 이후 스토어 배포 준비가 되면 사용자가 직접 게시 버튼을 눌러서 원하는 시간에 업데이트가 가능하다.&lt;/li&gt;
-&lt;li&gt;기존에는 바이너리 업데이트후 검토 완료후 자동으로 게시 되어 정확한 시간을 알수가 없었다.&lt;/li&gt;
-&lt;li&gt;예약게시를 활성화 이후에는 검토가 완료 되면 게시 버튼이 활성화가 된다.&lt;/li&gt;
-&lt;li&gt;원하는 시간 몇분전에(플레이스토어 반영 시간) 게시 버튼만 누르면 된다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;예약게시 기능
+    &lt;ul&gt;
+      &lt;li&gt;플레이스토어 언젠가 부터 예약게시 기능이 생성 되었다.&lt;/li&gt;
+      &lt;li&gt;원하는 날짜에 자동으로 되는 예약이 아니다.&lt;/li&gt;
+      &lt;li&gt;스토어 등록 정보 하단에 있는 예약 게시 기능을 활성화 하면 바이너리 활성화 이후 스토어 배포 준비가 되면 사용자가 직접 게시 버튼을 눌러서 원하는 시간에 업데이트가 가능하다.&lt;/li&gt;
+      &lt;li&gt;기존에는 바이너리 업데이트후 검토 완료후 자동으로 게시 되어 정확한 시간을 알수가 없었다.&lt;/li&gt;
+      &lt;li&gt;예약게시를 활성화 이후에는 검토가 완료 되면 게시 버튼이 활성화가 된다.&lt;/li&gt;
+      &lt;li&gt;원하는 시간 몇분전에(플레이스토어 반영 시간) 게시 버튼만 누르면 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
@@ -984,21 +1023,21 @@ brew install yarn
       <item>
         <title>기본 레프트 메뉴의 활용</title>
         
-          <description>&lt;h3&gt;레프트 메뉴의 다양화&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;레프트 메뉴의 다양화&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.&lt;/li&gt;
-&lt;li&gt;디자이너가 요청 하는 내용
-
-&lt;ul&gt;
-&lt;li&gt;안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태&lt;/li&gt;
-&lt;li&gt;메인 화면을 밀고 가는 내용&lt;/li&gt;
-&lt;li&gt;메인 화면이 작아 지면서 메뉴가 나오는 형태&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;위 내용 처럼 대략 3가지 정도로 요약 됨&lt;/li&gt;
-&lt;li&gt;처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.&lt;/li&gt;
-&lt;li&gt;다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.&lt;/li&gt;
+  &lt;li&gt;애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.&lt;/li&gt;
+  &lt;li&gt;디자이너가 요청 하는 내용
+    &lt;ul&gt;
+      &lt;li&gt;안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태&lt;/li&gt;
+      &lt;li&gt;메인 화면을 밀고 가는 내용&lt;/li&gt;
+      &lt;li&gt;메인 화면이 작아 지면서 메뉴가 나오는 형태&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위 내용 처럼 대략 3가지 정도로 요약 됨&lt;/li&gt;
+  &lt;li&gt;처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.&lt;/li&gt;
+  &lt;li&gt;다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 22 Mar 2019 00:00:00 +0000</pubDate>
@@ -1012,11 +1051,11 @@ brew install yarn
       <item>
         <title>그냥 지식</title>
         
-          <description>&lt;h3&gt;PublishSubject , BehaviorSubject 비교&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;publishsubject--behaviorsubject-&quot;&gt;PublishSubject , BehaviorSubject 비교&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
@@ -1030,14 +1069,13 @@ brew install yarn
       <item>
         <title>안드로이드 나인패치 그림자 만들어 주는 사이트</title>
         
-          <description>&lt;h3&gt;그림자를 빠르게 만들기위한 사이트 링크&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;그림자를 빠르게 만들기위한 사이트 링크&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;라운드&lt;/li&gt;
-&lt;li&gt;그림자 색상&lt;/li&gt;
-&lt;li&gt;블러 사이즈&lt;/li&gt;
-&lt;li&gt;위치 오프셋 등 원하는대로 금방 만들수 있어요&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://inloop.github.io/shadow4android/&quot;&gt;그림자만들기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;라운드&lt;/li&gt;
+  &lt;li&gt;그림자 색상&lt;/li&gt;
+  &lt;li&gt;블러 사이즈&lt;/li&gt;
+  &lt;li&gt;위치 오프셋 등 원하는대로 금방 만들수 있어요&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://inloop.github.io/shadow4android/&quot;&gt;그림자만들기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
@@ -1052,17 +1090,16 @@ brew install yarn
       <item>
         <title>야근은 하기 싫은데 일은 잘하고 싶다</title>
         
-          <description>&lt;h3&gt;야근은 하기 싫은데 일은 잘하고 싶다&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;야근은 하기 싫은데 일은 잘하고 싶다&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;뇌에 대한 책&lt;/li&gt;
-&lt;li&gt;사람의 뇌는 멀티태스킹을 못한다.&lt;/li&gt;
-&lt;li&gt;한번에 할 수 있는 있는 최대 4개 평상시 3개 안좋을때 2개&lt;/li&gt;
-&lt;li&gt;그냥 한번에 한 가지 일만 하자&lt;/li&gt;
-&lt;li&gt;집중 할 때 한가지 일만 열심히 하자&lt;/li&gt;
-&lt;li&gt;집중력이 떨어지는 오후 시간에는 반복적인 작업이 좋다.&lt;/li&gt;
-&lt;li&gt;3가지 이상을 기억해야 할때는 메모 하자&lt;/li&gt;
-&lt;li&gt;메모를 이용해 해야 할 일을 정리 하자&lt;/li&gt;
+  &lt;li&gt;뇌에 대한 책&lt;/li&gt;
+  &lt;li&gt;사람의 뇌는 멀티태스킹을 못한다.&lt;/li&gt;
+  &lt;li&gt;한번에 할 수 있는 있는 최대 4개 평상시 3개 안좋을때 2개&lt;/li&gt;
+  &lt;li&gt;그냥 한번에 한 가지 일만 하자&lt;/li&gt;
+  &lt;li&gt;집중 할 때 한가지 일만 열심히 하자&lt;/li&gt;
+  &lt;li&gt;집중력이 떨어지는 오후 시간에는 반복적인 작업이 좋다.&lt;/li&gt;
+  &lt;li&gt;3가지 이상을 기억해야 할때는 메모 하자&lt;/li&gt;
+  &lt;li&gt;메모를 이용해 해야 할 일을 정리 하자&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
@@ -1077,20 +1114,20 @@ brew install yarn
       <item>
         <title>트렌드 코리아 2019</title>
         
-          <description>&lt;h3&gt;트렌드 코리아 2019 요약 :  PIGGY DREAM&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;piggy-dream&quot;&gt;트렌드 코리아 2019 요약 :  PIGGY DREAM&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;P : (컨셉을 연출하라)play the concept&lt;/li&gt;
-&lt;li&gt;I : (세포 마켓)invite to the cell market&lt;/li&gt;
-&lt;li&gt;G : (요즘 옛날, 뉴트로) going New-tro&lt;/li&gt;
-&lt;li&gt;G : (필 환경시대) green survival&lt;/li&gt;
-&lt;li&gt;Y : (감정대리인, 내마음을 부탁해) you are my proxy emotion&lt;/li&gt;
-&lt;li&gt;D : (데이터 인텔리전스) data intelligence&lt;/li&gt;
-&lt;li&gt;R : (공간의 재탄생,카메레존) rebirth of space&lt;/li&gt;
-&lt;li&gt;E : (밀레니얼 가족) emerging millennial family&lt;/li&gt;
-&lt;li&gt;A : (그곳만이 내세상, 나나랜드) as being myself&lt;/li&gt;
-&lt;li&gt;M : (매너소비자) manners make the consumer&lt;/li&gt;
+  &lt;li&gt;P : (컨셉을 연출하라)play the concept&lt;/li&gt;
+  &lt;li&gt;I : (세포 마켓)invite to the cell market&lt;/li&gt;
+  &lt;li&gt;G : (요즘 옛날, 뉴트로) going New-tro&lt;/li&gt;
+  &lt;li&gt;G : (필 환경시대) green survival&lt;/li&gt;
+  &lt;li&gt;Y : (감정대리인, 내마음을 부탁해) you are my proxy emotion&lt;/li&gt;
+  &lt;li&gt;D : (데이터 인텔리전스) data intelligence&lt;/li&gt;
+  &lt;li&gt;R : (공간의 재탄생,카메레존) rebirth of space&lt;/li&gt;
+  &lt;li&gt;E : (밀레니얼 가족) emerging millennial family&lt;/li&gt;
+  &lt;li&gt;A : (그곳만이 내세상, 나나랜드) as being myself&lt;/li&gt;
+  &lt;li&gt;M : (매너소비자) manners make the consumer&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 07 Jan 2019 00:00:00 +0000</pubDate>
@@ -1104,13 +1141,13 @@ brew install yarn
       <item>
         <title>안드로이드 UI 모음</title>
         
-          <description>&lt;h3&gt;디자이너가 원하는 라이브러리를 찾아보자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;디자이너가 원하는 라이브러리를 찾아보자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;앱을 만들다 보면 커스텀 UI 가 필요한 경우가 너무 많다.&lt;/li&gt;
-&lt;li&gt;시간이 있는것도 아니고 시간이 있어도 기존에 나온것 보다 잘 만들기 어려우니&lt;/li&gt;
-&lt;li&gt;디자이너가 원하는 라이브러리를 찾아서 라이브러를 커스텀 해서 사용하자&lt;/li&gt;
+  &lt;li&gt;앱을 만들다 보면 커스텀 UI 가 필요한 경우가 너무 많다.&lt;/li&gt;
+  &lt;li&gt;시간이 있는것도 아니고 시간이 있어도 기존에 나온것 보다 잘 만들기 어려우니&lt;/li&gt;
+  &lt;li&gt;디자이너가 원하는 라이브러리를 찾아서 라이브러를 커스텀 해서 사용하자&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 07 Jan 2019 00:00:00 +0000</pubDate>
@@ -1124,23 +1161,27 @@ brew install yarn
       <item>
         <title>데이터바인딩과 뷰모델</title>
         
-          <description>&lt;h3&gt;데이터바인딩을 이용한 뷰모델&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;데이터바인딩을 이용한 뷰모델&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;기존 프로젝트중 화면 하나를 변경&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;화면은 viewpager에 이미지 추가(횡으로 한칸 한칸 이동)&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;LinearLayout 에 현재 이미지 위치를 표시해 주는 포인트 추가&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;이미지 개수가 최대 몇개인지 알수 없는 API 인지라 imageview를 동적 할당 하여 넣어줌 &lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;아래가 XML 
-&lt;script src=&quot;https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;뷰모델 
-&lt;script src=&quot;https://gist.github.com/pyeongho/7b47e6abfb5f1c8b1ffb03fc5f0d2dcd.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;생각보다 괜찮은 방법으로 보임&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;해야할 작업은 많아 지지만 매우 만족 스러움&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;기존 프로젝트중 화면 하나를 변경&lt;/li&gt;
+  &lt;li&gt;화면은 viewpager에 이미지 추가(횡으로 한칸 한칸 이동)&lt;/li&gt;
+  &lt;li&gt;LinearLayout 에 현재 이미지 위치를 표시해 주는 포인트 추가
+    &lt;ul&gt;
+      &lt;li&gt;이미지 개수가 최대 몇개인지 알수 없는 API 인지라 imageview를 동적 할당 하여 넣어줌&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아래가 XML 
+&lt;script src=&quot;https://gist.github.com/pyeongho/ae301847d752e8a6fbd7909a4e3632ea.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;뷰모델 
+&lt;script src=&quot;https://gist.github.com/pyeongho/7b47e6abfb5f1c8b1ffb03fc5f0d2dcd.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;생각보다 괜찮은 방법으로 보임&lt;/li&gt;
+  &lt;li&gt;해야할 작업은 많아 지지만 매우 만족 스러움&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
@@ -1154,42 +1195,43 @@ brew install yarn
       <item>
         <title>kotlin init 사용시 편집기 주의사항</title>
         
-          <description>&lt;h3&gt;kotlin constructor , init&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;kotlin-constructor--init&quot;&gt;kotlin constructor , init&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;생성자 사용하면서 사용하는 코틀린 내용입니다.&lt;/li&gt;
-&lt;li&gt;참고 &lt;a href=&quot;https://kotlinlang.org/docs/reference/classes.html&quot;&gt;kotlinlang.org&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;참고 &lt;a href=&quot;https://thdev.tech/kotlin/2017/03/09/Kotlin-Constructor-Init/&quot;&gt;꿈많은 개발자가 되자 Kotlin constructor init 이란?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;생성자 사용하면서 사용하는 코틀린 내용입니다.&lt;/li&gt;
+  &lt;li&gt;참고 &lt;a href=&quot;https://kotlinlang.org/docs/reference/classes.html&quot;&gt;kotlinlang.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;참고 &lt;a href=&quot;https://thdev.tech/kotlin/2017/03/09/Kotlin-Constructor-Init/&quot;&gt;꿈많은 개발자가 되자 Kotlin constructor init 이란?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;문서의 소중함&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;문서의 소중함&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The primary constructor cannot contain any code. Initialization code can be placed in initializer blocks, which are prefixed with the init keyword.&lt;br&gt;
-During an instance initialization, the initializer blocks are executed in the same order as they appear in the class body, interleaved with the property initializers:&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;파파고 번역&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;기본 생성자는 코드를 포함할 수 없습니다. 초기화 코드는 init 키워드가 앞에 붙는 initializer 블록에 배치할 수 있습니다.&lt;br&gt;
+  &lt;li&gt;
+    &lt;p&gt;The primary constructor cannot contain any code. Initialization code can be placed in initializer blocks, which are prefixed with the init keyword. &lt;br /&gt;
+During an instance initialization, the initializer blocks are executed in the same order as they appear in the class body, interleaved with the property initializers:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파파고 번역&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;기본 생성자는 코드를 포함할 수 없습니다. 초기화 코드는 init 키워드가 앞에 붙는 initializer 블록에 배치할 수 있습니다.    &lt;br /&gt;
 인스턴스 초기화 중에 이니셜라이저 블록은 속성 이니셜라이저와 함께 클래스 본체에 나타나는 것과 동일한 순서로 실행됩니다.(위에서부터 실행 한다.)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;다시 한번 확인 하는 이유는 역시나  NullPointerException&lt;/h4&gt;
+&lt;h4 id=&quot;nullpointerexception&quot;&gt;다시 한번 확인 하는 이유는 역시나  NullPointerException&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;아래 코드를 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&quot;https://gist.github.com/pyeongho/b5aa08641cdfa05a6ca56f18a4d30d3e.js&quot;&gt;&lt;/script&gt;
 
 &lt;ul&gt;
-&lt;li&gt;아래 코드를 확인&lt;/li&gt;
+  &lt;li&gt;편집기에서 에러가 발생 하지 않는게 문제&lt;/li&gt;
+  &lt;li&gt;열심히 문서 보고 공부 했으면 문제가 없었겠지만  nullPoint -&amp;gt; sb.append(“ hahaha”) 에서 에러가 발생 한다.&lt;/li&gt;
+  &lt;li&gt;순서대로 초기화 하기 때무에 val sb = StringBuilder(name) 하기 전에 사용, 널포인트&lt;/li&gt;
+  &lt;li&gt;sb.append(“ hahaha”) 를 첫번째 init 블럭에 사용하면 에러 표시를 하지만 함수를 이용하면 나타 나지 않는다.&lt;/li&gt;
+  &lt;li&gt;문서 확인과 편집기 완벽 하지 않음으로 발생하는 내용으로 잘 알고 있어야 합니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;script src=&quot;https://gist.github.com/pyeongho/b5aa08641cdfa05a6ca56f18a4d30d3e.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;편집기에서 에러가 발생 하지 않는게 문제&lt;/li&gt;
-&lt;li&gt;열심히 문서 보고 공부 했으면 문제가 없었겠지만  nullPoint -&amp;gt; sb.append(&amp;quot; hahaha&amp;quot;) 에서 에러가 발생 한다.&lt;/li&gt;
-&lt;li&gt;순서대로 초기화 하기 때무에 val sb = StringBuilder(name) 하기 전에 사용, 널포인트 &lt;/li&gt;
-&lt;li&gt;sb.append(&amp;quot; hahaha&amp;quot;) 를 첫번째 init 블럭에 사용하면 에러 표시를 하지만 함수를 이용하면 나타 나지 않는다.&lt;/li&gt;
-&lt;li&gt;문서 확인과 편집기 완벽 하지 않음으로 발생하는 내용으로 잘 알고 있어야 합니다.&lt;/li&gt;
-&lt;/ul&gt;
 </description>
         
         <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
@@ -1203,7 +1245,8 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>파이썬 텔레그램 봇 만들기</title>
         
-          <description>&lt;h3&gt;텔래그램 봇을 이용해서 알림을 만들어 보자&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;section&quot;&gt;텔래그램 봇을 이용해서 알림을 만들어 보자&lt;/h3&gt;
+
 </description>
         
         <pubDate>Wed, 14 Nov 2018 00:00:00 +0000</pubDate>
@@ -1217,12 +1260,12 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>App Version Name 다양한 방법</title>
         
-          <description>&lt;h3&gt;몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;몇명 사용하지도 않는데 왜 앱 버전을 못 가지고 오는 걸까?&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.&lt;/li&gt;
+  &lt;li&gt;그냥 버전이름과 코드를 가지고 오는 방법으로 아래와 같이 사용하고 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;        &lt;span class=&quot;n&quot;&gt;PackageManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;n&quot;&gt;PackageManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
            &lt;span class=&quot;n&quot;&gt;PackageInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPackageName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
            &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packageName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;packageName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
@@ -1231,20 +1274,26 @@ During an instance initialization, the initializer blocks are executed in the sa
            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NameNotFoundException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
            &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated catch block&lt;/span&gt;
            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;ul&gt;
-&lt;li&gt;특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.&lt;/li&gt;
-&lt;li&gt;우선 문제 해결 먼저 진행&lt;/li&gt;
-&lt;li&gt;처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함&lt;/li&gt;
-&lt;li&gt;그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능 &lt;/li&gt;
+  &lt;li&gt;특정 기기에서 특정 조건 일때만 죽는 디버깅이 너무 어렵다.&lt;/li&gt;
+  &lt;li&gt;우선 문제 해결 먼저 진행&lt;/li&gt;
+  &lt;li&gt;처음에는 하드코딩하 넣었지만 버전 올라갈때마다 같이 변경해줘야 하는 너무나 큰 불편함이 존재함&lt;/li&gt;
+  &lt;li&gt;그래서 빌드 컨피그를 이용하여 아래와 같이 사용하면 상수 처럼 사용 가능&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;      /*version name*/
-      BuildConfig.VERSION_NAME
 
-      /*version code*/
-      BuildConfig.VERSION_CODE
+&lt;p&gt;```
+      /&lt;em&gt;version name&lt;/em&gt;/
+      BuildConfig.VERSION_NAME&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  /*version code*/
+  BuildConfig.VERSION_CODE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
         
         <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
         <link>
@@ -1257,19 +1306,17 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>No toolchains found in the NDK</title>
         
-          <description>&lt;h3&gt;NDK 를 사용하지 않는데&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;ndk---&quot;&gt;NDK 를 사용하지 않는데&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다. &lt;/li&gt;
-&lt;li&gt;&amp;quot;No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android&amp;quot;&lt;/li&gt;
+  &lt;li&gt;안드로이드 스튜디오 3.2로 업데이트 이후 구 버전 프로젝트 실행 시 아래와 같은 에러가 너무 많이 난다.&lt;/li&gt;
+  &lt;li&gt;“No toolchains found in the NDK toolchains folder for ABI with prefix: mips64el-linux-android”&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;나만의 해결&lt;/h3&gt;
-
+&lt;h3 id=&quot;section&quot;&gt;나만의 해결&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;그래들 버전 업&lt;/li&gt;
-&lt;li&gt;다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.&lt;/li&gt;
-&lt;li&gt;&amp;quot;classpath &amp;#39;com.android.tools.build:gradle:3.2.1&amp;#39;&amp;quot;&lt;/li&gt;
+  &lt;li&gt;그래들 버전 업&lt;/li&gt;
+  &lt;li&gt;다른 분들은 안될수도 있지만 저는 3.2.1 로 변경하니 NDK 가 더이상 안나옵니다.&lt;/li&gt;
+  &lt;li&gt;“classpath ‘com.android.tools.build:gradle:3.2.1’”&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
@@ -1284,19 +1331,18 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>앱 아이콘 동적 변경</title>
         
-          <description>&lt;h3&gt;아이콘을 동적 변경해야 하는일도 있는 세상&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;아이콘을 동적 변경해야 하는일도 있는 세상&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;세상은 어떤일들이 일어 날지 모른다. 앱 아이콘을 조건에 따라 변경하고 싶어 하는 일도 있다.&lt;/li&gt;
-&lt;li&gt;정말 가능하다 ㅎㅎ&lt;/li&gt;
+  &lt;li&gt;세상은 어떤일들이 일어 날지 모른다. 앱 아이콘을 조건에 따라 변경하고 싶어 하는 일도 있다.&lt;/li&gt;
+  &lt;li&gt;정말 가능하다 ㅎㅎ&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;동적 아이콘 변경&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;동적 아이콘 변경&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/myinnos/AppIconNameChanger&quot;&gt;AppIconNameChanger&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;동작은 github 에 라이브러리가 잘 처리해 줍니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/myinnos/AppIconNameChanger&quot;&gt;AppIconNameChanger&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;동작은 github 에 라이브러리가 잘 처리해 줍니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
@@ -1310,36 +1356,35 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>Jetpack 사용을 위한 기초 공부 AAC(ViewModel)</title>
         
-          <description>&lt;h3&gt;샘플은 구글&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;샘플은 구글&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-sunflower&quot;&gt;해바라기&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-architecture-components&quot;&gt;구글 샘플&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.android.com/topic/libraries/architecture/viewmodel&quot;&gt;ViewModel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-sunflower&quot;&gt;해바라기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-architecture-components&quot;&gt;구글 샘플&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/topic/libraries/architecture/viewmodel&quot;&gt;ViewModel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;패턴의 변화&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;패턴의 변화&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;ViewModel클래스는 UI 관련 데이터를 라이프 사이클을 고려한 방식으로 저장하고 관리하도록 설계되었습니다. 이 ViewModel클래스를 사용하면 화면 회전과 같은 구성 변경시에도 데이터를 유지할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;ViewModel클래스는 UI 관련 데이터를 라이프 사이클을 고려한 방식으로 저장하고 관리하도록 설계되었습니다. 이 ViewModel클래스를 사용하면 화면 회전과 같은 구성 변경시에도 데이터를 유지할 수 있습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;뷰모델&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-2&quot;&gt;뷰모델&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;뷰모델은 옵저버패턴이라고 이해중&lt;/li&gt;
-&lt;li&gt;데이터가 변화 가능한곳에 콜백 같은 옵저버를 추가한다.&lt;/li&gt;
-&lt;li&gt;UI 쪽에서 해당 데이터의 콜백을 이용하여 업데이트 한다.&lt;/li&gt;
-&lt;li&gt;데이터를 콜백 형태로 묶어 놓기 때문에 위에서 말하는 UI 와 완전 분리가 가능하다.&lt;/li&gt;
-&lt;li&gt;예를 들어 특정 데이터가 변경 되면 콜백 발생하도록 하고 콜백에서 UI 업데이트를 처리한다.&lt;/li&gt;
-&lt;li&gt;이런 개념으로 이해 함&lt;/li&gt;
-&lt;li&gt;BasicRxJavaSampleKotlin 기본으로 공부 중&lt;/li&gt;
-&lt;li&gt;콜백을 넣어 주는 부분이 직접접이지 않아 이해 하고 있어야 이해가 된다.&lt;/li&gt;
-&lt;li&gt;아래와 같은 코드가 있을 때 Rx 를 이용해서  viewModel.userName()  변화를 감지하여 UI 업데이트 &lt;/li&gt;
-&lt;li&gt;클릭 이벤트에서 updateUserName() 를 호출 하면 DB 완료후 결과를 다시 읽어 UI 를 업데이트 함&lt;/li&gt;
-&lt;li&gt;하지만 뷰모엘을 이용하면 콜백으로 변경 내용을 확인 하므로 UI 업데이트에 대한 의존성을 없앨수 있다.&lt;/li&gt;
+  &lt;li&gt;뷰모델은 옵저버패턴이라고 이해중&lt;/li&gt;
+  &lt;li&gt;데이터가 변화 가능한곳에 콜백 같은 옵저버를 추가한다.&lt;/li&gt;
+  &lt;li&gt;UI 쪽에서 해당 데이터의 콜백을 이용하여 업데이트 한다.&lt;/li&gt;
+  &lt;li&gt;데이터를 콜백 형태로 묶어 놓기 때문에 위에서 말하는 UI 와 완전 분리가 가능하다.&lt;/li&gt;
+  &lt;li&gt;예를 들어 특정 데이터가 변경 되면 콜백 발생하도록 하고 콜백에서 UI 업데이트를 처리한다.&lt;/li&gt;
+  &lt;li&gt;이런 개념으로 이해 함&lt;/li&gt;
+  &lt;li&gt;BasicRxJavaSampleKotlin 기본으로 공부 중&lt;/li&gt;
+  &lt;li&gt;콜백을 넣어 주는 부분이 직접접이지 않아 이해 하고 있어야 이해가 된다.&lt;/li&gt;
+  &lt;li&gt;아래와 같은 코드가 있을 때 Rx 를 이용해서  viewModel.userName()  변화를 감지하여 UI 업데이트&lt;/li&gt;
+  &lt;li&gt;클릭 이벤트에서 updateUserName() 를 호출 하면 DB 완료후 결과를 다시 읽어 UI 를 업데이트 함&lt;/li&gt;
+  &lt;li&gt;하지만 뷰모엘을 이용하면 콜백으로 변경 내용을 확인 하므로 UI 업데이트에 대한 의존성을 없앨수 있다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-kotlin&quot; data-lang=&quot;kotlin&quot;&gt;      override fun onStart() {
+
+&lt;p&gt;```kotlin
+      override fun onStart() {
             super.onStart()
             // Subscribe to the emissions of the user name from the view model.
             // Update the user name text view, at every onNext emission.
@@ -1348,10 +1393,10 @@ During an instance initialization, the initializer blocks are executed in the sa
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ this.user_name.text = it },
-                            { error -&amp;gt; Log.e(TAG, &quot;Unable to get username&quot;, error) }))
-        }
+                            { error -&amp;gt; Log.e(TAG, “Unable to get username”, error) }))
+        }&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+</description>
         
         <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
         <link>
@@ -1364,21 +1409,20 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>Jetpack 사용을 위한 기초 공부 AAC(Room)</title>
         
-          <description>&lt;h3&gt;샘플은 구글&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;샘플은 구글&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-sunflower&quot;&gt;해바라기&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-architecture-components&quot;&gt;구글 샘플&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.android.com/training/data-storage/room/defining-data&quot;&gt;Room 엔터티&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.bsidesoft.com/?p=6003&quot;&gt;비사이드소프트&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-sunflower&quot;&gt;해바라기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/googlesamples/android-architecture-components&quot;&gt;구글 샘플&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.android.com/training/data-storage/room/defining-data&quot;&gt;Room 엔터티&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.bsidesoft.com/?p=6003&quot;&gt;비사이드소프트&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;샘플 내용 요약&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-1&quot;&gt;샘플 내용 요약&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;sunflower, 구글 AAC 샘플을 적용하기전 기초지식 부터&lt;/li&gt;
-&lt;li&gt;짧은 샘플이지만 기본적인 내용부터 알아야 가능 &lt;/li&gt;
+  &lt;li&gt;sunflower, 구글 AAC 샘플을 적용하기전 기초지식 부터&lt;/li&gt;
+  &lt;li&gt;짧은 샘플이지만 기본적인 내용부터 알아야 가능&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 29 Oct 2018 00:00:00 +0000</pubDate>
@@ -1392,11 +1436,10 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 Jetpack 중 네비게이션 에디터 사용</title>
         
-          <description>&lt;h3&gt;안드로이드 Jetpack&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;jetpack&quot;&gt;안드로이드 Jetpack&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;가중 눈에 가는 네비게이션 에디터를 사용해 보려고 했지만 사용법은 금방 나오지만 어떻게 해야 에디터가 나오는지 안보인다.&lt;/li&gt;
-&lt;li&gt;File -&amp;gt; Settings -&amp;gt; Experimental -&amp;gt; Enable Navigation Editor 을 활성화 하자&lt;br&gt;&lt;/li&gt;
+  &lt;li&gt;가중 눈에 가는 네비게이션 에디터를 사용해 보려고 했지만 사용법은 금방 나오지만 어떻게 해야 에디터가 나오는지 안보인다.&lt;/li&gt;
+  &lt;li&gt;File -&amp;gt; Settings -&amp;gt; Experimental -&amp;gt; Enable Navigation Editor 을 활성화 하자&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         
@@ -1411,12 +1454,12 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>ConstraintLayout 이제 사용 할 듯</title>
         
-          <description>&lt;h3&gt;출처&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;출처&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://android-developers.googleblog.com/2017/08/understanding-performance-benefits-of.html&quot;&gt;구글 블로그 원문&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://abandonia.tistory.com/1&quot;&gt;구글 블로그 번역문&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://android-developers.googleblog.com/2017/08/understanding-performance-benefits-of.html&quot;&gt;구글 블로그 원문&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://abandonia.tistory.com/1&quot;&gt;구글 블로그 번역문&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
@@ -1430,12 +1473,12 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>푸시 내용 업데이트</title>
         
-          <description>&lt;h3&gt;푸시 적용&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;푸시 적용&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://pyeongho.github.io/push&quot;&gt;https://pyeongho.github.io/push&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;위 글에서 푸시 관련 내용을 작성 하였습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pyeongho.github.io/push&quot;&gt;https://pyeongho.github.io/push&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;위 글에서 푸시 관련 내용을 작성 하였습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
@@ -1449,12 +1492,12 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>방법을 생각해 보자</title>
         
-          <description>&lt;h4&gt;1. 안드로이드 보안을 위한 방법들&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;1. 안드로이드 보안을 위한 방법들&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면&lt;/li&gt;
-&lt;li&gt;아래 내용들은 최대한 지저분하게 여기 저기 막 넣어 둔다.&lt;/li&gt;
+  &lt;li&gt;중요한 정보를 저장 하거나 하드코딩 안하면 되지만 어쩔수 없다면&lt;/li&gt;
+  &lt;li&gt;아래 내용들은 최대한 지저분하게 여기 저기 막 넣어 둔다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
@@ -1468,13 +1511,13 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>윈도우즈에서 파이어베이스 CLI 에러</title>
         
-          <description>&lt;h3&gt;윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;기본적인 파이어베이스 CLI 사용법 아닙니다.&lt;/li&gt;
+  &lt;li&gt;기본적인 파이어베이스 CLI 사용법 아닙니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;firebase deploy 진행중 발생하는 에러&lt;/h4&gt;
+&lt;h4 id=&quot;firebase-deploy---&quot;&gt;firebase deploy 진행중 발생하는 에러&lt;/h4&gt;
+
 </description>
         
         <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
@@ -1488,16 +1531,16 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>코틀린 KTX</title>
         
-          <description>&lt;h3&gt;코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;ktx----&quot;&gt;코틀린 개발용 확장 라이브러리 KTX 에대한 지극히 개인적인 생각&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;코틀린 KTX 내용 블로그
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+blogspot%2FhsDu+%28Android+Developers+Blog%29&quot;&gt;KTX 안드로이드 구글 블로그 영문&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developers-kr.googleblog.com/2018/02/introducing-android-ktx-even-sweeter-kotlin-development-for-android.html&quot;&gt;KTX 안드로이드 구글 블로그 번역리뷰&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;코틀린 KTX 내용 블로그
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+blogspot%2FhsDu+%28Android+Developers+Blog%29&quot;&gt;KTX 안드로이드 구글 블로그 영문&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developers-kr.googleblog.com/2018/02/introducing-android-ktx-even-sweeter-kotlin-development-for-android.html&quot;&gt;KTX 안드로이드 구글 블로그 번역리뷰&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
@@ -1511,17 +1554,17 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>프로가드라 알차게 사용하기</title>
         
-          <description>&lt;h4&gt;1. 코드난독화를 위해서 사용하는 프로가드&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;1. 코드난독화를 위해서 사용하는 프로가드&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;자세한 프로가드 사용법은 아닙니다.&lt;/li&gt;
-&lt;li&gt;패키지 구성을 어떻게 하면 좋을지에 대한 내용입니다.&lt;/li&gt;
-&lt;li&gt;프로가드 적용시 패키명과 클래스명이 유지 되는것중 액티비티가 있습니다.&lt;/li&gt;
-&lt;li&gt;그렇게 되면 기본적인 구성을 확인 가능하면 그 안에 있는 하위 패키지 이름을 보면서 내용 유추가 가능해 진다.&lt;/li&gt;
-&lt;li&gt;아주 간단한 방법으로 액티비티를 따로 모아서 패키지를 만들어서 관리혀면 생각보다 좋다.&lt;/li&gt;
-&lt;li&gt;액티비티 뿐만 아니라 클래스명과 패키지명이 유지되어야 하는 내용을 따로 관리하면 생각보다 큰 효과를 얻습니다.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/&quot;&gt;https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;자세한 프로가드 사용법은 아닙니다.&lt;/li&gt;
+  &lt;li&gt;패키지 구성을 어떻게 하면 좋을지에 대한 내용입니다.&lt;/li&gt;
+  &lt;li&gt;프로가드 적용시 패키명과 클래스명이 유지 되는것중 액티비티가 있습니다.&lt;/li&gt;
+  &lt;li&gt;그렇게 되면 기본적인 구성을 확인 가능하면 그 안에 있는 하위 패키지 이름을 보면서 내용 유추가 가능해 진다.&lt;/li&gt;
+  &lt;li&gt;아주 간단한 방법으로 액티비티를 따로 모아서 패키지를 만들어서 관리혀면 생각보다 좋다.&lt;/li&gt;
+  &lt;li&gt;액티비티 뿐만 아니라 클래스명과 패키지명이 유지되어야 하는 내용을 따로 관리하면 생각보다 큰 효과를 얻습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/&quot;&gt;https://academy.realm.io/kr/posts/jon-reeve-reverse-engineering-is-not-just-for-hackers-android/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
@@ -1535,7 +1578,8 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>작은가게 성공 매뉴얼</title>
         
-          <description>&lt;h4&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;section&quot;&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+
 </description>
         
         <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
@@ -1549,13 +1593,13 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>드로이드나이츠 2019 후기</title>
         
-          <description>&lt;h3&gt;드로이드 나이츠 2019 후기&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;드로이드 나이츠 2019 후기&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;2017년도 부터 시작된 드로이드 나이츠 운이 좋아 아직까지는 3번 모두 참석&lt;/li&gt;
-&lt;li&gt;표는 4월4일에 누군가 취소한 티켓을  겨우 겨우 구매&lt;/li&gt;
-&lt;li&gt;올해에는 스티커가 이쁘다.&lt;/li&gt;
+  &lt;li&gt;2017년도 부터 시작된 드로이드 나이츠 운이 좋아 아직까지는 3번 모두 참석&lt;/li&gt;
+  &lt;li&gt;표는 4월4일에 누군가 취소한 티켓을  겨우 겨우 구매&lt;/li&gt;
+  &lt;li&gt;올해에는 스티커가 이쁘다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
@@ -1569,12 +1613,12 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 띵스</title>
         
-          <description>&lt;h4&gt;구글 랩스 안드로이드 띵즈&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;구글 랩스 안드로이드 띵즈&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 띵즈 : 운영체제 이름&lt;/li&gt;
-&lt;li&gt;2월24일 구글코라아에서 진행 하는 발표에 참석&lt;/li&gt;
+  &lt;li&gt;안드로이드 띵즈 : 운영체제 이름&lt;/li&gt;
+  &lt;li&gt;2월24일 구글코라아에서 진행 하는 발표에 참석&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
@@ -1588,17 +1632,17 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>애플리케이션 Foreground 확인</title>
         
-          <description>&lt;h3&gt;애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;foreground------&quot;&gt;애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.&lt;/li&gt;
-&lt;li&gt;백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.&lt;/li&gt;
-&lt;li&gt;api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.&lt;/li&gt;
-&lt;li&gt;Application.ActivityLifecycleCallbacks 를 이용하는 방법&lt;/li&gt;
-&lt;li&gt;Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다. &lt;/li&gt;
-&lt;li&gt;사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.&lt;/li&gt;
+  &lt;li&gt;백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.&lt;/li&gt;
+  &lt;li&gt;api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.&lt;/li&gt;
+  &lt;li&gt;Application.ActivityLifecycleCallbacks 를 이용하는 방법&lt;/li&gt;
+  &lt;li&gt;Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다.&lt;/li&gt;
+  &lt;li&gt;사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
@@ -1612,18 +1656,18 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 immersive</title>
         
-          <description>&lt;h3&gt;갤럭시 s8 의 이상한 기능&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;s8---&quot;&gt;갤럭시 s8 의 이상한 기능&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상&lt;/li&gt;
-&lt;li&gt;애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.&lt;/li&gt;
-&lt;li&gt;알아야 하는 내용
-
-&lt;ul&gt;
-&lt;li&gt;애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부&lt;/li&gt;
-&lt;li&gt;에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상&lt;/li&gt;
+  &lt;li&gt;애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.&lt;/li&gt;
+  &lt;li&gt;알아야 하는 내용
+    &lt;ul&gt;
+      &lt;li&gt;애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부&lt;/li&gt;
+      &lt;li&gt;에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
@@ -1637,15 +1681,15 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 스와이프백</title>
         
-          <description>&lt;h3&gt;조금더 편한 액티비 종료&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;조금더 편한 액티비 종료&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;손가락으로 드래그하여 액티비티 종료 하는 라이브러리 입니다.&lt;/li&gt;
-&lt;li&gt;iOS에서 자주 사용 되지만 안드로이드에서도 사용 할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;아래가 오리지널 코드 위치 입니다.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/liuguangqiang/SwipeBack&quot;&gt;스와이프백&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;코드분석은 setContentView 를 할때 루트에 스와이프 레이아웃을 추가하여 터치 이벤트를 전역으로 사용 할 수 있게 하여 드래그로 액티비티를 종료 할 수 있도록 한 라이브러리 입니다.&lt;/li&gt;
+  &lt;li&gt;손가락으로 드래그하여 액티비티 종료 하는 라이브러리 입니다.&lt;/li&gt;
+  &lt;li&gt;iOS에서 자주 사용 되지만 안드로이드에서도 사용 할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;아래가 오리지널 코드 위치 입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/liuguangqiang/SwipeBack&quot;&gt;스와이프백&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;코드분석은 setContentView 를 할때 루트에 스와이프 레이아웃을 추가하여 터치 이벤트를 전역으로 사용 할 수 있게 하여 드래그로 액티비티를 종료 할 수 있도록 한 라이브러리 입니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
@@ -1659,12 +1703,12 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 네스티드 웹뷰</title>
         
-          <description>&lt;h3&gt;웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;웹뷰와 네이티브의 연동시 꼭필요한 웹뷰 확장&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;웹뷰를 스크롤 하면 툴바가 사라지거나 &lt;/li&gt;
-&lt;li&gt;BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때 &lt;/li&gt;
+  &lt;li&gt;웹뷰를 스크롤 하면 툴바가 사라지거나&lt;/li&gt;
+  &lt;li&gt;BottomSheet 에 웹뷰를 추가 했으때도 RecyclerView 처럼 스크롤 되는걸 원할 때&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
@@ -1678,18 +1722,18 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 TextView Padding 문제</title>
         
-          <description>&lt;h3&gt;디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;textview-&quot;&gt;디자인가이드를 적용하면서 문제가 발생하는 부분은 역시 TextView 패딩&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐&lt;/li&gt;
-&lt;li&gt;처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.&lt;/li&gt;
-&lt;li&gt;아래 이미지&lt;br&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-&quot; alt=&quot;이렇게&quot;&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;TextView로 구성된 화면에서 마진으로 간격이 조정된 디자인 가이드를 받으면 생각 했던거 보다 간격이 훨씬 벌어짐&lt;/li&gt;
+  &lt;li&gt;처음에 적용 했던 내용은 includeFontPadding을 false 로 적용 함&lt;/li&gt;
+  &lt;li&gt;약간 줄어 들긴 하지만 완벽 하게 적용 되진 않았습니다.&lt;/li&gt;
+  &lt;li&gt;아래 이미지
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1nnjL0afBO2rmZOXJzbi95P6lef2XWRA-&quot; alt=&quot;이렇게&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 27 Nov 2017 00:00:00 +0000</pubDate>
@@ -1703,26 +1747,27 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>안드로이드 알쓸신잡 1</title>
         
-          <description>&lt;h3&gt;NavigationView 상단 그림자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;navigationview--&quot;&gt;NavigationView 상단 그림자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+  &lt;li&gt;안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46&quot; alt=&quot;이렇게&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;for tag:  NavigationView remove shadow&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
+    &lt;ul&gt;
+      &lt;li&gt;DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능&lt;/li&gt;
+      &lt;li&gt;정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음&lt;/li&gt;
+      &lt;li&gt;NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임&lt;/li&gt;
+  &lt;li&gt;그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=”-24dp” 발견하기 까지 많은 시간이 걸렸습니다.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;https://drive.google.com/uc?export=view&amp;amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46&quot; alt=&quot;이렇게&quot;&gt;&lt;/li&gt;
-&lt;li&gt;for tag:  NavigationView remove shadow &lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
-
-&lt;ul&gt;
-&lt;li&gt;DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능&lt;/li&gt;
-&lt;li&gt;정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음&lt;/li&gt;
-&lt;li&gt;NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 &lt;/li&gt;
-&lt;li&gt;그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&amp;quot;-24dp&amp;quot; 발견하기 까지 많은 시간이 걸렸습니다.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.design.widget.NavigationView&lt;/span&gt;
+    &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.design.widget.NavigationView&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/nav_view&quot;&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;android:layout_marginTop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-24dp&quot;&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
@@ -1731,8 +1776,11 @@ During an instance initialization, the initializer blocks are executed in the sa
     &lt;span class=&quot;na&quot;&gt;android:fitsSystemWindows=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;app:headerLayout=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@layout/nav_header_main&quot;&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;app:menu=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@menu/activity_main_drawer&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Fri, 24 Nov 2017 00:00:00 +0000</pubDate>
@@ -1746,7 +1794,8 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>파이썬을 크로스도메인 허용</title>
         
-          <description>&lt;h3&gt;플라스크에서 크로스도메인 허용&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;section&quot;&gt;플라스크에서 크로스도메인 허용&lt;/h3&gt;
+
 </description>
         
         <pubDate>Wed, 22 Nov 2017 00:00:00 +0000</pubDate>
@@ -1760,53 +1809,53 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>Shared elements</title>
         
-          <description>&lt;h3&gt;머티리얼 화면 전환, Shared Elements&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;shared-elements&quot;&gt;머티리얼 화면 전환, Shared Elements&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;플레이스토어에서 앱을 선택하면 리스트의 이미지가 스르르하면서 커지면서 화면 전환이 발생&lt;/li&gt;
+  &lt;li&gt;처음에는 엄청난 라이브러리를 사용한지 알았지만 안드로이드 기본을 이용하면 된다.&lt;/li&gt;
+  &lt;li&gt;안드로이는 구현보다 무엇을 사용하지만 알면 금방 적용 할수 있습니다.&lt;/li&gt;
+  &lt;li&gt;일단 처음 발견한 링크 입니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb&quot;&gt;fragment-transitions-with-shared-elements&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위 링크를 보고 사용하는 내용이 shared-elements 라는것을 알고 사용하기로 함&lt;/li&gt;
+  &lt;li&gt;5.0 이상만 가능하지만 이제는 5.0 미만에서의 애니메이션은 신경 안쓰기로 결정함&lt;/li&gt;
+  &lt;li&gt;shared-elements 를 키워드로 검색&lt;/li&gt;
+  &lt;li&gt;안드로이드 개발자 사이트 참고 링크
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.android.com/training/material/animations.html?hl=ko&quot;&gt;https://developer.android.com/training/material/animations.html?hl=ko&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다른 사람이 만든 공부하기 쉬운 샘플코드
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/mikescamell/shared-element-transitions&quot;&gt;https://github.com/mikescamell/shared-element-transitions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;프래그먼트에서 프래그먼트로 이동할 때 만 적어 보겠습니다.
+    &lt;ul&gt;
+      &lt;li&gt;각각의 상황에 맞는 내용은 위 링크 샘플에 잘 정리 되어 있습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A 프래그먼트에 이미지 뷰를 추가&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;플레이스토어에서 앱을 선택하면 리스트의 이미지가 스르르하면서 커지면서 화면 전환이 발생&lt;/li&gt;
-&lt;li&gt;처음에는 엄청난 라이브러리를 사용한지 알았지만 안드로이드 기본을 이용하면 된다.&lt;/li&gt;
-&lt;li&gt;안드로이는 구현보다 무엇을 사용하지만 알면 금방 적용 할수 있습니다. &lt;/li&gt;
-&lt;li&gt;일단 처음 발견한 링크 입니다.
+    &lt;p&gt;``` xml&lt;/p&gt;
+    &lt;ImageView android:id=&quot;@+id/logo&quot; android:src=&quot;@mipmap/ic_launcher_round&quot; android:layout_centerInParent=&quot;true&quot; android:transitionName=&quot;simple_fragment_transition&quot; android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot; /&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb&quot;&gt;fragment-transitions-with-shared-elements&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;위 링크를 보고 사용하는 내용이 shared-elements 라는것을 알고 사용하기로 함&lt;/li&gt;
-&lt;li&gt;5.0 이상만 가능하지만 이제는 5.0 미만에서의 애니메이션은 신경 안쓰기로 결정함 &lt;/li&gt;
-&lt;li&gt;shared-elements 를 키워드로 검색&lt;/li&gt;
-&lt;li&gt;안드로이드 개발자 사이트 참고 링크
+    &lt;p&gt;```&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.android.com/training/material/animations.html?hl=ko&quot;&gt;https://developer.android.com/training/material/animations.html?hl=ko&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;다른 사람이 만든 공부하기 쉬운 샘플코드
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/mikescamell/shared-element-transitions&quot;&gt;https://github.com/mikescamell/shared-element-transitions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;프래그먼트에서 프래그먼트로 이동할 때 만 적어 보겠습니다.
-
-&lt;ul&gt;
-&lt;li&gt;각각의 상황에 맞는 내용은 위 링크 샘플에 잘 정리 되어 있습니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A 프래그먼트에 이미지 뷰를 추가&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/logo&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher_round&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:transitionName=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;simple_fragment_transition&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;android:transitionName 속성이 2번째 프래그먼트에도 동일하게 사용됩니다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;A 프래그먼트 에서 B 프래그먼트 생성 및 A 프래그먼트 삭제 &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;참고 addToBackStack(TAG) 을 이용해서 뒤로가기 가능하도록 가능합니다.(플레이스토어 처럼 반대 애니메이션 동작 합니다.)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;android:transitionName 속성이 2번째 프래그먼트에도 동일하게 사용됩니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A 프래그먼트 에서 B 프래그먼트 생성 및 A 프래그먼트 삭제
+    &lt;ul&gt;
+      &lt;li&gt;참고 addToBackStack(TAG) 을 이용해서 뒤로가기 가능하도록 가능합니다.(플레이스토어 처럼 반대 애니메이션 동작 합니다.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
@@ -1820,38 +1869,38 @@ During an instance initialization, the initializer blocks are executed in the sa
       <item>
         <title>롤리팝 이상에서 백그라운드 푸시 보내기</title>
         
-          <description>&lt;h3&gt;백그라운드 푸시 적용&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;백그라운드 푸시 적용&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;롤리팝 이상에서 앱이 백그라운드 상태에서는 푸시를 수신하는 코드가 동작 하지 않고 운영체제에서 알림을 발생시킨다.&lt;/li&gt;
-&lt;li&gt;파이어베이스 콘솔에서 푸시를 발송하면 OS 에서만 수신 
-
-&lt;ul&gt;
-&lt;li&gt;이유를 찾아 보니 푸시 메시지 notification 이 있을 때 앱에서 푸시를 수신 안하고 OS 가 처리함&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;notification 영역을 제거하고 페이로드 영역(data) 부분만 으로 푸시를 보내면 됩니다.&lt;/li&gt;
-&lt;li&gt;커스텀 푸시는 아니지만 노티 알림 클릭시 원하는 동작을 만들고 싶을때가 많다.&lt;/li&gt;
-&lt;li&gt;그래서 푸시 규격에 대해서 자세히 찾아 봄
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko&quot;&gt;https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;위 링크에서 보면 click_action 이 존재 하고 하고 이를 이용하면 시작 액티비티를 지정이 가능하다.&lt;/li&gt;
-&lt;li&gt;그래서 서버쪽 전송 영역을 아래 처러 지정 하였습니다.
-&lt;code&gt;json
+  &lt;li&gt;롤리팝 이상에서 앱이 백그라운드 상태에서는 푸시를 수신하는 코드가 동작 하지 않고 운영체제에서 알림을 발생시킨다.&lt;/li&gt;
+  &lt;li&gt;파이어베이스 콘솔에서 푸시를 발송하면 OS 에서만 수신
+    &lt;ul&gt;
+      &lt;li&gt;이유를 찾아 보니 푸시 메시지 notification 이 있을 때 앱에서 푸시를 수신 안하고 OS 가 처리함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;notification 영역을 제거하고 페이로드 영역(data) 부분만 으로 푸시를 보내면 됩니다.&lt;/li&gt;
+  &lt;li&gt;커스텀 푸시는 아니지만 노티 알림 클릭시 원하는 동작을 만들고 싶을때가 많다.&lt;/li&gt;
+  &lt;li&gt;그래서 푸시 규격에 대해서 자세히 찾아 봄
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko&quot;&gt;https://firebase.google.com/docs/cloud-messaging/http-server-ref?hl=ko&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;위 링크에서 보면 click_action 이 존재 하고 하고 이를 이용하면 시작 액티비티를 지정이 가능하다.&lt;/li&gt;
+      &lt;li&gt;그래서 서버쪽 전송 영역을 아래 처러 지정 하였습니다.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;json
 data: {
-  hello: &amp;quot;good job&amp;quot;,
+    hello: &quot;good job&quot;,
 },
 notification: {
-  title: &amp;quot;Hello, World&amp;quot;,
-  body: &amp;quot;This is a notification that will be displayed if your app is in the background.&amp;quot;,
-  click_action:&amp;quot;OPEN_ACTIVITY_1&amp;quot;,
-  icon:&amp;quot;white&amp;quot;,
-  color:&amp;quot;#FF0000&amp;quot;,
-  sound:&amp;quot;default&amp;quot;
+    title: &quot;Hello, World&quot;,
+    body: &quot;This is a notification that will be displayed if your app is in the background.&quot;,
+    click_action:&quot;OPEN_ACTIVITY_1&quot;,
+    icon:&quot;white&quot;,
+    color:&quot;#FF0000&quot;,
+    sound:&quot;default&quot;
 }
 &lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 22 Jul 2017 00:00:00 +0000</pubDate>
@@ -1865,11 +1914,11 @@ notification: {
       <item>
         <title>osx 도커</title>
         
-          <description>&lt;h3&gt;개발공부도 도커에서 하기&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;개발공부도 도커에서 하기&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;이런 저런 이유로 도커는 공부해 놓으면 좋을거 같습니다.&lt;/li&gt;
+  &lt;li&gt;이런 저런 이유로 도커는 공부해 놓으면 좋을거 같습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 10 Jun 2017 00:00:00 +0000</pubDate>
@@ -1883,15 +1932,15 @@ notification: {
       <item>
         <title>로그를 편하게 사용하자</title>
         
-          <description>&lt;h3&gt;Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;log------&quot;&gt;Log. 사용이 귀찮을때가 많아서 사용중인 클래스를 공유합니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Log -&amp;gt; log 로 변경해서 대문자를 사용안한다.&lt;/li&gt;
-&lt;li&gt;TAG 입력이 귀찮아서 제거함&lt;/li&gt;
-&lt;li&gt;파일이름과 라인 함수 이름을 출력 하도록 함&lt;/li&gt;
-&lt;li&gt;릴리즈에서는 로그가 출력 안되도록 하였습니다.&lt;/li&gt;
-&lt;li&gt;그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l() &lt;/li&gt;
+  &lt;li&gt;Log -&amp;gt; log 로 변경해서 대문자를 사용안한다.&lt;/li&gt;
+  &lt;li&gt;TAG 입력이 귀찮아서 제거함&lt;/li&gt;
+  &lt;li&gt;파일이름과 라인 함수 이름을 출력 하도록 함&lt;/li&gt;
+  &lt;li&gt;릴리즈에서는 로그가 출력 안되도록 하였습니다.&lt;/li&gt;
+  &lt;li&gt;그리고 가장 많이 사용하는 라인 출력 함수를 추가 하였습니다. log.l()&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
@@ -1905,12 +1954,12 @@ notification: {
       <item>
         <title>Dagger2 기초 부터</title>
         
-          <description>&lt;h3&gt;Dagger2 활용을 위하여&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;dagger2--&quot;&gt;Dagger2 활용을 위하여&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://pluu.github.io/blog/android/2017/01/13/android-dagger/&quot;&gt;http://pluu.github.io/blog/android/2017/01/13/android-dagger/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;기본을 공부하기에는 이곳 만큼 좋은곳은 없는거 같습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pluu.github.io/blog/android/2017/01/13/android-dagger/&quot;&gt;http://pluu.github.io/blog/android/2017/01/13/android-dagger/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
@@ -1924,12 +1973,12 @@ notification: {
       <item>
         <title>코틀린 안드로이드 익스텐션</title>
         
-          <description>&lt;h3&gt;findviewid 는 안했으면 ...&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;findviewid---&quot;&gt;findviewid 는 안했으면 …&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;코틀린에서도 사용 가능한 방법&lt;/li&gt;
-&lt;li&gt;코틀린 안드로이드 익스텐션&lt;/li&gt;
+  &lt;li&gt;코틀린에서도 사용 가능한 방법&lt;/li&gt;
+  &lt;li&gt;코틀린 안드로이드 익스텐션&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
@@ -1943,25 +1992,24 @@ notification: {
       <item>
         <title>웹에서 앱 설치 여부를 확인하자</title>
         
-          <description>&lt;h3&gt;Web 에서 앱 설치 여부를 확인 하자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;web------&quot;&gt;Web 에서 앱 설치 여부를 확인 하자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Page&lt;em&gt;Visibility&lt;/em&gt;API&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.&lt;/li&gt;
-&lt;li&gt;하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지 
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devtalk.kakao.com/t/topic/20684/3&quot;&gt;https://devtalk.kakao.com/t/topic/20684/3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;시나리오는 페이지가 안보이면 document.webkitHidden 과 document.hidden 으로 확인이 가능하다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API&quot;&gt;https://developer.mozilla.org/ko/docs/Web/API/Page_Visibility_API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;2개인 이유는 정식 스크립트 등록으로 인해서라고 풍문으로 들었습니다.&lt;/li&gt;
+  &lt;li&gt;하지만 문제점은 매우 많습니다. 구현 내용을 보면 알 수 있습니다. 왜 문제가 많은지
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://devtalk.kakao.com/t/topic/20684/3&quot;&gt;https://devtalk.kakao.com/t/topic/20684/3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;1. 내용&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;1. 내용&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;인터벌 함수를 이용해서 hidden 을 계속 확인한다.&lt;/li&gt;
-&lt;li&gt;타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.&lt;/li&gt;
+  &lt;li&gt;인터벌 함수를 이용해서 hidden 을 계속 확인한다.&lt;/li&gt;
+  &lt;li&gt;타임아웃 함수를 이용해서 특정시간이 되면 앱이 설치 안되어있다고 판단한다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
@@ -1975,12 +2023,12 @@ notification: {
       <item>
         <title>코를린 공부를 intellij 에서</title>
         
-          <description>&lt;h3&gt;안드로이드 공식 언어인 코틀릭 공부&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;안드로이드 공식 언어인 코틀릭 공부&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 스튜디오가 아닌 인텔리제이 에서 공부&lt;/li&gt;
-&lt;li&gt;기본 적인 언어 공부후 안드로이드 스튜디오에서 진행&lt;/li&gt;
+  &lt;li&gt;안드로이드 스튜디오가 아닌 인텔리제이 에서 공부&lt;/li&gt;
+  &lt;li&gt;기본 적인 언어 공부후 안드로이드 스튜디오에서 진행&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
@@ -1994,12 +2042,12 @@ notification: {
       <item>
         <title>RemoteConfig FirebaseRemoteConfigFetchThrottledException</title>
         
-          <description>&lt;h3&gt;파이어베이스 리모트 컨피그 사용&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;파이어베이스 리모트 컨피그 사용&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함&lt;/li&gt;
-&lt;li&gt;공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음&lt;/li&gt;
+  &lt;li&gt;앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함&lt;/li&gt;
+  &lt;li&gt;공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
@@ -2013,7 +2061,8 @@ notification: {
       <item>
         <title>대한민국 부동산의 미래</title>
         
-          <description>&lt;h4&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;section&quot;&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+
 </description>
         
         <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
@@ -2027,12 +2076,12 @@ notification: {
       <item>
         <title>Rx 사용하면서 추가하거나 공부한 내용</title>
         
-          <description>&lt;h3&gt;rx 라이브러리를 사용하면서 사용하는 함수들&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;rx----&quot;&gt;rx 라이브러리를 사용하면서 사용하는 함수들&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;간단하게 성남도서관 검색 앱을 개발하면서 사용하는 함수들 입니다.&lt;/li&gt;
-&lt;li&gt;rxbiding 사용법&lt;/li&gt;
+  &lt;li&gt;간단하게 성남도서관 검색 앱을 개발하면서 사용하는 함수들 입니다.&lt;/li&gt;
+  &lt;li&gt;rxbiding 사용법&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 14 May 2017 00:00:00 +0000</pubDate>
@@ -2046,16 +2095,16 @@ notification: {
       <item>
         <title>Daum 이미지 검색을 내가 좋아하는 형태로 변경해 보자</title>
         
-          <description>&lt;h3&gt;구글 샘플과 GDG-ATSL-ON-MVP를 이용&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;gdg-atsl-on-mvp-&quot;&gt;구글 샘플과 GDG-ATSL-ON-MVP를 이용&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.&lt;/li&gt;
-&lt;li&gt;원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/ZeroBrain/GDG-ATSL-ON-MVP&quot;&gt;https://github.com/ZeroBrain/GDG-ATSL-ON-MVP&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;2개의 코드 모두 너무 좋지만 앞으로를 위해서 필요한 부분을 변경해 보려고 합니다. 남들이 보면 이상해 보일수도 있겠지만 구조와 라이브러리르 조금 추가 및 변경해서 원하는 형태로 변경합니다.&lt;/li&gt;
+  &lt;li&gt;원래 코드도 좋지만 이상하게 마음에 안드는 부분을 변경해보려고 합니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ZeroBrain/GDG-ATSL-ON-MVP&quot;&gt;https://github.com/ZeroBrain/GDG-ATSL-ON-MVP&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
@@ -2069,11 +2118,11 @@ notification: {
       <item>
         <title>이미지를 호스팅을 드랍박스로 변경해 보자</title>
         
-          <description>&lt;h4&gt;구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;구글 드라이브는 이상하게 사파리에서 정상 동작을 안한다.&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자&lt;/li&gt;
+  &lt;li&gt;드랍박스를 이용해서 링크를 가지고 오는 방법을 만들어 보자&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
@@ -2087,17 +2136,17 @@ notification: {
       <item>
         <title>Github Page 스태틱으로 변경하기</title>
         
-          <description>&lt;h4&gt;테마를 변경하면서 스택으로 변경하기로 결정&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;테마를 변경하면서 스택으로 변경하기로 결정&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정&lt;/li&gt;
-&lt;li&gt;목표 설정
-
-&lt;ul&gt;
-&lt;li&gt;저장소 위치를 비트버켓으로 이동한다.&lt;/li&gt;
-&lt;li&gt;지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;테마변경을 적용중 원하는 카테고리 동작이 안되어서 찾아보니 특정 폴더를 추가해야 하는걸 알았습니다. 그래서 이것 저것 찾다가 결국은 스태틱 사이트로 변경 하기로 결정&lt;/li&gt;
+  &lt;li&gt;목표 설정
+    &lt;ul&gt;
+      &lt;li&gt;저장소 위치를 비트버켓으로 이동한다.&lt;/li&gt;
+      &lt;li&gt;지킬로 빌드후 결과물을 pyeongho.github.io 로 올린다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 29 Apr 2017 20:00:00 +0000</pubDate>
@@ -2111,11 +2160,11 @@ notification: {
       <item>
         <title>비트버켓에서 파이프라인을 이용한 자동 배포</title>
         
-          <description>&lt;h4&gt;자동배포시스템 적용하기&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;자동배포시스템 적용하기&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함&lt;/li&gt;
+  &lt;li&gt;github 를 이용할때는 travis 를 이용하려 햐였지만 비트버켓으로 이동하면서 최종적으로 비트버켓 내의 시스템을 이용함&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 29 Apr 2017 12:00:00 +0000</pubDate>
@@ -2129,7 +2178,8 @@ notification: {
       <item>
         <title>미라클 모닝,당신의 하루를 바꾸는 기적</title>
         
-          <description>&lt;h4&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;section&quot;&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+
 </description>
         
         <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
@@ -2143,11 +2193,11 @@ notification: {
       <item>
         <title>구글에서 만든 클린 아키텍처를 이해하고 알아보자</title>
         
-          <description>&lt;h3&gt;구글 클린 아키텍처&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;구글 클린 아키텍처&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;mvp 패턴만 적용 하더라도 구조가 이상해 보인다. 어떻게 하면 좀더 좋은 구조를 만들 수 있을까를 고민하던 중 클린아키텍처가 있었고 그중 구글이 만들 샘플 코드가 기본 라이브러리로만 만들어져서 마음에 들어서 분석하기 시작함&lt;br&gt;&lt;/li&gt;
+  &lt;li&gt;mvp 패턴만 적용 하더라도 구조가 이상해 보인다. 어떻게 하면 좀더 좋은 구조를 만들 수 있을까를 고민하던 중 클린아키텍처가 있었고 그중 구글이 만들 샘플 코드가 기본 라이브러리로만 만들어져서 마음에 들어서 분석하기 시작함&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
@@ -2161,11 +2211,11 @@ notification: {
       <item>
         <title>크롬 40+ 버전에서 의 앱 실행 문제</title>
         
-          <description>&lt;h3&gt;크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;section&quot;&gt;크롬에서 사용자 제스처 없이 앱 실행은 안됩니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;탐색할수없음&lt;/li&gt;
+  &lt;li&gt;탐색할수없음&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
@@ -2179,7 +2229,8 @@ notification: {
       <item>
         <title>GRIT IQ, 재능 환경을 뛰어 넘는 열정적 끈기의 힘 그릿</title>
         
-          <description>&lt;h4&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;section&quot;&gt;본것 깨달은것 적용할것&lt;/h4&gt;
+
 </description>
         
         <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
@@ -2193,11 +2244,11 @@ notification: {
       <item>
         <title>클린아키텍처 듣기 전부터 고민하던 내용들</title>
         
-          <description>&lt;h4&gt;적용에 앞서 많은 고민중&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;적용에 앞서 많은 고민중&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;고민은 좋은거.&lt;/li&gt;
+  &lt;li&gt;고민은 좋은거.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
@@ -2211,12 +2262,12 @@ notification: {
       <item>
         <title>드로이드나이츠 클린아키텍처 세션</title>
         
-          <description>&lt;h4&gt;드로이드나이츠 클린아키텍처&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;드로이드나이츠 클린아키텍처&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.&lt;/li&gt;
-&lt;li&gt;그중 기억에 남는 클린 아키텍처를 정리 하였습니다.&lt;/li&gt;
+  &lt;li&gt;드로이드나이츠 컨퍼런스 참가후 작성한 글 입니다.&lt;/li&gt;
+  &lt;li&gt;그중 기억에 남는 클린 아키텍처를 정리 하였습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 08 Apr 2017 00:00:00 +0000</pubDate>
@@ -2230,11 +2281,11 @@ notification: {
       <item>
         <title>구글 드라이브를 이용해서 쉽게 이미지를 올리자</title>
         
-          <description>&lt;h4&gt;맥에서 github page 이미지 쉽게 올리기&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;github-page---&quot;&gt;맥에서 github page 이미지 쉽게 올리기&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;깃허브 페이지를 이용중 가장 힘든건 스크린샷을 추가하는 방법이라 생각해서 찾아보니 구글드라이브를 이미지서버로 사용이 가능해서 적용해 보았습니다. 문제는 사파리에서 정상동작 안한다는 단점&lt;/li&gt;
+  &lt;li&gt;깃허브 페이지를 이용중 가장 힘든건 스크린샷을 추가하는 방법이라 생각해서 찾아보니 구글드라이브를 이미지서버로 사용이 가능해서 적용해 보았습니다. 문제는 사파리에서 정상동작 안한다는 단점&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 29 Mar 2017 00:00:00 +0000</pubDate>
@@ -2248,27 +2299,23 @@ notification: {
       <item>
         <title>gitugb.io 지킬에 사진업로드 쉽게 하는 앱개발</title>
         
-          <description>&lt;h3&gt;iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;ios--githubio----&quot;&gt;iOS 에서 github.io에 사진을 첨부한 글을 포스팅한다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;스마튼폰에서 찍은 사진을 블로그에 바로 올리고 싶은 생각으로 앱을 개발해 보기로 결정&lt;/li&gt;
+  &lt;li&gt;스마튼폰에서 찍은 사진을 블로그에 바로 올리고 싶은 생각으로 앱을 개발해 보기로 결정&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;1. 공부할 자료 수집&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;1. 공부할 자료 수집&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;깃 라이브러리 
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/libgit2/objective-git#carthage&quot;&gt;https://github.com/libgit2/objective-git#carthage&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/SwiftGit2/SwiftGit2&quot;&gt;https://github.com/SwiftGit2/SwiftGit2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt; carthage 사용법을 알아야 한다.
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://swifter.kr/2016/04/24/carthage-%EC%B9%B4%EB%A5%B4%ED%85%8C%EC%A7%80-%EC%84%A4%EC%B9%98-%EB%B0%A9%EB%B2%95/&quot;&gt;https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;깃 라이브러리
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/libgit2/objective-git#carthage&quot;&gt;https://github.com/libgit2/objective-git#carthage&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/SwiftGit2/SwiftGit2&quot;&gt;https://github.com/SwiftGit2/SwiftGit2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;carthage 사용법을 알아야 한다.
+    - &lt;a href=&quot;https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/&quot;&gt;https://swifter.kr/2016/04/24/carthage-카르테지-설치-방법/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
@@ -2282,7 +2329,8 @@ notification: {
       <item>
         <title>github page 구글 검색 허용하기</title>
         
-          <description>&lt;h4&gt;지킬로 만들면 구글 검색이 안됩니다.&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;section&quot;&gt;지킬로 만들면 구글 검색이 안됩니다.&lt;/h4&gt;
+
 </description>
         
         <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
@@ -2296,7 +2344,8 @@ notification: {
       <item>
         <title>파이썬을 이용한 서버구축</title>
         
-          <description>&lt;h3&gt;클라우드 서버 구축&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;section&quot;&gt;클라우드 서버 구축&lt;/h3&gt;
+
 </description>
         
         <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
@@ -2310,13 +2359,13 @@ notification: {
       <item>
         <title>java 디자인패턴 4일차</title>
         
-          <description>&lt;h3&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;gof------&quot;&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
 
-&lt;h4&gt;코드 링크&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;코드 링크&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
@@ -2330,17 +2379,16 @@ notification: {
       <item>
         <title>스위프트를 이용해서 앱을 개발해 보자(iOS 공부 1일차)</title>
         
-          <description>&lt;h3&gt;iOS를 공부해서 원하는 앱을 만들어 보자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;ios-----&quot;&gt;iOS를 공부해서 원하는 앱을 만들어 보자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 개발자지만 iOS 앱을 만들어 보고 싶어서 공부를 시작&lt;/li&gt;
+  &lt;li&gt;안드로이드 개발자지만 iOS 앱을 만들어 보고 싶어서 공부를 시작&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;0. 따라하기&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;0. 따라하기&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/&quot;&gt;https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/&quot;&gt;https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-1/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
@@ -2354,9 +2402,10 @@ notification: {
       <item>
         <title>RxJava</title>
         
-          <description>&lt;h3&gt;RxJava 이해하기&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;rxjava-&quot;&gt;RxJava 이해하기&lt;/h3&gt;
 
-&lt;h4&gt;공부 링크&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;공부 링크&lt;/h4&gt;
+
 </description>
         
         <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
@@ -2370,13 +2419,13 @@ notification: {
       <item>
         <title>java 디자인패턴 3일차</title>
         
-          <description>&lt;h3&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;gof------&quot;&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
 
-&lt;h4&gt;코드 링크&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;코드 링크&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
@@ -2390,13 +2439,13 @@ notification: {
       <item>
         <title>java 디자인패턴 2일차</title>
         
-          <description>&lt;h3&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;gof------&quot;&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
 
-&lt;h4&gt;코드 링크&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;코드 링크&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
@@ -2410,13 +2459,13 @@ notification: {
       <item>
         <title>java 디자인패턴 1일차</title>
         
-          <description>&lt;h3&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;gof------&quot;&gt;GoF 의 자바 디자인 패턴, 인프런 강의&lt;/h3&gt;
 
-&lt;h4&gt;코드 링크&lt;/h4&gt;
-
+&lt;h4 id=&quot;section&quot;&gt;코드 링크&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/parkgaram/java-designpattern&quot;&gt;https://github.com/parkgaram/java-designpattern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 25 Feb 2017 00:00:00 +0000</pubDate>
@@ -2430,11 +2479,11 @@ notification: {
       <item>
         <title>제네릭을 이용하여 샘플코드를 좀더 편하게 사용하기</title>
         
-          <description>&lt;h3&gt;최종코드의 BasePresnter의 addSubscription를 부분만 확인하면 됩니다.&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;basepresnter-addsubscription---&quot;&gt;최종코드의 BasePresnter의 addSubscription를 부분만 확인하면 됩니다.&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;API가 추가 될때마다 계속 추가해야하나?&lt;/li&gt;
+  &lt;li&gt;API가 추가 될때마다 계속 추가해야하나?&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 19 Feb 2017 00:00:00 +0000</pubDate>
@@ -2448,12 +2497,12 @@ notification: {
       <item>
         <title>AndroidAnnotation을 공부 하자</title>
         
-          <description>&lt;h3&gt;안드로이드에서 AndroidAnnotation을 이용해서 앱을 개발해 보자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;androidannotation----&quot;&gt;안드로이드에서 AndroidAnnotation을 이용해서 앱을 개발해 보자&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;어노테이션 기능으로 좀금더 편하게 의존성을 주입해서 앱을 개발하는 방법 입니다.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://androidannotations.org/&quot;&gt;http://androidannotations.org/ 공식사이트&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;어노테이션 기능으로 좀금더 편하게 의존성을 주입해서 앱을 개발하는 방법 입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://androidannotations.org/&quot;&gt;http://androidannotations.org/ 공식사이트&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
@@ -2467,12 +2516,12 @@ notification: {
       <item>
         <title>dagger2 를 공부</title>
         
-          <description>&lt;h4&gt;DI 공부&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;di-&quot;&gt;DI 공부&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;라이브러리를 이용해서 의존성을  주입하는 방법&lt;/li&gt;
-&lt;li&gt;그냥 플래버를 이용해도 되지만 좀더 많은 사람들이 사용하는 방법&lt;/li&gt;
+  &lt;li&gt;라이브러리를 이용해서 의존성을  주입하는 방법&lt;/li&gt;
+  &lt;li&gt;그냥 플래버를 이용해도 되지만 좀더 많은 사람들이 사용하는 방법&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
@@ -2486,7 +2535,8 @@ notification: {
       <item>
         <title>mvp 패턴을 공부하자</title>
         
-          <description>&lt;h3&gt;안드로이드에 mvp를 적극적으로 추가하기 위한 공부중&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;mvp----&quot;&gt;안드로이드에 mvp를 적극적으로 추가하기 위한 공부중&lt;/h3&gt;
+
 </description>
         
         <pubDate>Sat, 11 Feb 2017 00:00:00 +0000</pubDate>
@@ -2500,7 +2550,8 @@ notification: {
       <item>
         <title>retrofit2 + rxandroid2 + mvp 네이버 기계번역 사용하기</title>
         
-          <description>&lt;h4&gt;retrofit2 + rxandroid2 + mvp 를 이용한 통신&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;retrofit2--rxandroid2--mvp---&quot;&gt;retrofit2 + rxandroid2 + mvp 를 이용한 통신&lt;/h4&gt;
+
 </description>
         
         <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
@@ -2514,11 +2565,11 @@ notification: {
       <item>
         <title>버터나이프 없이 조금더 편하게 XML 의 객체를 사용해 보자</title>
         
-          <description>&lt;h4&gt;findViewById 없이 사용하기&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;findviewbyid--&quot;&gt;findViewById 없이 사용하기&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;앱을 만들면서 항상해야 하고 코드가 안 이쁘게 보이는걸 데이터 바인딩으로 해결해 보자&lt;/li&gt;
+  &lt;li&gt;앱을 만들면서 항상해야 하고 코드가 안 이쁘게 보이는걸 데이터 바인딩으로 해결해 보자&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
@@ -2532,11 +2583,11 @@ notification: {
       <item>
         <title>retrofit2 + okhttp3 + rxandroid2네이버 기계번역 사용하기</title>
         
-          <description>&lt;h3&gt;retrofit2 + rxandroid2 를 이용한 통신&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;retrofit2--rxandroid2---&quot;&gt;retrofit2 + rxandroid2 를 이용한 통신&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;rxandroid2 를 추가해 보았습니다.&lt;/li&gt;
+  &lt;li&gt;rxandroid2 를 추가해 보았습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 05 Feb 2017 00:00:00 +0000</pubDate>
@@ -2550,11 +2601,11 @@ notification: {
       <item>
         <title>retrofit2 + okhttp3 네이버 기계번역 사용하기</title>
         
-          <description>&lt;h3&gt;retrofit2 를 이용한 통신&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;retrofit2---&quot;&gt;retrofit2 를 이용한 통신&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;가장 많이 사용되는 통신라이브러리를 이용해서 네이버기계 번역 앱을 만들어 보았습니다.&lt;/li&gt;
+  &lt;li&gt;가장 많이 사용되는 통신라이브러리를 이용해서 네이버기계 번역 앱을 만들어 보았습니다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
@@ -2568,7 +2619,8 @@ notification: {
       <item>
         <title>RxAndroid2 를 이용해서 앱을 만들어 보자</title>
         
-          <description>&lt;h4&gt;1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;rxandroid2-------rxandroid---&quot;&gt;1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자&lt;/h4&gt;
+
 </description>
         
         <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
@@ -2582,29 +2634,29 @@ notification: {
       <item>
         <title>안드로이드 WebView 53 SSL 버그</title>
         
-          <description>&lt;h4&gt;1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;webview-53--ssl---&quot;&gt;1. 안드로이드 WebView 53 에서 ssl 에러가 발생한 이유&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;webview 버전 53 에서 인증서 버그&lt;/li&gt;
-&lt;li&gt;여기 저기에서 문제 발생에 대한 공지 내용 
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://channel.daum.net/content/232337?dmp_channel=notice&quot;&gt;다음 공지&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://sir.kr/co_notice/1205&quot;&gt;KG 이니시스 공지&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;에러 내용은 webview 버전 53 일때 ssl 인증서 오류가 발생한다.
-
-&lt;ul&gt;
-&lt;li&gt;정확히 symantec 인증서 에서만 오류가 발생 한다고 한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;해결 방법은 다음의 공지 처럼 크롬 업데이트나 웹뷰 업데이트 설치 말고는 방법이 없다&lt;/li&gt;
-&lt;li&gt;그래도 테스트를 내용을 확인 해야 마음이 편하다. 구글 에서도 인증서 오류 관련 팝업을 넣어야 한다고 공지함&lt;/li&gt;
-&lt;li&gt;구글의 공지도 있고 해서 테스틀 진행함 &lt;/li&gt;
-&lt;li&gt;테스트를 위해서 테스트 기기에 webview 53 버전을 설치함 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-53-0-2785-97-release/&quot;&gt;webview 53 다운로드 경로&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;구글에서 추가 해야한다고 하는  ssl error 팝업을 아래와 같이 추가함
-&lt;script src=&quot;https://gist.github.com/pyeongho/66a50062921216dfae7a1abb9e8cb94e.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;webview 버전 53 에서 인증서 버그&lt;/li&gt;
+  &lt;li&gt;여기 저기에서 문제 발생에 대한 공지 내용
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://channel.daum.net/content/232337?dmp_channel=notice&quot;&gt;다음 공지&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://sir.kr/co_notice/1205&quot;&gt;KG 이니시스 공지&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;에러 내용은 webview 버전 53 일때 ssl 인증서 오류가 발생한다.
+    &lt;ul&gt;
+      &lt;li&gt;정확히 symantec 인증서 에서만 오류가 발생 한다고 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;해결 방법은 다음의 공지 처럼 크롬 업데이트나 웹뷰 업데이트 설치 말고는 방법이 없다&lt;/li&gt;
+  &lt;li&gt;그래도 테스트를 내용을 확인 해야 마음이 편하다. 구글 에서도 인증서 오류 관련 팝업을 넣어야 한다고 공지함&lt;/li&gt;
+  &lt;li&gt;구글의 공지도 있고 해서 테스틀 진행함&lt;/li&gt;
+  &lt;li&gt;테스트를 위해서 테스트 기기에 webview 53 버전을 설치함&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-53-0-2785-97-release/&quot;&gt;webview 53 다운로드 경로&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;구글에서 추가 해야한다고 하는  ssl error 팝업을 아래와 같이 추가함
+ &lt;script src=&quot;https://gist.github.com/pyeongho/66a50062921216dfae7a1abb9e8cb94e.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
@@ -2618,16 +2670,16 @@ notification: {
       <item>
         <title>EditText 를 이용한 RecyclerView 검색 기능</title>
         
-          <description>&lt;h4&gt;1. EditText에서 한두 글자를 입력하면 리스트에서 해당 결과를 보여주는 방법&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;edittext--------&quot;&gt;1. EditText에서 한두 글자를 입력하면 리스트에서 해당 결과를 보여주는 방법&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;RecyclerView 에 검색 기능을 추가하여 한두 글자를 입력으로 원하는 결과만 확인 하는 방법&lt;/li&gt;
-&lt;li&gt;RecyclerView에 원하는 내용만 출력하기&lt;/li&gt;
-&lt;li&gt;기본 내용은 &lt;a href=&quot;http://jizard.tistory.com/53&quot;&gt;http://jizard.tistory.com/53&lt;/a&gt; 블로그를 참조 했습니다.&lt;/li&gt;
-&lt;li&gt;리스트2개를 가지고  contain 에 포함 된것만 보여주는 형태 입니다.&lt;/li&gt;
-&lt;li&gt;중요한 코드는 아래와 같습니다.
+  &lt;li&gt;RecyclerView 에 검색 기능을 추가하여 한두 글자를 입력으로 원하는 결과만 확인 하는 방법&lt;/li&gt;
+  &lt;li&gt;RecyclerView에 원하는 내용만 출력하기&lt;/li&gt;
+  &lt;li&gt;기본 내용은 &lt;a href=&quot;http://jizard.tistory.com/53&quot;&gt;http://jizard.tistory.com/53&lt;/a&gt; 블로그를 참조 했습니다.&lt;/li&gt;
+  &lt;li&gt;리스트2개를 가지고  contain 에 포함 된것만 보여주는 형태 입니다.&lt;/li&gt;
+  &lt;li&gt;중요한 코드는 아래와 같습니다.
 &lt;script src=&quot;https://gist.github.com/pyeongho/fbe79093772cfa1b62fc3f97659bdaed.js&quot;&gt;&lt;/script&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 15 Jan 2017 00:00:00 +0000</pubDate>
@@ -2641,13 +2693,13 @@ notification: {
       <item>
         <title>jekyll 댓글 추가 하기</title>
         
-          <description>&lt;h4&gt;1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;disqus--------3&quot;&gt;1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Disqus 가입하기&lt;/li&gt;
-&lt;li&gt;Disqus 설정하기&lt;/li&gt;
-&lt;li&gt;github 연동하기&lt;/li&gt;
+  &lt;li&gt;Disqus 가입하기&lt;/li&gt;
+  &lt;li&gt;Disqus 설정하기&lt;/li&gt;
+  &lt;li&gt;github 연동하기&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sat, 14 Jan 2017 00:00:00 +0000</pubDate>
@@ -2661,16 +2713,18 @@ notification: {
       <item>
         <title>안드로이드 스튜디오 한글 깨짐</title>
         
-          <description>&lt;h4&gt;1. 안드로이드 스튜디오 2.X 버전에서 한글깨짐 수정&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;x---&quot;&gt;1. 안드로이드 스튜디오 2.X 버전에서 한글깨짐 수정&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 스튜디오 최신버전에서 레이아웃 미리보기에서 한글깨짐 현상 수정&lt;/li&gt;
-&lt;li&gt;안드로이드 스튜디오가 설치된 경로 내의 다음 파일을 확인합니다. (OS X의 경우 안드로이드 스튜디오 실행파일을 오른쪽 선택한 후 ‘Show Package contents’로 하위 폴더 탐색 가능)&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;아래가 경로 입니다.&lt;/p&gt;
+  &lt;li&gt;안드로이드 스튜디오 최신버전에서 레이아웃 미리보기에서 한글깨짐 현상 수정&lt;/li&gt;
+  &lt;li&gt;안드로이드 스튜디오가 설치된 경로 내의 다음 파일을 확인합니다. (OS X의 경우 안드로이드 스튜디오 실행파일을 오른쪽 선택한 후 ‘Show Package contents’로 하위 폴더 탐색 가능)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아래가 경로 입니다.&lt;/p&gt;
 
-&lt;p&gt;// Windows
-{Android Studio 설치경로}/plugins/android/lib/layoutlib/data/fonts/fonts.xml&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;// Windows
+ {Android Studio 설치경로}/plugins/android/lib/layoutlib/data/fonts/fonts.xml&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Mon, 09 Jan 2017 00:00:00 +0000</pubDate>
@@ -2684,15 +2738,15 @@ notification: {
       <item>
         <title>파이어베이스 데이터베이스를  사용해보자</title>
         
-          <description>&lt;h4&gt;1. firebase database 를 사용해 보자&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;firebase-database---&quot;&gt;1. firebase database 를 사용해 보자&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 스튜디오 에서 tools -&amp;gt; firebase 를 클릭한다.&lt;/li&gt;
-&lt;li&gt;firebase 관련 메뉴들이 나오는데 사용 할 realtime database 를 선택&lt;/li&gt;
-&lt;li&gt;기본 firebase가 연결되어 있다고 나옴 &lt;/li&gt;
-&lt;li&gt;firebase authentication 문서를 미리 진행 하면 connected 로 변경 됩니다.&lt;/li&gt;
-&lt;li&gt;연결 안되어 있으면 connect 클릭해 주세요&lt;/li&gt;
+  &lt;li&gt;안드로이드 스튜디오 에서 tools -&amp;gt; firebase 를 클릭한다.&lt;/li&gt;
+  &lt;li&gt;firebase 관련 메뉴들이 나오는데 사용 할 realtime database 를 선택&lt;/li&gt;
+  &lt;li&gt;기본 firebase가 연결되어 있다고 나옴&lt;/li&gt;
+  &lt;li&gt;firebase authentication 문서를 미리 진행 하면 connected 로 변경 됩니다.&lt;/li&gt;
+  &lt;li&gt;연결 안되어 있으면 connect 클릭해 주세요&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
@@ -2706,13 +2760,13 @@ notification: {
       <item>
         <title>파이어베이스를 사용해보자</title>
         
-          <description>&lt;h4&gt;1. firebase authentication 를 사용해 보자&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;firebase-authentication---&quot;&gt;1. firebase authentication 를 사용해 보자&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;안드로이드 스튜디오 에서 tools -&amp;gt; firebase 를 클릭한다.&lt;/li&gt;
-&lt;li&gt;firebase 관련 메뉴들이 나오는데 사용 할 authentication 선택 한다. &lt;/li&gt;
-&lt;li&gt;영어지만 설명서 대로 진행 한다.&lt;/li&gt;
+  &lt;li&gt;안드로이드 스튜디오 에서 tools -&amp;gt; firebase 를 클릭한다.&lt;/li&gt;
+  &lt;li&gt;firebase 관련 메뉴들이 나오는데 사용 할 authentication 선택 한다.&lt;/li&gt;
+  &lt;li&gt;영어지만 설명서 대로 진행 한다.&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
         
         <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
@@ -2726,9 +2780,9 @@ notification: {
       <item>
         <title>butterknife 라이브러리 사용</title>
         
-          <description>&lt;h3&gt;butterknife 를 사용해 보자&lt;/h3&gt;
-
+          <description>&lt;h3 id=&quot;butterknife---&quot;&gt;butterknife 를 사용해 보자&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/JakeWharton/butterknife&quot;&gt;butterknife github&lt;/a&gt;&lt;/p&gt;
+
 </description>
         
         <pubDate>Thu, 29 Dec 2016 00:00:00 +0000</pubDate>
@@ -2742,7 +2796,8 @@ notification: {
       <item>
         <title>OWASP top 10 항목을 이용한 취약점 확인</title>
         
-          <description>&lt;h4&gt;1. Mobile OWASP Top 10 ( 2014)&lt;/h4&gt;
+          <description>&lt;h4 id=&quot;mobile-owasp-top-10--2014&quot;&gt;1. Mobile OWASP Top 10 ( 2014)&lt;/h4&gt;
+
 </description>
         
         <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
@@ -2756,9 +2811,10 @@ notification: {
       <item>
         <title>APK 바이너리 분석 및 리패키징</title>
         
-          <description>&lt;h3&gt;4. APK 바이너리 분석 및 리패키징&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;apk----&quot;&gt;4. APK 바이너리 분석 및 리패키징&lt;/h3&gt;
 
-&lt;h4&gt;1.첨부된 apk 의 코드를 확인 한다.&lt;/h4&gt;
+&lt;h4 id=&quot;apk-----1&quot;&gt;1.첨부된 apk 의 코드를 확인 한다.&lt;/h4&gt;
+
 </description>
         
         <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
@@ -2772,9 +2828,9 @@ notification: {
       <item>
         <title>andorid 취약점</title>
         
-          <description>&lt;h4&gt;2. 국내 모바일 앱 보안점검 체크리스트&lt;/h4&gt;
-
+          <description>&lt;h4 id=&quot;section&quot;&gt;2. 국내 모바일 앱 보안점검 체크리스트&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;http://wikisecurity.net/etc:%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0_%EA%B8%88%EC%9C%B5%EC%95%88%EC%A0%84%EB%8C%80%EC%B1%85_%EC%9D%B4%ED%96%89%EC%8B%A4%ED%83%9C_%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8&quot;&gt;스마트폰 금융안전대책 이행 실태 체크리스트&lt;/a&gt;&lt;/p&gt;
+
 </description>
         
         <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
@@ -2788,9 +2844,9 @@ notification: {
       <item>
         <title>모바일앱 보안코딩</title>
         
-          <description>&lt;h3&gt;andorid-java 시큐어 코딩 가이드&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;andorid-java---&quot;&gt;andorid-java 시큐어 코딩 가이드&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 </description>
         
         <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
@@ -2804,7 +2860,8 @@ notification: {
       <item>
         <title>python 모듈 만들기,python C 모듈 원형</title>
         
-          <description>&lt;h3&gt;python 사용 할 C 라이브러리 만들기&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;python---c--&quot;&gt;python 사용 할 C 라이브러리 만들기&lt;/h3&gt;
+
 </description>
         
         <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
@@ -2818,7 +2875,8 @@ notification: {
       <item>
         <title>mysql 사용법</title>
         
-          <description>&lt;h3&gt;리눅스에서 mysql 사용하기&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;mysql-&quot;&gt;리눅스에서 mysql 사용하기&lt;/h3&gt;
+
 </description>
         
         <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
@@ -2832,7 +2890,8 @@ notification: {
       <item>
         <title>python 에서 사용할 C 엑셀 모듈 만들기</title>
         
-          <description>&lt;h3&gt;python에서 사용 할 C 모듈 만들기&lt;/h3&gt;
+          <description>&lt;h3 id=&quot;python---c--&quot;&gt;python에서 사용 할 C 모듈 만들기&lt;/h3&gt;
+
 </description>
         
         <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>

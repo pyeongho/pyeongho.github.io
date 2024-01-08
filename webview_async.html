@@ -138,37 +138,39 @@
 
         <section class="post-content">
             
-            <h3>웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
-
+            <h3 id="section">웹뷰 사용시 비동기 처리를 주의 해야 합니다.</h3>
 <ul>
-<li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
-<li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
-<li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
-<li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
-<li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
+  <li>웹뷰는 제어 함수들은 콜백 형태로 함수를 제공해 주고 있습니다.</li>
+  <li>크롬 클라이언트나 , 웹뷰클라이언트의 함수를 오버라이딩 해서 많이 사용 할 것입니다.</li>
+  <li>예를 들어서 페이지 로딩이 완료된 이후 동작을 처리하기 위해서 웹뷰 클라이언트의 onPageFinished 사용을 가정 합니다.</li>
+  <li>onPageFinished 함수에 화면 UI 제어 함수를 추가 합니다. (onPageFinished -&gt; binding.loading.isVisible = false)</li>
+  <li>binding 은 뷰바인딩 입니다. 구글원하는 대로 아래 처럼 사용하면 에러가 발생 합니다.</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  private var _binding: xxxxxxxxxBinding? = null
-  val binding get() = _binding!!
 
-  override fun onDestroyView() {
+<p>~~~
+  private var _binding: xxxxxxxxxBinding? = null
+  val binding get() = _binding!!</p>
+
+<p>override fun onDestroyView() {
           super.onDestroyView()
           _binding = null
       }
-</code></pre></div>
-<ul>
-<li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
-<li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
-<li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
-<li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
-</ul>
-
-<h3>웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+  ~~~</p>
 
 <ul>
-<li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
-<li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
-<li>꼭 신경 써야 합니다.</li>
+  <li>위와 같이 사용시 크래시는 항상 재현 시킬 수 있습니다.</li>
+  <li>해당 웹뷰 접근 -&gt; 페이지 완료 전에 해당 화면 종료 -&gt; 약간 기다림(페이지 완료 될때 까지) -&gt; 크래시</li>
+  <li>매우 당연한 결과 입니다. 해당 화면이 이미 종료 되어  onDestroyView 가 실행 되었고 이후에 onPageFinished 가 실행 되었습니다.</li>
+  <li>그래서 binding.loading.isVisible = false 를 실행 하려면 크래시가 발생 되기 때문입니다.</li>
 </ul>
+
+<h3 id="section-1">웹뷰 콜백을 받아서 처리 할 때는 웹뷰 처리를 신경써서 해야 합니다.</h3>
+<ul>
+  <li>화면이 종료 될때 웹뷰도 같이 종료 시키던지(onDestroyView 에서 binding.webview.destroy())</li>
+  <li>화면종료 후에 UI 처리 할때 예외를 추가(try catch )</li>
+  <li>꼭 신경 써야 합니다.</li>
+</ul>
+
 
 
         </section>
@@ -270,7 +272,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

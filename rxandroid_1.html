@@ -134,44 +134,48 @@
 
         <section class="post-content">
             
-            <h4>1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자</h4>
+            <h4 id="rxandroid2-------rxandroid---">1. RxAndroid2 를 이용한 샘플 앱을 만들어 보면서 RxAndroid 에 적응해 보자</h4>
 
 <ul>
-<li>인터넷에 rxjava, RxAndroid 내용들이 너무 많아서 해당 내용은 따로 기술 안함</li>
-<li><a href="https://realm.io/kr/news/rxandroid/">공부하기 좋은 링크</a></li>
-<li>위 링크가 기본 rxandroid 를 이해하기 좋습니다.</li>
-<li><p>약간의 요약 </p>
-
-<ul>
-<li>1라인 컨베이어 벨트 또는 강 를 만든다. (Observable)</li>
-<li>컨베이어벨트 끝 에서 하나씩 작업하는 작업 자 또는 강에서 하나씩 건진는 작업자(Subscriber)</li>
-<li>Observable 에 데이터를 제공하는 생산자 
-
-<ul>
-<li>onNext - 새로운 데이터를 전달한다.</li>
-<li>onCompleted - 스트림의 종료.</li>
-<li>onError - 에러 신호를 전달한다</li>
-</ul></li>
-</ul></li>
-<li><p>가장 간단한 문자열을 전달하는 샘플 코드를 확인해 보겠습니다.</p></li>
-<li><p>기본적인 프로젝트 생성후 아래 2개의 의존성을 추가합니다.(app level)</p></li>
+  <li>인터넷에 rxjava, RxAndroid 내용들이 너무 많아서 해당 내용은 따로 기술 안함</li>
+  <li><a href="https://realm.io/kr/news/rxandroid/">공부하기 좋은 링크</a></li>
+  <li>위 링크가 기본 rxandroid 를 이해하기 좋습니다.</li>
+  <li>약간의 요약
+    <ul>
+      <li>1라인 컨베이어 벨트 또는 강 를 만든다. (Observable)</li>
+      <li>컨베이어벨트 끝 에서 하나씩 작업하는 작업 자 또는 강에서 하나씩 건진는 작업자(Subscriber)</li>
+      <li>Observable 에 데이터를 제공하는 생산자
+        <ul>
+          <li>onNext - 새로운 데이터를 전달한다.</li>
+          <li>onCompleted - 스트림의 종료.</li>
+          <li>onError - 에러 신호를 전달한다</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>가장 간단한 문자열을 전달하는 샘플 코드를 확인해 보겠습니다.</li>
+  <li>기본적인 프로젝트 생성후 아래 2개의 의존성을 추가합니다.(app level)</li>
 </ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    compile 'io.reactivex.rxjava2:rxjava:2.0.2'
+
+<p><code class="highlighter-rouge">
+    compile 'io.reactivex.rxjava2:rxjava:2.0.2'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1' 
-</code></pre></div>
-<ul>
-<li>코드는 아래 입니다. </li>
-<li>getObservable() 함수에 onNext 도 사용하지 않고 Observable을 생성합니다. 간단하게 상용 가능합니다.
+ </code></p>
 
 <ul>
-<li>Observable.just(&quot;Cricket&quot;, &quot;Football&quot;);</li>
-</ul></li>
-<li>실행을 하면 onNext 가 2번 호출 되며 인자는 크리켓과 풋볼이 넘어 옵니다.</li>
-<li>onCompleted 이 실행되면서 동작이 완료 됩니다.</li>
-<li>아래 코드가 가장 간단하고 기본적인 내용이니 꼭 이해 해야 합니다.<br></li>
+  <li>코드는 아래 입니다.</li>
+  <li>getObservable() 함수에 onNext 도 사용하지 않고 Observable을 생성합니다. 간단하게 상용 가능합니다.
+    <ul>
+      <li>Observable.just(“Cricket”, “Football”);</li>
+    </ul>
+  </li>
+  <li>실행을 하면 onNext 가 2번 호출 되며 인자는 크리켓과 풋볼이 넘어 옵니다.</li>
+  <li>onCompleted 이 실행되면서 동작이 완료 됩니다.</li>
+  <li>아래 코드가 가장 간단하고 기본적인 내용이니 꼭 이해 해야 합니다.</li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/b912db5c42e318f54b5941a54b7b65b7.js"></script></p>
+<script src="https://gist.github.com/pyeongho/b912db5c42e318f54b5941a54b7b65b7.js"></script>
+
 
 
         </section>
@@ -273,7 +277,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

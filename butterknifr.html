@@ -134,33 +134,36 @@
 
         <section class="post-content">
             
-            <h3>butterknife 를 사용해 보자</h3>
-
+            <h3 id="butterknife---">butterknife 를 사용해 보자</h3>
 <p><a href="https://github.com/JakeWharton/butterknife">butterknife github</a></p>
 
-<h4>1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함</h4>
-<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">ImageButton</span> <span class="n">btn_send</span><span class="o">;</span> 
+<h4 id="xml-----------">1. 안드로이드 xml 레이아웃 사용시 아래 와 같은 작업을 해야함 많아 지면 매번 해야함</h4>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">ImageButton</span> <span class="n">btn_send</span><span class="o">;</span> 
     <span class="n">btn_send</span> <span class="o">=</span> <span class="o">(</span><span class="n">ImageButton</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btn_send</span><span class="o">);</span>
     <span class="n">ib_chat_photo</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
-</code></pre></div>
-<h4>2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.</h4>
+</code></pre>
+</div>
 
+<h4 id="butterknife------">2. butterknife 위 작업을 편하게 해주는 라이브러리 입니다.</h4>
 <ul>
-<li>안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다</li>
-<li><p>아래 내용을 모듈의 적당한 위치 시켜야 합니다.
-<script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script></p></li>
-<li><p>프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
-<script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script></p></li>
+  <li>안드로이드 스튜디오 에서 butterknife 라이브러리를 추가해준다</li>
+  <li>
+    <p>아래 내용을 모듈의 적당한 위치 시켜야 합니다.
+ <script src="https://gist.github.com/pyeongho/e2b7c978bb556329b06d6bdfd9ec799d.js"></script></p>
+  </li>
+  <li>프로젝트 레벨의 gradle 에 아래 내용을 추가해 준다.
+ <script src="https://gist.github.com/pyeongho/4bd2ddf00e1137572724668654ee1e87.js"></script></li>
 </ul>
 
-<h4>3. 안드로이드 스튜디오 플러그인을 설치</h4>
-
+<h4 id="section">3. 안드로이드 스튜디오 플러그인을 설치</h4>
 <ul>
-<li>setting -&gt; plugins -&gt; browse repositories   에서 butterknife zelezny 찾아서 설치 (안드로이드 스튜디오 재시작함)</li>
-<li>레이아웃 xml 파일에서 마우스 오른쪽 버튼 클릭후 generate 를 선택 합니다.</li>
-<li>butterknife 가 보입니다. 선택합니다.</li>
-<li>체크박스 선택 창이 나옵니다.  원하는 속성을 체크 체크 해서 완료 하면 됩니다.</li>
+  <li>setting -&gt; plugins -&gt; browse repositories   에서 butterknife zelezny 찾아서 설치 (안드로이드 스튜디오 재시작함)</li>
+  <li>레이아웃 xml 파일에서 마우스 오른쪽 버튼 클릭후 generate 를 선택 합니다.</li>
+  <li>butterknife 가 보입니다. 선택합니다.</li>
+  <li>체크박스 선택 창이 나옵니다.  원하는 속성을 체크 체크 해서 완료 하면 됩니다.</li>
 </ul>
+
 
 
         </section>
@@ -251,7 +254,7 @@
         <a class="read-next-story prev " style="background-image: url(/assets/images/cover7.jpg)" href="/mobile-sec.-owasp">
             <section class="post">
                 <h2>OWASP top 10 항목을 이용한 취약점 확인</h2>
-                <p>1. Mobile OWASP Top 10 ( 2014) | No | 진단 항목 | 내용 |...</p>
+                <p>1. Mobile OWASP Top 10 ( 2014) No 진단 항목 내용 1 서버 측 통제...</p>
             </section>
         </a>
     
@@ -262,7 +265,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

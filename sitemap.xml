@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://pyeongho.github.io/kmm</loc>
+    </url>
+    
+    <url>
         <loc>https://pyeongho.github.io/spa</loc>
     </url>
     
@@ -3469,6 +3473,22 @@
     
     <url>
         <loc>https://pyeongho.github.io/tag/spa/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/kmm/rss.xml</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://pyeongho.github.io/tag/kmm/</loc>
     </url>
     
     

@@ -138,14 +138,15 @@
 
         <section class="post-content">
             
-            <h3>윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그</h3>
-
+            <h3 id="section">윈도우즈에서 파이어베이스를 이용해서 개발중 발생한 버그</h3>
 <ul>
-<li>기본적인 파이어베이스 CLI 사용법 아닙니다.</li>
+  <li>기본적인 파이어베이스 CLI 사용법 아닙니다.</li>
 </ul>
 
-<h4>firebase deploy 진행중 발생하는 에러</h4>
-<div class="highlight"><pre><code class="language-" data-lang="">    i  deploying functions, hosting
+<h4 id="firebase-deploy---">firebase deploy 진행중 발생하는 에러</h4>
+
+<p><code class="highlighter-rouge">
+    i  deploying functions, hosting
     Running command: npm --prefix $RESOURCE_DIR run lint
     npm ERR! path D:\abcd\$RESOURCE_DIR\package.json
     npm ERR! code ENOENT
@@ -156,16 +157,18 @@
     npm ERR! enoent This is related to npm not being able to find a file.
     npm ERR! enoent
     ...
-</code></pre></div>
-<ul>
-<li>윈도우에서 최종 배포 명령을 하니 위처럼 에러가 발생 여기 저기 찾아 보니 수정을 해야함 
+</code></p>
 
 <ul>
-<li>$RESOURCE<em>DIR -&gt; %RESOURCE</em>DIR%</li>
-<li>윈도우와 리눅스계열 컴퓨터의 경로 설정 방법에 의한 차이로 보입니다. </li>
-<li>firebase.json 파일을 열어서 위 내용처럼 바꾸어 주면 됩니다.</li>
-</ul></li>
+  <li>윈도우에서 최종 배포 명령을 하니 위처럼 에러가 발생 여기 저기 찾아 보니 수정을 해야함
+    <ul>
+      <li>$RESOURCE_DIR -&gt; %RESOURCE_DIR%</li>
+      <li>윈도우와 리눅스계열 컴퓨터의 경로 설정 방법에 의한 차이로 보입니다.</li>
+      <li>firebase.json 파일을 열어서 위 내용처럼 바꾸어 주면 됩니다.</li>
+    </ul>
+  </li>
 </ul>
+
 
 
         </section>
@@ -267,7 +270,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

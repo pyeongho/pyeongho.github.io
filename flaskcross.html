@@ -138,31 +138,32 @@
 
         <section class="post-content">
             
-            <h3>플라스크에서 크로스도메인 허용</h3>
+            <h3 id="section">플라스크에서 크로스도메인 허용</h3>
 
-<h4>파이썬 서버에 크로스도메인 허용</h4>
-
+<h4 id="section-1">파이썬 서버에 크로스도메인 허용</h4>
 <ul>
-<li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
-<code>
- &#39;Access-Control-Allow-Origin: *&#39;
- &#39;Access-Control-Allow-Methods: GET&#39;
- &#39;Access-Control-Allow-Headers: X-Requested-With, Content-Type&#39;
+  <li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
+<code class="highlighter-rouge">
+ 'Access-Control-Allow-Origin: *'
+ 'Access-Control-Allow-Methods: GET'
+ 'Access-Control-Allow-Headers: X-Requested-With, Content-Type'
 </code></li>
-<li>내용을 찾아 보니 크로스 도메인 허용</li>
-<li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.<br></li>
-<li>오리지널 참고 코드 입니다.
-
-<ul>
-<li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
-</ul></li>
-<li><p>필요한 코드
-<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p></li>
-<li><p>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.</p>
-
-<ul>
-<li>@crossdomain(origin=&#39;*&#39;)<br></li>
-</ul></li>
+  <li>내용을 찾아 보니 크로스 도메인 허용</li>
+  <li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.</li>
+  <li>오리지널 참고 코드 입니다.
+    <ul>
+      <li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>필요한 코드
+<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p>
+  </li>
+  <li>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.
+    <ul>
+      <li>@crossdomain(origin=’*’)</li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -265,7 +266,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

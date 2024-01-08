@@ -18,48 +18,52 @@
 	  <pubDate>2018-02-12T00:00:00+00:00</pubDate>
 	  <guid>//lifecycle</guid>
 	  <description><![CDATA[
-	     <h3>애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.</h3>
-
+	     <h3 id="foreground------">애플리케이션이 Foreground 를 확인 해야 할 때는 많습니다.</h3>
 <ul>
-<li>안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.</li>
-<li>백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.</li>
-<li>api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.</li>
-<li>Application.ActivityLifecycleCallbacks 를 이용하는 방법</li>
-<li>Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다. </li>
-<li>사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.</li>
-<li><div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">
-    class OnApplication: Application() {
-        override fun onCreate() {
-            super.onCreate()
-            Foreground.init(this)
+  <li>안드로이드 사용자중 홈버튼으로 앱을 종료 시키는 사람이 의외로 많다.</li>
+  <li>백그라운드 동작을 허용하지 않기 위해서는 포그라운드 인지 백그라운드 인지 확인을 해야 한다.</li>
+  <li>api 26이 나오면서 권한 없이 사용 가능한 방법이 생겼다.</li>
+  <li>Application.ActivityLifecycleCallbacks 를 이용하는 방법</li>
+  <li>Application 상속받은 클래스에서 위 클래스를 구현해 주면 됩니다.</li>
+  <li>사용은 애플리케이션 상속 받은 코드에서 init 을 호출해서 사용하면 됩니다.</li>
+  <li>
 
-        }
-    }
+    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code>
+    <span class="kd">class</span> <span class="nc">OnApplication</span><span class="p">:</span> <span class="n">Application</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">()</span>
+            <span class="n">Foreground</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+                
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-</code></pre></div></li>
-<li><p>애프리케이션 생성자에서 클래스를 초기화 합니다.</p></li>
-<li><p>싱글톤 클래스라서 사용은 편하게 하시면 됩니다. 아래 처럼 원하는걸로 편하게 사용하면 됩니다.</p>
-
-<ul>
-<li>Foreground.get().isBackground</li>
-<li>Foreground.get().appStatus</li>
-</ul></li>
-<li><p>전체 코드는 아래에 있습니다.</p>
-
-<ul>
-<li>간단한 동작 설명<br>
-
-<ul>
-<li>onActivityStarted 추가 되면 카운트 +1</li>
-<li>onActivityStopped 추가 되면 카운트 -1</li>
-<li>카운트가 0 이면 백그라운드</li>
-<li>카운트가 1 보다 크면 포그라운드</li>
-<li>카운트가 1 이면 포그라운드 전환<br></li>
-</ul></li>
-</ul></li>
+</code></pre>
+    </div>
+  </li>
+  <li>애프리케이션 생성자에서 클래스를 초기화 합니다.</li>
+  <li>싱글톤 클래스라서 사용은 편하게 하시면 됩니다. 아래 처럼 원하는걸로 편하게 사용하면 됩니다.
+    <ul>
+      <li>Foreground.get().isBackground</li>
+      <li>Foreground.get().appStatus</li>
+    </ul>
+  </li>
+  <li>전체 코드는 아래에 있습니다.
+    <ul>
+      <li>간단한 동작 설명
+        <ul>
+          <li>onActivityStarted 추가 되면 카운트 +1</li>
+          <li>onActivityStopped 추가 되면 카운트 -1</li>
+          <li>카운트가 0 이면 백그라운드</li>
+          <li>카운트가 1 보다 크면 포그라운드</li>
+          <li>카운트가 1 이면 포그라운드 전환</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<p><script src="https://gist.github.com/pyeongho/59944e4e9e8d76f45c6f395dccd1d8e8.js"></script></p>
+<script src="https://gist.github.com/pyeongho/59944e4e9e8d76f45c6f395dccd1d8e8.js"></script>
+
 
 	  ]]></description>
 	</item>

@@ -18,49 +18,42 @@
 	  <pubDate>2019-11-27T00:00:00+00:00</pubDate>
 	  <guid>//ssl</guid>
 	  <description><![CDATA[
-	     <h3>참고</h3>
-
+	     <h3 id="section">참고</h3>
 <ul>
-<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
+  <li><a href="https://m.blog.naver.com/PostView.nhn?blogId=youzang7&amp;logNo=221192794441&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">intellij Server Certificates 문제</a></li>
 </ul>
 
-<h3>안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
-
+<h3 id="intellij--------">안드로이드 스튜디오 , intellij 등을 사용시 뜬금 없이 나오는 인증서 오류 문제</h3>
 <ul>
-<li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
-
-<ul>
-<li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
-<li>Server&#39;s Certificate is not trusted pop-up</li>
-</ul></li>
+  <li>아래와 같은 에러들로 빌드 에러가 발샐할 때 (일반적이지는 않아요)
+    <ul>
+      <li>PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException</li>
+      <li>Server’s Certificate is not trusted pop-up</li>
+    </ul>
+  </li>
 </ul>
 
-<h3>참고 사이트</h3>
-
+<h3 id="section-1">참고 사이트</h3>
 <ul>
-<li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
+  <li>3개 정도의 방법입니다. 저는 사내 인증서 허용 방법으로 해결 했습니다. 마지막 방법은 실패해서 정리는 안했습니다.</li>
 </ul>
 
-<h2>설정 변경</h2>
-
+<h2 id="section-2">설정 변경</h2>
 <ul>
-<li> SSL 통신 관련 옵션을 해제
-
-<ul>
-<li>File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크</li>
-<li>저는 실패 했습니다.</li>
-</ul></li>
+  <li>SSL 통신 관련 옵션을 해제
+    - File &gt; Settings &gt; Tools &gt; Server Certificates &gt; Accept non-trusted certificates automatically 체크
+    - 저는 실패 했습니다.</li>
 </ul>
 
-<h2>사내 인증서 허용</h2>
-
+<h2 id="section-3">사내 인증서 허용</h2>
 <ul>
-<li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
-<li>저는 이걸로 성공 했습니다.</li>
-<li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
-<li>해당 경로의 파일들은 따로 백업</li>
-<li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
+  <li>회사내 인증서 및 self 인증서가 존재한다면 다음과 같이 진행한다.</li>
+  <li>저는 이걸로 성공 했습니다.</li>
+  <li>경로 : C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\lib\security</li>
+  <li>해당 경로의 파일들은 따로 백업</li>
+  <li>keytool ‐keystore cacerts ‐importcert ‐alias HQSSL ‐file HQSSL.cer 실행 (password : changeit , HQSSL.cer 사내 인증서 파일로 대체)</li>
 </ul>
+
 
 	  ]]></description>
 	</item>

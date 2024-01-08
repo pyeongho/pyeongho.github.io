@@ -18,24 +18,29 @@
 	  <pubDate>2019-02-21T00:00:00+00:00</pubDate>
 	  <guid>//how_phkim</guid>
 	  <description><![CDATA[
-	     <h3>PublishSubject , BehaviorSubject 비교</h3>
-
+	     <h3 id="publishsubject--behaviorsubject-">PublishSubject , BehaviorSubject 비교</h3>
 <ul>
-<li><p>PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.</p></li>
-<li><p>BehaviorSubject : 초기 값이 필요하고 새로운 가입자에게 최신 요소를 재생합니다. BehaviorSubject는 항상 최신 요소를 방출하기 때문에 기본 초기 값을 제공하지 않고 만들 수 없습니다. BehaviorSubject는 &quot;시간 경과에 따른 값&quot;을 묘사 할 때 유용합니다. 예를 들어, 생일의 이벤트 스트림은 제목이지만, 사람의 나이의 흐름은 BehaviorSubject가됩니다.</p></li>
+  <li>
+    <p>PublishSubject : 비어있는 시작하고 구독자에게만 새로운 요소를 방출합니다. PublishSubject가 생성시 즉시 요소를 방출하기 때문에 Subject가 작성되고 관찰자가 등록 할 때 하나 이상의 항목이 손실 될 수 있습니다.</p>
+  </li>
+  <li>
+    <p>BehaviorSubject : 초기 값이 필요하고 새로운 가입자에게 최신 요소를 재생합니다. BehaviorSubject는 항상 최신 요소를 방출하기 때문에 기본 초기 값을 제공하지 않고 만들 수 없습니다. BehaviorSubject는 “시간 경과에 따른 값”을 묘사 할 때 유용합니다. 예를 들어, 생일의 이벤트 스트림은 제목이지만, 사람의 나이의 흐름은 BehaviorSubject가됩니다.</p>
+  </li>
 </ul>
 
-<h3>복사 하기</h3>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-     clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
-</code></pre></div>
-<h3>zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
+<h3 id="section">복사 하기</h3>
 
+<p><code class="highlighter-rouge">kotlin
+    val clipboard = v.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+     clipboard.primaryClip = ClipData.newPlainText("힌트","복사할 내용")
+</code></p>
+
+<h3 id="zxing-qr-----------">zxing QR 코드 생성 아래처럼 길게 사용 가능 생각보다 오래 걸려서 비동기 처리</h3>
 <script src="https://gist.github.com/pyeongho/a648449d43ca2bafd5d075a1c6382055.js"></script>
 
-<h3>zxing QR 코드 코드만</h3>
-
+<h3 id="zxing-qr--">zxing QR 코드 코드만</h3>
 <script src="https://gist.github.com/pyeongho/140951225375239ed0567b60ca55e112.js"></script>
+
 
 	  ]]></description>
 	</item>

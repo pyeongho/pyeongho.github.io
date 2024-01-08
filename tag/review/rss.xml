@@ -18,23 +18,21 @@
 	  <pubDate>2020-09-23T00:00:00+00:00</pubDate>
 	  <guid>//review</guid>
 	  <description><![CDATA[
-	     <h3>안드로이드도 리뷰를 요청 할 수 있습니다.</h3>
-
+	     <h3 id="section">안드로이드도 리뷰를 요청 할 수 있습니다.</h3>
 <ul>
-<li><a href="https://developer.android.com/guide/playcore/in-app-review">https://developer.android.com/guide/playcore/in-app-review</a></li>
+  <li><a href="https://developer.android.com/guide/playcore/in-app-review">https://developer.android.com/guide/playcore/in-app-review</a></li>
 </ul>
 
-<h3>사용법</h3>
-
+<h3 id="section-1">사용법</h3>
 <ul>
-<li>참고 문서에도 있지만 천천히 따라하기</li>
-<li>의존성 주입 :  implementation &#39;com.google.android.play:core-ktx:1.8.1&#39;</li>
-<li><p>추가 코드 : 결과 처리 예외 처리 역시 가능함</p>
+  <li>참고 문서에도 있지만 천천히 따라하기</li>
+  <li>의존성 주입 :  implementation ‘com.google.android.play:core-ktx:1.8.1’</li>
+  <li>추가 코드 : 결과 처리 예외 처리 역시 가능함
+    <ul>
+      <li></li>
+    </ul>
 
-<ul>
-<li></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">    val manager = ReviewManagerFactory.create(context)
+    <div class="highlighter-rouge"><pre class="highlight"><code>    val manager = ReviewManagerFactory.create(context)
     val request = manager.requestReviewFlow()
     request.addOnCompleteListener { request -&gt;
         if (request.isSuccessful) {
@@ -44,8 +42,11 @@
             // There was some problem, continue regardless of the result.
         }
     }  
-</code></pre></div></li>
+</code></pre>
+    </div>
+  </li>
 </ul>
+
 
 	  ]]></description>
 	</item>

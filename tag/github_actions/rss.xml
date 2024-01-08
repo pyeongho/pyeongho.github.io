@@ -18,49 +18,59 @@
 	  <pubDate>2021-09-13T00:00:00+00:00</pubDate>
 	  <guid>//github_actions</guid>
 	  <description><![CDATA[
-	     <h3>깃허브 액션이 빌드 에러 발생</h3>
-
+	     <h3 id="section">깃허브 액션이 빌드 에러 발생</h3>
 <ul>
-<li>라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러</li>
-<li><p>로걸에서 캐시 클리어 이후로 빌드 실패</p>
-<div class="highlight"><pre><code class="language-" data-lang=""> ./gradlew build --refresh-dependencies --stacktrace
-</code></pre></div></li>
-<li><p>터미널에서 --refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행</p></li>
-<li><p>/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.</p></li>
-<li><p>결국 로컬에서도 에러가 발생한다.</p></li>
-<li><p>특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
-</code></pre></div></li>
-<li><p>이후 해당 에러로 검색 하기 시작
--루트의 그래들을 수정 했습니다.</p></li>
-<li><p>allprojects -&gt; repositories 위치의 내용을 확인 했습니다.</p></li>
-<li><p>순서를 변경 했습니다.</p></li>
-<li><p>mavenCentral , maven, google, jcenter</p></li>
-</ul>
-<div class="highlight"><pre><code class="language-" data-lang="">  // 변경 전
-  repositories {
-          maven { url 'https://maven.google.com' }
-          maven { url 'https://jitpack.io' }
-          maven { url 'https://jcenter.bintray.com' }
-          maven { url 'https://naver.jfrog.io/artifactory/maven/' }
-          jcenter()
-          flatDir { dirs 'libs' }
-          google()
-          mavenCentral()
-      }
+  <li>라이브러리 다운로드 받지 못하고 에러가 발생하면서 에러</li>
+  <li>
+    <p>로걸에서 캐시 클리어 이후로 빌드 실패</p>
 
- // 변경 후
+    <div class="highlighter-rouge"><pre class="highlight"><code> ./gradlew build --refresh-dependencies --stacktrace
+</code></pre>
+    </div>
+  </li>
+  <li>터미널에서 –refresh-dependencies 를 추가후 빌드하면 라이브러리를 다운로드 받아서 진행</li>
+  <li>/Users/사용자$/Users/.gradle/caches/버전/ 폴더를 삭제 해도 됩니다.</li>
+  <li>결국 로컬에서도 에러가 발생한다.</li>
+  <li>
+    <p>특정 라이브러리 에러가 발생해서 해당 라이브러리르 패키지로 바꾸면 다른 라이브러리들이 에러를 막 발생 대충 아래와 같은 문구가 포함 되어 있습니다.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for
+</code></pre>
+    </div>
+  </li>
+  <li>이후 해당 에러로 검색 하기 시작
+  -루트의 그래들을 수정 했습니다.</li>
+  <li>allprojects -&gt; repositories 위치의 내용을 확인 했습니다.</li>
+  <li>순서를 변경 했습니다.</li>
+  <li>mavenCentral , maven, google, jcenter</li>
+</ul>
+
+<p>```
+  // 변경 전
+  repositories {
+          maven { url ‘https://maven.google.com’ }
+          maven { url ‘https://jitpack.io’ }
+          maven { url ‘https://jcenter.bintray.com’ }
+          maven { url ‘https://naver.jfrog.io/artifactory/maven/’ }
+          jcenter()
+          flatDir { dirs ‘libs’ }
+          google()
+          mavenCentral()
+      }</p>
+
+<p>// 변경 후
   repositories {
           mavenCentral()
-          maven { url 'https://maven.google.com' }
-          maven { url 'https://jitpack.io' }
-          maven { url 'https://jcenter.bintray.com' }
-          maven { url 'https://naver.jfrog.io/artifactory/maven/' }
+          maven { url ‘https://maven.google.com’ }
+          maven { url ‘https://jitpack.io’ }
+          maven { url ‘https://jcenter.bintray.com’ }
+          maven { url ‘https://naver.jfrog.io/artifactory/maven/’ }
           google()
           jcenter()
-          flatDir { dirs 'libs' }
+          flatDir { dirs ‘libs’ }
       }
-</code></pre></div>
+  ```</p>
+
 	  ]]></description>
 	</item>
 

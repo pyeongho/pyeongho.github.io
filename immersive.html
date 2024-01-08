@@ -138,48 +138,52 @@
 
         <section class="post-content">
             
-            <h3>갤럭시 s8 의 이상한 기능</h3>
-
+            <h3 id="s8---">갤럭시 s8 의 이상한 기능</h3>
 <ul>
-<li>갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상</li>
-<li>애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.</li>
-<li><p>알아야 하는 내용</p>
+  <li>갤럭시 s8 에서 특정 설정을 하면 소트키가 항상 숨겨지는 모드가 존재 해서 내가 추가한 내용은 아니지만 마치 이머시브 모드 처럼 동작 하는 현상</li>
+  <li>애플리케이션 개발 중에는 몰라도 될거 같지만 막상 개발하다 보면 알아야 도움 되는 내용입니다.</li>
+  <li>알아야 하는 내용
+    <ul>
+      <li>애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부</li>
+      <li>에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.</li>
+    </ul>
+  </li>
+  <li>애플리케이션 시작하면서 확인 하는 코드
+    <ul>
+      <li>enable 가 0 보다 크면 소프트 키가 안보이는 상태 입니다.</li>
+    </ul>
 
-<ul>
-<li>애플리케이션 시작시 소프트키가 활성화 되어 있는지 체크 해야 하는부부</li>
-<li>에플리케이션 실행 중 변경 되는 내용 이렇게 2가지 경우가 있습니다.</li>
-</ul></li>
-<li><p>애플리케이션 시작하면서 확인 하는 코드 </p>
+    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code>    <span class="kd">var</span> <span class="py">enable</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">enable</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">Build</span><span class="p">.</span><span class="n">VERSION</span><span class="p">.</span><span class="n">SDK_INT</span> <span class="p">&gt;=</span> <span class="n">Build</span><span class="p">.</span><span class="n">VERSION_CODES</span><span class="p">.</span><span class="n">JELLY_BEAN_MR1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Settings</span><span class="p">.</span><span class="n">Global</span><span class="p">.</span><span class="n">getInt</span><span class="p">(</span><span class="n">activity</span><span class="p">.</span><span class="n">contentResolver</span><span class="p">,</span> <span class="s">"navigationbar_hide_bar_enabled"</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="p">-</span><span class="m">1</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">Exception</span><span class="p">){</span>
+    <span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>런타임에서 리스너로 확인 하는 방법
+    <ul>
+      <li>arg 가 2일때 소프트 키가 안보이는 상태 입니다.</li>
+    </ul>
 
-<ul>
-<li>enable 가 0 보다 크면 소프트 키가 안보이는 상태 입니다.</li>
+    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code>    <span class="kd">val</span> <span class="py">decorView</span> <span class="p">=</span> <span class="n">activity</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">decorView</span>
+    <span class="n">decorView</span><span class="p">.</span><span class="n">setOnSystemUiVisibilityChangeListener</span> <span class="p">{</span><span class="n">arg</span> <span class="p">-&gt;</span>
+        <span class="n">log</span><span class="p">.</span><span class="n">d</span><span class="p">(</span><span class="s">"Current arg: "</span> <span class="p">+</span> <span class="n">arg</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arg</span> <span class="p">==</span> <span class="m">2</span><span class="p">){</span>
+          <span class="c1">//TODO 소포트키 안보임
+</span>        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+          <span class="c1">//TODO 소포트 보임
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
 </ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    var enable = 0
-    try {
-        enable = if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            Settings.Global.getInt(activity.contentResolver, "navigationbar_hide_bar_enabled")
-        } else {
-            -1
-        }
-    }catch (e: Exception){
-    }
-</code></pre></div></li>
-<li><p>런타임에서 리스너로 확인 하는 방법</p>
 
-<ul>
-<li>arg 가 2일때 소프트 키가 안보이는 상태 입니다.</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">    val decorView = activity.window.decorView
-    decorView.setOnSystemUiVisibilityChangeListener {arg -&gt;
-        log.d("Current arg: " + arg)
-        if(arg == 2){
-          //TODO 소포트키 안보임
-        }else{
-          //TODO 소포트 보임
-        }
-    }
-</code></pre></div></li>
-</ul>
 
 
         </section>
@@ -281,7 +285,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

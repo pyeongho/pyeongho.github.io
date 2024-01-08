@@ -18,51 +18,52 @@
 	  <pubDate>2019-03-22T00:00:00+00:00</pubDate>
 	  <guid>//left_menu</guid>
 	  <description><![CDATA[
-	     <h3>레프트 메뉴의 다양화</h3>
-
+	     <h3 id="section">레프트 메뉴의 다양화</h3>
 <ul>
-<li>애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.</li>
-<li>디자이너가 요청 하는 내용
-
-<ul>
-<li>안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태</li>
-<li>메인 화면을 밀고 가는 내용</li>
-<li>메인 화면이 작아 지면서 메뉴가 나오는 형태</li>
-</ul></li>
-<li>위 내용 처럼 대략 3가지 정도로 요약 됨</li>
-<li>처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.</li>
-<li>다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.</li>
+  <li>애플리케이션 개발 시 디자이너의 메뉴 화면은 여러 개가 있다.</li>
+  <li>디자이너가 요청 하는 내용
+    <ul>
+      <li>안드로이드 기본 에서 선택 하는 메인 화면을 가리는 형태</li>
+      <li>메인 화면을 밀고 가는 내용</li>
+      <li>메인 화면이 작아 지면서 메뉴가 나오는 형태</li>
+    </ul>
+  </li>
+  <li>위 내용 처럼 대략 3가지 정도로 요약 됨</li>
+  <li>처음에는 라이브러리르 찾아서 적용 했는데 뭔지 모르게 버그도 있는거 같고 조금 무거운 느낌도 있다.</li>
+  <li>다양한 메뉴가 기본 DrawerLayout 으로 충분히 가능하다.</li>
 </ul>
 
-<h3>기본적인 내용을 이용하는 방법</h3>
-
+<h3 id="section-1">기본적인 내용을 이용하는 방법</h3>
 <ul>
-<li>DrawerLayout 기본 샘플은  새로운 프로젝트를 시작 하여 네비게이션 드로어를 선택</li>
-<li>메뉴 사이즈는  android:layout_gravity=&quot;start&quot; 속성을 가지는 레이아웃을 폭을 조정 하면 된다.</li>
-<li>메뉴가 나올때 그림자 색상은 아래 처럼 옵션을 설정 한다. 아래는 그림자 제거
-
-<ul>
-<li>drawerLayout.setScrimColor(Color.TRANSPARENT);</li>
-</ul></li>
-<li><p>메인화면 밀기는 아래 코드 처럼 사용 하였습니댜.</p>
-
-<ul>
-<li>contentFrame 메인화면 레이아웃 입니다.</li>
-<li>slideOffset 을 이용하여 메인화면의 좌표를 변경 하는 방법 입니다.</li>
-<li><script src="https://gist.github.com/pyeongho/02c696d302047ee3aa5d859fb73c16e6.js"></script></li>
-</ul></li>
-<li><p>메인 화면을 이동하는 코드를 확용 하면 원하는 형태를 만들 수 있습니다.</p>
-
-<ul>
-<li><script src="https://gist.github.com/pyeongho/b77bd2e392a7e8355c068d5fb28098b9.js"></script></li>
-<li>위와 같이 적용 하면 메인 화면의 사이즈가 작아 지면서 처리가 됩니다.</li>
-</ul></li>
+  <li>DrawerLayout 기본 샘플은  새로운 프로젝트를 시작 하여 네비게이션 드로어를 선택</li>
+  <li>메뉴 사이즈는  android:layout_gravity=”start” 속성을 가지는 레이아웃을 폭을 조정 하면 된다.</li>
+  <li>메뉴가 나올때 그림자 색상은 아래 처럼 옵션을 설정 한다. 아래는 그림자 제거
+    <ul>
+      <li>drawerLayout.setScrimColor(Color.TRANSPARENT);</li>
+    </ul>
+  </li>
+  <li>메인화면 밀기는 아래 코드 처럼 사용 하였습니댜.
+    <ul>
+      <li>contentFrame 메인화면 레이아웃 입니다.</li>
+      <li>slideOffset 을 이용하여 메인화면의 좌표를 변경 하는 방법 입니다.</li>
+      <li>
+        <script src="https://gist.github.com/pyeongho/02c696d302047ee3aa5d859fb73c16e6.js"></script>
+      </li>
+    </ul>
+  </li>
+  <li>메인 화면을 이동하는 코드를 확용 하면 원하는 형태를 만들 수 있습니다.
+    <ul>
+      <li>
+        <script src="https://gist.github.com/pyeongho/b77bd2e392a7e8355c068d5fb28098b9.js"></script>
+      </li>
+      <li>위와 같이 적용 하면 메인 화면의 사이즈가 작아 지면서 처리가 됩니다.</li>
+    </ul>
+  </li>
 </ul>
 
-<h3>참고</h3>
-
+<h3 id="section-2">참고</h3>
 <ul>
-<li><a href="http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/">http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/</a></li>
+  <li><a href="http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/">http://thetechnocafe.com/slide-content-to-side-in-drawer-layout-android/</a></li>
 </ul>
 
 	  ]]></description>
@@ -75,26 +76,27 @@
 	  <pubDate>2017-11-24T00:00:00+00:00</pubDate>
 	  <guid>//tips1</guid>
 	  <description><![CDATA[
-	     <h3>NavigationView 상단 그림자</h3>
-
+	     <h3 id="navigationview--">NavigationView 상단 그림자</h3>
 <ul>
-<li>안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+  <li>안드로이드 기본 메뉴를 사용중에 아래와 같은 요구 사항이 들어 올때 처리 방법
+    <ul>
+      <li><img src="https://drive.google.com/uc?export=view&amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46" alt="이렇게" /></li>
+      <li>for tag:  NavigationView remove shadow</li>
+    </ul>
+  </li>
+  <li>처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
+    <ul>
+      <li>DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능</li>
+      <li>정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음</li>
+      <li>NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌</li>
+    </ul>
+  </li>
+  <li>설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임</li>
+  <li>그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작</li>
+  <li>
+    <p>24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=”-24dp” 발견하기 까지 많은 시간이 걸렸습니다.</p>
 
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=1mN322WnoJSJWKYxHEQIT5Cl4ynUxKK46" alt="이렇게"></li>
-<li>for tag:  NavigationView remove shadow </li>
-</ul></li>
-<li>처음에는 DrawerLayout, NavigationView 속성을 열심히 찾음
-
-<ul>
-<li>DrawerLayout의 StatusBar 은 투명하게 되고, 메뉴 나올때 그림자도 제거 가능</li>
-<li>정작 하고 싶음 NavigationView 상단 statusbar 그림자가 남아 있음</li>
-<li>NavigationView 코드를 확인 하면서 발생한 생각 상다바 만큼 알파값을 위에 추가한 느낌</li>
-</ul></li>
-<li>설마 하면서 NavigationView marginTop 을 -24dp 로 설정하니 그림자가 안보임 </li>
-<li>그래서 내린 알쓸신잡 NavigationView 에서 상단에 알파값을 주기 때문에 상태바 만큼 위로 올려 버리니 동작 </li>
-<li><p>24만큼 올렸으니 컨텐츠는 24만큼 내려야 합니다. 아래 처럼 android:layout_marginTop=&quot;-24dp&quot; 발견하기 까지 많은 시간이 걸렸습니다.</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.design.widget.NavigationView</span>
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.NavigationView</span>
     <span class="na">android:id=</span><span class="s">"@+id/nav_view"</span>
     <span class="na">android:layout_marginTop=</span><span class="s">"-24dp"</span>
     <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
@@ -103,39 +105,41 @@
     <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
     <span class="na">app:headerLayout=</span><span class="s">"@layout/nav_header_main"</span>
     <span class="na">app:menu=</span><span class="s">"@menu/activity_main_drawer"</span> <span class="nt">/&gt;</span>
-</code></pre></div></li>
+</code></pre>
+    </div>
+  </li>
 </ul>
 
-<h3>안드로이드 스튜디오 실행기기 다중 선택</h3>
-
+<h3 id="section">안드로이드 스튜디오 실행기기 다중 선택</h3>
 <ul>
-<li>한개만 선택해야 한다는 고정 관념</li>
-<li>shift f10 을 이용해서 실행 단일 기기 선택 </li>
-<li>원하는 디바이스 선택 후 테스트 </li>
-<li>너무 고정 관념 처럼 사용함</li>
-<li>안드로이드 스튜디오 3.0 에서는 이 방법을 사용하기 힘든 이상하게 타겟이 고정됨</li>
-<li>그런데 다른 방법으로 해결 고정 관념 타파</li>
-<li>아래 그림 처럼 실행시 기기를 여러개 선택 가능하다.</li>
-<li>여러개 선택하면 동시에 설치되고 실행
-<img src="https://drive.google.com/uc?export=view&amp;id=1T2U0bqErnqhc1G39-BvWyTjCRbfdPkUI" alt="다중선택"></li>
+  <li>한개만 선택해야 한다는 고정 관념</li>
+  <li>shift f10 을 이용해서 실행 단일 기기 선택</li>
+  <li>원하는 디바이스 선택 후 테스트</li>
+  <li>너무 고정 관념 처럼 사용함</li>
+  <li>안드로이드 스튜디오 3.0 에서는 이 방법을 사용하기 힘든 이상하게 타겟이 고정됨</li>
+  <li>그런데 다른 방법으로 해결 고정 관념 타파</li>
+  <li>아래 그림 처럼 실행시 기기를 여러개 선택 가능하다.</li>
+  <li>여러개 선택하면 동시에 설치되고 실행
+<img src="https://drive.google.com/uc?export=view&amp;id=1T2U0bqErnqhc1G39-BvWyTjCRbfdPkUI" alt="다중선택" /></li>
 </ul>
 
-<h3>Kotlin DP &lt;-&gt; PX 변경 함수</h3>
-
+<h3 id="kotlin-dp---px--">Kotlin DP &lt;-&gt; PX 변경 함수</h3>
 <ul>
-<li>베이스 액티비티나,  베이스 프래그먼트에 추가해 놓으면 편합니다.</li>
-<li><p>사용법</p>
+  <li>베이스 액티비티나,  베이스 프래그먼트에 추가해 놓으면 편합니다.</li>
+  <li>사용법
+    <ul>
+      <li>144.toDP</li>
+      <li>36.toPx</li>
+    </ul>
 
-<ul>
-<li>144.toDP</li>
-<li>36.toPx</li>
-</ul>
-<div class="highlight"><pre><code class="language-kotlin" data-lang="kotlin">val Int.toDp: Int
-    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+    <div class="language-kotlin highlighter-rouge"><pre class="highlight"><code><span class="kd">val</span> <span class="py">Int</span><span class="p">.</span><span class="n">toDp</span><span class="p">:</span> <span class="n">Int</span>
+    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="p">(</span><span class="k">this</span> <span class="p">/</span> <span class="n">Resources</span><span class="p">.</span><span class="n">getSystem</span><span class="p">().</span><span class="n">displayMetrics</span><span class="p">.</span><span class="n">density</span><span class="p">).</span><span class="n">toInt</span><span class="p">()</span>
 
-val Int.toPx: Int
-    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
-</code></pre></div></li>
+<span class="kd">val</span> <span class="py">Int</span><span class="p">.</span><span class="n">toPx</span><span class="p">:</span> <span class="n">Int</span>
+    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="p">(</span><span class="k">this</span> <span class="p">*</span> <span class="n">Resources</span><span class="p">.</span><span class="n">getSystem</span><span class="p">().</span><span class="n">displayMetrics</span><span class="p">.</span><span class="n">density</span><span class="p">).</span><span class="n">toInt</span><span class="p">()</span>
+</code></pre>
+    </div>
+  </li>
 </ul>
 
 	  ]]></description>

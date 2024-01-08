@@ -18,69 +18,63 @@
 	  <pubDate>2018-02-24T00:00:00+00:00</pubDate>
 	  <guid>//droid_2019</guid>
 	  <description><![CDATA[
-	     <h3>드로이드 나이츠 2019 후기</h3>
-
+	     <h3 id="section">드로이드 나이츠 2019 후기</h3>
 <ul>
-<li>2017년도 부터 시작된 드로이드 나이츠 운이 좋아 아직까지는 3번 모두 참석</li>
-<li>표는 4월4일에 누군가 취소한 티켓을  겨우 겨우 구매</li>
-<li>올해에는 스티커가 이쁘다.</li>
+  <li>2017년도 부터 시작된 드로이드 나이츠 운이 좋아 아직까지는 3번 모두 참석</li>
+  <li>표는 4월4일에 누군가 취소한 티켓을  겨우 겨우 구매</li>
+  <li>올해에는 스티커가 이쁘다.</li>
 </ul>
 
-<h3>늘어나는 트랙</h3>
-
+<h3 id="section-1">늘어나는 트랙</h3>
 <ul>
-<li>2017 -&gt; 1트랙</li>
-<li>2018 -&gt; 2트랙</li>
-<li>2019 -&gt; 3트랙</li>
+  <li>2017 -&gt; 1트랙</li>
+  <li>2018 -&gt; 2트랙</li>
+  <li>2019 -&gt; 3트랙</li>
 </ul>
 
-<h3>동적 맵 프레임워크와 인터렉션 구현하기</h3>
-
+<h3 id="section-2">동적 맵 프레임워크와 인터렉션 구현하기</h3>
 <ul>
-<li>SDK 추가하는 방법</li>
-<li>구글맵, 히어맵, 티맵등 동일한 기능의 다양한 SDK 를 사용하기 위한 방법</li>
-<li>기본적인 SDK 의 구조를 파악 한다.</li>
-<li>지도 SDK 의 경우
-
-<ul>
-<li>에셋 다운로드 -&gt; 엔진 초기화 -&gt; 맵뷰 초기화</li>
-<li>SDK에 따라서 위 순서대로 진행 해야 할때도 있고 맵뷰만 넣어줘도 되는 경우 조건이 다양하다.</li>
-<li>SDK 변경을 할때 위 내용을 쉽게 변경 가능한 구조를 만들자</li>
-</ul></li>
+  <li>SDK 추가하는 방법</li>
+  <li>구글맵, 히어맵, 티맵등 동일한 기능의 다양한 SDK 를 사용하기 위한 방법</li>
+  <li>기본적인 SDK 의 구조를 파악 한다.</li>
+  <li>지도 SDK 의 경우
+    <ul>
+      <li>에셋 다운로드 -&gt; 엔진 초기화 -&gt; 맵뷰 초기화</li>
+      <li>SDK에 따라서 위 순서대로 진행 해야 할때도 있고 맵뷰만 넣어줘도 되는 경우 조건이 다양하다.</li>
+      <li>SDK 변경을 할때 위 내용을 쉽게 변경 가능한 구조를 만들자</li>
+    </ul>
+  </li>
 </ul>
 
-<h3>지금까지 이런 간단한 로직 처리는 없었다.</h3>
-
+<h3 id="section-3">지금까지 이런 간단한 로직 처리는 없었다.</h3>
 <ul>
-<li>RxBinding 사용법</li>
-<li>RxBinding 코틀린</li>
-<li>view.Clicks 가능 하다.</li>
+  <li>RxBinding 사용법</li>
+  <li>RxBinding 코틀린</li>
+  <li>view.Clicks 가능 하다.</li>
 </ul>
 
-<h3>Clean Architecture Revised</h3>
-
+<h3 id="clean-architecture-revised">Clean Architecture Revised</h3>
 <ul>
-<li>2017년도 개정판</li>
-<li>유즈케이스 중심의 설계를 한다.</li>
-<li>쇼핑몰을 만들때 필수 유즈케이스
-
-<ul>
-<li>구매요청 -&gt; 판매자가 구매 정보 수집 -&gt; 판매자 구매 결과 반환 -&gt; 구매 승인</li>
-</ul></li>
-<li><a href="https://github.com/sunghyunzz/android-clean-architecture-example">샘플 확인 </a></li>
+  <li>2017년도 개정판</li>
+  <li>유즈케이스 중심의 설계를 한다.</li>
+  <li>쇼핑몰을 만들때 필수 유즈케이스
+    <ul>
+      <li>구매요청 -&gt; 판매자가 구매 정보 수집 -&gt; 판매자 구매 결과 반환 -&gt; 구매 승인</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/sunghyunzz/android-clean-architecture-example">샘플 확인 </a></li>
 </ul>
 
-<h3>코루틴 너 은행에서 뭐하니</h3>
-
+<h3 id="section-4">코루틴 너 은행에서 뭐하니</h3>
 <ul>
-<li>Rx 는 생각보다 거대 하다.</li>
-<li>간단한 비동기 처리를 위해서는 그냥 코루틴으로 충분하다.</li>
-<li>Rx 를 이미 사용하고 있다면 그냥 Rx 사용해도 될듯 하다.</li>
+  <li>Rx 는 생각보다 거대 하다.</li>
+  <li>간단한 비동기 처리를 위해서는 그냥 코루틴으로 충분하다.</li>
+  <li>Rx 를 이미 사용하고 있다면 그냥 Rx 사용해도 될듯 하다.</li>
 </ul>
 
-<h3>Dagger Vs Koin</h3>
+<h3 id="dagger-vs-koin">Dagger Vs Koin</h3>
+<p>### Tensorflow Lite 부터 MLKit, Mobile GPU 활용까지</p>
 
-<h3>Tensorflow Lite 부터 MLKit, Mobile GPU 활용까지</h3>
 
 	  ]]></description>
 	</item>

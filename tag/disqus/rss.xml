@@ -18,43 +18,41 @@
 	  <pubDate>2017-03-21T00:00:00+00:00</pubDate>
 	  <guid>//google-search</guid>
 	  <description><![CDATA[
-	     <h4>지킬로 만들면 구글 검색이 안됩니다.</h4>
+	     <h4 id="section">지킬로 만들면 구글 검색이 안됩니다.</h4>
 
-<h4>1. 구글 검색 허용하기</h4>
-
+<h4 id="section-1">1. 구글 검색 허용하기</h4>
 <ul>
-<li><p>구글 웹마스터 도구(Search Console)에 속성 추가 및 인증</p>
-
-<ul>
-<li><a href="https://www.google.com/webmasters/tools/home?hl=ko">구글 웹 마스터 도구 접속</a></li>
-<li>속성추가 버튼을 선택</li>
-<li>자신의 jekyll 블로그 주소를 입력하여 속성 추가 (https://pyeongho.github.io/)</li>
-<li>구글에서 제공하는 html 다운로드(ex googlee420f3ff29beb995.html) 하여 루트 폴더에 올리고 푸시 
-
-<ul>
-<li>테스트는 https://pyeongho.github.io/googlee420f3ff29beb995.html 하여 내용이 나오는지 확인</li>
-</ul></li>
-<li>구글 확인 버튼 클릭</li>
-</ul></li>
-<li><p>sitemap.xml 등록하기 </p>
-
-<ul>
-<li>_config.yml 에 url 을 추가 합니다.
-<code>
+  <li>구글 웹마스터 도구(Search Console)에 속성 추가 및 인증
+    <ul>
+      <li><a href="https://www.google.com/webmasters/tools/home?hl=ko">구글 웹 마스터 도구 접속</a></li>
+      <li>속성추가 버튼을 선택</li>
+      <li>자신의 jekyll 블로그 주소를 입력하여 속성 추가 (https://pyeongho.github.io/)</li>
+      <li>구글에서 제공하는 html 다운로드(ex googlee420f3ff29beb995.html) 하여 루트 폴더에 올리고 푸시
+        <ul>
+          <li>테스트는 https://pyeongho.github.io/googlee420f3ff29beb995.html 하여 내용이 나오는지 확인</li>
+        </ul>
+      </li>
+      <li>구글 확인 버튼 클릭</li>
+    </ul>
+  </li>
+  <li>sitemap.xml 등록하기
+    <ul>
+      <li>_config.yml 에 url 을 추가 합니다.
+<code class="highlighter-rouge">
 url: https://pyeongho.github.io
 </code></li>
-<li>sitemap.xml 을 만들어서 루트 폴더에 올리고 푸시
-
-<ul>
-<li><a href="https://github.com/pyeongho/pyeongho.github.io/blob/master/sitemap.xml">sitemap.xml 예제</a></li>
-</ul></li>
-<li>구글 웹마스터 콘솔에 sitemap.xml 을 테스트후 등록 하여 문제 없도록 합니다.</li>
-<li>등록하면 상태가 접수 중으로 나옵니다. 시간이 지나면 구글 검색으로 테스트 하겠습니다. </li>
-</ul></li>
+      <li>sitemap.xml 을 만들어서 루트 폴더에 올리고 푸시
+        <ul>
+          <li><a href="https://github.com/pyeongho/pyeongho.github.io/blob/master/sitemap.xml">sitemap.xml 예제</a></li>
+        </ul>
+      </li>
+      <li>구글 웹마스터 콘솔에 sitemap.xml 을 테스트후 등록 하여 문제 없도록 합니다.</li>
+      <li>등록하면 상태가 접수 중으로 나옵니다. 시간이 지나면 구글 검색으로 테스트 하겠습니다.</li>
+    </ul>
+  </li>
 </ul>
 
-<h5>참고</h5>
-
+<h5 id="section-2">참고</h5>
 <p><a href="https://wayhome25.github.io/etc/2017/02/20/google-search-sitemap-jekyll/">초보몽키의 개발로그</a></p>
 
 	  ]]></description>
@@ -67,53 +65,56 @@ url: https://pyeongho.github.io
 	  <pubDate>2017-01-14T00:00:00+00:00</pubDate>
 	  <guid>//add-comment</guid>
 	  <description><![CDATA[
-	     <h4>1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계</h4>
-
+	     <h4 id="disqus--------3">1. Disqus 를 이용하여 댓글 기능을 추가, 순서는 크게 3단계</h4>
 <ul>
-<li>Disqus 가입하기</li>
-<li>Disqus 설정하기</li>
-<li>github 연동하기</li>
+  <li>Disqus 가입하기</li>
+  <li>Disqus 설정하기</li>
+  <li>github 연동하기</li>
 </ul>
 
-<h4>2. Disqus 가입하기</h4>
-
+<h4 id="disqus-">2. Disqus 가입하기</h4>
 <ul>
-<li><a href="https://disqus.com/">Disqus 홈페이지</a> 에서 회원 가입을 한다.</li>
-<li>계정은 페이스북 트위터 구글을 사용 가능 합니다.</li>
-<li>회원 가입이 완료 되면 아래와 같은 이미지 가나옵니다.
-<img src="/assets/images/post/comment_follow.PNG" alt="follow"></li>
-<li>적당히 잘 선택해 줍니다.</li>
-<li><p>3개를 선택하면 상단에 cotinue 
-<img src="/assets/images/post/comment_continue.PNG" alt="continue"> </p></li>
-<li><p>disqus 홈이 표시 됩니다.</p></li>
+  <li><a href="https://disqus.com/">Disqus 홈페이지</a> 에서 회원 가입을 한다.</li>
+  <li>계정은 페이스북 트위터 구글을 사용 가능 합니다.</li>
+  <li>회원 가입이 완료 되면 아래와 같은 이미지 가나옵니다.
+<img src="/assets/images/post/comment_follow.PNG" alt="follow" /></li>
+  <li>적당히 잘 선택해 줍니다.</li>
+  <li>
+    <p>3개를 선택하면 상단에 cotinue 
+ <img src="/assets/images/post/comment_continue.PNG" alt="continue" /></p>
+  </li>
+  <li>disqus 홈이 표시 됩니다.</li>
 </ul>
 
-<h4>2. Disqus 설정하기</h4>
-
+<h4 id="disqus--1">2. Disqus 설정하기</h4>
 <ul>
-<li>회원 가입이 완료 되었으니 Disqus 설정을 추가합니다. </li>
-<li><a href="https://disqus.com/profile/signup/intent/">설정하기</a> 로 이동합니다. </li>
-<li><p>위 링클르 클릭하면 아래와 같이 나옵니다.
-<img src="/assets/images/post/comment_sel.PNG" alt="choose"></p></li>
-<li><p>댓글을 자신의 사이트에 추가 하기위해서는 아래 버튼을 눌러주세요</p>
-
-<ul>
-<li>i want to install Disqus on my site</li>
-</ul></li>
-<li><p>site 이름과 카테고리 선택을 해주세요.
-<img src="/assets/images/post/comment_name.PNG" alt="name"></p></li>
-<li><p>하단의 create 버튼은 누르고 렛츠 스타트를 선택 합니다.</p></li>
-<li><p>플랫폼은 jekyll 을 선택합니다.</p></li>
-<li><p>추가하는 방법이 나옵니다.</p></li>
+  <li>회원 가입이 완료 되었으니 Disqus 설정을 추가합니다.</li>
+  <li><a href="https://disqus.com/profile/signup/intent/">설정하기</a> 로 이동합니다.</li>
+  <li>
+    <p>위 링클르 클릭하면 아래와 같이 나옵니다.
+  <img src="/assets/images/post/comment_sel.PNG" alt="choose" /></p>
+  </li>
+  <li>댓글을 자신의 사이트에 추가 하기위해서는 아래 버튼을 눌러주세요
+    <ul>
+      <li>i want to install Disqus on my site</li>
+    </ul>
+  </li>
+  <li>
+    <p>site 이름과 카테고리 선택을 해주세요.
+ <img src="/assets/images/post/comment_name.PNG" alt="name" /></p>
+  </li>
+  <li>하단의 create 버튼은 누르고 렛츠 스타트를 선택 합니다.</li>
+  <li>플랫폼은 jekyll 을 선택합니다.</li>
+  <li>추가하는 방법이 나옵니다.</li>
 </ul>
 
-<h4>3. github.io jekyll 과 연동하기</h4>
-
+<h4 id="githubio-jekyll--">3. github.io jekyll 과 연동하기</h4>
 <ul>
-<li>중간에 Universal Code 를 선택하면 해당 코드가 표시 되고 이를 복사해서 </li>
-<li>_layout/post.html 의 disqus 위치에 추가 시켰습니다.</li>
-<li>결과는 성공입니다.</li>
+  <li>중간에 Universal Code 를 선택하면 해당 코드가 표시 되고 이를 복사해서</li>
+  <li>_layout/post.html 의 disqus 위치에 추가 시켰습니다.</li>
+  <li>결과는 성공입니다.</li>
 </ul>
+
 
 	  ]]></description>
 	</item>

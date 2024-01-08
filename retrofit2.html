@@ -134,47 +134,47 @@
 
         <section class="post-content">
             
-            <h4>retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
+            <h4 id="retrofit2--rxandroid2--mvp---">retrofit2 + rxandroid2 + mvp 를 이용한 통신</h4>
 
-<h4>참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
+<h4 id="mvp----">참고로 mvp 처럼만 보이고 아닐수도 있어요.</h4>
 
-<h4>1. dependencies 추가 기존 내용과 동일 합니다.</h4>
-<div class="highlight"><pre><code class="language-gradle" data-lang="gradle">
-    compile 'com.squareup.okhttp3:okhttp:3.6.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+<h4 id="dependencies-----">1. dependencies 추가 기존 내용과 동일 합니다.</h4>
 
-    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+<div class="language-gradle highlighter-rouge"><pre class="highlight"><code>
+    <span class="n">compile</span> <span class="s1">'com.squareup.okhttp3:okhttp:3.6.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.squareup.okhttp3:logging-interceptor:3.6.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.squareup.retrofit2:retrofit:2.1.0'</span>
+    <span class="n">compile</span> <span class="s1">'com.squareup.retrofit2:converter-gson:2.1.0'</span>
 
-</code></pre></div>
-<h4>2. mvp 패던 링크</h4>
+    <span class="n">compile</span> <span class="s1">'io.reactivex.rxjava2:rxjava:2.0.1'</span>
+    <span class="n">compile</span> <span class="s1">'io.reactivex.rxjava2:rxandroid:2.0.1'</span>
+    <span class="n">compile</span> <span class="s1">'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'</span>
+    
+</code></pre>
+</div>
 
+<h4 id="mvp--">2. mvp 패던 링크</h4>
 <ul>
-<li><a href="http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html">잔디랩의 mvp</a></li>
-<li><a href="http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/">pluu dev</a></li>
-<li><a href="http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html">꿈많은 개발자 링크</a></li>
+  <li><a href="http://tosslab.github.io/android/2015/03/01/01.Android-mvc-mvvm-mvp.html">잔디랩의 mvp</a></li>
+  <li><a href="http://pluu.github.io/blog/android/2016/04/06/android-mvc-mvp/">pluu dev</a></li>
+  <li><a href="http://thdev.tech/androiddev/2016/10/12/Android-MVP-Intro.html">꿈많은 개발자 링크</a></li>
 </ul>
 
-<h4>3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
+<h4 id="mvp---1">3. 통신으로만 구현 하다 보니 모델이 없어서  mvp 처럼 안느껴지네요</h4>
 
-<h4>4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
-
+<h4 id="mvp--------">4.  mvp 이외의 코드를 제거 하여 조금더 보기 편하도록 하겠습니다.</h4>
 <ul>
-<li>mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..</li>
-<li>다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.</li>
-<li>mvp가 자리 잡으면 테스트 주도 개발을 도전해 보겠습니다.</li>
-<li>아래가 코드가 제가 다른 사람걸 참고 만든 전체 코드 입니다.</li>
-<li>버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.</li>
+  <li>mvp 공부 하면서 진행 하다 보니 이렇게 하는게 맞는건지..</li>
+  <li>다른분들이 만드는걸 보고 따라하면서 프로젝트에도 활용 하도록 할 예정입니다.</li>
+  <li>mvp가 자리 잡으면 테스트 주도 개발을 도전해 보겠습니다.</li>
+  <li>아래가 코드가 제가 다른 사람걸 참고 만든 전체 코드 입니다.</li>
+  <li>버터나이프를 제거하고 데이터 바인딩을 이용해 보겠습니다.</li>
 </ul>
 
-<h4>5. 전체 샘플코드</h4>
-
+<h4 id="section">5. 전체 샘플코드</h4>
 <ul>
-<li>기존 샘플코드에 폴더를 추가 하였습니다.</li>
-<li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
+  <li>기존 샘플코드에 폴더를 추가 하였습니다.</li>
+  <li><a href="https://github.com/pyeongho/Sample">https://github.com/pyeongho/Sample</a></li>
 </ul>
 
 
@@ -277,7 +277,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

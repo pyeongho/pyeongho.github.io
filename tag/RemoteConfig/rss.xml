@@ -18,51 +18,46 @@
 	  <pubDate>2017-05-22T00:00:00+00:00</pubDate>
 	  <guid>//firebase_remoteconfig</guid>
 	  <description><![CDATA[
-	     <h3>파이어베이스 리모트 컨피그 사용</h3>
-
+	     <h3 id="section">파이어베이스 리모트 컨피그 사용</h3>
 <ul>
-<li>앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함</li>
-<li>공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음</li>
+  <li>앱 수정 없이 API 서버 사용 유무를 선택 하는 기능을 만들려고함</li>
+  <li>공지나 강제 업데이트 기능을 이걸로 하면 좋을거 같음</li>
 </ul>
 
-<h4>0. 목적</h4>
-
+<h4 id="section-1">0. 목적</h4>
 <ul>
-<li>앱 재배포 없이 기능을 선택 하려고함</li>
-<li>firebase reomte config 기능이 눈에 들어옴 </li>
-<li>테스트도 할겸 도전 </li>
+  <li>앱 재배포 없이 기능을 선택 하려고함</li>
+  <li>firebase reomte config 기능이 눈에 들어옴</li>
+  <li>테스트도 할겸 도전</li>
 </ul>
 
-<h4>1. 앱에 파이어 베이스 리모트 컨피그 기능 추가</h4>
-
+<h4 id="section-2">1. 앱에 파이어 베이스 리모트 컨피그 기능 추가</h4>
 <ul>
-<li>안드로이드 스튜디오에서 편하게 추가 가능하다.</li>
-<li>tools -&gt; Firebase 선택시 편집기 오른쪽에 사용 가능한 기능이 나옵니다.</li>
-<li>Remote Config  를 선택해서 순서대로 하면 사용상 문제는 없습니다.</li>
+  <li>안드로이드 스튜디오에서 편하게 추가 가능하다.</li>
+  <li>tools -&gt; Firebase 선택시 편집기 오른쪽에 사용 가능한 기능이 나옵니다.</li>
+  <li>Remote Config  를 선택해서 순서대로 하면 사용상 문제는 없습니다.</li>
 </ul>
 
-<h4>2. 처음 한두번은 문제 없다가 갑자기 에러가 나기 시작함</h4>
-
+<h4 id="section-3">2. 처음 한두번은 문제 없다가 갑자기 에러가 나기 시작함</h4>
 <ul>
-<li>순서 대로 진행 하면 &#39;Fetch Failed&#39; 에러로 정확한 이유를 알수 없음</li>
-<li>그래서 addOnFailureListener 리스너를 이용해서 exception 클래스 이름을 확인 하였습니다.</li>
-<li>FirebaseRemoteConfigFetchThrottledException</li>
-<li>위 내용으로 에러가 발생</li>
-<li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
-<li>구글 검색으로 위와 같은 내용이 찾음</li>
-<li>아래 코드로 동작 확인<br>
-<code>java
-FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
-  .setDeveloperModeEnabled(BuildConfig.DEBUG)
-  .build();
-mFirebaseRemoteConfig.setConfigSettings(setting);
+  <li>순서 대로 진행 하면 ‘Fetch Failed’ 에러로 정확한 이유를 알수 없음</li>
+  <li>그래서 addOnFailureListener 리스너를 이용해서 exception 클래스 이름을 확인 하였습니다.</li>
+  <li>FirebaseRemoteConfigFetchThrottledException</li>
+  <li>위 내용으로 에러가 발생</li>
+  <li><a href="http://blog.naver.com/PostView.nhn?blogId=cranjathe&amp;logNo=220845740807&amp;parentCategoryNo=&amp;categoryNo=158&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">사용법 및 에러처리 방법</a></li>
+  <li>구글 검색으로 위와 같은 내용이 찾음</li>
+  <li>아래 코드로 동작 확인<br />
+<code class="highlighter-rouge">java
+ FirebaseRemoteConfigSettings setting = new FirebaseRemoteConfigSettings.Builder()
+   .setDeveloperModeEnabled(BuildConfig.DEBUG)
+   .build();
+ mFirebaseRemoteConfig.setConfigSettings(setting);
 </code></li>
 </ul>
 
-<h4>3. Remote Config 사용시 주의 사항</h4>
-
+<h4 id="remote-config---">3. Remote Config 사용시 주의 사항</h4>
 <ul>
-<li>개발 모드 일때는 꼭 개발 설정을 하자</li>
+  <li>개발 모드 일때는 꼭 개발 설정을 하자</li>
 </ul>
 
 	  ]]></description>

@@ -18,24 +18,26 @@
 	  <pubDate>2020-11-27T00:00:00+00:00</pubDate>
 	  <guid>//heroku</guid>
 	  <description><![CDATA[
-	     <h3>헤로쿠 기본 공부</h3>
+	     <h3 id="section">헤로쿠 기본 공부</h3>
 
 <ul>
-<li>헤로쿠 가입후</li>
-<li>앱 생성 : 앱이름은 :  &quot;random-bot-17&quot;</li>
-<li><p>cli 설치
+  <li>헤로쿠 가입후</li>
+  <li>앱 생성 : 앱이름은 :  “random-bot-17”</li>
+  <li>
+    <p>cli 설치
 ~~~
 brew tap heroku/brew &amp;&amp; brew install heroku
-~~~</p></li>
-<li><p>heroku login 실행</p></li>
-<li><p>브라우저 로그인 실패(ip 다름)</p></li>
-<li><p>heroku login --interactive 을 이용해서 터미널 로그인(이메일, 비밀번호 로그인 완료)</p></li>
-<li><p>https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up</p>
-
-<ul>
-<li>node --version  설치확인</li>
-<li>npm --version 설치확인</li>
-</ul></li>
+~~~</p>
+  </li>
+  <li>heroku login 실행</li>
+  <li>브라우저 로그인 실패(ip 다름)</li>
+  <li>heroku login –interactive 을 이용해서 터미널 로그인(이메일, 비밀번호 로그인 완료)</li>
+  <li>https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+    <ul>
+      <li>node –version  설치확인</li>
+      <li>npm –version 설치확인</li>
+    </ul>
+  </li>
 </ul>
 
 	  ]]></description>
@@ -48,31 +50,32 @@ brew tap heroku/brew &amp;&amp; brew install heroku
 	  <pubDate>2017-11-22T00:00:00+00:00</pubDate>
 	  <guid>//flaskcross</guid>
 	  <description><![CDATA[
-	     <h3>플라스크에서 크로스도메인 허용</h3>
+	     <h3 id="section">플라스크에서 크로스도메인 허용</h3>
 
-<h4>파이썬 서버에 크로스도메인 허용</h4>
-
+<h4 id="section-1">파이썬 서버에 크로스도메인 허용</h4>
 <ul>
-<li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
-<code>
- &#39;Access-Control-Allow-Origin: *&#39;
- &#39;Access-Control-Allow-Methods: GET&#39;
- &#39;Access-Control-Allow-Headers: X-Requested-With, Content-Type&#39;
+  <li>요청내용은 응답 헤더에 아래 내용 추가 였습니다.
+<code class="highlighter-rouge">
+ 'Access-Control-Allow-Origin: *'
+ 'Access-Control-Allow-Methods: GET'
+ 'Access-Control-Allow-Headers: X-Requested-With, Content-Type'
 </code></li>
-<li>내용을 찾아 보니 크로스 도메인 허용</li>
-<li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.<br></li>
-<li>오리지널 참고 코드 입니다.
-
-<ul>
-<li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
-</ul></li>
-<li><p>필요한 코드
-<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p></li>
-<li><p>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.</p>
-
-<ul>
-<li>@crossdomain(origin=&#39;*&#39;)<br></li>
-</ul></li>
+  <li>내용을 찾아 보니 크로스 도메인 허용</li>
+  <li>그래서 플라스크 크로스도메인 관련 내용을 찾으니 아래 처럼 친절하게 나와 있었습니다.</li>
+  <li>오리지널 참고 코드 입니다.
+    <ul>
+      <li><a href="http://flask.pocoo.org/snippets/56/">http://flask.pocoo.org/snippets/56/</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>필요한 코드
+<script src="https://gist.github.com/pyeongho/61fb098a180301db1a21c17f2d4e85de.js"></script></p>
+  </li>
+  <li>위 crossdomain 함수를 추가 후 내용필욯나 페이지에는 아래 내용을 추가 하면 됩니다.
+    <ul>
+      <li>@crossdomain(origin=’*’)</li>
+    </ul>
+  </li>
 </ul>
 
 	  ]]></description>
@@ -85,61 +88,62 @@ brew tap heroku/brew &amp;&amp; brew install heroku
 	  <pubDate>2017-03-20T00:00:00+00:00</pubDate>
 	  <guid>//flask</guid>
 	  <description><![CDATA[
-	     <h3>클라우드 서버 구축</h3>
+	     <h3 id="section">클라우드 서버 구축</h3>
 
-<h4>1 환경 설정</h4>
-
+<h4 id="section-1">1 환경 설정</h4>
 <ul>
-<li>클라우드9 에서 테스트 </li>
-<li>heroku 에 상시 서버 실행</li>
-<li>클라우드9는 개발 환경을 제공하기에 상시 서버로 사용하기 어렵다.(무료로)</li>
-<li>heroku는 18시간 사용 6시간휴식으로 서버 사용 가능</li>
-<li>heroku는 git 으로 코드를 관리하며 추가 하면 바로 서버에 추가됨</li>
-<li>디버깅은 어떻게 하는지 찾아봐야 함</li>
-<li>2개 모두 거의 모든 언어를 지원 한다.</li>
+  <li>클라우드9 에서 테스트</li>
+  <li>heroku 에 상시 서버 실행</li>
+  <li>클라우드9는 개발 환경을 제공하기에 상시 서버로 사용하기 어렵다.(무료로)</li>
+  <li>heroku는 18시간 사용 6시간휴식으로 서버 사용 가능</li>
+  <li>heroku는 git 으로 코드를 관리하며 추가 하면 바로 서버에 추가됨</li>
+  <li>디버깅은 어떻게 하는지 찾아봐야 함</li>
+  <li>2개 모두 거의 모든 언어를 지원 한다.</li>
 </ul>
 
-<h4>2. 목표</h4>
-
+<h4 id="section-2">2. 목표</h4>
 <ul>
-<li>파이썬 서버 </li>
-<li>phaser 클라이언트</li>
+  <li>파이썬 서버</li>
+  <li>phaser 클라이언트</li>
 </ul>
 
-<h4>3. 기본 코드</h4>
-
+<h4 id="section-3">3. 기본 코드</h4>
 <ul>
-<li> c9 에서 기본 파이썬 코드는 아래와 같습니다.</li>
-<li><script src="https://gist.github.com/anonymous/2aaf522bb68ffbc1d28e1d5698a70f32.js"></script><br></li>
-<li>폴더 구조는 2개가 필요합니다. 트리를 어떻게 그리는지 몰라서... 아래처럼 생겼습니다.</li>
-<li>파이썬 파일과 템플릿 폴더, 스트택 폭더가 필요합니다.</li>
-<li>플라스크가 아래와 같은 내용을 지원해서 입니다.
-
-<ul>
-<li>hello.py</li>
-<li>templates
-
-<ul>
-<li>hello.html</li>
-</ul></li>
-<li>static
-
-<ul>
-<li>js</li>
-<li>test.js</li>
-<li>hello.js</li>
-<li>hello.png<br></li>
-</ul></li>
-</ul></li>
-<li>스태틱 폴더는 html 에서 js 파일이나 이미지 파일 경로를 나타내기 위해서 입니다.</li>
-<li>경로를 나타 내는 방법은 아래처럼 url_for 를 사용합니다. 
+  <li>c9 에서 기본 파이썬 코드는 아래와 같습니다.</li>
+  <li>
+    <script src="https://gist.github.com/anonymous/2aaf522bb68ffbc1d28e1d5698a70f32.js"></script>
+  </li>
+  <li>폴더 구조는 2개가 필요합니다. 트리를 어떻게 그리는지 몰라서… 아래처럼 생겼습니다.</li>
+  <li>파이썬 파일과 템플릿 폴더, 스트택 폭더가 필요합니다.</li>
+  <li>플라스크가 아래와 같은 내용을 지원해서 입니다.
+    <ul>
+      <li>hello.py</li>
+      <li>templates
+        <ul>
+          <li>hello.html</li>
+        </ul>
+      </li>
+      <li>static
+        <ul>
+          <li>js
+            <ul>
+              <li>test.js</li>
+              <li>hello.js</li>
+            </ul>
+          </li>
+          <li>hello.png</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>스태틱 폴더는 html 에서 js 파일이나 이미지 파일 경로를 나타내기 위해서 입니다.</li>
+  <li>경로를 나타 내는 방법은 아래처럼 url_for 를 사용합니다. 
 <script src="https://gist.github.com/anonymous/62e4bb32d428839989d208e4c6b55b80.js"></script></li>
 </ul>
 
-<h4>4. heroku 파이썬 패키지 설치</h4>
-
+<h4 id="heroku---">4. heroku 파이썬 패키지 설치</h4>
 <ul>
-<li> pip freeze &gt; requirements.txt 를 이용해서 파일을 같이 푸시 한다.</li>
+  <li>pip freeze &gt; requirements.txt 를 이용해서 파일을 같이 푸시 한다.</li>
 </ul>
 
 	  ]]></description>

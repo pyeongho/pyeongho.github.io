@@ -138,47 +138,49 @@
 
         <section class="post-content">
             
-            <h3>SVG</h3>
-
+            <h3 id="svg">SVG</h3>
 <ul>
-<li><p>이런 SVG 를 보셨다면 꼭 읽어 주세요</p>
-
-<ul>
-<li><img src="https://drive.google.com/uc?export=view&amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee" alt="깨진 svg"></li>
-</ul></li>
-<li><p><a href="https://developer.android.com/studio/write/vector-asset-studio?hl=ko#svg">SVG 추가 방법 개발 문서</a></p></li>
-<li><p>os6(sdk23이상) 을 지원 할때는 꼭 확인 해야 합니다.</p></li>
-<li><p>개발을 하면서 특히 Figma 를 사용하면서 svg 사용이 많아지고 있습니다.</p></li>
-<li><p>저번 게시글에서도 언급한것 처럼 약간의 호환성 문제들이 나타나고 있었습니다.
-호환성 문제체크 하는 방법은 이전 게시글에 있으니 꼭 확인해 주세요</p></li>
-<li><p>호환은 되지만 잘못된 경우가 있을때는 아래 내용을 확인해 보면 좋습니다.
+  <li>이런 SVG 를 보셨다면 꼭 읽어 주세요
+    <ul>
+      <li><img src="https://drive.google.com/uc?export=view&amp;id=17f1VGJGaf5tbOHiBMwIQ931LSZvYsoee" alt="깨진 svg" /></li>
+    </ul>
+  </li>
+  <li><a href="https://developer.android.com/studio/write/vector-asset-studio?hl=ko#svg">SVG 추가 방법 개발 문서</a></li>
+  <li>os6(sdk23이상) 을 지원 할때는 꼭 확인 해야 합니다.</li>
+  <li>개발을 하면서 특히 Figma 를 사용하면서 svg 사용이 많아지고 있습니다.</li>
+  <li>
+    <p>저번 게시글에서도 언급한것 처럼 약간의 호환성 문제들이 나타나고 있었습니다.
+호환성 문제체크 하는 방법은 이전 게시글에 있으니 꼭 확인해 주세요</p>
+  </li>
+  <li>
+    <p>호환은 되지만 잘못된 경우가 있을때는 아래 내용을 확인해 보면 좋습니다.
 예를 들어 23 이상에서만 android:fillType=“evenOdd” 사용되는 svg 속성들이 제대로 동작 하지 않는 경우도 있었습니다.</p>
 
-<ul>
-<li>xml 에서 사용법
-
-<ul>
-<li>android:src 과 app:srcCompat 는 완전히 동일하게 동작 하지 않는다. app:srcCompat 만 사용하자</li>
-<li>xml 에서 svg 추가 할때 android:src=&quot;리소스 파일&quot; 습관적으로 이렇게 사용을 합니다.
-minsdk 21 이상이면 신경도 안쓰고 사용 할수도 있습니다. 하지만 습관을 바꿔야 할 때입니다.
-app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속성값이 제대로 동작 하지만 android:src 에서는 동작 하지 않습니다.</li>
-</ul></li>
-<li>자바나 코틀린에서의 사용법
-
-<ul>
-<li>AppCompatResources.getDrawable 를 사용한다.</li>
-<li>코드상으로 벡터 이미지를 넣을때도 습관적으로 context.getDrawable 을 사용하는데 이건 android:src 과 같다고 생각해야 합니다.
+    <ul>
+      <li>xml 에서 사용법
+        <ul>
+          <li>android:src 과 app:srcCompat 는 완전히 동일하게 동작 하지 않는다. app:srcCompat 만 사용하자</li>
+          <li>xml 에서 svg 추가 할때 android:src=”리소스 파일” 습관적으로 이렇게 사용을 합니다.
+ minsdk 21 이상이면 신경도 안쓰고 사용 할수도 있습니다. 하지만 습관을 바꿔야 할 때입니다.
+ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속성값이 제대로 동작 하지만 android:src 에서는 동작 하지 않습니다.</li>
+        </ul>
+      </li>
+      <li>자바나 코틀린에서의 사용법
+        <ul>
+          <li>AppCompatResources.getDrawable 를 사용한다.</li>
+          <li>코드상으로 벡터 이미지를 넣을때도 습관적으로 context.getDrawable 을 사용하는데 이건 android:src 과 같다고 생각해야 합니다.
 그래서 깨진 벡터 이미지를 확인 할수 있습니다.</li>
-<li>AppCompatResources.getDrawable 를 사용해서 drawable 를 가지고 오면 문제가 해결 됩니다.</li>
-</ul></li>
-</ul></li>
+          <li>AppCompatResources.getDrawable 를 사용해서 drawable 를 가지고 오면 문제가 해결 됩니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h3>결론</h3>
-
+<h3 id="section">결론</h3>
 <ul>
-<li>android:src 을 사용하지 말고  app:srcCompat 이것만 사용하자</li>
-<li>java, kt 에서 벡터이미지를 추가 할때 getDrawable 가 아닌 AppCompatResources.getDrawable 를 사용하자</li>
+  <li>android:src 을 사용하지 말고  app:srcCompat 이것만 사용하자</li>
+  <li>java, kt 에서 벡터이미지를 추가 할때 getDrawable 가 아닌 AppCompatResources.getDrawable 를 사용하자</li>
 </ul>
 
 
@@ -281,7 +283,7 @@ app:srcCompat 를 사용할 때는 sdk23 이상에서 사용 할수 있는 속�
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

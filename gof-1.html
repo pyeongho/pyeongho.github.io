@@ -134,152 +134,150 @@
 
         <section class="post-content">
             
-            <h3>GoF 의 자바 디자인 패턴, 인프런 강의</h3>
+            <h3 id="gof------">GoF 의 자바 디자인 패턴, 인프런 강의</h3>
 
-<h4>코드 링크</h4>
-
+<h4 id="section">코드 링크</h4>
 <ul>
-<li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
+  <li><a href="https://github.com/parkgaram/java-designpattern">https://github.com/parkgaram/java-designpattern</a></li>
 </ul>
 
-<h4>1. 전략 패턴</h4>
-
+<h4 id="section-1">1. 전략 패턴</h4>
 <ul>
-<li>인터페이스 
-
-<ul>
-<li>기능에 대한 선언과 구현 분리</li>
-<li>기능을 사용하는 통로</li>
-</ul></li>
-<li>델리케이트 
-
-<ul>
-<li>위임하다. 다른객체의 기능을 사용한다.</li>
-</ul></li>
-<li>전략 패턴
-
-<ul>
-<li>여러 알고리즘을 하나의 추상적인 접근점(인터페이스)을 만들어 접근점에서 서로 교환 가능하도록 하는 패턴</li>
-</ul></li>
-</ul>
-
-<ol>
-<li>요구사항
-
-<ul>
-<li>신작 게임에서 케릭터와 무기를 구현</li>
-<li>무기는 두가지 종류</li>
-<li>칼 , 검 </li>
-<li>weapon 이라는 인터페이스를 만들고 </li>
-<li>칼 이라는 객체를 웨폰으로 구현 함</li>
-<li>케릭터는 웨폰이라는 교환 가능한 무기를 가지고 공격 한다.</li>
-<li>무기는 교환 가능 하다.</li>
-</ul></li>
-<li>유지보수 </li>
-<li>도끼 추가 </li>
-</ol>
-
-<h4>2. 어댑터 패턴</h4>
-
-<ul>
-<li>연관성 없는 두 객체를 묶어 사용하기</li>
-<li>알고리즘을 요구상항에 맞춰 사용 가능함</li>
-<li>220볼트 코드에 110볼트 코드를 추가 하기 위해 돼지코를 사용하는 내용!@</li>
-<li>기존 알고리즘은 사용, 알고리즘 추가나 알고리즘 인자 변경등이 가능함</li>
+  <li>인터페이스
+    <ul>
+      <li>기능에 대한 선언과 구현 분리</li>
+      <li>기능을 사용하는 통로</li>
+    </ul>
+  </li>
+  <li>델리케이트
+    <ul>
+      <li>위임하다. 다른객체의 기능을 사용한다.</li>
+    </ul>
+  </li>
+  <li>전략 패턴
+    <ul>
+      <li>여러 알고리즘을 하나의 추상적인 접근점(인터페이스)을 만들어 접근점에서 서로 교환 가능하도록 하는 패턴</li>
+    </ul>
+  </li>
 </ul>
 
 <ol>
-<li>요구사항
-
-<ul>
-<li>두 수에 대한 연산을 수행하는 객체 만들기</li>
-<li>수의 두 배의 수를 반환 =&gt; Double twiceOf(Float num);</li>
-<li>수의 반의수를 반환  =&gt;  Double halfOf(Float num);</li>
-<li>구현 객체 이름은 Adapter </li>
-<li>Math 클래스에서 두 배와 절반을 구하는 함수는 이미 구현 됨(double twoTime(double num))</li>
-<li>어댑터에 추가 기능을 넣을수 있다.</li>
-</ul></li>
+  <li>요구사항
+    <ul>
+      <li>신작 게임에서 케릭터와 무기를 구현</li>
+      <li>무기는 두가지 종류</li>
+      <li>칼 , 검</li>
+      <li>weapon 이라는 인터페이스를 만들고</li>
+      <li>칼 이라는 객체를 웨폰으로 구현 함</li>
+      <li>케릭터는 웨폰이라는 교환 가능한 무기를 가지고 공격 한다.</li>
+      <li>무기는 교환 가능 하다.
+        <ul>
+          <li>유지보수</li>
+          <li>도끼 추가</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
 
-<h4>3. 템플릿 메소드 패턴</h4>
-
+<h4 id="section-2">2. 어댑터 패턴</h4>
 <ul>
-<li>일정한 프로세스를 가진 요구사항을 템플릿 메소드 패턴을 이용하여 구한 한다.</li>
-<li>모양자를 템플릿이라고 생각, 다른색 펜으로 그리면 달라짐</li>
-<li>알고리즘의 구조를 메소드에 정의, 하위 클래스에서 알고리즘 구조의 변경없이 알고리즘을 재정의 하는 패턴
-
-<ul>
-<li>구현하려는 알고리즘이 일정한 프로세스가 있다</li>
-<li>구현하려는 알고리즘은 변경 가능하다. </li>
-</ul></li>
-<li>알고리즘은 여러단계</li>
-<li>나눠진 알고리즘을 메소드로 선언</li>
-<li>알고리즘을 수행할 템플릿 메소드를 만든다.</li>
-<li>하위클래스에서 구현 한다.</li>
+  <li>연관성 없는 두 객체를 묶어 사용하기</li>
+  <li>알고리즘을 요구상항에 맞춰 사용 가능함</li>
+  <li>220볼트 코드에 110볼트 코드를 추가 하기 위해 돼지코를 사용하는 내용!@</li>
+  <li>기존 알고리즘은 사용, 알고리즘 추가나 알고리즘 인자 변경등이 가능함</li>
 </ul>
 
 <ol>
-<li><p>요구사항</p>
-
-<ul>
-<li>접속을 구현해 주세요 -&gt; requestConnection
-
-<ul>
-<li>보안 과정 -&gt; doSecurity</li>
-<li>인증 과정 -&gt; authentication</li>
-<li>권한 과정 -&gt; authorization</li>
-<li>접속 과정 -&gt; connection</li>
-</ul></li>
-</ul></li>
-<li><p>내용</p>
-
-<ul>
-<li>순서
-
-<ul>
-<li>여러단계로 나누기 -&gt; 메소드 선언 -&gt; 템플릿 메소드 -&gt; 하위 클래스에서 구현</li>
-</ul></li>
-<li>추상 클래스 생성(접두사를 활용하자)</li>
-<li>외부에서 재정의 해야 하고 사용금지 시킬때 protect(패키지나눠서 잘)</li>
-</ul></li>
-<li><p>추가 개발</p>
-
-<ul>
-<li>하위 클래스에서 즉 구현부에서 수정</li>
-</ul></li>
+  <li>요구사항
+    <ul>
+      <li>두 수에 대한 연산을 수행하는 객체 만들기</li>
+      <li>수의 두 배의 수를 반환 =&gt; Double twiceOf(Float num);</li>
+      <li>수의 반의수를 반환  =&gt;  Double halfOf(Float num);</li>
+      <li>구현 객체 이름은 Adapter</li>
+      <li>Math 클래스에서 두 배와 절반을 구하는 함수는 이미 구현 됨(double twoTime(double num))</li>
+      <li>어댑터에 추가 기능을 넣을수 있다.</li>
+    </ul>
+  </li>
 </ol>
 
-<h4>4. 팩토리 매소드 패턴</h4>
-
+<h4 id="section-3">3. 템플릿 메소드 패턴</h4>
 <ul>
-<li>팩토리 메소드 패턴에서 템플릿 메소드 패턴의 사용됨을 안다.</li>
-<li>팩토리 메소드 패턴에서의 구조와 구현의 분리를 이해하고 구조와 구현의 분리 장점을 안다.<br></li>
-<li>요구사항
-
-<ul>
-<li>게임 아이템과 아이템을 생성을 구현해주세요.</li>
-<li>아이템을 생성하기 전에 데이터 베이스에서 아이템 정보를 요구사항</li>
-<li>아이템 생성후 데이터 베이스에 정보를 남김</li>
-<li>아이템 생성 주체는 ItemCreator로 이름 짓습니다.</li>
-<li>아이템은 item 이라는 인터페이스로 다룰수 있음</li>
-<li>use 함수를 기본 함수로 갖고 있습니다.</li>
-<li>아이템 종류는 물약1, 물약2 가 있습니다.</li>
-</ul></li>
+  <li>일정한 프로세스를 가진 요구사항을 템플릿 메소드 패턴을 이용하여 구한 한다.</li>
+  <li>모양자를 템플릿이라고 생각, 다른색 펜으로 그리면 달라짐</li>
+  <li>알고리즘의 구조를 메소드에 정의, 하위 클래스에서 알고리즘 구조의 변경없이 알고리즘을 재정의 하는 패턴
+    <ul>
+      <li>구현하려는 알고리즘이 일정한 프로세스가 있다</li>
+      <li>구현하려는 알고리즘은 변경 가능하다.</li>
+    </ul>
+  </li>
+  <li>알고리즘은 여러단계</li>
+  <li>나눠진 알고리즘을 메소드로 선언</li>
+  <li>알고리즘을 수행할 템플릿 메소드를 만든다.</li>
+  <li>하위클래스에서 구현 한다.</li>
 </ul>
 
-<h4>4. 싱글톤 패턴</h4>
+<ol>
+  <li>요구사항
+    <ul>
+      <li>접속을 구현해 주세요 -&gt; requestConnection
+        <ul>
+          <li>보안 과정 -&gt; doSecurity</li>
+          <li>인증 과정 -&gt; authentication</li>
+          <li>권한 과정 -&gt; authorization</li>
+          <li>접속 과정 -&gt; connection</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>내용
+    <ul>
+      <li>순서
+        <ul>
+          <li>여러단계로 나누기 -&gt; 메소드 선언 -&gt; 템플릿 메소드 -&gt; 하위 클래스에서 구현</li>
+        </ul>
+      </li>
+      <li>추상 클래스 생성(접두사를 활용하자)</li>
+      <li>외부에서 재정의 해야 하고 사용금지 시킬때 protect(패키지나눠서 잘)</li>
+    </ul>
+  </li>
+  <li>추가 개발
+    <ul>
+      <li>하위 클래스에서 즉 구현부에서 수정</li>
+    </ul>
+  </li>
+</ol>
 
+<h4 id="section-4">4. 팩토리 매소드 패턴</h4>
 <ul>
-<li>객체 : 속성과 기능을 갖춘 것</li>
-<li>클래스 : 속성과 기능을 정의한 것</li>
-<li>인스턴스 : 속성과 기능ㅇ을 가진 것 중 실제 하는것
-
-<ul>
-<li>자동차 =&gt; 객체</li>
-<li>자동차 설계도 =&gt; 클래스 </li>
-<li>실제 자동차 =&gt; 인스턴스</li>
-</ul></li>
+  <li>팩토리 메소드 패턴에서 템플릿 메소드 패턴의 사용됨을 안다.</li>
+  <li>팩토리 메소드 패턴에서의 구조와 구현의 분리를 이해하고 구조와 구현의 분리 장점을 안다.
+    <ol>
+      <li>요구사항
+        <ul>
+          <li>게임 아이템과 아이템을 생성을 구현해주세요.</li>
+          <li>아이템을 생성하기 전에 데이터 베이스에서 아이템 정보를 요구사항</li>
+          <li>아이템 생성후 데이터 베이스에 정보를 남김</li>
+          <li>아이템 생성 주체는 ItemCreator로 이름 짓습니다.</li>
+          <li>아이템은 item 이라는 인터페이스로 다룰수 있음</li>
+          <li>use 함수를 기본 함수로 갖고 있습니다.</li>
+          <li>아이템 종류는 물약1, 물약2 가 있습니다.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
 </ul>
+
+<h4 id="section-5">4. 싱글톤 패턴</h4>
+<ul>
+  <li>객체 : 속성과 기능을 갖춘 것</li>
+  <li>클래스 : 속성과 기능을 정의한 것</li>
+  <li>인스턴스 : 속성과 기능ㅇ을 가진 것 중 실제 하는것</li>
+  <li>자동차 =&gt; 객체</li>
+  <li>자동차 설계도 =&gt; 클래스</li>
+  <li>실제 자동차 =&gt; 인스턴스</li>
+</ul>
+
 
 
         </section>
@@ -381,7 +379,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

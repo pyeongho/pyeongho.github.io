@@ -18,41 +18,38 @@
 	  <pubDate>2017-05-27T00:00:00+00:00</pubDate>
 	  <guid>//kotlin_android_extensions</guid>
 	  <description><![CDATA[
-	     <h3>findviewid 는 안했으면 ...</h3>
-
+	     <h3 id="findviewid---">findviewid 는 안했으면 …</h3>
 <ul>
-<li>코틀린에서도 사용 가능한 방법</li>
-<li>코틀린 안드로이드 익스텐션</li>
+  <li>코틀린에서도 사용 가능한 방법</li>
+  <li>코틀린 안드로이드 익스텐션</li>
 </ul>
 
-<h4>1. Kotlin android extensions 사용하기</h4>
-
+<h4 id="kotlin-android-extensions-">1. Kotlin android extensions 사용하기</h4>
 <ul>
-<li><a href="http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html">http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html</a></li>
+  <li><a href="http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html">http://thdev.tech/kotlin/2017/03/05/AndroidStudio-Kotlin-Extensions.html</a></li>
 </ul>
 
-<h4>2. Kotlin android extensions 사용하기</h4>
-
+<h4 id="kotlin-android-extensions--1">2. Kotlin android extensions 사용하기</h4>
 <ul>
-<li>기존에 사용해보았던 데이터바인딩도 사용가능하지만 새 술은  새 부대에 </li>
-<li>build.gradle(app) 에 내용 추가</li>
-<li><div class="highlight"><pre><code class="language-gradle" data-lang="gradle">apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+  <li>기존에 사용해보았던 데이터바인딩도 사용가능하지만 새 술은  새 부대에</li>
+  <li>build.gradle(app) 에 내용 추가</li>
+  <li>
+    <p>```gradle
+ apply plugin: ‘com.android.application’
+ apply plugin: ‘kotlin-android’
+ apply plugin: ‘kotlin-android-extensions’</p>
 
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version"
-}
-</code></pre></div></li>
-</ul>
-
-<ul>
-<li>사용은 xml 에서 정의한 아이디를 넣으면 자동으로 임포트 되어서 사용이 편합니다.
-
-<ul>
-<li>import kotlinx.android.synthetic.main.fragment_main.view.*</li>
-<li>view.tv_hello.text = &quot;ABCD&quot;</li>
-</ul></li>
+    <p>dependencies {
+     compile “org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version”
+ }
+  ```</p>
+  </li>
+  <li>사용은 xml 에서 정의한 아이디를 넣으면 자동으로 임포트 되어서 사용이 편합니다.
+    <ul>
+      <li>import kotlinx.android.synthetic.main.fragment_main.view.*</li>
+      <li>view.tv_hello.text = “ABCD”</li>
+    </ul>
+  </li>
 </ul>
 
 	  ]]></description>

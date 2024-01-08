@@ -134,63 +134,58 @@
 
         <section class="post-content">
             
-            <h3>python에서 사용 할 C 모듈 만들기</h3>
+            <h3 id="python---c--">python에서 사용 할 C 모듈 만들기</h3>
 
-<h4>0. 진행 이유</h4>
-
+<h4 id="section">0. 진행 이유</h4>
 <ul>
-<li> python 에서 엑셀 만들기 사용하면 느리다고 함</li>
+  <li>python 에서 엑셀 만들기 사용하면 느리다고 함</li>
 </ul>
 
-<h4>1.속도 테스트</h4>
-
+<h4 id="section-1">1.속도 테스트</h4>
 <ul>
-<li><p>xlsxwriter 라이브러리 사용  </p>
-
-<ul>
-<li>python 테스트
-<script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script><br></li>
-<li>C 테스트 코드
-<script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script>
-
-<ul>
-<li>속도 측정</li>
-<li>python : 약 12초</li>
-<li>c : 약 1.221초</li>
-</ul></li>
-</ul></li>
+  <li>xlsxwriter 라이브러리 사용
+    <ul>
+      <li>python 테스트
+ <script src="https://gist.github.com/pyeongho/175edfafa9f6b41d9755373222d56c0d.js"></script></li>
+      <li>C 테스트 코드
+ <script src="https://gist.github.com/pyeongho/a4ee815aaa703709f0de758d2fbbf840.js"></script></li>
+    </ul>
+  </li>
+  <li>속도 측정
+    <ul>
+      <li>python : 약 12초</li>
+      <li>c : 약 1.221초</li>
+    </ul>
+  </li>
 </ul>
 
-<h4>2. C 라이브러리 만들기</h4>
-
+<h4 id="c--">2. C 라이브러리 만들기</h4>
 <ul>
-<li>기본 C module 링크: <a href="https://pyeongho.github.io/python/2016/12/21/pythonClib.html">C module</a></li>
+  <li>기본 C module 링크: <a href="https://pyeongho.github.io/python/2016/12/21/pythonClib.html">C module</a></li>
 </ul>
 
-<h4>3. setup.py 의 문제점</h4>
-
+<h4 id="setuppy--">3. setup.py 의 문제점</h4>
 <ul>
-<li>기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함</li>
+  <li>기본 컴파일 옵션만 가능해 보이기에 다른 방법을 찾아야함</li>
 </ul>
 
-<h4>4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
-
+<h4 id="python--c--libxlsxwriter----c--">4. python 에서 C 의 libxlsxwriter 를 이용한다. 코드는 C 테스트 코드</h4>
 <ul>
-<li>리눅스에 libxlsxwriter 를 설치 한다.</li>
-<li>setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
-
-<ul>
-<li>ext<em>modules = [Extension(&quot;mylib&quot;, [&quot;mylib.c&quot;],extra</em>link_args=[&#39;-lxlsxwriter&#39;])]</li>
-</ul></li>
-<li>mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조</li>
+  <li>리눅스에 libxlsxwriter 를 설치 한다.</li>
+  <li>setup.py 에서 컴파일 옵션을 추가 한다. 아래가 변경된 내용
+    <ul>
+      <li>ext_modules = [Extension(“mylib”, [“mylib.c”],extra_link_args=[‘-lxlsxwriter’])]</li>
+    </ul>
+  </li>
+  <li>mylib.c 를 수정 하여 c 에서 엑셀 파일 만드는 코드 추가 코드는 하단 참고 코드 참조</li>
 </ul>
 
-<h4>참고 코드</h4>
-
+<h4 id="section-2">참고 코드</h4>
 <ul>
-<li>python 에서 호출, C 에서 엑셀 파일 생성
-<script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script></li>
+  <li>python 에서 호출, C 에서 엑셀 파일 생성
+   <script src="https://gist.github.com/pyeongho/2dba1e1f9d90817c13828f55ee9c6cbc.js"></script></li>
 </ul>
+
 
 
         </section>
@@ -285,7 +280,7 @@
 
 
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2022</section>
+          <section class="copyright"><a href="/">PyeongHo Factory</a> &copy; 2024</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
     </div>

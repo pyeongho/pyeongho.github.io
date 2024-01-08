@@ -18,29 +18,27 @@
 	  <pubDate>2019-11-27T00:00:00+00:00</pubDate>
 	  <guid>//monobmp</guid>
 	  <description><![CDATA[
-	     <h3>단색 BMP 생성</h3>
-
+	     <h3 id="bmp-">단색 BMP 생성</h3>
 <ul>
-<li>BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ</li>
-<li>128 * 64 사이즈의 단색 BMP 파일 생성 입니다.</li>
-<li>단색의 경우 1비트가 1픽셀을 나타 냅니다.</li>
-<li>1바이트는 8픽셀 입니다.</li>
-<li>128 * 64 = 8192 픽셀</li>
-<li>8192 =&gt;  1024바이트 </li>
-<li>헤더는 무식하게 하드코딩으로 넣었습니다.</li>
-<li>색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0</li>
+  <li>BMP 헤더는 한땀 한땀 만들어서 넣었습니다. ㅠㅠ</li>
+  <li>128 * 64 사이즈의 단색 BMP 파일 생성 입니다.</li>
+  <li>단색의 경우 1비트가 1픽셀을 나타 냅니다.</li>
+  <li>1바이트는 8픽셀 입니다.</li>
+  <li>128 * 64 = 8192 픽셀</li>
+  <li>8192 =&gt;  1024바이트</li>
+  <li>헤더는 무식하게 하드코딩으로 넣었습니다.</li>
+  <li>색상 가지고 와서 약간의 색상이 포함 되어 있으면 1 없으면 0</li>
 </ul>
 
-<script src="https://gist.github.com/pyeongho/ae31ee6bca03a044c39e28de7ca0aeaf.js"></script> 
-  
+<script src="https://gist.github.com/pyeongho/ae31ee6bca03a044c39e28de7ca0aeaf.js"></script>
 
-<h3>BMP 헤더</h3>
-
+<h3 id="bmp--1">BMP 헤더</h3>
 <ul>
-<li>128 * 64 입니다.</li>
-<li><a href="https://heinek.tistory.com/13">헤더참고</a>
-<script src="https://gist.github.com/pyeongho/eabb74ca82b6f2f7c31084c7d9950edd.js"></script><br></li>
+  <li>128 * 64 입니다.</li>
+  <li><a href="https://heinek.tistory.com/13">헤더참고</a>
+<script src="https://gist.github.com/pyeongho/eabb74ca82b6f2f7c31084c7d9950edd.js"></script></li>
 </ul>
+
 
 	  ]]></description>
 	</item>
